@@ -1,0 +1,1515 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://iranfa.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1715370*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[351]='4';commentCnt[352]='3';commentCnt[353]='0';commentCnt[354]='0';commentCnt[355]='3';commentCnt[356]='0';commentCnt[357]='0';commentCnt[358]='0';commentCnt[359]='1';commentCnt[360]='6';commentCnt[361]='0';commentCnt[362]='63';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[351]='0';
+mihanblogDisLikeArrCnt[351]='0';
+mihanblogLikeArrCnt[352]='0';
+mihanblogDisLikeArrCnt[352]='0';
+mihanblogLikeArrCnt[353]='0';
+mihanblogDisLikeArrCnt[353]='0';
+mihanblogLikeArrCnt[354]='0';
+mihanblogDisLikeArrCnt[354]='0';
+mihanblogLikeArrCnt[355]='0';
+mihanblogDisLikeArrCnt[355]='0';
+mihanblogLikeArrCnt[357]='0';
+mihanblogDisLikeArrCnt[357]='0';
+mihanblogLikeArrCnt[358]='0';
+mihanblogDisLikeArrCnt[358]='0';
+mihanblogLikeArrCnt[359]='0';
+mihanblogDisLikeArrCnt[359]='0';
+mihanblogLikeArrCnt[360]='0';
+mihanblogDisLikeArrCnt[360]='0';
+mihanblogLikeArrCnt[362]='0';
+mihanblogDisLikeArrCnt[362]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://iranfa.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://iranfa.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','332');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','جمعه 1 بهمن 1395');
+	
+	setStatVar('today_view','25');
+	setStatVar('yesterday_view','262');
+	
+	setStatVar('this_month_view','4262');
+	setStatVar('last_month_view','1375');
+
+	setStatVar('total_view','147943');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:47)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://iranfa.mihanblog.com/statupdate/?data[refereruri]=http://1995sara.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607831491&data[hash]=179690c8991f10387bee793cb1dbb460&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://iranfa.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://iranfa.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://iranfa.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>پایگاه خبری تحلیلی ایران فا</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="<meta name="alexaVerifyID" content="N-ZDoRPU0SgCClozj9CMERaWgIw"/>" />
+<meta name="keywords" content="<meta name="alexaVerifyID" content="N-ZDoRPU0SgCClozj9CMERaWgIw"/>" />
+<link rel="alternate" type="application/rss+xml" title="پایگاه خبری تحلیلی ایران فا" href="http://iranfa.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="پایگاه خبری تحلیلی ایران فا" href="http://iranfa.mihanblog.com/post/atom/" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+*{ padding:0px; margin:0px;}
+body{ background:#1F1F1F url('http://s6.picofile.com/file/8188431892/BG.png') fixed;
+      direction:rtl;}
+a{ text-decoration:none;}
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 400;
+  src: url('http://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v4/DroidNaskh-Regular.eot');
+  src: url('http://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v4/DroidNaskh-Regular.eot?#iefix') format('embedded-opentype'),
+       url('http://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v4/DroidNaskh-Regular.woff2') format('x-woff2'),
+       url('http://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v4/DroidNaskh-Regular.woff') format('woff'),
+       url('http://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v4/DroidNaskh-Regular.ttf') format('truetype');
+}
+#header{ width:1000px;
+         height:159px;
+		 background:#e7e7e7 url('http://s3.picofile.com/file/8211251150/header.png') no-repeat;
+		 margin:auto;
+		 text-align:left;
+		 padding-top:10px;}
+		 .today { font-family:tahoma;
+		          margin-left:15px;
+				  color:#FFFFFF;}
+#menu{ width:983px;
+margin:auto;
+padding:5px 15px 5px 0px;
+border-left: 1px solid #b00808;
+border-right: 1px solid #b00808;
+background: #252525; /* Old browsers */
+background: -moz-linear-gradient(top, #252525 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#252525), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #252525 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #252525 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #252525 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom, #252525 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252525', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+       }
+	   #menu a{ color:#FFFFFF;
+	            font-family:Droid Arabic Naskh;
+				font-size:small;
+				padding:5px 8px;}
+				#menu a:hover{ background:#b50a0a;}
+#all { width:1000px;
+       background:#e8e7e7;
+	   margin:auto;
+	   position:absolute;
+	   left:0px;
+	   right:0px;
+	   border-top:#b00808 10px solid;
+	   margin-top:10px;
+	   padding:10px 0px 10px 0px;}
+	   
+#footer {width:1000px;
+         height:50px;
+		 margin:auto;
+		 float:right;
+		 border-bottom:2px solid #2a2a2a;
+		 border-top:2px solid #2a2a2a;
+		 background: #fa4848; /* Old browsers */
+background: -moz-linear-gradient(top, #fa4848 0%, #b50b0b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fa4848), color-stop(100%,#b50b0b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #fa4848 0%,#b50b0b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #fa4848 0%,#b50b0b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #fa4848 0%,#b50b0b 100%); /* IE10+ */
+background: linear-gradient(to bottom, #fa4848 0%,#b50b0b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa4848', endColorstr='#b50b0b',GradientType=0 ); /* IE6-9 */ 
+		 }
+		 
+#menu-R { width:190px;
+          height:100%;
+		  float:right;
+		  padding-top:8px;
+		  padding-bottom:8px;
+		  margin-right:3px;
+		  background:#f0bd95;
+		  
+		  
+		  
+		  }
+		  .menu-name { width:170px;
+		               margin:auto;
+		               background:#db9075;
+					   color:#FFFFFF;
+					   padding-right:10px;
+					   font-family:Droid Arabic Naskh;}
+#menu-R ul{ background:right top no-repeat url('http://s3.picofile.com/file/8188431350/bgUL.png') ;
+    padding-top:8px;
+	margin-bottom:15px;}
+#menu-R li { background:#ffdcb9;
+     width:168px;
+	 list-style:inside square;
+	 margin:auto;
+	 color:#db9075;
+	 padding-top:1px;
+	 padding-right:10px;}
+	 #menu-R li:hover{ color:#FF0004;
+					   border-bottom:#FFFFFF 1px solid;
+					   }
+	 #menu-R li a{ color:#000000;
+	       font-size:small;
+		   font-family:Droid Arabic Naskh ,tahoma;}
+	
+
+#menu-L { width:190px;
+          height:100%;
+		  float:left;
+		  padding-top:8px;
+		  padding-bottom:8px;
+		  margin-left:3px;
+		  background:#f0bd95;}
+		  
+#menu-L ul{ background:right top no-repeat url('http://s3.picofile.com/file/8188431350/bgUL.png') ;
+    padding-top:8px;
+	margin-bottom:15px;}
+#menu-L li { background:#ffdcb9;
+     width:168px;
+	 list-style:inside square;
+	 margin:auto;
+	 color:#db9075;
+	 padding-top:1px;
+	 padding-right:10px;}
+	#menu-L li:hover{ color:#FF0004;
+					   border-bottom:#FFFFFF 1px solid;
+					   }
+	 #menu-L li a{ color:#000000;
+	       font-size:small;
+		   font-family:Droid Arabic Naskh ,tahoma;}
+	   
+ol{ height:10px; background:#ffdcb9; width:178px; margin:auto;}
+#post-R {float:right;
+         width:580px;}
+.post{ width:580px;
+       background:#FFFFFF;
+	   margin:0px 7px 0px 0px;
+	   border-radius:5px;
+	   border:1px solid #CFCFCF;
+	   padding:10px;
+	   font-family:Droid Arabic Naskh ,tahoma;
+	   margin-bottom:3px;}
+	   .post-name { color:#9522cb;
+	                font-family:Droid Arabic Naskh ,tahoma;
+					font-size:large;
+					}
+.post-tag {width:580px;
+       float:right;
+       background:#FFFFFF;
+	   margin:0px 7px 0px 0px;
+	   border-radius:5px;
+	   padding:10px;
+	   font-size:small;
+	   font-family:tahoma;
+	   margin-bottom:6px;
+	   border:1px solid #CFCFCF;}
+	 
+	   
+.a {font-family:tahoma;
+border:1px solid #CFCFCF;
+    background:#FFFFFF;
+	border-radius:5px;
+	margin:0px 7px 0px 0px;
+	padding:5px 8px 8px 8px;
+	font-size:small;
+	color:#000000;
+	}
+.b {margin:0px 3px 0px 0px;}
+.c {margin:0px 0px 0px 0px;}
+   .a:hover {background:#37B836;
+             transition:all .7s;}
+   .b:hover{ background:#26D3D0;}
+   .c:hover {background:#F43235;}
+.fa {border-radius:8px;
+     padding:8px;
+	 width:583px;
+	 background:#f98631;
+	 margin:20px 7px 20px 0px;}
+.page { margin-right:7px;}
+.number { background:#2a2a2a;
+          border:#FFFFFF 1px solid;
+		  box-shadow:#000000 1px 1px 4px;
+		  border-radius:5px;
+		  padding:5px 8px 5px 8px;
+		  color:#FFFFFF;
+		  font-family:Droid Arabic Naskh ,tahoma;}
+.number b { background:#b00808;
+            padding:5px 8px 5px 8px; }	
+ 
+ #footer { text-align:center;
+           font-family:Droid Arabic Naskh ,tahoma;
+		   padding-top:20px;}
+		   #footer i{ color:#000C70;}
+		   
+.search { float:left;
+          margin-left:10px;}
+.search-box { height:20px;
+              background:#b50a0a;
+			  color:#FFFFFF;}
+.search-submit{background:#b50a0a;
+               color:#FFFFFF;
+			   font-family:Segoe,tahoma;
+			   height:23px;
+			   padding-bottom:2px;
+			   }
+.blog-name{ float:right;
+			margin:40px 0px 0px 0px;
+			font-family:Droid Arabic Naskh ,tahoma;
+			padding-right:30px;
+			color:#E8FF00;
+            }
+#menu-R ul img{ max-height:150px;
+			    max-width:150px;
+				border-radius:75px;}
+</style>
+</head>
+<!---->
+<body>
+<div id="header">
+<a class="today"><script>setTodayDate()</script> </a>
+<span class="blog-name">
+<h1>پایگاه خبری تحلیلی ایران فا</h1>
+<a></a>
+</span>
+
+</div><!--header-->
+<div id="menu">
+<a href="index.html">صفحه نخست</a>
+<!-- به جای # آدرس موضوع و به جای موضوع 1 نام موضوع منتخب را بگذارید
+مثلا : <a href="#">موضوع 1</a>
+      <a href="http://mihanqaleb.mihanblog.com/post/category/3">قالب دو ستونه</a>
+      
+      
+      در غیر این صورت تگ های a را پاک کنید-->
+<a href="http://iranfa.mihanblog.com/post/category/255">اخبار اقتصادی</a>
+<a href="http://iranfa.mihanblog.com/post/category/257">اخبار گوناگون</a>
+<a href="http://iranfa.mihanblog.com/post/category/256">اخبار ورزشی</a>
+<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>
+<a href="http://iranfa.mihanblog.com/extrapage/iranfa">معرفی ما</a>
+<a href="javascript:messageForm()">تماس با ما</a>
+<form class="search" target="_new" method="get" action="http://www.google.com/search">
+<input class="search-box" name=q size=18>
+<input  class="search-submit" type="submit" name="btnG" value="جستجو" >
+<input value="http://iranfa.mihanblog.com" type="hidden" name=sitesearch checked>
+<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8>
+</form>
+
+</div><!--menu-->
+
+<div id="all">
+
+<div id="menu-R">
+
+
+<div class="menu-name">درباره وب</div>
+<ul>
+<li style="list-style:none;">
+<center>
+<img src="../static.mihanblog.com/public/user_data/web_photo/572/1715370.jpg@9329"  /><br>
+<a>با ما بروز باشید</a>
+</center>
+</li>
+<ol></ol>
+</ul>
+
+<div class="menu-name">مطالب وب</div>
+<ul>
+<ol></ol>
+<li><a href="http://iranfa.mihanblog.com/post/category/316">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/315">شکست استقلال از پرسپولیس در دربی نوجوانان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/314">رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/313">مسی بهترین بازیکن هفته لیگ قهرمانان شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/312">افتتاح چهارمین دوره &quot;فرماندهی عملیات مشترک و مرکب&quot;-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/311">حسن روحانی: در قرن جدید زندگی کنیم-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/310">تقابل هواپیماهای شخصی کلینتون و ترامپ-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/309">اختلاس 385 هزار دلاری وزیر افغانستانی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/308">کاروان فراری داعش از موصل منهدم شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/307">آتش‌بازی خطرناک اردوغان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/306">آمریکا حمله هوایی به تاسیسات ارتش سوریه را بررسی می‎کند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/305">پیشنهاد تیم مطرح و بالانشین لالیگایی به سردار آزمون-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/304">خشم &quot;نتانیاهو&quot; از قطعنامه &quot;یونسکو&quot; به نفع مسلمانان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/303">۵۸ میلیون دلار کالای ایرانی به آمریکا صادر شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/302">بیرانوند به شایعات پایان داد+عکس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/301">اظهارات کی روش پس از شکست ازبکستان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/299">ترکیب استقلال اعلام شد/ حضور مهاجم سابق نفت در ترکیب اصلی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/298">کشته شدن ده‌ها تروریست در عملیات ارتش سوریه در جنوب حلب-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/297">یک بازیگر زن دیگر ایرانی به GEM پیوست (+عکس)-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/296">قرارداد 5 بازیکن پرسپولیس ثبت شد/حسینی و انصاری رسما سرخپوش شدند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/295">فیش حقوقی رئیس کمیته امداد امام خمینی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/263">ادامه ناکامی‌های سپاهان با شکست مقابل لوکوموتیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/258">آب پاکی آمریکا روی دست خوش خیالان!-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/257">اخبار گوناگون-91</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/256">اخبار ورزشی-35</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/255">اخبار اقتصادی-31</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی-122</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/253">ساخت ۹۰ هتل ۴ و ۵ ستاره در ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/252">دیدار روسای جمهور چین و ترکیه با اوباما در حاشیه نشست امنیت هسته‌ای-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/251">آخرین آمار تلفات و مجروحان انفجار دیاربکر ترکیه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/250">شیرین‌ترین جامی که &quot;علی کریمی&quot; گرفت + عکس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/249">جبران فاصله 4 امتیازی با استقلال سخت نیست/ چوب خط پرسپولیس پر شده است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/248">تمام جنایت‌ها و خیانت‌های رژیم سعودی در سالی که گذشت-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/247">گزارش رویترز از مداحان ایرانی در سوریه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/246">کاخ سفید: می‌توانیم بدون نگرانی با تهدید موشک‌های ایران مقابله کنیم-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/245">دایی از پرسپولیس شکایت کرد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/244">کاسیاس: همه منتظر بازنشستگی من هستند، صبور باشید آن روز نزدیک است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/243">آیا &quot;احمدی نژاد&quot;با وعده یارانه 250 هزار تومانی برای انتخابات 96 می آید؟-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/242">ایران انفجارهای تروریستی بغداد و لاهور را محکوم کرد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/241">زنگ خطر کاهش مصرف سرانه شیر به صدا درآمد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/240">شهاب 3 موشکی که قادر است&quot;نیروگاه اتمی دیمونا&quot; را با خاک یکسان کند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/238">شهر تدمر آزاد شد +نقشه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/237">ایران اهواز را اشغال کرده!/ عجم‌ها در محاصره اعراب هستند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/236">نخستین واکنش ارتش سوریه به شکست داعش-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/235">روحانی از پاکستان بازگشت-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/234">واکنش برانکو به برد پرگل پرسپولیس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/232">جنگ سایبری شدید اسرائیل علیه ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/230">اقتصاد مقاومتی،اقدام و عمل-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/229">مادر همسر رئیس‌جمهور در سمنان به خاک سپرده می‌شود-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/228">رونمایی از جدیدترین پهپاد ساخت چین + عکس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/227">بیانات مقام معظم رهبری(خطاب به جوانان کشور)-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/226">مقایسه قیمت خودرو در ایران و دبی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/225">عربستان مجبور شد کوتاه بیاید!-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/220">چرا روحانی مایل به رفع حصر نیست؟-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/217">«امیر تتلو» در خبر ۲۰:۳۰ حضور پیدا کرد (عکس)-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/214">زیدان: با این وضع بازی کردن به هیچ جایی نمی‌رسیم-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/209">کفاشیان همچنان برای ریاست می‌جنگد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/208">استقبال رسمی روحانی از رئیس جمهور ویتنام-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/206">سطح علمی ایرانی‌ها را از آمریکایی‌ها هم بالاتر دیدم/ فکر مهاجرت استعماری است/ به ایران آمدم تا کشورم را بسازم-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/205">سال آینده، تولید سواری بنز در ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/204">ماجرای توطئه نافرجام برای حاج قاسم در مشهد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/203">ابراهیمی به رحمت خدا رفت؛ ورزش ایران بار دیگر عزادار شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/202">دعوت ظریف از بازرگانان نیوزیلندی برای حضور و سرمایه گذاری در ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/201">یاسر هاشمی عنوان کرد؛ نقش روحانی در شکل‌گیری &quot;لیست هاشمی&quot; در انتخابات خبرگان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/200">وزیر نفت: مذاکرات ما با شرکت جنرال الکتریک آمریکا مثبت بود/ برای توسعه میدان آزادگان جنوبی به توتال پیشنهاد دادیم-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/199">رئیس پلیس راه البرز اعلام کرد جاده چالوس ۲۷ و ۲۸ اسفند ماه یک طرفه است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/198">گروه مخالف جدیدی در سوریه تأسیس شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/197">ایت الله مکارم شیرازی:امار بالای قاچاق کالا در کشور شرم‌آور است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/196">بغض و اشک رهبری در دیدار با اعضای مجلس خبرگان/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/195">اسامی بازیکنان تیم ملی فوتبال ایران اعلام شد/ دعوت از ۷ پرسپولیسی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/194">آغاز ساخت مدرسه علمیه ۱۴ معصوم (ع) با حضور آیت‌‎الله مکارم شیرازی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/193">پاریس از احتمال تحریم ایران در پاسخ به رزمایش موشکی خبر داد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/192">جنگنده جدید روسیه پنتاگون را شوکه کرد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/190">ایام فاطمیه در انگلیس +پوستر-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/189">بمب خبری باشگاه پرسپولیس به بیرون درز کرد/ خبری خوش برای قرمزها-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/186">نکات پس از برجام رهبر انقلاب/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/185">در کمیته بررسی صلاحیت‌ها؛جبهه متحد اصولگرایان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/184">رئیس‌دادگستری تهران: ب.ز هنوز پولی نداده است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/183">المانیتور: موشک‌های «کوتاه‌برد» ایران فوق‌العاده‌اند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/182">خبر شوک آور / کارلوس کی روش به سرطان مبتلا شد؟-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/181">مصوبه عجیب در شورای نشریات دانشجویی وزارت بهداشت-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/180">فعالیت های موشکی ایران با جدیت دنبال می شود-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/179">جهانگیری: محدودیتی برای رابطه ایران و ارمنستان وجود ندارد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/178">شهادت ۲ تن از مدافعان حرم حضرت زینب(س) در سوریه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/177">جمعه شاید غیرپرسپولیسی‌ها هم به ورزشگاه بیایند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/176">آغاز اجرای برجام از ۲۶ مهر و انتظار لغو تحریم ها-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/175">رفع تحریم‌ تا دوماه آینده/ارائه تسهیلات به مردم برای افزایش تقاضا-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/174">واکنش واشنگتن به آزمایش موشکی ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/173">قشقاوی: نمی‌توان درباره سرنوشت ۷۴ حاجی مفقود نظر قطعی داد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/172">واکنش سخت وخشن ایران بفاجعه کشتار حجّاج در منا/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/171">وزرای خارجه ایران و لوکزامبورگ دیدار کردند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/170">امارات: تهران صادرات سلاح را متوقف کند!-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/169">پیام تسلیت رییس مجلس درپی درگذشت مادر تخت‌روانچی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/168">جلسه کمیسیون برجام با حضور آمانو آغاز شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/167">گریه سردار سلیمانی در محضر رهبر انقلاب/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/166">تعیین دوعضو مجلس در ستاد امر به معروف-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/165">تاثیر مثبت همکاری‌های پارلمانی در افزایش درک و فهم متقابل-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/164">بیانیه آژانس درباره سفر آمانو به ایران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/163">جلسه علنی مجلس پس از سه هفته آغازشد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/162">عربستان مانند داعش از گاز سمی استفاده کرده است-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/161">آمانو امروز به تهران می‌آید-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/160">پورمختار: برخی سفارت‌خانه‌ها دست به واردات می‌زنند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/159">زاکانی به صالحی: اسناد محرمانه توافق با آژانس را ارائه دهید-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/158">پیام تسلیت ابوترابی فرد درپی درگذشت آیت‌الله خزعلی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/157">سرنوشت پولی که برای بیت الله عباسپور جمع شد چه شد؟/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/156">نامه زاکانی به صالحی برای ارائه اسناد محرمانه توافق به کمیسیون برجام-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/155">حمله جنگنده‌های رژیم صهیونیستی به غزه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/154">موافقت رهبری با دفن پیکر جان باختگان حادثه مکه درگلزار شهدا-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/153">پایان کنفرانس عمومی آژانس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/152">رسایی: توافق هسته‌ای نقاط مبهمی دارد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/151">کلیپ بسیار دیدنی از اقتدار قرارگاه پدافند خاتم الانبیاء-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/150">پیام تسلیت معاون اول رِِِییس جمهور به نو بخت-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/149">پیکر هفت تن از حجاج حادثه مکه مکرمه به کشور بازگشت-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/148">آمریکا به‌دنبال تسلط بر منابع انرژی منطقه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/147">توصیه مقام رهبری پس از فوت آیت‌الله خزعلی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/146">درخواست برای آتش بس ۲۴ ساعته در جهان-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/145">امروز مرحله جهش انقلاب است نه عقب گرد و انفعال-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/144">پیکر آیت‌ الله شیخ ابوالقاسم خزعلی در مشهد تشییع شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/143">زمین‌لرزه ۴ ریشتری راین بدون خسارت و تلفات-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/142">بیانات مقام معظم رهبری در جمع فرماندهان سپاه-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/141">مراسم تشییع پیکر برادر نوبخت با حضور چهره‌های سیاسی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/140">وزیر خارجه هلند یکشنبه در تهران-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/139">پیکر برادر معاون رییس جمهوری تشییع شد-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/138">نیروهای کُرد ۴۵ داعشی را اسیر کردند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/137">عیادت رهبر انقلاب از آیت الله خزعلی/ویدیو-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/136">دیدار خانواده یکی از جانباختگان حادثه مکه با رهبر انقلاب-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/135">گران ترین اپارتمان جهان در دبی-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/133">امیر سیاری: نیروهای ایرانی مرد دریاهای سخت هستند-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/132">خرید ادوات از بیگانگان در دستور کار نیست-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/129">پنج وزیر دیگر دولت روحانی در راه مجلس-1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/category/128">آیت‌الله جنتی بر پیکر آیت‌الله خزعلی نماز خواند/ تشییع آغاز شد-1</a></li>
+<ol></ol>
+</ul>
+
+
+<div class="menu-name">نویسندگان</div>
+<ul>
+<ol></ol>
+ 
+<li><a href="http://iranfa.mihanblog.com/post/author/1419080">محمدسجاد سیفی(330)</a></li>
+ 
+<ol></ol>
+</ul>
+
+<div class="menu-name">صفحات جانبی</div>
+<ul>
+<ol></ol>
+<li><a title="دانلود آخرین خبر – برنامه جدیدترین اخبار برای اندروید" href="http://iranfa.mihanblog.com/extrapage/android">دانلود آخرین خبر – برنامه جدیدترین اخبار برای اندروید</a></li>
+<li><a title="معرفی ما" href="http://iranfa.mihanblog.com/extrapage/iranfa">معرفی ما</a></li>
+<ol></ol>
+</ul>
+<div class="menu-name">آمار وبسایت</div>
+<ul>
+<ol></ol>
+<li><a>کل بازدید: <script>getStatVar('total_view');</script></a></li>
+<li><a>بازدید امروز : <script>getStatVar('today_view');</script></a></li>
+<li><a>بازدید دیروز : <script>getStatVar('yesterday_view');</script></a></li>
+<li><a>بازدید این ماه : <script>getStatVar('this_month_view');</script></a></li>
+<li><a>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></a></li>
+<li><a>تعداد نویسندگان : <script>getStatVar('total_author');</script></a></li>
+<li><a>تعداد کل مطالب : <script>getStatVar('total_post');</script></a></li>
+<li><a>آخرین بازدید : <script>getStatVar('last_view_date');</script></a></li>
+<li><a>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></a></li>
+<ol></ol>
+</ul>
+
+</div><!--menu-R-->
+
+<div id="post-R">
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/362">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</a><br>
+ 
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<div><font size="2">فرانسه بعد از حادثه ساختمان پلاسکو با ارسال پیامی اظهار تاسف کرده و به خانواده های قربانیان تسلیت گفت.&nbsp;</font></div><div><img src="http://static1.afkarnews.ir/thumbnail/4U6k8gDqBugC/rDxJk2yoXn9KV7c7C6kDweJVxtu4cY7G2hzV_1efiJea1I30PYCuRqolFhYjlGcmXTYXaWKO8q0wfYWGdiJBEedZbU5YLDeVXCssNmnyZDDW41bi53Z6sg,,/%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87+%D9%88+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.jpg" alt="پیام همدردی فرانسه برای حادثه ساختمان پلاسکو"></div><div><font size="2">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</font></div><div><font size="2">به گزارش افکارنیوز، سفارت فرانسه در تهران در صفحه توییتر خود ابراز همدردی فرانسه با حادثه دیدگان در ساختمان پلاسکو تهران را منتشر کرد و نوشت: فرانسه با ایران به خاطر فروریختن ساختمان پلاسکو همدردی می کند و با خانواده های قربانیان تسلیت می گوید.</font></div><div><br></div><div><font size="2">منبع:افکارنیوز</font></div>
+
+
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/316">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</a>،<a href="http://iranfa.mihanblog.com/post/category/257">اخبار گوناگون</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%A7%D9%85%20%D9%87%D9%85%D8%AF%D8%B1%D8%AF%DB%8C%20%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AD%D8%A7%D8%AF%D8%AB%D9%87%20%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86%20%D9%BE%D9%84%D8%A7%D8%B3%DA%A9%D9%88">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">جمعه 1 بهمن 1395 - 17:51</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(362)">نظرات(<script>setCommentCnt(362)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/361">شکست استقلال از پرسپولیس در دربی نوجوانان</a><br>
+ 
+
+
+<div style="text-align: right;"><font size="2">تیم فوتبال نوجوانان پرسپولیس دربی نوجوانان را از تیم استقلال برد.</font></div><div style="text-align: right;"><img src="http://static0.afkarnews.ir/thumbnail/YjiNBped6Oh0/rDxJk2yoXn9KV7c7C6kDwb8gXQLzm0KVkbz182Z_RjPhaRqCI9JPJfjvxXpzdXhcXTYXaWKO8q0wfYWGdiJBEedZbU5YLDeVfA-P2QXHk1l_T-CgKqtqLQ,,/%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3+%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84.jpg" alt="شکست استقلال از پرسپولیس در دربی نوجوانان"></div><div style="text-align: right;"><font size="2">شکست استقلال از پرسپولیس در دربی نوجوانان</font></div><div style="text-align: right;"><font size="2">به گزارش افکارنیوز، هفته بیست و هفتم لیگ نوجوانان تهران از ساعت 13:30 امروز با برگزاری دیدار استقلال و پرسپولیس پیگیری شد.</font></div><div style="text-align: right;"><font size="2">این بازی که در ورزشگاه استقلال جنوب واقع در خیایان شهید رجایی تهران برگزار شد در نهایت با برتری سه بر یک نوجوانان پرسپولیس به پایان رسید.</font></div><div style="text-align: right;"><font size="2">در این دیدار داور یکی از بازیکنان تیم استقلال را از زمین اخراج کرد.</font></div><div style="text-align: right;"><font size="2">سرمربیگری تیم نوجوانان استقلال بر عهده حسین کاظمی بود.سرمربی نوجوانان پرسپولیس هم منصور هاشمی بود.</font></div><div style="text-align: right;"><font size="2"><br></font></div><div style="text-align: right;"><font size="2">منبع:افکارنیوز</font></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/315">شکست استقلال از پرسپولیس در دربی نوجوانان</a>،<a href="http://iranfa.mihanblog.com/post/category/256">اخبار ورزشی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%B4%DA%A9%D8%B3%D8%AA%20%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84%20%D8%A7%D8%B2%20%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3%20%D8%AF%D8%B1%20%D8%AF%D8%B1%D8%A8%DB%8C%20%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86">شکست استقلال از پرسپولیس در دربی نوجوانان</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">جمعه 1 بهمن 1395 - 17:48</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(361)">نظرات(<script>setCommentCnt(361)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/360">رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد</a><br>
+ 
+
+
+
+<div><font size="2">صدها کارمند یمنی در شهر المکلا در استان حضرموت علیه دولت فراری منصور هادی تظاهرات کردند.</font></div><div><font size="2">&nbsp;رئیس جمهور یمن رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد</font><img height="400" style="height: 377px;" alt="رئیس جمهور یمن رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد" src="http://media.jamnews.ir/medium1/1395/08/03/JamNewsImage17300405.jpg"></div><div><font size="2"><br></font></div><div><font size="2">به گزارش سرویس بین‌الملل جام نیـوز به نقل از العالم، صدها کارمند شاغل و بازنشسته یمنی در شهر المکلا در استان حضرموت، در اعتراض به تاخیر در پرداخت حقوق از سوی دولت فراری منصور هادی تظاهرات کردند.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:جام نیوز</font></div><div><font size="2">&nbsp;</font></div><div><br></div>
+
+
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/360'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/314">رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%B1%D8%A6%DB%8C%D8%B3%E2%80%8C%D8%AC%D9%85%D9%87%D9%88%D8%B1%20%D9%81%D8%B1%D8%A7%D8%B1%DB%8C">رئیس‌جمهور فراری</a> ،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%AF%D8%B3%D8%AA%D9%85%D8%B2%D8%AF%20%DA%A9%D8%A7%D8%B1%D9%85%D9%86%D8%AF%D8%A7%D9%86%20%D8%B1%D8%A7%20%D9%86%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D8%AF">دستمزد کارمندان را نمی‌دهد</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">دوشنبه 3 آبان 1395 - 17:50</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(360)">نظرات(<script>setCommentCnt(360)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/359">مسی بهترین بازیکن هفته لیگ قهرمانان شد</a><br>
+ 
+
+
+<div><font size="2">فوق‌ستاره آرژانتینی بارسلونا به‌عنوان بهترین بازیکن هفته سوم از مرحله گروهی لیگ قهرمانان اروپا انتخاب شد.</font><img height="556" style="height: 347px;" alt="لیونل مسی" src="http://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1395/07/29/139507290018068978985934.jpg"></div><div><font size="2"><br></font></div><div><font size="2">به گزارش خبرگزاری تسنیم، لیونل مسی که در پیروزی 4 بر صفر چهارشنبه شب بارسلونا برابر منچسترسیتی در هفته سوم از مرحله گروهی لیگ قهرمانان اروپا، هت‌تریک کرد و یک تنه پپ گواردیولا و شاگردانش را شکست داد، با کسب 38 درصد آرای کاربران سایت اتحادیه فوتبال اروپا (یوفا) به‌عنوان بهترین بازیکن هفته سوم این رقابت‌ها انتخاب شد.</font></div><div><br></div><div>منبع:تسنیم</div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/359'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/313">مسی بهترین بازیکن هفته لیگ قهرمانان شد</a>،<a href="http://iranfa.mihanblog.com/post/category/256">اخبار ورزشی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D9%85%D8%B3%DB%8C%20%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86%20%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%20%D9%87%D9%81%D8%AA%D9%87%20%D9%84%DB%8C%DA%AF%20%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86%20%D8%B4%D8%AF">مسی بهترین بازیکن هفته لیگ قهرمانان شد</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">جمعه 30 مهر 1395 - 17:56</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(359)">نظرات(<script>setCommentCnt(359)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/358">افتتاح چهارمین دوره &quot;فرماندهی عملیات مشترک و مرکب&quot;</a><br>
+ 
+
+
+<div><font size="2">چهارمین دوره فرماندهی عملیات مشترک و مرکب دافوس آجا در محل سالن شهید همتی این دانشگاه افتتاح شد.</font></div><div><font size="2">افتتاح چهارمین دوره "فرماندهی عملیات مشترک و مرکب"&nbsp;</font></div><div><font size="2">به گزارش افکارنیوز، صبح امروز با حضور امیر سرتیپ خرم طوسی چهارمین دوره فرماندهی عملیات مشترک مرکب دافوس آجا در محل سالن &nbsp;شهید همتی این دانشگاه افتتاح &nbsp;شد.</font></div><div><img src="http://static3.afkarnews.ir/thumbnail/6gP401AHRtx1/rDxJk2yoXn9KV7c7C6kDweJVxtu4cY7G2hzV_1efiJea1I30PYCuRnwNVuR5bYh-XTYXaWKO8q0wfYWGdiJBEedZbU5YLDeV5WutdgYT3SUNZSZ7oCLoYw,,/Yik11QRfS0g2.jpg" alt="افتتاح چهارمین دوره &quot;فرماندهی عملیات مشترک و مرکب&quot; "></div><div><font size="2">امیر سرتیپ رضا خرم طوسی، مشاور عالی فرمانده کل ارتش در این مراسم و خطاب به دانشجویان جدیدالورود گفت: این دوره با توجه به کیفیتی که دارد می تواند نگرش اساسی در تمام ابعاد در حوزه های مختلف آموزش برای دانشجوبان ایجاد کند.</font></div><div><font size="2">وی تصریح کرد: در حوزه نظامی با توجه به شرایط جدید در محیط کنونی و پیرامونی ما و نقش بسیار تعین کننده آن لازم است در حوزه دانش مشترک مرکب وارد شویم و تهدیدها را به فرصت تبدیل نماییم.</font></div><div><font size="2">سرتیپ خرم طوسی در ادامه با تاکید برضرورت تربیت نیروی کاربردی در ارتش خاطر نشان کرد: در حوزه نظری و دانش مشکلی نداریم ولی در اجرا باید توانمندی های خود را افزایش بدهیم.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:افکار نیوز</font></div><div><br></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/358'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/312">افتتاح چهارمین دوره "فرماندهی عملیات مشترک و مرکب"</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">پنجشنبه 29 مهر 1395 - 12:08</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(358)">نظرات(<script>setCommentCnt(358)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/357">حسن روحانی: در قرن جدید زندگی کنیم</a><br>
+ 
+
+
+<div><font size="2">رئیس‌جمهور گفت: باید به قرن جدید بازگردیم. برخی در قرن ما قبل قبل زندگی می‌کنند.</font></div><div><font size="2">حسن روحانی: در قرن جدید زندگی کنیم</font></div><div><img src="http://static0.afkarnews.ir/thumbnail/dqyhJAfl6HNj/rDxJk2yoXn9KV7c7C6kDweJVxtu4cY7G2hzV_1efiJea1I30PYCuRnwNVuR5bYh-XTYXaWKO8q0wfYWGdiJBEedZbU5YLDeV5WutdgYT3SVVmKk5Dstp3Q,,/B5FrqGtwnWZ5.jpg" alt="حسن روحانی: در قرن جدید زندگی کنیم"></div><div><font size="2">به گزارش افکارنیوز، حجت‌الاسلام حسن روحانی رئیس‌جمهور روز پنجشنبه در مراسم گرامیداشت روز ملی صادرات و درجمع صادرکنندگان کشور با اشاره به سفر اخیر خود به سه کشور ویتنام، مالزی و تایلند و تشریح دلایل حرکت آنها در مسیر رونق اقتصادی، گفت: اولین دلیل این بود که آنها روابط با دنیا را بر مبنای تعامل سازنده قرار دادند چرا که از دعوا با دنیا صادرات به وجود نمی‌آید.</font></div><div><font size="2">وی افزود: برخی فکر می‌کنند، تعامل سازنده به معنای این است که با غربی‌ها رو در رو لبخند بزنیم و صحبت کنیم، اما تعامل سازنده به معنای مناسب کردن روابط بین‌المللی برای صادرات کالا، اشتغال جوانان، واردات راحت‌تر کالاهای سرمایه‌ای و مواد اولیه است.</font></div><div><font size="2">رئیس‌جمهور با بیان اینکه اساس اقتصاد مقاومتی، تولید درون زا است، همه بخش‌های کشور را به تلاش بیشتر برای صادرات و رونق اقتصادی کشور فرا خواند و تاکید کرد: اساس سیاست تعامل سازنده دولت یازدهم، مناسب کردن محیط روابط بین‌الملل برای صادرات و اشتغال جوانان و واردات آسانتر کالاهای سرمایه‌ای و مواد اولیه است.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:افکار نیوز</font></div><div><br></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/357'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/311">حسن روحانی: در قرن جدید زندگی کنیم</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%AD%D8%B3%D9%86%20%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C:%20%D8%AF%D8%B1%20%D9%82%D8%B1%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF%20%D8%B2%D9%86%D8%AF%DA%AF%DB%8C%20%DA%A9%D9%86%DB%8C%D9%85">حسن روحانی: در قرن جدید زندگی کنیم</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">پنجشنبه 29 مهر 1395 - 12:05</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(357)">نظرات(<script>setCommentCnt(357)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/356">تقابل هواپیماهای شخصی کلینتون و ترامپ</a><br>
+ 
+
+
+<font size="2">در عکس زیر تصویری از هواپیمای کمپین دونالد ترامپ (مشکی رنگ) و هواپیمای کمپین هیلاری کلینتون (آبی رنگ) را مشاهده می‌کنید.
+
+
+</font><div><img height="595" style="height: 315px;" alt="هواپیما" src="http://static0.eghtesadonline.com/thumbnail/ayunIJTXzLeB/odJ5qJgIOksnDoJdBenUlE48u50d9ntalnDkvdNYgn4W1Qy4Tz9dac-zhltB_746/%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7.jpg"></div>
+
+
+
+<br>
+
+<span class="post-continue"></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/310">تقابل هواپیماهای شخصی کلینتون و ترامپ</a>،<a href="http://iranfa.mihanblog.com/post/category/255">اخبار اقتصادی</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%AA%D9%82%D8%A7%D8%A8%D9%84%20%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%D9%87%D8%A7%DB%8C%20%D8%B4%D8%AE%D8%B5%DB%8C%20%DA%A9%D9%84%DB%8C%D9%86%D8%AA%D9%88%D9%86%20%D9%88%20%D8%AA%D8%B1%D8%A7%D9%85%D9%BE">تقابل هواپیماهای شخصی کلینتون و ترامپ</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">چهارشنبه 28 مهر 1395 - 18:19</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(356)">نظرات(<script>setCommentCnt(356)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/355">اختلاس 385 هزار دلاری وزیر افغانستانی</a><br>
+ 
+
+
+<div><font size="2">هیئت بازرسی داخلی وزارت آموزش و پرورش اعلام کرد که وزیر سابق این وزارتخانه و رئیس کنونی آموزش و پرورش ولایت کابل در سه مورد حدود ۳۸۵ هزار دلار (۲۵ میلیون افغانی) اختلاس کرده‌اند.</font></div><div><img src="http://cdn.mashreghnews.ir/files/fa/news/1395/7/27/1905140_555.jpg"></div><div><font size="2"><br></font></div><div><font size="2">به گزارش مشرق، «فاروق وردک» وزیر سابق آموزش و پرورش همچنین «محمد سعید منصور» رئیس کنونی آموزش و پرورش ولایت کابل حدود 385 هزار دلار اختلاس کرده‌اند.</font></div><div><font size="2"><br></font></div><div><font size="2">بر اساس گزارش 51 صفحه‌ای هیئت بازرسی داخلی وزارت آموزش و پرورش افغانستان، 119 قرارداد ساختمان‌های اجاره‌ شده برای مدارس و 10 قرارداد ساخت همچنین 7 قرار داد تهیه و تدارکات وسایل این مدارس به طور نمونه بررسی شدند.</font></div><div><font size="2"><br></font></div><div><font size="2">هیئت بازرسی داخلی گفته است که تنها در جشن نوروز سال 1393 حدود 139 هزار دلار توسط فاروق وردک اختلاس صورت گرفته است.</font></div><div><font size="2"><br></font></div><div><font size="2">این در حالی است که محمد سعید منصور رئیس آموزش و پرورش کابل نیز به گفته هیئت بررسی، حدود 171 هزار دلار در جشن نوروز اختلاس کرده است.</font></div><div><font size="2"><br></font></div><div><font size="2">همچنین ریاست آموزش و پرورش افغانستان در سه قرارداد با شرکتهای تدارکاتی «افغان کیپتل» و «پاور پوینت» که وجود خارجی نداشت، 123 هزار دلار اختلاس شده است.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:مشرق نیوز</font></div><div><br></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/355'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/309">اختلاس 385 هزار دلاری وزیر افغانستانی</a>،<a href="http://iranfa.mihanblog.com/post/category/255">اخبار اقتصادی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D8%B3%20385%20%D9%87%D8%B2%D8%A7%D8%B1%20%D8%AF%D9%84%D8%A7%D8%B1%DB%8C%20%D9%88%D8%B2%DB%8C%D8%B1%20%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86%DB%8C">اختلاس 385 هزار دلاری وزیر افغانستانی</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">سه شنبه 27 مهر 1395 - 17:10</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(355)">نظرات(<script>setCommentCnt(355)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/354">کاروان فراری داعش از موصل منهدم شد</a><br>
+ 
+
+
+<div><font size="2">منابع محلی در استان نینوی اعلام کردند که یک کاروان داعش شامل ۳۰ خودروی نظامی در حال فرار از موصل به سوریه به صورت کامل منهدم شد.</font></div><div><img src="http://media.qudsonline.ir/d/2016/10/18/3/570563.jpg" alt="کاروان فراری داعش"></div><div><font size="2">به گزارش قدس آنلاین به نقل ازتسنیم، یک منبع محلی در استان نینوی گفت که یک کاروان از عناصر داعش که قصد فرار به سوریه را داشتند توسط جنگنده‌های عراقی منهدم شدند.</font></div><div><font size="2">بر اساس این گزارش، این کاروان شامل عناصر عرب و خارجی بوده است که قصد داشتند تا به الرقه فرار کنند.</font></div><div><font size="2">این کاروان شامل ۳۰ خودرو نظامی بوده که تمامی آنها منهدم شده است و اکثر کسانی که در این کاروان بودند کشته شدند.</font></div><div><font size="2">داعش ۴ پل را در نینوی تخریب کرده و حالت آماده باش را بالا برده است.</font></div><div><font size="2">بر اساس این گزارش ۳ زن خارجی که از عناصر داعش بودند به صورت ناگهانی در موصل ناپدید شدند که داعش به دنبال پیدا کردند آنها است.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:قدس انلاین</font></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/354'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/308">کاروان فراری داعش از موصل منهدم شد</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86%20%D9%81%D8%B1%D8%A7%D8%B1%DB%8C%20%D8%AF%D8%A7%D8%B9%D8%B4%20%D8%A7%D8%B2%20%D9%85%D9%88%D8%B5%D9%84%20%D9%85%D9%86%D9%87%D8%AF%D9%85%20%D8%B4%D8%AF">کاروان فراری داعش از موصل منهدم شد</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">سه شنبه 27 مهر 1395 - 12:22</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(354)">نظرات(<script>setCommentCnt(354)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/353">رسمی: تمدید قرارداد ماسکرانو با بارسا(عکس)</a><br>
+ 
+
+
+
+<div><font size="2">به گزارش "ورزش سه"، ماسکرانو سال 2010 از لیورپول به بارسا پیوست و تمام افتخارات ممکن در سطح باشگاهی را با این تیم کسب کرده است.</font></div><div><img height="551" style="height: 297px;" src="http://static2.varzesh3.com/files/picture/01150578.jpg"></div><div><font size="2">در حالی که تابستان امسال شایعات زیادی مبنی بر جدایی این هافبک-مدافع آرژانتینی از بارسلونا وجود داشت، در نهایت او متقاعد شد که قراردادش که تا 2018 اعتبار داشت را یک فصل دیگر نیز تمدید کند.</font></div><div><font size="2">او پس از امضا قرارداد جدیدش، کنار بارتومئو(رئیس) و یوردی مستره، روبرت فرناندز و خاویر بورداس از مدیران بارسا عکسی به یادگار گرفت.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:ورزش سه</font></div>
+
+
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/353'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/256">اخبار ورزشی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%B1%D8%B3%D9%85%DB%8C:%20%D8%AA%D9%85%D8%AF%DB%8C%D8%AF%20%D9%82%D8%B1%D8%A7%D8%B1%D8%AF%D8%A7%D8%AF%20%D9%85%D8%A7%D8%B3%DA%A9%D8%B1%D8%A7%D9%86%D9%88%20%D8%A8%D8%A7%20%D8%A8%D8%A7%D8%B1%D8%B3%D8%A7(%D8%B9%DA%A9%D8%B3)">رسمی: تمدید قرارداد ماسکرانو با بارسا(عکس)</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">دوشنبه 26 مهر 1395 - 16:33</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(353)">نظرات(<script>setCommentCnt(353)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/352">آتش‌بازی خطرناک اردوغان</a><br>
+ 
+
+
+
+
+<div><font size="2">صادق ملکی، کارشناس و تحلیلگر ارشد سیاسی در یادداشتی برای دیپلماسی ایرانی می‌نویسد: رجزخوانی اردوغان نسبت به موصل، ترکیه را به نماد عینی و بارز دخالت و تجاوز به تمامیت ارضی عراق تبدیل کرده است. &nbsp; &nbsp;</font><span style="font-size: small;">&nbsp;</span></div><div><img src="http://media.qudsonline.ir/d/2016/10/16/3/569868.jpg" alt="اردوغان"></div><div><font size="2"><br></font></div><div><font size="2">به گزارش قدس آنلاین به نقل از دیپلماسی ایرانی، «ارتش ترکیه برای شرکت در عملیات آزادسازی موصل به اجازه نخست وزیر عراق نیازی ندارد و حیدر العبادی باید حد و اندازه خود را بداند. ارتش ترکیه تحت هر شرایطی برای آزادسازی موصل وارد عمل خواهد شد. اگر نیروهای ائتلاف با مشارکت نظامیان ترکیه مخالفت کنند، این کشور طرح جایگزین را وارد عمل خواهد کرد.»</font></div><div><font size="2">در روزهای که بغداد بر شیپور آزادسازی موصل دمیده و انتظار می رود شمارش معکوس عملیات آغاز گردد، این سخنان، اظهارات مردی است که در کسوت ریاست جمهوری ترکیه تکیه زده است. اردوغان به اصطلاح اسلام گرا، امروز هم داخل ترکیه و هم خارج ترکیه را به آتش کشیده است. اردوغان، جانشین آتاترک سکولاری است که سرلوحه خود را صلح در داخل و خارج قرار داده بود.</font></div><div><font size="2"><br></font></div><div><font size="2">منبع:قدس آنلاین</font></div><div><br></div>
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/352'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/307">آتش‌بازی خطرناک اردوغان</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%A2%D8%AA%D8%B4%E2%80%8C%D8%A8%D8%A7%D8%B2%DB%8C%20%D8%AE%D8%B7%D8%B1%D9%86%D8%A7%DA%A9%20%D8%A7%D8%B1%D8%AF%D9%88%D8%BA%D8%A7%D9%86">آتش‌بازی خطرناک اردوغان</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">یکشنبه 25 مهر 1395 - 17:22</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(352)">نظرات(<script>setCommentCnt(352)</script>)</a>
+<div class="fa"></div>
+
+<div class="post">
+ <a class="post-name" href="http://iranfa.mihanblog.com/post/351">آمریکا حمله هوایی به تاسیسات ارتش سوریه را بررسی می‎کند</a><br>
+ 
+
+
+<div><font size="2">باراک اوباما در نشست جمعه شب خود با اعضای شورای امنیت ملی آمریکا گفت: حمله نظامی به تاسیسات ارتش سوریه را بررسی می‌ کنیم.</font></div><div><img src="http://media.qudsonline.ir/d/2016/10/15/3/569238.jpg" alt="اوباما"></div><div><font size="2"><br></font></div><div><font size="2">به گزا</font><span style="font-size: small;">رش قدس آنلاین به نقل از میزان، باراک اوباما در نشست جمعه شب خود با شورای امنیت ملی آمریکا گفت: حمله نظامی به تاسیسات ارتش سوریه را بررسی می‌ کنیم.</span></div><div><span style="font-size: small;"><br></span></div><div><span style="font-size: small;">منبع:قدس آنلاین</span></div><div><br></div>
+
+
+
+
+
+
+<br>
+
+<span class="post-continue"><a href='http://iranfa.mihanblog.com/post/351'>ادامه مطلب</a></span>
+
+</div>
+<div class="post-tag">
+موضوع : <a href="http://iranfa.mihanblog.com/post/category/306">آمریکا حمله هوایی به تاسیسات ارتش سوریه را بررسی می‎کند</a>،<a href="http://iranfa.mihanblog.com/post/category/254">اخبار سیاسی</a>،<br>
+
+برچسب ها : <a href="http://iranfa.mihanblog.com/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%20%D8%AD%D9%85%D9%84%D9%87%20%D9%87%D9%88%D8%A7%DB%8C%DB%8C%20%D8%A8%D9%87%20%D8%AA%D8%A7%D8%B3%DB%8C%D8%B3%D8%A7%D8%AA%20%D8%A7%D8%B1%D8%AA%D8%B4%20%D8%B3%D9%88%D8%B1%DB%8C%D9%87%20%D8%B1%D8%A7%20%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D9%85%DB%8C%E2%80%8E%DA%A9%D9%86%D8%AF">آمریکا حمله هوایی به تاسیسات ارتش سوریه را بررسی می‎کند</a> ،
+</div>
+<br>
+<a class="a">محمدسجاد سیفی</a>
+<a class="a b">شنبه 24 مهر 1395 - 17:35</a>
+<a class="a c"target="_self" target="_self" href="javascript:newComment(351)">نظرات(<script>setCommentCnt(351)</script>)</a>
+<div class="fa"></div>
+
+
+<div class="page"><a class="number">کل صفحات : 28  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/1"> <b>1</b>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/2"> <span>2</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/3"> <span>3</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/4"> <span>4</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/5"> <span>5</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/6"> <span>6</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/7"> <span>7</span>  </a>&nbsp;&nbsp;<a class="number" href="http://iranfa.mihanblog.com/page/8"> <i>...</i>  </a>&nbsp;&nbsp;</div>
+<br>
+
+</div><!--post-R-->
+
+<div id="menu-L">
+
+<div class="menu-name">آخرین مطالب</div>
+<ul>
+<ol></ol>
+<li><a href="http://iranfa.mihanblog.com/post/362">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/361">شکست استقلال از پرسپولیس در دربی نوجوانان</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/360">رئیس‌جمهور فراری، دستمزد کارمندان را نمی‌دهد</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/359">مسی بهترین بازیکن هفته لیگ قهرمانان شد</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/358">افتتاح چهارمین دوره &quot;فرماندهی عملیات مشترک و مرکب&quot;</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/357">حسن روحانی: در قرن جدید زندگی کنیم</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/356">تقابل هواپیماهای شخصی کلینتون و ترامپ</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/355">اختلاس 385 هزار دلاری وزیر افغانستانی</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/354">کاروان فراری داعش از موصل منهدم شد</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/353">رسمی: تمدید قرارداد ماسکرانو با بارسا(عکس)</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/352">آتش‌بازی خطرناک اردوغان</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/351">آمریکا حمله هوایی به تاسیسات ارتش سوریه را بررسی می‎کند</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/350">پیشنهاد تیم مطرح و بالانشین لالیگایی به سردار آزمون</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/349">خشم &quot;نتانیاهو&quot; از قطعنامه &quot;یونسکو&quot; به نفع مسلمانان</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/348">۵۸ میلیون دلار کالای ایرانی به آمریکا صادر شد</a></li>
+<ol></ol>
+</ul>
+<div class="menu-name">تعداد مطالب</div>
+<ul>
+<ol></ol>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/11"> بهمن 1395 - 2</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/8"> آبان 1395 - 1</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/7"> مهر 1395 - 15</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/5"> مرداد 1395 - 2</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/4"> تیر 1395 - 4</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/3"> خرداد 1395 - 18</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/2"> اردیبهشت 1395 - 8</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1395/1"> فروردین 1395 - 45</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1394/12"> اسفند 1394 - 33</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1394/11"> بهمن 1394 - 4</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1394/8"> آبان 1394 - 2</a></li>
+<li><a href="http://iranfa.mihanblog.com/post/archive/1394/7"> مهر 1394 - 11</a></li>
+<ol></ol>
+</ul>
+
+<div class="menu-name">لینکدونی</div>
+<ul>
+<ol></ol>
+<li><a href="http://www.grin.ir/category.php?id=2" target="_blank">خرید عینک آفتابی</a></li>
+<li><a href="http://uupload.ir" target="_blank">آپلود فایل</a></li>
+<li><a href="http://yekdana.com" target="_blank">مجله آموزشی یک دانا</a></li>
+<li><a href="http://zooya.ir" target="_blank">آزمون آنلاین زبان انگلیسی</a></li>
+<li><a href="http://amoozesh-pc.ir" target="_blank">تبادل لینک</a></li>
+<li><a href="../www.beheshtiyan.mihanblog.com/index.html" target="_blank">بهشتیان</a></li>
+<li><a href="http://masaaf.com/" target="_blank">فروشگاه مصاف ( برنامه ها و pdf های نایاب )</a></li>
+<li><a href="http://ADONIYA.ir" target="_blank">سایت آدونیا</a></li>
+<li><a href="http://iraniannurse.com" target="_blank">پرستاری ایرانیان</a></li>
+<li><a href="http://ADONIYA.ir" target="_blank">سایت آدونیا</a></li>
+<ol></ol>
+</ul>
+
+
+		<form id="frm-16077901625fd4ee526af86" method="post" action="http://iranfa.mihanblog.com/poll/new/fid/16077901625fd4ee526af86/atrty/1607790162/avrvy/0/key/e6a4e2365485f74635c1687973980728/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="347999" id="data[pollid]" />		
+<div class="menu-name">نظر سنجی</div>
+<ul>
+<ol></ol>
+<li style="list-style:none"><a>سطح  وبسایت خبری ما از دید شما؟</a></li>
+<li><a>&nbsp;&nbsp;<label><input type="radio" name="data[answer]" value="v1">عالی</label></a></li>
+<li><a>&nbsp;&nbsp;<label><input type="radio" name="data[answer]" value="v2">متوسط</label></a></li>
+<li><a>&nbsp;&nbsp;<label><input type="radio" name="data[answer]" value="v3">ضعیف</label></a></li>
+<li style="list-style:none"><center><input type="submit" value="ثبت" class="btn"/></center>
+</li>
+<ol></ol>
+</ul>
+		<input type="hidden" name="frm-id" value="16077901625fd4ee526af86" id="frm-id" /></form>
+<div class="menu-name">برچسب ها</div>
+<ul>
+<ol></ol>
+<li style="list-style:none;">
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%AF%D8%B3%D8%AA%D9%85%D8%B2%D8%AF+%DA%A9%D8%A7%D8%B1%D9%85%D9%86%D8%AF%D8%A7%D9%86+%D8%B1%D8%A7+%D9%86%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D8%AF">دستمزد کارمندان را نمی‌دهد</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%B1%D8%A6%DB%8C%D8%B3%E2%80%8C%D8%AC%D9%85%D9%87%D9%88%D8%B1+%D9%81%D8%B1%D8%A7%D8%B1%DB%8C">رئیس‌جمهور فراری</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D8%B3+385+%D9%87%D8%B2%D8%A7%D8%B1+%D8%AF%D9%84%D8%A7%D8%B1%DB%8C+%D9%88%D8%B2%DB%8C%D8%B1+%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86%DB%8C">اختلاس 385 هزار دلاری وزیر افغانستانی</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D9%85%D8%B3%DB%8C+%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86+%D9%87%D9%81%D8%AA%D9%87+%D9%84%DB%8C%DA%AF+%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86+%D8%B4%D8%AF">مسی بهترین بازیکن هفته لیگ قهرمانان شد</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%AD%D8%B3%D9%86+%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C%3A+%D8%AF%D8%B1+%D9%82%D8%B1%D9%86+%D8%AC%D8%AF%DB%8C%D8%AF+%D8%B2%D9%86%D8%AF%DA%AF%DB%8C+%DA%A9%D9%86%DB%8C%D9%85">حسن روحانی: در قرن جدید زندگی کنیم</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%B4%DA%A9%D8%B3%D8%AA+%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84+%D8%A7%D8%B2+%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3+%D8%AF%D8%B1+%D8%AF%D8%B1%D8%A8%DB%8C+%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86">شکست استقلال از پرسپولیس در دربی نوجوانان</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%B9%D8%AF%D9%87+%D8%A7%DB%8C+%D8%B3%D8%B9%DB%8C+%D8%AF%D8%B1+%D8%A8%D8%B2%DA%A9+%DA%A9%D8%B1%D8%AF%D9%86+%DA%86%D9%87%D8%B1%D9%87+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7+%D8%AF%D8%A7%D8%B1%D9%86%D8%AF%2F%D9%85%D9%84%D8%AA+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%81%D8%B1%DB%8C%D8%A8+%D9%86%D9%85%DB%8C+%D8%AE%D9%88%D8%B1%D8%AF">عده ای سعی در بزک کردن چهره آمریکا دارند/ملت ایران فریب نمی خورد</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%A7%D9%85+%D9%87%D9%85%D8%AF%D8%B1%D8%AF%DB%8C+%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AD%D8%A7%D8%AF%D8%AB%D9%87+%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86+%D9%BE%D9%84%D8%A7%D8%B3%DA%A9%D9%88">پیام همدردی فرانسه برای حادثه ساختمان پلاسکو</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%B1%DA%98%DB%8C%D9%85+%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C+%D8%A8%D8%B1%D8%A7%DB%8C+%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87+%D8%A8%D8%A7+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D8%A8%D9%87+%D8%AF%D9%86%D8%A8%D8%A7%D9%84+%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4+%D8%A7%D9%81+%DB%B3%DB%B5+%D8%A7%D8%B3%D8%AA">رژیم صهیونیستی برای مقابله با ایران به دنبال افزایش اف ۳۵ است</a>،
+<a href="http://iranfa.mihanblog.com/post/tag/%D8%AA%D9%82%D8%A7%D8%A8%D9%84+%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%D9%87%D8%A7%DB%8C+%D8%B4%D8%AE%D8%B5%DB%8C+%DA%A9%D9%84%DB%8C%D9%86%D8%AA%D9%88%D9%86+%D9%88+%D8%AA%D8%B1%D8%A7%D9%85%D9%BE">تقابل هواپیماهای شخصی کلینتون و ترامپ</a>،
+</li>
+<ol></ol>
+</ul>
+
+<div class="menu-name">سایر امکانات</div>
+<ul>
+<ol></ol>
+<li style="list-style:none">
+<center><!-- Scrollbar by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/scrollbar/jquery.min.js"></script><script>$(document).ready(function(){$("html").niceScroll({railalign:"right",cursorcolor:"#E61C5F",cursorwidth:"10px",background:"",autohidemode:false,hidecursordelay:"800",cursoropacitymax:"0.7",cursorborder:"0",railpadding:{left:0,right:2}});});</script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/scrollbar.php">&#1575;&#1587;&#1705;&#1585;&#1608;&#1604; &#1576;&#1575;&#1585;</a></h3></div>
+<!-- Scrollbar by www.1abzar.com ---><!-- Begin Nostalgie.blogfa.com -->
+<center><embed src="http://nostalgie.persiangig.com/Swf/14/Read%20Me%20To%20Sleep.swf" width="100" height="25" wmode="transparent" type="application/x-shockwave-flash" </center><br>
+<center><A href=" http://nostalgie.blogfa.com/page/making-music " target=_blank><STRONG>Making MusiC</STRONG></A> </P></center>
+<!-- End Nostalgie.blogfa.com -->
+<!-- Calendar by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/ruznama/?mod=8"></script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/ruznama.php">&#1578;&#1602;&#1608;&#1740;&#1605; &#1588;&#1605;&#1587;&#1740;</a></h3></div>
+<!-- Calendar by www.1abzar.com ---><!-- Goto Top by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src=http://1abzaar.ir/abzar/tools/top-page/top8.png />";</script><script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h2><a href="http://www.1abzar.com/abzar/top-page.php">هدایت به بالای صفحه</a></h2></div>
+<!-- Goto Top by www.1abzar.com ---><!-- Print by www.1abzar.com --->
+<a href="javascript:window.print()"><img border=0 src="http://1abzaar.ir/abzar/tools/print/5.png" alt="چاپ این صفحه"></a>
+<!-- Print by www.1abzar.com ---><!-- News by www.1abzar.com --->
+<script type="text/javascript" async src="http://1abzar.ir/abzar/tools/news/v2.php?cat=2&data=all&n=8&w=150&bg=FAD4C3&kc=F8F2CE&kadr=1&c=333333&titr=2"></script><div id="abzar_2all"></div><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/news.php">&#1705;&#1583; &#1575;&#1582;&#1576;&#1575;&#1585;</a></h3></div>
+<!-- News by www.1abzar.com ---><!-- Alexa Rank by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/alexa/graf2.php?url=iranfa.mihanblog.com&sh1=1&sh2=1&sh3=1"></script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/alexa.php">&#1575;&#1604;&#1705;&#1587;&#1575;</a></h3></div>
+<!--  Alexa Rank by www.1abzar.com ---></center>
+</li>
+
+<ol></ol>
+</ul>
+
+
+</div><!--menu-L-->
+<br>
+<div id="footer">
+
+ <i>پایگاه خبری تحلیلی ایران فا</i><a href="http://lastest_news" target="_blank"><i></i></a>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'iranfa.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

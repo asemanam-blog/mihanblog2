@@ -1,0 +1,1565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*628415*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[2542]='9';commentCnt[2545]='1';commentCnt[2546]='0';commentCnt[2547]='0';commentCnt[2548]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[2542]='32';
+mihanblogDisLikeArrCnt[2542]='3';
+mihanblogLikeArrCnt[2545]='28';
+mihanblogDisLikeArrCnt[2545]='5';
+mihanblogLikeArrCnt[2546]='10';
+mihanblogDisLikeArrCnt[2546]='5';
+mihanblogLikeArrCnt[2547]='16';
+mihanblogDisLikeArrCnt[2547]='14';
+mihanblogLikeArrCnt[2548]='40';
+mihanblogDisLikeArrCnt[2548]='17';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://iaca.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://iaca.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','2642');
+	setStatVar('total_author','28');
+	setStatVar('modify_date','پنجشنبه 26 مرداد 1396');
+	
+	setStatVar('today_view','266');
+	setStatVar('yesterday_view','429');
+	
+	setStatVar('this_month_view','15683');
+	setStatVar('last_month_view','16792');
+
+	setStatVar('total_view','2989428');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (14:55)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://iaca.mihanblog.com/statupdate/?data[refereruri]=http://iaca.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1393/10&data[sdate]=1607772688&data[hash]=c77c1f9ffb15f7b986491f3bef6c9bfe&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://iaca.mihanblog.com/post/archive/1393/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://iaca.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://iaca.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://iaca.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://iaca.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://iaca.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" lang="fa-IR">
+<head>
+<title>اقلیم شناسان ایران</title>
+    <base href="" />
+	<meta name="generator" content="ParsTools.Com | Hesam B" />
+	<meta content="fa" http-equiv="Content-Language" />
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="" />
+	<meta name="keywords" content="IACA,اقلیم شناسان ایران, اقلیم شناسی،انجمن ایرانی اقلیم شناسی،آب و هوا،تغییرات اقلیمی،مخاطرات محیطی" />
+	<link rel="alternate" type="application/rss+xml" title="اقلیم شناسان ایران" href="../../rss/index.html" />
+	<link rel="alternate" type="application/atom+xml" title="اقلیم شناسان ایران"  href="../../atom/index.html" />
+
+	<link rel="stylesheet" href="http://tem.parstools.com/gigantika/style/styles.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+	
+<div class="header_sekond">
+<div align="right" class="header_top">
+
+<div align="left" style="height:66px; margin:0px 0 -66px 490px;">
+<div style="height:36px;"></div>
+<div style="float: right; height:30px; width:220px;text-align: center;">
+<h1 class="h1title"><a href="../../../index.html" title="اقلیم شناسان ایران">اقلیم شناسان ایران</a></h1>
+</div>
+</div>
+
+
+<form id="frm-16075896535fd1df15a108d" method="get" action="http://iaca.mihanblog.com/post/search/fid/16075896535fd1df15a108d"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div style="width:400px;">
+<div style="float:left; margin:5px; 0 0 0px; padding:0 0 0 8px;">
+<input type="image" src="http://tem.parstools.com/gigantika/images/search_in.gif" alt="Search" />
+</div>
+<div class="hder17-3">
+<input name="search_text" type="text" class="b_field" value="جستجو در سایت" onblur="if(this.value=='') this.value='جستجو در سایت';" onfocus="if(this.value=='جستجو در سایت') this.value='';" onfocus="this.value = '';" />
+</div>
+</div>
+<input type="hidden" name="frm-id" value="16075896535fd1df15a108d" id="frm-id" /></form></div>
+</div>
+
+<div align="right" class="heder_bg_in">
+<div class="login">
+
+
+
+
+<div class="btn2" style="margin:0px 14px -13px -14px">
+این وبلاگ برای تبادل نظر پیرامون مسائل روز دانش اقلیم شناسی توسط تعدادی از متخصصان این رشته ایجاد شده است. نقل مطالب علمی با ذکر ماخذ آزاد است. اخبار و گزارشاتی که به نقل از جراید و خبرگزاری ها منتشر می شود نشان دهنده آرا و نظرات نویسندگان آنها است .آدرس کوتاه سایت :http://1o2.ir/Climate</div>
+
+
+
+
+</div>
+</div>
+
+<div align="right" class="header_center">
+
+
+	    <a class="menu_top" href="../../../index.html"><span>صفحه اصلی</span></a>
+        <a class="menu_top" href="../../list.html"><span>آرشیو</span> </a>
+		<a class="menu_top" href="../../../m.html"><span>موبابل</span></a></li>
+		<a class="menu_top" href="../../atom/index.html"><span>نسخه اتوم</span></a>
+		<a class="menu_top" href="javascript:messageForm()"><span>ارتباط با ما</span></a>
+
+<a class="menu_top" href="../../rss/index.html"><span>نسخه RSS</span></a>
+
+</div>
+
+
+	</div>
+
+
+<div class="content">
+<table width="100%" cellpadding="0" cellspacing="0" class="content_td">
+  <tr>
+    <td valign="top" class="left_col2">
+    <div class="left_col">
+    
+    <div class="left_col_first_top"></div>
+    <div class="left_col_first_center">
+ 
+ 
+    <div class="left_col_first_nav">موضوعات</div>
+    
+			<div class="but"><a class="post-title" href="../../category/3.html" title="تعداد: 863">اخبار علمی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/17.html" title="تعداد: 40">اقلیم پزشکی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/16.html" title="تعداد: 220">تغییر اقلیم</a></div>
+     		<div class="but"><a class="post-title" href="../../category/15.html" title="تعداد: 152">عکس و تصویر</a></div>
+     		<div class="but"><a class="post-title" href="../../category/14.html" title="تعداد: 5">گرایش های جدید در اقلیم شناسی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/13.html" title="تعداد: 226">نرم افزارها و داده های اقلیمی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/12.html" title="تعداد: 65">فن آوری های نوین در اقلیم شناسی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/11.html" title="تعداد: 293">بحث آزاد صنفی آموزشی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/10.html" title="تعداد: 199">بحث های علمی آزاد </a></div>
+     		<div class="but"><a class="post-title" href="../../category/9.html" title="تعداد: 18">معرفی انجمن های اقلیم شناسی </a></div>
+     		<div class="but"><a class="post-title" href="../../category/8.html" title="تعداد: 2">جلسات</a></div>
+     		<div class="but"><a class="post-title" href="../../category/7.html" title="تعداد: 22">بزرگان اقلیم شناسی</a></div>
+     		<div class="but"><a class="post-title" href="../../category/6.html" title="تعداد: 134">معرفی کتاب ،مجلات و مقالات</a></div>
+     		<div class="but"><a class="post-title" href="../../category/5.html" title="تعداد: 20">سخنرانی های علمی و کارگاه ها</a></div>
+     		<div class="but"><a class="post-title" href="../../category/4.html" title="تعداد: 63">اعضا</a></div>
+     		<div class="but"><a class="post-title" href="../../category/2.html" title="تعداد: 164">همایش ها و کنفرانس ها</a></div>
+     		<div class="but"><a class="post-title" href="../../category/1.html" title="تعداد: 80">اطلاعیه</a></div>
+     	 
+    </div>
+    <div class="left_col_first_bot"></div>
+    
+
+		
+			
+<div class="left_three_top"><div class="left_col_second_nav"><div class="str">نویسندگان</div></div></div>
+<div class="left_three_center">
+<div style="padding:10px 13px; line-height:20px;" class="topnews45">
+		  <ul>
+							<li class="cat-post-item">
+					<a title="" href="../../author/504171.html">محمود خسروی (591)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/504261.html">سید ابوالفضل  مسعودیان (142)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/505505.html">عباس مفیدی (21)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/505507.html">هوشمند عطایی (18)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/505508.html">حسین عساکره (97)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/608864.html">مرتضی اسماعیل نژاد (533)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/610723.html">حمید نظری پور (15)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/611603.html">مجید منتظری (2)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/804916.html">علیرضا  موقری (73)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/809553.html">حسن ذوالفقاری (90)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/826417.html">سعید جوی زاده (55)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/831682.html">حمیده دالایی (35)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/858674.html">رضا اسماعیلی (6)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/858685.html">فریبا کرمی (9)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/900954.html">حجت ا....  یزدان پناه (4)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1057745.html">اکبر زهرایی (15)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1073305.html">آذر زرین (0)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1095297.html">بهرام نجف پور (2)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1099796.html">حمیده افشارمنش (31)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1145178.html">غلامعلی مظفری (4)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1164359.html">ایمان بابائیان (8)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1217966.html">مهران فاطمی (641)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1218554.html">لیلا حلاج (3)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1219419.html">احمد روشنی (12)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1220653.html">محمود حسین زاده کرمانی (191)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1221813.html">محمد احمدی (27)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1280256.html">محسن حمیدیان پور (1)</a>
+				</li>
+							<li class="cat-post-item">
+					<a title="" href="../../author/1584224.html">سعید بلیانی (4)</a>
+				</li>
+					  </ul>
+
+</div>
+</div>
+<div class="left_three_bot"></div>
+	
+
+<div class="left_four_top"><div class="left_col_second_nav">آمار بازدید</div></div>
+<div class="left_col_second_center" style="padding:6px 16px 17px 5px; margin-bottom:-15px;">
+		<div>
+			کل بازدید ها : <script>getStatVar('total_view');</script><br/>
+			بازدید امروز : <script>getStatVar('today_view');</script><br/>
+			بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+			بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+			بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+			تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+			تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+			آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+		</div>
+</div>
+<div class="left_col_second_bot"></div>
+    
+
+
+<div class="left_four_top"><div class="left_col_second_nav">درباره ما</div></div>
+<div class="left_col_second_center" style="padding:6px 16px 17px 5px; margin-bottom:-15px;">
+		<div>
+		 	<center><div style="text-align:center"></div></center>
+			<br />
+					همدلی و هم افزایی ملی و علمی					<br />ایجاد کننده وبلاگ : <a href="../../author/504171.html">محمود خسروی</a>
+						
+				<br /><br />
+				<center><center>
+<form target='_blank' method=get action=http://www.google.com/search>
+<table style="width:128px;font-size:9pt;font-family:Tahoma" class='b-g-c-blue'>
+<tbody><tr><td><center><a target=_new href=http://blogers.ir/cod/extra-cods/google-search/>
+<img border=0 src=http://www.google.com/logos/Logo_40wht.gif alt=Google>
+</a><input name=q size=15 maxlength="255"><br>
+<input type="submit" name="btnG" value="Search"><br>
+<input value='Iaca.mihanblog.com' type=radio name=sitesearch checked=''>در  اقلیم شناسان ایران
+<br><input type=radio name=sitesearch value="">در كل اینترنت
+<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8></center></td></tr></tbody></table></form></center><div style="display:none"><a href=http://blogers.ir>وبلاگ</a>-<a href=http://blogers.ir/cod/extra-cods/google-search/>کد جستجوی گوگل</a></div><!--finish google search cod by www.blogers.ir-->
+
+<!-- Begin Night-Skin.com Upper code -->
+<script type='text/javascript' src='http://night-skin.com/blogcode/upper/jq-up.js' ></script><a href="http://night-skin.com" target="_blank">ابزار پرش به بالا</a>
+<script type='text/javascript' > document.write ("<scr"+"ipt type='text/javascript' src='http://night-skin.com/blogcode/upper/22-scroll.js' ></s"+"cript>");</script>
+<!-- End Night-Skin.com Upper code -->
+
+ <script language="javascript" src="http://fa-tools.ir/code/ip/11.js"></script><div style="display:none"><a href="http://fa-tools.ir">فا تولز ، ابزار رایگان وبمستر</a><a href="http://fa-tools.ir/News/topic/34/">نمایشگر آی پی</a></div>
+
+</center>
+				<br />
+		</div>
+</div>
+<div class="left_col_second_bot"></div>
+    
+    </div>
+    </td>
+    <td valign="top" class="center_col2"><div class="center_col7">	<div id='dle-content'>
+	
+   
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+			
+﻿<div class="short_top">
+<div class="short_top2">
+<a href="http://iaca.mihanblog.com/post/2548" title="بارش برف در جنوب کرمان پس از ۵۲ سال ">بارش برف در جنوب کرمان پس از ۵۲ سال </a>
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="second_line">
+
+<div class="date">
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/author.gif" alt="" />نویسنده: <b><a href="../../author/1217966.html">مهران فاطمی</a></b> | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/date.gif" alt="" />سه شنبه 30 دی 1393 | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/comm.gif" alt="" />نظر: (<a target="_self" href="javascript:newComment(2548)"><script>setCommentCnt(2548)</script></a>)</div>
+
+</div><div class="cat">
+		<a href="../../category/3.html" title="اخبار علمی" >اخبار علمی</a> , </div></div>
+<div class="story"><span class="novosti">
+
+<div><br />
+				 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div align="justify"><font size="3">شهرستان منوجان با ۷۰ هزار نفر جمعیت در فاصله 
+۴۳۰ کیلومتری جنوب کرمان و ۱۱۰ کیلومتری شمال هرمزگان واقع شده است و از 
+شهرستان‌های گرم استان کرمان محسوب می‌شود.
+        
+
+        
+
+        </font></div><p align="justify"><font size="3">به گزارش ایرنا، فرماندار منوجان گفت: کاهش دمای هوا از روز 
+گذشته آغاز و بامداد امروز موجب بارش برف در ارتفاعات بخش آسمینون شد که 
+خوشحالی مردم را به همراه داشته است.</font></p><p align="justify"><br></p><p align="center"><br><img src="data:image/jpeg;base64,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" style="width:275px;height:183px;margin-left:0px;margin-right:0px;margin-top:0px" data-sz="f" name="C93kOh93FfbkZM:" class="rg_i"></p><font size="3">
+
+
+</font>
+
+ 
+					<br />					<br /><br />
+															
+</div></span>
+<div class="full_link">
+<a href="http://iaca.mihanblog.com/post/2548" title="بارش برف در جنوب کرمان پس از ۵۲ سال ">
+<img border="0" width="107" height="20" style="border:0;" alt="ادامه" src="http://tem.parstools.com/gigantika/images/spacer.gif">
+</a>
+</div>
+
+</div>
+
+<div class="short_bottom_center">
+
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" /><img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+</div>
+
+<br/>
+  	
+﻿<div class="short_top">
+<div class="short_top2">
+<a href="http://iaca.mihanblog.com/post/2547" title="برگزاری نشست دبیرخانه ملی هیات بین الدولی تغییر اقلیم در سازمان هواشناسی کشور ">برگزاری نشست دبیرخانه ملی هیات بین الدولی تغییر اقلیم در سازمان هواشناسی کشور </a>
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="second_line">
+
+<div class="date">
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/author.gif" alt="" />نویسنده: <b><a href="../../author/831682.html">حمیده دالایی</a></b> | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/date.gif" alt="" />سه شنبه 30 دی 1393 | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/comm.gif" alt="" />نظر: (<a target="_self" href="javascript:newComment(2547)"><script>setCommentCnt(2547)</script></a>)</div>
+
+</div><div class="cat">
+	</div></div>
+<div class="story"><span class="novosti">
+
+<div><br />
+				 <font face="tahoma,arial,helvetica,sans-serif"><b><font size="2">با سلام خدمت جامعه اقلیم شناسی ایران <br>&nbsp;ن</font></b><span style="font-size: small"><b>شست دبیرخانه ملی <font size="2">هیئت بین الدول تغییر اقلیم دوشنبه 29/10/93 در سالن شهید همت سازمان هواشناسی برگزار شد.</font></b></span><font size="2"><b>&nbsp;&nbsp;</b></font>
+</font><p style="text-align: justify"><font face="tahoma,arial,helvetica,sans-serif"><span style="font-size: small"><b>نشست دبیرخانه ملی هیئت بین الدول تغییر اقلیم </b><b><span dir="ltr">(IPCC)</span></b><b> دوش</b><b>نبه 29/10/93 با حضور دکتر پرهیزکار </b><b>معاون
+ وزیر راه‌ و‌ شهرسازی و رئیس سازمان هواشناسی (که به عنوان فوکال پوینت IPCC انتخاب شده اند)&nbsp; و نمایندگانی از ریاست 
+جمهوری، سازمان حفاظت محیط زیست، سازمان انرژی اتمی، سازمان ملی استاندارد 
+ایران، سازمان مدیریت و برنامه‌ریزی کشور، شرکت کنترل کیفیت هوا، سازمان 
+جنگل‌ها مراتع و آبخیزداری کشور ، سازمان زمین شناسی ، سازمان بنادر و دریانوردی وزارت نیرو، سازمان جغرافیایی ، وزارت خارجه و ... در سالن شهید همت سازمان هواشناسی 
+برگزار شد. &nbsp;</b></span></font></p><font face="tahoma,arial,helvetica,sans-serif">
+</font><p style="text-align: justify"><font face="tahoma,arial,helvetica,sans-serif"><span style="font-size: small"><b>در این نشست خلاصه گزارش‌ ارزیابی پنجم هیئت بین الدول تغییر اقلیم </b><b><span dir="ltr">IPCC</span></b><b> و برنامه‌های آتی آن ارائه گردید و ساختار پیشنهادی دبیرخانه </b><b><span dir="ltr">IPCC</span></b><b> نیز مورد بررسی قرار گرفت. </b></span></font></p><font face="tahoma,arial,helvetica,sans-serif">
+</font><p style="text-align: justify"><font face="tahoma,arial,helvetica,sans-serif"><span style="font-size: small"><b>هیئت بین الدول تغییر اقلیم از نظر ساختار سازمانی دارای سه گروه کاری اول (</b><b><span dir="ltr">(WGI</span></b><b> ، دوم( </b><b><span dir="ltr">WGII</span></b><b>) و سوم</b><b><span dir="ltr">WGIII)</span></b><b> )و یک گروه کاری دیگر به نام فهرست گازهای گلخانه‌ای (</b><b><span dir="ltr">Task Force on National house gas inventories</span></b><b> ) نیز می‌باشد. در نشست 29 دی 1393 ،دبیرخانه ملی </b><b><span dir="ltr">IPCC</span></b><b>، مقرر شد تا سازمان‌‌های مربوطه نسبت به معرفی اعضاء خود جهت حضور و فعالیت در کارگروه‌های مذکور اقدام نمایند.ایمیل این دبیرخانه ipcc@irimo.ir می باشد اسناد ارائه شده در سایت سازمان هواشناسی کشور لینک دبیرخانه IPCC متعاقباً بارگزاری می شود . از اساتید و صاحب نظران حوزه اقلیم شناسی خواهشمندم با بازدید از آن و دانلود اسناد حضور موثر و خوبی برای شرکت در کارگزوه ها و مطالعات و شرکت در تهیه گزارش ارزشیابی ششم داشته باشند . لازم به ذکر است دبیرخانه ملی IPCC در سازمان هواشناسی مستقر می باشد. <br></b></span></font></p><font face="tahoma,arial,helvetica,sans-serif">
+</font><p style="text-align: justify"><font face="tahoma,arial,helvetica,sans-serif"><span style="font-size: small"><b>جهت آشنایی بیشتر با </b><b><span dir="ltr">IPCC</span></b><b> لطفاً </b></span><b><a href="http://www.irimo.ir/far/wd/3305-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1%D9%88%D9%87-%D9%87%DB%8C%D8%A7%D8%AA-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D8%AF%D9%88%D9%84%DB%8C-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%A7%D9%82%D9%84%DB%8C%D9%85.html"><span style="font-size: small">این‌جا</span></a></b><span style="font-size: small"><b> کلیک کنید.</b></span></font></p>
+
+
+ 
+					<br />					<br /><br />
+															
+</div></span>
+<div class="full_link">
+<a href="http://iaca.mihanblog.com/post/2547" title="برگزاری نشست دبیرخانه ملی هیات بین الدولی تغییر اقلیم در سازمان هواشناسی کشور ">
+<img border="0" width="107" height="20" style="border:0;" alt="ادامه" src="http://tem.parstools.com/gigantika/images/spacer.gif">
+</a>
+</div>
+
+</div>
+
+<div class="short_bottom_center">
+
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" /><img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+</div>
+
+<br/>
+  	
+﻿<div class="short_top">
+<div class="short_top2">
+<a href="http://iaca.mihanblog.com/post/2545" title="ناهنجاری بارش کشور">ناهنجاری بارش کشور</a>
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="second_line">
+
+<div class="date">
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/author.gif" alt="" />نویسنده: <b><a href="../../author/804916.html">علیرضا  موقری</a></b> | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/date.gif" alt="" />یکشنبه 28 دی 1393 | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/comm.gif" alt="" />نظر: (<a target="_self" href="javascript:newComment(2545)"><script>setCommentCnt(2545)</script></a>)</div>
+
+</div><div class="cat">
+		<a href="../../category/15.html" title="عکس و تصویر" >عکس و تصویر</a> , 	<a href="../../category/10.html" title="بحث های علمی آزاد " >بحث های علمی آزاد </a> , </div></div>
+<div class="story"><span class="novosti">
+
+<div><br />
+				 <div style="text-align: justify;"><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;">نقشه زیر ناهنجاری بارش کشور&nbsp;</span><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;">را&nbsp;</span><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;">برای ماه دسامبر (آذر و دی) نشان می دهد. همانطور که می بینید تقریبا تمام پهنه کشور ناهنجاری منفی بارش را به نمایش می گذارد که میزان آن در جنوب غربی کشور بیشتر است.</span></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s4.picofile.com/file/8164558718/dec.gif" alt=""></div> 
+					<br />					<br /><br />
+															
+</div></span>
+<div class="full_link">
+<a href="http://iaca.mihanblog.com/post/2545" title="ناهنجاری بارش کشور">
+<img border="0" width="107" height="20" style="border:0;" alt="ادامه" src="http://tem.parstools.com/gigantika/images/spacer.gif">
+</a>
+</div>
+
+</div>
+
+<div class="short_bottom_center">
+
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" /><img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+</div>
+
+<br/>
+  	
+﻿<div class="short_top">
+<div class="short_top2">
+<a href="http://iaca.mihanblog.com/post/2542" title="دمای رویه ی زمین">دمای رویه ی زمین</a>
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="second_line">
+
+<div class="date">
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/author.gif" alt="" />نویسنده: <b><a href="../../author/504261.html">سید ابوالفضل  مسعودیان</a></b> | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/date.gif" alt="" />یکشنبه 28 دی 1393 | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/comm.gif" alt="" />نظر: (<a target="_self" href="javascript:newComment(2542)"><script>setCommentCnt(2542)</script></a>)</div>
+
+</div><div class="cat">
+		<a href="../../category/10.html" title="بحث های علمی آزاد " >بحث های علمی آزاد </a> , </div></div>
+<div class="story"><span class="novosti">
+
+<div><br />
+				 
+
+
+
+
+<div align="justify"><font size="3">درود بر شما</font></div><div align="justify"><font size="3"><br></font></div><div align="justify"><font size="3">سنجنده ی مودیس كه بر روی ماهواره ترا نصب است هر روز دو بار از فراز ایران می گذرد؛ یك بار حوالی نیمروز و یك بار حوالی نیمشب. تررا نزدیك به چهارده سال است كه زمین را از بالا می نگرد و از داده هایی كه سنجنده ی مودیس به زمین می فرستد تا كنون فراورده های بسیار زیادی به دست آمده است. دمای رویه ی زمین یكی از این فراورده ها است.&nbsp;</font></div><div align="justify"><font size="3"><br></font></div><div align="justify"><font size="3">چنان كه از بررسی این داده ها بر می آید تفتیده ترین زمین های جهان چندین بار در ایران دیده شده اند. لوت، كرانه های خلیج فارس و دریای عمان و ایران مركزی گرمترین زمین های كشور را دارند. آسمان بی ابر این بخش های كشور كار را برای سنجنده ی مودیس ساده كرده و سنجش دمای رویه ی زمین تقریباً بی دردسر انجام می گیرد. در مقابل، كرانه های خزر به دلیل ابرناكی برای سنجش دمای رویه ی زمین مزاحمت ایجاد می كند.</font></div><div><br></div><div><br></div>
+
+
+
+
+
+
+
+
+
+ 
+					<br />					<br /><br />
+															
+</div></span>
+<div class="full_link">
+<a href="http://iaca.mihanblog.com/post/2542" title="دمای رویه ی زمین">
+<img border="0" width="107" height="20" style="border:0;" alt="ادامه" src="http://tem.parstools.com/gigantika/images/spacer.gif">
+</a>
+</div>
+
+</div>
+
+<div class="short_bottom_center">
+
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" /><img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+</div>
+
+<br/>
+  	
+﻿<div class="short_top">
+<div class="short_top2">
+<a href="http://iaca.mihanblog.com/post/2546" title="نقشه روز:نقشه سامانه های فعال در خاورمیانه ">نقشه روز:نقشه سامانه های فعال در خاورمیانه </a>
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="second_line">
+
+<div class="date">
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/author.gif" alt="" />نویسنده: <b><a href="../../author/504171.html">محمود خسروی</a></b> | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/date.gif" alt="" />یکشنبه 28 دی 1393 | </div>
+<div style="float:left;"><img src="http://tem.parstools.com/gigantika/images/comm.gif" alt="" />نظر: (<a target="_self" href="javascript:newComment(2546)"><script>setCommentCnt(2546)</script></a>)</div>
+
+</div><div class="cat">
+	</div></div>
+<div class="story"><span class="novosti">
+
+<div><br />
+				 
+<a href="http://www.pmdnmcc.net/WxCharts/SaChart-00-3.JPG" target="_blank" title=""><div align="center"><img src="http://www.pmdnmcc.net/WxCharts/SaChart-00-3.JPG" alt="" align="middle" border="0" height="350" hspace="0" vspace="0" width="424"></div></a>
+
+ 
+					<br />					<br /><br />
+															
+</div></span>
+<div class="full_link">
+<a href="http://iaca.mihanblog.com/post/2546" title="نقشه روز:نقشه سامانه های فعال در خاورمیانه ">
+<img border="0" width="107" height="20" style="border:0;" alt="ادامه" src="http://tem.parstools.com/gigantika/images/spacer.gif">
+</a>
+</div>
+
+</div>
+
+<div class="short_bottom_center">
+
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" /><img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+</div>
+
+<br/>
+  
+	
+
+		
+
+
+	
+﻿<div class="short_top">
+ <div style="text-align:center;" class="short_top2">
+ صفحات سایت
+<img src="http://tem.parstools.com/gigantika/images/short_top.png" style="height: 42px;float:right; margin-top:-11px; margin-right:-9px" alt="" />
+</div>
+</div>
+
+<div class="story"><span class="novosti">
+
+<div style="text-align:center;"><br />
+				
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/1">[ <b>1</b> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/2">[ <span>2</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/3">[ <span>3</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/4">[ <span>4</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/5">[ <span>5</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/6">[ <span>6</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/7">[ <span>7</span> ]</a>
+				   <a href="http://iaca.mihanblog.com/post/archive/1393/10/page/8">[ <i>...</i> ]</a>
+		
+</div></span>
+</div>
+
+<div class="short_bottom_center">
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_left.gif" style="float:left;" height="11" alt="" />
+<img src="http://tem.parstools.com/gigantika/images/short_bottom_right.gif" style="float:right;" alt="" />
+</div>
+
+<br/>
+		
+
+
+
+</div></div></td>
+    <td valign="top" class="right_col2">
+    <div class="right_col">	
+	
+	    
+<div class="right_three_top"><div class="left_col_second_nav"><div class="str">آرشیو</div></div></div>
+<div class="left_three_center">
+<ul>
+			<li><a href="../1396/5.html" > مرداد 1396</a></li>
+			<li><a href="../1396/4.html" > تیر 1396</a></li>
+			<li><a href="../1396/3.html" > خرداد 1396</a></li>
+			<li><a href="../1396/1.html" > فروردین 1396</a></li>
+			<li><a href="../1395/12.html" > اسفند 1395</a></li>
+			<li><a href="../1395/11.html" > بهمن 1395</a></li>
+			<li><a href="../1395/10.html" > دی 1395</a></li>
+			<li><a href="../1395/9.html" > آذر 1395</a></li>
+			<li><a href="../1395/7.html" > مهر 1395</a></li>
+			<li><a href="../1395/6.html" > شهریور 1395</a></li>
+			<li><a href="../1395/5.html" > مرداد 1395</a></li>
+			<li><a href="../1395/4.html" > تیر 1395</a></li>
+			<li><a href="../1395/3.html" > خرداد 1395</a></li>
+			<li><a href="../1395/2.html" > اردیبهشت 1395</a></li>
+			<li><a href="../1395/1.html" > فروردین 1395</a></li>
+			<li><a href="../1394/12.html" > اسفند 1394</a></li>
+			<li><a href="../1394/11.html" > بهمن 1394</a></li>
+			<li><a href="../1394/10.html" > دی 1394</a></li>
+			<li><a href="../1394/9.html" > آذر 1394</a></li>
+			<li><a href="../1394/8.html" > آبان 1394</a></li>
+			<li><a href="../1394/7.html" > مهر 1394</a></li>
+			<li><a href="../1394/6.html" > شهریور 1394</a></li>
+			<li><a href="../1394/5.html" > مرداد 1394</a></li>
+			<li><a href="../1394/4.html" > تیر 1394</a></li>
+			<li><a href="../1394/3.html" > خرداد 1394</a></li>
+			<li><a href="../1394/2.html" > اردیبهشت 1394</a></li>
+			<li><a href="../1394/1.html" > فروردین 1394</a></li>
+			<li><a href="12.html" > اسفند 1393</a></li>
+			<li><a href="11.html" > بهمن 1393</a></li>
+			<li><a href="10.html" > دی 1393</a></li>
+			<li><a href="9.html" > آذر 1393</a></li>
+			<li><a href="8.html" > آبان 1393</a></li>
+			<li><a href="7.html" > مهر 1393</a></li>
+			<li><a href="6.html" > شهریور 1393</a></li>
+			<li><a href="5.html" > مرداد 1393</a></li>
+			<li><a href="4.html" > تیر 1393</a></li>
+			<li><a href="3.html" > خرداد 1393</a></li>
+			<li><a href="2.html" > اردیبهشت 1393</a></li>
+			<li><a href="1.html" > فروردین 1393</a></li>
+			<li><a href="../1392/12.html" > اسفند 1392</a></li>
+			<li><a href="../1392/11.html" > بهمن 1392</a></li>
+			<li><a href="../1392/10.html" > دی 1392</a></li>
+			<li><a href="../1392/9.html" > آذر 1392</a></li>
+			<li><a href="../1392/8.html" > آبان 1392</a></li>
+			<li><a href="../1392/7.html" > مهر 1392</a></li>
+			<li><a href="../1392/6.html" > شهریور 1392</a></li>
+			<li><a href="../1392/5.html" > مرداد 1392</a></li>
+			<li><a href="../1392/4.html" > تیر 1392</a></li>
+			<li><a href="../1392/3.html" > خرداد 1392</a></li>
+			<li><a href="../1392/2.html" > اردیبهشت 1392</a></li>
+			<li><a href="../1392/1.html" > فروردین 1392</a></li>
+			<li><a href="../1391/12.html" > اسفند 1391</a></li>
+			<li><a href="../1391/11.html" > بهمن 1391</a></li>
+			<li><a href="../1391/10.html" > دی 1391</a></li>
+			<li><a href="../1391/9.html" > آذر 1391</a></li>
+			<li><a href="../1391/8.html" > آبان 1391</a></li>
+			<li><a href="../1391/7.html" > مهر 1391</a></li>
+			<li><a href="../1391/6.html" > شهریور 1391</a></li>
+			<li><a href="../1391/5.html" > مرداد 1391</a></li>
+			<li><a href="../1391/4.html" > تیر 1391</a></li>
+			<li><a href="../1391/3.html" > خرداد 1391</a></li>
+			<li><a href="../1391/2.html" > اردیبهشت 1391</a></li>
+			<li><a href="../1391/1.html" > فروردین 1391</a></li>
+			<li><a href="../1390/12.html" > اسفند 1390</a></li>
+			<li><a href="../1390/11.html" > بهمن 1390</a></li>
+			<li><a href="../1390/10.html" > دی 1390</a></li>
+			<li><a href="../1390/9.html" > آذر 1390</a></li>
+			<li><a href="../1390/8.html" > آبان 1390</a></li>
+			<li><a href="../1390/7.html" > مهر 1390</a></li>
+			<li><a href="../1390/6.html" > شهریور 1390</a></li>
+			<li><a href="../1390/5.html" > مرداد 1390</a></li>
+			<li><a href="../1390/4.html" > تیر 1390</a></li>
+			<li><a href="../1390/3.html" > خرداد 1390</a></li>
+	<li><a href="../../archive.html">نمایش تمام مطالب</a></li>
+</ul>
+</div>
+<div class="right_three_bot"></div>
+	
+
+	
+<div class="right_three_top"><div class="left_col_second_nav"><div class="str">لینکستان</div></div></div>
+<div class="left_three_center" style="padding:3px 10px 3px 0px;">
+		  <ul>
+			 
+				<li>
+					<a href="http://mohammaddarvish.com/desert/" title="" target="_blank">مهار بیابان زائی (مهندس درویش)</a>
+				</li>
+			 
+				<li>
+					<a href="http://teleclimate.webs.com" title="" target="_blank">سری زمانی شاخص های پیوند از دور</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.kermanshahmet.ir" title="در این وب سایت می توانید پیش بینی های فصلی، فراكاوی الگوهای پیوند از دور، تصاویر رادار و بروندادهای مدل ورف را ببینید" target="_blank">پیش بینی های هواشناسی كرمانشاه</a>
+				</li>
+			 
+				<li>
+					<a href="../../../extrapage/authors.html" title="" target="_blank">دستورالعمل نگارش مطلب در خبرنامه برای نویسندگان</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.mihanbit.com" title="" target="_blank">آپلود فایل جهت نمایش در خبرنامه</a>
+				</li>
+			 
+				<li>
+					<a href="http://igut.ir" title="" target="_blank">موسسه جغرافیای دانشگاه تهران</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.irangeomorphology.ir" title="" target="_blank">انجمن ایرانی ژئومورفولوژی</a>
+				</li>
+			 
+				<li>
+					<a href="http://pap.blog.ir/" title="" target="_blank">استادان علیه تقلب</a>
+				</li>
+			 
+				<li>
+					<a href="http://drought.irimo.ir/darbarema.asp" title="" target="_blank">مرکز ملی خشکسالی ایران</a>
+				</li>
+			 
+				<li>
+					<a href="http://iaock.blogfa.com/" title="" target="_blank">انجمن اقلیم شناسی منطقه کرمانشاه</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.ismh-direct.net/" title="" target="_blank">انجمن بین المللی اقلیم شناسی و هیدرولوژی پزشکی</a>
+				</li>
+			 
+				<li>
+					<a href="../../../../duststorm.mihanblog.com/index.html" title="" target="_blank">اقلیم شناسی طوفان های گرد و غباری</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.weather.ir" title="" target="_blank">سازمان هواشناسی کشور</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.cri.ac.ir/" title="" target="_blank">پژوهشکده اقلیم شناسی</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.moderngeography.blogfa.com/" title="" target="_blank">جغرافیای نوین</a>
+				</li>
+			 
+				<li>
+					<a href="http://drought.iranhydrology.net/" title="" target="_blank">سامانه خشکسالی هواشناسی ایران</a>
+				</li>
+			 
+				<li>
+					<a href="../../1.html" title="" target="_blank">لیست اعضای انجمن ایرانی اقلیم شناسی</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.irses.ir/" title="" target="_blank">انجمن علمی انرژی خورشیدی ایران</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.irsgiss.ir/home" title="" target="_blank">انجمن سنجش از دور و GIS ایران</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.135230.blogfa.com/" title="" target="_blank">اقلیم شناسی نوین</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.sid.ir" title="" target="_blank">پایگاه اطلاعات علمی (SID)</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.darvish100.blogfa.com/cat-42.aspx" title="" target="_blank">مهار بیابان زایی</a>
+				</li>
+			 
+				<li>
+					<a href="http://ataeih.isfpnu.ac.ir/" title="" target="_blank">دکتر هوشمند عطایی</a>
+				</li>
+			 
+				<li>
+					<a href="http://www.drkhosravi.webs.com/" title="" target="_blank">دکتر محمود خسروی</a>
+				</li>
+			 
+			<li><a rel="follow" href="http://parstools.com/" title="ابزار وب برای وبلاگ نویسان"  target="_blank"><h1 class="myh1">ابزار وب</h1></a></li>
+			<li><a rel="follow" href="http://parstools.com/blog-template/" title="قالب وبلاگ"  target="_blank"><h1 class="myh1">قالب وبلاگ</h1></a></li>
+			<li><a rel="nofollow" href="http://graphic.ir/" title="بانک عکس و گرافیک طرح و نقوش ایرانی اسلامی"  target="_blank"><h1 class="myh1">دانلود عکس</h1></a></li>
+			<li><a rel="follow" href="http://uplod.ir/" title="آپلود دائمی و رایگان فایل با لینک مستقیم و بدون محدودیت زمانی"  target="_blank"><h1 class="myh1">آپلود فایل</h1></a></li>
+			<!--15-7--><li><a rel="follow" href="http://www.peykeweb.com/" title="آگهی رایگان"  target="_blank"><h1 class="myh1">آگهی رایگان</h1></a></li>
+		
+			<li>
+			<a href="../../../link/index.html">لیست لینک ها</a>
+			</li>
+		  </ul>
+</div>
+<div class="right_three_bot"></div>
+	
+
+<div class="right_four_top"><div class="left_col_second_nav">تگ های سایت</div></div>
+<div class="right_col_second_center" style="padding:3px 15px 0 0;  text-align: center;">
+				
+	               <a href="../../tag/کتاب+مدیریت+خشکسالی+در+هزاره+سوم.html" 
+	                style="font-size:1em">
+	                       کتاب مدیریت خشکسالی در هزاره سوم 
+	               </a>
+				
+	               <a href="../../tag/مدیریت+جامع+نگر+خشكسالی.html" 
+	                style="font-size:1em">
+	                       مدیریت جامع نگر خشكسالی 
+	               </a>
+				
+	               <a href="../../tag/علی+مراد+حسن+لی.html" 
+	                style="font-size:1em">
+	                       علی مراد حسن لی 
+	               </a>
+				
+	               <a href="../../tag/شاخصPI.html" 
+	                style="font-size:1em">
+	                       شاخصPI 
+	               </a>
+				
+	               <a href="../../tag/خشکسالی٬+موسسه+چشم+انداز+هزاره+سوم٬+کتاب+خشکسالی٬+کتاب+مدیریت+خش.html" 
+	                style="font-size:1em">
+	                       خشکسالی٬ موسسه چشم انداز هزاره سوم٬ کتاب خشکسالی٬ کتاب مدیریت خش 
+	               </a>
+				
+	               <a href="../../tag/سید+محمد+جعفر+ناظم+السادات.html" 
+	                style="font-size:1em">
+	                       سید محمد جعفر ناظم السادات 
+	               </a>
+				
+	               <a href="../../tag/بهرام+نجف+پور.html" 
+	                style="font-size:1em">
+	                       بهرام نجف پور 
+	               </a>
+				
+	               <a href="../../tag/زهرا+حجازی+زاده.html" 
+	                style="font-size:1em">
+	                       زهرا حجازی زاده 
+	               </a>
+				
+	               <a href="../../tag/سارا+کاویانی++آهنگر.html" 
+	                style="font-size:1em">
+	                       سارا کاویانی  آهنگر 
+	               </a>
+				
+	               <a href="../../tag/سعید+جوی+زاده.html" 
+	                style="font-size:1em">
+	                       سعید جوی زاده 
+	               </a>
+			</div>
+<div class="right_col_second_bot"></div>
+
+<div class="right_two_top"><div class="left_col_second_nav">لینکدونی</div></div>
+<div class="right_col_two_center" style="padding:1px 10px 1px 0px; direction: rtl;">
+		  <ul>
+			 
+				<li class="cat-post-item">
+					<a href="../../../extrapage/authors.html" title="" target="_blank">دستورالعمل نگارش مطلب در خبرنامه برای نویسندگان</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.havairan.com/weather/Sistan_and_Baluchestan/Zāhedān" title="" target="_blank">هوا ایران (پیش بینی وضع هوا در تمام نقاط کشور)</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://isap.research.gov.ir/sites/mmcc/" title="" target="_blank">عضویت در انجمن</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://moderngeography.blogfa.com/" title="" target="_blank">فارغ التحصیلی اولین دانشجوی دکتری اقلیم شناسی در زاهدان</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../225.html" title="" target="_blank">تخصص گرایی،نیاز امروز جامعه اقلیمی کشور</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../249.html" title="" target="_blank">  رابطه زمستان و زلزله</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../271.html" title="" target="_blank">  اعطای نشان علمی درجه یک دانش به پدر علم جغرافیا و اقلیم شناسی کشور</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../327.html" title="" target="_blank">  پیش بینی اقلیمی و مشکلی به نام خطا</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../339.html" title="" target="_blank">  بحثی پیرامون تنوع کاربرد واژگان در علم هوا و اقلیم شناسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://iciwg.webs.com/IAOC_Membership_Sheet.docx" title="" target="_blank">فرم عضویت در انجمن ایرانی اقلیم شناسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../26.html" title="" target="_blank">بحث آزاد &quot;رابطه دیپلم ادبی و لیسانس اقلیم شناسی&quot;</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../28.html" title="" target="_blank">  الویت های پژوهشی اقلیم شناسی کشور</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../30.html" title="" target="_blank">غربت GIS در جامعه اقلیم شناسی ایران</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../156.html" title="" target="_blank">  رویکردی نو برانتخاب موضوع پایان نامه های اقلیم شناسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../172.html" title="" target="_blank">  پیشنهاد برگزاری اولین کنگره ملی اقلیم شناسان ایران</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="../../196.html" title="" target="_blank">سرفصل 7گرایش کارشناسی ارشد اقلیم شناسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://climatechange.ir/" title="" target="_blank">تغییر اقلیم</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.jstage.jst.go.jp/browse/jmsj" title="" target="_blank">نشریه انجمن هواشناسی ژاپن</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.ardebilmet.ir/" title="" target="_blank">اداره کل هواشناسی استان اردبیل</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://isfahanmetportal.ir/ShowPage.aspx?page_=form&amp;order=show&amp;lang=1&amp;sub=5&amp;PageId=89&amp;codeV=1&amp;tempname=OzoneNewSkin" title="" target="_blank">اصفهان مرکز پژوهشی شیمی جو، ازن و آلودگی هوا</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://havamet.ir/index.php/انجمن/ایندکس" title="" target="_blank">انجمن هواشناسی ایران</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://drought.ir/" title="" target="_blank">انجمن علمی سازگاری با خشكی و خشكسالی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.weather.ir" title="" target="_blank">سازمان هواشناسی کشور</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://up8.iranblog.com/images/9vz1logd5gnx6oqzvvc.pdf" title="" target="_blank">فهرست اعضای انجمن ایرانی اقلیم شناسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.isfahanmetairpollution.ir./" title="" target="_blank">اداره کل هواشناسی استان اصفهان</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.climatology.blogfa.com" title="" target="_blank">جغرافیا و برنامه ریزی محیطی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.worldweather.org/" title="" target="_blank">آمار نرمال اقلیمی و پیش بینی هوایی تمام ایستگاههای جهان</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://WWW.sid.ir" title="" target="_blank">پایگاه مقالات علمی جهاد دانشگاهی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.ensani.ir/fa/archive.aspx?gId=3510&amp;from=10/20/2010&amp;to=6/17/2011&amp;type=12" title="" target="_blank">بانک مقالات و پایان نامه های اقلیمی فارسی</a>
+				</li>
+			 
+				<li class="cat-post-item">
+					<a href="http://www.wmo.int/pages/members/members_en.html" title="" target="_blank">وب سایت مراکز هواشناسی کشورها</a>
+				</li>
+						<li class="cat-post-item">
+				<a href="../../../linkdaily/index.html" title="لیست لینک ها">لیست لینک ها</a>
+			</li>
+			<li class="cat-post-item">
+				<a href="javascript:linkdailyForm()">+ ارسال لینک</a>
+			</li>			
+		  </ul>
+</div>
+<div class="right_col_two_bot"></div>
+
+ 			
+<div class="right_three_top"><div class="left_col_second_nav"><div class="str">صفحات</div></div></div>
+<div class="left_three_center">
+<div style="padding:10px 13px; line-height:20px;" class="topnews45">
+		  <ul>
+			  	
+				<li class="cat-post-item">
+					<a href="../../../extrapage/ttt.html" target="_blank">ادامه مطلب</a>
+				</li>
+			  	
+				<li class="cat-post-item">
+					<a href="../../../extrapage/ccc.html" target="_blank">روان شناسی تغییر اقلیم</a>
+				</li>
+			  	
+				<li class="cat-post-item">
+					<a href="../../../extrapage/authors.html" target="_blank">دستورالعمل نوشتن مطالب در خبرنامه</a>
+				</li>
+			  	
+		  </ul>
+
+</div>
+</div>
+<div class="right_three_bot"></div>
+ 	
+    
+    </div>
+    </td>   
+  </tr>
+</table>
+</div>
+
+<table width="100%" class="footer_td">
+<tr>
+<td>
+<div id="footer">
+<div class="footer_top">
+<img src="http://tem.parstools.com/gigantika/images/footer_top_left.gif" style="float:left;" alt="" />
+<img src="http://tem.parstools.com/gigantika/images/footer_top_right.gif" style="float:right;" alt="" />
+</div>
+
+<div class="footer_center">
+
+<div>
+<div style="color: #3D7385; font-size: 10px; font-weight: bold; padding: 12px 10px 10px 7px; text-align: center;">	CopyRight © 2011 - 2012 <a href="../../../index.html" title="IACA Group">IACA Group</a> , All Rights Reserved<br/></div>
+<div class="footer_info"><img src="http://tem.parstools.com/gigantika/images/hit.gif" border="0" alt="" /></div>
+
+</div>
+
+
+
+</div>
+
+<div class="footer_down">
+<img src="http://tem.parstools.com/gigantika/images/footer_down_left.gif" style="float:left;" alt="" />
+<img src="http://tem.parstools.com/gigantika/images/footer_down_right.gif" style="float:right;" alt="" />
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'iaca.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

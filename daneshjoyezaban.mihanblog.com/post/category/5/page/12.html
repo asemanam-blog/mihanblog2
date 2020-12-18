@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1505484*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[117]='17';commentCnt[119]='25';commentCnt[120]='6';commentCnt[121]='23';commentCnt[123]='13';commentCnt[124]='39';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[117]='2';
+mihanblogDisLikeArrCnt[117]='0';
+mihanblogLikeArrCnt[119]='3';
+mihanblogDisLikeArrCnt[119]='0';
+mihanblogLikeArrCnt[120]='1';
+mihanblogDisLikeArrCnt[120]='0';
+mihanblogLikeArrCnt[121]='1';
+mihanblogDisLikeArrCnt[121]='0';
+mihanblogLikeArrCnt[123]='5';
+mihanblogDisLikeArrCnt[123]='0';
+mihanblogLikeArrCnt[124]='3';
+mihanblogDisLikeArrCnt[124]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://daneshjoyezaban.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://daneshjoyezaban.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','325');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','پنجشنبه 20 آذر 1399');
+	
+	setStatVar('today_view','295');
+	setStatVar('yesterday_view','744');
+	
+	setStatVar('this_month_view','8437');
+	setStatVar('last_month_view','2455');
+
+	setStatVar('total_view','430675');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (04:11)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://daneshjoyezaban.mihanblog.com/statupdate/?data[refereruri]=http://daneshjoyezaban.mihanblog.com/post/category/5/page/8&data[postid]=&data[requesturi]=/post/category/5/page/12&data[sdate]=1607820157&data[hash]=b1997c5d8e1e6533c92e5b0c4e5a10c1&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://daneshjoyezaban.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text html">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.0">
+    <meta name="description" content="روزنوشت های یک دانشجوی زبان و ادبیات انگلیسی، جایی که هم قراره براتون از خاطراتم بگم هم کمکتون کنم زبان رو بهتر و شیرین تر یاد بگیرین. البته دوستان عزیز گرایش های آموزش زبان انگلیسی، مترجمی و حتی زبانشناسی هم میتونن منابع تخصصی و عمومی آزمون ارشدشون رو مشاهده کنند." />
+    <meta name="keywords" content="دانشجوی زبان انگلیسی، دانشجوی زبان، خوابگاه، معلوم الحال، زبان انگلیسی، ادبیات انگلیسی، آموزش زبان انگلیسی، مترجمی زبان انگلیسی، زبانشناسی همگانی، منابع کارشناسی ارشد مجموعه زبان انگلیسی، Linguistics,TEFL, English Literature Student" />
+    <title>گاه نوشته هاى یک دانشجوى زبان - مطالب معلوم نوشت</title>
+    <link rel="stylesheet" href="../../../../../file.mihanblog.com/public/user_data/user_files/649/1944575/css/global.css">
+    <link rel="stylesheet" href="../../../../../file.mihanblog.com/public/user_data/user_files/649/1944575/theme21/css/style.css">
+    <link rel="stylesheet" href="../../../../../file.mihanblog.com/public/user_data/user_files/649/1944575/css/mihanblog_theme_icons.css">
+
+    <style>
+    </style>
+</head>
+
+
+<body>
+
+
+<div class="page-container" id="pageContainer">
+    <div class="menu-sidbar" id="menuSidbar">
+        <div class="logo-media">
+            <img src="../../../../../static.mihanblog.com/public/user_data/web_photo/502/1505484.jpg@4024"  />        </div>
+
+
+        <div class="menu-wrapper">
+            <ul class="sm-item">
+                <li><a class="sid-menu-item" href="../../../../../www.daneshjoyezaban.mihanblog.com/index.html">صفحه اصلی</a></li>         
+<li><a class="sid-menu-item" 
+<li><a class="sid-menu-item" href="http://daneshjoyezaban.sazito.com/">بستر دانلود فایل‌ها</a></li>         
+<li><a class="sid-menu-item" href="../../../../extrapage/highereducationinenglish.html">بخش زبان تخصصی</a></li>
+                <li><a class="sid-menu-item" href="../../../../extrapage/masterofenglishliterature.html">ادبیات انگلیسی</a></li>
+                <li><a class="sid-menu-item" href="../../../../extrapage/masteroftefl.html">آموزش زبان انگلیسی</a></li>
+                <li><a class="sid-menu-item" href="../../../../extrapage/masteroftranslationstudies.html">مترجمی زبان انگلیسی</a></li>
+                <li><a class="sid-menu-item" href="../../../../extrapage/masteroflinguistics.html">زبانشناسی همگانی</a></li>
+
+                <li><a class="sid-menu-item" href="mailto:daneshjoyezaban@gmail.com"> پست الکترونیک</a></li>
+                <li><a class="sid-menu-item" href="javascript:messageForm()">تماس با ما</a></li>
+                <li><a class="sid-menu-item" href="../../../rss/index.html">RSS</a></li>
+            </ul>
+            <ul class="menu-social-network">
+                <li class="social-networks-icons">
+                    <a href="12.html"><i class="icon icon-facebook"></i></a>
+                </li>
+                <li class="social-networks-icons">
+                    <a href="12.html"><i class="icon icon-twitter"></i></a>
+                </li>
+                <li class="social-networks-icons">
+                    <a href="12.html"><i class="icon icon-instagram"></i></a>
+                </li>
+                <li class="social-networks-icons">
+                    <a href="12.html"><i class="icon icon-gplus"></i></a>
+                <li class="social-networks-icons">
+                    <a href="12.html"><i class="icon icon-telegram"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="wrap" id="Wrapper">
+        <div class="sidemenu">
+            <div class="exit-rot" onclick="exitMenu()" id="exitRot"></div>
+            <div id="js--rot-menu-icon" class="rot-menu-icon" onclick="openSiteMenu()">
+                <span class="menu-name" id="mName"> منوی اصلی </span>
+                <span class="m-line m-line1" id="mLine1"></span>
+                <span class="m-line m-line2" id="mLine2"></span>
+                <span class="m-line m-line3" id="mLine3"></span>
+            </div>
+
+            <span class="blog-logo">
+                <img src="../../../../../static.mihanblog.com/public/user_data/web_photo/502/1505484.jpg@8276"  />            </span>
+
+
+            <div class="header-field container clearfix">
+
+                <button onclick="openSiteMenu()" class="menu-button">
+                    <span class="icon-barss"></span>
+                    <span class="icon-barss"></span>
+                    <span class="icon-barss"></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="opac" id="pageBd" onclick="exitMenu()"></div>
+
+
+        <div class="header-section">
+            <div class="header-container">
+                <div class="header-wrapper">
+                    <div class="header-content">
+                        <div class="site-title">
+                            گاه نوشته هاى یک دانشجوى زبان                        </div>
+                        <div class="blog-slogan">
+                            معلوم الحال                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="page-section">
+            <div class="gotop" id="goTop" onclick="moveToTop()">
+                <div class="gotop-org"></div>
+                <div class="gotop-hov"></div>
+            </div>
+
+
+            <div class="page clearfix">
+
+
+                <div class="post-column">
+
+                                            <div class="post-field clearfix">
+                            <ul>
+                                
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                                    <li id="124" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../124.html">روز دختر</a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> پنجشنبه 14 مرداد 1395 08:52 ب.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../124.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(124)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<font face="Mihan-Iransans" size="2">... در طول یک هفته همه مدارس را در جلگه ها و تل وتپه های پیرامون آن ها دیدم و آزمودم و تنها از دیدار و آزمایش یک مدرسه در تیره ی دلیر و شجاع «ده بر آفتاب» چشم پوشیدم. مدرسه ای بود که دانش آموز دختر نداشت. پدران و مادران، دختران خود را به دبستان نفرستاده بودند. جای خواهرها در کنار برادرها خالی بود. دختران پاره ای از مدارس به آموزگاری نیز رسیده بودند و این دبستان هنوز دختر دانش آموز نداشت. کار با مردم رشید طایفه به ستیز و قهر کشید.</font><div><font face="Mihan-Iransans" size="2">روابط عاطفی من و مردم بویراحمد طوری بود که ناز یکدیگر را می خریدیم و از قهر یکدیگر نمی رنجیدیم. به مردم و معلم که در کنار چادر دبستان جمع شده بودند سخنانی تند و کوتاه و گله آمیز درباره ی ظلم مرد به زن گفتم و خداحافظی کردم.</font></div><div><font face="Mihan-Iransans" size="2">در مقابل زن ایلی نه تنها من بلکه هر کس جز تعظیم و ستایش راه دیگری نداشت. زن ایلی از همه ی زنان عالم بیشتر زحمت می کشید و کمتر بهره می برد. زودتر از همه بر می خاست و دیرتر از همه به خواب می رفت. خانه را مملو از شرف، عصمت، کار و زیبایی می کرد و خود احترام چندانی نمی دید. سخنِ درشت می شنید و دم بر نمی آورد.</font></div><div><font face="Mihan-Iransans" size="2">مرد ایلی فقط گوسفند را به چرا می برد و همین که باز می گشت، همه ی کارها با زن ایلی بود. گوسفند را می دوشید. شیر را می جوشانید. ماست را می بست. دوغ را می زد. کره را می گرفت. غذا را می پخت تا مردش بیش از او بخورد و بیاشامد.</font></div><div><font face="Mihan-Iransans" size="2">مرد ایلی فقط پشم گوسفند را می چید و باز این کدبانوی زحمت کش ایل بود که آن را می شست، می رشت، می تابید، رنگ می کرد و می بافت تا مردش بر فرشی خوش رنگ بنشیند و بیاساید.</font></div><div><font face="Mihan-Iransans" size="2"><b>ستم مرد به زن، این ستم دیرپای کهنسال که نه از دشمن به دشمن بلکه از دوست به دوست، از پدر به دختر، از پسر به مادر، از برادر به خواهر و از شوی به همسر می رسد، در ایلات و بخصوص در بویر احمد با قوت و صولت بر جای مانده بود. رودابه ها و تهمینه های بویراحمد گرفتاری های سهمگین داشتند. چاره ی کار جز در دست تعلیم و تربیت و نبود. نمی شد این راه و رسم را سهل انگاشت.</b></font></div><div><font face="Mihan-Iransans" size="2">قهر و ستیز من اثر کرد. دو روزی بیش نگذشت که پیکی از راه رسید و خبر آورد که دبستان، آماده ی دیدن و آزمودن است. بازگشتم. دختران رنگین پوش در کنار برادران خویش کلاس را آراسته بودند. فریاد شادی شان و فریاد شادی مادرانشان بر آسمان بلند بود.</font></div><div style="text-align: left;"><font face="Mihan-Koodak" size="2">«بخارای من، ایل من» - محمد بهمن بیگی - صص۳۳۸ -۳۴۰</font></div><div style="text-align: right;"><br></div><div style="text-align: left;"><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2">به پاس خدمات شایان و مظلومیت «مهربانویان» سرزمینم باید تمام قد ایستاد و کلاه از سر برداشت./</font></div>
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:23 ب.ظ </span>
+                                            </div>
+
+                                            
+                                                                                            <div class="post-related-links">
+                                                    <ul>
+                                                        <span><i class="icon icon-link" aria-hidden="true"></i>لینک های مرتبط:</span>
+                                                                                                                    <li class="related-links">
+                                                                <a href="http://derkhidemamasani.blogfa.com/post-43.aspx" target="_blank">
+                                                                    سرهنگ تژده (فردی که بهمن بیگی ازر جانب مردم به وی نشان شرف دلسوزی و مردم نوازی داد)                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="related-links">
+                                                                <a href="http://https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%A8%D9%87%D9%85%D9%86%E2%80%8C%D8%A8%DB%8C%DA%AF%DB%8C" target="_blank">
+                                                                    محمد بهمن بیگی                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="related-links">
+                                                                <a href="http://www.bahmanbeigi.ir/" target="_blank">
+                                                                    وبگاه محمد بهمن بیگی                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </div>
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                            <li class="post-category-floor"><a href="../../1.html">برشی از آثار ادبی</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../124.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('124','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                        <li id="123" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../123.html">شیدایی</a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> چهارشنبه 6 مرداد 1395 11:00 ب.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../123.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(123)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<font face="Mihan-Iransans" size="2">بعد از حذف و اضافه ترم یک دیده بودمش. سر کلاس فارسی عمومی. کلاس ۷ دانشکده. از اون کلاس های درندشت که مثل یه اتوبوس بود. تا دلت بخواد پَت و پَهن بود که گاهی استاد هم نمی دونست چطور کنترل کنه اون همه جمعیت رو. البته اون زمان هنوز توی حس و حال بقیه نبودم که با ورود به دانشگاه خیلی زود عاشق و شیدا بشم! یکی از دوستام بهش اشاره کرد. گفت: "نگاه کن! هر هفته همون جا میشینه. ساکت و آروم. مثل خودت. هیچ کس هم نمیشناسدش." راست میگفت. هر هفته صندلی دوم ردیف اول سمت چپ کلاس مال خودش بود. آروم و سر به زیر. خیلی معمولی.&nbsp;</font><div><font face="Mihan-Iransans" size="2"><br></font><div><font face="Mihan-Iransans" size="2">من از همون اول سرم به کارم خودم بود. نشون به این نشونه که حتی همکلاسی هام رو به اسم، فامیل یا شهرشون نمیشناختم و حتی گاهی توی تشخیص اینکه کدوم دختر آموزش زبان هستش و کدوم یکی ادبیات هم می موندم. یک بار ترم دو دختری رو در کتابفروشی دانشگاه دیدم که کتابی مشابه کتاب کورس ما داشت و وقتی سلام کردم و گفتم که شما هم زبانید گفت بله که خوشحال شدم و گفتم آموزش دیگه؟ که نگاهش یجوری شد و گفت: نخیر، ادبیات ... و درست یک ساعت بعد اون دختر رو سر کلاسمون دیدم و تازه فهمیدم که همچین همکلاسی هم داشتم و بی خبر بودم!&nbsp;</font></div></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">من به دلیل علاقم به فارسی عمومی هر هفته دو بار توی این کلاس شرکت می کردم. پنجشنبه ها و یکشنبه ها. یکشنبه ها همراه با دوستانم که آموزش زبان میخوندن. هر هفته همون ساعت و همون صندلی. بعد از اتمام کلاس هم مستقیم میرفتم خوابگاه. هیچ فکری نمی کردم. اما ... یک روز حس فضولیم گل کرد. از چند نفر پرسیدم که اون دختر رو میشناسن و همه سری به نشانه ی "نه" می تکوندن و لبخندی به نشانه ی "تو هم آره؟" :/ میزدن و رد میشدن. تا اینکه یک روز یکی از بچه های زیست شناسی رو دیدم. از قضا اون دختر از جلومون رد شد و اون رد نگاهم رو گرفت و گفت: زیست میخونه. توی بعضی کلاس های ما هست. که نگاهم به طرفش برگشت. گفتم: چه گرایشی؟ گفت: نمی دونم. بدبختی اینجا بود که دانشگاه تمام گرایش های زیست شناسی رو داشت و از قضا کلاس های هر یکی دو گرایش هم به دلیل داشتن دروس مشترک با هم بود. یعنی مثلا جانوری و سلولی، عمومی و گیاهی و دریا، ...! نمی دونم چرا برام مهم شدم بود اما یه حس دیگه ای بهش داشتم. عشق نبود. دوست داشتنی هم در کار نبود. اما هر چه که بود سخت مشغولم کرده بود. گفتم اگه سلولی باشه کارمون در اومده. شب توی خوابگاه از پسرهای گرایش های مختلف پرسیدیم. هر کسی میگفت نه این دختر همکلاسی ما نیست. مگه میشد؟ عمومی ها وجودش رو انکار میکردن و جانوری ها هم گردن نمی گرفتن. گیاهی و دریا و سلولی هم که نبود. بالاخره چی میخوند؟... اسمش؟ فامیلش؟ ... فقط یک فامیل از حضور و غیابای کلاسی دستم رو گرفته بود: "ب" ...</font></div><div><br></div><div><font face="Mihan-Iransans" size="2">ترم یک تموم شد و من همه چیز رو فراموش کردم تا اینکه باز ترم دو شروع شدم. من به خاطر سردی هوا حوصله رفتن توی محوطه رو نداشتم و همش توی راهروهای ساختمون مرکزی دور میزدم تا وقت کلاس بعدی بشه و برم سر کلاس بشینم. نه عاشق بودم و اونقدر داغ که توی همچین هوایی برم بیرون و نه اون قدر هم باحوصله! تا اینکه مقابل سایت دیدمش! بی توجه رد شدم. دوست زیستیم هم راهرو بعد به من ملحق شد و دوتایی شروع کردیم به سیر کردن در راهروها. سر هر راهرو که میخواستیم بپیچیم همین دختر رو میدیم. دفعه اول ... دوم ... سوم ... دفعه چهارم دیگه دخترک هم خنده ش گرفت. همینجور می رفتیم و باز هم به هم میرسیدیم. دوستم هم خنده اش گرفته بود. میگفت از این طرف بریم و دوباره همون دختر ... و دوباره از طرفی دیگه و مجددا همون دختر ...عجیب بود! عجیب! یاد این شعر فاضل نظری افتادم: "به روز وصل چه دل بسته ای؟ که مثل دو خط / به هم رسیدن ما نقطه ی جدایی ماست"</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">اون شب توی خوابگاه مثل همیشه روی تخت دراز کشیده بودم و لپ تاپم روشن بود و کتابم باز. خیره شده بودم به کتابم و فکر می کردم. دوست زیستیم وارد اتاق شده بود و من حتی متوجه نشده بودم. بعد که دیدم هم دارن یه جوری بهم نگاه میکنن تازه دوزاریم افتاد که یه اتفاقی افتاده! و دیدم که بلعه ایشون همه چیز رو به بقیه گفتن و اینکه معلومی که همه رو نصیحت می کرد که عاشق نشین و بشینین و سرت به درستون باشه عاشق شده! عاشق یه دختر بی نام و نشان! حالا مگه میشد انکار کنی؟ من هیچ حسی به اون دختر نداشتم اما برام جالب بود. جالب ... جالب ... جالب ...</font></div><div><span style="font-family: Mihan-Iransans; font-size: small;"><br></span></div><div><span style="font-family: Mihan-Iransans; font-size: small;">گذشت تا اینکه هم اتاقیم که از قضا دوست***دختر محترمه شان زیستی هستن (بودن) سرخود پاپیش گذاشتن و از طرف من برای اون خانوم درخواست دوستی فرستادن! اون روز سر کلاس مدام گوشیم توی جیبم میلرزید و من بی توجه سرم گرم حرف های استاد بود. کلاس دستور خانوم "ع" .عادتم بود. حتی اگه پدر و مادرم هم زنگ بزنن سر کلاس جواب نمیدم! کلاس تموم شد و دیدم که چند تماس بی پاسخ و چند پیام نامفهوم از دوست زیستیم دارم. پیام های اول برام نامفهوم بودن و به تدریج لحنشون تندتر میشد چون به تماس هاشون جواب نمی دادم. کلاس که تموم شد پشت سر استاد مستقیم رفتم بیرون که دوستم به پستم خورد و فحش که کجایی تو؟ دنبالت می گردیم. اسم اون دختر رو فهمیدیم. اسمش شیداست! و گفت: تمایلی به این دوستی ها ندارم! تعجب کردم: دوستی با کی؟ چی؟ و گفتند که دوست***دختر دوستم از جانب من درخواستی به دوستشون دادن و ایشون هم رد کردن! داغ شدم. آخه چرا بدون اطلاع من؟ من اگه میخواستم خودم میرفتم جلو. چرا سر خود؟! تا شب عصبی بودم. بی توجه به همه دوستام. همه فکر می کردن به خاطر جواب "نه" شنیدن هستش اما اصل قضیه این کار زشت اون ها بود.کم رو بودن من به خودم مربوط میشد و دلیلی نداشت برای من کاری بکنن. اون هم این کار زشت و بی شرمانه.&nbsp;</span></div><div><span style="font-family: Mihan-Iransans; font-size: small;"><br></span></div><div><font face="Mihan-Iransans" size="2">گذشت و گذشت تا اینکه یکی از ترم بالایی هام هم از قضیه بو برد. و از قضا اون دختر رو میشناخت چون یک بار براش کاری انجام داده بود! از دست دوستام و هم اتاقی هام خلاص شده بودم و گرفتار امیرحسین شده بودم. هر روز از عشق می گفت و تفاسیر خودش. آدمی بود که با حرفاش موم رو ذوب می کرد و حتی می تونست ماست رو سیاه جلوه بده. من همیشه انکار می کردم. بحث رو عوض می کردم. ولی اون باز از چیزهای دیگه میگفت. از اون پسرهای هفت خط بود. پسر بدی نبود اما هر جور بود تفکر خودش رو به بقیه القا می کرد. برای همین ازش فاصله می گرفتم اما اون هم کارش رو بلد بود.</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">اردیبهشت اومد. اردیبهشتی که برام اردی جهنم شد. نزدیک امتحانات ترم دو بود و کلاس ها هم تق و لق! سری زدم به محوطه که دوستم امیرحسین (ترم بالاییم. البته گرایش آموزش نه ادبیات. چون ترم چهار ادبیات هیچ پسری نداشت!) رو دیدم. نشستیم روی یکی از نیمکت ها که باز سر بحث رو باز کرد و از این گفت که چرا حرف دلت رو بهش نمیزنی؟ چرا میخوای ساکت باشی؟ چرا و چرا و چرا ... اگه حرف دلت رو بزنی حتی اگه جوابش نه هم باشه مطمئن باش خیالت راحت میشه که حداقل تو سعی خودت رو کردی. گفت و گفت و گفت و من هم فقط شنیدم و سری به نشانه ی تایید تکون دادم. کار همیشگیم بود. وقتی از فهمیدن کسی قطع امید می کردم در ظاهر تاییدش می کردم و خودم رو از شرِّ حرف هاش خلاص می کردم. می خواستم برگردم خوابگاه که دستم رو گرفت بیا بریم قدم بزنیم. حوصله نداشتم اما هر جور بود راضیم کرد. چند قدم نرفته بودیم که فهمیدم چه نقشه ای داره. همون دختر بود. داشت با تلفن صحبت می کرد. دوستش هم کنارش ایستاده بود. پاهام سنگین شد که امیرحسین بازوم رو گرفت و با خودش من رو کشید و من هم برای حفظ آبرو راه افتادم. گفت وایسا یه لحظه. سریع رفت پیش دوست اون خانوم و باهاش صحبت کرد و اشاره ی به من کرد و پشت درخت ها گم شد! من ساکت ایستاده بودم. حس می کردم که تمام دنیا ایستادن و به من نگاه می کنن. صدای گرومب گرومب قلبم رو میشنیدم. پاهام اونقدر سنگین بود که نمی تونستم برگردم. خدایا این چه ورطه ای بود؟! چرا من؟! من چی بگم؟! اصلا من تا به حال با دخترهای همکلاسیم هم صحبتی نداشتم. من موقع حرف زدن با دختر خاله هام هم گل های قالی رو میشمرم. چی بگم؟ بگم اشتباه شده؟... یهو به خودم اومدم. دیدم که داره به سمت من میاد. هر قدم که جلوتر میومد بیشتر گُر می گرفتم. خدا لعنتت کنه امیر! این چه کاری بود؟!&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">لحظات گذشت و بعد از چند ثانیه اون خانوم رو جلوی خودم دیدم: "ببخشید، کاری داشتین؟" هنوز آواز صداش توی سرمه! لکنت زبان گرفتم. نمی دونستم چی بگم: "ببخشید ... من ... من یه لحظه یه کاری باهاتون داشتم ... می خواستم ... می خواستم یه پیشنهادی بهتون بدم ... که ببینم موافقید یا نه" جون به لب شد تا این چند کلمه رو شکسته از حلقومم فرستادم بیرون.گلوم خشکِ خشک شده بود و مدام آب گلوم رو پایین میفر ستادم. ادامه دادم: "اگه موافقید که ....... (مکث کردم) و اگه نه هم که نه!". نمی دونستم چطور اون همه حرف رو بهش بزنم! اما ... خودش همه چیز رو فهمید. گفت: "اون حرفی که به فلانی زده بودین؟" و من اومدم بگم که من توی اون قضیه بی تقصیر بودم! که گفت: "من به اون خانوم هم جوابم رو گفتم." و من گفتم: "یعنی نه؟!" و ایشون هم گفتند: "بله ... ببخشید" که گویی زلزله اومد و کوه شکست. من دست و پا شکسته در جواب گفتم: "ممنون" و او هم یک: "مرسی و خدانگهدار" گفت و رفت سراغ دوستش. و من هنوز ایستاده بودم. انگار کفش های آهنی پام کرده بودن.&nbsp;</font><span style="font-family: Mihan-Iransans; font-size: small;">نفس هام به شماره افتاده بود.&nbsp;</span><font face="Mihan-Iransans" size="2">به سختی راه می رفتم که دیدم امیرحسین از پشت درخت ها پیداش شد و بدو بدو اومد سمتم و محکم بازوهام رو گرفت و لرزوند و گفت: "اینهههههه! دیدی گفتم راحت میشی. حالا شیری یا روباه؟" ... و من بی تفاوت نگاهی کردم و گفتم: "نه" .. سریع راه افتادم به سمت خوابگاه. امیرحسین پشت سرم بود و خودش رو بهم رسوند. اون دوستم که زیست شناسی میخوند هم گویا از پنجره طبقه بالا من رو دیده بود و تمام حرکاتم رو زیر نظر داشت. همش باهام حرف میزدن. اما نمیفهمیدم چی میگن. فقط صداهاشون توی گوشم می پیچید. مستقیم رفتم توی اتاقم و افتادم روی تختم. تمام شب به سقف زل زده بودم. اشتباه ... بزرگترین اشتباه عمرم. صدام میکردن که "معلوم شام بگیر" "معلوم شام نگرفتی به درک. لااقل بیا شام بخور. اینجوری می میری." "معلوم چته؟" ...&nbsp;</font><span style="font-family: Mihan-Iransans; font-size: small;">روز بعد بیدار شدم. باز هم همون معلوم سرد و بی احساس سابق بودم. کسی که نسبت به همه کس و همه چیز بی تفاوت بود. به من چه که کی عاشق شده و کی با کی دوست شده و کجا رفتن و چی کار کردن؟ به من چه! نمی خواستم با کسی حرف بزنم. باز راه افتادم به سمت دانشگاه ...</span></div><div><span style="font-family: Mihan-Iransans; font-size: small;"><br></span></div><div><span style="font-family: Mihan-Iransans;"><font size="2">یک سال از اون اتفاق میگذره و بالکل فراموشش کرده بودم. تا اینکه باز دیشب یادم اومد. باز هم به خودم لعنت فرستادم که چرا جسارت همچین کار زشتی رو به خودم دادم؟ چرا همچین اشتباهی کردم؟ من که از همون اول مطمئن بودم همچین دختری جوابش نه ست چرا رفتم جلو؟ اصلا من که این کاره نبودم! دنبال این کارها نبودم! چرا من ...؟! این بدترین کاری بود که در تمام عمرم کرده بودم. بدترین و بزرگترین اشتباه عمرم ... لعنت به من ... لعنت ... . الان یک سالِ که رفته و من فقط هنوز درگیر همون یک دقیقه صحبتم. چرا حرف زدم؟ میمردم و لال میشدم؟&nbsp;</font></span></div><div><span style="font-family: Mihan-Iransans; font-size: small;"><br></span></div><div><font face="Mihan-Koodak" size="3">چه غریب ماندی ای دل</font></div><div><font face="Mihan-Koodak" size="3">نه غمی نه غمگساری</font></div><div><font face="Mihan-Koodak" size="3">نه به انتظار&nbsp;ِ یاری</font></div><div><font face="Mihan-Koodak" size="3">نه زِ یار، انتظاری ...</font></div><div><font face="Mihan-Koodak" size="3">غم اگر به کوه گویم</font></div><div><font face="Mihan-Koodak" size="3">بگریزد و بریزد</font></div><div><font face="Mihan-Koodak" size="3">که دگر بدین گرانی</font></div><div><font face="Mihan-Koodak" size="3">نتوان کشید یاری&nbsp;</font></div><div style="text-align: left;"><font face="Mihan-Iransans"><b>معلوم ترین حال &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font></div><div style="text-align: left;"><font face="Mihan-Iransans"><b>۲۸ اردیبهشت ۱۳۹۴ - &nbsp;ساعت ۱۵:۲۳</b></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:23 ب.ظ </span>
+                                            </div>
+
+                                                                                            <div class="post-tag">
+                                                    <!--<span class="">برچسب ها:</span>-->
+                                                    <ul>
+                                                        <i class="icon icon-tags"></i>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/خاطرات.html">
+                                                                    خاطرات                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/دل&#32;نوشته.html">
+                                                                    دل نوشته                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/دانشگاه.html">
+                                                                    دانشگاه                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </div>
+                                            
+                                                                                            <div class="post-related-links">
+                                                    <ul>
+                                                        <span><i class="icon icon-link" aria-hidden="true"></i>لینک های مرتبط:</span>
+                                                                                                                    <li class="related-links">
+                                                                <a href="http://dl.pop-music.ir/music/1393/Bahman/Salar%20Aghili%20-%20Hanie.mp3" target="_blank">
+                                                                    حانیه - سالار عقیلی: بی تابم این شب ها، بی خوابم ای رویا / از تو چه پنهان من گم کرده ام خود را                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="related-links">
+                                                                <a href="http://sv.jenabmusic.com/93/mordad/Emo%20Band%20-%20Bidaram.mp3" target="_blank">
+                                                                    بیدارم - امو باند                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </div>
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../2.html">خاطرات دانشجویی</a></li>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                            <li class="post-category-floor"><a href="../../4.html">کاغذ پاره ها (دل نوشته)</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../123.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('123','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                        <li id="121" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../121.html">WANTED</a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> دوشنبه 28 تیر 1395 03:59 ق.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../121.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(121)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    
+
+
+
+
+
+
+
+
+
+<font face="Mihan-Iransans" size="2">چند روز پیش داشتم به آپشن افزوده شده به وبلاگم نگاه میکردم و متوجه شدم که یکی دو نفری مشغول زیر و رو کردن پستای قدیمیم هستن. اومدم بگم عآغاااااااااا ناموصا نخونید اینا رو زشته! جوون بودیم و خام! البته هنوزم بلد نیستیم بنویسم. نوشته هامون همش پر بود از غلط غلوط و تقریبا از سر دلتنگی و غربت ...&nbsp;</font><div><font face="Mihan-Iransans" size="2">و اینکه چند نفر خواننده ها آیفون و مک بوک دارن ؟؟!!!! ناموصا خصوصی بیاید بگید. من اشتباه میکنم یا میهن بلاگ یا شماها ...&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">راستی اگه آشنا هم منو پیدا کرده بیاد بگه تا دیگه ننویسم! خیلی شیک و مجلسی (همکلاسی و فامیل های وابسته)&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/26.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/32.gif"></div><div><br></div><div><br></div><div><font face="Mihan-Iransans" size="2"><b>الغرض اومدم اعلام مفقودی کنم:</b></font></div><div><font face="Mihan-Iransans" size="2">اون اوایل که اومده بودم یه خواننده داشتم به اسم<b> "رها"</b> که فکر میکردم مرده بعدش فهمیدم زنه! تا اومدم بشناسمش بلاگفا پرید و اون هم برای همیشه گم شد. یادم نمیاد آخرین بار کی برام کامنت گذاشت اما دیشب واقعا یادش افتادم. دلم براش تنگ شد. نگران شدم. گفتم شاید از حوالی شما رهایی رد شده باشه که اون آشنای قدیمی ماست. اگه یافتیدش بگویید ... ثواب دارد (اجر دنیویش با من اخرویش هم با خود خدا)&nbsp;</font></div><div><font face="Mihan-Iransans" size="3" color="#33cc00">گًم شده همراه با مژدگانی</font><font face="Mihan-Iransans" size="2">&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">یکی دیگه <b>shadi</b> بود که ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><font face="Mihan-Iransans" size="4" color="#ff6600">پیدا شد</font></div><div><font face="Mihan-Iransans" size="2">الحمدالله خودش با پای خودش اومد خودش رو معرفی کرد و حاضری زد</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">یکی دیگشون <b>گلبرگ</b> بود که آخرشم نفهمیدم کنکور رو چی کار کرد؟ ... &nbsp; </font></div><div><font face="Mihan-Iransans" size="3" color="#ff6600">ایشون هم ۲ ساعت بعد از اعلام مفقودی شون اومدن و حاضری زدن</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">و یه خانوم یا آقای <b>خاکستری</b> که خاکستری بود و خاموش و خصوصی کامنت میزاشت &nbsp; &nbsp; </font><font face="Mihan-Iransans" size="3" color="#33cc00">گُم شده بدون مژدگانی</font><font face="Mihan-Iransans" size="2">&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">و همین طور یه <b>هانیه</b> خانوم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><font face="Mihan-Iransans" size="3" color="#33cc00">گُم شده بدون مژدگانی</font><font face="Mihan-Iransans" size="2">&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">و سرکار خانوم <b>faride.u</b> که ایشالا ایشونم هر جا هستن سلامت باشن &nbsp; &nbsp; &nbsp;&nbsp;</font><font face="Mihan-Iransans" size="3" color="#33cc00">گُم شده&nbsp;</font></div><div><br></div><div><br></div><div><font face="Mihan-Iransans" size="2">و همین طور سر کار خانوم یا جناب آقای <b>خوشحال</b> ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><font face="Mihan-Iransans" size="3" color="#33cc00">گُم شده&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">و یه خانوم به نام <b>xy</b> که نفهمیدم آخرش چطو شد؟!! موند؟ رفت خارج؟ اصن او یک فرشته بود؟‌خلاصه چی چی بود؟‌ &nbsp;</font></div><div><font face="Mihan-Iransans" size="3" color="#33cc00">گُم شده همراه با مژدگانی</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">و چند نفر دیگه که یادم نمیاد :|&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">&nbsp;</font><font face="Mihan-Iransans" color="#33cc00" size="3">اونا هم گم شده و همراه با جوایز ارزنده ی دیگر ...</font></div><div><br></div><div><font face="Mihan-Iransans" size="2">و اینم بگم که <b>آبانا (سودای سابق!)</b> تو رو هم اسمتو برده بودم جزو مفقودی ها! آخه "شنیدُم رفتی و یاری گرفتی" و اصن پست نمیزاری و اینکه من مشکوکم به اینکه شاید اصن اسباب کشی کردی اونم بدون اطلاع من&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif">&nbsp; &nbsp;</div><div><font color="#cc33cc"><font face="Mihan-Iransans" size="3">وضعیت نامعلوم! (گرفتار کار و زندگی و ریاست؛ درگیر تبلت جدید</font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><font face="Mihan-Iransans" size="3" style="color: rgb(204, 51, 204);">)</font><span style="color: rgb(204, 51, 204); font-family: Mihan-Iransans; font-size: small;">&nbsp;</span></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><br></div><div><font face="Mihan-Koodak" size="3">پ. ن.: اینم بگم که بیکار خودتونید&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/10.gif"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:23 ب.ظ </span>
+                                            </div>
+
+                                            
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../121.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('121','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                        <li id="120" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../120.html">ماه زینب </a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> یکشنبه 27 تیر 1395 11:38 ب.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../120.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(120)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    
+
+<font size="2" face="Mihan-Iransans">امشب (الان دیگه شده دیشب!!! ) رفتیم خونه مادربزرگم. خونه مادربزرگم توی یکی از محله های قدیمی و سنتی شهره ک هنوزم به اصلش وفادار بوده. هنوزم حیاطشون تک و توک درخت داره و اگه میوه ای باشه ماها اَمونش نمیدیم. البته اینو بگم که الان نسبت به قبل عاقل تر شدیم و دیگه اون شور و شوق جوونی رو نداریم که مدام از درختا آویزون بودیم :)) (حالا بازم بیاید بگید دهه چندی هستی! آقااا من دهه ۷۰یم!! متولد سنه ۷۴)</font><div><font size="2" face="Mihan-Iransans">تازه رسیده بودیم که یهو دیدیم یکی داره پشت پنجره میزنه. مادربزرگم به عموم گفت بره درو باز کنه که ماه زینب بیاد تو. من گفتم من میرم. رفتم درو باز کردم و کلی حال و احوال که چه خبر و کم پیدایین و اینا تا اینکه رسیدیم توی خونه.</font></div><div><font face="Mihan-Iransans" size="2">ماه زینب یه زن میانسال (نگین چرا میانسال؟! چون خانوما مثل ما آقایون به سن کهن سالی نمیرسن! خلاصه خوب مونده دیگه) جنوبیه. از وقتی که مادربزرگم به این محله اومدن اون هم با شوهرش مهاجرت میکنن و میان به این محله و خلاصه اینکه یکی از رفیق های صمیمی مادربزرگمه. هنوز هم سنتی کار میکنه، یعنی با وجود زگ در و آیفون همینجور که داره میاد پشت پنجره پذیرایی میزنه تا وقتی که میرسه دمِ در در رو به روش باز کرده باشن. اینم بگم که یکی از بچه هاش سال دوم راهنمایی معلم ریاضی مون بود و با اینکه دست بزن داشت :) کاری به من نداشت چون میدونست مادرش به خونه مادربزرگم رفت و آمد داره! &nbsp;بعضی وقتا خودش هم میومد خونه مادربزرگم.</font></div><div><font face="Mihan-Iransans" size="2">ماه زینب هنوز اون استایل و فرم لباس پوشیدنش رو حفظ کرده. هنوزم از تکنولوژی و موبایل و اینا بیزاره -بجز ما***هواره!-. لهجه شیرین خودش رو داره و کلمات رو به سبک خودش ادا میکنه. به همون شیرینی و سادگی! مثلا بجای اینکه بگم پسرم توی آموزش و پرورشه میگه پسرم توی آمو پرورشه! :) یا اینکه به حج عُمره میگه حج خُمره و .... (کلی ازین کلمات جابجا داره توی دایره واژگانش که هنوزم با وجود خنده های ما بهشون دست نخورده باقی مونده!) داشتم میگفتم که از تکنولوژی بیزاره بجز ما*****هواره! اونم فقط سریالای تر**کیه ای چند صد قسمتی :) البته دیشب که میگفت وقتی فیلم مورد علاقه ش تموم شده دیگه زده توی کار ترک ما***هواره چون خونه ی خودشون ندارن و باید تا خونه ی دخترش بره!&nbsp;</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">دیشب ماه زینب از قدیم برامون میگفت. از شهرش! از بابام و عموهام! از همه چی ...</font></div><div><font face="Mihan-Iransans" size="2">... قدیما خوش بود نه الان! اون موقع ما صدای خروسا رو میشنیدیم، صدای وق وق سگا و عرعر خرا و ...(برای صدای خروس و سگ و خر اصطلاحات خاص خودش رو طبق معمول به کار برد که بنده با اجازه خودم به فارسی روان برشون گردوندم). از روزی که میخواستن عروس ببرن و فکر میکردن خروسا خابشون برده :)</font></div><div><font face="Mihan-Iransans" size="2">... ذهنش هنوز هم مثل ساعتکار میکرد. شجره نامه ای بود برای خودش. بچه های همه ی همسایه ها رو میشناخت. به ترتیب سن و اینکه تاریخ تولدهاشون رو هم از حفظ بود (قمری و شمسی!!) مثلا بچه فلانی سه ماه و پنج روز از زهرای من بزرگتره یا مجید شما دو روز از مریم من کوچیک تره؛ این که فلان بچه فلانی با کی ازدواج کرده و چه تحصیلاتی داره و چند تا بچه دارن و ... بهش گفتیم که ماشالله ماشالله اطلاعاتت هم آپدیت هستن! که برگشت گفت: هااا من آین لاین هستم (online)!!!&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/21.gif"></div><div><font face="Mihan-Iransans" size="2">... از بچه های قدیم گفت! از اینکه پوشکی نبود و با کهنه بچه ها رو میبستیم ... بچه ها هم همه یک دست "شاشووو"، نمونه فرد اعلاش هم بابات که کنارت نشسته&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><span style="font-family: Mihan-Iransans; font-size: small;">&nbsp; از کُری خوندن های بابام و دخترش میگفت که اون به این میگفت "شاشو" و این به اون ... میگفت اون زمان توی ایران پمپرز نبود و میگفتیم که از کشورهای عربی برامون بیارن، توی لنج های باری. هنوز توی شهرهای بزرگ هم باب نشده بود! حتی همین "مبارک" خودمون، چه برسه به my baby چیک چیک و ازین صوبتا ...</span></div><div><font face="Mihan-Iransans" size="2">... از خان و شیخ ها و رعیت ها گفت. از عشق ها و علاقه هایی که به ازدواج ختم نشد. اون هم بخاطر اختلافات طبقاتی و مذهبی و ... اختلافاتی که میگف هنوز هم هست! با این وجود که دیگه نه خانی هست و نه رعیتی. البته راست میگفت. چند سال پیش خودم هم دیده بودم. خان های سابق خنوز هم دبدبه و کبکبه ی خودشون رو داشتن! خونه های درندشت و زمین های بزرگ ... اسم خانی رو یدک میکشیدن و کمابیش ثروتی!&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">... از سر آستین های آغشته به آب بینی گفت و دهنمون رو آب انداخت.&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/10.gif"></div><div><font face="Mihan-Iransans" size="2">... از تابستون های گرم و پشت بوم خوابیدن هاشون&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">... و از حیوونایی که توی جوونی توی خونشون داشتن و الان که هیچی جنبنده ای توی خونشون نبود ...&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/50.gif"></div><div><font face="Mihan-Iransans" size="2">از ...</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">واقعا چِم شده؟! :| اومده بودم که شاد بنویسم! از ماه زینب که توی این سال ها فقط ما رو خندوند. اما نمی دونم چرا هر چی ذهنم رو مرور میکنم و حرفاش رو به خاطرم میارم میبینم که همچین شیرین هم نبود! تلخ و تلخ تر میشد و من بودم که نمی فهمیدم و میخندیدم. واقعا نفهمی بد دردیه! خیلی چیز ها گفت که میخواستم بنویسم، اما دیگه دست و دلم به نوشتن نمیره ... شاید نباید ثبت بشن؛شاید باید فراموش بشن&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/29.gif">&nbsp;<font face="Mihan-Iransans" size="2">... شاید&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/17.gif">&nbsp;<span style="font-family: Mihan-Iransans; font-size: small;">...&nbsp;</span></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">یادم رفت که از زیبایی هاش بگم. از این که بخاطر خوشگلیش بهش میگفتن ماه زینب! از نرگسش&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"><span style="font-family: Mihan-Iransans; font-size: small;">&nbsp;که بخاطر سهل انگاری یه جوون سرخوش یکی از چشم هاش رو از دست داد و زیبایی دخترش که از دست رفت. از ... آخخخ ... دیگه نمی تونم!&nbsp;</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="2">نفست گرم ماه زینب ...</font></div><div style="text-align: left;"><font face="Mihan-Iransans" size="2">... شبتون بخیر</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/28.gif"></div>
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:23 ب.ظ </span>
+                                            </div>
+
+                                            
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../120.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('120','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                        <li id="119" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../119.html">کنکورِ زمانِ ما</a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> جمعه 25 تیر 1395 12:11 ب.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../119.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(119)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    
+
+
+
+
+
+<div><font face="Mihan-Iransans"><font size="3">۱.</font>&nbsp;<b>پیش از واقعه (!)</b>:</font></div><font face="Mihan-Iransans">یادش بخیر زمان ما ... طرف کنکور داشت نصف محله رو آذین بندی می کردن و روز کنکورم طرف رو از زیر قرآن رد می کردن که بره آینده خودش و مملکت رو بسازه و بیاد ... الان مورد داریم طرف نمی دونه کدوم گروه (های) آزمایشی شرکت کرده و کد داوطلبی و فلان و بهمانش چی هست، چه برسه به اینکه حوزه آزمونش کدوم قبرستونی تشریف داره! خوشبحالشون بخدا :( همینان که زندگی می کنن</font><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">ما از کل دوران کنکور یه دونه جناب <b>توکلی</b>&nbsp;رو یادمون میاد که اگه بخوایم این قانون «یکسان سازی امکانات برای همه دانش آموزان کل کشور» در نظر بگیریم هنوز هم هستن و دو روز مونده به کنکور هی میان تیلیویزیون (!) و میگن: «داوطلبان عزیز پاک کن و مداد نرم فراموششون نشه»! یجوری میگفت مداد نرم انگار مداد سخت هم داریم! لابد فکر کردن مثل اجداد غارنشینمون میخوایم با قلمای آهنی و مته و دریل تویپاسخ نامه هنرنمایی بکنیم. جالب ترش این بود که اصلن حرفی از «تراش» بنده خدا نمی زدن که جا داره بنده از همین جا از جامعه «مدادتراشان» عذر بخوام و بهشون قول بدم که انشاء الله به یاری خدا استاد مشایخی رو در اسرع وقت جهت دلجویی خدمتشون بفرستیم (نیست بنده خدا یه سفر دور دنیا در ۸۰ روز نصیبشون شده و هی از اینور باید بره اونور -آرژانتین- و از اونجا بره یه جا -ینگه دنیا- و ....)</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans"><font size="3">۲.</font> حالا از خاطرات پیشا کنکوری اگه بخوایم بگذریم که الحق و الانصاف نمیشه گذشت میرسیم به خاطرات <b>حین کنکوری</b>:</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">ما مثل همه رفتیم سر جلسه که بشینیم، دیدم که ای بابا! صندلی خاردار هم به شکنجه هاشون اضافه شده. اومدیم به مراقب گفتیم: «میگم منو دور بریام که هیچی نخوندیم، وضع صندلیاتونم که اینه اگه اجازه بدین دور همی روی زمین بشینیم و یه و امرهم شورا بینهم بکنیم» که یه چش غره ای رفت که منصرف شدیم و گفتیم: «شوخی کردم گُلَم» و به هر نحوی بود نشستیم روی صندلی مون. حالا که برای کنکوریا مبل میارن که مبادا اونجاشون خسته بشه یه وقت خراب کنن. مراقبا هم که همه ماشالله بزنم به تخته ...مال ما مثل دراکولا بودن بخدا، از دهن یکی خون سرازیر بود، یکی دهنش کف کرده بود، یکی چشاش زده بود بیرون، یکی ...</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">یکی دیگه از موارد این بود که مسئول آزمون هی می گفت «داوطلبان عزیز» «داوطلبان عزیز»! اینقدر که اوشون ما رو «عزیز» خطاب کرد ننه بابامون توی خونه عزیز صدامون نکرده بودن. ینی تمام کمبود محبت های بیست سال اول زندگی مون جبران شد. حالا بماند بنده خدا فکر می کرد ما از پشت کوه بلند شدیم اومدیم و هی میگفت برگه رو چطوری پر کنیم و ببینیم واقعا پاسخنامه مال خودمونه یا نه و این که لامصبا چشاتون اینور اونور نچرخه سوالاتون متفاوته و ...</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">ده دقیقه مونده به شروع فرآیند آزمون هم برای محکم کاری -همین جناب «عزیز»- برگشت گفت: «داوطلبان عزیزی که دستشویی دارن بگن تا ما بریم براشون! ینی ترتیب کاراشون رو بدیم! نه ینی ببریمشون کاراشون رو بکنن» و یهو همه برگشتن گفتن» «من» «مو» «مه» «بع» «بععععع» «صدای شیهه اسب» «صدای قارقار کلاغ» «صدای سوسک» و این وسط هم بعضیا بودن که مثه ماهی دهنشون رو باز و بسته میکردن که: «ما هم دستشویی دوست و ازین صوبتا»! (هنوزم نمی دونم ماهیا برای دستشویی کجا میرن؟! به سوالای ما سر جلسه کنکور جواب نمیدن همین میشه دیگه) بماند که بنده خدا فهمید چه اشتباهی کرده و اومد درستش کنه گفت: «داوطلبان عزیز بتمرگید سر جاهاتون و اونایی دَششوری داره دستاشونُ ببرن بالا» و ما هم یک صدا و همراه تمامی عزیزان حاضر در سالن دستامون رو بردیم بالا! یعنی شما سرت یه دور ۱۴۶ درجه ای میزد متوجه میشدی که ۱۰۸ ٪ افراد حاضر در سالن دستاشون رو بردن بالا که ما دستشویی داریم. بنده خدا پرسنل حوزه آزمونم استرس کنکور وجودشون رو فرا گرفته بود.</font></div><div><font face="Mihan-Iransans">&nbsp;حالا دیگه اجازه بدین از دستشویی ها نگم که برق نداشتن و ما مجبور بودیم فرآیند دفع رو -گلاب به روتون البته- از حفظ انجام بدیم و میدیدم که آب هم نیست و اینکه ویزززز و ووووز و چلپ (!) عه پامو کجا گذاشتیم ؟!... :|</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">یکی دیگه از آپشنای زمان ما موقع کنکور این بود که بهمون یه آب معدنی جوش (دقت کنید گرم نه ها جووشششش) میدادن به انضمام یک عدد بیسکویت ساقه طلایی (که اعلام کردن علت خشکی دریاچه ارومیه ایشون هستن؛ نگو یه نفر رفته بیسکوییتش رو خیس کنه زده دریاچه رو خشک کرده) و یه آبمیوه که معلوم نبود دقیقا از کجای میوه گرفته بودن که مزه زهرمار میداد. خیل بچه اعیان بودی یه شکولاتی با خودت میبردی همزمان با هورت کشیدن آبمیوه ت مینداختی بالا (به عنوان مزه) که اثر اون آبمیوه زهر ماری رو بشوره ببره ..... حالا زمونه عوض شده! آب معدنی نیمه یخ شده میدن بچه هاشون به اضافه شکولات تلخ ۷۷٪‌ فرمند و رد بول -استغفرالله- یا هااایپ یا بوم بوم &nbsp;که متاسفانه فقط اسمش رو شنیدیم و هنوز به شخصه با چشم رویت نکردیم!&nbsp;</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans"><font size="3">۳.</font> زیادی سرتو رو درد آوردم. دیگه با اجازتون زود سر و ته قضیه رو هم بیارم و برم دنبال کار و زندگیم. خاطرات <b>پسا کنکوری</b>:</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans">زمان ما به ازای هر ۱۳ داوطلب یه صندلی برای ورود به دانشگاه موجود بود. یعنی بلاتشبیه شبیه این بازیه شده بود که آهنگ میزارن و یهو قطع میکنن و همه هول هولکی میرن سمت صندلی که بشین و بعد میبینی قشنگ ۵ نفر روی هر صندلی نشستن (این فرآیند جاسازی خواهر برادری رو ما موقع سوار خودرو شدن هم میتونیم ملاحظه بکنیم. ینی بعضا دیده شده یه پراید اندازه ظرفیت خاور مسافر زده. از نیسان چیزی نگم بهتره! )</font></div><div><font face="Mihan-Iransans">حالا عوض شده اوضاع. به ازای هر داوطلب ۴ تا صندلی موجود هستش ینی شما رفتی دانشگاه روی یکی میشینی <b>(۱)</b> ، روی صندلی دیگه جزوه و&nbsp;چایی&nbsp;تو&nbsp;میزاری که سرد بشه! <b>(۲)</b> ، صندلی دیگه رو هم به کیفت اختصاص میدی <b>(۳)</b> (البته الان بعضیا به یه دفتر ۴۰ برگ برای رفتن به دانشگاه اکتفا میکنن که باید بهشون افتخار کنیم! ما فامیل داشتیم چهارسال رفته و برگشته از دانشگاه، نتونسته این دفترو پر بکنه! بقیشو گذاشته برای ارشد و دکتری) ، صندلی چهارم رو هم می تونید به خواهرزاده یا برادرزاده شیطونتون اختصاص بدید و با خودتون ببریدش دانشگاه تا با یه تیر سه نشون بزنید: <b>یک</b>. اینکه ننه باباش نفس راحتی بکشن! <b>دو</b>. اینکه بچه با محیط آموزش عالی آشنا بشه! <b>سه</b>. اینکه به بقیه همکلاسی ها یه حالی بدید! بالاخره کلاس همیشه نباید توش استاد بگه و درس بده، یه روزم بگیم و بخندیم ...</font></div><div><font face="Mihan-Iransans"><br></font></div><div><font face="Mihan-Iransans"><b>پ. ن.۱: </b>عمر جناب توکلی مستدام و خدا حافظ و نگهدارشون باشه. اگه ایشون نبودن ما بچه دهاتی ها به چه امیدی میرفتیم سر جلسه واقعا! ایشون بودن که هی امید میدادن نگران بچه های شهر و کلاس کنکوراشون نباشید بیاید برید بشینید بقیه ش با من ...</font></div><div><font face="Mihan-Iransans"><b>پ. ن.۲:</b> حوصله PROOFREAD کردن ندارم! اگه اشکال و اشتباه تایپی بود به بزرگواری خودتون ببخشید.</font></div><div><font face="Mihan-Iransans"><b>%</b> این پست صرفا جهت حاضری زدن بوده و هیچ ارزش قانونی و غیرقانونی دیگری ندارد! (به بیان همه فهم تر: فقط اومدم بگم زنده م :) )</font></div><div><font face="Mihan-Iransans"><b><br></b></font></div><div><font face="Mihan-Iransans"><b>یخورده بعد تر نوشت:</b> الان کنکوری ها رو جدا جدا و به تفکیک درس دعا میکنن! شما که غریبه نیستید ماها خودمونم نمی دونستیم کنکور چی چیه برسه به ننه باباهامون ...&nbsp;</font></div><div><font face="Mihan-Iransans"><b>بعد از یخورده بعدتر نوشت: </b>قابل توجه خوانندگان محترم! نویسنده جفنگیات فوق کنکوری سال های ۹۲ و ۹۳ بوده و با اینکه به صورت بالفعل یک دهه ۷‍‍۰ی می باشد، به صورت بالقوه در دهه ۶۰ می زیید !</font></div><div><font face="Mihan-Iransans"><br></font></div><div style="text-align: center;"><font face="Mihan-Iransans"><b>مخلص کلام:</b> خوش بگذرونید! نگران نتیجه کنکورم نباشید! همه قراره برن سر جای خودشون</font></div>
+
+
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:23 ب.ظ </span>
+                                            </div>
+
+                                                                                            <div class="post-tag">
+                                                    <!--<span class="">برچسب ها:</span>-->
+                                                    <ul>
+                                                        <i class="icon icon-tags"></i>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/کنکور.html">
+                                                                    کنکور                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/طنز.html">
+                                                                    طنز                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="tags">
+                                                                <a class="" href="../../../tag/دانشگاه.html">
+                                                                    دانشگاه                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </div>
+                                            
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../119.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('119','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                        <li id="117" class="post container clearfix">
+                                        <div class="post-content">
+
+                                            <div class="title clearfix">
+                                                <h2 class="post-header">
+                                                    <a href="../../../117.html">یک سوال بی جواب </a>
+                                                </h2>
+                                            </div>
+
+
+
+
+
+                                            <div>
+
+
+                                                <div class="name-and-date">
+                                                    <span class="author-name"><i class="icon icon-user"></i><a href="../../../author/1262083.html">معلوم  الحال </a></span>
+                                                    <span class="date"><i class="icon icon-calendar"></i> پنجشنبه 10 تیر 1395 10:09 ق.ظ</span>
+                                                    <a class="comment-number" target="_self" href="../../../117.html#commentlist"><i class="icon icon-comments"></i> نظرات (<script>setCommentCnt(117)</script>) </a>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="content">
+                                                <div class="content-body">
+                                                    
+
+
+
+
+
+
+
+
+
+<font size="1"><font face="Mihan-Iransans">خب بعد از سن بلوغ یجورایی این سوال توی ذهن من همیشه بوده اما با رفتن به دانشگاه این سوال یجورایی برام تبدیل به یه دغدغه بزرگ ذهنی شده.&nbsp;</font><span style="font-family: Mihan-Iransans;">یکی از بحث هایی که هست اینه که دخترا زودتر از پسرا به بلوغ عقلی میرسن که هیچ کس منکرش نیست. پس اگه بخوایم مقایسه کنیم یه دختر ۲۰&nbsp;ساله از یه پسر ۲۰ که تازه به سن بلوغ رسیده مسلما درکش باید بیشتر باشه!&nbsp;</span></font><div><font face="Mihan-Iransans" size="1"><br></font><div><span style="font-family: Mihan-Iransans;"><font size="1">حالا سوال اینه: «<b>چرا یه دختر باید به درخواست دوستی یا ازدواج ... -هر چیزی- یه پسر جواب مثبت بده</b>»؟ (البته قضیه ازدواج توی سن مناسب خودش و به شرط اینکه طرفین شرایط مناسب برای تامین زندگی شون رو داشته باشن شامل این سوال نمیشه؛ بگم که گفته باشم) وقتی که می دونه اون هدف دیگه ای داره. وقتی که از شرایطش خبر داره و می دونه که آه نداره که با ناله سودا کنه. وقتی می دونه که ...</font></span></div><div><span style="font-family: Mihan-Iransans;"><font size="1">چند حالت وجود داره:&nbsp;</font></span></div><div><span style="font-family: Mihan-Iransans;"><font size="1"><br></font></span></div><div><span style="font-family: Mihan-Iransans;"><font size="1">* اولین قرضیه اینه که اون دختر بیش از اندازه <b>گرایش به جنس مخالف</b> داره و ... (اصلا کرم از خود درخته)</font></span></div><div><span style="font-family: Mihan-Iransans;"><font size="1"><br></font></span></div><div><span style="font-family: Mihan-Iransans;"><font size="1">* یا اینکه اون دخت اونقدر <b>احساساتیه</b>&nbsp;و عقده ازدواج داره که خیلی زود خام میشه که این فرضیه با توجه به بلوغ عقلی دختر پیش از پسر این یجورایی ممکنه و شاید برای دفعه اول اون رو به سمت پرتگاه هُل بده اما برای چی همچین شخصی برای دفعات دوم و سوم و ... باید بخواید خودش وارد همچین ورطه ای بکنه؟</font></span></div><div><font size="1"><br></font></div><div><font face="Mihan-Iransans" size="1">* یه فرضیه هم هست که قصد <b>سوء استفاده</b> و تیغ زدن و هر چیزی داره و میخواد به خواسته هاش برسه و بعد هم اون شخص رو به حال خودش رها کنه.</font></div><div><font face="Mihan-Iransans" size="1"><br></font></div><div><font face="Mihan-Iransans" size="1">* ...&nbsp;</font></div><div><font face="Mihan-Iransans" size="1"><br></font></div><div><font face="Mihan-Iransans" size="1">خیلی از این جوابا به ذهنم اومده اما هیچ وقت نتونستم هیچ کدومشون رو تایید یا رد بکنم. یکی به من بگه چرا؟ یعنی دخترای سرزمین من اینقدر احساساتی و ساده هستن که هر حرفی رو باور میکنن و یا اینکه ... آه! نمی دونم چطوری بنویسم! خستمه از فکر کردن به همچین موضوعات کم اهمیتی ... &nbsp;اصلا واقعا به من چه! برم تقوا پیشه کنم، باشد که رستگار شوم :|</font></div><div><font face="Mihan-Iransans" size="1"><br></font></div><div><font face="Mihan-Iransans" size="1">یک فیلم کاملا نامرتبط: <b>من ترانه ۱۵ سال دارم:</b>&nbsp;</font><a href="http://www.doostiha.ir/1393/11/29/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%85%D9%86-%D8%AA%D8%B1%D8%A7%D9%86%D9%87-15-%D8%B3%D8%A7%D9%84-%D8%AF%D8%A7%D8%B1%D9%85.html" target="_blank" title="دانلود فیلم سینمایی من ترانه ۱۵ سال دارم"><font face="Mihan-Koodak" size="2" color="#3366ff"><b>لینک دانلود</b></font></a></div><div><font face="Mihan-Iransans" size="1">«نه ... اون نمی تونه بابا، خیلی بچه ست ... منم دیگه نمی تونم! ... هیچی نشده ها، ولی دیگه نمی تونم؛ خیلی دارم اذیت میشم بابا ... امتحانام خراب شد ... از همه چیم عقب افتادم بابا! از همه چیم ... من اشتباه کردم بابا»</font></div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="read-more">
+                                                                                            </div>
+                                        </div>
+
+
+                                        <div class="bottom-post-side clearfix">
+                                            <div class="clearfix btmpost">
+
+                                                <span class="last-edit"><i class="icon icon-edit"></i>  آخرین ویرایش: پنجشنبه 13 آذر 1399 04:24 ب.ظ </span>
+                                            </div>
+
+                                            
+                                            
+
+                                                                                            <ul class="post-category">
+                                                    <i class="icon icon-folder-open"></i>
+                                                                                                            <li class="post-category-floor"><a href="../../5.html">معلوم نوشت</a></li>
+                                                                                                    </ul>
+                                            
+
+                                            <a class="send-comment" target="_self" href="../../../117.html#commentform"><span> <i class="icon icon-comment"></i> ارسال دیدگاه </span> </a>
+
+
+                                            <div class="post-like clearfix">
+                                                <script>mihanblogPostLike('117','like')</script>                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+
+                                                                                                </ul>
+                        </div>
+
+
+                        
+                    
+
+                                            <div class="page-count container">
+                            <span class="page-total"> تعداد  صفحات : 12</span>
+                                                            <a href="8.html"> <i>...</i></a>
+                                                            <a href="9.html"> <span>9</span></a>
+                                                            <a href="10.html"> <span>10</span></a>
+                                                            <a href="11.html"> <span>11</span></a>
+                                                            <a href="12.html"> <b>12</b></a>
+                                                    </div>
+                    
+
+                </div>
+
+
+                <div class="left-sidebar container">
+                    <div class="inside-sidebar">
+
+                        <form id="frm-16076310995fd280fb2325e" method="get" action="http://daneshjoyezaban.mihanblog.com/post/search/fid/16076310995fd280fb2325e"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+                            <div class="search brpdbottom">
+                                <input class="search-input" type="text" name="search_text" placeholder="جستجو">
+                                <button class="search-button" type="submit" value="جستجو">
+                                    <i class="icon icon-search"></i>
+                                </button>
+                            </div>
+                        <input type="hidden" name="frm-id" value="16076310995fd280fb2325e" id="frm-id" /></form>
+
+                                                    <div class="inside-border">
+                                <div class="title-sidebar">ابر برچسب ها</div>
+                                <ul class="s-tags">
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/طنز.html">
+                                                طنز                                                <span>(25)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/دانشگاه.html">
+                                                دانشگاه                                                <span>(14)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/عکس+نوشت.html">
+                                                عکس نوشت                                                <span>(5)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/بیانیه+های+یهویی.html">
+                                                بیانیه های یهویی                                                <span>(10)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/همینجوری.html">
+                                                همینجوری                                                <span>(13)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/روزنوشت.html">
+                                                روزنوشت                                                <span>(18)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/دل+نوشته.html">
+                                                دل نوشته                                                <span>(15)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/خاطرات.html">
+                                                خاطرات                                                <span>(17)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/الفبای+معلومی.html">
+                                                الفبای معلومی                                                <span>(5)</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="blog-tag-cloud">
+                                            <a class="super-tags" href="../../../tag/شعر+و+ادب.html">
+                                                شعر و ادب                                                <span>(12)</span>
+                                            </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        
+
+                                                    <div class="title-sidebar">آرشیو موضوعی</div>
+                            <div class="inside-border">
+                                <ul>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-2" href="../../2.html">
+                                                خاطرات دانشجویی                                                <span class="sidebar-dez">
+
+                                        100                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-5" href="../../5.html">
+                                                معلوم نوشت                                                <span class="sidebar-dez">
+
+                                        117                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-4" href="../../4.html">
+                                                کاغذ پاره ها (دل نوشته)                                                <span class="sidebar-dez">
+
+                                        44                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-7" href="../../7.html">
+                                                مینیمال های معلومی                                                <span class="sidebar-dez">
+
+                                        8                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-6" href="../../6.html">
+                                                تلگرام‌نوشت                                                <span class="sidebar-dez">
+
+                                        4                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-1" href="../../1.html">
+                                                برشی از آثار ادبی                                                <span class="sidebar-dez">
+
+                                        24                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar-float">
+                                            <a class="clearfix category-3" href="../../3.html">
+                                                مطالب آموزشی                                                <span class="sidebar-dez">
+
+                                        1                                        مطلب
+                                            </span>
+                                            </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        
+
+                                                    <div class="title-sidebar">آخرین پست ها</div>
+                            <div class="inside-border">
+                                <ul>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../375.html">
+                                                <span class="last-posts-asp">هجرت</span>
+                                                <span class="last-posts-dez">یکشنبه 30 دی 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../374.html">
+                                                <span class="last-posts-asp">کلک رشتی</span>
+                                                <span class="last-posts-dez">شنبه 29 دی 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../373.html">
+                                                <span class="last-posts-asp">حلالیت</span>
+                                                <span class="last-posts-dez">سه شنبه 18 دی 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../372.html">
+                                                <span class="last-posts-asp">تو فقط باش</span>
+                                                <span class="last-posts-dez">یکشنبه 9 دی 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../371.html">
+                                                <span class="last-posts-asp">یلدا</span>
+                                                <span class="last-posts-dez">جمعه 30 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../370.html">
+                                                <span class="last-posts-asp">سه روزی که گذشت</span>
+                                                <span class="last-posts-dez">دوشنبه 19 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../369.html">
+                                                <span class="last-posts-asp">عزل</span>
+                                                <span class="last-posts-dez">پنجشنبه 15 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../367.html">
+                                                <span class="last-posts-asp">پاییز</span>
+                                                <span class="last-posts-dez">پنجشنبه 8 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../366.html">
+                                                <span class="last-posts-asp">never .. ever</span>
+                                                <span class="last-posts-dez">دوشنبه 5 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../365.html">
+                                                <span class="last-posts-asp">Profile checker</span>
+                                                <span class="last-posts-dez">یکشنبه 4 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../364.html">
+                                                <span class="last-posts-asp">علی کوچولوی قصه‌ها</span>
+                                                <span class="last-posts-dez">جمعه 2 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../363.html">
+                                                <span class="last-posts-asp">بی تو هر لحظه مرا بیم فرو ریختن است / همچو شهری که به روی گسل زلزله هاست</span>
+                                                <span class="last-posts-dez">پنجشنبه 1 آذر 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../362.html">
+                                                <span class="last-posts-asp">TELLSI 16</span>
+                                                <span class="last-posts-dez">چهارشنبه 30 آبان 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../361.html">
+                                                <span class="last-posts-asp">دنیای کوچیک ما</span>
+                                                <span class="last-posts-dez">چهارشنبه 2 آبان 1397</span>
+                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../360.html">
+                                                <span class="last-posts-asp">ارشد</span>
+                                                <span class="last-posts-dez">چهارشنبه 25 مهر 1397</span>
+                                            </a>
+                                        </li>
+                                                                        <li class="link-in-sidebar">
+                                        <a class="clearfix" href="../../../list.html">لیست پست ها</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                                                    <div class="title-sidebar">نویسندگان</div>
+                            <div class="inside-border block-author">
+                                <ul>
+                                                                            <li>
+                                            <div class="block-author-photo">
+                                                <i class="icon icon-user"></i>
+                                                <a href="../../../author/1262083.html"><img src="../../../../../static.mihanblog.com/public/user_data/user_photo/421/1262083.jpg" style="width:16px;" /></a>                                            </div>
+                                            <a href="../../../author/1262083.html">
+                                                <div>معلوم  الحال </div><div>مطالب ارسالی: (321)</div>
+                                            </a>
+                                            <div style="clear: both">درباره نویسنده :یک دانشجوی زبان و ادبیات انگلیسی کاملا معلوم الحال <br />
+<br />
+</div>
+                                        </li>
+                                                                            <li>
+                                            <div class="block-author-photo">
+                                                <i class="icon icon-user"></i>
+                                                <a href="../../../author/1703281.html"><img src="../../../../../static.mihanblog.com/public/user_data/user_photo/568/1703281.jpg" style="width:16px;" /></a>                                            </div>
+                                            <a href="../../../author/1703281.html">
+                                                <div>فیلیپور میرزا کوچک زاده</div><div>مطالب ارسالی: (4)</div>
+                                            </a>
+                                            <div style="clear: both">درباره نویسنده :</div>
+                                        </li>
+                                                                            <li>
+                                            <div class="block-author-photo">
+                                                <i class="icon icon-user"></i>
+                                                <a href="../../../author/1798810.html"></a>                                            </div>
+                                            <a href="../../../author/1798810.html">
+                                                <div>نم نم</div><div>مطالب ارسالی: (0)</div>
+                                            </a>
+                                            <div style="clear: both">درباره نویسنده :</div>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        
+
+                                                    <div class="title-sidebar">لینکدونی</div>
+                            <div class="inside-border clearfix">
+                                <ul>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://ims2001.blogfa.com/" title="" target="_blank">
+                                                دکتر                                            </a>
+                                        </li>
+                                                                        <li class="link-in-sidebar">
+                                        <a class="clearfix" href="../../../../linkdaily/index.html">همه لینکها</a>
+                                    </li>
+                                    <a class="button-cc" href="javascript:linkdailyForm()">ارسال لینکتون</a>
+                                </ul>
+                            </div>
+                        
+
+                                                    <div class="title-sidebar">لینکستان</div>
+                            <div class="inside-border">
+                                <ul>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../../daneshjoyepezeshki.mihanblog.com/index.html" title=""  target="_blank">
+                                                یک دانشجوی پزشکی (مهربان)                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://harfhayedivane.blog.ir/" title="پیر و مردا ما :)"  target="_blank">
+                                                روزهای یک پزشک تمام وقت (حرف های دیوانه)                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://gbm2021.blogsky.com/" title="مردیت گری"  target="_blank">
+                                                پزشکی در این حوالی                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://bevosat-asman.blog.ir/" title="یک عدد دانشجوی دامپزشکی"  target="_blank">
+                                                به وسعت آسمان                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://tamamanmakhsus.blog.ir" title="سمفونی یک زندگی"  target="_blank">
+                                                تماما مخصوص (پریا)                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://vaalsehastii.blog.ir/" title="شبنم"  target="_blank">
+                                                رقص زندگی                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://parsehdarkhalseh.blogfa.com/" title="پرسه در خلسه - خانم وجدان"  target="_blank">
+                                                قلبم را با قلبت میزان می کنم                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://divane.blogfa.com/" title="یک دانشجوی پزشکی دیوانه"  target="_blank">
+                                                حرفهایی از جنس دیوانگی                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://www.med84.blogfa.com/" title="آبانا/سودا"  target="_blank">
+                                                فردا مال ماست                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://nebula.blog.ir/" title="یک دانشجوی زبانشناسی"  target="_blank">
+                                                شباهنگ                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://persianacademy.blog.ir/" title="وب شباهنگ فوق الذکر"  target="_blank">
+                                                از فرهنگستان                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://thegipsy.ir/" title="یک دانشجوی مترجمی"  target="_blank">
+                                                مونولوگ های دختر کولی                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../../silentgirl321.mihanblog.com/index.html" title=""  target="_blank">
+                                                خلوتگاه یک دختر ساکت                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://stayhungrystayfoolish.blog.ir" title=""  target="_blank">
+                                                روزنگار تیردخت                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://serendipity.blog.ir/" title=""  target="_blank">
+                                                سرندیپیتی                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://my-life7.mihanblog.com" title=""  target="_blank">
+                                                زندگی من                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://life-ahead.blog.ir" title=""  target="_blank">
+                                                زندگی پیش رو                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://rednotebook.blog.ir" title=""  target="_blank">
+                                                دفترچه یادداشت قرمز                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://skygirl94plus1.mihanblog.com/" title=""  target="_blank">
+                                                مورنینگ استار                                            </a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="http://konkoorie94.persianblog.ir/" title=""  target="_blank">
+                                                روزمرگی های من (پرتقال)                                            </a>
+                                        </li>
+                                                                        <li class="link-in-sidebar">
+                                        <a class="clearfix" href="../../../../link/index.html"> همه لینک ها </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+
+                                                    <div class="block-extrapage inside-border">
+                                <div class="title-sidebar">صفحات جانبی</div>
+                                <ul>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/englishcentre2.html">زبانکده معلومی (زبان عمومی) - 2</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/alphabetofhappiness.html">الفبای زندگی</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/englishcentre.html">زبانکده معلومی (زبان عمومی)</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/highereducationinenglish.html">ویژه دانشجویان رشته زبان (تخصصی)</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/masterofenglishliterature.html">ادبیات انگلیسی</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/masteroftefl.html">آموزش زبان انگلیسی</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/masteroftranslationstudies.html">مترجمی زبان انگلیسی</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/masteroflinguistics.html">زبانشناسی همگانی</a>
+                                        </li>
+                                                                            <li class="link-in-sidebar">
+                                            <a href="../../../../extrapage/cinematograph.html">فیلمکده</a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        
+
+                        
+		<form id="frm-16076310995fd280fb23a05" method="post" action="http://daneshjoyezaban.mihanblog.com/poll/new/fid/16076310995fd280fb23a05/atrty/1607631099/avrvy/0/key/1cfcfa3d0975c93f9d6f63c134f524db/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="374836" id="data[pollid]" />		
+                            <div class="title-sidebar">نظرسنجی</div>
+                            <div class="inside-border clearfix">
+                                <div class="nolink-sidbar">
+                                    <div class="hr-dashed-rule">تا چه حدی از محتوای این وبلاگ رضایت دارید؟</div>
+                                    <ul>
+                                                                                    <li>
+                                                <a href="12.html#"><label><input type="radio" name="data[answer]" value="v1">0 الی 20 درصد</label></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="12.html#"><label><input type="radio" name="data[answer]" value="v2">21 الی 40 درصد</label></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="12.html#"><label><input type="radio" name="data[answer]" value="v3">41 الی 60 درصد</label></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="12.html#"><label><input type="radio" name="data[answer]" value="v4">61 الی 80 درصد</label></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="12.html#"><label><input type="radio" name="data[answer]" value="v5">81 الی 100 درصد</label></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                                <input type="submit" class="button-cc"  value="درج نظر"/>
+                            </div>
+                        
+		<input type="hidden" name="frm-id" value="16076310995fd280fb23a05" id="frm-id" /></form>
+
+                        <div class="block-user-script">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer container">
+                <div class="bottombar clearfix">
+
+                    <div class="blog-statistics inside-bottombar">
+                                                    <div class="title-bottombar">آمار وبلاگ</div>
+                            <ul>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('total_view');</script></span><span class="stat-subs">کل بازدید : </span></li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"> <script>getStatVar('today_view');</script></span><span class="stat-subs">بازدید امروز : </span></li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('yesterday_view');</script></span><span class="stat-subs"> بازدید دیروز : </span></li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('this_month_view');</script></span><span class="stat-subs"> بازدید این ماه : </span> </li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('last_month_view');</script></span><span class="stat-subs">بازدید ماه قبل : </span> </li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"> <script>getStatVar('total_author');</script></span><span class="stat-subs">تعداد نویسندگان : </span></li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('total_post');</script></span><span class="stat-subs">تعداد کل مطالب : </span> </li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('last_view_date');</script></span><span class="stat-subs">آخرین بازدید : </span></li>
+                                <li class="hr-dashed-rule clearfix"><span class="stat-nums"><script>getStatVar('modify_date');</script></span><span class="stat-subs">آخرین بروز رسانی : </span> </li>
+                            </ul>
+                                            </div>
+
+                    <div class="inside-bottombar insbtm-archive">
+                                                    <div class="title-bottombar">آرشیو</div>
+                            <ul>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1399/9.html">
+                                             آذر 1399 <span class="bottombar-dez"> 1 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/10.html">
+                                             دی 1397 <span class="bottombar-dez"> 4 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/9.html">
+                                             آذر 1397 <span class="bottombar-dez"> 8 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/8.html">
+                                             آبان 1397 <span class="bottombar-dez"> 2 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/7.html">
+                                             مهر 1397 <span class="bottombar-dez"> 2 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/6.html">
+                                             شهریور 1397 <span class="bottombar-dez"> 2 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/5.html">
+                                             مرداد 1397 <span class="bottombar-dez"> 4 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/4.html">
+                                             تیر 1397 <span class="bottombar-dez"> 8 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/3.html">
+                                             خرداد 1397 <span class="bottombar-dez"> 7 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/2.html">
+                                             اردیبهشت 1397 <span class="bottombar-dez"> 13 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1397/1.html">
+                                             فروردین 1397 <span class="bottombar-dez"> 5 پست </span>
+                                        </a>
+                                    </li>
+                                                                    <li class="link-in-bottombar">
+                                        <a class="clearfix" href="../../../archive/1396/12.html">
+                                             اسفند 1396 <span class="bottombar-dez"> 2 پست </span>
+                                        </a>
+                                    </li>
+                                                                <li class="link-in-bottombar">
+                                    <a class="clearfix" href="../../../archive.html"><span>همه آرشیوها</span></a>
+                                </li>
+                            </ul>
+                                            </div>
+
+                    <div class="inside-bottombar">
+                        <div class="about-blog">
+                            <div class="blog-creator">ایجاد شده توسط:
+                                <a href="../../../author/1262083.html">معلوم  الحال </a>
+                            </div>
+                            <div class="blog-desc">خوش اومدین :)<br />
+<br />
+جهت اطلاعات بیشتر و تماس با من:<br />
+daneshjoyezaban@gmail.com </div>
+                        </div>
+                        <div class="social-networks-footer">
+                            <ul class="icons">
+                                <li class="social-networks-icons">
+                                    <a href="https://www.facebook.com/"><i class="icon icon-facebook"></i></a>
+                                </li>
+                                <li class="social-networks-icons">
+                                    <a href="https://www.pinterest.com/"><i class="icon icon-pinterest"></i></a>
+                                </li>
+                                <li class="social-networks-icons">
+                                    <a href="https://twitter.com/daneshjoyezaban"><i class="icon icon-twitter"></i></a>
+                                </li>
+                                <li class="social-networks-icons">
+                                    <a href="https://www.instagram.com/daneshjoyezaban"><i class="icon icon-instagram"></i></a>
+                                </li>
+                                <li class="social-networks-icons">
+                                    <a href="https://plus.google.com/u/0/110663882903980735046"><i class="icon icon-gplus"></i></a>
+                                </li>
+                                <li class="social-networks-icons">
+                                    <a href="https://t.me/daneshjoyezaban"><i class="icon icon-telegram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <div class="footer-text">
+                        کلیه حقوق برای دانشجوی زبان محفوظ است
+                        <!--<span class="heart">♥</span>-->
+                        <i class="icon icon-heart"></i>
+                        
+                        <a href="../../../../../www.daneshjoyezaban.mihanblog.com/index.html">
+                            © با معرفت ها ذکر ماخذ می کنند!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    function openSiteMenu() {
+        document.getElementById("pageContainer").className += " menu-active";
+    }
+
+    function exitMenu() {
+        document.getElementById("pageContainer").classList.remove("menu-active");
+    }
+
+
+        window.onscroll = function() {
+
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("goTop").style.display = 'block';
+            }
+            else {
+                document.getElementById("goTop").style.display = 'none';
+            }
+
+        };
+
+    function moveToTop() {
+        $('html,body').animate({ scrollTop: 0 }, 'slow');
+    };
+
+</script>
+
+
+
+
+</body>
+</html>
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=3749853&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=3749853" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code --><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'daneshjoyezaban.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

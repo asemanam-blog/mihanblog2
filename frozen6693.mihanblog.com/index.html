@@ -1,0 +1,889 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://frozen6693.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1542669*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[3]='2289';commentCnt[904]='-';commentCnt[907]='-';commentCnt[908]='13';commentCnt[909]='7';commentCnt[910]='6';commentCnt[911]='11';commentCnt[915]='37';commentCnt[916]='3';commentCnt[917]='4';commentCnt[918]='15';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[3]='0';
+mihanblogDisLikeArrCnt[3]='0';
+mihanblogLikeArrCnt[904]='0';
+mihanblogDisLikeArrCnt[904]='0';
+mihanblogLikeArrCnt[907]='0';
+mihanblogDisLikeArrCnt[907]='0';
+mihanblogLikeArrCnt[908]='0';
+mihanblogDisLikeArrCnt[908]='0';
+mihanblogLikeArrCnt[909]='0';
+mihanblogDisLikeArrCnt[909]='0';
+mihanblogLikeArrCnt[910]='0';
+mihanblogDisLikeArrCnt[910]='0';
+mihanblogLikeArrCnt[911]='0';
+mihanblogDisLikeArrCnt[911]='0';
+mihanblogLikeArrCnt[915]='0';
+mihanblogDisLikeArrCnt[915]='0';
+mihanblogLikeArrCnt[916]='0';
+mihanblogDisLikeArrCnt[916]='0';
+mihanblogLikeArrCnt[917]='0';
+mihanblogDisLikeArrCnt[917]='0';
+mihanblogLikeArrCnt[918]='0';
+mihanblogDisLikeArrCnt[918]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://frozen6693.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://frozen6693.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','631');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','شنبه 22 خرداد 1395');
+	
+	setStatVar('today_view','49');
+	setStatVar('yesterday_view','415');
+	
+	setStatVar('this_month_view','7084');
+	setStatVar('last_month_view','10291');
+
+	setStatVar('total_view','1339347');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (05:31)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://frozen6693.mihanblog.com/statupdate/?data[refereruri]=http://shirinhi.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607826445&data[hash]=d2f46b5c7ceeccfec1fe40f34fcbe71d&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://frozen6693.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://frozen6693.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://frozen6693.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!-- start logo cod off http://sarasfaresh.mihanblog.com/--><p align="center"><p align="center"><a href="http://sarasfaresh.mihanblog.com/" target="_self"><img border="0" src="index.html"  alt="قالبساز سارا"></a></p><!--finish logo cod off http://sarasfaresh.mihanblog.com/ -->
+     <html>      <head>         <title>❄دنیای السا❄</title>         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">         <meta http-equiv="Content-Language" content="fa">         <meta name="description" content="" />         <meta name="keywords" content="فروزن-السا-نگاهبانان قصه-انا-هانتس-جک-جلسایی ها-فروزنی-جلسایی ها" />                  <link rel="alternate" type="application/rss+xml" title="❄دنیای السا❄"           href="http://frozen6693.mihanblog.com/post/rss/" />         <link rel="alternate" type="application/atom+xml" title="❄دنیای السا❄"           href="http://frozen6693.mihanblog.com/post/atom/" />         </head>     <style>         *{font-family:tahoma;direction:rtl;color:#000000}         #sidebar{float:right;width:200px;margin-right:5px}         #content{float:left;width:500px;padding:20px}            #body{display:block;font-size:12px}                 a,a:hover,a.visited{text-decoration:none}         .inbox{list-style:none; padding:0 4px}         ul{padding:3px;margin:5px;}         h2{color:red}         h2 a{color:#0099FF; font-size:25px; font-family:arial}         h3{color:#0099FF; margin-top:0; font-size:20px; font-family:arial; text-align:center}         #header h1 a{font-size:35px; font-family:arial; float:center; color:000000}                #header h1{margin:0; height:50px; overflow:hidden}                 .author_box img{float:right;border:none;}         .mihan_logo{text-align:center;height:131px;margin-top:10px;     background: url() no-repeat top center;}         .slogan{             color:#0099FF; text-align:center; padding:5px 0;             background: url(http://s2.img7.ir/vjXgr.png) repeat;             background: expression(#FFFFFF);         }                 #footer{font-size:9px;display:block;margin-top:50px; float:left}         #footer a,#footer a:hover,#footer a:visited{color:#000;}                 .hr{border-top:1px solid #CCCCCC;height:1px;margin:3px;}                    body{margin:0; background: #FFFFFF url(http://s2.img7.ir/Y9RJL.jpg) repeat fixed center}                 .sidebar_box{background-color:#; padding:10px 5px; line-height:5px; line-height:20px}         .sidebar_box_border{background-color:#0099FF; height:1px; display:block; overflow:hidden}         .sidebar_box_border_div{width:185px;}         .seprator{margin-bottom:10px}         .main_menu{text-align:center}         .blog_title{color:#0099FF}                 #header{height:478px; overflow:hidden; background:  url(http://s2.img7.ir/jntYK.png) center no-repeat}         #body{             background: url(http://s2.img7.ir/vjXgr.png) repeat;             background: expression(#FFFFFF);         }         #blog_body{width:750px; margin:30px auto; }         #footer_background{height:0}             .clearfix {             display:inline-block;         }         .clearfix:after {             clear:both;             content:'.';             display:block;             height:0;             visibility:hidden;         }         * html .clearfix {             height:1%;         }         .clearfix {             display:block;         }     </style>     <body>          <div id="blog_body">                 <div id="header">                 <h1><p style="text-align:center; margin:0"><a class="blog_title" href="http://frozen6693.mihanblog.com/frozen6693" style="margin:10px">❄دنیای السا❄</a></p></h1>             </div>                     <div class="slogan">❄من یه جلساییم یِه جلسایی خاص❄</div>                         <div class="clearfix">                             <div id="body" class="clearfix">                                         <div id="content">                                                      
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                                 <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/3">پســـــــ♡ـــت ثابـــــــــــ♡ـــت</a>                                     </h2>                                     <p class="date">                                         شنبه 6 دی 1393 08:21 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/47">                                             پـست ثـابت جلسایی هآ                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="index.html" alt="" align="bottom" hspace="0" border="0" vspace="0"></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div><div style="TEXT-ALIGN: center"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s3.picofile.com/file/8211580476/i_love_your_smile_by_fransiskarinda_d8noo6c0.jpg" alt=""></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ru4_690962/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">سلام دوستان خوش اومدید</font><img src="http://gazo.emoji7.jp/img/04ru4_690962/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/0561y_776494/%E5%86%AC_m.gif" alt="冬 のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;اینجا عکس و مطلب هام دربارهی جک و الساس&nbsp;</font><img src="http://gazo.emoji7.jp/img/0561y_776494/%E5%86%AC_m.gif" alt="冬 のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ctj_573882/%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%90%E3%83%BC_m.GIF" alt="クローバー のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3"><span style="TEXT-ALIGN: justify; LINE-HEIGHT: 23px; COLOR: rgb(255,255,255)">&nbsp;</span></font><font face="tahoma, arial, helvetica, sans-serif" size="3"><font style="TEXT-ALIGN: justify; LINE-HEIGHT: 18px; COLOR: rgb(0,0,0); TEXT-DECORATION: none">من سارا هستم مدیر این وب</font><span style="TEXT-ALIGN: justify; LINE-HEIGHT: 23px; COLOR: rgb(255,255,255); TEXT-DECORATION: none">&nbsp;</span></font><img src="http://gazo.emoji7.jp/img/04ctj_573882/%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%90%E3%83%BC_m.GIF" alt="クローバー のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/05100_762106/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.GIF" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">ما از هیچ جا کپی نمیکنیم</font><img src="http://gazo.emoji7.jp/img/05100_762106/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.GIF" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ru4_690962/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">مطمعن باشید</font><img src="http://gazo.emoji7.jp/img/04ru4_690962/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"></div><div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/05100_720010/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.gif" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">این وب ایده های جدیدی داره لطفا کپی نکنید</font><img src="http://gazo.emoji7.jp/img/05100_720010/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.gif" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/05100_762049/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.GIF" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3"><font style="TEXT-ALIGN: justify; LINE-HEIGHT: 18px; COLOR: rgb(0,0,0); TEXT-DECORATION: none">شرایط عضویت تو صفحه جانبی</font></font><img src="http://gazo.emoji7.jp/img/05100_762049/%E5%86%AC%E3%81%A0%E3%82%88%E3%80%82%E9%9B%AA%E3%81%AE%E7%B5%90%E6%99%B6_m.GIF" alt="冬だよ。雪の結晶 のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ru4_690947/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"><font face="tahoma, arial, helvetica, sans-serif" size="3">قوانین وب جلساییم</font><img src="http://gazo.emoji7.jp/img/04ru4_690947/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3">1-کپی ممنوع(حتی با ذکر منبع)</font></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><font style="TEXT-ALIGN: justify; LINE-HEIGHT: 18px; COLOR: rgb(0,0,0); TEXT-DECORATION: none"><span style="LINE-HEIGHT: 23px">2-&nbsp;</span></font><font style="TEXT-ALIGN: justify; LINE-HEIGHT: 18px; COLOR: rgb(0,0,0); TEXT-DECORATION: none">توهین به شخصیت ها ممنوع!</font></font></div>
+<div style="TEXT-ALIGN: center"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><a title="" href="http://www.lenzor.com/sara6639" target="_blank">
+<div><font size="3">ادرس پیچم تو لنزور(بکلیک):</font></div>
+<div><font size="3"><br></font></div>
+<div><font size="3"><br></font></div>
+<div><font size="3">http://www.lenzor.com/sara6639</font></div></a></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><a title="" href="http://www.aparat.com/miss.sarah987" target="_blank">
+</a><div><font size="3"><a title="" href="http://www.aparat.com/miss.sarah987" target="_blank">ادرس کانال اپاراتم(بکلیک):</a></font></div>
+<div><font size="3"><a title="" href="http://www.aparat.com/miss.sarah987" target="_blank"><br></a></font></div>
+<div><font size="3"><a title="" href="http://www.aparat.com/miss.sarah987" target="_blank"><br></a></font></div>
+<div><a href="http://www.aparat.com/ssssara" target="_blank" title=""><font size="3">http://www.aparat.com/ssssara</font></a></div></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ru4_690977/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"><font size="3">مطالب منتظرن که ببینیدشون و بهشون نظر بدین</font><img src="http://gazo.emoji7.jp/img/04ru4_690977/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><img src="http://gazo.emoji7.jp/img/04ru4_690977/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"><font size="3">زودباشین</font><img src="http://gazo.emoji7.jp/img/04ru4_690977/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m.gif" alt="かわいい のﾃﾞｺﾒ絵文字"></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+<div style="TEXT-ALIGN: center"><font size="3"><br></font></div>
+
+
+
+
+
+
+
+
+                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(3)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(3)</script> نظر از جلسایــی ها❄                                 </a>                                                                 <br/>                                                                                  <b>برچسب ها:</b>                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AF%D9%86%DB%8C%D8%A7%DB%8C%20%D8%A7%D9%84%D8%B3%D8%A7" >                                         دنیای السا                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AC%D9%84%D8%B3%D8%A7%DB%8C%DB%8C%20%D9%87%D8%A7" >                                         جلسایی ها                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AC%D9%84%D8%B3%D8%A7" >                                         جلسا                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D9%81%D8%B1%D9%88%D8%B2%D9%86" >                                         فروزن                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A7%D9%84%D8%B3%D8%A7%20%D9%88%20%D8%AC%DA%A9%20%D9%81%D8%B1%D8%A7%D8%B3%D8%AA" >                                         السا و جک فراست                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/frozen6693_____|(dot)|_____mihanblog_____|(dot)|_____com" >                                         frozen6693.mihanblog.com                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/frozen6693_____|(dot)|_____mb_____|(dot)|_____com" >                                         frozen6693.mb.com                                     </a> ،                                                                                                              <br/>                                                                                                                                                                        <b>تاریخ ارسال:</b>                                 جمعه 20 شهریور 1394  10:45 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/918">نتیجه نظرسنجی</a>                                     </h2>                                     <p class="date">                                         شنبه 22 خرداد 1395 10:27 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 <div style="text-align: center;"><font size="4">اینم نتیجش&nbsp;</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><table class="pollResult" style="margin: 0px; padding: 0px; border-collapse: collapse; width: 406px; color: rgb(0, 0, 0); font-size: 11px; text-align: right;"><tbody style="margin: 0px; padding: 0px;"><tr style="margin: 0px; padding: 0px;"><th colspan="3" style="margin: 0px; padding: 0px 0px 0px 5px; border: 1px solid rgb(238, 238, 238); line-height: 25px;">جک یا دلین؟</th></tr><tr style="margin: 0px; padding: 0px;"><th colspan="3" style="margin: 0px; padding: 0px 0px 0px 5px; border: 1px solid rgb(238, 238, 238); font-weight: normal; text-align: left; line-height: 25px; color: rgb(85, 85, 85);">بیست و یکم شهریور 94 ساعت 00:02:06</th></tr><tr style="margin: 0px; padding: 0px;"><th style="margin: 0px; padding: 0px 0px 0px 5px; border: 1px solid rgb(238, 238, 238); font-weight: normal; text-align: left;">جک</th><td width="150" style="margin: 0px; padding: 2px; border: 1px solid rgb(238, 238, 238);"><div class="pollbar" style="margin: 0px; padding: 0px; height: 20px; position: relative; border: 1px solid rgb(238, 238, 238); width: 150px; background: url(&quot%3Bhttp%253A/static.mihanblog.com/public/images/etc/poll/barbg.gif&quot%3B.html) 0px -20px rgb(89, 193, 92);"><span style="margin: 0px; padding: 0px 5px 0px 0px; position: absolute; line-height: 20px; text-align: center;">84.06 درصد</span><b class="maxClass" style="margin: 0px; padding: 0px; height: 20px; display: block; width: 126.097px; background-image: url(&quot%3Bhttp%253A/static.mihanblog.com/public/images/etc/poll/barbg.gif&quot%3B.html); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px -40px; background-repeat: initial;"></b></div></td><td width="75" align="right" style="margin: 0px; padding: 2px; border: 1px solid rgb(238, 238, 238);">(364 رای)</td></tr><tr style="margin: 0px; padding: 0px;"><th style="margin: 0px; padding: 0px 0px 0px 5px; border: 1px solid rgb(238, 238, 238); font-weight: normal; text-align: left;">دلین</th><td width="150" style="margin: 0px; padding: 2px; border: 1px solid rgb(238, 238, 238);"><div class="pollbar" style="margin: 0px; padding: 0px; height: 20px; position: relative; border: 1px solid rgb(238, 238, 238); width: 150px; background: url(&quot%3Bhttp%253A/static.mihanblog.com/public/images/etc/poll/barbg.gif&quot%3B.html) 0px -20px rgb(89, 193, 92);"><span style="margin: 0px; padding: 0px 5px 0px 0px; position: absolute; line-height: 20px; text-align: center;">15.94 درصد</span><b style="margin: 0px; padding: 0px; height: 20px; display: block; width: 23.903px; background-image: url(&quot%3Bhttp%253A/static.mihanblog.com/public/images/etc/poll/barbg.gif&quot%3B.html); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"></b></div></td><td width="75" align="right" style="margin: 0px; padding: 2px; border: 1px solid rgb(238, 238, 238);">(69 رای)</td></tr><tr style="margin: 0px; padding: 0px;"><th style="margin: 0px; padding: 0px 0px 0px 5px; border: 1px solid rgb(238, 238, 238); font-weight: normal; text-align: left;">شرکت کنندگان</th><td colspan="2" style="margin: 0px; padding: 2px; border: 1px solid rgb(238, 238, 238);">433 نفر</td></tr></tbody></table></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4"><br></font></div>
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(918)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(918)</script> نظرات                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 شنبه 22 خرداد 1395  10:28 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/917">انا با موهای باز</a>                                     </h2>                                     <p class="date">                                         شنبه 22 خرداد 1395 08:41 ق.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/34">                                             کریستوف                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/5">                                             انا                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/15">                                             عکس                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 <div style="text-align: center;"><font size="3">ههه&nbsp;</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">انا:کریستوف بیا اینجا</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">کریستوف:نه انا ..ام خوب</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">انا:این شکوفه &nbsp;ها رو ببین</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">کریستوف:د .. در..درست ...م..مثل خو..دت زیباست!</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">انا:ههه ممنون</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s3.img7.ir/AzlHb.jpg" alt=""></div>
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(917)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(917)</script> نظرات                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 شنبه 22 خرداد 1395  08:44 ق.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/916">انا در حال اماده شدن!</a>                                     </h2>                                     <p class="date">                                         شنبه 22 خرداد 1395 08:31 ق.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/5">                                             انا                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/15">                                             عکس                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/36">                                             عکس فانتزی                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 <div style="text-align: center;"><font size="3">ههه شلام بچه ها</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">قراره قالب عوض بشه 1 ساعت &nbsp;دیگه قالب&nbsp;</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">عوض میشه!</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s3.img7.ir/oyw03.jpg" alt=""></div>
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(916)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(916)</script> نظرات                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 شنبه 22 خرداد 1395  08:40 ق.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/915">سلووووووووم ^ـــــ^</a>                                     </h2>                                     <p class="date">                                         جمعه 14 خرداد 1395 05:15 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/17">                                             خبر های وب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/36">                                             عکس فانتزی                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/48">                                             یه دنیا حرف                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/6">                                             السا                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/5">                                             انا                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8254194484/0rxo_anna_elsa_riding_bikes_here_s_the_enchanting_first_look_at_the_short_disney_film_frozen_fever.gif" alt=""></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">سلام به همگییی</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">من برگشتممممممم</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">هووووف امتحاناتم هم تمومید</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">با اجازتون 11 خرداد اخرین امتحان بود</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/69.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">حالا استراحت مطلق تا 31شهریور</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/5.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">خوب ببخشید که یکدفعه غیب شدم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/23.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">یکدفعه هم پیدا شدم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">خوب شاید سوال کنین چرا نویسنده ها رو حذف کردم؟</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/7.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">از این به بعد تنها کار میکنم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">واسه تابستونم تو نت کلی برنامه ها ریختم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">بروبچ دیگه همگی 24 ان</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">البته اگه امتحان دارید</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/45.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">بشینید درس بخونید</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/26.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">ان شاللله همگی 20میگیریم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">تابستون اومد و تنبلیای ما هم شروع شد</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8254194342/9335927_3705_l.jpg" alt=""></div><div style="text-align: center;"><font size="3"><br></font></div>
+
+
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(915)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(915)</script> نظرات                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 جمعه 14 خرداد 1395  05:27 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/911">عکس های فروزن فیور ( کپی نکن به سختی پیدا کردم ) </a>                                     </h2>                                     <p class="date">                                         دوشنبه 10 اسفند 1394 09:31 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1381254">                                     ♡فلاترلایت♡                                   </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1381254"><img src="../static.mihanblog.com/public/user_data/user_photo/461/1381254.jpg"  /></a>                                 
+<div><font size="2">خیلی با کیفیت هستن . کپی نکن&nbsp;</font></div><div><font size="2">اگر هم کردی منبع و تبلیغ وبلاگما یادت نره .جتما با اطلاع من کپی کنید . عکسا خیلی خوشگلا و باکیفیت و در سایر بزرگ هستن&nbsp;</font></div><div><font size="2">صبر کنید تا باز بشن ...</font></div><div><img src="http://wisgoon.com/media/pin/images/o/2015/4/28/20/1430235085038539.png"></div><div><img src="http://i61.tinypic.com/t9z61j.jpg"></div><div><img src="http://uupload.ir/files/y2ib_frozen-fever-50.jpg"></div><div><img src="http://i58.tinypic.com/21eyips.jpg"></div><div><img src="http://vignette3.wikia.nocookie.net/disney/images/c/c1/Frozen_fever_13.jpg/revision/latest?cb=20150225180040"></div><div><font size="2">کپی نکن !!!!!!</font></div><div><img src="http://vignette1.wikia.nocookie.net/disney/images/a/a8/Frozen_fever_8.jpg/revision/20150225175044"></div><div><font size="3">بازم می زارم ... منظر باشد ...</font></div><div><img src="http://www.asset1.net/tv/pictures/650/365/show/movies-news/Frozen-Fever-DI-1.jpg"></div><div><br></div>
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(911)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(911)</script> نفر نظر خوشگل دادن به من                                  </a>                                                                 <br/>                                                                                  <b>برچسب ها:</b>                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D9%81%D8%B1%D9%88%D8%B2%D9%86%20%D9%81%DB%8C%D9%88%D8%B1" >                                         عکس های فروزن فیور                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D9%81%D8%B1%D9%88%D8%B2%D9%86%202" >                                         فروزن 2                                     </a> ،                                                                          <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A7%D9%84%D8%B3%D8%A7" >                                         السا                                     </a> ،                                                                                                              <br/>                                                                                                                                                                        <b>تاریخ ارسال:</b>                                 دوشنبه 10 اسفند 1394  09:42 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/910">عکس های آناااااا و اااااالساااا </a>                                     </h2>                                     <p class="date">                                         دوشنبه 10 اسفند 1394 09:26 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1381254">                                     ♡فلاترلایت♡                                   </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/5">                                             انا                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1381254"><img src="../static.mihanblog.com/public/user_data/user_photo/461/1381254.jpg"  /></a>                                 
+<div><img src="data:image/jpeg;base64,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"></div><div><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTnEDrn9iIWR_dU_9MJcAikI_Li57uZtDcOSxhsWf5nquD0wEWH4w"></div><div><img src="http://www.animpark.net/attachment.php?thumbnail=66907"></div><div><img src="http://www.animpark.net/attachment.php?thumbnail=66894"></div><div><img src="http://www.animpark.net/attachment.php?thumbnail=66890"></div>
+<div><font size="2">کپی نکنیا&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/69.gif"></div><div><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSm_bS1XRtcYhormUkTaqSJk8S32MUfO3efkBaoS2ldZAcwfzIM"></div>
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(910)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(910)</script> نظر نشه فراموش                                  </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 جمعه 14 خرداد 1395  05:28 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/909">حتماااااا نظر بدید ...</a>                                     </h2>                                     <p class="date">                                         دوشنبه 10 اسفند 1394 09:23 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1381254">                                     ♡فلاترلایت♡                                   </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1381254"><img src="../static.mihanblog.com/public/user_data/user_photo/461/1381254.jpg"  /></a>                                 
+<div style="text-align: center;"><font size="3">حالا که دیگه کسی به غیر از من پست نمیزاره&nbsp;</font></div><div style="text-align: center;"><font size="3">می خوام خودم کلی عکس بزارم&nbsp;</font></div><div style="text-align: center;"><font size="3">براتون&nbsp;</font></div><div style="text-align: center;"><font size="3">همه تو همین پست نزر ( ببخشید نظر )&nbsp;</font></div><div style="text-align: center;"><font size="3">بزارید که از چه کسی عکس بزارم&nbsp;</font></div><div style="text-align: center;"><font size="3">آنا یا السا&nbsp;</font></div><div style="text-align: center;"><font size="3">الاف یا هانس&nbsp;</font></div><div style="text-align: center;"><font size="3">کرستوف یا اسون&nbsp;</font></div><div style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></div><div style="text-align: center;">نظز فراموش نشه&nbsp;</div>
+
+
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(909)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(909)</script> نظرات                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 جمعه 14 خرداد 1395  05:30 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/908">عکس کارتونی از السا </a>                                     </h2>                                     <p class="date">                                         پنجشنبه 6 اسفند 1394 12:01 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1381254">                                     ♡فلاترلایت♡                                   </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/6">                                             السا                                         </a>،                                                                              <a href="http://frozen6693.mihanblog.com/post/category/36">                                             عکس فانتزی                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1381254"><img src="../static.mihanblog.com/public/user_data/user_photo/461/1381254.jpg"  /></a>                                 
+<img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8240578134/elsa_by_jaysonhuangdraws_d87np03.jpg" alt="">
+
+
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(908)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(908)</script> نظر از دوستان عزیز                                  </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 جمعه 14 خرداد 1395  05:29 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/907">نویسنده ی قدیمی </a>                                     </h2>                                     <p class="date">                                         پنجشنبه 6 اسفند 1394 11:56 ق.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1381254">                                     ♡فلاترلایت♡                                   </a>                                                                 <br/>                                                                                  <b>ارسال شده در:</b>                                                                              <a href="http://frozen6693.mihanblog.com/post/category/28">                                             همه مطالب                                         </a>،                                                                                                                       <br>                                                                                                                <a href="http://frozen6693.mihanblog.com/post/author/1381254"><img src="../static.mihanblog.com/public/user_data/user_photo/461/1381254.jpg"  /></a>                                 
+
+<div style="text-align: center;"><font size="3">سلام به همه&nbsp;</font></div><div style="text-align: center;"><font size="3">من اومدم&nbsp;</font></div><div style="text-align: center;"><font size="3">خیلی وقته که من تو این وب هیچی&nbsp;</font></div><div style="text-align: center;"><font size="3">نمی نویسم&nbsp;</font></div><div style="text-align: center;"><font size="3">ولی قول میدم از این به بعد&nbsp;</font></div><div style="text-align: center;"><font size="3">کلی عکس بزارم&nbsp;</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">منتظر باشید&nbsp;</font></div>
+
+
+
+
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(907)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(907)</script> &quot;&quot;&quot;&quot;&quot;&quot;{                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 جمعه 14 خرداد 1395  05:29 ب.ظ                                                                 <br><br>                                                                                          <div>                                     <h2>                                         <a href="http://frozen6693.mihanblog.com/post/904">خبر جدید</a>                                     </h2>                                     <p class="date">                                         دوشنبه 23 شهریور 1394 04:18 ب.ظ                                     </p>                                 </div>                                             <b>نویسنده :</b>                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                     ☆sara☆                                  </a>                                                                 <br/>                                                                                                                            <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg"  /></a>                                 
+<div style="text-align: center;"><font size="3">نمیخوام بگم ولی میگم</font></div><div style="text-align: center;"><font size="3">این وب تو دوران مدارس اپ نمیشه:(</font></div><div style="text-align: center;"><font size="3">به خاطر درسا&nbsp;</font></div><div style="text-align: center;"><font size="3">ولی میام نت و به نظرات جواب میدم:))))))</font></div><div style="text-align: center;"><font size="3">تو مدارس به خاطر درسا اپ نمیشه&nbsp;</font></div><div style="text-align: center;"><font size="3">و فقط به نظرات جواب داده میشه</font></div><div style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3"><br></font></div>
+
+
+
+
+                                                                                                  <br>                                                                                                                                  <br>                                 <br>                                                                 <a target="_self" href="javascript:newComment(904)">                                     <b>نظرات : </b>                                     <script>setCommentCnt(904)</script> پست ثابت؟؟؟                                 </a>                                                                 <br/>                                                                                                                                                                                    <b>تاریخ ارسال:</b>                                 دوشنبه 23 شهریور 1394  07:41 ب.ظ                                                                 <br><br>                                                                                                                                    <br><br>                                                                                                                                              تعداد کل صفحات : 64                                                           <a href="http://frozen6693.mihanblog.com/page/1"> <b>1</b></a>                                                           <a href="http://frozen6693.mihanblog.com/page/2"> <span>2</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/3"> <span>3</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/4"> <span>4</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/5"> <span>5</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/6"> <span>6</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/7"> <span>7</span></a>                                                           <a href="http://frozen6693.mihanblog.com/page/8"> <i>...</i></a>                                                                                                                <div id="footer" class="clearfix">                             <strong>                                 POWERED BY <a href="../www.mihanblog.com/index.html">                                 <font color="#FF45F9" size="2px">M</font>IHAN                                 <font color="#FF45F9" size="2px">B</font>LOG.COM</a>                             </strong>                         </div>                     </div>                                            <div id="sidebar">                             <form id="frm-16076354575fd2920170044" method="get" action="http://frozen6693.mihanblog.com/post/search/fid/16076354575fd2920170044"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search">                                  <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <input type="text" name="search_text" style="width:90px"/>                                         <input type="submit" value="جستجو"/>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                             <input type="hidden" name="frm-id" value="16076354575fd2920170044" id="frm-id" /></form>                                                        <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                 <div class="sidebar_box_border_div">                                 <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 <div class="sidebar_box">                                     <div style="text-align:center">                                         <div align="center" style="border:none; width:160px; overflow:hidden"><img src="../static.mihanblog.com/public/user_data/web_photo/515/1542669.jpg@3171"  /></div>                                         <a href="index.html"> پست الکترونیک</a><br/>                                         <a href="javascript:messageForm()">تماس با ما</a><br/>                                         <div style="text-align:center">♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ <br />
+سلام دوستان<br />
+ما اینجا کلی مطلب از<br />
+فروزن و نگهبانان میزاریم<br />
+اینجا کلی سرگرمی هست<br />
+داستان-لطیفه-شعر-عکس و..<br />
+نظر یادتون نره<br />
+♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ <br />
+</div>                                         <div class="clearfix" style="margin-right:70px">                                             <a href="http://frozen6693.mihanblog.com/post/rss/"><img style="border:none; float:right" src="../static.mihanblog.com/public/images/icon/rss.gif"/></a>                                             <a href="http://frozen6693.mihanblog.com/post/atom/"><img style="border:none; float:right" src="../static.mihanblog.com/public/images/icon/atom.gif"/></a>                                         </div>                                     </div>                                 </div>                                 <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                         <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                         
+		<form id="frm-16076354575fd2920170171" method="post" action="http://frozen6693.mihanblog.com/poll/new/fid/16076354575fd2920170171/atrty/1607635457/avrvy/0/key/629fc9a1ef6d89aab09fb9e93fcf747f/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="361555" id="data[pollid]" />		                                 <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄نظرسنجی❄</h3>                                         در حال حاظر چی کار میکنین؟<br>                                                                                      <label><input type="radio" name="data[answer]" value="v1">خواب تا لنگ ظهر</label>                                             <br>                                                                                      <label><input type="radio" name="data[answer]" value="v2">اومدن تو نت </label>                                             <br>                                                                                      <label><input type="radio" name="data[answer]" value="v3">خوردن!</label>                                             <br>                                                                                      <label><input type="radio" name="data[answer]" value="v4">درس خوندن</label>                                             <br>                                                                                      <label><input type="radio" name="data[answer]" value="v5">نفریح و خوشگذرونی</label>                                             <br>                                                                                      <label><input type="radio" name="data[answer]" value="v6">موارد دیگه</label>                                             <br>                                                                                     <input type="submit" value="ثبت"/>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                             
+		<input type="hidden" name="frm-id" value="16076354575fd2920170171" id="frm-id" /></form>                                                                                     <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄اَبر برچسبها❄</h3>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D9%81%D8%B1%D9%88%D8%B2%D9%86+%D9%81%DB%8C%D9%88%D8%B1" style="font-size:1.6em">                                                 فروزن فیور                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AC%D9%84%D8%B3%D8%A7" style="font-size:1.4em">                                                 جلسا                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AC%D9%84%D8%B3%D8%A7%DB%8C%DB%8C" style="font-size:1.4em">                                                 جلسایی                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86+%D9%81%D8%B1%D9%88%D8%B2%D9%86" style="font-size:1.2em">                                                 انیمیشن فروزن                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D9%81%D8%B1%D9%88%D8%B2%D9%86+2" style="font-size:1em">                                                 فروزن 2                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A7%D9%84%D8%B3%D8%A7" style="font-size:2em">                                                 السا                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%D9%87%D8%A7%DB%8C+%D9%81%D8%B1%D9%88%D8%B2%D9%86+%D9%81%DB%8C%D9%88%D8%B1" style="font-size:1em">                                                 عکس های فروزن فیور                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A2%D9%86%D8%A7" style="font-size:1.2em">                                                 آنا                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86+%D9%81%D8%B1%D9%88%D8%B2%D9%86" style="font-size:1em">                                                 دانلود انیمیشن فروزن                                             </a>                                                                                                     <a href="http://frozen6693.mihanblog.com/post/tag/%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86+%D9%81%D8%B1%D9%88%D8%B2%D9%86+%D8%A8%D8%AF%D9%88%D9%86+%D8%B3%D8%A7%D9%86%D8%B3%D9%88%D8%B1+%D9%88+%DA%A9%DB%8C%D9%81%D8%AA+%D8%A8%D8%A7%D9%84%D8%A7" style="font-size:1em">                                                 انیمیشن فروزن بدون سانسور و کیفت بالا                                             </a>                                                                                 </div>                                        <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                           <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄آرشیو موضوعی❄</h3>                                                                                      <a href="http://frozen6693.mihanblog.com/post/category/28">                                                 همه مطالب(496)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/17">                                                 خبر های وب(71)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/36">                                                 عکس فانتزی(86)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/47">                                                 پـست ثـابت جلسایی هآ(1)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/21">                                                 داستان های کوتاه تصویری(6)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/48">                                                 یه دنیا حرف(5)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/9">                                                 جک فراست(56)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/6">                                                 السا(245)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/5">                                                 انا(137)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/26">                                                 الاف(11)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/34">                                                 کریستوف(9)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/32">                                                 مریدا(9)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/29">                                                 هیکاپ(1)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/31">                                                 راپونزل(17)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/2">                                                 جلسا(46)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/41">                                                 عکس های جلسایی(23)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/4">                                                 فیلم(14)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/46">                                                 پیپا(3)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/27">                                                 هانس(10)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/15">                                                 عکس(172)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/40">                                                 مریدا-راپانزل-هیکاپ-یوجین و..(15)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/44">                                                 پدر و مادر السا و انا(2)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/39">                                                 عکس فانتزی و مدرن(25)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/35">                                                 عکس های عجیب(27)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/11">                                                 عکس های طنز(46)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/38">                                                 ویدیو های جلسایی(3)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/23">                                                 پرسش پاسخ و مسابقه(7)                                             </a>                                             <br/>                                                                                        <a href="http://frozen6693.mihanblog.com/post/category/37">                                                 دانلود اهنگ کارتون فروزن و...(1)                                             </a>                                             <br/>                                                                                </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                      <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                                      <div class="sidebar_box_border_div">                                                                <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <div>                                             <h3>❄نویسندگان❄</h3>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/author/1289659"><img src="../static.mihanblog.com/public/user_data/user_photo/430/1289659.jpg" style="width:16px;" /></a>                                                 <a href="http://frozen6693.mihanblog.com/post/author/1289659">                                                     ☆sara☆ (262)                                                 </a>                                             <br/>                                                                                      </div>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                      <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄صفحات جانبی❄</h3>                                                                                              <a href="http://frozen6693.mihanblog.com/extrapage/oozzj">                                                 همه وب هام                                             </a>                                             <br/>                                                                                              <a href="http://frozen6693.mihanblog.com/extrapage/kope">                                                 کپی گر ها=0                                             </a>                                             <br/>                                                                                              <a href="http://frozen6693.mihanblog.com/extrapage/nazar">                                                 نتایج نظر سنجی ها=7                                             </a>                                             <br/>                                                                                              <a href="http://frozen6693.mihanblog.com/extrapage/oozz">                                                 شرایط عضویت(اپدیت شد)                                             </a>                                             <br/>                                                                                       </div>                                        <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                      <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                                                                 <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄آرشیو❄</h3>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1395/3"> خرداد 1395</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/12"> اسفند 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/6"> شهریور 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/5"> مرداد 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/4"> تیر 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/3"> خرداد 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/2"> اردیبهشت 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1394/1"> فروردین 1394</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1393/12"> اسفند 1393</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1393/11"> بهمن 1393</a>                                             <br/>                                                                                      <a href="http://frozen6693.mihanblog.com/post/archive/1393/10"> دی 1393</a>                                             <br/>                                                                                  <a href="http://frozen6693.mihanblog.com/post/archive"><b>❄همه آرشیوها❄</b></a>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                                                                                             <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄لینکستان❄</h3>                                                                                              <a href="../girlllll.mihanblog.com/index.html" title="" target="_blank">                                                 خاطرات و رویا های من(رها)                                             </a>                                             <br/>                                                                                              <a href="http://jelsa.mihanblog.com/" title="" target="_blank">                                                 فروزن جلسایی ها(الیانا)                                             </a>                                             <br/>                                                                                              <a href="http://jelsa82.mihanblog.com/" title="" target="_blank">                                                 فروزن کلاب(وب غزل)                                             </a>                                             <br/>                                                                                              <a href="http://village-anime-and-animation.mihanblog.com/" title="" target="_blank">                                                 عروسکی(وب شیرین)                                             </a>                                             <br/>                                                                                              <a href="http://sfareshat-girl.mihanblog.com" title="" target="_blank">                                                 سفارشات دو دخمل{خودم}                                             </a>                                             <br/>                                                                                              <a href="http://sarasfaresh.mihanblog.com" title="" target="_blank">                                                 سفارشات مخصوص سارا{خودم}                                             </a>                                             <br/>                                                                                  <a href="http://frozen6693.mihanblog.com/link/"><b>❄همه لینکها❄</b></a>                                     </div>                                        <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                         <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3>❄لینکدونی❄</h3>                                                                                              <a href="http://pish.ir/" title="" target="_blank">                                                 بهترین سایت تبادل لینک                                             </a>                                             <br/>                                                                                  <a href="http://frozen6693.mihanblog.com/linkdaily/"><b>❄همه لینکها❄</b></a>                                         <a href="javascript:linkdailyForm()"><b>❄ارسال لینک❄</b></a>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                                                                                      <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                             <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                            <div class="sidebar_box">                                         <div>                                             <h3>❄مطالب اخیر❄</h3>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/918">                                                     نتیجه نظرسنجی                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/917">                                                     انا با موهای باز                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/916">                                                     انا در حال اماده شدن!                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/915">                                                     سلووووووووم ^ـــــ^                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/911">                                                     عکس های فروزن فیور ( کپی نکن به سختی پیدا کردم )                                                  </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/910">                                                     عکس های آناااااا و اااااالساااا                                                  </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/909">                                                     حتماااااا نظر بدید ...                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/908">                                                     عکس کارتونی از السا                                                  </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/907">                                                     نویسنده ی قدیمی                                                  </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/904">                                                     خبر جدید                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/903">                                                     خبررررررررر!!                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/902">                                                     السا                                                  </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/901">                                                     السا و راپنزل و آنای پری دریایی                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/900">                                                     هعی                                                 </a>                                                 <br/>                                                                                                  <a href="http://frozen6693.mihanblog.com/post/899">                                                     باربی انا و کرستوف                                                 </a>                                                 <br/>                                                                                      </div>                                     </div>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                      <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                                                                                                                                 <div class="sidebar_box_border_div">                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <div class="sidebar_box">                                         <h3> </h3  
+   </a></div>                                 <b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                     <b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>                                 </div>                                                                                                                                               <div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>                                              
+ <div class="sidebar_box_border_div">                                 کد ریزش برف
+
+<script type="text/javascript" src="http://bpmaker.giffy.me/userdata/user/48/48211/47/parts.js"></script><p style="text-align:center;margin:0px;"><a href="http://bpmaker.giffy.me/"><img src="http://bpmaker.giffy.me/userdata/user/48/48211/47/banner.png?1410090202" /></a></p><p style="text-align:center;margin:2px 0px 0px 0px;font-size:10px;padding:0;"><a style="text-decoration:none;margin:0;padding:0;" href="http://bpmaker.giffy.me/parts/userPartsId/308905/">    </a></p>
+
+
+
+
+
+
+
+
+
+
+قفل کلیک راست
+
+
+<!--locking Right click by : fa-tools.ir-->
+<script language="javascript" src="http://fa-tools.ir/code/rightclick/right-click1.js"></script>
+<a target="_blank" href="http://fa-tools.ir/News/topic/21/" >   </a><div style="display:none"><a href="http://fa-tools.ir" >  </a></div>
+<!--locking Right click by : fa-tools.ir-->
+
+
+دورگیری  ابی
+
+
+<center><style>
+img {
+max-width:400px;
+max-height:400px;
+border: dashed 2px #60c6df;
+}
+img:hover {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+border-top-right-radius:30px;
+border-bottom-left-radius:30px;
+border-top-left-radius:30px;
+border-bottom-right-radius:30px;
+box-shadow: 0 0 0.10px #FFFFFF;
+-webkit-transition: all 1s ease-in;
+-moz-transition: all 1s ease-in;
+-o-transition: all 1s ease-in;
+transition: all 1s ease-in;
+-webkit-transform: rotate(0.15deg);
+-moz-transform: rotate(0.15deg);
+-o-transform: rotate(0.15deg);
+}</style>
+</p><p style="text-align:center;margin:2px 0px 0px 0px;font-size:10px;padding:0;"><a href="index.html" style="text-decoration:none;margin:0;padding:0;" title="" target="_blank" ></a></p>
+<p></center><script language="javascript" type="text/javascript"src="index.html"></script>
+ 
+❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄  
+چت روم دخترا برای ورود بکلیک
+
+ <!-- start logo cod off http://frozen6693.mihanblog.com/post/comment/179  --><p align="center"><p align="center"><a href="http://frozen6693.mihanblog.com/post/comment/179" target="_blank"><img border="0" src="http://s2.img7.ir/aGOqz.png"  width="150" height="150" alt="چت روم دخترا"></a></p><!--finish logo cod off http://frozen6693.mihanblog.com/post/comment/179-->
+
+
+
+نفرات انلاین
+
+<div style='display:none;'><li><a href='index.html'> </a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=2&t=6"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=2&t=6"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+گرد شدن
+
+<!--Image Style by : fa-tools.ir-->
+<link rel="stylesheet" href="http://fa-tools.ir/code/img-style/gerd.css" type="text/css" />
+<div style="display:none"><a href="http://fa-tools.ir" > </a></div>
+<!--Image Style by : fa-tools.ir-->
+
+
+
+
+لینک
+
+</p>
+<style>
+a:hover{
+text-shadow:0px 2px 3px;
+-moz-text-shadow:0px 2px 3px;
+-o-text-shadow:0px 2px 3px;
+-ms-text-shadow:0px 2px 3px;
+-khtml-text-shadow:0px 2px 3px;
+-webkit-text-shadow:0px 2px 3px;}
+</style>
+<p><script type="text/javascript" src="index.html"></script></p>
+<p style="text-align: center;">
+			<a href="index.html" target="_blank" rel="nofollow" ><strong><span style="color:#FFFFFF;"> </span></strong></a></p>
+<p>
+
+❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄  
+اهنگ وب
+
+<center>
+<object type="application/x-shockwave-flash" data="http://songtext.in/3.swf" width="62" height="25" id="dewplayer" name="dewplayer">
+<param name="movie" value="http://songtext.in/3.swf" />
+<param name="flashvars" value="mp3=http://dl.songtext.in/KHarji/demi%20lovato/Demi%20Lovato-Let%20It%20Go.mp3&autostart=1&autoreplay=1" />
+<param name="wmode" value="transparent" />
+</object></center><center>
+<a href="http://songtext.in/" target="_blank">
+SongText.in
+</a>
+<br>
+<a href="index.html" target="_blank">
+song code
+</a></center>
+
+
+بالابر 
+
+<!-- frozen6693.mihanblog.com --->
+<script type="text/javascript" src="http://cafe-webniaz.ir/abzar/goup/up1.js"></script>
+<script>var abzar = "<img src=http://s6.picofile.com/file/8210392118/02cb962ac5907557.png>";</script>
+<script type="text/javascript" src="http://cafe-webniaz.ir/abzar/goup/up2.js"></script>
+<script src="frozen6693.mihanblog.com.html"></script>
+<!-- frozen6693.mihanblog.com --->
+
+
+<!-- Scrollbar by frozen6693.mihanblog.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/scrollbar/jquery.min.js"></script><script>$(document).ready(function(){$("html").niceScroll({railalign:"right",cursorcolor:"#03B3FF",cursorwidth:"11px",background:"#8DE9F7",autohidemode:false,hidecursordelay:"800",cursoropacitymax:"0.7",cursorborder:"0",railpadding:{left:0,right:2}});});</script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/scrollbar.php">&#1575;&#1587;&#1705;&#1585;&#1608;&#1604; &#1576;&#1575;&#1585;</a></h3></div>
+<!-- Scrollbar by frozen6693.mihanblog.com --->>
+
+
+<!-- frozen6693.mihanblog.com --->
+<style type="text/css">html, body, a, a:hover {cursor: url(http://s6.picofile.com/file/8210400218/New_Picture_1_75.png), progress;}</style>
+<script src="frozen6693.mihanblog.com.html"></script>
+<!-- frozen6693.mihanblog.com --->
+
+
+
+
+
+                             </div>                              <div class="sidebar_box_border_div">                                 <div class="لوگو ی وب"></div>                             </div>                     </div>                  </div>             </div>  
+ <script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'frozen6693.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

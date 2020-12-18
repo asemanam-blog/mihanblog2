@@ -1,0 +1,2863 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه بیست و هفتم آذر 1399');
+		/*1155132*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[419]='2';commentCnt[476]='0';commentCnt[477]='0';commentCnt[479]='0';commentCnt[480]='0';commentCnt[481]='0';commentCnt[482]='0';commentCnt[484]='0';commentCnt[485]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[419]='14';
+mihanblogDisLikeArrCnt[419]='1';
+mihanblogLikeArrCnt[476]='1';
+mihanblogDisLikeArrCnt[476]='0';
+mihanblogLikeArrCnt[477]='3';
+mihanblogDisLikeArrCnt[477]='0';
+mihanblogLikeArrCnt[479]='1';
+mihanblogDisLikeArrCnt[479]='0';
+mihanblogLikeArrCnt[480]='0';
+mihanblogDisLikeArrCnt[480]='0';
+mihanblogLikeArrCnt[481]='2';
+mihanblogDisLikeArrCnt[481]='0';
+mihanblogLikeArrCnt[482]='2';
+mihanblogDisLikeArrCnt[482]='2';
+mihanblogLikeArrCnt[484]='1';
+mihanblogDisLikeArrCnt[484]='0';
+mihanblogLikeArrCnt[485]='1';
+mihanblogDisLikeArrCnt[485]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://danasetup.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://danasetup.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','306');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه یکم مهر 1399');
+	
+	setStatVar('today_view','140');
+	setStatVar('yesterday_view','198');
+	
+	setStatVar('this_month_view','5360');
+	setStatVar('last_month_view','4885');
+
+	setStatVar('total_view','479279');
+	setStatVar('last_view_date','پنجشنبه بیست و هفتم آذر 1399 (22:10)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://danasetup.mihanblog.com/statupdate/?data[refereruri]=http://danasetup.mihanblog.com/&data[postid]=&data[requesturi]=/page/3&data[sdate]=1608230746&data[hash]=521e6198d5f990c4692bf4605953a987&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content="reza"/>
+    <link rel="alternate" type="application/rss+xml" title="سیستم  دانا   متوسطه (دوره دوم)                " href="../post/rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="سیستم  دانا   متوسطه (دوره دوم)                " href="../post/atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099963/style.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/iepngfix_tilebg.js"></script>
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/jquery.js"></script>
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/easySlider1.5.js"></script>
+    <script type="text/javascript">
+        var jq=jQuery.noConflict();
+        jq(document).ready(function(){
+            jq("#slider").easySlider();
+        });
+        var i=1;
+        var mytheme_pic=new Array();
+        var mytheme_titr=new Array();
+        var mytheme_text=new Array();
+        var mytheme_link=new Array();
+        /* nahveye estefade az slideshow
+         baraye ijad slide jadid az 3 ghesmat zir copy begirid va adade dakhel keroshe ra be tartib tanzim konid:
+
+         mytheme_pic[4] = 'Your_pic.jpg'
+         mytheme_titr[4] = 'Your_titr';
+         mytheme_text[4] = 'Your_text';
+         mytheme_link[4] = 'Your_link';
+
+         tavajoh konid tedad slide haye shoma bayad ba moteghayer (number) barabar bashad.
+
+         >> SIZE TASAVIR >> width="480 px" :: height="255 px"
+
+         */
+
+        var number = 3; //numbers of slides
+
+        mytheme_pic[1] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic1.jpg'; //adress tasvire shoma
+        mytheme_titr[1] = 'آموزش نحوه ویرایش اسلایدشو'; //titr marbot be tasvire shoma
+        mytheme_text[1] = 'چگونگی ویرایش اسلاید را در اینجا بخوانید'; //matne tozih marbot be tasvire shoma
+        mytheme_link[1] = 'http://www.mytheme.ir/faq.php'; // link marbot be tasvire shoma
+
+        mytheme_pic[2] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic2.jpg';
+        mytheme_titr[2] = 'دامنه ir. رایگان';
+        mytheme_text[2] = 'کلیه کاربرانی که از قالب های رایگان سایت استفاده می کنند می توانند دامنه ir. رایگان بگیرند.';
+        mytheme_link[2] = 'http://mytheme.ir/free-domain.php';
+
+        mytheme_pic[3] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic3.jpg';
+        mytheme_titr[3] = 'تیتر اسلاید شماره 3';
+        mytheme_text[3] = 'این اسلایدشو به تعداد دلخواه قابل افزایش یا کاهش خواهد بود.';
+        mytheme_link[3] = 'http://www.mytheme.ir';
+
+    </script>
+    <title>سیستم  دانا   متوسطه (دوره دوم)                </title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class="m-l">&nbsp;</td>
+<td class=div2>
+<div class=div00 id="top">
+
+<div class="mytheme">
+    <div class="mytheme3">
+        <a href="../post/rss/index.html" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.facebook.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.del.icio.us" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.twitter.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.cloob.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a></div>
+    <div class="mytheme4">
+        <g:plusone size="medium"></g:plusone>
+        <script type="text/javascript">
+            window.___gcfg = {lang: 'fa'};
+
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script></div>
+</div>
+
+<div class=div60>
+    <div class=div101>
+        <div class=div10><font class=title>سیستم  دانا   متوسطه (دوره دوم)                </font></div></div>
+    <div class=div11>
+        <div class=div12><font class=des>همکاران عزیز لطفا نظزات خودتون را بنویسید</font></div></div>
+</div>
+
+<div class=ss>
+    <div class=s1><form id="frm-16079959535fd81231729a4" method="get" action="http://danasetup.mihanblog.com/post/search/fid/16079959535fd81231729a4"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div class=s2>
+            <input type="text" name="search_text" size="18" style="border: 0px none; color:#35260c; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+        <div class=s3><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=30 height=30 value="جستجو"></div>
+    <input type="hidden" name="frm-id" value="16079959535fd81231729a4" id="frm-id" /></form></div>
+
+    <div class=s4>
+        <div class=s5><font class=text10><a href="../index.html">صفحه نخست</a></font></div>
+        <div class=s5><font class=text10><a href="javascript:messageForm()">تماس با ما</a></font></div>
+        <div class=s5><font class=text10><a href="mailto:eslami_2001@yahoo.com">پست الکترونیک</a></font></div>
+        <div class=s5><font class=text10><a href="../post/atom/index.html">ATOM</a></font></div>
+        <div class=s5><font class=text10><a href="http://www.mytheme.ir" target="_blank">طراح قالب</a></font></div>
+    </div>
+</div>
+
+<div class=mdiv17></div>
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35-1>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1><center><img src="http://static.mihanblog.com//public/user_data/web_photo/386/1155132.jpg?3616"  /><br><br>
+                پیشنهادات شما  مفید خواهد بود.<br />
+درصورت تمابل .شماره تلفن یا ایمیل خودرا بصورت خصوصی جهت دریافت جواب بگذارید.دانلود اهنگ جدیدنمایشگر آمار آلکسا</center><br>
+                <b>مدیر وبلاگ :</b> <a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35-2>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../post/514.html">مراحل تغییر رشته از دهم به یازدهم---واز یازدهم به دوازدهم </a></li><li><a href="../post/513.html">دریافت آلبوم عکس-کارت ورود به جلسه-لیست شرکت کنندگان از فاینال(گام دوم فاینال)</a></li><li><a href="../post/509.html">دریافت آلبوم عکس-کارت ورود به جلسه-لیست شرکت کنندگان از فاینال(گام دوم فاینال)</a></li><li><a href="../post/508.html">فاینال مختص حوزه اجرای امتحانات نهایی</a></li><li><a href="../post/507.html">جدول دروس تطبیقی</a></li><li><a href="../post/506.html">دانلود برنامه های سیستم دانا(برنامه رسمی آموزش وپرورش برای دوره ابتدایی-راهنمایی</a></li><li><a href="../post/419.html">آدرس وبلاگ و کانال معاومین اجرایی</a></li><li><a href="../post/505.html">نگارش 24.9</a></li><li><a href="../post/503.html">تنظیمات سیستم دانا </a></li><li><a href="../post/500.html">فرم هاودستورالعمل های مورد نیاز</a></li><li><a href="../post/499.html"> قوانین خدمت وظیفه عمومی</a></li><li><a href="../post/496.html">انجام فارغ التحصیلی برای پایه دوازدهم در سایت امین</a></li><li><a href="../post/491.html">سامانه عملیات متوسطه دوم و امین</a></li><li><a href="../post/490.html">آموزش تصویری نحوه نصب برنامه دانا در ویندوز7</a></li><li><a href="../post/489.html">روند اجرایی كمیسیون خاص</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-3>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../post/archive/1399/7.html"> مهر 1399</a></li><li><a href="../post/archive/1399/5.html"> مرداد 1399</a></li><li><a href="../post/archive/1399/2.html"> اردیبهشت 1399</a></li><li><a href="../post/archive/1398/11.html"> بهمن 1398</a></li><li><a href="../post/archive/1398/10.html"> دی 1398</a></li><li><a href="../post/archive/1398/9.html"> آذر 1398</a></li><li><a href="../post/archive/1398/8.html"> آبان 1398</a></li><li><a href="../post/archive/1398/3.html"> خرداد 1398</a></li><li><a href="../post/archive/1398/2.html"> اردیبهشت 1398</a></li><li><a href="../post/archive/1397/12.html"> اسفند 1397</a></li><li><a href="../post/archive/1397/11.html"> بهمن 1397</a></li>            <li><b><a href="../post/archive.html">آرشیو كل مطالب</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-4>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../post/author/995270.html">محمدرضا اسلامی (306)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    
+		<form id="frm-16079959535fd8123172c45" method="post" action="http://danasetup.mihanblog.com/poll/new/fid/16079959535fd8123172c45/atrty/1607995953/avrvy/0/key/7c5ebcd96c3ca319d38a7686d7d2ba77/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="235874" id="data[pollid]" />		<div class=div24>
+        <div class=div35-5>
+            <div class=div25><font class=text5>نظرسنجی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1>
+                پیشنهادات خودرا بیان کنید<br>
+                <label><input type="checkbox"  name="data[v1]" id="v1" value="1" />عالی ومفید</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />متوسط </label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />خوب</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />ضعیف</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />خیلی ضعیف</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />بدنیست</label><br>                <div align="center"><br><input type="submit" value="ثبت وحتما نظر دهید." style="font-family: Tahoma; font-size: 9pt"></div>
+            </font></div></div><div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16079959535fd8123172c45" id="frm-id" /></form>
+    <div class=div24>
+        <div class=div35-6>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../post/tag/نگارش+14_____|(dot)|_____4.html">نگارش 14.4</a></li><li><a href="../post/tag/پیش+دانشگاهی.html">پیش دانشگاهی</a></li><li><a href="../post/tag/علت+عدم+نمایش+نام+مدرسه+در+helper+وناشناخته+بودن+آن.html">علت عدم نمایش نام مدرسه در helper وناشناخته بودن آن</a></li><li><a href="../post/tag/متوسطه.html">متوسطه</a></li><li><a href="../post/tag/نرم+افزار.html">نرم افزار</a></li><li><a href="../post/tag/سرود.html">سرود</a></li><li><a href="../post/tag/نرم+افزارهای+جالب.html">نرم افزارهای جالب</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+</div>
+
+<div class=div20>
+
+    <!-- Slideshow Starts Here -->
+    <div id="container">
+        <div id="content">
+            <div id="slider">
+                <ul>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic1.jpg" /></li>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic2.jpg" /></li>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic3.jpg" /></li>
+                </ul>
+            </div>
+        </div></div>
+    <!-- Slideshow Ends Here -->
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/419.html">آدرس وبلاگ و کانال معاومین اجرایی</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>سه شنبه پانزدهم بهمن 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<p>معاونین اجرایی ((دوره متوسطه))</p><p>با سلام و عرض ادب خدمت همکاران گرامی: در این گروه سعی خواهد شد کلیه مطالب بخشنامه ها.دستورالعملها&nbsp; و راهکارهایی که برای همکاران مفید خواهد بود. جمع اوری گردد. وتقریبا&nbsp; مثل یک بانک اطلاعاتی خواهد بود البته به کمک اعضای گروه.</p><p style="text-align: center;"><font size="5">https://t.me/dana5701</font></p>
+
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/419.html#commentlist">نظرات (<script>setCommentCnt(419)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('419','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/485.html">دانلود انواع فرم ها، طرح ها و برنامه های آموزشی مدارس و آموزش و پرورش</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه دوازدهم آبان 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+<h3><span style="color: #008000;">دانلود انواع فرم ها، طرح ها و برنامه های آموزشی مدارس و آموزش و پرورش</span></h3>
+<p><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ها،-طرح-ها-و-مطالب-آموزشی.png" rel="attachment wp-att-243"><img class="wp-image-243 size-thumbnail alignnone tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ها،-طرح-ها-و-مطالب-آموزشی-150x150.png" alt="فرم ها، طرح ها و مطالب آموزشی" width="150" height="150"></a></p>
+<p><span style="font-size: 10pt;"><strong>مخاطب این مجموعه : معلمان، مدیران و مشاوران مدارس، کارشناسان آموزش و دانشجویان رشته های روانشناسی و علوم تربیتی</strong></span></p>
+<p><span style="font-size: 8pt;"><strong>محتویات:</strong></span></p>
+<p><span style="color: #0000ff;">۱- بیش از ۳۰ نوع فرم مورد نیاز در مدارس با دو فرمت pdf و word</span></p>
+<p><span style="color: #0000ff;">۲- برنامه های در حال اجرا در مدارس متوسطه ی اول</span></p>
+<p><span style="color: #0000ff;">۳- برنامه های در حال اجرا در مدارس متوسطه دوم</span></p>
+<p><span style="color: #0000ff;">۴- قوانین، آیین نامه ها و شیوه نامه های در حال اجرا در آموزش و پرورش</span></p>
+<p>&nbsp;</p>
+<h3><span style="color: #0000ff;">لیست فرم های موجود در این مجموعه :</span></h3>
+
+
+<table><tbody><tr>
+<td width="51">
+<p style="text-align: center;"><span style="color: #008000; font-size: 14pt;"><strong>ردیف</strong></span></p>
+</td>
+<td width="397">
+<p style="text-align: center;"><span style="color: #008000; font-size: 14pt;"><strong>عنوان فرم</strong></span></p>
+</td>
+<td width="76">
+<p style="text-align: center;"><span style="color: #008000;"><strong>فایل ورد</strong></span></p>
+</td>
+<td width="76">
+<p style="text-align: center;"><span style="color: #008000;"><strong>فایل</strong><strong>pdf</strong></span></p>
+</td>
+</tr>
+<tr>
+<td width="51"><strong>۱</strong></td>
+<td width="397"><strong>انتظارات آموزش از مدیران</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-آموزش-از-مدیران.docx" target="_blank"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-آموزش-از-مدیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>انتظارات مدیر آموزشگاه از دانش&nbsp; آموزان(پسر)</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دانش-آموزان-پسر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دانش-آموزان-پسر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۳</strong></td>
+<td width="397"><strong>انتظارات مدیر آموزشگاه از دانش&nbsp; آموزان (دختر)</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دانش-آموزان-دختر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دانش-آموزان-دختر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>انتظارات مدیر از دبیران</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دبیران.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/انتظارات-مدیر-از-دبیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۵</strong></td>
+<td width="397"><strong>پرسشنامه شناخت مسایل روحی/روانی دانش آموز</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/پرسشنامه-شناخت-دانش-آموز.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/پرسشنامه-شناخت-دانش-آموز.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۶</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>شاخص های ارزشیابی عملکرد سالانه</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شاخص-های-ارزشیابی-عملکرد-سالانه.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شاخص-های-ارزشیابی-عملکرد-سالانه.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۷</strong></td>
+<td width="397"><strong>شرح وظایف دبیر</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شرح-وظایف-دبیر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شرح-وظایف-دبیر.pdf" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۸</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم ارزشیابی از تدریس</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ارزشیابی-از-تدریس.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ارزشیابی-از-تدریس.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۹</strong></td>
+<td width="397"><strong>فرم بررسی پوشه کار دبیران</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-بررسی-پوشه-کار-دبیران.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-بررسی-پوشه-کار-دبیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۱۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم بررسی کارگاه آموزشی</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-بررسی-کارگاه-آموزشی.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۱۱</strong></td>
+<td width="397"><strong>فرم ثبت فعالیت های ابتکاری و خلاقانه دبیر</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ثبت-فعالیت-های-ابتکاری-و-خلاقانه-دبیر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ثبت-فعالیت-های-ابتکاری-و-خلاقانه-دبیر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۱۲</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم ثبت فعالیت های آموزشگاه</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ثبت-فعالیت-های-آموزشگاه.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ثبت-فعالیت-های-آموزشگاه.pdf" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۱۳</strong></td>
+<td width="397"><strong>فرم شناسایی ویژگی های تحصیلی وخانوادگی دانش آموزان</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-شناسایی-ویژگی-های-تحصیلی-وخانوادگی-دانش-آموزان.xlsx" target="_blank" rel="attachment wp-att-617"><img class="aligncenter wp-image-617 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/excel-1.png" alt="excel 1" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-شناسایی-ویژگی-های-تحصیلی-وخانوادگی-دانش-آموزان.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۱۴</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم شناسایی ویژگی های دانش آموز</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-شناسایی-ویژگی-های-دانش-آموز.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-شناسایی-ویژگی-های-دانش-آموز.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۱۵</strong></td>
+<td width="397"><strong>فرم طراحی سوال امتحانی</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طراحی-سوال-امتحانی.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><br></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۱۶</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم طرح درس روزانه</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-درس-روزانه-.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-درس-روزانه-.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۱۷</strong></td>
+<td width="397"><strong>فرم طرح درس سالانه</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-درس-سالانه.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-درس-سالانه.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۱۸</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم طرح سوال۲</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-سوال2.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-طرح-سوال2.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۱۹</strong></td>
+<td width="397"><strong>فرم کاربرگ کلاسی دبیران</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-کاربرگ-کلاسی-دبیران.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-کاربرگ-کلاسی-دبیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم گزارش گروه به معلم</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-گزارش-گروه-به-معلم.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-گزارش-گروه-به-معلم.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۲۱</strong></td>
+<td width="397"><strong>فرم گزارش گروه به معلم ۲</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-گزارش-گروه-به-معلم-1.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-گزارش-گروه-به-معلم-1.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲۲</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم مستندات پوشه کار دبیران</strong></span></td>
+<td width="76"><a target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-مستندات-پوشه-کار.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۲۳</strong></td>
+<td width="397"><strong>فرم نظر سنجی از دانش آموز در مورد عملکرد دبیران</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظر-سنجی-از-دانش-آموز-در-مورد-عملکرد-دبیران.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظر-سنجی-از-دانش-آموز-در-مورد-عملکرد-دبیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲۴</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم نظر سنجی ازمدیردر مورد عملکرد دبیران</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظر-سنجی-ازمدیردر-مورد-عملکرد-دبیران.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظر-سنجی-ازمدیردر-مورد-عملکرد-دبیران.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۲۵</strong></td>
+<td width="397"><strong>فرم نظرسنجی از دبیران در مورد عملکرد مدیر</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظرسنجی-از-دبیران-در-مورد-عملکرد-مدیر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نظرسنجی-از-دبیران-در-مورد-عملکرد-مدیر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲۶</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم نقد و بررسی یک موضوع درسی</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نقد-و-بررسی-1دروس.doc" target="_blank"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-نقد-و-بررسی-1دروس.pdf" target="_blank"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۲۷</strong></td>
+<td width="397"><strong>فرم های برنامه سالانه</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-های-برنامه-سالانه.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-های-برنامه-سالانه.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۲۸</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>نامه مدرسه&nbsp; به اولیا</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/نامه-مدرسه-به-اولیا.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/نامه-مدرسه-به-اولیا.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۲۹</strong></td>
+<td width="397"><strong>نظر خواهی از دانش آموز در مورد پدر و مادر</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/نظر-خواهی-از-دانش-آموز-در-مورد-پدر-ومادر.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/نظر-خواهی-از-دانش-آموز-در-مورد-پدر-ومادر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۳۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم الف- فرم برنامه های مدیر در طول سال</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-الف-فرم-برنامه-ها.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-الف-فرم-برنامه-ها.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۳۱</strong></td>
+<td width="397"><strong>فرم ب – فرم بازدید از مدارس</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ب-فرم-بازدید.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-ب-فرم-بازدید.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۳۲</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>فرم بازدید از حوزه امتحانی</strong></span></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-بازدید-از-امتحانات-داخلی94.docx" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/فرم-بازدید-از-امتحانات-داخلی94.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td colspan="4" width="599">
+<p style="text-align: center;"><span style="color: #008000; font-size: 14pt;"><strong>برنامه های متوسطه ی اول</strong></span></p>
+</td>
+</tr>
+<tr>
+<td width="51"><strong>۳۳</strong></td>
+<td width="397"><strong>طرح محبت</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شیوه-نامه-طرح-محبت.doc" target="_blank" rel="attachment wp-att-578"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><br></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۳۴</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>درس پژوهی</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/درس-پژوهی.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۳۵</strong></td>
+<td width="397"><strong>آیات طرح همگام با قران</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/آیات-همگام-با-قران1.pdf" target="_blank" rel="attachment wp-att-579"><img class="wp-image-579 aligncenter tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a>۱</td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/آیات-همگام-با-قران2.pdf" target="_blank" rel="attachment wp-att-579"><img class="wp-image-579 aligncenter tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a>۲</td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۳۶</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>طرح کلاسهای موضوعی</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/کلاس-های-موضوعی.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۳۷</strong></td>
+<td width="397"><strong>طرح نظارت و راهنمایی بالینی</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/طرح-نظارت-و-راهنمایی-بالینی.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۳۸</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>طرح مدام</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/طرح-مدام.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۳۹</strong></td>
+<td width="397"><strong>طراحی آموزشی</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/طراحی-آموزشی.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>شیوه نامه ارزشیابی مستمر</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شیوه-نامه-ارزشیابی-مستمر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۴۱</strong></td>
+<td width="397"><strong>طرح توسعه اخلاق</strong></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/طرح-توسعه-اخلاق-1.doc" target="_blank"><img class="aligncenter wp-image-578 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/word1.jpg" alt="" width="20" height="20"></a></td>
+<td width="76"><br></td>
+</tr>
+<tr>
+<td colspan="4" width="599">
+<p style="text-align: center;"><span style="color: #008000; font-size: 14pt;"><strong>برنامه های متوسطه ی دوم</strong></span></p>
+</td>
+</tr>
+<tr>
+<td width="51"><strong>۴۲</strong></td>
+<td width="397"><strong>طرح همیار معلم</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شیوه-نامه-طرح-همیار-معلم.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴۳</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>طرح مدارس سرآمد</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شیوه-نامه-مدارس-سرامد.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۴۴</strong></td>
+<td width="397"><strong>شیوه نامه کلاسهای فوق برنامه متوسطه دوم</strong></td>
+<td width="76"><br></td>
+<td width="76"><br></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>شیوه نامه ارزشیابی مستمر</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/شیوه-نامه-ارزشیابی-مستمر.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td colspan="4" width="599">
+<p style="text-align: center;"><span style="color: #008000; font-size: 14pt;"><strong>قوانین، آیین نامه ها و شیوه نامه ها</strong></span></p>
+</td>
+</tr>
+<tr>
+<td width="51"><strong>۴۵</strong></td>
+<td width="397"><strong>سند تحول بنیادین آموزش و پرورش</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/سند-تحول-بنیادین.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴۶</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>مبانی نظری سند تحول بنیادین آموزش و پرورش</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/مبانی-نظری-سند-تحول-بنیادین.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۴۷</strong></td>
+<td width="397"><strong>سند برنامه درسی آموزش و پرورش</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/سند-برنامه-درسی-1.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۴۸</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>کتاب تعالی مدیریت مدرسه</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/کتاب-تعالی-مدیریت.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۴۹</strong></td>
+<td width="397"><strong>آیین نامه اجرایی مدارس</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/ایین-نامه-اجرایی-مدارس.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۵۰</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>آیین نامه آموزشی بزرگسال</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/ایین-نامه-اموزشی-بزرگسال.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۵۱</strong></td>
+<td width="397"><strong>قانون رسیدگی به تخلفات اداری</strong></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/قانون-رسیدگی-به-تخلفات-اداری.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><span style="color: #993300;"><strong>۵۲</strong></span></td>
+<td width="397"><span style="color: #993300;"><strong>جدول تطبیق و نحوه ادامه تحصیل</strong></span></td>
+<td width="76"><br></td>
+<td width="76"><a href="http://roshdosamar.com/wp-content/uploads/2015/11/جدول-تطبیق-و-نحوه-ادامه-تحصیل.pdf" target="_blank" rel="attachment wp-att-579"><img class="aligncenter wp-image-579 tie-appear" src="http://roshdosamar.com/wp-content/uploads/2015/11/pdf2.jpg" alt="" width="19" height="20"></a></td>
+</tr>
+<tr>
+<td width="51"><strong>۵۳</strong></td>
+<td width="397"><strong>آیین نامه رسیدگی به تخلفات امتحانی</strong></td></tr></tbody></table>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="../post/category/15.html" class=text4>متوسطه</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/485.html#commentlist">نظرات (<script>setCommentCnt(485)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('485','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/484.html">امتحانات</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه دوازدهم آبان 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><h2 class="title"><br></h2>
+<table style="width:500px" cellspacing="1" cellpadding="1" border="1"><tbody><tr><td style="width:325px"><span style="font-size:18px"><strong>صورت جلسه برگزاری امتحانات داخلی&nbsp;</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s9.picofile.com/file/8357021100/%D8%B5%D9%88%D8%B1%D8%AA%D8%AC%D9%84%D8%B3%D9%87_%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA_%D9%87%D9%85%D8%A7%D9%87%D9%86%DA%AF_%D9%88_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C.docx.html"><span style="color:#e74c3c"><strong><span style="font-family:Tahoma"><span style="font-size:18px">دانلود&nbsp;</span></span></strong></span></a></td></tr><tr><td style="text-align:center; width:325px"><span style="font-size:18px"><strong>فرم بازدید&nbsp;</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s9.picofile.com/file/8357021192/form_bazdid.pdf.html"><span style="color:#e74c3c"><span style="font-size:18px"><strong>دانلود&nbsp;</strong></span></span></a></td></tr><tr><td style="text-align:center; width:325px"><span style="font-size:18px"><strong>شیوه نامه برگزاری امتحانات</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s8.picofile.com/file/8357021468/shivehnameh.pdf.html"><span style="font-size:18px"><strong>دانلود</strong></span></a></td></tr><tr><td style="text-align:center; width:325px"><span style="font-size:18px"><strong>فرم بایگانی اوراق امتحانی&nbsp;</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s8.picofile.com/file/8357021592/t%D9%81%D8%B1%D9%85_%D8%A8%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%DB%8C_%D8%A7%D9%88%D8%B1%D8%A7%D9%82.docx.html"><span style="font-size:18px"><strong>دانلود&nbsp;</strong></span></a></td></tr><tr><td style="text-align:center; width:325px"><span style="font-size:18px"><strong>شماره صندلی&nbsp;</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s8.picofile.com/file/8357021518/%D8%B4%D9%85%D8%A7%D8%B1%D9%87_%D8%B5%D9%86%D8%AF%D9%84%DB%8C.docx.html"><span style="font-size:18px"><strong>دانلود&nbsp;</strong></span></a></td></tr><tr><td style="text-align:center; width:325px"><span style="font-size:18px"><strong>تخلفات امتحانی&nbsp;</strong></span></td><td style="text-align:center; width:162px"><a rel="nofollow" href="http://s8.picofile.com/file/8357021276/photo_2016_12_18_09_00_31.jpg"><span style="font-size:18px"><strong>دانلود&nbsp;</strong></span></a></td></tr></tbody></table><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size:16px"><strong>سر برگ امتحانات&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a rel="nofollow" href="http://s8.picofile.com/file/8357809776/%D8%B3%D8%B1_%D8%A8%D8%B1%DA%AF_%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA.rar.html"><span style="color:#3498db">دانلود&nbsp;</span></a></strong></span></p><p><span style="font-size:16px"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong><strong> &nbsp; فرم بازبینی اوراق امتحانی</strong></span><strong><span style="color:#3498db"><span style="font-size:16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a rel="nofollow" href="http://s8.picofile.com/file/8357812776/%D9%81%D8%B1%D9%85_%D8%A8%D8%A7%D8%B2%D8%A8%DB%8C%D9%86%DB%8C_%D8%A7%D9%88%D8%B1%D8%A7%D9%82_%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%DB%8C.jpg">دانلود&nbsp;</a></span></span></strong></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/484.html#commentlist">نظرات (<script>setCommentCnt(484)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('484','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://danasetup.mihanblog.com/post/protected/482">  مطلب رمز دار : فرم اعتراض امتحان نهایی(جهت دزیافت نظر خودرا درمورد وبلاگ ارسال کنید.)</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>سه شنبه بیست و یکم خرداد 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>این مطلب رمزدار است، جهت مشاهده باید کلمه رمز این مطلب را وارد کنید.<form id="frm-16079959535fd81231730dd" method="post" action="http://danasetup.mihanblog.com/post/protected/482/fid/16079959535fd81231730dd/atrty/1607995953/avrvy/0/key/891b4c5b63f67982c0dbe4a4b09f7d56/" ><input type="password" name="data[post_pass]" id="post_pass" value="" class="english" /><input type="hidden" name="secfrdcodedvar" id="secfrdcodedvar" value="f5fb625cf220583f7a23853bf8cfcb1d"><input type="submit" value="ارسال" class="btn" /><input type="hidden" name="frm-id" value="16079959535fd81231730dd" id="frm-id" /></form>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/482.html#commentlist">نظرات (<script>setCommentCnt(482)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('482','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/481.html">دانش آموزان متقاضی شرکت در امتحانات نهایی</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه دوازدهم خرداد 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+<p dir="rtl"><strong><font size="6" face="arial, helvetica, sans-serif">دانش آموزان متقاضی شرکت در امتحانات نهایی ،</font></strong></p>
+<p dir="rtl"><strong><font size="6" face="arial, helvetica, sans-serif">آیا میدانید ؟</font></strong></p>
+<p dir="rtl"><strong>-<font size="3" face="arial, helvetica, sans-serif">
+ آیا میدانید که: سوابق تحصیلی دروسی که به صورت نهایی برگزار میشود ،حداقل
+ 25/0 درصد از کنکور سال آینده شما را تشکیل می دهد و در سنوات آینده</font></strong><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;این درصد بیشتر خواهد شد&nbsp; ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:معدل کتبی نهایی ، ملاکی مهم ، جهت پذیرش در&nbsp; آزمون های استخدامی آینده شما میباشد ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: امتحانات نهایی به صورت همزمان جهت همه متقاضیان ، در سراسر کشور اجرا میشود ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: طراح سئوالات امتحانات نهایی در هر درسی تنها یک نفر نمی باشد و گروهی از دبیران سئوال طرح مینمایند ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: ملاک طرح سئوال فقط و فقط ، &nbsp;کتب درسی دبیرستانی است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: گرفتن بارم هر فصل از درسهایتان برابر دستورالعمل از دبیر مربوطه ضروری &nbsp;است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;آیا میدانید که: احتمال آمدن سئوال از هر قسمت کتاب وجود دارد و شما نباید بر اساس نظر خودتان به حذف قسمت هایی از</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;کتاب بپردازید و قسمت هایی را مهم تر از بقیه بدانید&nbsp; ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: بررسی و مطالعه سئوالات امتحانات نهایی و پاسخنامه آن که مربوط به سنوات گذشته است بسیار مفید میباشد ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: سئوالات امتحانات نهایی در سنوات گذشته &nbsp;بیشتر فرادانشی ((مفهومی)) است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: در امتحانات نهایی فردی موفق تر است که درس را به صورت مفهومی خوانده و قدرت تجزیه و تحلیل داشته باشد؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: برگه امتحانی شما حداقل 2&nbsp; و حداکثر 4 بار توسط دبیران متخصص در همان رشته درسی&nbsp; که در همان سال تدریس&nbsp; </strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>همان درس را داشته اند ،تصحیح&nbsp; میشود و از این بابت جای نگرانی وجود ندارد ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: حوزه امتحان نهایی ، معمولا مدرسه ای غیر از مدرسه خودتان است و به شما راهنمای حوزه میدهند ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: باید حوزه امتحانی خود را شناسایی نموده و در هر جلسه حداقل نیم ساعت قبل از شروع درحوزه حضورداشته باشید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: تنها مجوز&nbsp; ورود به حوزه امتحانی، کارت شرکت در جلسه میباشد ،که توسط مدرسه به شما داده میشود ؟ &nbsp;</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: میبایست نهایت دقت در نگهداری از کارتتان را، که در پشت آن تاریخ و مواد امتحانی درج شده را داشته باشید؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: که همیشه باید در بدو ورود به حوزه ، کارت را در سمت چپ سینه خود نصب نمایید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; امتحان مجددی تحت عنوان غائبین موجه وجود ندارد و امتحانات نهایی فقط در 3 نوبت :خرداد و شهریور و دی ماه </strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>برگزار میگرددو در صورت عدم حضور باید در نوبت بعدی شرکت نمایید &nbsp;؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: در صورت داشتن عذر موجه جهت غیبت در امتحان ، باید به مدرسه خود مراجعه و فرمی جهت شما تکمیل شود ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: جهت امتحان مجدد درس یا دروسی که نمره قبولی آن&nbsp; نیاورده و یا غائب بوده اید ، باید مجددا در مدرسه خودتان </strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>انتخاب واحد نموده و در نوبت بعد ،آن درس یا دروس رامجددا در حوزه ای که مجددا اعلام میشود ، امتحان دهید&nbsp; ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: پس از حضور در جلسه امتحان باید 3 شماره ((صندلی ، کارت و پاسخنامه )) خود را با هم &nbsp;تطبیق داده و باید</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;شماره آنها با هم یکسان باشد&nbsp; و در غیر این صورت، مسئولین حوزه را&nbsp; در جریان قرار دهید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: در جلسه امتحان برای برخی دروس پاسخنامه تک صفحه ای و برای 
+برخی دیگر چند صفحه پاسخنامه به شما داده&nbsp; میشود و میبایست اطلاعات </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>خواسته شده را در&nbsp; سر برگ تمامی پاسخنامه ها ذکر نمایید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;آیا میدانید که: بردن چرکنویس به جلسه امتحان ممنوع است و باید از برگه آخر پاسخنامه خود (بدون جداکردن آن) استفاده نمایید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: نمیتوان از قسمت های سفید برگه سئوال بعنوان چرکنویس استفاده نمودو در صورت استفاده متخلف محسوب میشوید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: نوشتن نام ونام خانوادگی و شماره داوطلبی ،&nbsp; روی تمامی &nbsp;برگه 
+های سئوالات و همچنین نوشتن&nbsp; اطلاعات خواسته شده روی تمامی برگه های 
+پاسخنامه&nbsp;</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;الزامی است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: برای هر درس(غیر از دروسی که پاسخنامه تک برگی دارند ) به 
+تعداد کافی برگه به شما داده میشود و درصورت نیاز میتوانید برگ دیگری 
+بگیرید؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: نوشتن جواب سئوالات با خودکارهای سبز و قرمز و همچنین مداد ممنوع است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp;&nbsp; باید در جلسه امتحان دو خودکار ترجیحا آبی همرنگ داشته باشید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: استفاده از لاک غلط گیر و گذاشتن هر نوع علامت و یا کلمه و نشان روی برگه، تخلف محسوب میگردد ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; برای رسم جواب سئوالاتی مانند هندسه، باید اول آنرا با مداد کشیده و سپس با خودکار پر رنگش نمایید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; خوش خط نوشتن و پرهیز از خط خوردگی مدام برگه ، از اصول کار میباشد ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; کشیده شدن یک خط ساده بین جواب سئوالات ، به زیبایی جواب شما و دقت نظر مصحح ، می افزاید؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: حتی المقدور باید از جواب دادن به سئوالات در چند قسمت جداگانه صفحات پاسخنامه پرهیز نمایید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>- آیا میدانیدکه : 3 ساعت پس از پایان آزمون هر درس ، کلید سئوالات بر روی پایگاه اینترنتی مرکز سنجش وزارت آموزش و پرورش</strong></font><font face="arial, helvetica, sans-serif"><font size="3"><strong>&nbsp;به آدرس </strong><a href="http://aee.medu.ir/"><strong>http://aee.medu.ir</strong></a><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; قرار میگیرد؟</strong></font></font></p>
+<p dir="rtl"><font face="arial, helvetica, sans-serif"><font size="3"><strong>-&nbsp;
+ آیا میدانید که: همراه داشتن موبایل حتی خاموش ، تخلف و تقلب محسوب میگردد
+ و نمره درس صفر شدهدو در صورت روشن بودن نمره کلیه دروس آن نوبت</strong></font></font><font face="arial, helvetica, sans-serif"><font size="3"><strong> صفر میگردد &nbsp;و همچنین محل یا فردی جهت به امانت گرفتن وسایلتان در محل برگزاری آزمون پیش بینی<u> نشده</u> است ؟</strong></font></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: استفاده از ماشین حساب ساده که فقط چهار عمل اصلی را انجام میدهد در برخی از امتحانات مجاز میباشد ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: اجازه&nbsp; جابجا نمودن ماشین حساب را نداشته و باید از ماشین حساب یا دیگر وسایل شخصی خود استفاده نمایید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: باید در آخرین امتحان خود ، کارت ورود به جلسه اتان را تحویل مسئولین حوزه اجرا دهید ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: برای دریافت نتیجه امتحانات ،باید کمتر از 10روز پس از آخرین امتحان، به مدرسه خود مراجعه نمایید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: درصورت داشتن اعتراض به نتایج امتحان ، حداکثر تا 3 روز بعد 
+از اعلام نتایج ، میبایست شخصا به مدرسه مراجعه و&nbsp; فرم اعتراضات را پر نمود</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;و شخصا امضاء نموده و تحویل دفتر دار مدرسه اتان دهید ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; ارتباط مستمر شما با مدرسه بعد از پایان امتحانات تا اعلام نتیجه و برگشت جواب اعتراضات ، لازم است ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که:&nbsp; شرط فارغ التحصیلی شما گذراندن حداقل 96 واحد درسی و کسب معدل کل حداقل 10 میباشد </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: شرط استفاده از تبصره ((تک ماده )) حداکثر در دو عنوان درسی مقدور میباشد که نمره آن بالای(( 7 ))است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که:&nbsp; دانش آموزی که قصد استفاده از تبصره رادارد و نمرات 2 عنوان 
+درسی از دروس افتاده اش &nbsp;بالای 7 است ،درصورت متمایل بودن به حفظ این دو 
+نمره </strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>و
+ استفاده از تک ماده ، &nbsp;دیگر نباید در &nbsp;دوره های امتحانی بعدی ، آن دروس را
+ انتخاب نماید ؟ چراکه در صورت انتخاب، نمره امتحان جدید جایگزین میگردد .</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: بسیاری از تخلفات ، سهوی بوده و به واسطه ندانستن موضوع انجام
+ میگیرد و مطالعه موارد تخلف و تقلب در امتحانات که در تمامی حوزه ها نصب 
+گردیده ،</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;از اصول اساسی کار میباشد ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: مواردی چون همراه داشتن کتاب یا جزوه و یادداشت ، گذاشتن هر 
+نوع علامت روی برگه ، پاسخگویی به سئوالات از طریق نگاه کردن به ورقه 
+امتحانی </strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>دانش
+ آموز دیگر یا صحبت کردن با آنها ، رد و بدل نمودن یادداشت ، بیرون بردن 
+ورقه امتحانی از حوزه&nbsp; ، نوشتن برای دیگری ، مشارکت در تعویض اوراق امتحانی
+ ،</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;فرستادن شخصی به جای خود به جلسه امتحان و اخلال در نظم جلسه یا حوزه امتحانی ، از موارد تخلف محسوب میگردد ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا
+ میدانید که: تخلفاتی که خدای ناخواسته ،&nbsp; سهوا یا عمدا انجام پذیرد ، بعضا
+ تا محرومیت&nbsp; از نوبت بعدی را شامل شده و قابل &nbsp;پیگرد قانونی است ؟</strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>آیا میدانید که: توکل به خدا ، اعتماد به نفس ، مطالعه اصولی و&nbsp; برنامه ریزی مناسب ، نقطه اولین و آخرین بحث تعلیم و تربیت میباشد ؟ </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>اامید
+ است که با رعایت نکات و یادگیری &nbsp;مطالبی که نمی دانستید &nbsp;، به نمره واقعی 
+خود دست پیدا نموده و خدای ناخواسته حقی از شما داوطلب شرکت در امتحانات</strong></font><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;نهایی &nbsp;تضییع &nbsp;نگردد . </strong></font></p>
+<p dir="rtl"><font size="3" face="arial, helvetica, sans-serif"><strong>&nbsp;&nbsp;&nbsp;&nbsp; موفقیت و سر بلندی تمامی شما عزیزان که به حق آینده سازان ایران اسلامی میباشید را ، &nbsp;از خداوند بزرگ خواستاریم .</strong></font></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/481.html#commentlist">نظرات (<script>setCommentCnt(481)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('481','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/480.html">آیین نامه تخلفات امتحانات نهایی و داخلی </a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه دوازدهم خرداد 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+
+
+
+
+                
+                <div id="ctl00_cphMain_ctl00">
+	
+                        
+                    
+</div>
+                <div class="meta_text">
+                    </div><div class="meta_text"><div class="article_rating">
+                    </div>
+                </div>
+                <p>
+                    
+                </p>
+
+ 
+               
+                    
+<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">آیین نامه تخلفات امتحانات نهایی و داخلی </span></span></p>
+
+<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">رای های صادره در مورد متخلفین امتحانات دوره تحصیلی متوسطه و عمومی</span></span></p>
+
+<table dir="rtl" width="633" height="1774" cellspacing="0" cellpadding="0" border="1" align="right">
+	<tbody>
+		<tr>
+			<td style="width:65px;height:20px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">ردیف</span></span></p>
+			</td>
+			<td style="width:186px;height:20px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نوع تخلف</span></span></p>
+			</td>
+			<td style="width:212px;height:20px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نوع امتحان</span></span></p>
+			</td>
+			<td style="width:302px;height:20px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">مجازات</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:65px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">1</span></span></p>
+
+			<p dir="RTL" align="center">&nbsp;</p>
+			</td>
+			<td rowspan="4" style="width:186px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">همراه داشتن کتاب ، جزوه ، یادداشت و سایر وسایل غیر مجاز ( 1 ) در جلسه امتحان</span></span></p>
+			</td>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات ابتدایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">تذکر شفاهی و کسر نمره درس با نظر معلم</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی راهنمایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">تذکر شفاهی و کسر نمره درس با نظر شورای مدرسه</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات نهایی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:65px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">2</span></span></p>
+			</td>
+			<td rowspan="4" style="width:186px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">گذاشتن هر نوع علامت روی ورقه امتحانی به منظور سوء استفاده</span></span></p>
+			</td>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات ابتدایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">------------------</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی راهنمایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">------------------</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">------------------</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات نهایی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:65px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">3</span></span></p>
+			</td>
+			<td rowspan="4" style="width:186px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">استفاده
+ یا اقدام به استفاده از کتاب ، جزوه ، یادداشت و سایر وسایل غیرمجاز 
+پاسخگویی به سوالات امتحانی از طریق نگاه کردن به ورقه امتحانی دانش آموزان
+ دیگر یا صحبت کردن با آنها</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">رد و بدل کردن یادداشت و روشهای مشابه</span></span></p>
+			</td>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات ابتدایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">کسر نمره صفر با نظر شورای مدرسه</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی راهنمایی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات نهایی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات انجام شده اعم از داخلی و نهایی باطل و از شرکت در امتحان بقیه دروس همان نوبت محروم می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:65px;height:27px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">4</span></span></p>
+			</td>
+			<td rowspan="4" style="width:186px;height:27px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">بیرون بردن ورقه امتحانی</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نوشتن ورقه امتحانی برای دانش آموز دیگر</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">استفاده از ورقه امتحانی نوشته شده توسط دانش آموز دیگر</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">مشارکت در تعویض اوراق امتحانی</span></span></p>
+			</td>
+			<td style="width:212px;height:27px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات ابتدایی</span></span></p>
+			</td>
+			<td style="width:302px;height:27px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفرمی شود </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:31px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی راهنمایی</span></span></p>
+			</td>
+			<td style="width:302px;height:31px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:42px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;height:42px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:46px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات نهایی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;height:46px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات انجام شده اعم از داخلی و نهایی باطل و از شرکت در امتحان بقیه دروس همان نوبت محروم می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:65px;height:29px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">5</span></span></p>
+			</td>
+			<td rowspan="4" style="width:186px;height:29px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">فرستادن شخص دیگری به جای خود به جلسه امتحان</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">اخلال در نظم جلسه یا حوزه امتحانی</span></span></p>
+
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">افشا یا استفاده از سوالات امتحانی افشا شده و یا مشارکت در افشا</span></span></p>
+			</td>
+			<td style="width:212px;height:29px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات ابتدایی</span></span></p>
+			</td>
+			<td style="width:302px;height:29px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس و انضباط صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:34px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی راهنمایی</span></span></p>
+			</td>
+			<td style="width:302px;height:34px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس و انضباط صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:28px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات داخلی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;height:28px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره درس و انضباط صفر می شود</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:212px;height:32px;">
+			<p dir="RTL" align="center"><span style="font-family:b titr;"><span style="font-size:8.0pt;">امتحانات نهایی متوسطه و پیش دانشگاهی</span></span></p>
+			</td>
+			<td style="width:302px;height:32px;">
+			<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">نمره تمام درس صفر ( 2 ) و متخلف از امتحانات نوبت بعدی محروم می شود و موضوع به مراجع قضایی ذیصلاح گزارش می گردد</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear:both;">&nbsp;</div>
+
+<p dir="RTL" align="center">&nbsp;</p>
+
+<p dir="RTL" style="margin-right:.25in;"><span style="font-family:b titr;"><span style="font-size:8.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 1- همراه داشتن اسلحه ، بی سیم و تلفن همراه در جلسات امتحانی مجاز نیست .
+ در صورت عدم رعایت موراد مذکور با متخلفین برابر ردیف یک جدول فوق برخورد 
+خواهد شد .</span></span></p>
+
+<p dir="RTL"><span style="font-family:b titr;"><span style="font-size:8.0pt;">2-
+ فردی که در امتحانات داخلی یا نهایی دوره متوسطه در یک نوبت امتحانی مرتکب
+ تکرار تخلف شود امتحانات انجام شده وی در آن نوبت باطل و از شرکت در 
+امتحانات بقیه دروس محروم می گردد .</span></span></p><table width="100%"><tbody><tr><td><br></td><td style="width: 25px"><br></td><td style="width: 25px"><br></td><td style="width: 25px"><br></td><td style="width: 25px"><br></td><td style="width: 25px"><br></td>
+                        
+                    </tr>
+                </tbody></table>
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/480.html#commentlist">نظرات (<script>setCommentCnt(480)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('480','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/479.html">نمونه سوالات نهایی پایه دوازدهم</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>سه شنبه سوم اردیبهشت 1398</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><a href="http://s8.picofile.com/file/8358282984/%D9%86%D9%85%D9%88%D9%86%D9%87_%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA_%D9%88%D9%86%DA%A9%D8%A7%D8%AA_%D9%85%D9%87%D9%85_%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%DB%8C.rar.html" target="_blank" title=""><div align="center"><img class="irc_mi" src="http://s1.picofile.com/file/7992758816/17.gif" alt="Image result for ‫دانلود متحرک‬‎" style="margin-top: 117px;" width="316" height="120"></div></a><div align="center">ر<br></div><br>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/479.html#commentlist">نظرات (<script>setCommentCnt(479)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('479','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/477.html">کرک نود32 وبرنامه نصب نود</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div><br></div><div><br></div><div><br></div><div align="center"><a href="http://s9.picofile.com/file/8354616876/NOD32.rar.html" target="_blank" title=""><img class="irc_mi" src="http://s1.picofile.com/file/7992758816/17.gif" alt="Image result for ‫دانلود متحرک‬‎" style="margin-top: 117px;" width="316" height="120"></a></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/477.html#commentlist">نظرات (<script>setCommentCnt(477)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('477','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../post/476.html">رفع مشکل باز نشدن بخش اصلاح سوابق تحصیلی</a></font></div>
+            <div class=div58><font class=text7><a href="../post/author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">با
+ عرض سلام و خسته نباشید خالصانه محضر همه همکاران محترم و تشکر ویژه بابت 
+یاری همه جانبه و اظهار لطف جهت بهبود هر چه بهتر مطالب این وبلاگ (که صد 
+البته متعلق به خود شماست).<br></span>
+<p><span style="font-size: small;">در پست قبلی به </span>تاریخ: <span style="color: #ff0000;"><strong><a href="http://sanjeshborujerd.blogfa.com/post/191" target="_blank"><span style="color: #ff0000;">چهارشنبه ۲۴ آبان ۱۳۹۶</span></a></strong> </span>با موضوع&nbsp;<span style="color: #ff0000;"><strong><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;">ر</span></a><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;">وش اصلاح سوابق دانش</span></a><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;"> آموزان</span></a></strong></span>&nbsp;مطالبی خدمت شما عزیزان گفته شد.&nbsp;</p>
+<p><span style="font-size: small;">در تکمیل مطالب قبلی باید بگوییم که ممکن است بخش اصلاح سوابق تحصیلی باز نشود و با پیغام ((<span style="color: #ff0000;">سندهای وجود دارد که به منطقه ارسال شده اند ولی هنوز رمز اصلاحیه صادره برای آن ها در سیستم اعمال نشده است</span>)) مواجه شوید.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8320310950/%D8%A7%D8%B5%D9%84%D8%A7%D8%AD_%D8%B3%D9%88%D8%A7%D8%A8%D9%82.JPG" alt="" width="450" height="164"></span></p>
+<p><span style="font-size: small;">&nbsp;</span></p>
+<p><span style="font-size: small;">این امر ممکن به دو دلیل باشد:</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;"> 1-</span>
+ سوابق دانش آموزی را اصلاح نموده و به منطقه ارسال نموده اید اما&nbsp;بعد از 
+دریافت اسناد اصلاحیه از منطقه و اعمال آن ها مشاهده می کنید که&nbsp;&nbsp;این بخش 
+باز نمی شود. (چند سند اعمال نشده باقی مانده است)<br></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;"> 2-</span> و یا قبلا به هر دلیلی اصلاحاتی صورت گرفته اما موارد بعدی پیگیری نشده است و این اصلاحات در سیستم هم چنان باقی مانده اند.</span></p>
+<p><span style="font-size: small;"><span style="background-color: #00ff00;">نکته: </span>حتما قبلا از انجام اصلاحات یک ذخیره تهیه نمایید تا با بروز مشکلات احتمالی بتوانید سیستم را به حالت قبل برگردانید.</span></p>
+<p><span style="font-size: small;">اما راه حل:</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;"> الف)</span>
+ در قسمت اول که اصلاحات را انجام داده و اسناد را دریافت و اعمال نموده 
+اید اگر بخش اصلاح سوابق تحصیلی باز شد یعنی اسناد تولید شده شما تأیید و 
+اعمال شده است. اما &nbsp;حتی بعد از تکرار چند بار دریافت اسناد و اعمال آن ها،
+ این بخش&nbsp;باز نشد، می توانید ذخیره را بر گردانید.&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">ب)</span> ممکن این اسناد قبلا صورت گرفته باشند و معلوم نباشد که چه زمانی بوده و یا حتی مورد تأیید شما باشند یا نه، لذا نمی توانید از روش <span style="background-color: #ffff00;">الف</span> استفاده نمایید. برای بر طرف نمودن این مشکل باید از ا<span style="color: #ff0000;">سکریپت script</span> مخصوص حذف اسناد اصلاحیه استفاده نمایید.</span></p>
+<p style="text-align: center;"><span style="color: #ff0000; font-size: small;">&nbsp;<a href="http://s9.picofile.com/file/8320310500/baha.sql.html" rel="nofollow" target="_blank"><span style="color: #ff0000;"><strong>اسکریپت حذف اسناد اصلاحیه</strong></span></a></span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../post/476.html#commentlist">نظرات (<script>setCommentCnt(476)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('476','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+        ( کل صفحات : 39 )&nbsp;&nbsp;&nbsp;
+            <a href="1.html" class=text4><span>1</span></a>&nbsp;&nbsp;&nbsp;<a href="2.html" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="3.html" class=text4><b>3</b></a>&nbsp;&nbsp;&nbsp;<a href="4.html" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="5.html" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="6.html" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;<a href="7.html" class=text4><span>7</span></a>&nbsp;&nbsp;&nbsp;<a href="8.html" class=text4><i>...</i></a>&nbsp;&nbsp;&nbsp;<br><br><br>
+    </font>
+    </div>
+</div>
+
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35-7>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../post/category/20.html">ویندوز (2)</a></li><li><a href="../post/category/19.html">نرم افزار (5)</a></li><li><a href="../post/category/18.html">سرودهای بازگشایی مدارس (1)</a></li><li><a href="../post/category/17.html">آنتی وریروس (1)</a></li><li><a href="../post/category/16.html">نحوه شارژ چاپگرهای hp (2)</a></li><li><a href="../post/category/15.html">متوسطه (16)</a></li><li><a href="../post/category/14.html">راهنمایی (10)</a></li><li><a href="../post/category/13.html">ابتدایی (3)</a></li><li><a href="../post/category/12.html">پیش دانشگاهی (1)</a></li><li><a href="../post/category/10.html">اسکریپت نمایش مشخصات فردی دانش آموز انتقالی و دانش آموز فارغ التحصیل (1)</a></li><li><a href="../post/category/9.html">رفع بهم ریختگی در حرف (ی) (1)</a></li><li><a href="../post/category/6.html">سوالات وپاسخها (9)</a></li><li><a href="../post/category/5.html">ترفندهای کامپیوتر (6)</a></li><li><a href="../post/category/4.html">سیستم پیام خطای نصب فونت را می دهد (3)</a></li><li><a href="../post/category/3.html">آموزش تصویری gmail (8)</a></li><li><a href="../post/category/2.html">آموزش فتوشاپ (3)</a></li><li><a href="../post/category/1.html">دفتر امتحانات راهنمایی (2)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-8>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://niiyayesh1351.mihanblog.com/" title="" target="_blank">دلنوشته های نیایش</a></li><li><a href="https://rizy.ir/" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم از سایت ریزی برای کوتاه کردن لینک ها استفاده کند و در کنارش کسب درآمد هم کنید!
+از هر بازدید کننده لینک های کوتاه تا 200 ریال درآمد کسب کنید!" target="_blank">کوتاه کننده لینک</a></li><li><a href="http://uupload.ir" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون" target="_blank">آپلود عکس و فایل</a></li><li><a href="http://webposter.ir/webmasters" title="در آمد میهن بلاگی ها در تیر ماه 95 به 2245000 تومان رسید.
+
+    - در آمد هر پاپ آپ 30 ریال.
+    - در آمد بنر گرافیکی 600 ریال. (جدید)
+
+وب پوستر - هوشمند
+webposter.ir
+
+لطفا این لینک را تایید کنید." target="_blank">کسب در آمد از سایت و وبلاگ</a></li><li><a href="http://esteva.mihanblog.com" title="لطفا این لینک را تایید کنید" target="_blank">استوا</a></li><li><a href="http://esteva.mihanblog.com/" title="سلام . مطالب وبلاگتون رو دنبال میکنم
+
+لینکتون رو به این ادرس بفرستید
+http://esteva.mihanblog.com/linkdaily/new
+خیلی زود تایید میکنم
+
+شما هم این لینک رو تایید کنید" target="_blank">مجله اینترنتی استوا</a></li><li><a href="http://esteva.mihanblog.com/post/2793" title="با این زیر می توانید تبلیغات بالای وبلاگتان (سمت چپ) را بلافاصله ببندید.
+
+ادامه مطلب در 
+http://esteva.mihanblog.com/post/2793
+
+لطفا این لینک را تایید کنید" target="_blank">حذف تبلیغات میهن بلاگ</a></li><li><a href="http://rahchamani.mihanblog.com/extrapage/p1" title="" target="_blank">آپدیت سه ماهه NOD32</a></li><li><a href="http://nod32update1.ir/nod32/91" title="" target="_blank">آپدیت 90روزه  نود</a></li><li><a href="http://newsoft-nod32.cofeblog.ir/" title="" target="_blank">نود32</a></li><li><a href="http://shop.panizz.com/product.php?id=3" title="سلام وبلاگ زیبایی دارید
+در صورت تمایل این را لینک را تایید کنید سپس لینک وبلاگ خود را در سایت زیر قرار دهید
+http://9rang.ir/panizz
+ارادتمند" target="_blank">آموزش خیاطی</a></li><li><a href="http://www.iphone.dcashop.ir" title="سلام 
+لطفا ما را لینک کنید 
+تشکر" target="_blank">آیفون تصویری</a></li><li><a href="http://www.kanoon.ir/Public/ExamQuestions.aspx?group=27&amp;lesson=10" title="" target="_blank">نمونه سوالات قلم چی </a></li><li><a href="http://peykanshegeftangiz.blogfa.com/" title="پیکان شگفت انیز" target="_blank">وبلاگ پسر کوچولوی من </a></li><li><a href="http://www.upsara.com/" title="با افتخار میزبان عکس ها و فایل های شما هستیم.
+آپلود رایگان و دائمی عکس
+
+با لینک کردن ما آدرس ما رو فراموش نکنید و از ما حمایت کنید
+
+باتشکر
+آپسرا" target="_blank">آپلود عکس</a></li><li><a href="http://tabadolha.rozblog.com/" title="" target="_blank">خنده وان </a></li><li><a href="http://linefarsi.com" title="" target="_blank">فروشگاه اینترنتی</a></li><li><a href="http://sanjeshl.blogfa.com/" title="" target="_blank">کارشناسی سنجش وارزشیابی شهرستان لردگان</a></li><li><a href="http://emtehan.roshd.ir/" title="" target="_blank">امتحانات سامانه رشد</a></li><li><a href="http://mesl.ir/" title="" target="_blank">نمونه سوالات</a></li>            <li><b><a href="../linkdaily/index.html">همه پیوندهای روزانه</a></b></li>
+            <li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-9>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://www.rasafars.com/EDU2/statute.htm#" title="" target="_blank">اساسنامه مدارس بزرگسالان</a></li><li><a href="http://sanjesh16ab.blogfa.com/" title="" target="_blank">وبلاگ دوره راهنمایی همکار محترم  علیرضا بک نزاد*معاون اجرائی مدارس تربت حیدریه</a></li><li><a href="http://shahedsabrin.mihanblog.com/" title="shahedsabrin" target="_blank">وبلاگ همکار گرامی  رشید خواجه</a></li><li><a href="http://www.akserver.ir" title="" target="_blank">آپلود</a></li><li><a href="http://www.aee.medu.ir/IranEduThms/theme2/cntntpge.php?pgid=99&amp;rcid=151" title="" target="_blank">بخشنامه های كلیدی و آیین نامه ها ازسال1313 تا به امروز</a></li><li><a href="http://www.aee.medu.ir/IranEduThms/theme2/cntntpge.php?pgid=99&amp;rcid=112" title="سوالات نهایی" target="_blank">آرشیو سوالات وزارت آموزش وپرورش</a></li><li><a href="http://danasetup.rzb.ir/" title="ثبت نام" target="_blank">دانا سیستم</a></li><li><a href="http://fish.medu.ir/" title="حقوق شما" target="_blank">فیش حقوق</a></li><li><a href="http://danasetup.rozblog.com/" title="سیستم جدید" target="_blank">سیتم دانا جدید</a></li><li><a href="http://s5.picofile.com/" title="" target="_blank">آپلود آسان picofile</a></li><li><a href="http://uploadweb.ir/Home/Index" title="" target="_blank">آپلود       uploadweb</a></li><li><a href="http://dailykhabariran.ir/news/52423" title="" target="_blank">لایسنس نود ورژن 9</a></li><li><a href="http://www.iranzamin-zanjan.ir" title="" target="_blank">همکار عزیز آقای سلیمی</a></li><li><a href="http://uploadgoogle.ir/" title="" target="_blank">آپلود کردن</a></li><li><a href="http://peykanshegeftangiz.mihanblog.com/" title="" target="_blank">وبلاگ پسر کوچولوی من که عاشق ماشینه</a></li><li><a href="http://m-a-amjadi.blog.ir/" title="" target="_blank">همگام با مدارس سلماس</a></li><li><a href="http://www.sanjesh5747.blogfa.com/" title="سنجش وارزشیابی تحصیلی سجاسرود" target="_blank">وبلاگ همکار گرامی آقای گنج خانلو</a></li><li><a href="http://sch1.blogfa.com/" title="" target="_blank">پایگاه اطلاع رسانی مدارس</a></li><li><a href="http://softsara.ir/" title="" target="_blank">سافت سرا  /softsara.ir/</a></li><li><a href="http://danasetup.persiangig.com/win-xp.pdf/download" title="" target="_blank">تعمیر ویندوزxp با استفاده از دستورات خود ویندوز</a></li>            <li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li>
+            <li><b><a href="../link/index.html">همه پیوندها</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-10>
+            <div class=div25><font class=text5>صفحات جانبی</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../extrapage/1.html">آیین نامه های مهم(کمیسیون خاص -تخلفات امتحانی و...)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-11>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+            <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+            <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+            <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+            <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+            <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+            <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+            <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+            <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-12>
+            <div class=div25><font class=text5>امکانات جانبی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><center><font class=text1><!-- BEGIN Parstools.com Site Translator -->ترجمه وبلاگ به زبانهای مختلف دنیا
+<script src="http://code.parstools.com/index.php?t=st&langs=en,ar,bg,ca,cs,da,de,el,es,et,fi,hi,hu,id,it,ja,ko,lt,lv,mt,nl,pl,pt,ro,ru,sk,sl,sq,sr,sv,th,tl,tr,uk,vi,zh-CN"></script>
+<!-- END Parstools.com Site Translator -->
+
+<center><a target="_blank" href="http://pichak.net/blogcod/pagerank/"><img src="http://pichak.net/blogcod/pagerank/icon/50/pr5.gif" alt="پیج رنک سایت " border="0"></a></center><div style="display:none"><h3><a href="http://pichak.net/">پیج رنک</a></h3><h3><a href="http://pichak.net/blogcod/pagerank/">پیج رنک گوگل</a></h3><h3><a href="http://pichak.net/">قالب وبلاگ</a></h3></div>
+
+<center><script language="javascript" src="http://picHak.NEt/alexa/code.php?link=pichak.net&urlweb=pichak.net&bgi=12&global=1&country=1&links=1&bgc=FFFFFF&borderw=1&borderc=D6D2B4"></script></center><div style='display:none'><h3><a href='http://pichak.net/alexa/'>نمایشگر آمار آلکسا</a></h3></div></font></center>
+                <style>
+                    .mihan_logo {
+                        background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                        height: 131px;
+                        margin-top: 10px;
+                        text-align: center;
+                    }
+                </style>
+                <div class="mihan_logo"></div>
+
+            </div>
+        </div>
+        <div class=div30></div>
+    </div>
+
+</div>
+
+
+
+</div>
+</td>
+<td class="m-r">&nbsp;</td>
+</tr>
+<tr>
+    <td class="b-l">&nbsp;</td>
+    <td class="b2" valign=top>
+        <div class=div7><a href="http://www.mytheme.ir" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" border=0 width=182 height=35></a></div>
+        <div class="mytheme2"><a href="3.html#top"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=80 height=33 border="0" title="بالای صفحه" alt="بالای صفحه"></a></div>
+    </td>
+    <td class="b-r">&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 468px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'danasetup.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

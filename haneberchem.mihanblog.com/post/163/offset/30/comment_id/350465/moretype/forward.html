@@ -1,0 +1,1317 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../../../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*553073*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[163]='31';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[163]='0';
+mihanblogDisLikeArrCnt[163]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://haneberchem.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://haneberchem.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://haneberchem.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://haneberchem.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>هه‌ورامان هانه‌به‌رچه‌م</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="هه‌ورامان هانه‌به‌رچه‌م - کسب رتبه های کشوری واستانی توسط آقای افشین لهونی آموزگارنمونه  - روزنه‌ای به زیبایی‌های هورامان - هه‌ورامان هانه‌به‌رچه‌م">
+<meta name="keywords" content="هه‌ورامان هانه‌به‌رچه‌م - کسب رتبه های کشوری واستانی توسط آقای افشین لهونی آموزگارنمونه ,haneberchem, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="هه‌ورامان هانه‌به‌رچه‌م" href="../../../../../../rss/index.html">
+
+
+
+
+
+<style>
+
+body{margin:0;font-family: Tahoma;background:#dbaa39 }
+.Top-Header{width:1000;background:#f4c75e}
+A {TEXT-DECORATION: none; }
+
+#Header{width:1000;background:url("http://hatav3.persiangig.com/qaleb/hane/top.jpg") no-repeat top;height:291;vertical-align:top;direction:rtl;}
+#Header a{color:#1c4063;margin:0 19}
+#Header a:hover{color:#fcf5f9;}
+
+#BlogTitle{color:#F0C14F;text-align:center;font-size:1pt;font-weight: bold;padding:5 380 0 0;font-family:Times New Roman;}
+#BlogDescription{padding:0 380 0 0;direction:rtl;font-size:1pt;color:#F0C14F;text-align:center;} 
+
+.Habibi1{color:#daebf2;font-size:10pt;padding:230 12 0 0;text-align:center;}
+
+.TPost{width:540;height:68;background:url("http://hatav3.persiangig.com/qaleb/hane/p1.jpg") no-repeat top right;direction:rtl;text-align:right;
+font-size:8pt;}
+.TPost a{color:#2d1f03}
+.TPost2{padding:30 73 0 20;}
+.Post{width:540;background:url("http://hatav3.persiangig.com/qaleb/hane/p2.jpg") repeat-y right;direction:rtl;text-align:right;color:#333333;font-size:8pt;;overflow:hidden}
+.Post2{padding:10 15 10 15}
+.Post3{width:540;background:url("http://hatav3.persiangig.com/qaleb/hane/p3.jpg") no-repeat top right;height:68;text-align:right}
+.Post4{padding:33 34 0 0}
+.Post a{color:#7e5903}
+
+.date{width:360px;float:right;direction:rtl;font-size:8pt;color:#243d3c;}
+.date a{color:#2b3d20;}
+.date a:hover{color:#006488;}
+.Comment{width:120px;float:left;direction:rtl;font-size:8pt;color:#2b3d20;text-align:center;}
+.Comment a{color:#2b3d20;}
+.Comment a:hover{color:#7e5903;}
+.Comment{padding:0 0 0 0}
+
+#Menur{width:210;float:left;}
+#Menul{width:210;float:right;}
+
+.Menu{width:210;background:url("http://hatav3.persiangig.com/qaleb/hane/m1.jpg") no-repeat top right;height:50;direction:rtl;color:#2d1f03;font-size:8pt;}
+.Menu2{padding:23 60 0 60;text-align:right}
+.XMenu{width:210;float:left;direction:rtl;color:#444444;font-size:8pt;background:url("http://hatav3.persiangig.com/qaleb/hane/m2.jpg") repeat-y right;}
+.XMenu a{color:#444444;}
+.XMenu a:hover{color:#FF00CC} 
+.XXMenu{padding:3 25 0 5;background:url("http://hatav3.persiangig.com/qaleb/hane/dot.jpg") 190px 4px  no-repeat}
+.XXMenu2 span{color:#1192b0;font-size:8pt;font-weight:bold}
+.XXMenu2{padding:0 10 5 10;}
+.ZMenu{padding:3 25 0 5;background:url("http://hatav3.persiangig.com/qaleb/hane/dot.jpg") 170px 4px  no-repeat}
+.ZMenu2 span{color:#1192b0;font-size:8pt;font-weight:bold}
+.ZMenu2{padding:0 10 5 10;}
+
+.habibi{width:206px; height:200px; overflow:auto;direction:rtl;scrollbar-face-color: F2C707;scrollbar-track-color: EAD79F;scrollbar-arrow-color: 0D0101;scrollbar-face-color: F4C75E;scrollbar-track-color: EAD79F;scrollbar-arrow-color: 0D0101;scrollbar-highlight-color: BC7C7C;scrollbar-3dlight-color: 9FEE9F;scrollbar-shadow-color: EE49D8;scrollbar-darkshadow-color: 1773C4;}
+
+.BMenu{width:210;background:url("http://hatav3.persiangig.com/qaleb/hane/m3.jpg") no-repeat top right;height:29;float:right}
+
+#Footer{text-align:center;background:url("http://hatav3.persiangig.com/qaleb/hane/footer.jpg") repeat-x top;font-size:8pt;color:#000000;direction:rtl;height:150}
+#Footer a{color:#000000}
+#Footer a:hover{color:#FF00CC}
+#Footer{padding:115 20 5 10;}
+</style>
+
+
+
+
+
+</head>
+<body>
+<div align="center">
+<div class=Top-Header>
+	
+<table border="0" width="1000" cellspacing="0" cellpadding="0">		
+
+
+<tr><td colspan="3" id=Header>			
+
+
+<div id=BlogTitle><br>هه‌ورامان هانه‌به‌رچه‌م</div><div style="width:100%;height:23;float:right"></div>
+<div id=BlogDescription>روزنه‌ای به زیبایی‌های هورامان&nbsp;</div>	
+
+	
+
+<div class=Habibi1><div style="float:right;width:978;direction:rtl">
+
+
+<marquee scrollamount="1" scrolldelay="20" style="font-family: Tahoma;font-size: 10pt;color:#0C1ECE;" direction="right">
+به نامێ خودٚای به‌رز و بێ وێنه‌-خێر به‌یدێ په‌ی په‌لیانه‌و هه‌ورامان هانه‌به‌رچه‌می/
+وه‌شه‌ویسی هه‌ورامی زوان به‌یدێ با زوانه‌که‌یما پارێزنمێ/هومایون موحەممەدنژاد </marquee>
+
+
+
+
+</div>
+
+
+</div>    
+
+
+</td></tr>
+
+<tr><td width="220" valign="top">
+
+
+<div id=Menul>
+<div class=Menu><div class=Menu2>
+<b>منوی اصلی</b></div></div>
+<div class=XMenu>
+<div class=XXMenu>
+<a title="  صفحه نخست وبلاگ"  href="../../../../../../../index.html">صفحه نخست وبلاگ</a>
+</div>
+<div class=XXMenu>﻿
+<a title="عناوین مطالب وبلاگ" target="_blank" href="../../../../../../list.html">عناوین مطالب وبلاگ</a>
+</div>
+<div class=XXMenu>﻿
+<a href="javascript:messageForm()">ارسال پیام به مدیر وبلاگ</a>
+</div>
+<div class=XXMenu>﻿
+<a href="mailto:sina.mohamad@ymail.com"> پست الكترونیك مدیر وبلاگ</a>
+</div>
+<div class=XXMenu>﻿
+<a href="../../../../../../rss/index.html">RSS</a>
+</div>
+<div class=XXMenu>﻿
+<a title="طراح قالب وبلاگ" target="_blank" href="http://www.hatav2.blogfa.com">طراح قالب وبلاگ</a>
+</div>
+</div><div class=BMenu></div></div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+		</div>
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+			
+</td>
+
+
+<td width="563" valign="top">
+
+<div align="center">
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					
+<div class=TPost>
+<div class=TPost2>		
+
+<b><a href="../../../../../../163.html">کسب رتبه های کشوری واستانی توسط آقای افشین لهونی آموزگارنمونه </a></b></div></div>
+<div class=Post><div class=Post2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="-->
+   <m:smallfrac m:val="off"><div style="text-align: left;">
+   </div><m:dispdef><div style="text-align: left;">
+   </div><m:lmargin m:val="0"><div style="text-align: left;">
+   </div><m:rmargin m:val="0"><div style="text-align: left;">
+   </div><m:defjc m:val="centerGroup"><div style="text-align: left;">
+   <m:wrapindent m:val="1440">
+   <m:intlim m:val="subSup">
+   <m:narylim m:val="undOvr">
+  </m:narylim></m:intlim>
+</m:wrapindent><!--[endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:Arial;
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]-->
+
+</div><div dir="ltr" align="center"><div style="text-align: left;">
+
+</div><table class="MsoNormalTable" style="width: 97%;" border="0" cellpadding="0" width="97%">
+ <tbody><tr style="font-family: arial,helvetica,sans-serif;">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%"><div style="text-align: left;">
+  </div><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; line-height: normal; direction: ltr; unicode-bidi: embed; text-align: center;"><img style="width: 290px; height: 334px;" src="http://s1.picofile.com/file/7105495371/%D8%A7%D9%81%D8%B4%DB%8C%D9%86_%D9%84%D9%87%D9%88%D9%86%DB%8C.jpg" alt="http://haneberchem.mihanblog.com/" align="bottom" border="0" hspace="0" vspace="0"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA"><br></span></b></font></p><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">آقای
+ افشین لهونی فرزندآقای رحمان بگ لهونی ومرحومه عصمت حسینی،معلمی وارسته 
+ونجیب ودلسوزبرای دانش آموزان دوره ابتدایی به خصوص برای کلاس دومی ها.</span></b></font></p><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA"></span></b></font><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">خلاصه ای ازموفقیت های آقای افشین لهونی آموزگارنمونه دبستان پسرانه شاهد مریوان:</span></b></font></p><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">1-رتبه اول کشوری درجشنواره الگوهای برترتدریس دردرس علوم <font size="2">پایه دوم ابتدایی درسال 1379.&nbsp;</font> <br></span></b></font></p><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA"></span></b><b><span dir="RTL" style="font-size: 12pt;" lang="FA">2-رتبه اول کشوری درجشنواره الگوهای برترتدریس درچند پایه&nbsp;&nbsp; ابتدایی </span></b><font style="font-weight: bold;"><font size="2"><span dir="RTL" style="font-size: 12pt;" lang="FA"></span></font><span dir="RTL" style="font-size: 12pt;" lang="FA"><font size="2">درسال 1379</font>.</span><span dir="RTL" style="font-size: 12pt;" lang="FA">&nbsp; </span></font></font></p><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><font style="font-weight: bold;"><span dir="RTL" style="font-size: 12pt;" lang="FA"></span></font><b><span dir="RTL" style="font-size: 12pt;" lang="FA"><br></span></b></font></p><div style="text-align: right;"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">3-رتبه اول کشوری درجشنواره الگوهای برترتدریس دردرس هنر پایه دوم ابتدایی<font size="2"> </font></span></b><b><span dir="RTL" style="font-size: 12pt;" lang="FA"><font size="2">درسال 1379.</font><br><br><br>4</span></b></font><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">-رتبه اول کشوری درجشنواره الگوهای برترتدریس دردرس تربیت بدنی&nbsp; ابتدایی </span></b><b><span dir="RTL" style="font-size: 12pt;" lang="FA"><font size="2">درسال 1386.</font><br><br></span></b><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">آقای لهونی علاوه بر4مقام کشوری 11مقام استانی ومقام های فراوان شهرستانی نیزکسب کرده است،که درپست های بعدی بیشتربه آن هامی پردازیم .<br><br><br></span></font><div style="text-align: center;"><div style="text-align: right;"><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">&nbsp;&nbsp; ایشان درمردادماه1390 رتبه اول استان کردستان رادرجشنواره روش یاددهی-یادگیری مبتنی</span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">&nbsp;</span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">برآ.تی راکسب کرده است،که ضمن تبریک به ایشان وخانواده محترمشان وجامعه فرهنگی و</span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA"></span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">اهالی خوب دزآورونوسود،وبلاگ(هورامان هانه به رچه م)برای معلم فرهیخته دیارمان،آرزوی </span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA"></span></font><br><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA">موفقیت های بیشتری درعرصه دانایی وعلم وفرهنگ اورامان،راازخداوند منان خواستاریم .</span></font><br></div><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA"></span></font></div><font size="5"><span dir="RTL" style="font-size: 12pt; font-weight: bold;" lang="FA"><br>متن سخنرانی مدیرکل آموزش وپرورش استان کردستان :&nbsp;</span><b><span dir="RTL" style="font-size: 12pt;" lang="FA"> <br>
+    </span></b></font></div><p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><font size="5"><b><span dir="RTL" style="font-size: 12pt;" lang="FA">با حضور 110 نفر از منتخبان استان؛</span></b><b><span style="font-size: 12pt;"></span></b></font></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%">
+  <p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal; direction: ltr; unicode-bidi: embed;" align="center"><b><span dir="RTL" style="font-size: 16pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">برترین‌های جشنواره روش یاددهی
+  کردستان معرفی شدند.</span></b><b><span style="font-size: 16pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"></span></b></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%"><br></td>
+ </tr>
+ <tr style="">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%">
+  <p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">مرحله استانی جشنواره روش‌های
+  یاددهی ـ یادگیری مبتنی بر آ.تی دوره ابتدایی استان کردستان در دروس پایه‌های
+  مختلف با معرفی افراد برتر به پایان رسید.</span></b><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"></span></b></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%"><br></td>
+ </tr>
+ <tr style="">
+  <td style="width: 99.32%; padding: 0.75pt;" width="99%">
+  
+  <p class="MsoNormal" dir="LTR" style="text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">مدیرکل
+  آموزش و پرورش کردستان امروز در سنندج اظهار داشت: مرحله استانی این جشنواره با
+  حضور 110 فرهنگی از منتخبان شهرستان‌ها و مناطق استان در دروس ریاضی پایه اول،
+  بخوانیم و بنویسیم پایه دوم، علوم پایه سوم، ریاضی پایه‌های چهارم و پنجم و در
+  کلاس‌های چند پایه درس ریاضی سوم و قرآن پایه چهارم برگزار شد.</span></b><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">خسرو ساکی افزود: در پایان این
+  رقابت علمی و در پایه اول شهلا غلامی از کامیاران، ثروت هاشمی از سقز و
+  شهلاشانازی صاحب از زیویه مقام‌های اول تا سوم را کسب کردند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">وی خاطرنشان کرد: در پایه دوم این
+  جشنواره افشین لهونی، کمال برنگ هر دو از مریوان و سمیره مرادی از زیویه مقام‌های
+  اول تا سوم را کسب کردند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">وی تصریح کرد: همچنین در پایه سوم
+  فریدون اصغری از زیویه، زهره ملاولی از سریش‌آباد و بدیعه کرمی از دیواندره حائز
+  رتبه‌های اول تا سوم شدند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">مدیرکل آموزش و پرورش کردستان ادامه
+  داد: در پایه چهارم آفاق امانی از مریوان،حیدر رضایی از بیجار و زلیخا رستمی از
+  ناحیه دو سنندج به ترتیب رتبه‌های اول تا سوم را کسب کردند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">ساکی تصریح کرد: در پایه پنجم این
+  جشنواره الهه محمدی از کامیاران، فرشاد ملامیرزایی از موچش و سهیلا طهمورث‌نژاد
+  از ناحیه دو سنندج حائر رتبه‌های اول تا سوم شدند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">وی یادآور شد: در بخش چند پایه این
+  جشنواره نیز منصور صالحی از مریوان، مرضیه عارفی از زیویه و لیلا بزرگی از بیجار
+  مقام‌های اول تا سوم را کسب کردند.</span></b><span dir="LTR"></span><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"><span dir="LTR"></span> <br>
+  </span></b><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">وی در پایان سخنان خود اضافه کرد: جشنواره
+  روش‌های یاددهی ـ یادگیری مبتنی بر آی.تی دوره ابتدایی در دو مرحله شهرستان و
+  استانی طی چند روز اخیر به مدت سه روز در سنندج برگزار شد. <br></span></b></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal" dir="RTL"><a href="http://www.afkarpress.ir/-"><span dir="LTR">http://www.afkarpress.irمنبع:</span><span dir="RTL"></span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA"><span dir="RTL"></span>/</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">-</span></a><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA"> روزنامه
+صبح ایران:افکار</span></p>
+
+<div dir="ltr" align="center">
+
+<table class="MsoNormalTable" style="width: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+ <tbody><tr style="">
+  <td style="width: 100%; padding: 0cm;" width="100%">
+  <p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">شنبه، 8 مرداد 1390 - 09:42</span></b><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"></span></b></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="width: 100%; padding: 0cm;" width="100%">
+  <p class="MsoNormal" dir="LTR" style="margin-bottom: 0.0001pt; text-align: right; line-height: normal; direction: ltr; unicode-bidi: embed;" align="right"><b><span dir="RTL" style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" lang="FA">کد خبر: 751</span></b><b><span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;"></span></b></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+
+
+
+
+</m:defjc></m:rmargin></m:lmargin></m:dispdef></m:smallfrac>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br><br>طبقه بندی: <br>برچسب ها:<a href="../../../../../../tag/هورامان.html" >هورامان</a>،<a href="../../../../../../tag/لهون.html" >لهون</a>،<a href="../../../../../../tag/نوسود.html" >نوسود</a>،<a href="../../../../../../tag/مریوان.html" >مریوان</a>،<a href="../../../../../../tag/افشین&#32;لهونی.html" >افشین لهونی</a>،<a href="../../../../../../tag/هه‌ورامان&#32;هانه‌به‌رچه‌م.html" >هه‌ورامان هانه‌به‌رچه‌م</a>،<a href="../../../../../../tag/زاوه‌ر(روستای&#32;دزآور).html" >زاوه‌ر(روستای دزآور)</a>،<br>				
+</div></div>			
+
+<div class=Post3><div class=Post4>
+
+<div class=date>  نوشته شده در تاریخ  شنبه 8 مرداد 1390 
+ 
+ <a href="../../../../../../author/430381.html">توسط  </a>  
+</div>
+<div class=Comment>
+<div class=Comment>
+<a target="_self" href="javascript:newComment(163)">نظرات  <script>setCommentCnt(163)</script> </a>
+
+</div></div></div></div>						
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center><b><font color="#000001" size="1">.:</font></b><a target="_blank" href="http://hatav2.blogfa.com"><span style="text-decoration: none">
+<font style="FONT-SIZE: 8pt" color="#000001"> Weblog Themes By</font><b>
+<font class=text5 size="1"><font color="#000001">Abdollah Habibi</font></span></a> </font><font color="#000001" size="1">
+:.</font>
+</b></a></center><br>
+
+</div>
+<style type="text/css">
+			.pagerNB span{
+				float:right;
+				width:37px;
+				height:26px;
+				background:url(http://static.mihanblog.com//public/images/pager/pagernb2.gif);
+				background:url(http://static.mihanblog.com//public/images/template/new/arrow.png);
+				display:block;
+			}
+			.pagerNB .next{
+				background-position: 0px -31px;
+			}
+			.pagerNB .nextOff{
+				background-position: 0px -58px;
+			}
+			.pagerNB .back{
+				background-position: 0px 0px;
+			}
+			.pagerNB .backOff{
+				background-position: 0px -35px;
+				background:none;
+			}
+			.pagerNB .descr{
+				background:transparent;
+				background-color : #FFFFFF;
+				border : 1px solid #CCCCCC;
+				color : #000000;
+				height : 26px;
+				width:170px;
+				text-align:center;
+				line-height:25px;
+				font-size:11px;
+			}
+			.pagerNB .wrapper{
+				margin:0px auto;
+				width:250px;
+			}
+			.pagerNB a, .pagerNB a:visited{
+			    border: none;
+                display: inline;
+                }
+		</style><div class="pagerNB clearfix" style="width:230px;margin:3px auto;"><div class="wrapper"><a href='../../../../../../../offset/0/comment_id/moretype/back.html' onclick="getContent(this, {target: '#commentlist'},true); return false;"><span class="back" title=" قبلی  ;  جهت مشاهده نظرات1 تا 30 کلیک کنید" tooltip=" قبلی  ;  جهت مشاهده نظرات1 تا 30 کلیک کنید" ></span></a><span class="descr"><div class="descr_inner"> نمایش   نظرات 31 تا 30</div></span><span class="nextOff" title=" بعدی  ;  لینکی جهت نمایش وجود ندارد " tooltip=" بعدی  ;  لینکی جهت نمایش وجود ندارد " ></span></div></div></td>
+
+<td width="220" valign="top">	
+
+
+<div id=Menur>
+<div class=Menu><div class=Menu2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=XMenu><div class=XXMenu2>  <p align="center">
+<br><img src="http://static.mihanblog.com//public/user_data/web_photo/185/553073.jpg?5503"  /></p></div></div>
+<div class=XMenu><div class=XXMenu2>  <p align="center">
+<br>هه‌ورامان هانه‌به‌رچه‌م <br />
+<br />
+نویسه‌ر:هومایون موحەممەدنژاد<br />
+<br />
+ئیمه‌یل:<br />
+<br />
+sina.mohamad@ymail.com<br />
+<br />
+ئه‌ژناسای هه‌ورامانی<br />
+<br />
+پارێزنای زوانی هه‌ورامی<br />
+<br />
+گلێرگاو زوان و فه‌رهه‌نگوو هه‌ورامانی<br />
+<br />
+په‌ی پارێزنای زوانه‌که‌یش<br />
+<br />
+چه‌مه‌راو سه‌ردا‌نه‌کێتانمێ<br />
+<br />
+په‌ی دووه‌مین په‌لیانه‌و ئێمه به ئادره‌سوو:<br />
+<br />
+کتابخانه‌هورامان،کتێبخانه‌وهه‌ورامانی<br />
+<br />
+http://hawramanktab.mihanblog.com/<br />
+<br />
+هه‌ورامان-هۆرامان-هورامان-اورامان<br />
+<br />
+هورامان شناسی/هەورامان شناسی<br />
+<br />
+روزنه‌ای به زیبایی‌های هورامان<br />
+<br />
+مدیروبلاگ:همایون محمدنژاد<br />
+<br />
+تاریخ راه اندازی وبلاگ:1388/11/7<br />
+</p></div></div>
+ 
+<div class=BMenu></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id=Menur>
+<div class=Menu>
+<div class=Menu2>
+<b>آهنگ زمینه</b></div></div>			
+<div class=XMenu>
+<SCRIPT
+ language=JavaScript type=text/javascript 
+src="http://www.jonbeshnet.ir/sites/default/files/logo/payambar/payambar5.js"></SCRIPT>
+
+</body>			
+<div class=XMenu>
+
+<br>
+<center>
+</body>
+</center>
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=4&t=1"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=4&t=1"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+<div class=BMenu></div></div></div>
+
+		
+<div id=Menur>
+<div class=Menu><div class=Menu2>
+<b>آمار سایت</b></div></div>
+<div class=XMenu>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=XXMenu>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=XXMenu>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=XXMenu>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=XXMenu>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=XXMenu>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=XXMenu>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=XXMenu>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=BMenu></div></div></div>	
+
+<div id=Menur>
+<div class=Menu><div class=Menu2>
+<b>امکانات وب</b></div></div>
+<div class=XMenu>
+<center>
+<font face="Tahoma" style="font-size: 8pt" color="#666666"><center></center></font></div>
+<div class=BMenu></div></div>
+
+</td></tr>
+
+<tr><td width="1000" colspan="3" id="Footer">
+<a href="http://www.hatav2.blogfa.com"target="_blank"> طراح قالب </a> : <a href="http://www.hatav2.blogfa.com"target="_blank"> عبدالله حبیبی </a> 
+Weblog Themes By : <a href="http://www.hatav2.blogfa.com"target="_blank"> Abdollah Habibi</a>    	        	
+</td></tr></table></div>
+ <div id="chehre_blog_confirm" style="display:none">$2a$08$BAlsElhjyzwEGYsU/oj38epQtiIYoexUPJeDl6IE9zPEs1Si81ne.</div> <div id="chehre_blog_confirm" style="display:none">$2a$08$BAlsElhjyzwEGYsU/oj38epQtiIYoexUPJeDl6IE9zPEs1Si81ne.</div></body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'haneberchem.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

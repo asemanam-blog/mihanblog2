@@ -1,0 +1,1205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://hami10.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه بیست و دوم آذرماه سال 1399');
+		/*204839*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[288]='15';commentCnt[289]='21';commentCnt[290]='9';commentCnt[291]='156';commentCnt[292]='16';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[288]='2';
+mihanblogDisLikeArrCnt[288]='0';
+mihanblogLikeArrCnt[289]='1';
+mihanblogDisLikeArrCnt[289]='0';
+mihanblogLikeArrCnt[290]='0';
+mihanblogDisLikeArrCnt[290]='0';
+mihanblogLikeArrCnt[291]='0';
+mihanblogDisLikeArrCnt[291]='0';
+mihanblogLikeArrCnt[292]='1';
+mihanblogDisLikeArrCnt[292]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://hami10.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://hami10.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','83');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','جمعه چهارم اسفندماه سال 1391');
+	
+	setStatVar('today_view','12');
+	setStatVar('yesterday_view','18');
+	
+	setStatVar('this_month_view','343');
+	setStatVar('last_month_view','1316');
+
+	setStatVar('total_view','271713');
+	setStatVar('last_view_date','شنبه بیست و دوم آذرماه سال 1399 (15:42)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://hami10.mihanblog.com/statupdate/?data[refereruri]=http://aks14.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607776367&data[hash]=a1f4d553193ef05909720c914ebb47c4&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://hami10.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://hami10.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://hami10.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://hami10.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://hami10.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://hami10.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content="پیامبر امید,قالب,لوگو,وبلاگ,بلاگفا,عکس,تم,بنر,امید,لینک,مذهبی"/>
+    <meta name="keywords" content="پیامبر امید,قالب,لوگو,وبلاگ,بلاگفا,عکس,تم,بنر,امید,لینک,مذهبی"/>
+    <link rel="alternate" type="application/rss+xml" title="کوثر پیامبر امید" href="http://hami10.mihanblog.com/post/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="کوثر پیامبر امید" href="http://hami10.mihanblog.com/post/atom/" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099985/style.css" type="text/css" rel="stylesheet">
+
+    <title>کوثر پیامبر امید</title>
+
+<style>
+.div26{
+background: url("http://hami10.mihanblog.com/public/public/user_data/template/2099985/mytheme.ir_19.jpg") no-repeat scroll 0 0;
+}
+</style>      
+
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class="m-l">&nbsp;</td>
+<td class=div2>
+<div class=div00>
+
+<div class=div60>
+    <div class=div101>
+        <div class=div10><font class=title>کوثر پیامبر امید</font></div></div>
+    <div class=div11>
+        <div class=div12><font class=des>پایگاه حمایتی وبلاگ نویسان مذهبی - وبلاگ بزرگ پیامبر امید</font></div></div>
+</div>
+
+<div class=ss>
+
+    <div class=s4>
+        <div class=s50><font class=text10><a href="index.html">صفحه نخست</a></font></div>
+        <div class=s51><font class=text10><a href="javascript:messageForm()">تماس با ما</a></font></div>
+        <div class=s52><font class=text10><a href="mailto:omidmac@gmail.com">پست الکترونیک</a></font></div>
+        <div class=s53><font class=text10><a href="http://hami10.mihanblog.com/post/atom/">ATOM</a></font></div>
+        <div class=s54><font class=text10><a href="http://www.mytheme.ir" target="_blank">طراح قالب</a></font></div>
+    </div>
+</div>
+
+<div class=mdiv170></div>
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35-1>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1><center><br><br>
+                سلام من به امام مهربان ، سلام من به مولایم امام رضا (علیه السلام)<br />
+سلام به گره گشای دلم ، زیبایی رویاهای خواب و بیداری ام امام رضا (علیه اسلام)<br />
+<br />
+دلم میخواد هرچی دارم <br />
+دونه و گندم بخرم<br />
+با چشم گریون همه را <br />
+هدیه به کفترا کنم<br />
+قربون کبوترای حرمت امام رضا (ع)<br />
+قربونه اینهمه لطف وکرمت امام رضا (ع)<br />
+<br />
+_________________<br />
+<br />
+این وبلاگ را با توسل به حضرت زهرا (سلام الله علیها) راه انداختم.<br />
+به امید ظهور <br />
+صاحب الزمان (علیه السلام) <br />
+ انشا الله<br />
+<br />
+<br />
+<br />
+</center><br>
+                <b>مدیر وبلاگ :</b> <a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/post/292">نرم افزار جامع شهید چمران در اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/291">حافظ در اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/290">غررالحکم برای اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/289">وقت خدا در اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/288">نهج الفصاحه زیبا برای اندروید (آپدیت شد.)</a></li><li><a href="http://hami10.mihanblog.com/post/287">نهج البلاغه اندرویید نسخه 2.5</a></li><li><a href="http://hami10.mihanblog.com/post/286">پس زمینه زنده امام خامنه ای (اندرویید)</a></li><li><a href="http://hami10.mihanblog.com/post/285">فاتحان خونین شهر اندرویید (نسخه دو)</a></li><li><a href="http://hami10.mihanblog.com/post/284">نرم افزار صحیفه سجادیه نسخه 4 اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/283">کتاب مسئله حجاب شهید مطهری اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/282">کتاب موبایل جامع حضرت زهرا (سلام الله علیها)</a></li><li><a href="http://hami10.mihanblog.com/post/281">چهل حدیث 14 معصوم علیهم السلام</a></li><li><a href="http://hami10.mihanblog.com/post/280">مفاتیح الجنان نسخه ویژه سیستم عامل آندروید</a></li><li><a href="http://hami10.mihanblog.com/post/279">دعای ندبه برای اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/278">۱۴ مجلس محرم آیت الله شیخ جعفر شوشتری رضوان الله تعالی علیه</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/post/archive/1391/12"> اسفند 1391</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1391/6"> شهریور 1391</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1391/5"> مرداد 1391</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1391/4"> تیر 1391</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1391/3"> خرداد 1391</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1390/6"> شهریور 1390</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1389/6"> شهریور 1389</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1389/4"> تیر 1389</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1389/2"> اردیبهشت 1389</a></li><li><a href="http://hami10.mihanblog.com/post/archive/1389/1"> فروردین 1389</a></li>            <li><b><a href="http://hami10.mihanblog.com/post/archive">آرشیو كل مطالب</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک  (83)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    
+		
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/post/tag/%D8%A8%D9%84%D8%A7%DA%AF%D9%81%D8%A7">بلاگفا</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%85%D8%B0%D9%87%D8%A8%DB%8C">مذهبی</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%B9%D9%85%D9%88%D9%85%DB%8C">عمومی</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%87%D8%AF%D8%B1">هدر</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF">اندروید</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D8%AE%D8%AA%D8%B5%D8%A7%D8%B5%DB%8C">اختصاصی</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84+%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C">موبایل اسلامی</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86">رایگان</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%84%D9%88%DA%AF%D9%88">لوگو</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%82%D8%A7%D9%84%D8%A8">قالب</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%87%D8%AF%DB%8C%D9%87">هدیه</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A8%D9%86%D8%B1">بنر</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF">دانلود</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%82%D8%A7%D9%84%D8%A8+%D8%B9%D9%85%D9%88%D9%85%DB%8C">قالب عمومی</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%81%D9%84%D8%B4">فلش</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84">موبایل</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86+%28%D8%B9%D8%AC%29">امام زمان (عج)</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%DB%8C%D8%AF">اندرویید</a></li><li><a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%B1%D8%B6%D8%A7+%28%D8%B9%29">امام رضا (ع)</a></li><li><a href="http://hami10.mihanblog.com/post/tag/Wallpaper">Wallpaper</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+</div>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://hami10.mihanblog.com/post/292">نرم افزار جامع شهید چمران در اندروید</a></font></div>
+            <div class=div58><font class=text7><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+            <div class=div581><font class=text7>جمعه چهارم اسفندماه سال 1391</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>در حال کار روی پروژه جدید اندروید هستم و به زودی آماده میشه<p>پروژه
+ در باره شهید چمران است. زندگی نامه، عکس ، صوت و خیلی چیزها را در برنامه
+ گذاشتم. نظراتتون را حتماً بگید تا قبل از انتشار در برنامه اثر دهم.</p><p>امیدوارم بتونه کار کوچیکی برای هدیه به این شهید بزرگوار باشه.</p><p align="baseline"><br></p><div style="text-align: center;"><img src="http://s1.picofile.com/file/7666348060/Screenshot_2013_02_22_10_55_55.png"><br><br><img src="http://s3.picofile.com/file/7666347418/Screenshot_2013_02_22_10_54_14.png"><br><br><img src="http://s3.picofile.com/file/7666347632/Screenshot_2013_02_22_10_54_27.png"><br><br><img src="http://s2.picofile.com/file/7666347739/Screenshot_2013_02_22_10_54_53.png"></div><p><br></p><p>یا علی علیه السلام</p>
+
+
+<br><br>
+                <font color="#ac0000">نوع مطلب :</font>
+                <a href="http://hami10.mihanblog.com/post/category/8" class=text4>برنامه های اسلامی اندرویید</a>،&nbsp;                <br><font color="#ac0000">برچسب ها :</font>
+                <a href="http://hami10.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF%20%DA%86%D9%85%D8%B1%D8%A7%D9%86" class=text4>شهید چمران</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF" class=text4>اندروید</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3" class=text4>عکس</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%B5%D9%88%D8%AA" class=text4>صوت</a>،                 <br><font color="#ac0000">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+            </div></div>
+  
+<div  class=div26>
+            <div class=div27 style="padding-top: 0px; float: left; width: 214px;">                <div style="margin-top: 63px; margin-bottom: 0px; margin-left: 132px;"><script>mihanblogPostLike('292','like')</script></div>
+                <font class=text8 style="float: left; margin-top: -21px; margin-left: 62px;"><a href="http://hami10.mihanblog.com/post/292#commentlist">نظرات (<script>setCommentCnt(292)</script>)</a></font>
+
+
+
+            </div>
+            <div class=div271>
+
+
+                <font class=text4><BlogExtendedPost><b></b></BlogExtendedPost></font></div>
+
+        </div>
+        <div class=div54 style="background:#212121;">
+            <style>
+
+
+
+
+
+
+                .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                .com{ width:535px; float:left; background:#424242; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+                .com1{ width:517px; float:left; background:#860909; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+            </style>
+                    </div>
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://hami10.mihanblog.com/post/291">حافظ در اندروید</a></font></div>
+            <div class=div58><font class=text7><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+            <div class=div581><font class=text7>دوشنبه بیستم شهریورماه سال 1391</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-description">
+			  <div id="app-description">
+			    
+			    <div itemprop="description"><p>سلام<br>1 - قالَ الاْ مامُ علىّ بن أ بى طالِب ، أ میرُ الْمُؤْمِنینَ صَلَواتُ اللّهِ وَسَلامُهُ عَلَیْهِ:<br>إ
+ غْتَنِمُوا الدُّعاءَ عِنْدَ خَمْسَةِ مَواطِنَ: عِنْدَ قِرائَةِ 
+الْقُرْآنِ، وَ عِنْدَ الاْ ذانِ، وَ عِنْدَ نُزُولِ الْغَیْثِ، وَ عِنْدَ 
+الْتِقاءِ الصَفَّیْنِ لِلشَّهادَةِ، وَ عِنْدَ دَعْوَةِ الْمَظْلُومِ، 
+فَاِنَّهُ لَیْسَ لَها حِجابٌ دوُنَ الْعَرْشِ.(74)<br>ترجمه :<br>فرمود: پنج موقع را براى دعا و حاجت خواستن غنیمت شمارید:<br>موقع تلاوت قرآن ، موقع اذان ، موقع بارش باران ، موقع جنگ و جهاد - فى سبیل اللّه - موقع ناراحتى و آه كشیدن مظلوم .<br>در چنین موقعیت ها مانعى براى استجابت دعا نیست .</p><hr size="2" width="100%">توجه: ابتدا نسخه دمو را از <p>http://cafebazaar.ir/app/ir.peyambareomid.hafezdemo/?l=fa<br>نصب کنید و از اجرا شدن برنامه روی دیوایس خود اطمینان پیدا کنید سپس این نسخه را خریداری نمایید.<br>دیوان کامل شعری حضرت حافظ علیه الرحمه<br>با قابلیت اشتراک ابیات و شعر ها<br>تنظیم فونت<br>گرافیک زیبا<br>فال حافظ<br>و ....<br>در تنظیمات هم می توانید فونت سفارشی و یا اصلاح متون حروف جدا را انتخاب کنید. همچنین اندازه نوشته ها هم تغییر می کند.</p></div>
+			    
+			  </div>
+			  
+			  <div style="text-align: center;" id="screenshot">
+			    
+			    <a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez0.jpg" rel="screenshots">
+			      <img class="screenshot-big" src="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez0.jpg">
+			    </a>
+			    
+			    <a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez1.jpg" rel="screenshots">
+			      <img class="screenshot-small" src="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez1.jpg">
+			    </a>
+			    
+			    <a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez2.jpg" rel="screenshots">
+			      <img class="screenshot-small" src="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez2.jpg">
+			    </a>
+			    
+			    <a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez3.jpg" rel="screenshots">
+			      <img class="screenshot-small" src="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez3.jpg">
+			    </a>
+			    
+			    <a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez4.jpg" rel="screenshots">
+			      <img class="screenshot-small" src="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez4.jpg"></a><br><br><a target="_blank" href="http://cafebazaar.ir/app/ir.peyambareomid.hafez/?l=fa">دانلود</a><br><a class="cboxElement" href="http://s.cafebazaar.ir/1/upload/screenshot/ir.peyambareomid.hafez4.jpg" rel="screenshots">
+			    </a>
+			    
+			  </div>
+			  
+		</div>
+
+
+
+
+<br><br>
+                <font color="#ac0000">نوع مطلب :</font>
+                <a href="http://hami10.mihanblog.com/post/category/8" class=text4>برنامه های اسلامی اندرویید</a>،&nbsp;                <br><font color="#ac0000">برچسب ها :</font>
+                <a href="http://hami10.mihanblog.com/post/tag/%D8%AD%D8%A7%D9%81%D8%B8" class=text4>حافظ</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF" class=text4>اندروید</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%81%D8%A7%D9%84%20%D8%AD%D8%A7%D9%81%D8%B8" class=text4>فال حافظ</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF" class=text4>دانلود</a>،                 <br><font color="#ac0000">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+            </div></div>
+  
+<div  class=div26>
+            <div class=div27 style="padding-top: 0px; float: left; width: 214px;">                <div style="margin-top: 63px; margin-bottom: 0px; margin-left: 132px;"><script>mihanblogPostLike('291','like')</script></div>
+                <font class=text8 style="float: left; margin-top: -21px; margin-left: 62px;"><a href="http://hami10.mihanblog.com/post/291#commentlist">نظرات (<script>setCommentCnt(291)</script>)</a></font>
+
+
+
+            </div>
+            <div class=div271>
+
+
+                <font class=text4><BlogExtendedPost><b></b></BlogExtendedPost></font></div>
+
+        </div>
+        <div class=div54 style="background:#212121;">
+            <style>
+
+
+
+
+
+
+                .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                .com{ width:535px; float:left; background:#424242; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+                .com1{ width:517px; float:left; background:#860909; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+            </style>
+                    </div>
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://hami10.mihanblog.com/post/290">غررالحکم برای اندروید</a></font></div>
+            <div class=div58><font class=text7><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+            <div class=div581><font class=text7>یکشنبه یکم مردادماه سال 1391</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="app-description">
+			    
+			    <div itemprop="description"><p>ماه رمضان ماه خدا و ماه تجلی مظلومیت و همچنین بزرگواری امام علی علیه السلام است.<br>امیر
+ مؤمنان على‏ علیه السلام ستیغ بلند فصاحت و اوج قله بلاغت و سرآمد ارباب 
+سخن بود. حکمت در سینه ‏اش موج میزد و علم و دانش (که جوشیده از سرچشمه وحى
+ الهى و نشأت گرفته از علوم نبوى بود)  از منطق استوار و بیان شیوایش 
+نمایان بود.<br>این برنامه کتاب گرانسنگ غررالحکم و دررالکم را در سیستم 
+اندرویدی شما می آورد. این کتاب بیش از یازده هزار حدیث در بیش از 500 باب و
+ موضوع از امیر المؤمنین علیه السلام را روایت می کند.<br>امکانات:<br>-	باب بندی و موضوع بندی احادیث<br>-	قابلیت ارسال احادیث یا کپی کردن متن آنها به صورت عربی، فارسی یا فارسی-عربی<br>-	قابلیت جستجو بین عناوین باب ها و موضوع ها<br>-	دارای ویجت زیبا که هر ساعت یک حدیث جدید برایتان نمایش میدهد و یا با لمس آن حدیث عوض می شود در دوحالت بزرگ و کوچک<br>-	تنظیم حروف چینی مجدد برای وسایلی که حروف فارسی را جدا نمایش می دهند.<br>-	قابلیت برگزیدن احادیث مورد دلخواه و ارسال آنها با پیامک<br>-	پیمایش سریع بین لیست احادیث یا موضوعات<br>-	شماره بندی باب ها<br>-	احادیث و باب ها با زبان عربی و فارسی<br>این
+ برنامه جهت ارادت به امیرالمؤمنین علی علیه السلام و نشر گفتارهای ایشان 
+به صورت رایگان ارائه شده است. اما خرید این نسخه با هزینه کم حمایتی است 
+از تولید چنین برنامه هایی. اگر مایل به خرید نسخه حمایتی هستید می توانید 
+همین نسخه در بازار خریداری کنید.<br>این برنامه با حمایت یکی از دوستان که
+ در بخش گرافیک یاری کردند تهیه شد. امیدواریم لایق عنوان خادم 
+الامیرالمؤمنین علیه السلام باشیم.<br>پیشنهادات و انتقادات را حتماً بیان کنید.</p></div>
+			    
+			  </div>
+			  
+			  
+			    
+			    <a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar0.jpg" class="cboxElement">
+			      </a><div style="text-align: center;"><a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar0.jpg" class="cboxElement"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar0.jpg" class="screenshot-big">
+			    </a><a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar1.jpg" class="cboxElement">
+			      <img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar1.jpg" class="screenshot-small">
+			    </a><a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar2.jpg" class="cboxElement">
+			      <img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar2.jpg" class="screenshot-small">
+			    </a><a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar3.jpg" class="cboxElement">
+			      <img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar3.jpg" class="screenshot-small">
+			    </a><a rel="screenshots" href="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar4.jpg" class="cboxElement">
+			      <img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.ghorar4.jpg" class="screenshot-small"></a><br></div>
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    <br><div style="text-align: center;"><a href="http://cafebazaar.ir/panel/edit/ir.peyambareomid.ghorard/?l=fa">خرید نسخه حمایتی</a><br><br><a href="http://cafebazaar.ir/panel/edit/ir.peyambareomid.ghorar/?l=fa">دانلود رایگان از بازار مارکت</a></div>
+
+
+<br><br>
+                <font color="#ac0000">نوع مطلب :</font>
+                <a href="http://hami10.mihanblog.com/post/category/8" class=text4>برنامه های اسلامی اندرویید</a>،&nbsp;                <br><font color="#ac0000">برچسب ها :</font>
+                <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF" class=text4>اندروید</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%BA%D8%B1%D8%B1%D8%A7%D9%84%D8%AD%DA%A9%D9%85" class=text4>غررالحکم</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%B9%D9%84%DB%8C" class=text4>امام علی</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%B1%D9%85%D8%B6%D8%A7%D9%86" class=text4>رمضان</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF" class=text4>دانلود</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84%20%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C" class=text4>موبایل اسلامی</a>،                 <br><font color="#ac0000">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+            </div></div>
+  
+<div  class=div26>
+            <div class=div27 style="padding-top: 0px; float: left; width: 214px;">                <div style="margin-top: 63px; margin-bottom: 0px; margin-left: 132px;"><script>mihanblogPostLike('290','like')</script></div>
+                <font class=text8 style="float: left; margin-top: -21px; margin-left: 62px;"><a href="http://hami10.mihanblog.com/post/290#commentlist">نظرات (<script>setCommentCnt(290)</script>)</a></font>
+
+
+
+            </div>
+            <div class=div271>
+
+
+                <font class=text4><BlogExtendedPost><b></b></BlogExtendedPost></font></div>
+
+        </div>
+        <div class=div54 style="background:#212121;">
+            <style>
+
+
+
+
+
+
+                .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                .com{ width:535px; float:left; background:#424242; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+                .com1{ width:517px; float:left; background:#860909; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+            </style>
+                    </div>
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://hami10.mihanblog.com/post/289">وقت خدا در اندروید</a></font></div>
+            <div class=div58><font class=text7><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+            <div class=div581><font class=text7>چهارشنبه بیست و یکم تیرماه سال 1391</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="app-description">
+			    
+			    <div itemprop="description"><p align="baseline">روزهای ما پر از ساعاتی است که هم برای خودمان وقت می گذاریم و هم برای دیگران. برخی از این ساعات هم فقط متعلق به مناجات با خداست.<br>برنامه وقت خدا با محاسبه دقیق اوقات شرعی و پخش اذان شما را به این اوقات آگاه میکند.<br>دوستانی که با برنامه مشکل دارند حتما نسخه اندرویدشان را بگن.<br>اگر ساعت گوشی شما با ساعت تلوزیون یکی باشد حتما از دقت برنامه متعجب می شوید.</p>
+  <p style="text-align: center;" align="baseline"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.praytime0.jpg"></p></div></div><br><br>
+                <font color="#ac0000">نوع مطلب :</font>
+                <a href="http://hami10.mihanblog.com/post/category/8" class=text4>برنامه های اسلامی اندرویید</a>،&nbsp;                <br><font color="#ac0000">برچسب ها :</font>
+                <a href="http://hami10.mihanblog.com/post/tag/%D9%86%D9%85%D8%A7%D8%B2" class=text4>نماز</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%88%D9%82%D8%AA%20%D8%AE%D8%AF%D8%A7" class=text4>وقت خدا</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%88%D9%82%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%B9%DB%8C" class=text4>اوقات شرعی</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF" class=text4>اندروید</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84%20%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C" class=text4>موبایل اسلامی</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D8%B0%D8%A7%D9%86" class=text4>اذان</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%82%D8%A8%D9%84%D9%87%20%D9%86%D9%85%D8%A7" class=text4>قبله نما</a>،                 <br><font color="#ac0000">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+            </div></div>
+  
+<div  class=div26>
+            <div class=div27 style="padding-top: 0px; float: left; width: 214px;">                <div style="margin-top: 63px; margin-bottom: 0px; margin-left: 132px;"><script>mihanblogPostLike('289','like')</script></div>
+                <font class=text8 style="float: left; margin-top: -21px; margin-left: 62px;"><a href="http://hami10.mihanblog.com/post/289#commentlist">نظرات (<script>setCommentCnt(289)</script>)</a></font>
+
+
+
+            </div>
+            <div class=div271>
+
+
+                <font class=text4><BlogExtendedPost><b><a href='http://hami10.mihanblog.com/post/289'>ادامه مطلب</a></b></BlogExtendedPost></font></div>
+
+        </div>
+        <div class=div54 style="background:#212121;">
+            <style>
+
+
+
+
+
+
+                .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                .com{ width:535px; float:left; background:#424242; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+                .com1{ width:517px; float:left; background:#860909; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+            </style>
+                    </div>
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://hami10.mihanblog.com/post/288">نهج الفصاحه زیبا برای اندروید (آپدیت شد.)</a></font></div>
+            <div class=div58><font class=text7><a href="http://hami10.mihanblog.com/post/author/110218">یا زینب سلام الله علیک </a></font></div>
+            <div class=div581><font class=text7>سه شنبه شانزدهم خردادماه سال 1391</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><p align="baseline">بیش از 3200 حدیث گرانبها و زیبا از رسول اعظم صلوات الله علیه در برنامه نهج الفصاحه جمع آوری شده است.</p><p style="text-align: center;"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.nahjfesah0.jpg"></p>
+
+<p>این برنامه ویژگی های زیر را دارد:</p><p>- وجود انیمیشن های مختلف در لودینگ برنامه، لودینگ احادیث، و ....<br>- محیط گرافیکی مناسب و زیبا<br>- تنظیم رنگ فونت عربی<br>- تنظیم رنگ فونت ترجمه<br>- تنظیم اندازه متن عربی<br>- تنظیم اندازه متن فارسی<br>- تنظیم روشن ماندن صفحه<br>- اصلاح حروف جدا از هم در برخی رام ها<br>- ایجاد ویجت حدیث تصادفی در هوم اسکرین در صورت نصب برنامه در حافظه گوشی و آپدیت حدیث هر یک ساعت یک بار.<br>- تنظیم رنگ و اندازه متن ویجت<br>- قابلیت برگزیدن احادیث دلخواه<br>- قابلیت جستجو در ترجمه فارسی احادیث<br>- ارسال متن عربی با پیامک<br>- ارسال متن فارسی با پیامک<br>- ارسال کل متن حدیث با پیامک<br>- کپی متن عربی در حافظه<br>- کپی متن فارسی در حافظه<br>- کپی کل متن حدیث در حافظه<br>- قابلیت اسکرول سریع برای لیست طویل احادیث هم در لیست اصلی و هم در قسمت برگزیده ها<strong> (جدید)</strong><br>- ذخیره شدن موقعیت آخرین حدیث خوانده شده برای ادامه دادن مطالعه در فرصت بعدی<strong> (جدید)</strong><br>- تنظیمات برای حذف انیمیشن ها<strong> (جدید)</strong><br>- تغییر سایز نوشته ها در قسمت برگزیده ها<strong> (جدید)</strong></p><p align="baseline">و خیلی امکانات دیگری که باید نصب کنید و ببینید و بنده را دعا کنید.</p><p style="text-align: center;"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.nahjfesah1.jpg"></p><p style="text-align: left;"><br></p><p style="text-align: center;"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.nahjfesah2.jpg"></p><p style="text-align: left;" align="baseline"><br></p><p style="text-align: center;"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.nahjfesah3.jpg"></p>
+
+<p align="baseline">انتقادات و پیشنهادات را حتما عنوان کنید تا در نسخه های بعدی منظور بشوند.</p><p style="text-align: center;"><img src="http://s.cafebazaar.ir/upload/screenshot/ir.peyambareomid.nahjfesah4.jpg"></p><p style="text-align: left;"><br></p><p style="text-align: center;"><a target="_blank" href="http://omidomidi.persiangig.com/MyAndroid/Nahjol%20Fesahe%20ver2.0.apk">برای دانلود کلیک کنید</a></p><br><br>
+                <font color="#ac0000">نوع مطلب :</font>
+                <a href="http://hami10.mihanblog.com/post/category/8" class=text4>برنامه های اسلامی اندرویید</a>،&nbsp;                <br><font color="#ac0000">برچسب ها :</font>
+                <a href="http://hami10.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF" class=text4>اندروید</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84%20%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C" class=text4>موبایل اسلامی</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%85%D8%AD%D9%85%D8%AF" class=text4>حضرت محمد</a>، <a href="http://hami10.mihanblog.com/post/tag/%D9%86%D9%87%D8%AC%20%D8%A7%D9%84%D9%81%D8%B5%D8%A7%D8%AD%D9%87" class=text4>نهج الفصاحه</a>، <a href="http://hami10.mihanblog.com/post/tag/%D8%AD%D8%AF%DB%8C%D8%AB" class=text4>حدیث</a>،                 <br><font color="#ac0000">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+            </div></div>
+  
+<div  class=div26>
+            <div class=div27 style="padding-top: 0px; float: left; width: 214px;">                <div style="margin-top: 63px; margin-bottom: 0px; margin-left: 132px;"><script>mihanblogPostLike('288','like')</script></div>
+                <font class=text8 style="float: left; margin-top: -21px; margin-left: 62px;"><a href="http://hami10.mihanblog.com/post/288#commentlist">نظرات (<script>setCommentCnt(288)</script>)</a></font>
+
+
+
+            </div>
+            <div class=div271>
+
+
+                <font class=text4><BlogExtendedPost><b></b></BlogExtendedPost></font></div>
+
+        </div>
+        <div class=div54 style="background:#212121;">
+            <style>
+
+
+
+
+
+
+                .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                .com{ width:535px; float:left; background:#424242; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+                .com1{ width:517px; float:left; background:#860909; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+                .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+            </style>
+                    </div>
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+        ( کل صفحات : 17 )&nbsp;&nbsp;&nbsp;
+            <a href="http://hami10.mihanblog.com/page/1" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/2" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/3" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/4" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/5" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/6" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/7" class=text4><span>7</span></a>&nbsp;&nbsp;&nbsp;<a href="http://hami10.mihanblog.com/page/8" class=text4><i>...</i></a>&nbsp;&nbsp;&nbsp;<br><br><br>
+    </font>
+    </div>
+</div>
+
+<div class=mdiv170></div>
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/post/category/8">برنامه های اسلامی اندرویید (15)</a></li><li><a href="http://hami10.mihanblog.com/post/category/7">هدر (2)</a></li><li><a href="http://hami10.mihanblog.com/post/category/6">ساعت فلش (2)</a></li><li><a href="http://hami10.mihanblog.com/post/category/5">لوگوی رایگان (28)</a></li><li><a href="http://hami10.mihanblog.com/post/category/4">قالب های عمومی (16)</a></li><li><a href="http://hami10.mihanblog.com/post/category/3">قالب هدیه و رایگان (9)</a></li><li><a href="http://hami10.mihanblog.com/post/category/2">هدر رایگان (15)</a></li><li><a href="http://hami10.mihanblog.com/post/category/1">اخبار خود پایگاه (19)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://m1m1.blogfa.com" title="" target="_blank">keshmahoor news</a></li><li><a href="http://shahrkord.mihanblog.com/post/2" title="خدمات با روش نو!" target="_blank">برطرف کردن خاک های اطراف گودال خط لوله آب با آب!</a></li><li><a href="http://shahrkord.mihanblog.com/post/3" title="معرکه گیری در شهر!" target="_blank">تمامش با امام حسین و حضرت اباالفضل (علیهما السلام) تمام شد!</a></li><li><a href="http://www.andishehjonoob.blogfa.com" title="منتظران ظهور" target="_blank">امروز..........!فردا............!</a></li><li><a href="http://www.fatemiun-sirjan.blogfa.com" title="کانون فرهنگی هنری فاطمیه مسجد جامع شهرستان سیرجان" target="_blank">پایگاه اینترتی پایگاه اینترتی کانون فرهنگی هنری فاطمیه مسجد جامع سیرجان</a></li><li><a href="http://www.moslemmohsen.blagfa.com" title="روزها نو نشده کهنه تر از دیروز است
+
+ 
+
+گر کند یوسف زهرا نظری نوروز است
+
+ 
+
+ ای خدا کاش شود سال نوام عید فرج
+
+ 
+
+که نگاهم نگران منتظر آن روز است" target="_blank">منتظران اباصالح</a></li><li><a href="http://www.rozane-aftab.blagfa.com" title="شهید همت
+شهادت، زیباترین، بالندهترین و نغزترین کلام در تاریخ بشریت است، شهادت بهترین و روشنترین معنی حقیقی توحید است و تاریخ تشیع خونینترین و گویاترین تابلو نمایانگر شکوه و عظمت شهید است." target="_blank">روزنه شهادت</a></li><li><a href="http://www.rasekhoon.net/weblog/ganjinepenhan/index.aspx" title="سلام من شما را لینک دادم. لطفا وبلاگ من را هم لینک دهید." target="_blank">گنجینه پنهان</a></li><li><a href="http://www.kamrantehrani.blogfa.com" title="" target="_blank">شهدا ماندگارترین شجره قرآن وعترت هستند</a></li><li><a href="http://www.azjamkarantato.blogfa.com" title="" target="_blank">امام زمان</a></li><li><a href="http://www.neveshteh.pib.ir" title="" target="_blank">نوشته</a></li><li><a href="http://mohban1373.blogfa.com/" title="مذهبی و فرهنگی" target="_blank">مذهبی</a></li><li><a href="http://www.fotrosedel.blogfa.com" title="" target="_blank">فطرس دل</a></li><li><a href="http://www.dorcheh.blogfa.com" title="در باره مهدویت 5 سال کار کردم ولی در این روزگار تصمیم گرفتم قالب رو تغییر بدم و قالب ولایت رو انتخاب کنم و در باره مهدویت بنویسم . 
+
+با تشکر 
+اللهم عجل لولیک الفرج" target="_blank">گل خوشبو یوسف زهرا ( س ) </a></li><li><a href="http://www.halabit.bolgfa.com" title="در مورد اقا امام زمان" target="_blank">منجی عالم </a></li><li><a href="http://www.firouzmand.mihanblog.com" title="وبلاگی عمومی با موضوعات متفاوت....." target="_blank">من و زندگی</a></li><li><a href="http://kanonehemmat.blogfa.com/" title="سلام 
+خدا خیرت بده 
+وبلاگ خیلی خوبی داری
+موفق باشی
+راستی ما برای هیئتمون نیاز به طرح بنر برای محرم داریم اگه یه بنر خوب برامون طراحی کنی ممنون میشم
+اجر شما با اباعبدا... الحسین" target="_blank">کانون فرهنگی - هنری شهید همت گرگان</a></li><li><a href="http://s133.blogfa.com" title="" target="_blank">سلام  او خواهد آمد شک نکنیم . . .</a></li><li><a href="http://khamenei313.blogfa.com/" title="مطالبی پیرامون مولای عشق سید علی خامنه ای و امام زمان عج و مطلب و اشعار مذهبی و فرهنگی" target="_blank">پایگاه فرهنگی مذهبی و آموزشی در انتظار یار</a></li><li><a href="http://hasannasrollah.parsiblog.com/" title="مذهبی سیاسی" target="_blank">جبروتهم تحت اقدام حزب الله</a></li><li><a href="http://samimiweb.blogfa.com/" title="یادم باشد حرفی نزنم که به کسی بر بخورد... و بنویسم آنچه را که باید نوشت" target="_blank">دروغگوهای سبز پوش</a></li><li><a href="http://heidaryan.blogfa.com" title="دوست عزیز من نیاز به یک سری تغییرات در قالب وبلاگم دارم اگه بتونی کمکم کنی ممنون می شم. از جمله گذاشتن نظر سنجی، حدیث هفته، بخشی برای شعر های دینی که برای مدتی ثابت در صفحه باقی بماندو.... راستی ایمیل من heidaryanhasan@yahoo.com خوشحالم میکنی اگه توی وبلاگم ببینمت." target="_blank">صبای صبح</a></li><li><a href="http://www.gomnambasij.blogfa.com" title="سربلند باش وطنم" target="_blank">از شهادت تا سعادت...</a></li><li><a href="http://www.rozaneaftab.blagfa.com" title="شهداء روزنه آفتاب 
+شهدا روزنه افتابی هستندواین روزنه راهنمایی نسل جوان می باشدوماخادمین شهداانشاالله بتوانیم راه شان                                                            شهید مطهری 
+خون شهید هدر نمیرود خون شهید نمیریزد خون شهید هر قطرهاش تبدیل به صدها قطره و هزارها قطره بلکه به دریایی از خون میشود و در پیکر اجتماع وارد میشود.
+
+شهید همت
+شهادت، زیباترین، بالندهترین و نغزترین کلام در تاریخ بشریت است، شهادت بهترین و روشنترین معنی حقیقی توحید است و تاریخ تشیع خونینترین و گویاترین تابلو نمایانگر شکوه و عظمت شهید است." target="_blank">شهداروزنه افتاب</a></li><li><a href="http://www.iran-sara.blogfa.com" title="" target="_blank">ایران وطنم</a></li><li><a href="http://www.rozaneaftab.blagfa.com" title="شهداء روزنه آفتاب 
+شهدا روزنه افتابی هستندواین روزنه راهنمایی نسل جوان می باشدوماخادمین شهداانشاالله بتوانیم راه شان                                                                  شهید مطهری 
+خون شهید هدر نمیرود خون شهید نمیریزد خون شهید هر قطرهاش تبدیل به صدها قطره و هزارها قطره بلکه به دریایی از خون میشود و در پیکر اجتماع وارد میشود.
+
+شهید همت
+شهادت، زیباترین، بالندهترین و نغزترین کلام در تاریخ بشریت است، شهادت بهترین و روشنترین معنی حقیقی توحید است و تاریخ تشیع خونینترین و گویاترین تابلو نمایانگر شکوه و عظمت شهید است." target="_blank">درباره شهدا دفاع مقدس</a></li><li><a href="http://yeki-mesle-hich-kas.blogfa.com/" title="" target="_blank">یکی مثل هیچ کس</a></li><li><a href="http://ahmadinezhad-eshqe.blogfa.com" title="" target="_blank">احمدی نژاد رو عشقه</a></li><li><a href="http://ansarolmoghavema.blogfa.com" title="" target="_blank">جنبش مردمی انصارالمقاومه</a></li><li><a href="../aks14.mihanblog.com/index.html" title="" target="_blank">تصویر اسلام</a></li><li><a href="http://hajitaraghe.blogfa.com/" title="ما حامیان گفتمان امام و رهبری عزیز هستیم-آخرین تحلیل های روز" target="_blank">خبرهای حاجی ترقه</a></li><li><a href="http://rasool-noor.blogfa.com/" title="" target="_blank">رسول نور</a></li><li><a href="http://doostdaraneagha.blogfa.com" title="مطالبی درباره امام زمان(عج)، دانلود مداحی، دانلود مولودی، دانلود نرم افزار قرآنی، ..." target="_blank">منتظران مهدی(عج)</a></li><li><a href="http://shorajavanan.blogfa.com/" title="با تشکر از شما" target="_blank">شورای جوانان شهر زنگی آباد</a></li><li><a href="http://www.karevane-ashora.blogfa.com" title="" target="_blank">کاروان عاشورا</a></li><li><a href="http://khademmardom.blogfa.com" title="" target="_blank">مردی از جنس مردم</a></li><li><a href="http://www.hamiyanejavaneqom.blogfa.com" title="" target="_blank">جوانان قم</a></li><li><a href="http://ahmadi-nejad.mee.ir/" title="" target="_blank">علمدار عزت ایران</a></li><li><a href="http://www.2latepak.parsiblog.com" title="" target="_blank">دولت پاک</a></li><li><a href="http://lordahmdinejat.mihanblog.com/" title="" target="_blank">حامیان لرد احمدی نژاد</a></li><li><a href="http://hot-baby.mihanblog.com/" title="" target="_blank">حامیال احمدی نژاد در کرج</a></li><li><a href="http://dolate-mehr.mihanblog.com/" title="" target="_blank">دولت مهر</a></li><li><a href="http://www.edalat1387.blogfa.com" title="برای حمایت ازمرد ساده زیست صادق وتابع ولایت به حمایت اوامده ایم هرچندکه خداوندسبحان واهل بیت علیهم السلام حامی ایشان وحق مداران هست" target="_blank">عدالت1387</a></li><li><a href="http://president-iranian.blogfa.com" title="" target="_blank">حامیان دکتر احمدی نژاد در استان اردبیل</a></li><li><a href="http://havaypak.mihanblog.com/" title="" target="_blank">هوای پاک</a></li><li><a href="http://mahmoodaziz.mihanblog.com/" title="" target="_blank">یک ایران و یک احمدی نژاد</a></li><li><a href="http://to-iran.mihanblog.com/" title="" target="_blank">محض دولت یار</a></li><li><a href="http://dar_emtedad_mehr.mihanblog.com/" title="" target="_blank">حامیان دکتر احمدی نژاد در فریدونکنار</a></li><li><a href="http://www.rihanah-hosein.mihanblog.com/" title="" target="_blank">مجمع حامیان احمدی نژاددر غرب كشور</a></li><li><a href="http://poore-e-velayate.blogfa.com" title="سلام علیكم
+خدا قوت- حقیر قائم مقام ستاد انتخاباتی دكتر احمدی نژاد در استان بوشهر هستم و 
+همچنین رئیس عملیات پالایشگاه فازهای 8و7و6 پارس جنوبی
+
+تا خون در رگ ماست
+خامنه ای رهبرماست
+پور ولایت ، احمدی نژاد رئیس جمهور ماست
+
+العاقبه للمتقین
+انوشیروان كوهپایه" target="_blank">پایگاه اصولگرایان اصلاح طلب بوشهر</a></li>            <li><b><a href="http://hami10.mihanblog.com/linkdaily/">همه پیوندهای روزانه</a></b></li>
+            <li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://omidomidi.persiangig.com/Ghalebha/AliC.txt" title="" target="_blank">قالب حضرت علی (ع) (کودکانه) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Mahdi1C.txt" title="" target="_blank">قالب امام زمان (عج) (1) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Mahdi2C.txt" title="" target="_blank">قالب امام زمان (عج) (2) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Mahdi3C.txt" title="" target="_blank">قالب امام زمان (عج) (3) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Rasool1C.txt" title="" target="_blank">قالب پیامبر (ص) (2) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Rasool2C.txt" title="" target="_blank">قالب پیامبر (ص) (1) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/HejabC.txt" title="" target="_blank">قالب حجاب - فاطمه زهرا (س) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Reza2C.txt" title="" target="_blank">قالب امام مهربان - امام رضا (ع) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/Hossein1C.txt" title="" target="_blank">قالب امام حسین (ع) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/NamazC.txt" title="" target="_blank">قالب نماز - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/ShahidC.txt" title="" target="_blank">قالب شهدا - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/PishraftC.txt" title="" target="_blank">قالب نوآوری و شکوفایی - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.ir/Ghalebha/ZeynabC.txt" title="" target="_blank">قالب حضرت زینب (س) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/SajjadC.txt" title="" target="_blank">قالب امام سجاد (ع) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/RahbarC.txt" title="" target="_blank">قالب علمدار صبح (ویژه رهبری) - بلاگفا</a></li><li><a href="http://omidomidi.persiangig.com/Ghalebha/MasoomehC.txt" title="" target="_blank">قالب حضرت معصومه (س) - بلاگفا</a></li>            <li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li>
+            <li><b><a href="http://hami10.mihanblog.com/link/">همه پیوندها</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>صفحات جانبی</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://hami10.mihanblog.com/extrapage/ghalebsb">دانلود کد قالب ها - 2</a></li><li><a href="http://hami10.mihanblog.com/extrapage/ghalebs">دانلود کد قالب ها</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+            <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+            <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+            <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+            <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+            <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+            <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+            <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+            <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>امکانات جانبی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><center><font class=text1></font></center>
+                <style>
+                    .mihan_logo {
+                        background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                        height: 131px;
+                        margin-top: 10px;
+                        text-align: center;
+                    }
+                </style>
+                <div class="mihan_logo"></div>
+
+            </div>
+        </div>
+        <div class=div30></div>
+    </div>
+
+</div>
+
+
+
+</div>
+</td>
+<td class="m-r">&nbsp;</td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class="b2" valign=top>
+        <div class=div7><a href="http://www.mytheme.ir" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099985/blank.gif" border=0 width=182 height=35></a></div>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 485px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'hami10.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,2355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1142327*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[90]='48';commentCnt[95]='45';commentCnt[97]='9';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[90]='0';
+mihanblogDisLikeArrCnt[90]='0';
+mihanblogLikeArrCnt[95]='0';
+mihanblogDisLikeArrCnt[95]='0';
+mihanblogLikeArrCnt[97]='0';
+mihanblogDisLikeArrCnt[97]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://hamed-abbasnejad.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://hamed-abbasnejad.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','78');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','یکشنبه 16 آذر 1399');
+	
+	setStatVar('today_view','102');
+	setStatVar('yesterday_view','65');
+	
+	setStatVar('this_month_view','1433');
+	setStatVar('last_month_view','1512');
+
+	setStatVar('total_view','61561');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (15:55)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://hamed-abbasnejad.mihanblog.com/statupdate/?data[refereruri]=http://hamed-abbasnejad.mihanblog.com/post/archive&data[postid]=&data[requesturi]=/post/archive/1393/10&data[sdate]=1607782674&data[hash]=3a442e13f034ac3fc755defd373bbe1d&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://hamed-abbasnejad.mihanblog.com/post/archive/1393/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://hamed-abbasnejad.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<style>
+    /*
+    Theme Name: Accord
+    Theme URI: http://www.justkins.com
+    Description: Accord is <a href="http://www.justskins.com" title="Download Wordpress Themes">sleek wordpress theme</a> with widgets support. Designed by <a href="http://www.justskins.com">Just Skins</a> and developed by <a href="http://www.gsmhacks.com">GSM Hacks</a>.
+    Version: 1.0
+    Author: Ravish Ahuja, Aditi Tuteja & R.Bhavesh
+    Author URI: http://www.xeonext.com
+
+        This theme is released under Creative Commons Attribution 2.5 License.
+
+    */
+
+body {
+    font: 80%/150%  Tahoma, Arial;
+    color: #303030;
+    background: #307aa9;
+    margin: 0px;
+    padding: 0px;
+    /*direction:rtl;*/
+}
+a {
+    color: #006699;
+    text-decoration: none;
+}
+a:visited {
+    color: #006699;
+    text-decoration: none;
+}
+a:hover {
+    color: #24A6D9;
+}
+img {
+    border: none;
+    max-width: 480px;
+}
+p {
+    padding: 0px 0px 15px;
+    margin: 0px;
+}
+h1 {
+    margin: 5px 0;
+    font: lighter 2em/1em "trebuchet MS", "Lucida Sans Unicode", Georgia;
+    color: #FFFFFF;
+}
+h1 a, h1 a:visited{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+h1 a:hover{
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+h2 {
+    color: #006699;
+    margin: 0px 0px 2px;
+    background-position:3px 0;
+    padding:0 0 1px 0;
+    width:100%;
+    font: lighter 1.5em/1em "trebuchet MS", "Lucida Sans Unicode", Georgia;
+}
+h2 a, h2 a:visited {
+    color: #006699;
+    text-decoration: none;
+}
+h2 a:hover {
+    color: #24A6D9;
+    text-decoration: none;
+}
+h3 {
+    font: bold 125%/100% "Trebuchet MS", Tahoma, Arial;
+    color: #006699;
+    margin: 10px 0px 5px;
+}
+h4 {
+    font: normal 130%/100% "Trebuchet MS", Tahoma, Arial;
+    color: #006699;
+    margin: 10px 0px 5px;
+}
+form {
+    margin:0px;
+    padding:0px;
+}
+#wrapper {
+    background: #307aa9;}
+#page {
+    margin: 0px auto;
+    width: 754px;
+    border:7px solid #fff;
+    border-top: none;
+    background:#fff url(http://mihanblog.com/public/public/user_data/template/2/images/pagebg.png) repeat-y left;
+}
+    /* header area */
+#header{
+    position: relative;
+    margin: 0px auto;
+    width: 768px;
+}
+
+#header h1 {
+    float:left;
+    width:159px;
+    height:45px;
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/logo.gif) no-repeat;
+    text-indent:-9009px;
+    overflow:hidden;
+    clear:both;}
+
+#header  h1 a, #headerimg h1 a:visited{
+    display:block;
+    width:227px;
+    height:27px;
+}
+#header h1 a:hover{
+}
+
+#navi{
+    float: right;
+    height: 45px;
+    width: 100%;
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/navbg.gif) no-repeat;
+    overflow: hidden;
+}
+#nav {
+    list-style: none;
+    margin: 7px 7px 0 0;
+    padding-top: 7px;
+}
+#nav li {
+    float: right;
+    height: 31px;
+    /*background: url(http://mihanblog.com/public/public/user_data/template/2/images/nav_tabr.png) top right no-repeat;*/
+    margin: 0 3px;
+    white-space: nowrap;
+}
+#nav .page_item a{
+    color: #006699;
+    display: block;
+    /*background: url(http://mihanblog.com/public/public/user_data/template/2/images/nav_tabl.png) top left no-repeat;*/
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    font: bold 11px Tahoma, Arial, Helvetica, sans-serif;
+    line-height: 31px;
+}
+#nav li:hover {
+    background-position: 100% -38px;
+    color: #F9CA3B;
+}
+#nav .page_item a:hover {
+    background-position: 0px -38px;
+    border: none;
+    color: #F9CA3B;
+}
+
+
+#mainbanner{
+    height:129px;
+    width:754px;
+    clear:both;
+    margin:0 auto;
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/bannerbg.png) no-repeat right;
+    border-left:7px solid #fff;
+    border-right:7px solid #fff;
+    text-align:right;
+    direction:rtl;
+}
+
+.description{
+    padding: 30px 20px 0 0px;
+    color: #fff;
+    font: lighter 14px "Trebuchet MS", "Lucida Sans Unicode", Verdana;
+}
+
+
+    /* content area */
+#content {
+    padding: 0px 0px 30px 0;
+    float: right;
+    width: 494px;
+    overflow:hidden;
+    direction:rtl;
+    text-align:right;
+
+}
+
+#content img {
+    padding: 3px;
+}
+#content ul{
+    padding-right:20px;
+}
+.narrowcolumn {
+    margin: 15px 0 10px 0;
+}
+
+.post {
+    clear:both;
+}
+
+.entry {
+    background: #e4f1fa;
+    padding-bottom:7px;
+    width:493px;
+    display: table;
+    overflow:hidden;
+}
+.entrytop{
+    padding-top: 9px;
+    background: #e4f1fa;
+    width:493px;
+    display:table;
+}
+
+.entry h2 {
+    width:475px;
+    margin:0 auto!important;
+}
+
+.postmeta {
+    margin: 0;
+    padding: 5px 28px 5px 2px;
+    font-size: 0.9em;
+    color: #666;
+    border-bottom: 1px solid #e4f1fa;
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/file_icon.gif) no-repeat right 50%;
+}
+
+.post-content {
+    clear: both;
+    padding: 5px;
+    width:484px;
+    overflow:hidden;
+}
+.post-content a {
+    color: #006699;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.post-content a:hover {
+    color: #24A6D9;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.post-info {
+    padding: 5px 5px 15px 5px;
+    height: 15px;
+    color: #006699;
+    font: 12px "Trebuchet MS", "Tahoma", sans-serif;
+}
+.post-info a {
+    color: #006699;
+    text-decoration: none;
+}
+.post-info a:hover {
+    color: #24A6D9;
+    text-decoration: underline;
+    border: none;
+    background: none;
+}
+.post-content blockquote {
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/quote.gif) no-repeat left top ;
+    font-style:italic;
+    padding: 0 0 0 20px;
+    margin:0 0 0 10px;
+    width: 415px;
+}
+
+
+
+
+    /*Sidebar starts*/
+
+#sidebar {
+    float: left;
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/sidebarbg.gif) no-repeat top;
+    font-size:100%;
+    width: 259px;
+    margin: 0px;
+    color:#333;
+    direction:rtl;
+}
+#sidebar a{
+    color:#333;
+    text-decoration:none;
+}
+#sidebar a:hover{
+    color: #FF6600   ;
+}
+#sidebar h2 {
+    color: #d4a107;
+    margin: 15px 0px  10px 0px;
+    width:100%;
+    background:none;
+    padding:0;
+    font: lighter 1.4em/1em "trebuchet MS", "Lucida Sans Unicode", Georgia;
+    padding-bottom: 3px;
+    border-bottom:1px dotted #F9CA3B;
+}
+#sidebar p{
+    padding: 2px 0px 16px 0px;
+    margin: 0px;
+    line-height: 20px;
+}
+
+    /*sidebar list level1 */
+#mainul{
+    margin:0 15px!important;
+}
+#mainul #logo{text-align:center;}
+#mainul #logo img{
+    width:150px;
+    height:150px;
+    margin:2px;
+}
+
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+    text-align:right;
+}
+#sidebar ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+    /*sidebar list level2 */
+#sidebar ul li ul {
+    padding: 0;
+    margin: 0;
+}
+#sidebar ul li ul li{
+    padding: 2px 0;
+    margin:2px 0;
+}
+#sidebar ul li .cloud_box li{
+    float:right;
+}
+#sidebar ul li ul .cloud_li{
+    padding:0px 0;
+    margin:0px 0;
+}
+#sidebar ul li ul .cloud_li a{
+    padding:0px 0px;
+    margin:0px;
+}
+    /*sidebar list level3 */
+#sidebar ul li ul li ul li{
+    padding: 1px 0;
+    border: none;
+}
+    /*blogroll */
+ul.list-blogroll li, li.list-blogroll ul li, li.linkcat ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-blogroll.gif) no-repeat !important;
+    background-position:0 3px!important;
+    padding-left: 20px !important;
+}
+
+    /*Meta*/
+li.list-meta ul li, .widget_meta ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-page-arrow.gif) no-repeat !important;
+    padding-left: 10px !important;
+}
+
+    /*category widget */
+li.list-cat ul li, ul.list-cat li, .widget_categories ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-category.gif) no-repeat !important;
+    background-position:0 3px!important;
+    padding-left: 20px !important;
+}
+    /*archives widget */
+li.list-archives ul li, .widget_archives ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-monthly-archive.gif) no-repeat !important;
+    background-position:0 3px!important;
+    padding-left: 20px !important;
+}
+    /*pages widget */
+li.list-page ul li, ul.list-page li, .widget_pages ul li, .widget_recent_entries ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-page.gif) no-repeat !important;
+    background-position:100% 3px!important;
+    padding-right: 20px !important;
+}
+    /*sub-pages */
+ul li.list-page ul li ul li, ul.list-page li ul li, .widget_pages ul li ul li{
+    background: url(http://mihanblog.com/public/public/user_data/template/2/images/mini-page-arrow.gif) no-repeat !important;
+    padding-left: 10px !important;
+}
+.widget .stat span{color:#FF6600;}
+
+
+    /* Form Elements */
+#search{
+    display: none;
+}
+
+.searchtitle {
+    font:bold 15px "Trebuchet MS", sans-serif, "Lucida Sans", Tahoma!important;
+    color:#2c65a8;
+}
+#searchform {
+    margin: 5px auto ;
+    padding: 0;
+}
+
+#searchform #s {
+    height:17px;
+    width:190px;
+    margin-right:5px;
+    font:11px TAHOMA, Arial, Helvetica, sans-serif;
+    border:1px solid #fff;
+}
+
+#searchsubmit {
+    padding:0px;
+    background:#fce49b;
+    border:1px solid #FFF;
+    height:21px;
+    width:52px;
+    font:11px tahoma, Verdana;
+}
+#searchsubmit:hover {
+    background:#fff;
+}
+
+#pollsubmit {
+    padding:0px 10px;
+    background:#fce49b;
+    border:1px solid #F9CA3B;
+    height:21px;
+    font:11px tahoma, Verdana;
+}
+#pollsubmit:hover {
+    background:#fff;
+}
+
+    /* Sidebar RSS Link*/
+
+.rsslinks{
+    padding:5px 10px;
+    margin-bottom:15px;
+    direction:ltr;
+}
+.rsslinks ul{
+    list-style:none;
+    text-align:left;
+}
+.rsslinks #rss_box{
+    list-style:none;
+    text-align:left;
+}
+.rsslinks li{
+    display:inline;}
+.rsslinks li a{
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/rss.gif) no-repeat left;
+    padding:3px 3px 3px 20px;
+    margin-right:10px;}
+
+
+
+
+
+
+    /*text widget */
+.textwidget {
+    padding-top: 5px;
+}
+
+
+
+    /* footer area */
+#footerbg {
+    clear: both;
+}
+#footer {
+    width: 760px;
+    color: #e4f1fa;
+    margin: 0px auto 0px;
+    padding: 5px 0px 30px 0px;
+    line-height: 18px;
+    font-size: 0.9em;
+}
+#footer a {
+    color: #e4f1fa;
+    font-weight: bold;
+}
+
+#footer a:hover {
+    color:#FFF;
+}
+
+.xhtml_valid {
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/xhtml_valid.gif) no-repeat left ;
+    padding-left:20px;
+    margin:0 5px;
+}
+.css_valid {
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/css_valid.gif) no-repeat left;
+    padding-left:20px;
+    margin:0 5px;
+}
+.rss {
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/rss_valid.gif) no-repeat left;
+    padding-left:20px;
+    margin:0 5px;
+}
+
+    /* credits */
+
+
+
+
+.valid{
+    background:url(http://mihanblog.com/public/public/user_data/template/2/images/valid.gif) no-repeat left;
+    padding-left:20px;
+    margin:0 5px;}
+
+    /* alignments */
+.center {
+    text-align: center;
+}
+img.center, img[align="center"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignleft {
+    float: left;
+    font-size:9px;
+}
+img.alignleft, img[align="left"] {
+    float:left;
+    margin: 2px 10px 5px 0px;
+}
+.alignright {
+    float: right;
+}
+img.alignright, img[align="right"] {
+    float:right;
+    margin: 2px 0px 5px 10px;
+}
+.clear {
+    clear:both;
+}
+hr.clear {
+    clear:both;
+    visibility: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mihan_logo{
+    background: url(http://mihanblog.com/public/public/images/logo/poweredby.gif) no-repeat top center;
+    text-align:center;
+    height:131px;
+    margin:10px 0px;
+}
+.script_box{
+    margin:10px 0px;
+}
+.clearfix {display: inline-block;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+    /* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+.owner_photo{
+    color:#fff;
+    float:right;
+    margin:5px 0px 5px 5px;
+}
+.page_box ul{
+    direction:rtl;
+    height:17px;
+    margin:20px auto;
+    max-width:420px;
+    text-align:left;
+    width:420px;
+    list-style:none;
+
+}
+
+.page_box li{
+    float:right;
+    margin:0px;
+    margin-right:5px;
+    list-style:none;
+    background:none;
+
+
+}
+.page_box a,.page_box a:visited {
+    border:1px solid #E3E3E3;
+    display:block;
+    line-height:17px;
+    text-align:center;
+    width:17px;
+}
+.page_box a b{
+    color:#fff;
+    background:#005B8E  none repeat scroll 0 0;
+    border:none;
+    display:block;
+    line-height:17px;
+    text-align:center;
+    width:17px;
+    color:#fff;
+}
+.general_box {
+    margin:10px;
+    line-height:22px;
+}
+#parentheses p{
+    float:right;
+    padding:0px;
+    margin:0px;
+    direction:rtl;
+    text-align:right;
+    padding-right:2px;
+}
+
+
+.cb_share{
+    text-align:left;
+    padding-bottom: 15px;
+}
+.cb_share a{
+    font-size:11px;
+    text-decoration:none
+}
+#content .cb_share a img{
+    padding:0 0 0 5px;
+}
+</style>
+<title>علمی ـ سیاسی - مطالب  دی 1393</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="alternate" type="application/rss+xml" title="علمی ـ سیاسی" href="../../rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="علمی ـ سیاسی" href="../../atom/index.html" />
+
+</head>
+<body>
+<div id="header">
+    <div id="navi">
+        <ul id="nav">
+            <li class="page_item"><a href="../../../index.html" >خانه</a></li>
+            <li class="page_item"><a href="mailto:h67_abbasnejad@yahoo.com" title="ارسال ایمیل به مدیر سایت">پست الکترونیک</a></li>
+            <li class="page_item"><a href="javascript:messageForm()" title="تماس با مدیر سایت">تماس با ما</a></li>
+            <li class="page_item"><a href="../../rss/index.html" title="RSS">RSS</a></li>
+            <li class="page_item"><a href="../../atom/index.html" title="Atom">Atom</a></li>
+        </ul>
+    </div>
+</div>
+<!--/header -->
+
+<div id="mainbanner">
+    <div class="description"><h1><a href="../../../index.html">علمی ـ سیاسی</a></h1>
+        حكومت مردم بر مردم و برای مردم هرگز محكوم به نابودی نخواهد بود.    </div>
+</div>
+<div id="wrapper">
+<div id="page">
+<div id="content">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		    <div class="post clearfix" id="97">
+        <div class="entrytop">
+            <div class="entry">
+                <h2><a href="../../97.html" rel="bookmark">ویژگی هاو مشخصات حماسه ی 9دی</a></h2>
+            </div>
+        </div>
+
+        <p class="postmeta">سه شنبه 9 دی 1393  		<br />
+
+            نویسنده: حامد عباس نژاد |
+
+
+
+        </p>
+        <div class="post-content">
+            <p><div class="owner_photo"></div></p>
+            <p><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">این راهپیمایی از یکسری از ویژگی
+ها و مشخصاتی برخوردار بود که آن را نسبت به بسیاری از راهپیمایی ها و تظاهرات
+برجسته می ساخت.</span><span lang="FA" style="font-size:14.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">1ـ این راهپیمایی نه در جهت حمایت
+از اشخاصی خاص و نه در جهت دفع آقایان موسوی و کروبی صورت گرفت؛ چرا که همانطور که
+اشاره شد در جریان روز عاشورا عملا این آقایان هیچ اراده،اختیار و همچنین مشروعیتی
+در جهت سوق دادن مردم به اعتراضات نداشتند، بلکه برای دفع کسانی بود که هویت دینی
+مردم را به سخره گرفته بودند. نویسنده ای در اینباره می نویسد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">این راهپیمایی در اعلام انزجار از اقدام
+کسانی صورت می گرفت که در پایتخت جهان تشیع به خود اجازه دادند تا به ساحت مقدس
+ابا عبدالله الحسین توهین کنند.(جمعی از نویسندگان،1389: 394)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">2ـ حضوری &nbsp;مبتنی بر ایمان و هویت دینی: مخرج مشترک حضور
+میلیونی مردم در این راهپیمایی علیرغم اختلاف سلیقه هایی که با هم داشتند،دغدغه
+دفاع از دین و هویت آن ها بود. این راهپیمایی خیلی پر صلابت تر از 22 بهمن همان
+سال بود و شعارها و اعتراضات&nbsp; خیلی&nbsp; رادیکال تر و پر شورتر از 22 بهمن بود.<a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn1" name="_ftnref1" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:12.0pt;mso-bidi-font-size:
+13.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;B Lotus&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[1]</span></span><!--[endif]--></span></span></a><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">حضور مردم در صحنه هایی که به نوعی تعیین
+کننده ی حیات و ممات انقلاب بوده،همواره یکی از مولفه های اساسی پیدایش،تداوم،
+تقویت و گسترش قدرت انقلاب و نظام اسلامی بوده است،اما در راهپیمایی 9دی، این حضور
+میلیونی به همراه بصیرت، هوشیاری و دشمن شناسی ملت مسلمان ایران از جنسی دیگر بود
+و حماسه ای ماندگار در تاریخ.(پریشان،1391: 7)</span><span lang="FA" style="font-size:10.0pt;line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">3ـ برگزاری این راهپیمایی تنها دو
+روز پس از اطلاع رسانی سازمان تبلیغات اسلامی شکل گرفت: پس از هتک حرمت&nbsp; ساحت حضرت ابا عبدالله الحسین در روز عاشورا،
+در ابتدا مردم قم بصورت کاملا خود جوش دست به اعتراضات بر علیه کسانیکه این هتک
+حرمت را صورت دادند، زدند و در 8 دی در اعتراض به این غائله به تجمع پرداختند. اما
+با توجه به فرصت کمی که در پیش بود،حضور مردم در 9دی از ویژگی های ممتاز این
+راهپیمایی بود ؛چرا که به قول نویسنده ای:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">اغلب راهپیمایی های تاریخی از مدت ها قبل
+برنامه ریزی و اطلاع رسانی شده و شرکت کنندگان می توانند برای حضور برنامه ریزی
+کنند.(جمعی از نویسندگان،1389: 394)</span><span lang="FA" style="font-size:12.0pt;
+line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">&nbsp;</span><span lang="FA" style="font-size:13.0pt;
+mso-ansi-font-size:12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">4ـ&nbsp; برگزاری این راهپیمایی در یک روز غیر تعطیل و
+کاری: این راهپیمایی در روز چهارشنبه و غیر تعطیل برگزار شد که این امر شاید مانعی
+برای حضور برخی افراد باشد که خوشبختانه با حضور گسترده مردم تبدیل به یک حماسه شد
+و این مهم یکی دیگر از ویژگی های برجسته ی این راهپیمایی بود.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">5ـ نویسنده ای این راهپیمایی را
+زمینه ساز شکستن سکوت برخی از خواص می داند و در اینباره می نویسد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">این راهپیمایی با شکوه حتی کسانی را که تا
+آن روز در مقابل حوادث روز عاشورا سکوت کرده بودند نیز به واکنش وا داشت.</span><span lang="FA" style="font-size:10.0pt;line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">و در ادامه از آقای هاشمی
+رفسنجانی یاد می کند و می نویسد:</span><span lang="FA" style="font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">هاشمی رفسنجانی [ بعد از این راهپیمایی]
+نیز در سخنانی حضور گسترده ی مردم&nbsp; سراسر
+کشور در راهپیمایی حمایت از نظام،ولایت و رهبری تشکرو قدردانی کرد.(جمعی از
+نویسندگان،1389: 396)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">6ـ یاس مطلق دشمنان: نویسنده ی
+دیگری ضمن توجه به تفاسیر محافل خارجی قبل و بعد از این راهپیمایی می نویسد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">اگر به تحلیل ها و تفاسیر محافل خارجی
+نگاهی بیندازیم در می یابیم که میان آنچه پیش از 9دی گفته می شد و آنچه پس از این
+روز مطرح گردید، فاصله بزرگ وجود دارد.پس از 9دی روند توطئه خارجی کند نشد،اما
+امید دشمن به کار در جغرافیای ایران و امید به کارآیی عوامل فتنه از بین رفت و
+حرکت به سمت اقدامات خارجی نظیر تحریم و قطعنامه و دسته بندی های بین المللی پیش
+رفت.(پریشان،1391: 7)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">در ادامه همین بحث، حسین
+کچوئیان،استاد جامعه شناسی دانشگاه تهران پا را فراتر از این می گذارد و در مصاحبه
+با نشریه پنجره معتقد است که اگر راهپیمایی 9دی صورت نمی گرفت ممکن بود مداخله
+خارجی صورت بگیرد!:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">به نظرم یکی از دلایلی که غربی ها به ما
+حمله نکردند،این است که تا می آیند&nbsp; اقدامی
+کنند،یک دفعه چیز عجیب و غریبی می بینند. اگر نهم دی اتفاق نمی افتاد، قطعا قضیه
+به یک معارضه ی عجیب و غریب تبدیل می شد که مرحله بعد آن، ممکن بود مداخله خارجی و
+یا مسلح شدن این نیروهای مسئله دار باشد. ولی در واقع نهم دی جلوگیری کرد. این است
+که می بینید الان تمام فشارهای خارجی روی مساله محدودیت ها و تحریم هاست.( نشریه
+پنجره، سال سوم، شماره 121)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">7ـ از دیگر ویژگی های این حماسه
+می توان به عنصر "اعتماد" اشاره کرد. پدیده و حماسه ی 9دی نشاندهنده ی
+شکل گیری روابط مبتنی بر اعتماد و حمایت میان حاکمیت و شهروندان است که بی تردید
+سرمایه اجتماعی عظیمی را برای جامعه ایران و جمهوری اسلامی فراهم کرده است و نتیجه
+بلافصل آن ارتقا قدرت نرم ملی خواهد بود.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">8ـ هشتمین و آخرین ویژگی این
+حماسه ـ9دی ـ نمایش اتحاد و یکپارچگی ملت و تقویت وحدت ملی در جریان روزهای پس از
+انتخابات می باشد.نویسنده ای در اینباره می نویسد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="mso-ansi-font-size:10.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">حماسه
+حضور نهم دی ماه از ویژگی های بسیاری برخوردار بود{...} در جنگ نرم علیه جمهوری
+اسلامی و فتنه های{بحران های} پس از انتخابات دهم،عده ای تلاش کردند اینگونه القا
+کنند که حکومت پشتوانه های مردمی خود را از دست داده است و متکی به سپاه و بسیج
+شده است{...}حضور میلیونی مردم در نهم دی ماه 1388 در تظاهرات پاسداشت حرمت عاشورا
+و دفاع از ولایت و نظام اسلامی،بطلان تحلیل دشمنان و مخالفان را اثبات کرد.(اخوان،1389،ج2:
+258)</span><span dir="LTR" style="font-size:10.0pt;mso-bidi-font-size:11.0pt;
+line-height:200%;mso-bidi-font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<div><!--[if !supportFootnotes]--><br clear="all">
+
+<hr align="left" size="1" width="33%">
+
+<!--[endif]-->
+
+<div id="ftn1">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref1" name="_ftn1" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:10.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[1]</span></span><!--[endif]--></span></span></a><span dir="RTL"></span><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> <span lang="FA">اینجانب هم در 9دی 1388 و هم در
+22 بهمن 88 حضور داشتم و از نزدیک شاهد حضور پر رنگ&nbsp; و پر صلابت مردم در 9 دی 88 به نسبت 22 بهمن 88
+آن سال بودم.</span></span></p>
+
+</div>
+
+</div>
+
+
+</p>
+            <p><br></p>
+        </div>
+
+
+        <ul class="clearfix">
+            
+                        <li style="float: left; list-style: none outside none;">
+                <div style="float: left; margin-left: 17px; margin-right: 17px; margin-top: -4px;"> <script>mihanblogPostLike('97','like')</script></div>
+                <a target="_self" href="../../97.html#commentlist" class="comment-link">نظرات(<script>setCommentCnt(97)</script>)</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="cb_share clearfix">
+        <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://hamed-abbasnejad.mihanblog.com/post/97&amp;title=ویژگی هاو مشخصات حماسه ی 9دی">
+            ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+        </a>
+    </div>
+    <div class="post clearfix" id="95">
+        <div class="entrytop">
+            <div class="entry">
+                <h2><a href="../../95.html" rel="bookmark">تاسوعا و عاشورا سال 88</a></h2>
+            </div>
+        </div>
+
+        <p class="postmeta">یکشنبه 7 دی 1393  		<br />
+
+            نویسنده: حامد عباس نژاد |
+
+
+
+        </p>
+        <div class="post-content">
+            <p><div class="owner_photo"></div></p>
+            <p><p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">در یک جامعه دینی مانند ایران با
+شعارهای غیر دینی نمی توان به موفقیت خوشبین بود، همانطور که تجربه ی تاریخی گذشته
+ایرانیان هم&nbsp; موید این مطلب است. بویژه
+آنکه هدف از این فعالیت اجتماعی سرنگونی یک حکومت دینی به رهبری مرجعیت دینی باشد.
+راهکاری که نظریه پردازان جبهه تجدید نظر طلب(اصلاح طلبان)&nbsp; در این شرایط&nbsp;
+بطور اجتماعی پیشنهاد می کنند این است که : با شعارهای دینی به مقابله با
+حکومت دینی بروید. با" لا مذهبی "نمی توان به جنگ&nbsp; مذهب رفت، به این منظور نیاز است که از نمادهای
+مذهبی استفاده شود.(اسماعیلی،1389: &nbsp;345ـ344) در این شرایط تلاش فراوانی برای خروج
+از انفعال توسط سران داخلی و خارجی فتنه صورت گرفت که مهمترین آن پیگیری جدی پروژه
+ی از پیش تعیین شده "محرم سبز" بود. جریان مستاصل شده خط نفاق برای
+تداوم&nbsp;&nbsp; حداقل حیات خود این بار نیز
+استفاده ابزاری از دین را&nbsp; برگزید و به
+ایام محرم الحرام به چشم فرصتی برای احیا دوباره فتنه سبز بعد از شکست های پی در
+پی در ماه های گذشته می نگریست.فتنه گران ، محفل ها و هیات های مذهبی را مکان
+مناسبی برای فریب مردم تصور کرده و برنامه ریزی کردند تا با ارائه چهره ای به ظاهر
+عزادار و معتقد، در این محافل مذهبی نفوذ کرده و اقدامات منافقانه و تفرقه افکنانه
+خود را در بین عزاداران دنبال نمایند.( جمعی از نویسندگان،1389: 383) چرا که عدم
+اعتقاد به فلسفه عزاداری برای امام حسین (ع) در بین بخشی از سران خارج نشین یکی از
+موانع پارادوکسیکال برای بهره برداری از مراسم محرم بود.ملت فراموش نکرده بود
+روزگاری نه چندان دور را که کسانی از این جریان،حادثه عاشورا را نتیجه ی تندروی
+پیامبر (ص) در بدر و احد دانستند یا اظهارات سروش سبز پوش امروز که مقام عصمت و
+مصونیت از خطا و گناه را نه تنها برای اهل بیت (ع) که برای پیامبر (ص) نیز نفی
+میکند.(اخوان،ج2،1389: 244) همان سروشی که&nbsp;
+ما در فصل های قبل از آن تحت عنوان" خاستگاه تطور ایدئولوژی
+اصلاحات" یاد کردیم.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">&nbsp;&nbsp;فتنه
+گران طبق عادت، مراسم عزاداری شب عاشورا&nbsp;
+در حسینیه جماران را تبدیل به صحنه هتاکی علیه نظام کردند. آنان به این امر
+نیز بسنده نکردند و با حضور خاتمی در این مراسم شروع به کف و سوت زدن کردند. هتک
+حرمت مراسم عزاداری شب عاشورا منجر به درگیری و مشاجره های لفظی میان هتاکان و
+معترضان به این رفتار شد و در ادامه و با آغاز سخنرانی آقای خاتمی اعتراض ها به
+این رفتار شدت بیشتری گرفت. معترضان با شعار " منافق حیا کن، جماران را رها
+کن" خواستار خروج هتک حرمت کنندگان شدند.(انوری تفتی،1391: 3)خبرگزاری فارس
+در اینباره اینطور گزارش می دهد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">پس از سخنان تحریک آمیز و انحرافی خاتمی از
+موضوع کربلا <a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn1" name="_ftnref1" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:11.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;B Lotus&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[1]</span></span><!--[endif]--></span></span></a>،
+مردم وارد حسینیه جماران شده و شعارهایی در حمایت از امام و رهبری سر دادند. مردم
+و دانشجویان که به چند صد نفر می رسیدند با محکوم کردن سخنان تفرقه انگیز خاتمی
+شعارهایی با این مضمون که " بیت امام خمینی، جای منافقین نیست" ،"
+مرگ بر منافق ـ مرگ بر ضد ولایت فقیه " سر دادند و با حفظ آرامش اقدام و
+شعارهای ساختار شکن هواداران خاتمی و موسوی را در حسینیه جماران محکوم کردند.
+گفتنی&nbsp; است پس از حضور انقلابی مردم و
+دانشجویان، خاتمی مجبور به قطع سخنان خود و ترک حسینیه جماران شد.( خبرگزاری
+فارس،کد خبر: 8810050365)</span><span lang="FA" style="font-size:9.0pt;line-height:
+200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">روز تاسوعا نیز با تمام اتفاقاتش
+سپری شد<a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn2" name="_ftnref2" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:12.0pt;mso-bidi-font-size:
+13.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;B Lotus&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[2]</span></span><!--[endif]--></span></span></a>
+و روز سرنوشت ساز عاشورا از راه رسید. در این روز اتفاقاتی به وقوع پیوست که قلوب
+آحاد ملت ایران را بطور بی سابقه ای جریحه دار کرد . و این روز لکه ننگی بر دوش
+کسانی بود که هنوز تصور می کردند اعتراضات حامیانشان در چارچوب نظام و به تبعیت از
+آنها صورت می گیرد.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">ظهر روز عاشورا در حالی که مردم
+تهران مشغول عزاداری برای سید و سالار شهیدان حضرت ابا عبدالله الحسین بودند،
+اغتشاش گران فرصت را مغتنم شمرده و خیابان انقلاب و حوالی&nbsp; آن را عرصه جولانگاه خویش قرار داده و با آتش
+زدن خیمه های عزاداری امام حسین ، حمله به مردم عزادار و ... ابراز وجود کردند.(انوری
+تفتی،1391: 3) فتنه گران به خیابان های مرکزی شهر که تجاری و اداریث و خلوت است،
+ریختند و جسارت ها و توهین هایی کردند که پیش از این در تاریخ انقلاب مشابهی برای
+آن نمی توان یافت.(سعیدی،1391: 8) گزاره های زیر نمونه ی بارزی از مصادیق توهین و
+اهانت به ساحت حضرت ابا عبدالله الحسین و اغتشاش و ناآرامی در عاشورای سال 1388 می
+باشد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ&nbsp;
+گستاخی هدفمند عده ای در اهانت و جسارت به قرآن، مساجد، حسینیه ها و تکیه
+ها، نذورات، عزاداران و مراسم حسینی، تخریب اموال عمومی، به بازی گرفتن مقدسات
+مردم و شعار علیه اصل ولایت فقیه {و ...} بطور بی سابقه ای در رسانه های غربی و
+سایت های اینترنتی بازتاب داده شد.(محمدی،1390: 671)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ به گزارش خبرگزاری ها برخی افراد فریب
+خورده و آشوبگر در خودروهای خود بسان مراسم عروسی بوق می زدند. برخی نیز در تجمع
+ها دست به هلهله و شادمانی و خرابکاری زدند{...} افراد فریب خورده نیز شعارهای مرگ
+بر جمهوری اسلامی و به مقدسات توهین کردند.(جمعی از نویسندگان،1389: 389)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ آن ها شعارهای " مرگ بر
+دیکتاتور"،" یا حسین میر حسین"،" مرگ بر اصل ولایت فقیه"
+{و ...} را به همراه کف و سوت تکرار می کردند. آن ها در مسیر خود پرچم های مقدس یا
+زهرا و یا حسین را که در کوچه ها و خیابان ها نصب شده بود،پاره کرده و یا آتش می
+زدند.(انوری تفتی،1391: 3)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ آتش زدن پرچم،حمله ور شدن به عزاداری ابا
+عبدالله الحسین و کتک زدن آن ها ، شعله ور کردن خیمه های سینه زنی و خسارت به
+اموال عمومی و بیت المال از جمله&nbsp; اقداماتی
+بود که افرادی با دستبند و سربند و شال سبز آن را پدید آوردند که البته با حمایت و
+تایید سلطنت طلبان، وهابیون، تروریست ها،صهیونیست ها و مخالفان اسلام ناب محمدی
+همراه شد.(همتی،1389: 26)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ آشوبگران به نماز گزاران یک دسته عزاداری
+در خیابان جمهوری اسلامی حمله می کنند و امام جماعت آن را مجروح می کنند. آتش زدن
+ایستگاه های صلواتی و بیرق های عزاداری، فصل مشترک همه ی اغتشاش های امروز است.(
+نشریه همشهری؛ فرهنگ شهر، شماره: 103)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ به گزارش خبرنگار سیاسی خبرگزاری فارس،
+در جریان حرمت شکنی عده ای از حامیان موسوی<a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn3" name="_ftnref3" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:11.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:&quot;B Lotus&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:FA">[3]</span></span><!--[endif]--></span></span></a> از
+روز عاشورا و اقدامات ساختار شکنانه و آتش زدن بانک، یک ساختمان در چهار راه کالج،
+تعدادی از تاکسی های شهری، وسائط نقلیه نیروی انتظامی، خودروهای شخصی {و ...}، در
+اقدامی تاسف برانگیز قرآن کریم نیز توسط این افراد به آتش کشیده شد.(خبرگزاری
+فارس، کد خبر: 8810060264)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">ـ در بیانیه رسمی فرماندهی نیروی انتظامی
+تهران آمده است: <o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">{...} در تداوم فتنه گری فتنه گران و تخریب
+اموال عمومی و شخصی مردم ،نیروی انتظامی با قاطعیت و بهره گیری از ابزار و تجهیزات
+ضد اغتشاش و با تاکید بر عدم حمل و بکارگیری سلاح گرم به متفرق نمودن اغتشاش گران
+اقدام کرد. با کمال تاسف، در این اغتشاش [ روز 6 دی 88؛روز عاشورا] 5 نفر به طرز
+مشکوکی جان باختند و تعدادی نیز مجروح شدند...( نشریه مردم سالاری، شماره: 2254)</span><span lang="FA" style="font-size:9.0pt;line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">گزاره های فوق فارغ از اینکه چه
+کسانی جرات جسارت به ساحت حضرت ابا عبدالله الحسین را کردند، به خوبی نشانگر هتک
+حرکت امام حسین در روز عاشورا و اینکه فتنه گران از همه مرزهای اخلاقی و اعتقادی
+عبور کردند،می باشد. نویسنده ای در اینباره می نویسد:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%;tab-stops:165.2pt"><span lang="FA" style="font-family:&quot;B Lotus&quot;">پس از حوادثی مانند اهانت به عکس امام و
+سوت و کف در شب عاشورا اقدامات انجام شده توسط آشوبگران در روز عاشورا که اهانت
+مستقیم به اسلام از جمله آن ها بود به همگان نشان داد که جماعت فتنه گرا از همه
+مرزهای اخلاقی و اعتقادی عبور کرده اند و دیگر هیچ نسبتی میان آن ها و سرانشان با
+ملت بزرگ ایران نیست.(محمدی،1389: 274)</span><span lang="FA" style="font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%;
+tab-stops:165.2pt"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:
+12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;">از فردای روز عاشورا تظاهرات
+بزرگی در جهت محکومیت فتنه گران آغاز گردید که اوج آن در روز 9دی88 می باشد.<o:p></o:p></span></p>
+
+<span lang="FA" dir="RTL" style="font-size:11.0pt;line-height:115%;font-family:
+&quot;B Lotus&quot;;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:FA">از فردای روز عاشورا قم اولین شهری بود که صحنه
+تظاهرات گسترده مردمی در محکومیت فتنه گران بود. موج اعتراضات به
+شیراز،تبریز،اصفهان،کرمانشاه،مشهد و سایر شهرها نیز کشانده شد و ایران اسلامی
+یکپارچه خشم و انزجار از اقدامات فتنه گران گردید.(انوری تفتی،1391: 3) </span>
+
+<div><!--[if !supportFootnotes]--><br clear="all">
+
+<hr align="left" size="1" width="33%">
+
+<!--[endif]-->
+
+<div id="ftn1">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref1" name="_ftn1" title=""></a><span dir="RTL"></span><span class="MsoFootnoteReference"><span lang="FA" style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span>5</span></span><span lang="FA" style="font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+Arial;mso-bidi-theme-font:minor-bidi">7 در بینش الهی توحیدی و ادیان آسمانی به
+خصوص اسلام، قهرمان و بازیگر اصلی صحنه تاریخ خود انسان است و پیامبران و مصلحان
+بزرگ الهی آمده اند تا آگاهی این انسان را بالا ببرند و اراده اش را تقویت کنند تا
+خود راه را با چراغ آگاهی و پای اراده بپیماید و طبعا این انسان هرچه آگاه تر و
+مصمم تر، سیر او به سوی هدف شتابان تر و در نزدیک تر شدن به آن هدف کامرواتر است و
+امام حسین قهرمان آگاهی بخش و شتاب دهنده این حرکت است. اگر تا دیروز تنها وجه
+حکومت رایج در شرق و غرب عالم به نحوی حکومت استبدادی بود، در همه جا اکثریت نه
+تنها محکوم به اطاعت از خواست و اراده حاکمان غیرمسوول بودند، بلکه در عمق جان
+وجدان خود نیز این امر را به عنوان سرنوشت محتوم خود پذیرفته بودند. امروز در جهان
+کسی نیست که بتواند از نظام های استبدادی و خودکامه دفاع کند و حتی مستبدترین
+حاکمان نیز تظاهر به مردم داری و دفاع از حق و حرمت مردم می کنند و در همه جا این
+اصل پذیرفته شده است که برترین و محکم ترین حق در عرصه اجتماعی حق حاکمیت انسان بر
+سرنوشت خویش است و به عبارت دیگر مردم سالاری به عنوان کم هزینه ترین و پرفایده
+ترین سامان حکومت و نظام اجتماعی پذیرفته شده است و می بینیم که افتخار انقلاب
+اسلامی هم این است که منجر به استقرار جمهوری اسلامی می شود. بنابراین در عرصه
+حیات اجتماعی به روشنی و بی هیچ تردیدی می توانیم ادعاکنیم که سیر تاریخ سیر به
+سوی آزادی است. از این امر نکته ای دیگر که بسیار هم ارزشمند است در می آید و آن
+اینکه انسان رهاشده از قیدهای تحمیلی استعمار، استثمار و استعباد اجتماعی و نیز
+آزاد از غرائز تلطیف نشده حیوانی چون خشونت و درنده خویی، جانب حق و عدالت را
+خواهد گرفت.&nbsp; یعنی تاریخ بشر علاوه بر اینکه تاریخ آزادی است تاریخ فعلیت
+یافتن حق و عدالت نیز خواهد بود و این سخن را می توان بیان دیگری از نظریه مهدویت
+دانست. بر می گردیم به فراز آغاز سخن که هدف تاریخ شکوفایی وجود آدمی است. یعنی
+وجود انسان در پرتو آزادی و در بستر حق و در سایه عدالت است که شکوفا می
+شود.&nbsp; اجازه دهید از تجربه شخصی که طی این سال ها داشته ام در اثبات ادعایم
+مدد بگیرم. این که در زمان ما نیاز به کوشش و بحث فراوان نیست تا همگان بپذیرند که
+به جای جنگ و خونریزی و کشتار می توان و باید با یکدیگر گفت وگو کرد چندان آسان به
+دست نیامده است. گویی تمام تاریخ خونین بشر، مقدمه این قضیه به ظاهر ساده بوده
+است. البته می دانیم که رسیدن به یک داوری و پذیرش یک ارزش از سوی همگان با تحقق و
+فعلیت آن نظر و ارزش فاصله زیادی است و اصلا آرمان ها همان ها هستند که در خارج
+نیستند و انسان می خواهد به آنها برسد و لازم است که علیه موانع آن مبارزه کند و
+آنها را از سر راه بردارد، موانعی که گاه بسیار سخت و متصلب است، چنانکه امروز هم
+در برابر آرمان آزادی و عدالت وجود دارد شاید بتوان جشن پیروزی کلمه بر تیغ،
+انسانیت بر ددمنشی و آزادی بر بردگی و آزادگی بر حقارت را به تاخیر انداخت، ولی
+نمی توان و نباید حرکت خرامان و پرشکوه تاریخ پر درد بشری را به سوی آزادی و حق و
+عدالت ندید و سرشار از امید و خشنودی نشد و همین امید و بینش است که ما، شما و همه
+انسان ها را به رغم نامردمی ها و سختی ها و درد و رنج ها امیدوار و با اراده نگه
+می دارد.&nbsp; بعد از این مقدمه می گویم: نقش قهرمان در عرصه تاریخ غیر قابل
+انکار است، اما نه در راه بردن تاریخ (که سیر الهی و طبیعی خود را دارد و قهرمان
+هم در متن این سیر و حرکت است نه بیرون از آن) بلکه در شتابان کردن سیر به سوی هدف
+والای تاریخ است</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span>.</span><span dir="RTL"></span><span lang="FA" style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> نشریه مردم سالاری،شماره :2253&nbsp; ، 7/10/1388.</span></p>
+
+</div>
+
+<div id="ftn2">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref2" name="_ftn2" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:10.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[2]</span></span><!--[endif]--></span></span></a><span dir="RTL"></span><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> <span lang="FA">هر چند عده ای هم در داخل کشور
+همچون مرحوم حبیب الله عسگر اولادی ،معتقد بودند که&nbsp; ورود به حسینیه ی جماران ضد نظام و ضد ارزش بود
+و همان هایی که خواهرزاده موسوی راترور کردند،همان ها هم به جماران رفتند و آنجا
+را به هم ریختند! (نشریه مردم سالاری،شماره: 2258 ،12/10/1388)</span></span><span lang="FA" style="font-size:11.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"> </span><span lang="FA" style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi">وحتی برخی منابع نزدیک به اصلاح طلبان از بهم خوردن آن مراسم توسط
+لباس شخصی ها خبر دادند.</span></p>
+
+</div>
+
+<div id="ftn3">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref3" name="_ftn3" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:10.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[3]</span></span><!--[endif]--></span></span></a><span dir="RTL"></span><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> <span lang="FA">اینجانب اعتقادم مبتنی بر این
+فرضیه می باشد که در جریان روز عاشورا آقای موسوی علنا هیچ اختیار و اراده و حتی مشروعیتی
+در جهت سوق دادن مردم به اعتراضات نداشت و بیشتر بعنوان یک مهره ی سیاسی سوخته به
+دادن&nbsp; بیانیه صرفا اکتفا می کرد.</span></span></p>
+
+</div>
+
+</div>
+
+
+</p>
+            <p><br></p>
+        </div>
+
+
+        <ul class="clearfix">
+            
+                        <li style="float: left; list-style: none outside none;">
+                <div style="float: left; margin-left: 17px; margin-right: 17px; margin-top: -4px;"> <script>mihanblogPostLike('95','like')</script></div>
+                <a target="_self" href="../../95.html#commentlist" class="comment-link">نظرات(<script>setCommentCnt(95)</script>)</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="cb_share clearfix">
+        <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://hamed-abbasnejad.mihanblog.com/post/95&amp;title=تاسوعا و عاشورا سال 88">
+            ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+        </a>
+    </div>
+    <div class="post clearfix" id="90">
+        <div class="entrytop">
+            <div class="entry">
+                <h2><a href="../../90.html" rel="bookmark">رابطه و نسبت هویت دینی با نهضت ملی کردن صنعت نفت</a></h2>
+            </div>
+        </div>
+
+        <p class="postmeta">سه شنبه 2 دی 1393  		<br />
+
+            نویسنده: حامد عباس نژاد |
+
+
+
+        </p>
+        <div class="post-content">
+            <p><div class="owner_photo"></div></p>
+            <p><p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">در حالیکه دولت بریتانیا بر تصویب قرارداد الحاقی نفت[گس ـ
+گلشائیان] پافشاری می کرد و بسیاری از دولتمردان ایرانی نیز مایل به امضای آن
+بودند،مخالفت اقلیت کوچکی از نمایندگان در مجلس 15 و مخالفت جناح های مذهبی به
+رهبری آیت الله کاشانی ـ که از حمایت وسیع توده ای برخوردار بودـ مانع از تصویب آن
+شد. در این اوضاع،انتخابات مجلس 16 برگزار گردید و دولت به گونه ای گسترده در آن دخالت
+کرد و نمایندگان حامی دربار را به مجلس فرستاد.این امر اعتراضات بسیاری را
+برانگیخت. از جمله عده ای از سیاستمداران مشهور به رهبری مصدق، در اعتراض به تقلب
+در کاخ شاه متحصن شدند. این تحصن مقدمه ای بود برای تشکیل جبهه ی ملی که در ملی
+شدن صنعت نفت ایفای نقش نمود.(جمعی از نویسندگان،1388: 81)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">در واقع می توان گفت که مقدمه ی نهضت ملی شدن صنعت نفت در
+ایران با عدم تصویب قرارداد الحاقی گس ـ گلشائیان متقارن شد که مخالفت آیت الله
+کاشانی و دیگران مانع از تصویب آن شد.این قرار داد از این جهت حائز اهمیت است که
+از یکسو نشاندهنده ی این واقعیت می باشد که آیت الله کاشانی یکی از پیشگامان نهضت
+ملی شدن نفت می باشد و از سوی دیگر تا آن زمان هیچ اعتراضی توسط مصدق به این لایحه
+<a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn1" name="_ftnref1" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:12.0pt;mso-bidi-font-size:
+13.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;B Lotus&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[1]</span></span><!--[endif]--></span></span></a>صورت
+نگرفته بود.سید احمد کاشانی فرزند مرحوم ایت الله کاشانی طی مصاحبه ای در اینباره
+می گوید:</span><span lang="FA" style="font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%"><span lang="FA" style="font-family:&quot;B Lotus&quot;">آیت الله کاشانی با فرستادن نامه هایی از لبنان به
+مجلس و مردم و تشویق نمایندگان اپوزیسیون به ایستادگی در برابر لایحه الحاقی مانع
+از تصویب آن شده و سرانجام با رهبری آیت الله کاشانی و مبارزه های شدید همان گروه
+از نمایندگان ،آیت الله کاشانی و یاران او وارد مجلس 16 شدند. نکته ی مهم این که
+مصدق طرفدار ملی کردن صنعت نفت نبود زیرا هنگامیکه در تیر ماه سال 1328 لایحه
+الحاقی گس ـ گلشایین در مجلس 15 مطرح شد، مصدق مخالفتی با لایحه نکرد. این در حالی
+بود که آیت الله کاشانی از لبنان به مجلس پیام فرستاد و نمایندگان را تشویق به
+مبارزه با این لایحه کرد. <o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%"><span lang="FA" style="font-family:&quot;B Lotus&quot;">مصدق پیرو فشارهای حسین مکی تنها در روز 30 تیر
+1328 نامه ای به مجلس نوشت و در آن به نمایندگان توصیه کرد و گفت:<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%"><span lang="FA" style="font-family:&quot;B Lotus&quot;">"اگر قرار است این لایحه از تصویب مجلس بگذرد،
+به جای لیره کاغذی بگویید شرکت نفت انگلیس بعنوان حق امتیاز ایران، لیره طلا
+پرداخت کند."<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%"><span lang="FA" style="font-family:&quot;B Lotus&quot;">این نامه به خط مصدق وجود دارد و به روشنی نشان می
+دهد که مصدق مخالفتی با لایحه الحاقی نداشته است که اساس قرارداد 1312 را تثبیت می
+کرد.(نشریه پنجره،شماره 129: 169ـ168)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">متولی دفاع از هویت دینی در ایران شیعی، روحانیت اند که در
+این نهضت،پرچمدار اصلی مبارزه،آیت الله کاشانی است. کاشانی و پیروانش در فرآیند
+اولیه نهضت ملی نفت حضور جدی داشتند و ضمن موضع گیری شفاف علیه استعمار، قدم به
+قدم فعالان نهضت ملی را بصورت مخالفت با رزم آرا تا حمایت از جبهه ی ملی و بصورت
+مشخص نخست وزیری شخص دکتر مصدق و حتی تکذیب اختلاف بین او و نخست وزیر حمایت می
+کردند، با اینکه مصدق مسیری خلاف خواست کاشانی را می رفت.(منصورنژاد،1385: 103)
+نویسنده ای دراینباره می نویسد</span><span lang="FA" style="font-family:&quot;B Lotus&quot;">:</span><span lang="FA" style="font-size:12.0pt;line-height:200%;font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="margin-top:0in;margin-right:.5in;margin-bottom:
+10.0pt;margin-left:.5in;text-align:justify;line-height:200%"><span lang="FA" style="font-family:&quot;B Lotus&quot;">در جریان ملی شدن صنعت نفت، دو گرایش فکری ملی و
+مذهبی به هم رسیدند و با اقدامات متحدانه خود در دفاع از حقوق مردم و با تکیه بر
+قاعده " نفی سبیل " ، به نفی سلطه ی انگلیس بر ایران پرداختند.بدین
+ترتیب با توجه به پایگاه مردمی آیت الله کاشانی و مذهبی بودن جامعه ایران،وی
+توانست همچون پلی ارتباطی،مردم مذهبی را به اندیشه های جبهه ملی پیوند دهد.(عیوضی
+و هراتی،1390: 89)</span><span lang="FA" style="font-size:9.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">وقتی عده ای از طرف جبهه ی ملی به منزل آیت الله کاشانی
+حمله کردند؛حداد یکی از مریدان ایشان کشته شد. آیت الله کاشانی باعث و بانی حکومت
+و قدرت مصدق بود.(نشریه پنجره، سال سوم،شماره 129 : 163)بعنوان مثال در روز 30 تیر
+در بیشتر شهرهای ایران به خواست آیت الله کاشانی و احزاب طرفدار دکتر مصدق،مردم به
+خیابان ها ریختند و به نفع مصدق تظاهرات کردند که با دخالت ارتش به خاک و خون
+کشیده شد. سرانجام شاه که موقعیت خود را در خطر می دید به ناچار مصدق را دوباره
+بعنوان نخست وزیر به مجلس معرفی کرد.(جمعی از نویسندگان، 1388: 83) و در همین قیام
+30 تیر کاشانی طی مصاحبه ای سوگند یاد کرد که اگر قوام نرود<a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftn2" name="_ftnref2" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:12.0pt;mso-bidi-font-size:
+13.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;B Lotus&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[2]</span></span><!--[endif]--></span></span></a>
+اعلام جهاد خواهد نمود و شخصا کفن پوش مردم را همراهی خواهد کرد و متعاقب این
+مصاحبه، از برخی شهرهای دیگر نیز نیرو به تهران حرکت کردند.(منصورنژاد،1385: 103)<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">از دیگر گروه ها و افراد مذهبی که در طی ملی شدن صنعت نفت
+نقش داشتند میتوان از فداییان اسلام یاد کرد که تا حالا کمتر نامی از این گروه به
+میان آمده است. نقش عمده ی این گروه مذهبی در این نهضت عمدتا حول محور سخنرانی ها
+و هشدارها درباره ی عواقب وابستگی به انگلیسی ها و منافع ملی می چرخد و بیشتر نقش
+تبلیغاتی و فرهنگی داشته اند.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;line-height:200%"><span lang="FA" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;line-height:200%;
+font-family:&quot;B Lotus&quot;">آیت الله کاشانی اقداماتش را با مفاهیم و گزاره های دینی(
+مثلا گره زدن حرکت مردم به جهاد) پیوند می زد و به تعبیری ،احکام و فرامین او بار
+قدسی گرفته و از سوی مسلمانان استقبال می شد زیرا کوشش برای ملی شدن صنایع نفت را
+تکلیف دینی و ملی برای ملت مسلمان ایران اعلام می کرد. آیت الله کاشانی،دولت
+انگلستان را از مصادیق دولت های کافری قلمداد می کرد که قصد سلطه بر جهان اسلام را
+دارد. و ثانیا، نابودی قرآن بعنوان مهمترین سند آسمانی مسلمان ها را از اهداف آن
+دولت غربی می دانست و دفاعیه او در اصل،دفاع از حرمت و شان قرآن تلقی می شد؛ ثالثا
+دغدغه های دینی کاشانی سبب می شد که شعاع توجه و نفوذش در ایران نیز خلاصه نشده و
+به تعبیرخودش حتی در بین النهرین کلامش نافذ تر باشد. دغدغه دفاع از هویت دینی،
+نفی سیطره ی بیگانگان،دفاع از حقوق مسلمانان، همواره در وجود کاشانی موج می زد و
+در کوران نهضت،متوجه ترفندهای مختلف اغیار بوده است.(منصور نژاد،1385: 104)<o:p></o:p></span></p>
+
+<span lang="FA" dir="RTL" style="font-size:13.0pt;mso-ansi-font-size:12.0pt;
+line-height:115%;font-family:&quot;B Lotus&quot;;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">بنابراین
+می توان گفت علیرغم اینکه این نهضت جوهره ی اصلی اش دینی نبوده و صبغه ی ملیت در
+آن غلبه دارد،این روح دینی حاکم بر مردم ایران زمینه ساز قدرت یافتن مراجع و
+مجتهدینی شد که توانستند این نهضت را آغاز و همراهی کنند و در مواقع بحرانی مانند
+قیام 30 تیر به کمک مصدق که بیشتر یک ناسیونالیست بود تا اسلام گرا ،بیاید. یا
+بعبارت دیگر تعهد و وفاداری مردم به مراجع و روحانیون بعنوان حاملان دین زمینه ساز
+حمایت آن ها از نهضت ملی شدن صنعت نفت ـ علیرغم صبغه ی ناسیونالیستی آن ـ گردید.</span>
+
+<div><!--[if !supportFootnotes]--><br clear="all">
+
+<hr align="left" size="1" width="33%">
+
+<!--[endif]-->
+
+<div id="ftn1">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref1" name="_ftn1" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:10.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[1]</span></span><!--[endif]--></span></span></a><span dir="RTL"></span><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> <span lang="FA">این قرارداد با توجه به مفاد آن
+مغایر با ملی کردن صنعت نفت ایران بود و راه را برای هرگونه احقاق حقوق دولت ایران
+می بست. برای کسب اطلاع بیشتر&nbsp; ر.ک. آقای
+میر طیب موسوی با عنوان" مسائل سیاسی ـ اقتصادی جهانی نفت،تهران: مردم سالاری
+:1384" <o:p></o:p></span></span></p>
+
+</div>
+
+<div id="ftn2">
+
+<p class="MsoFootnoteText" dir="RTL"><a href="file:///H:/%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B9%D8%A8%D8%A7%D8%B3%20%D9%86%DA%98%D8%A7%D8%AF/%D8%AD%D8%A7%D9%85%D8%AF/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%20%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A7%D8%B1%D8%B4%D8%AF%20(Autosaved)%20(Autosaved).docx#_ftnref2" name="_ftn2" title=""><span class="MsoFootnoteReference"><span dir="LTR"><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size:10.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA">[2]</span></span><!--[endif]--></span></span></a><span dir="RTL"></span><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Arial;mso-bidi-theme-font:
+minor-bidi"><span dir="RTL"></span> <span lang="FA">پس از آنکه مصدق بر سر در اختیار
+گرفتن وزارت جنگ با شاه اختلاف پیدا کرد،استعفا داد و قوام به نخست وزیری منصوب
+شد. در این اوضاع و احوال چنین پنداشته می شد که تنها قوام می تواند مصدق را از
+میدان به در کند.این اقدام با اعتراض شدید آیت الله کاشانی و نیز واکنش نمایندگان
+طرفدار مصدق روبرو شد.</span></span></p>
+
+</div>
+
+</div>
+
+
+</p>
+            <p><br></p>
+        </div>
+
+
+        <ul class="clearfix">
+            
+                        <li style="float: left; list-style: none outside none;">
+                <div style="float: left; margin-left: 17px; margin-right: 17px; margin-top: -4px;"> <script>mihanblogPostLike('90','like')</script></div>
+                <a target="_self" href="../../90.html#commentlist" class="comment-link">نظرات(<script>setCommentCnt(90)</script>)</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="cb_share clearfix">
+        <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://hamed-abbasnejad.mihanblog.com/post/90&amp;title=رابطه و نسبت هویت دینی با نهضت ملی کردن صنعت نفت">
+            ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+        </a>
+    </div>
+
+<!-- comment -->
+<div>
+
+
+    <style>
+
+            /*** COMMENT BODY***/
+        .comment_body{
+            background: #e6dab9;
+            margin:10px;
+            border-radius: 5px;
+            border-right:5px solid #ded1ac;
+            overflow:hidden
+
+        }
+
+        .comment .comment_reply {
+            background: #f8f2e1;
+            border-right: 5px solid #f0ead8;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 350px;
+            margin-top:10px;
+            overflow:hidden
+        }
+
+
+        .comment .name {
+            font-weight: 600;
+            color: #4E3E09;
+            padding-right: 5px;
+            text-align: right;
+            line-height: 26px;
+            float: right;
+        }
+
+
+        .comment .date {
+            font-size: 10px;
+            padding: 5px;
+            color: #7E7E7E;
+            float: left;
+        }
+
+
+        .comment .comemnt_web {
+            padding: 5px 0 5px 15px; color: #999; direction: ltr; text-align: left;
+
+        }
+
+
+        .comment .comemnt_web a {
+            color: #554c3d;
+            text-decoration: underline;
+        }
+
+        .comment .comemnt_text {
+            text-align: justify;
+            line-height: 1.5em;
+            padding: 2px 5px;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .comment_det{
+            border-bottom:1px solid #e4dabd;
+            padding:4px;
+
+        }
+
+
+        .comment .name,.date,.comemnt_text,.comment_reply{
+            margin-right:3px;
+            padding-right:3px;
+
+        }
+
+            /**** COMMENT FORM ****/
+
+        .comment_form {
+            background: none repeat scroll 0 0 #ece5d9;
+            border-radius: 5px 5px 5px 5px;
+            border-right: 5px solid #dcceb7;
+            direction: rtl;
+            margin: 10px;
+            padding: 20px;
+        }
+
+
+
+        .comment_form label {
+            width: 100px;
+            display: block;
+            float: right;
+            text-align: left;
+            font-size: 11px;
+            color: #555;
+            padding-left: 10px;
+        }
+
+
+        .comment_form .comment_form_row {
+            margin: 3px 0;
+        }
+
+
+        #imageCodeWrapper .imageCode_input #imgstr {
+            font-size: 25px;
+            height: 34px;
+            width: 70px;
+        }
+
+        .comment_form input.btn:hover {
+            background: white;
+        }
+
+
+        .comment_form input.btn {
+            padding: 0px 10px;
+            background: #FCE49B;
+            border: 1px solid #F9CA3B;
+            height: 21px;
+            font: 11px tahoma, Verdana;
+        }
+        .comment_form_textbox {
+            width:240px;
+
+        }
+        .comment_form_textarea{
+            width:240px;
+        }
+
+
+
+        .comment_form .comment_form_textarea, .comment_form .comment_form_textbox {
+            border: 1px solid #C5C5C5;
+        }
+
+
+
+
+    </style>
+
+    </div>
+
+<!-- End comment -->
+
+
+<div class="general_box">
+    </div>
+
+<div align="center" class="page_box clearfix">
+    
+    <br>
+</div>
+
+
+
+
+
+</div><!--/content -->
+
+<!-- begin sidebar -->
+
+<div id="sidebar">
+
+    <form id="frm-16075760305fd1a9dec5a88" method="get" action="http://hamed-abbasnejad.mihanblog.com/post/search/fid/16075760305fd1a9dec5a88"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <ul class="clearfix">
+            <li>
+                <div id="searchform"">
+                <table width="100%" dir="rtl" border="0" cellspacing="3" cellpadding="0">
+                    <tr>
+                        <td><input type="text" value="" name="search_text" id="s" /></td>
+
+                        <td><input type="submit" id="searchsubmit" value="جستجو" /></td>
+                    </tr>
+                </table>
+</div>
+</li>
+</ul>
+<input type="hidden" name="frm-id" value="16075760305fd1a9dec5a88" id="frm-id" /></form>
+<div class="rsslinks">
+    <ul id="rss_box">
+        <li><a href="../../rss/index.html">RSS</a></li>
+        <li><a href="../../atom/index.html">ATOM</a></li>
+    </ul>
+
+</div>
+
+
+<ul id="mainul">
+
+    <div id="logo"><img src="../../../../static.mihanblog.com/public/user_data/web_photo/381/1142327.jpg@4015"  /></div>
+    <div id="about" class="clearfix"></div>
+    <div align="center"><a href="../../author/983499.html"><b>حامد عباس نژاد</b></a></div>
+
+            <li id="recent-posts" class="widget widget_recent_entries">
+            <h2 class="sidebartitle">آخرین پستها</h2>
+            <ul >
+                                    <li>
+                        <a href="../../128.html" >&quot; شهید فخری زاده، رسانه ملی، افکارعمومی، دولت و برجام&quot;</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../127.html" >چرا برای صدا و سیما پیروزی جمهوری خواهان یا دموکرات ها فرقی بر ایران ندارد؟</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../125.html" >آیا واقعا پیروز انتخابات ریاست جمهوری آمریکا بایدن بود!؟</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../124.html" >چرا سردار سلیمانی را دوست دارم؟</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../122.html" >اعتراضات آبان ماه؛ اینترنت، محمد جواد لاریجانی</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../121.html" >استیضاح وزیر کشور؛ مطالبه گری از دولت و سکوت در برابر نهادهای انتصابی</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../119.html" >تبئین چگونگی مواجهه ج‌ا با سند 2030 یونسکو</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../118.html" >رجایی و بنی صدر؛ تقابل دو دیدگاه</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../117.html" >مهندس بازرگان؛ مردی فراتر از زمان خود</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../115.html" >مالیا اوباما، افراطیون و پسابرجام</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../114.html" >سازمان ملل؛ بان کی مون و عربستان سعودی</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../112.html" >&quot; کالبد شکافی واژگان تندرو و میانه‌رو در ادبیات سیاسی ایران از منظر داخلی و خارجی&quot;</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../111.html" >انتخابات7 اسفند؛ نه بزرگ به تندروها</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../110.html" >لیست  و اسامی نمایندگان خبرگان رهبری(لیست منتسب به هاشمی و روحانی که به زعم اصولگرایان افراطی عامل بیگانگان می باشند):</a><br>
+                    </li>
+                                    <li>
+                        <a href="../../107.html" >لیست ائتلاف اصلاح طلبان به همراه کد انتخاباتی</a><br>
+                    </li>
+                                <li>
+                    <a href="../../list.html" ><b>همه پستها</b></a><br>
+                </li>
+            </ul>
+        </li>
+    
+    
+            <li id="" class="widget"><h2 class="sidebartitle">آرشیو</h2>
+            <ul>
+                                    <li>
+                        <a href="../1399/9.html"> آذر 1399</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1399/8.html"> آبان 1399</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1398/10.html"> دی 1398</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1398/9.html"> آذر 1398</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1396/3.html"> خرداد 1396</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1395/8.html"> آبان 1395</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1395/4.html"> تیر 1395</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1395/3.html"> خرداد 1395</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1394/12.html"> اسفند 1394</a><br>
+                    </li>
+                                    <li>
+                        <a href="../1394/1.html"> فروردین 1394</a><br>
+                    </li>
+                                    <li>
+                        <a href="12.html"> اسفند 1393</a><br>
+                    </li>
+                                <li>
+                    <b><a href="../../archive.html">لیست آرشیوها</a></b>
+                </li>
+            </ul>
+        </li>
+    
+    
+        <li id="" class="widget"><h2 class="sidebartitle">صفحات جانبی</h2>
+            <ul>
+                                    <li>
+                        <a href="../../../extrapage/adsgxdd.html">علمی ـ سیاسی</a><br>
+                    </li>
+                            </ul>
+        </li>
+    
+    
+        <li id="" class="widget"><h2 class="sidebartitle">پیوندها</h2>
+            <ul>
+                                    <li>
+                        <a href="http://rezaaber.mihanblog.com/" title="" target="_blank">وبلاگ دکتر اکبری نوری</a><br>
+                    </li>
+                                <li>
+                    <b><a href="../../../link/index.html"> لیست پیوندها</a></b>
+                </li>
+            </ul>
+        </li>
+    
+            <li id="" class="widget"><h2 class="sidebartitle">پیوندهای روزانه</h2>
+            <ul>
+                                    <li>
+                        <a href="http://Sid.ir" title=""  target="_blank">سایت جهاد دانشگاهی</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://Portal.msrt/sites/ravabetomomi/lists/list9/view.aspx" title=""  target="_blank">فهرست نشریات مصوب وزارت علوم</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://ISINET.COM" title=""  target="_blank">موسسه بین المللی اطلاعات علمی » ISI «</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://irandoc.ac.ir" title=""  target="_blank">مرکز اطلاعات و مدارک علمی ایران</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://magiran.com" title=""  target="_blank">بانک اطلاعات نشریات کشور</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://windows-host.ir" title=""  target="_blank">هاست ویندوز</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://rahimpour.ir" title=""  target="_blank">وب سایت استاد رحیم پور ازغدی</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://nasiri1342.blogfa.com" title=""  target="_blank">وبلاگ مهدی نصیری</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://kouchakzadeh.blogfa." title=""  target="_blank">وبلاگ مهدی کوچک زاده</a><br>
+                    </li>
+                                    <li>
+                        <a href="http://dehnamaki.blogfa.com" title=""  target="_blank">وبلاگ مسعود ده نمکی</a><br>
+                    </li>
+                                <li>
+                    <b><a href="../../../linkdaily/index.html"> لیست  پیوندهای روزانه</a></b>
+                </li>
+                <li>
+                    <b><a href="javascript:linkdailyForm()">ارسال لینک روزانه</a></b>
+                </li>
+            </ul>
+        </li>
+    
+            <li id="" class="widget"><h2 class="sidebartitle">نویسندگان</h2>
+            <ul>
+                                    <li id="parentheses" class="clearfix">
+                        <p><a href="../../author/983499.html"><img src="../../../../static.mihanblog.com/public/user_data/user_photo/328/983499.jpg" style="width:16px;" /></a></p><a href="../../author/983499.html"><p>حامد عباس نژاد</p><p>(78)</p></a>
+                    </li>
+                            </ul>
+        </li>
+    
+    
+		
+            <li id="" class="widget"><h2 class="sidebartitle">آمار وبلاگ</h2>
+            <ul class="stat clearfix">
+                <li>کل بازدید : <span><script>getStatVar('total_view');</script></span></li>
+                <li>بازدید امروز :<span><script>getStatVar('today_view');</script></span></li>
+                <li>بازدید دیروز : <span><script>getStatVar('yesterday_view');</script></span></li>
+                <li>بازدید این ماه : <span><script>getStatVar('this_month_view');</script></span></li>
+                <li>بازدید ماه قبل : <span><script>getStatVar('last_month_view');</script></span></li>
+                <li>تعداد نویسندگان : <span><script>getStatVar('total_author');</script></span></li>
+                <li>تعداد کل پست ها : <span><script>getStatVar('total_post');</script></span></li>
+                <li>آخرین بازدید : <span><script>getStatVar('last_view_date');</script></span></li>
+                <li>آخرین بروز رسانی : <span><script>getStatVar('modify_date');</script></span></li>
+
+            </ul>
+        </li>
+    
+
+    
+</ul>
+
+<div  align="center" class="clearfix script_box"></div><br>
+<div align="center" class="mihan_logo"></div>
+
+</div>
+
+<!-- end sidebar -->
+<hr class="clear" />
+</div><!--/page -->
+</div><!--/wrapper -->
+
+<div id="footer">
+    <div class="alignleft"><p><strong>POWERED BY <a href="../../../../www.mihanblog.com/index.html"><font color="#FF0000" size="2px">M</font>IHAN<font color="#FF0000" size="2px">B</font>LOG.COM</a></strong><br />
+        Themes by <a title="N95 Nokia">www.RealGeek.com/Nokia-n95/</a> , <a>www.AvivaDirectory.com</a>
+    </div>
+
+    <div class="alignright"></div>
+</div>
+    <a href="../../../linkdaily/index.html">همه پیوندها</a>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'hamed-abbasnejad.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

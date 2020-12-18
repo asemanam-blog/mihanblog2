@@ -1,0 +1,1003 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ipromissu4ever.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 1399/09/23');
+		/*1021395*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[240]='5';commentCnt[243]='1';commentCnt[244]='3';commentCnt[245]='0';commentCnt[246]='1';commentCnt[247]='0';commentCnt[248]='7';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[240]='0';
+mihanblogDisLikeArrCnt[240]='0';
+mihanblogLikeArrCnt[243]='0';
+mihanblogDisLikeArrCnt[243]='0';
+mihanblogLikeArrCnt[244]='0';
+mihanblogDisLikeArrCnt[244]='0';
+mihanblogLikeArrCnt[246]='0';
+mihanblogDisLikeArrCnt[246]='0';
+mihanblogLikeArrCnt[247]='0';
+mihanblogDisLikeArrCnt[247]='0';
+mihanblogLikeArrCnt[248]='0';
+mihanblogDisLikeArrCnt[248]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://ipromissu4ever.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://ipromissu4ever.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','185');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 1394/10/21');
+	
+	setStatVar('today_view','0');
+	setStatVar('yesterday_view','5');
+	
+	setStatVar('this_month_view','126');
+	setStatVar('last_month_view','307');
+
+	setStatVar('total_view','103460');
+	setStatVar('last_view_date','شنبه 1399/09/22 (22:50)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://ipromissu4ever.mihanblog.com/statupdate/?data[refereruri]=http://kojabia2.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607829393&data[hash]=dea1b38b7092ec76d0801ec1fd97aeea&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://ipromissu4ever.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://ipromissu4ever.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://ipromissu4ever.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!-.-.-Design By : pichak.net-.-.->
+<head>
+<script language="JavaScript1.2">
+<!--
+
+top.window.moveTo(0,0);
+if (document.all) {
+top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) {
+if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+top.window.outerHeight = screen.availHeight;
+top.window.outerWidth = screen.availWidth;
+}
+}
+
+//-->
+</script>
+<!-"-"-Design By : www.pichak.net-"-"->
+<title>سکوتی برای همیشه...</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="keywords" content="سکوتی برای همیشه...,Ipromissu4ever">
+      <META NAME="description" CONTENT="سکوتی برای همیشه... - اِنسانم آرِزوست...">
+      <meta name="copyright" content="www.pichak.net">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="designer" content="http://pichak.net" />
+      <link rel="alternate" type="application/rss+xml" title="سکوتی برای همیشه..." href="http://ipromissu4ever.mihanblog.com/post/rss/" />
+<!-"-"-Design By : www.pichak.net-"-"->
+<style>
+<!--
+body{font-family:Tahoma;font-size:8pt;padding:0px;margin:0px;color:#d1dcf3;background:#fff}
+a, a:visited{color:#494949;text-decoration: none}a:hover{color:#000000;text-decoration: none}
+body {
+	BACKGROUND: #d0c2bf url('') top left fixed no-repeat ; 
+}
+.link1{width:170px;}
+.link2{background:#d0c2bf url() right no-repeat;padding:0px;font-weight:bold;text-align:center;color:#3f3e48;}
+#page{background:url() center repeat-y;width:890px}img{border:none}
+#uwrapper {margin:0;padding:0;text-align:center;background-image:url(); background-repeat:repeat-x; background-position-y:top;}
+#header{height:0px;background:url() no-repeat right; }
+#header div{color:#2C2215;font-family:verdana;font-size:21pt;font-weight:bold;text-align:center;padding-top:50px}
+#header div p{margin-top:5px;margin-bottom:0px;color:#2C2215;font-family:Tahoma;font-size: 9pt;font-weight:normal;text-align:center;direction:rtl}
+#headerb{height:0px}
+#content{padding:0px 7px}
+#main{background:#e6dddb url() repeat center;float:right;width:550px;text-align:right;overflow:hidden}
+#main2{height:60px;background: url() top no-repeat;}
+#post{padding:0 0px;text-align:right}
+#posttitle{height:44px;background: url() center no-repeat;text-align:right;font-size:9pt;font-weight:42;direction:rtl;padding-top:14px;padding-right:30px}
+#posttitle a, #posttitle a:visited {color:#526065}#posttitle a:hover {color:#526065}
+#postbody{text-align: justify;padding:0px 10px 5px 3;font-size:8pt;color:#282d2f;line-height:1.5em;direction:rtl;}
+#postbody p{margin-top:10px;margin-bottom:0px}
+#postdesc{padding-top:15px;padding-right:22px;padding-left:7px;color:#606a6d;direction:rtl}
+#space{height:20px}
+#sidebar{float:left;background:#d8cac7 url(http://pichak.net/themes/19/04/image/pichak.jpg) no-repeat top center ;width:320px;padding-top:492px;color:#364a51;line-height:1.5em;text-align:right}
+#sidebar a, #sidebar a:visited {color:#343434}#sidebar a:hover {color:#364a51}
+#mmenu{width:170px;ine-height: 1.5em;text-align:center;direction:rtl;}
+#sidebar ul{font-size:8pt;list-style-type: none;margin: 0px;padding:0 5px 20px 5px}
+#sidebar li {font-size:8pt;padding-right:5px;padding-bottom:0px;line-height:1.5em;direction:rtl}
+#photo{width:170px;padding-top:5px;padding-bottom:2px;text-align:center}
+#about{width:170px;text-align: justify;font-size:8pt;padding:10px 7px 20px 7px;color:#343434;direction:rtl}
+#feed{margin:0px;padding-bottom:10px;text-align:center}
+#custom{width:170px;color:#5e7161;overflow:auto;margin:10px 0;text-align:center;direction:rtl}
+-->
+</style>
+<script lang ="javascript">
+function GetBC(lngPostid)
+{
+intTimeZone=<-BlogTimeZone->;
+strBlogId="Ipromissu4ever";
+intCount=-1;
+strResult="";
+try {
+for (i=0;i<BlogComments.length;i+=2)
+{
+if (BlogComments[i]==lngPostid)
+intCount=BlogComments[i+1] ;
+}
+}  catch( e) {
+}
+
+if ( intCount==-1)  strResult="آرشیو نظرات";
+if ( intCount==0)  strResult="نظر بدهید";
+if ( intCount==1)  strResult="یک نظر";
+if ( intCount>1)  strResult=intCount + " نظر" ;
+if [cb:post_like]
+strUrl="http://commenting.blogfa.com/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+strResult ="<a href="http://ipromissu4ever.mihanblog.com/\&quot;javascript:void(0)\&quot;" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+document.write ( strResult ) ;
+}[cb:post_like]
+function OpenLD()
+{
+window.open('LinkDump.aspx','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+return true;
+}
+</script>
+<script language="javascript" type="text/javascript"          
+  src="http://pichak.net/p/js/themes/up.js"></script>
+</head>
+<body>
+<!-.-.-Design By : pichak.net-.-.->
+<div id=uwrapper>
+<div align=center>
+<div id=page>
+
+<div id=content>
+<div id=main>
+<div id=main2>
+<center><br>
+<font color="#364a51" face="Arial" style="font-size: 15pt">
+<b>  سکوتی برای همیشه...</b><p>
+<font color="#364a51" face="Tahoma" style="font-size: 8pt">
+  اِنسانم آرِزوست...<p>
+</center>
+<p></div>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/248"><b>خواب عمیق...///</b></a></div>
+<div id=postbody><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>چقدر همه شعر عمیق به خواب رفته<div>انگارش هم نیست که من دیگر نیستم...</div><div>ولی مهم منم که انگارم در عین نبودن و خوش بودن بازهم هست...</div><br></div>
+<div id=postdesc> نوشته شده در دوشنبه 1394/10/21 ساعت 
+	02:36  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(248)">نظرات  <script>setCommentCnt(248)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/247"><b>...///</b></a></div>
+<div id=postbody>
+هوا که سرد میشد...<div>دلم به بودنت گرم میشد...</div><div>حالا اما...</div><div>آتش هم این <b>من</b> را گرم نمیکند...</div><div><br></div>
+
+<br></div>
+<div id=postdesc> نوشته شده در یکشنبه 1394/10/13 ساعت 
+	18:23  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(247)">نظرات  <script>setCommentCnt(247)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/246"><b>عمق فاجعه...///</b></a></div>
+<div id=postbody><b><font color="#3333ff">باران امشب...</font></b><div><b><font color="#3333ff">فقط نشان دهنده عمق فاجعه است...</font></b></div><div><b><font color="#3333ff">عیبی نیست...</font></b></div><div><b><font color="#3333ff">ماهم خدایی داریم... ///</font></b></div><div><br></div><div><br></div><div><font color="#3333ff"><b>سکوت آبی...&nbsp;</b></font></div><br></div>
+<div id=postdesc> نوشته شده در شنبه 1394/10/12 ساعت 
+	03:05  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(246)">نظرات  <script>setCommentCnt(246)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/245"><b>از اول...///</b></a></div>
+<div id=postbody><font color="#3333ff">چقدر زود میگذره این روزها...</font><div><font color="#3333ff">_روزی هزار بار گیج و منگ بودن خیلییییییی هم زود نیستا!!!</font></div><div><font color="#3333ff">نه زود میگذره...</font></div><div><font color="#3333ff">من هنوزم بچگی هام مثل روز برام روشن و شفافِ... بعد تو میگی زود نمیگذره... حتی این روزهای عاشقی هم داره زود میگذره... ببین انگار همین دیروز<b> سه ی مرداد </b>بود...</font></div><div><font color="#3333ff">_چی بگم...لابد زود میگذره...حالا چیشد که برگشتی.!؟..</font></div><div><font color="#3333ff">من خیلی هم دور نشده بودم... نه... &nbsp;<b>اصلا نرفته بودم.</b>.. من همش همینجا نشسته بودم.... پشت شیشه بخار گرفته خاطراتت... ببین... بوی نم میاد... واسه همینه میگم زود میگذره...</font></div><div><font color="#3333ff">_پس تو این همه مدت اینجا قایم شده بودی؟</font></div><div><font color="#3333ff">نه قایم نشده بودم... مدتی هم نبود...زود گذشت...</font></div><div><font color="#3333ff">_پس چی؟</font></div><div><font color="#3333ff"><b>مثل اینکه تو یادت رفته... &nbsp;من سکوت کرده بودم...سکوتی به رنگ آبی...&nbsp;</b></font></div><div><font color="#3333ff"><b>_مثل "سکوتِ آبی"...</b></font></div><div><font color="#3333ff"><b>خودِ"سکوتِ آبی"...</b></font></div><div><font color="#3333ff">.</font></div><div><font color="#3333ff">.</font></div><div><font color="#3333ff">.</font></div><div><font color="#3333ff">پ.ن: سلام... :)</font></div><div><font color="#3333ff">فکر کنم متن بالا گویای همه چیز باشه...</font></div><div><font color="#3333ff">دروغ چرا...</font></div><div><font color="#3333ff">دلم هم برای اینجا خیلییییییی تنگ بود با اینکه هفته ای دوبار می اومدم...</font></div><div><font color="#3333ff">...</font></div><div><font color="#3333ff">ارادتمند همیشگی:</font></div><div><span style="font-size: 11px;"><font color="#3333ff">سکوتِ آبی... :)</font></span></div><div><br></div><br></div>
+<div id=postdesc> نوشته شده در جمعه 1394/08/22 ساعت 
+	17:10  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(245)">نظرات  <script>setCommentCnt(245)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/244"><b>فصل بهار...///</b></a></div>
+<div id=postbody>باران جیر جیرک ها...&nbsp;<div>سکوت ژرف شب را کر میکند...</div><div>رفتنت از جاده ی بهار نارنج...</div><div>رسیدن ترنج ها را از یاد ها میبرد...</div><div>وهوای بهارفقط...</div><div>فقط هوای بهار را عشق است با یک ترنج زمستانی و باران جیرجیرک ها...</div><div>زاد روز نو زمین بر همگان مبارک///بهارینه بمانید...</div><div>ارادتمند:سکوت آبی...</div><br></div>
+<div id=postdesc> نوشته شده در یکشنبه 1394/01/2 ساعت 
+	01:40  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(244)">نظرات  <script>setCommentCnt(244)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/243"><b>کور...</b></a></div>
+<div id=postbody>تعارف نداریم که...<div>خاطره ی هرکس...</div><div>بهش گره خورده...</div><div>ولی کاش تو به من <b>کور</b> باشی...</div><div>.</div><div>.</div><div>.</div><div>ارادتمند :سکوت آبی ///</div><div><br></div><br></div>
+<div id=postdesc> نوشته شده در پنجشنبه 1393/11/23 ساعت 
+	01:40  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(243)">نظرات  <script>setCommentCnt(243)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+  <FONT color=#282d2f>
+<div id=post>
+<div id=posttitle><a href="http://ipromissu4ever.mihanblog.com/post/240"><b>قبلا تر ها...\\\</b></a></div>
+<div id=postbody>قبلا تر ها از ته دل میخندیدیم...<div>واقعا و از اعماق وجودمون اطرافیانمون رو دوست داشتیم...</div><div>قبلا تر ها واقعا عاشق خدا بودیم...</div><div>متاسفانه...</div><div>الانه ها...</div><div>انسانیت مرده...</div><div>قبلاتر ها هم توگذشته دفن شدن...</div><div>درست مثل بادکنک...</div><div>خوشگل، سرگرمی خوبیه، گاهی نشونه عشق، &nbsp;شادی و زیست آدمی میمونه..&nbsp;</div><div>ولی تا ولش کنی میره...</div><div>دیگه هیچی مثل اون جاشو نمیگیره...</div><div>.</div><div>&nbsp;</div><div>&nbsp;</div><div>خودمونیم ها ولی...</div><div>قبلاتر ها...</div><div>حداقل مجهول نبود هوای نبودنت...</div><div>.</div><div>.</div><div>.</div><div>زنده ام هنوز...</div><div>و مثل یک انسان...&nbsp;</div><div>درگیر زندگی...</div><div>درگیر کلاف های بافته نشده از طرف تو...</div><div>میای بالاخره...&nbsp;</div><div>حرف میزنی...</div><div>من مطمنم...\\\</div><br></div>
+<div id=postdesc> نوشته شده در جمعه 1393/10/12 ساعت 
+	00:31  توسط <a href="http://ipromissu4ever.mihanblog.com/post/author/870188">سکوت آبی </a><a target="_self" href="javascript:newComment(240)">نظرات  <script>setCommentCnt(240)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+                       <hr width="60%" size="1" color="#627177" align="center" >
+                 
+</div>
+
+<center><br>
+<table style="border-right: #8996a4 1px solid; border-top: #8996a4 1px solid; border-left: #bccad9 1px solid; direction: rtl; border-bottom: #bccad9 1px solid; height: 7px; color:#80868d; font-size: 7pt;">
+<tr><td> <a href="http://www.pichak.net" target=_blank>Design By</a> : <a href="http://pichak.net" target=_blank>Pichak</a> <br></td></tr>
+</table><br>
+
+<!-.-.-Design By : pichak.net-.-.->
+
+</div>
+
+<div id=sidebar>  
+<br>
+
+
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> About </div>
+</b>
+<br>
+<!-.-.-Design By : pichak.net-.-.->
+<img src="../static.mihanblog.com/public/user_data/web_photo/341/1021395.jpg@2171"  /><div align=right>
+<div id=about><FONT style="FONT-SIZE: 8pt">
+مَرا کِیفیَتِ چَشمِ تو کافیست... </div>
+
+<center>
+<br>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Menu </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="index.html">خانه</a></li>
+<li><a href="mailto:">ایمیل</a></li>
+<li><a target="_blank" href="http://www.pichak.net">قالب</a></li>
+<center><script language="javascript" src="http://pichak.net/p/js/themes/120.js"></script></center>
+</ul></div>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Authors </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://ipromissu4ever.mihanblog.com/post/author/870188" >سکوت آبی  185 </a></li></ul>
+</div>
+
+
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> LinkDump </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://picasia.ir" title="با سلام....
+خسته نباشی واقعا خوشحالم از این که تونستم تو وبلاگت نظری درج کنم واقعا خوب شد
+ممنون میشم سایت منم با اسم سایت عکس لینک کنید خیلی ممنون 
+اگه میشه بزرگی کنی از سایت منم بازدید کنی و حتما نظرتو درج کنی خیلی ممنون">سایت عکس</a></li><li><a target="_blank" href="http://www.gemupload.ir" title="جم آپلود
+مکانی امن برای آپلود رایگان عکس و فایل های شما
+جدیدترین و دائمی ترین سرویس
+ویژگی:
+فضای نامحدود برای آپلود
+سرعت دانلود و اپلود و لود بالا
+قابلیت آپلود از آدرس
+رایگان بودن همیشگی
+و از همه مهم تر**دائمی بودن عکس و فایل های شما**
+و ویژگی های بسیار زیاد و مهم دیگری که با ورود به سایت با آنها آشنا خواهید شد.
+منتظر حظور گرمتان هستیم...
+www.gemupload.ir
+*****************************
+راستی به آدرس زیر هم بروید و کد آپلود  عکس و فایل رو برای وبلاگتون رایگان دریافت کنید.
+http://gemupload.ir/blog
+
+
+**ممنون میشم این لینک رو تایید کنی**">جم آپلود(آپلود رایگان عکس و فایل دائمی)</a></li><li><a target="_blank" href="http://www.gaminglive.blogfa.com" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.">دانلود آهنگ جدید</a></li><li><a target="_blank" href="http://lebas5.mihanblog.com" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+لباس5">گالری مدل لباس مجلسی|مدل لباس عروس</a></li><li><a target="_blank" href="http://www.khorshidgroup.org" title="برای عضویت در بزرگترین گروه اینترنتی ایران کلیک کنید گروه اینترنتی خورشید http://khorshidgroup.org">عکس های دیدنی</a></li><li><a target="_blank" href="http://img.ir" title="خسته نباشید گروه ما یه سایت آپلود عکس راه اندازی کرده و نیاز به حمایت داریم خواستم خواهش کنم از اپلودسنتر استفاده کنید و یه لینک به ما بدید توی وبلاگتون اگر ممکنه با عنوان آپلود عکس ما هم لینک شما رو قرار میدیم لطفا از این قسمت لینک رو ارسال کنید : www.link.img.ir ممنون">آپلود عکس</a></li><li><a target="_blank" href="http://uploadkon.ir" title="سلام وبلاگ خوبی داری ممنون میشم به من هم سر بزنی 
+
+سایتی رایگان برای آپلود عکس و فایل وبلاگ داران عزیز">آپلود رایگان عکس و فایل</a></li><li><a target="_blank" href="../jojoman.mihanblog.com/index.html" title="سلام .......
+
+مد لباس دخترانه 
+
+▓░ آرایش عاشقانه 
+▓░ مدل شب لباس
+▓░ لباس شب عروس
+
+▓░ آرایش عاشقانه  مدل شب لباس">▓░ آرایش عاشقانه  مدل شب لباس ▓░ </a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Archive</div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1394/10"> دی 1394  3 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1394/8"> آبان 1394  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1394/1"> فروردین 1394  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/11"> بهمن 1393  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/9"> آذر 1393  2 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/7"> مهر 1393  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/5"> مرداد 1393  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/4"> تیر 1393  2 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1393/2"> اردیبهشت 1393  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/12"> اسفند 1392  2 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/11"> بهمن 1392  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/10"> دی 1392  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/9"> آذر 1392  1 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/8"> آبان 1392  3 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/7"> مهر 1392  2 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/6"> شهریور 1392  4 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/5"> مرداد 1392  3 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/4"> تیر 1392  15 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/3"> خرداد 1392  4 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392  4 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1392/1"> فروردین 1392  9 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/12"> اسفند 1391  15 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/11"> بهمن 1391  17 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/10"> دی 1391  32 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/9"> آذر 1391  25 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/8"> آبان 1391  5 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/7"> مهر 1391  3 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/6"> شهریور 1391  3 </a></li><li><a href="http://ipromissu4ever.mihanblog.com/post/archive/1391/5"> مرداد 1391  2 </a></li></ul>
+</div>
+
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Categories </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Links </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://linux.tegra.ir">هاست لینوکس</a></li><li><a target="_blank" href="http://www.eshgh1717.blogf.com">سایه ///</a></li><li><a target="_blank" href="http://ziresaghfekhoda.parsiblog.com">یاسی...</a></li><li><a target="_blank" href="http://yaregol.persianblog.ir">خاطرات من ( رفیق عزیــــــــــــز)</a></li><li><a target="_blank" href="http://yaademahboob.blogfa.com">*یاد محبوب*</a></li><li><a target="_blank" href="http://nani652.blogfa.com">بهار من</a></li><li><a target="_blank" href="http://dontyouremember.blogfa.com">روزهای تکراری...</a></li><li><a target="_blank" href="http://bidemajn00n.blogfa.com">بید مجنون</a></li><li><a target="_blank" href="http://unique-boy.persianblog.ir">غرور عاشقـــــــــــــــانه</a></li><li><a target="_blank" href="http://niceangel.mihanblog.com">شبنم های برفی</a></li><li><a target="_blank" href="../khodaoman.mihanblog.com/index.html">خدا و من</a></li><li><a target="_blank" href="http://bahane1000h.mihanblog.com">تنهایی یعنی...</a></li><li><a target="_blank" href="http://hamneshinsofi.mihanblog.com">کلبه صوفی</a></li><li><a target="_blank" href="http://shahrbano1.mihanblog.com">شهربانو</a></li><li><a target="_blank" href="http://www.jody-abbott.blogfa.com">بی نام...</a></li><li><a target="_blank" href="http://springhead.mihanblog.com">سرگرمی-تفریحی(هومن حصارکی)</a></li><li><a target="_blank" href="http://sepidpar.mihanblog.com">دلنوشته های یک نسل سوخته...</a></li><li><a target="_blank" href="http://bato-tanha.blogfa.com/">با تو ولی تنها...</a></li><li><a target="_blank" href="../sepideh76.mihanblog.com/index.html">*STAR*</a></li><li><a target="_blank" href="http://farid-70.blogfa.com">این خلوت تنهایی...</a></li><li><a target="_blank" href="../baraneaseg.mihanblog.com/index.html">باران عشق</a></li><li><a target="_blank" href="../aftabgardoon.mihanblog.com/index.html">آفتاب گردون</a></li><li><a target="_blank" href="../naderkhan.mihanblog.com/index.html">لیمو تـــــــــــــــــــــــــــــــرش</a></li><li><a target="_blank" href="../sohasport.mihanblog.com/index.html">بارووووووونی</a></li><li><a target="_blank" href="http://update.1bn.eu">لیست وبلاگ های بروز شده</a></li><li><a target="_blank" href="http://the-times-bitter.blogfa.com">تنهایی</a></li><li><a target="_blank" href="http://sooorati.parsiblog.com">قاصدکااااااااانه (عارفه خانوم)</a></li><li><a target="_blank" href="http://www.pichak.net">قالب میهن بلاگ</a></li>
+</ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Specific </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+<li><a href="http://www.sendshortmessage.ir">سامانه ارسال پیام کوتاه</a>
+</li>
+<li><a href="http://sandalin.ir/%D8%AE%D8%B1%DB%8C%D8%AF-%D8%AA%D8%A7%D8%AA%D9%88-%D9%85%D9%88%D9%82%D8%AA-%D8%B4%DB%8C%D9%85%D8%B1/">تاتو شیمر</a>
+</li>
+<li><a href="http://www.sakhtemoon.com">سایت تبلیغاتی</a>
+</li>
+<li><a href="http://sandalin.ir/%D8%AE%D8%B1%DB%8C%D8%AF-%D8%AA%D8%A7%D8%AA%D9%88-%D9%85%D9%88%D9%82%D8%AA-%D8%B4%DB%8C%D9%85%D8%B1/">تاتو موقت شیمر</a>
+</li>
+<li><a href="http://hours-buy.ir/category/%D8%B3%D8%A7%D8%B9%D8%AA-%D9%85%DA%86%DB%8C-%D8%B2%D9%86%D8%A7%D9%86%D9%87/">خرید ساعت مچی زنانه</a>
+</li>
+<li><a href="http://www.buyinternetpostal.com/product/185/%D8%AE%D8%B1%DB%8C%D8%AF-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D8%A8%D8%A7%D9%81%D8%AA-%D9%85%D9%88-%D8%A8%D8%B1%D9%82%DB%8C-%D8%AC%D8%A7%D9%86%D8%B3%D9%88%D9%86/">خرید دستگاه بافت مو</a>
+</li>
+<li>﻿<a href="http://agahi.facenama.com">تبلیغ رایگان</a> | <a title=" آگهی رایگان" target="_blank" href="http://agahi.facenama.com">آگهی رایگان</a>
+</li>
+<li><a href="http://entreprisesdusport.org/%D9%82%D9%84%D9%85-%D8%AE%D8%B4-%DA%AF%DB%8C%D8%B1-%D8%AE%D9%88%D8%AF%D8%B1%D9%88-%D9%81%DB%8C%DA%A9%D8%B3-%D8%A7%DB%8C%D8%AA-%D9%BE%D8%B1%D9%88-%D8%AE%D8%B4%DA%AF%DB%8C%D8%B1">قلم خش گیر خودرو</a>
+</li>
+<li><a title="جراحی بینی" href="http://bartarinha.com/group/154/%D8%AC%D8%B1%D8%A7%D8%AD%DB%8C-%D8%A8%DB%8C%D9%86%DB%8C-%D9%88-%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C">جراحی بینی</a>
+</li>
+<li><a href="http://bartarinha.com/category/332/%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%DA%AF%D8%A7%D9%87-%D8%AE%D9%88%D8%AF%D8%B1%D9%88/%D8%AE%D9%88%D8%AF%D8%B1%D9%88">تعمیرگاه خودرو</a>
+</li>
+<li><a target="_blank" href="http://bahar22.com">بهاربیست</a></li></div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Design </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+	<li>    <a href="http://www.pichak.net"target="_blank">قالب وبلاگ</a> : <a href="http://pichak.net"target="_blank">پیچك</a></li><br>
+<br><a href="http://pichak.net" target="_blank"><img src="http://pichak.net/themes/logo/01.gif"></a>
+</div>
+<center>
+
+
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+<div align=left>
+	<div class="link2"> Others </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+</p>
+</div>
+</div></div>
+<!-.-.-Design By : pichak.net-.-.->
+</body>
+<script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="display:none;"><h3><li><a title="" rel="nofollow" href="http://aryanpc.ir">آریان پی سی</a>
+</li><li><a href="http://saleslinks.ir">بک لینک</a>
+</li><li><a href="http://papomarket.ir">پاپو مارکت</a>
+</li><li><a href="http://topolkhan.ir">تپل خان</a>
+</li></h3></div></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'ipromissu4ever.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,1196 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://hallaji.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*761815*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[512]='-';commentCnt[546]='10';commentCnt[547]='11';commentCnt[551]='15';commentCnt[552]='35';commentCnt[553]='15';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[512]='0';
+mihanblogDisLikeArrCnt[512]='0';
+mihanblogLikeArrCnt[546]='0';
+mihanblogDisLikeArrCnt[546]='0';
+mihanblogLikeArrCnt[547]='0';
+mihanblogDisLikeArrCnt[547]='0';
+mihanblogLikeArrCnt[551]='0';
+mihanblogDisLikeArrCnt[551]='0';
+mihanblogLikeArrCnt[552]='0';
+mihanblogDisLikeArrCnt[552]='0';
+mihanblogLikeArrCnt[553]='0';
+mihanblogDisLikeArrCnt[553]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://hallaji.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://hallaji.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','471');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 4 آبان 1394');
+	
+	setStatVar('today_view','27');
+	setStatVar('yesterday_view','51');
+	
+	setStatVar('this_month_view','1044');
+	setStatVar('last_month_view','2781');
+
+	setStatVar('total_view','670763');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (16:39)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://hallaji.mihanblog.com/statupdate/?data[refereruri]=http://beheshtiyan.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607780165&data[hash]=888f6edf55d97835388edf71dbc68173&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://hallaji.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://hallaji.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://hallaji.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<span style="color: #382110">my read shelf:</span><br/><a href="https://www.goodreads.com/review/list/31087637?shelf=read" title="Narsis's book recommendations, liked quotes, book clubs, book trivia, book lists (read shelf)"><img border="0" alt="Narsis's book recommendations, liked quotes, book clubs, book trivia, book lists (read shelf)" src="https://www.goodreads.com/images/badge/badge1.jpg"></a>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<title>پنبه زنی بزرگان</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="Theme - Designer">
+<meta name="designerUrl" content="http://www.theme-designer.com/">
+<meta name="language" content="Farsi">
+<meta name="author" content="نارسیس ">
+<meta name="description" content="پنبه زنی بزرگان - در این وبلاگ متون ادبی ، شعر ، ضرب المثل ، ..... ارائه شده و پی نوشت هایی که عمدتا طنزگونه اند ،توسط نگارنده ی وبلاگ به انتهای تعدادی از آنها اضافه گشته است .">
+<meta name="keywords" content="پنبه زنی بزرگان, نقد طنز گونه ی متون ادبی">
+<link rel="alternate" type="application/rss+xml" title="پنبه زنی بزرگان" href="http://hallaji.mihanblog.com/post/rss/" />
+<script type="text/javascript" src="http://themeupload.theme-designer.com/50/jquery.min.js"></script>
+<script type="text/javascript" src="http://themeupload.theme-designer.com/50/scrolltopcontrol.js"></script> 
+<link href="http://themeupload.theme-designer.com/50/c.css" type="text/css" rel="stylesheet">
+</head>
+<!-- template50-mihanblog-Version: 3.0 -->
+<!-- Design By : wWw.Theme-Designer.Com -->
+<body class="theme-designer-com-back">
+<div align="right">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0" dir="rtl">
+<tr>
+<td width="278" valign="top"></td>
+<td width="172" valign="top" class="theme-designer-com1" >
+
+<div class="theme-designer-com2"></div>
+<div align="center" class="theme-designer-com3"><img border="0" src="http://themeupload.theme-designer.com/50/image/4.jpg"></div>
+<div align="center">
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/8.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div class="theme-designer5" align="right">
+<div align="center" style="padding:10px 0px 10px 0px;"><img src="../static.mihanblog.com/public/user_data/web_photo/254/761815.jpg@8086"  /></div>
+<div class="text">وبلاگی که پیش رو دارید شامل قطعه ها ، حکایات ، اشعار ، ................. ادبی عرفانی است که گه گاه با یادداشت ها و برداشت های شخصی من همراه شده . از آنجایی که در کتب هیچ یک از بزرگان ادب در گذشته ، تاکیدی بر نقد ادبی و تخصصی صرف آثار خود نداشته اند ، نوشته های من می توانند طنز گونه ، عاشقانه ، دراماتیک یا هر چه می خواهد دل تنگم « بگوید » باشد . خواننده های من هم می توانند هر نظری در مورد نوشته ها بدهند ، اینجا احساس ها می توانند هوا بخورند .<br />
+پیشاپیش از همه ی اساتید ، نویسندگان ، شعرا و عرفای عزیزِ در قید حیات ( که عمرشان دراز بادا و سرشار از سلامت و موفقیت )<br />
+به خاطرنوشتارها و نقدهایی که احتمالا به مذاق ادب خوش نمی آید و منِ غیر متخصص آن ها را نوشته ام عذر میخواهم و تمنا می کنم فریاد واادبیاتا و واعرفانا و........... سرندهند .<br />
+مطمئن باشید من خاک پای همه ی بزرگانی هستم که اینجا مطرحشان خواهم کرد .<br />
+من مخلص فردوسی ام و رزم و بزم هایش <br />
+من صنم ها با مولوی داشته ام <br />
+من عاشق نظامی و خسرو شیرینش هستم ولیلی و مجنونش ، هنوز طعم شیرین اولین خواندن خسرو و شیرین زیر زبانم است ، و گرمی اشک هایی را که در مرگ شیرین ریختم روی گونه هایم حس می کنم <br />
+من قبل از اختراع موبایل مرتب به حافظ sms   می زدم ............. و ، <br />
+صد البته در پیشگاه همه ی « بزرگان زنده » کوچک ترینم و قول می دهم حتی المقدور پا توی کفش این عزیزان نکنم .<br />
+همچنین از جناب مسعود لعلی که بامطالعه ی کتابشان با نام « عالمی دیگر بباید ساخت »به فکر راه اندازی این وبلاگ افتادم تشکر می نمایم . بسیاری از قطعه ها را از مجموعه ی ایشان برداشت کرده ام<br />
+عنوان وبلاگ پنبه زنی بزرگان است که کنایه است به اینکه یا ما پنبه ی آن ها را می زنیم یا آن ها پنبه ی مارا !!! چه شود !!!<br />
+« مردی که اینجا بی پرده وحجاب گوید نادرتر از آن زنی است که در فرنگ با حجاب و نقاب راه برود » <br />
+                                                                                                      قائم مقام فراهانی<br />
+عزت زیاد<br />
+<br>
+&nbsp; :: <a target="_blank" href="http://hallaji.mihanblog.com/post/author/598978">مدیر وب سایت  : نارسیس </a></div>
+</div>
+<div id="vmenu" align="right">
+  <ul>
+    <li><a href="index.html"><span>صفحه ی نخست</span></a></li>
+    <li><a href="mailto:"><span>پست الکترونیک</span></a></li>
+    <li><a href="javascript:messageForm()"><span>تماس با ما</span></a></li>
+    <li><a href="http://hallaji.mihanblog.com/post/archive"><span>آرشیو مطالب</span></a></li>
+    <li><a target="_blank" href="http://hallaji.mihanblog.com/post/rss/"><span>لینك rss</span></a></li>
+    <li><a target="_blank" href="http://hallaji.mihanblog.com/m/"><span>نسخه موبایل</span></a></li>
+  </ul>
+</div>
+</div>
+<div class="theme-designer3-3"></div>
+
+<div class="search"><form method="Get" target="_blank" action="http://google.com/search" class=sch><input name="sitesearch" value="http://hallaji.mihanblog.com" type="hidden"></a>
+<div style="height:23px; overflow:hidden; width:140; overflow:hidden;"><input type="submit" value=" " class=but><input type="text" name="q" size="21" class=txt ></div>
+</p></form></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/9.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+    <li><a href="http://hallaji.mihanblog.com/post/category/11" title="58" >عطر چین ِکتاب</a></li><li><a href="http://hallaji.mihanblog.com/post/category/14" title="22" >کتاب</a></li><li><a href="http://hallaji.mihanblog.com/post/category/13" title="22" >یوگا</a></li><li><a href="http://hallaji.mihanblog.com/post/category/8" title="24" >هنر</a></li><li><a href="http://hallaji.mihanblog.com/post/category/10" title="24" >شعر</a></li><li><a href="http://hallaji.mihanblog.com/post/category/12" title="37" >فایل صوتی</a></li><li><a href="http://hallaji.mihanblog.com/post/category/9" title="7" >عکس با پی نوشت طنز</a></li><li><a href="http://hallaji.mihanblog.com/post/category/6" title="4" >ضرب المثل با پی نوشت طنز</a></li><li><a href="http://hallaji.mihanblog.com/post/category/2" title="23" >حکایت با پی نوشت طنز</a></li><li><a href="http://hallaji.mihanblog.com/post/category/1" title="10" >شعر باپی نوشت طنز</a></li><li><a href="http://hallaji.mihanblog.com/post/category/3" title="281" >دلنوشته های خودم</a></li><li><a href="http://hallaji.mihanblog.com/post/category/5" title="45" >دلتنگیِ من</a></li><li><a href="http://hallaji.mihanblog.com/post/category/7" title="23" >بدون شرح</a></li><li><a href="http://hallaji.mihanblog.com/post/category/4" title="35" >دانلود</a></li>  </ul>
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/11.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+    <li><a target="_blank" title="تم دیزاینر : قالب وبلاگ" href="http://www.theme-designer.com" >قالب وبلاگ</a></li>
+	<li><a target="_blank" href="http://attarlibrary.ir/ketab3/" title="" >سومین جشنواره مجازی کتابخوانی</a></li><li><a target="_blank" href="http://mitrayebarani.persianblog.ir/" title="" >هرگز نگذار بروم</a></li><li><a target="_blank" href="http://mitwa.blogfa.com/" title="" >میتوا ( همون میترای خودمون )</a></li><li><a target="_blank" href="http://myhive.blogfa.com/" title="" >کندوی شاهنگ</a></li><li><a target="_blank" href="http://www.new-veterinary.blogfa.com/" title="" >دامپزشکی به زبان آدمیزاد</a></li><li><a target="_blank" href="http://rojna.blogfa.com" title="" >مهربانی شما چه رنگی است</a></li><li><a target="_blank" href="http://godscourtyard.blogfa.com/" title="" >شیلا مامان رومینا</a></li><li><a target="_blank" href="http://sepidedamvalimoo.blogfa.com/" title="من میترسم کامنت بدهم چون اینجا یک شاعر و نویسنده و ... واقعی می نویسد :)" >سپیده دمی که بوی لیمو می دهد .</a></li><li><a target="_blank" href="http://sainttouka.blogfa.com/" title="" >توکای مقدس</a></li><li><a target="_blank" href="http://programmeridea.blogfa.com/" title="" >نوشته های یک برنامه نویس</a></li><li><a target="_blank" href="../dr_ahmadi.mihanblog.com/index.html" title="" >وب نوشته های یک جراح</a></li><li><a target="_blank" href="http://zizigooloodiaries.blogfa.com/" title="" >تنها چیزی جدی است که ضروری باشد</a></li><li><a target="_blank" href="http://idleuser.blogfa.com/" title="" >بی ربط نامه</a></li><li><a target="_blank" href="http://dokhtarayman.blogfa.com/" title="" >مامان الهام</a></li><li><a target="_blank" href="http://sarzamin-gomshode.ir/" title="" >سرزمین گمشده ی شروین</a></li><li><a target="_blank" href="http://sheydagaran.blogfa.com/" title="" >ادیب</a></li><li><a target="_blank" href="http://www.zahediam.blogfa.com/" title="" >کاسنی</a></li><li><a target="_blank" href="http://www.lahazatam.blogfa.com/" title="" >شروع پس از شروع</a></li><li><a target="_blank" href="http://room13.blogfa.com" title="" >اتاق 13 حمید</a></li><li><a target="_blank" href="http://galehje1234.blogfa.com/" title="" >قلعه ی کهکشان</a></li><li><a target="_blank" href="http://z1376.blogsky.com/" title="" >برگی از دفتر خاطرات زینب</a></li><li><a target="_blank" href="http://shadnameh-man.blogfa.com" title="" >سیاوش گوشه نشین</a></li><li><a target="_blank" href="http://fa-sol.blogfa.com/" title="" >موسیقی مصطفی</a></li><li><a target="_blank" href="http://www.sepidehman.blogsky.com/" title="" >تماشا</a></li>   
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/12.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+    <li><a href="http://hallaji.mihanblog.com/post/author/598978" title="471" >نارسیس </a></li>  </ul>
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/37.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+    <li><a href="http://hallaji.mihanblog.com/extrapage/smily5">شکلک های خوشگل من (5)</a></li><li><a href="http://hallaji.mihanblog.com/extrapage/smily4">شکلک های خوشگل من (4)</a></li><li><a href="http://hallaji.mihanblog.com/extrapage/smily3">شکلک های خوشگل من (3)</a></li><li><a href="http://hallaji.mihanblog.com/extrapage/smily2">شکلک های خوشگل من (2)</a></li><li><a href="http://hallaji.mihanblog.com/extrapage/smily1">شکلک های خوشگل من (1)</a></li>  </ul>
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+
+		
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/13.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div class="theme-designer5" style="color:#FFFFFF; margin:10px 0px 0px 0px;">
+<a href="http://hallaji.mihanblog.com/post/tag/%D8%B3%D9%87%D8%B1%D8%A7%D8%A8+%D8%B3%D9%BE%D9%87%D8%B1%DB%8C" style="font-size:1.08em">
+سهراب سپهری</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%86%DA%AF%D8%A7%D8%B1%DA%AF%D8%B1%DB%8C+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C" style="font-size:1em">
+نگارگری ایرانی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%82%D8%AF%D9%85+%D8%A8%D8%AE%DB%8C%D8%B1+%D9%85%D8%A7%D8%AF%D8%B1%D8%A8%D8%B2%D8%B1%DA%AF+%D9%85%D9%86+%D8%A8%D9%88%D8%AF" style="font-size:1em">
+قدم بخیر مادربزرگ من بود</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DB%8C%D9%88%DA%AF%D8%A7" style="font-size:2em">
+یوگا</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%AE%D8%B3%D8%B1%D9%88+%D9%88+%D8%B4%DB%8C%D8%B1%DB%8C%D9%86" style="font-size:1.08em">
+خسرو و شیرین</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%81%D8%B1%DB%8C%D8%A8%D8%A7+%DA%A9%D9%84%D9%87%D8%B1" style="font-size:1em">
+فریبا کلهر</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%86%D8%B4%D8%B1+%D8%A2%D9%85%D9%88%D8%AA" style="font-size:1em">
+نشر آموت</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%AF%D8%A7%D9%87+%D8%B4%D9%86%D9%88%D8%AF+%D9%82%D8%A7%D8%B5%D8%AF%DA%A9" style="font-size:1.08em">
+گاه شنود قاصدک</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%A2%D8%B4%D9%BE%D8%B2%DB%8C" style="font-size:1em">
+آشپزی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B3%D9%88%D9%88%D8%B4%D9%88%D9%86" style="font-size:1.08em">
+سووشون</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8+%D8%B5%D9%88%D8%AA%DB%8C" style="font-size:1.31em">
+کتاب صوتی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8+%D8%B5%D9%88%D8%AA%DB%8C+%D8%B9%D8%B4%D9%82+%D8%B3%D8%A7%D9%84+%D9%87%D8%A7%DB%8C+%D9%88%D8%A8%D8%A7" style="font-size:1em">
+کتاب صوتی عشق سال های وبا</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B5%D8%AF%D8%A7%DB%8C+%D9%BE%D8%A7%DB%8C+%D8%A2%D8%A8" style="font-size:1.08em">
+صدای پای آب</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8" style="font-size:1.7em">
+کتاب</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B1%D8%A7%D8%AF%DB%8C%D9%88+%D8%B1%D9%88%D8%BA%D9%86+%D8%AD%D8%A8%D9%87+%D8%A7%D9%86%DA%AF%D9%88%D8%B1" style="font-size:1em">
+رادیو روغن حبه انگور</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DB%8C%D9%88%D8%B3%D9%81+%D8%B9%D9%84%DB%8C%D8%AE%D8%A7%D9%86%DB%8C" style="font-size:1.16em">
+یوسف علیخانی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B2%D8%A7%D9%84%D9%88+%D8%AF%D8%B1%D9%85%D8%A7%D9%86%DB%8C" style="font-size:1em">
+زالو درمانی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%86%D8%B8%D8%A7%D9%85%DB%8C" style="font-size:1.08em">
+نظامی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B3%DB%8C%D9%85%DB%8C%D9%86+%D8%AF%D8%A7%D9%86%D8%B4%D9%88%D8%B1" style="font-size:1.08em">
+سیمین دانشور</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%B4%D9%88%D9%87%D8%B1+%D8%B9%D8%B2%DB%8C%D8%B2+%D9%85%D9%86" style="font-size:1em">
+شوهر عزیز من</a> , </div>
+</div>
+<div class="theme-designer3"></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/14.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+		<li><a href="http://hallaji.mihanblog.com/post/archive/1394/8" title="1"> آبان 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1394/7" title="1"> مهر 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1394/4" title="1"> تیر 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1394/3" title="3"> خرداد 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1394/2" title="1"> اردیبهشت 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1394/1" title="1"> فروردین 1394</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/12" title="3"> اسفند 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/11" title="1"> بهمن 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/10" title="6"> دی 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/9" title="7"> آذر 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/8" title="3"> آبان 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/7" title="3"> مهر 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/6" title="3"> شهریور 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/5" title="6"> مرداد 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/4" title="15"> تیر 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/3" title="8"> خرداد 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/2" title="12"> اردیبهشت 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1393/1" title="3"> فروردین 1393</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1392/12" title="10"> اسفند 1392</a></li><li><a href="http://hallaji.mihanblog.com/post/archive/1392/11" title="10"> بهمن 1392</a></li>  </ul>
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/15.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div id="vmenu" align="right">
+  <ul>
+  		<li><a target="_blank" href="http://samanica.blogfa.com/" title="" >رادیو کتابکده</a></li><li><a target="_blank" href="http://leyleywithlili.persianblog.ir/" title="" >رنگ بازی</a></li><li><a target="_blank" href="http://rangirangi.com/" title="" >رنگی رنگی</a></li><li><a target="_blank" href="http://whatlilireadstoday.persianblog.ir/" title="" >امروز لی لی چی می خونه</a></li><li><a target="_blank" href="http://avacs.ir" title="" >پرتال آموزش آواکس چت</a></li><li><a target="_blank" href="http://radiokare.blogfa.com" title="" >رادیوکره</a></li><li><a target="_blank" href="http://nooshidani.ir/" title="" >نوشیدنی</a></li><li><a target="_blank" href="http://ketabnar.persianblog.ir/" title="" >کتابخانه ی صوتی خودم</a></li><li><a target="_blank" href="http://www.iranvocals.blogfa.com/post-1.aspx" title="" >آرشیو موسیقی ملی ایران</a></li><li><a target="_blank" href="http://www.chefnegin.com/" title="" >دنیای شیرین آشپزی</a></li><li><a target="_blank" href="http://attarlibrary.farhangsara.ir/" title="" >جشنواره تولید کتاب های صوتی کودکان</a></li><li><a target="_blank" href="http://buy-glasses.ir" title="" > خرید عینک آفتابی</a></li><li><a target="_blank" href="http://neyestanak.blogfa.com/" title="" >نیستانک ما ( ماهی سفید )</a></li><li><a target="_blank" href="http://shahla1.blogfa.com/" title="" >تنهایی روشن شهلا</a></li><li><a target="_blank" href="http://www.soheilsasan2.blogfa.com/" title="" >فصل عاشقی من و خدای سهیل ساسان</a></li><li><a target="_blank" href="http://yoga-learner.blogfa.com/" title="" >من و یوگا</a></li><li><a target="_blank" href="http://shamimeshgh90.blogfa.com " title="" >سارا</a></li><li><a target="_blank" href="http://ketabnar.blogfa.com" title="وبلاگ دیگر خودم" >کتابخانه ی صوتی نارسیس</a></li><li><a target="_blank" href="../www.beheshtiyan.mihanblog.com/index.html" title="" >بهشتیان</a></li>    <li><a target="_blank" title="جدید ترین قالب های وردپرس" href="http://www.p30hosting.com" >هاست لینوکس</a></li>
+    <li><a href="http://hallaji.mihanblog.com/linkdaily/" >لیست پیوندهای روزانه</a></li>
+    <li><a  href="javascript:linkdailyForm()" >ارسال پیوند</a></li>
+  </ul>
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+<div class="theme-designer1" align="right"><div class="theme-designer4"><img border="0" src="http://themeupload.theme-designer.com/50/image/16.gif"></div></div>
+<div class="theme-designer2" align="center">
+<div class="theme-designer5" style="color:#FFFFFF; margin:10px 0px 0px 0px;">
+
+<div align="right">
+ » تعداد مطالب : <script>getStatVar('total_post');</script><br>
+ » تعداد نویسندگان : <script>getStatVar('total_author');</script><br>
+ » آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br>
+ » بازدید امروز : <script>getStatVar('today_view');</script><br>
+ » بازدید دیروز : <script>getStatVar('yesterday_view');</script><br>
+ » بازدید این ماه : <script>getStatVar('this_month_view');</script><br>
+ » بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br>
+ » بازدید کل : <script>getStatVar('total_view');</script><br>
+ » آخرین بازدید : <script>getStatVar('last_view_date');</script><br><br>
+</div>
+<!--start with themeviews.ir alexa ranking code --->
+<script type="text/javascript" src="http://tools.themeviews.ir/alexa/code.php?url=http://hallaji.mihanblog.com&num=4"></script><div style="display:none"><h1><a href="http://themeviews.ir">&#1575;&#1576;&#1586;&#1575;&#1585; &#1608; &#1602;&#1575;&#1604;&#1576; &#1608;&#1576;&#1604;&#1575;&#1711; :: &#1578;&#1605; &#1608;&#1740;&#1608;&#1586;</a><a href="http://themes.themeviews.ir">گالری قالب وبلاگ</a></h1></div>
+<!-- end with themeviews.ir alexa ranking code --->
+
+
+</div>
+</div>
+<div class="theme-designer3"></div>
+
+</div>
+
+
+</td>
+<td width="553" valign="top" class="theme-designer-com5">
+
+<div class="theme-designer-com4">
+<div class="bb" ><div class="blogtitle"><div class="title"><h1><p dir="rtl"><a href="index.html">پنبه زنی بزرگان</a></h1></div></div>
+<div class="blogdescription"><p dir="rtl"></div></div>
+
+<div class="alibehnamfar-other"></div>
+<div class="alibehnamfar">
+<ul id="topNav" align="right">
+	<li><a href="index.html" class="alibehnamfar1" title="صفحه ی نخست">
+    <span class="hidden">صفحه ی اصلی</span></a></li>
+    <li><a href="javascript:messageForm()" class="alibehnamfar2" title="تماس با ما">
+    <span class="hidden">تماس با ما</span></a></li>
+    <li><a target="_blank" href="http://hallaji.mihanblog.com/post/rss/" class="alibehnamfar3" title="لینك rss">
+    <span class="hidden">لینك rss</span></a></li>
+    <li><a href="http://hallaji.mihanblog.com/post/archive" class="alibehnamfar4" title="آرشیو مطالب">
+    <span class="hidden">آرشیو مطالب</span></a></li>
+    <li><a href="mailto:" class="alibehnamfar5" title="پست الکترونیک">
+    <span class="hidden">پست الکترونیک</span></a></li>
+  </ul>
+</div>
+</div>
+
+</div>
+
+<div align="center"><div class="alibehnamfar-ir1">
+<div align="center">
+
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td><div align="right">
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/512">پست ثابت فقط به عنوان پشه کُش </a></div></div>
+<div class="post-date">شنبه 25 مرداد 1393</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div style="text-align: center;">این پست ثابت احتمالا جلو ورود کامنت های تبلیغاتی رو می گیره&nbsp;</div><div style="text-align: center;">یه جورایی توری یا پشه کشه&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif" style="font-size: 11px;"><span style="font-size: 11px;">&nbsp;</span></div>
+
+
+
+
+ 
+
+
+
+
+
+<br><br>
+:: 
+<br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/512#commentlist">نظرات <script>setCommentCnt(512)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/512&title=پست ثابت فقط به عنوان پشه کُش " title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/512&amp;title=پست ثابت فقط به عنوان پشه کُش " title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/512&t=پست ثابت فقط به عنوان پشه کُش " title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/512&title=پست ثابت فقط به عنوان پشه کُش " title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/553">آن طرف ها مشغولیم</a></div></div>
+<div class="post-date">دوشنبه 4 آبان 1394</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+<font face="Mihan-Iransans" size="3">تازگی ها دو تا پست جدید کتابی برای کتابنار نوشتم . یکیش رو به مناسبت مراسم افتتاحیه</font><a href="http://ketabnar.persianblog.ir/post/60/" target="_blank" title=""><font color="#cc33cc"><b>" صد سال تنهایی صوتی "&nbsp;</b></font></a><font face="Mihan-Iransans" size="3">نوشتم و انتشار اولین قسمت این کتاب سریالی ، و دومیش هم معرفی کتاب&nbsp;</font><a href="http://ketabnar.persianblog.ir/post/61/" target="_blank" title=""><font color="#cc33cc"><b>"مرشد و مارگریتا "</b></font></a><font face="Mihan-Iransans" size="3">&nbsp;به عنوان یک کتاب خوب ، یعنی خوب که نه ، عالی .....</font><div><font face="Mihan-Iransans" size="3"><br></font></div><div><font face="Mihan-Iransans" size="3"><br></font></div><div><font face="Mihan-Iransans" size="3">راستی اجرای "کتاب صوتی عشق سال های وبایم" هم در اولین جشنواره کتاب های صوتی سایت<b><font color="#993399">&nbsp;</font></b></font><a href="http://blog.kajestan.ir/2015/09/27/%D8%A7%D8%AA%D9%85%D8%A7%D9%85-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%88-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D9%86%D8%AA%D8%A7%DB%8C%D8%AC/" target="_blank" title=""><b><font color="#cc33cc">کاجستان</font></b></a><font face="Mihan-Iransans" size="3">&nbsp;جزء کارهای برگزیده انتخاب شده . &nbsp;</font></div>
+
+ <br><br>
+:: <br>:: مرتبط با: <a href="http://hallaji.mihanblog.com/post/category/14">
+کتاب</a> , <a href="http://hallaji.mihanblog.com/post/category/12">
+فایل صوتی</a> , 
+<br>:: برچسب‌ها: <a href="http://hallaji.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%B5%D9%88%D8%AA%DB%8C">
+دانلود کتاب صوتی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%B5%D9%88%D8%AA%DB%8C%20%D8%B5%D8%AF%20%D8%B3%D8%A7%D9%84%20%D8%AA%D9%86%D9%87%D8%A7%DB%8C%DB%8C">
+کتاب صوتی صد سال تنهایی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%85%D8%B1%D8%B4%D8%AF%20%D9%88%20%D9%85%D8%A7%D8%B1%DA%AF%D8%A7%D8%B1%DB%8C%D8%AA%D8%A7">
+مرشد و مارگاریتا</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%85%DB%8C%D8%AE%D8%A7%D8%A6%DB%8C%D9%84%20%D8%A8%D9%88%D9%84%DA%AF%D8%A7%DA%A9%D9%81">
+میخائیل بولگاکف</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%AF%D8%A7%D8%A8%D8%B1%DB%8C%D9%84%20%DA%AF%D8%A7%D8%B1%D8%B3%DB%8C%D8%A7%20%D9%85%D8%A7%D8%B1%DA%A9%D8%B2">
+گابریل گارسیا مارکز</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%B5%D9%88%D8%AA%DB%8C%20%D8%B9%D8%B4%D9%82%20%D8%B3%D8%A7%D9%84%20%D9%87%D8%A7%DB%8C%20%D9%88%D8%A8%D8%A7">
+کتاب صوتی عشق سال های وبا</a> , <br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/553#commentlist">نظرات <script>setCommentCnt(553)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/553&title=آن طرف ها مشغولیم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/553&amp;title=آن طرف ها مشغولیم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/553&t=آن طرف ها مشغولیم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/553&title=آن طرف ها مشغولیم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/552">اجرای داستان رعنا ، مصاحبه با خالق رعنا</a></div></div>
+<div class="post-date">سه شنبه 7 مهر 1394</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+<font size="3" face="Mihan-Nassim">سلام عزیزانم&nbsp;</font><div><font face="Mihan-Nassim"><font size="3">بالاخره فایل صوتی<b><font color="#cc33cc">&nbsp;</font></b></font><a href="http://ketabnar.persianblog.ir/post/59/" target="_blank" title=""><font size="3" color="#cc33cc">رعنا&nbsp;</font></a><font size="3">؛ داستانی از مجموعه داستان های قدم بخیر مادربزرگ من بود ، از تنور درآمد .</font></font></div><div><font face="Mihan-Nassim"><font size="3">همینطور فایل صوتی&nbsp;</font><a href="http://ketabnar.persianblog.ir/post/58/" target="_blank" title=""><font size="3" color="#cc33cc">مصاحبه ی من با آقای علیخانی&nbsp;</font></a><font size="3">که سال گذشته در نمایشگاه کتاب انجامش دادم ....</font></font></div><div><font face="Mihan-Nassim"><font size="3">خجالتم ندین دیگه ! میدونم الان میگید : یک ساااااااااااااااال پیییش ؟!!&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font></div><div><font face="Mihan-Nassim"><font size="3">خوب پیش میاد دیگه ، بچه است ! شما به بزرگی خودتون ببخشیدش&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/9.gif" style="font-size: medium;"></font></div><div><font face="Mihan-Nassim"><font size="3">فعلا تا یخ نکرده اگر دوست دارید برید سراغش ....................... </font><font size="1">تا منم یواشکی در برم</font><font size="3">&nbsp;</font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div><br></div><div><br></div>
+
+ <br><br>
+:: <br>:: مرتبط با: <a href="http://hallaji.mihanblog.com/post/category/14">
+کتاب</a> , <a href="http://hallaji.mihanblog.com/post/category/12">
+فایل صوتی</a> , <a href="http://hallaji.mihanblog.com/post/category/4">
+دانلود</a> , 
+<br>:: برچسب‌ها: <a href="http://hallaji.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%AF%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%20%D8%B5%D9%88%D8%AA%DB%8C%20%D8%B1%D8%B9%D9%86%D8%A7">
+دانلود داستان صوتی رعنا</a> , <a href="http://hallaji.mihanblog.com/post/tag/%DB%8C%D9%88%D8%B3%D9%81%20%D8%B9%D9%84%DB%8C%D8%AE%D8%A7%D9%86%DB%8C">
+یوسف علیخانی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%82%D8%AF%D9%85%20%D8%A8%D8%AE%DB%8C%D8%B1%20%D9%85%D8%A7%D8%AF%D8%B1%D8%A8%D8%B2%D8%B1%DA%AF%20%D9%85%D9%86%20%D8%A8%D9%88%D8%AF">
+قدم بخیر مادربزرگ من بود</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87%20%D8%A8%D8%A7%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%B9%D9%84%DB%8C%D8%AE%D8%A7%D9%86%DB%8C">
+مصاحبه با یوسف علیخانی</a> , <a href="http://hallaji.mihanblog.com/post/tag/%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C%20%D8%B1%D8%B9%D9%86%D8%A7%20%D8%AA%D9%88%D8%B3%D8%B7%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%B9%D9%84%DB%8C%D8%AE%D8%A7%D9%86%DB%8C">
+اجرای رعنا توسط یوسف علیخانی</a> , <br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/552#commentlist">نظرات <script>setCommentCnt(552)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/552&title=اجرای داستان رعنا ، مصاحبه با خالق رعنا" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/552&amp;title=اجرای داستان رعنا ، مصاحبه با خالق رعنا" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/552&t=اجرای داستان رعنا ، مصاحبه با خالق رعنا" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/552&title=اجرای داستان رعنا ، مصاحبه با خالق رعنا" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/551">قفل کودک</a></div></div>
+<div class="post-date">سه شنبه 30 تیر 1394</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+<font face="Mihan-Iransans">پسرک میگه </font><span style="font-family: Mihan-Iransans;">مامان میخوام برای تبلتم قفل کودک دانلود کنم . توی دلم ذوقش رو میکنم که چقدر پسر فهمیده و خوبیه که داوطلبانه میخواد تبلتش کنترل بشه .</span><div><span style="font-family: Mihan-Iransans;">بهش میگم :</span></div><div><span style="font-family: Mihan-Iransans;">مادر جون خودت مراقب باش ، دیگه بزرگ شدی و خوب و بد رو تشخیص میدی ، در مقابل وسوسه ها مقاومت کن ، اینطوری بهتره . نیازی نیست قفل دانلود کنی .</span></div><div><span style="font-family: Mihan-Iransans;">میگه : مادر من ! من قفل رو برای خودم دانلود نمیکنم ، برای شما دانلود میکنم که نتونی هی بری توی تبلت من "کندی کراش" بازی کنی !</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/13.gif"></div><div><br></div><div><br></div><div>نامرد ! خوب من عاشق "Candy crash saga" &nbsp;و &nbsp;" Candy crash soda" هستم&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif">&nbsp;.......<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div><span style="font-family: Mihan-Iransans;"><br></span></div><div><span style="font-family: Mihan-Iransans;"><br></span></div><div style="text-align: center;"><img src="http://clash-of-clans-tools.ir/wp-content/uploads/2015/06/Candy-Crush-Soda-Saga-7.jpg"></div>
+
+ <br><br>
+:: <br>:: مرتبط با: <a href="http://hallaji.mihanblog.com/post/category/3">
+دلنوشته های خودم</a> , 
+<br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/551#commentlist">نظرات <script>setCommentCnt(551)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/551&title=قفل کودک" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/551&amp;title=قفل کودک" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/551&t=قفل کودک" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/551&title=قفل کودک" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/547">موهای خودم</a></div></div>
+<div class="post-date">چهارشنبه 27 خرداد 1394</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+<font size="2">قبل از عید رفتم سراغ آرایشگرم و طبق معمول گفتم موهامو کوتاه&nbsp;ِ کوتاه کن ... اونم طبق معمول گفت حیفه !&nbsp;</font><div><font size="2">اما من این بار مصمم تر از اون بودم که گول حرف آرایشگرم رو بخورم ؛ چون علاوه بر قصد کوتاه کردن یه نیت شوم دیگه هم داشتم ؛ اونم رنگ نکردن بود . در راستای نیت دوم حدود چهار پنج ماهی می شد که رنگ نکرده بودم و ریشه ی موهام &nbsp;کاملا از بخش رنگ شده متمایز شده بود . نشستم و گفتم میخوام تمام بخش های رنگ شده رو بچینی . بنده ی خدا ، هی چید ، هی گفت خیلــــــی کوتاه میشه ها ! گفتم عیب نداره .... دوباره گفت خیلی کوتاه میشه ها ! و ....</font></div><div><font size="2">خلاصه وقتی اومدم خونه ، داد پسرک و آقای شوهر در اومد که موهای من از موهای اونا هم کوتاه تره !!! اما من اهمیت ندادم ، مهم این بود که موهای خودم با رنگ طبیعی خودشون روی سرم بودن و نه با یک رنگ عاریتی . تا حالا که سه ماه میگذره ، هر کی منو دیده خوشش اومده و کلی ذوق کرده که موهام چقدر قشنگه و چقدر بهم میاد .</font></div><div><font size="2">الان موهای من رنگی هست که معروفه به " جوگندمی " یا " فلفل نمکی " . یعنی تعداد موهای سفید به موهای مشکیم تقریبا یک به سه هست . گفتم مشکی ! جالبه بگم با وجودی که رنگ چشمام روشنه و تا قبل از ازدواج موهای روشنی هم داشتم ، اما الان به وضوح موهام تغییر رنگ دادن و مشکی شدن !&nbsp;</font></div><div><font size="2">اینو هم اعتراف می کنم که در طول عید بفهمی نفهمی افسرده شده بودم ، چون واقعا برام پذیرفتن منِ واقعی و جدیدم سخت بود . آخه از وقتی که تعداد تارهای سفید موهام زیاد قابل دیدن شد ، شروع کردم به رنگ کردن و سال ها بود که همه رنگی داشت ، جز رنگ اصلی خودش . دیدن کله ی پر از موی جوگندمی به جای رنگ های جوان نما ، خواهی نخواهی تا مدتی افسرده کننده است . اما اونقدر در مقابل وسوسه ی رنگ زدن مقاومت کردم ، تا بالاخره حالت افسردگی هم از بین رفت و الان دارم با موهای ِ خودم کیف می کنم .</font></div><div><font size="2">&nbsp;</font></div><div><font size="2">نکته های اخلاقی :</font></div><div><font size="2">1 : مو هر قدر کوتاه تر باشه ، آدم جوون تر به نظر میاد ، مثلا 15 سالته ، ولی 14 ساله به نظر میرسی .&nbsp;</font></div><div><font size="2"><br></font></div><div><font size="2">2 : رنگ مو هر قدر تیره تر باشه ، سن پایین تر نشون داده میشه . پس روشن کردن بیش از حدِّ رنگ مو به خصوص در سنین بالا اشتباه هست .</font></div><div><br></div><div>3 : متاسفانه ما خانوم ها عادت کردیم از سنین کم موهامونو رنگ کنیم . وقتی هم شروع کردی به رنگ کردن مو دیگه نمیشه متوقفش کرد ، باید حداقل ماهی یک بار دست به رنگ بشی . اما من حداقل به خودم ثابت شد که با موهای طبیعی هم میشه زیبا بود و از زندگی لذت برد ( نکته ی مستتر در این جمله رو گرفتن که !&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif">&nbsp;)</div><div><font size="2"><br></font></div>
+
+ <br><br>
+:: <br>:: مرتبط با: <a href="http://hallaji.mihanblog.com/post/category/3">
+دلنوشته های خودم</a> , 
+<br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/547#commentlist">نظرات <script>setCommentCnt(547)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/547&title=موهای خودم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/547&amp;title=موهای خودم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/547&t=موهای خودم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/547&title=موهای خودم" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post"><div class="link-title-post"><a href="http://hallaji.mihanblog.com/post/546">آخرین برگه ها</a></div></div>
+<div class="post-date">یکشنبه 24 خرداد 1394</div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+
+
+<div>دوشنبه 94/3/18 آخرین مراقبت جلسه ی امتحانی مو انجام دادم</div>امروز هم آخرین برگه ها و نمره هامو تحویل دادم ..... شدم بازنشسته ی واقعی !<div>البته 6 تا افتاده هم داشتم که به احتمال زیاد امتحان شهریورشون گردن خودمه ... شایدم نباشه !</div><div>حالا نه که فکر کنید بازنشسته شدم و مثل خانوووما نشستم تو خونه و به زندگیم میرسم ها ! نه ! اصلا&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif">&nbsp;</div><div>&nbsp;اگر کلاس یوگای خودم که نیلو بهم آموزش میده رو در نظر نگیرم ، عملا 4 روز باشگاهم . دو روز آموزش میدم ، دو روز هم تو دفتر می نشینم &nbsp;. اگر کلاس نیلو رو هم اضافه کنیم میشه به عبارتیییییی ........... 5 روز ناقابل ( اینو گفتم تا کسی خدای ناکرده فکر نکنه پیر شدم &nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif">&nbsp;)</div><div>خدا آخر و عاقبت همه رو به خیر کنه ، من را هم ایضا</div><div><br></div><div style="text-align: center;"><img src="http://dl.baranpatogh.ir/p30/2011/11/yoga-old.jpg" alt="نام پیرترین مربی یوگا در گینس ثبت شد"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img style="height: 226px;" src="http://up03.persianfun.info/img/91/3/guinness-world-records-of-2012/guinness_world_records_16.jpg" height="396"></div><div style="text-align: center;"><br></div><div style="text-align: right;">پی نوشت : این دو تا عکس مربوط به پیرترین مربی یوگای جهان هست ( من نیستم ! )</div><div style="text-align: right;">نکته ی جالب اینه که هر دو عکس در یک زمان و مکان مشترک گرفته شده و این خانوم یه لباس پوشیده ، اما توی عکس بالایی ( که از یه منبع دیگه گرفتمش ) ، روی پاهای خانومه رو رنگ کردن که شلوار یا جوراب به نظر بیاد ! باشد که اسلام با این یه وجب پای پیرزن به خطر نیوفتد .</div>
+
+
+
+
+
+ <br><br>
+:: <br>:: مرتبط با: <a href="http://hallaji.mihanblog.com/post/category/3">
+دلنوشته های خودم</a> , 
+<br>
+
+</div></div></div>
+<div class="alibehnamfar-ir7"></div>
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div style="width:100%; padding:0px 0px 0px 0px; color:#32383c; ">
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/32.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" >نویسنده : نارسیس </div>
+<div class="icon3" ></div>
+<div class="icon1" ><img border="0" src="http://themeupload.theme-designer.com/50/image/31.gif"></div>
+<div class="icon4" ></div>
+<div class="icon2" ><a target="_self" href="http://hallaji.mihanblog.com/post/546#commentlist">نظرات <script>setCommentCnt(546)</script> </a></div>
+</div>
+</td>
+<td width="80"><div class="alibehnamfar-ir8">
+
+<div class="cbft"><a target="_blank" href="http://www.cloob.com/share/link/add? url=http://hallaji.mihanblog.com//post/546&title=آخرین برگه ها" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/26.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://balatarin.com/links/submit?phase=2&amp; url=http://hallaji.mihanblog.com//post/546&amp;title=آخرین برگه ها" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/27.gif" border="0"></a></div>
+<div class="cbft"><a target="_blank" href="http://www.facebook.com/share.php?u=http://hallaji.mihanblog.com/post/546&t=آخرین برگه ها" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/28.gif" border="0" ></a></div>
+<div class="cbft"><a target="_blank" href="http://twitter.com/home?status=Reading+this:+http://hallaji.mihanblog.com/post/546&title=آخرین برگه ها" title="این مطلب را به اشتراک بگذارید"><img src="http://themeupload.theme-designer.com/50/image/29.gif" border="0" ></a></div>
+
+</div></td>
+</tr>
+</table>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+
+<!-- ------------comment------------ -->
+<!-- ------------/comment------------ -->
+
+
+</td>
+</tr>
+</table>
+
+<table border="0" width="100%" id="table3" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<table border="0" width="100%" id="table4" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center">
+<p align="right">
+<div id="styleone2">
+  <ul>
+    <li><a href="index.html"> تعداد کل صفحات: 95 </a></li>
+    <li><a href="http://hallaji.mihanblog.com/page/1"><b>1</b></a></li><li><a href="http://hallaji.mihanblog.com/page/2"><span>2</span></a></li><li><a href="http://hallaji.mihanblog.com/page/3"><span>3</span></a></li><li><a href="http://hallaji.mihanblog.com/page/4"><span>4</span></a></li><li><a href="http://hallaji.mihanblog.com/page/5"><span>5</span></a></li><li><a href="http://hallaji.mihanblog.com/page/6"><span>6</span></a></li><li><a href="http://hallaji.mihanblog.com/page/7"><span>7</span></a></li><li><a href="http://hallaji.mihanblog.com/page/8"><i>...</i></a></li>  </ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+<br>
+<br>
+
+
+<div class="post">
+<table border="0" width="497" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15" ><img border="0" src="http://themeupload.theme-designer.com/50/image/23.gif"></td>
+<td><div class="title-post">آخرین عنوان های مطالب </div></td>
+</tr>
+</table>
+<div class="alibehnamfar-ir5"></div>
+<div class="post-link">
+<div align="center"><div class="alibehnamfar-ir4"><div align="right">
+<div class="alibehnamfar-ir6">
+<a href="http://hallaji.mihanblog.com/post/553" title="دوشنبه 4 آبان 1394" > آن طرف ها مشغولیم </a><br><a href="http://hallaji.mihanblog.com/post/552" title="سه شنبه 7 مهر 1394" > اجرای داستان رعنا ، مصاحبه با خالق رعنا </a><br><a href="http://hallaji.mihanblog.com/post/551" title="سه شنبه 30 تیر 1394" > قفل کودک </a><br><a href="http://hallaji.mihanblog.com/post/547" title="چهارشنبه 27 خرداد 1394" > موهای خودم </a><br><a href="http://hallaji.mihanblog.com/post/546" title="یکشنبه 24 خرداد 1394" > آخرین برگه ها </a><br><a href="http://hallaji.mihanblog.com/post/545" title="شنبه 16 خرداد 1394" > دومین جریمه </a><br><a href="http://hallaji.mihanblog.com/post/544" title="دوشنبه 21 اردیبهشت 1394" > نمیدونم اثرات بازنشستگیه یا عاشقی یا ... </a><br><a href="http://hallaji.mihanblog.com/post/543" title="چهارشنبه 26 فروردین 1394" > تبریک و تشکر </a><br><a href="http://hallaji.mihanblog.com/post/542" title="یکشنبه 17 اسفند 1393" > محض خنده ..... برای دل خودم </a><br><a href="http://hallaji.mihanblog.com/post/541" title="یکشنبه 17 اسفند 1393" > روز جهانی زن مبارک </a><br></div>
+</div></div></div>
+</div></div>
+<div class="alibehnamfar-ir9"></div>
+
+</div>
+</div>
+<div class="alibehnamfar-ir2"></div></div>
+
+</div></td>
+</tr>
+</table>
+</div>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="theme-designer-com6">
+<tr>
+<td valign="top">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0" class="theme-designer-com7">
+<tr>
+<td valign="top">
+
+<table border="0" width="980" cellspacing="0" cellpadding="0" dir="rtl">
+<tr>
+<td valign="top" align="right">
+<div class="alibehnamfar-6" >
+<div class="copyright" style="line-height: 25px">
+تمام حقوق این وب سایت و مطالب آن متعلق به <a href="index.html"> پنبه زنی بزرگان </a>می باشد
+.<br>
+كد نویسی و گرافیك قالب توسط : <a target="_blank" href="http://www.theme-designer.com/">تم دیزاینر</a>
+</div>
+</div>
+</td>
+<td width="110" valign="top" ><div class="top"><a href="index.html#top"><img border="0" src="http://themeupload.theme-designer.com/50/image/36.jpg"></a></div></td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'hallaji.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

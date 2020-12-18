@@ -1,0 +1,3386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 1399/09/23');
+		/*962232*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1]='108';commentCnt[170]='8';commentCnt[172]='10';commentCnt[175]='3';commentCnt[176]='8';commentCnt[177]='4';commentCnt[179]='4';commentCnt[181]='7';commentCnt[182]='5';commentCnt[184]='6';commentCnt[188]='8';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1]='0';
+mihanblogDisLikeArrCnt[1]='0';
+mihanblogLikeArrCnt[172]='0';
+mihanblogDisLikeArrCnt[172]='0';
+mihanblogLikeArrCnt[177]='0';
+mihanblogDisLikeArrCnt[177]='0';
+mihanblogLikeArrCnt[179]='0';
+mihanblogDisLikeArrCnt[179]='0';
+mihanblogLikeArrCnt[182]='0';
+mihanblogDisLikeArrCnt[182]='0';
+mihanblogLikeArrCnt[184]='0';
+mihanblogDisLikeArrCnt[184]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://ghalamesiyah.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://ghalamesiyah.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','94');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','چهارشنبه 1395/10/8');
+	
+	setStatVar('today_view','1');
+	setStatVar('yesterday_view','16');
+	
+	setStatVar('this_month_view','512');
+	setStatVar('last_month_view','365');
+
+	setStatVar('total_view','67825');
+	setStatVar('last_view_date','یکشنبه 1399/09/23 (05:03)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://ghalamesiyah.mihanblog.com/statupdate/?data[refereruri]=http://ghalamesiyah.mihanblog.com/&data[postid]=&data[requesturi]=/page/7&data[sdate]=1607829996&data[hash]=a2391b32f47b46f1f84613ea8fabc5fd&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://ghalamesiyah.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://ghalamesiyah.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://ghalamesiyah.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="alternate" type="application/rss+xml" title="... پر از ناگفته  ام ..." href="../post/rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="... پر از ناگفته  ام ..." href="../post/atom/index.html" />
+
+<title>... پر از ناگفته  ام ...</title>
+
+<style type="text/css">
+<!--
+body{
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -x-system-font:none;
+    background:#000000 none repeat scroll 0 0;
+    color:#333333;
+    font-family:Tahoma, Arial, sans-serif;
+    font-size:75%;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:150%;
+    margin:0;
+    padding:0;
+}
+.page {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#FFFFFF url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/content-bg.gif) repeat-y scroll 0 0;
+    margin:0 auto;
+    width:770px;
+}
+.td1{
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#E6920C url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/bg_lt.jpg) repeat-x scroll right top;
+    color:#FFFFFF;
+}
+.td2{
+    width:770px;
+}
+.td3{
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#22403E url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/bg_rt.jpg) repeat-x scroll left top;
+    color:#FFFFFF;
+}
+.header {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#0FACEA url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/header.jpg) no-repeat scroll 0 0;
+    border-bottom:3px solid #000000;
+    height:207px;
+    position:relative;
+    direction:rtl;
+}
+.title {
+    text-align: right;
+    padding-top: 35px;
+    padding-right: 20px;
+    font-family: Arial, Tahoma, sans-serif;
+}
+.title a{
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.title a:hover{
+    color: #FFF;
+}
+.slogan {
+    text-align: right;
+    font-size: 14px;
+    color: #FFF;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+.clearfix:after {
+    clear:both;
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+}
+* html .clearfix {
+    height:1%;
+}
+
+.clearfix {
+    display:block;
+}
+.content {
+    border-left:3px solid #000000;
+    border-right:3px solid #000000;
+    overflow:hidden;
+    width:764px;
+}
+.right {
+    float: right;
+    width: 230px;
+    direction:rtl;
+    text-align:right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.right a{
+    color: #25443F;
+    text-decoration:none;
+}
+.right a:hover{
+    font-weight: bold;
+    color: #DB7708;
+    text-decoration: none;
+}
+h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #569C92;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+.nav{
+    padding-right: 5px;
+    font-size: 12px;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #274442;
+}
+.nav a{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: #25443F;
+    text-decoration: none;
+    padding-right: 10px;
+}
+.nav a:hover{
+    font-weight: bold;
+    color: #DB7708;
+    text-decoration: none;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 10px;
+}
+.search{
+    text-align:center;
+}
+.search_btn{
+    text-align:center;
+}
+.text{
+    border: 1px solid #22403E;
+    margin-bottom: 5px;
+    width: 120px;
+
+
+
+}
+img{
+    max-width : 495px;
+}
+.btn{
+    color: #000;
+    background-attachment: scroll;
+    background-image: url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/search-btn-bg.jpg);
+    background-repeat: no-repeat;
+    border: 0px none #1F3D3B;
+    text-align: center;
+    background-position: center center;
+    height: 26px;
+    width: 67px;
+    font-size: 11px;
+    background-color: #76825E;
+}
+.logo a{
+    color: #ECFDCE;
+    text-decoration: none;
+}
+.logo a:hover{
+    color: #ECFDCE;
+    text-decoration: none;
+}
+.admin a{
+    color: #ECFDCE;
+    text-decoration: none;
+}
+.admin a:hover{
+    color: #ECFDCE;
+    text-decoration: none;
+}
+.left {
+    float: left;
+    width: 495px;
+    direction:rtl;
+    text-align:right;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+h2 a {
+    font-family: Arial, Tahoma, sans-serif;
+    font-size: 22px;
+    color: #39692E;
+    display: block;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #999;
+    text-decoration: none;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    padding-right: 5px;
+}
+h2 a:hover{
+    color: #ff6600;
+    text-decoration: none;
+    padding-right: 5px;
+}
+.date a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.dare a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+.writer {
+    float: right;
+    margin-left: 20px;
+    border-left-style: none;
+    display: block;
+    background-image: url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/mini-category.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 15px;
+}
+.PostCom {
+    float: left;
+    margin-left: 20px;
+    display: block;
+    direction:rtl;
+    background-image: url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/mini-comments.gif);
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    padding-right: 17px;
+    margin-top: -82px;
+    width: 177px;
+}
+.time {
+    float: right;
+    display: block;
+    background-image: url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/date-icon.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 14px;
+}
+.body {
+    text-align:right;
+    direction:rtl;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+.body a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.body a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+.post_category {
+    text-align: right;
+    font-weight: bold;
+    color: #000;
+    padding-right: 5px;
+}
+.post_category a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.post_category a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+
+.post_tag {
+    text-align: right;
+    margin-top: 5px;
+    padding-right: 5px;
+}
+.post_tag a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.post_tag a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+.post_related {
+    text-align: right;
+    padding-right: 5px;
+}
+.post_related a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.post_related a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+.post_edit {
+    text-align: right;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom-style: none;
+    font-weight: bold;
+    color: #333;
+    padding-right: 5px;
+}
+.general_list{
+    padding-right: 5px;
+}
+.general_list a{
+    color:#CC6633;
+    text-decoration:none;
+}
+.general_list a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+.page_box ul{
+    direction:rtl;
+    height:17px;
+    margin:3px auto;
+    max-width:480px;
+    text-align:left;
+    width:90%;
+    list-style:none;
+}
+.page_box li{
+    float:right;
+    margin-right:5px;
+}
+.page_box {
+    font-weight: bold;
+    color: #FFF;
+    direction:rtl;
+    padding-right: 110px;
+    padding-top: 10px;
+}
+.page_box a{
+    color: #F3C026;
+    text-decoration:none;
+}
+.page_box a:hover{
+    color: #DB7708;
+    text-decoration:none;
+}
+.footer {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#000000 none repeat scroll 0 0;
+    clear:both;
+    color:#ACD7EE;
+    font-size:95%;
+    line-height:130%;
+    padding-bottom:10px;
+}
+.creadit {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:transparent url(http://mihanblog.com/public/public/user_data/user_files/97/289651/Dreamplace/bottom.jpg) repeat scroll 0 0;
+    color:#CCC;
+    font-size:85%;
+    height:100px;
+    line-height:120%;
+    margin:0 auto;
+    width:770px;
+    text-align:right;
+    direction:rtl
+}
+.creadit a{
+    color: #EE9B0D;
+    text-decoration:none;
+}
+.creadit a:hover{
+    color: #F3C12A;
+    text-decoration:underline;
+}
+
+
+
+.cblike{
+    margin:4px 0px;
+}
+.cblike a {
+    float:left;
+    padding:3px;
+    text-align:center;
+    font-size:12px;
+    color:#FFF;
+    display:block;
+    line-height:15px;
+    text-decoration: none;
+}
+
+
+
+
+.cblike a.clike_plus {
+    background-color:#009900 ; /*green #039B03*/
+
+    border-radius: 5px ;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    /*border:1px solid green;
+             border-right:0px;*/
+}
+.cblike a.clike_minus {
+    background-color:#CC0000;
+    border-radius: 5px ;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    /*border:1px solid red;
+             border-left:0px;*/
+}
+.cblike a.clike_minus:hover {
+    background-color:red;
+    text-decoration: none;
+}
+.cblike a.clike_plus:hover {
+    background-color:green;
+    text-decoration: none;
+}
+.cblike a span{
+    font-weight:bold;
+    font-size:13px;
+
+    color:#fff;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="td1">&nbsp;</td>
+<td class="td2">
+<div class="page">
+<div class="header">
+    <div class="title"><a href="../index.html">... پر از ناگفته  ام ...</a></div>
+    <div class="slogan">من زمینی نیستم...!</div>
+</div>
+<div class="content clearfix">
+
+
+<div class="left clearfix">
+    
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		        <h2><a href="../post/1.html">* به نام او... *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/03/22-08:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center; "><font style="color: rgb(153, 51, 0); direction: rtl; " size="5"><span style="font-weight: bold; "><span style="font-family: tahoma,arial,helvetica,sans-serif; "><font size="4"><br>آغاز می کنم با عنوانی از دوران نوجوانی و با هدفی خاص...</font></span></span></font><br><br><br><br><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; font-weight: bold; "><font size="3"><font size="2"><span style="font-weight: normal; ">بالاخره کار خود را کرد این هجوم <span style="color: rgb(0, 153, 0); ">رنگ </span>و <span style="color: rgb(0, 204, 204); ">فکر</span></span></font></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; font-weight: bold; "><font size="3"><br></font></p><font size="1"><font style="font-weight: bold; " size="3"><span style="color: rgb(255, 0, 0); ">هجوم </span>که می آرند <span style="color: rgb(51, 51, 255); ">منحل </span>می کنند هر چیزی غیر از <span style="color: rgb(204, 153, 51); ">خودشان </span>را...<br><br><br></font></font><font size="1"><font style="font-weight: bold; " size="3"><br><br><span style="color: rgb(0, 153, 0); ">*******<br><br><br></span></font></font></div><div style="text-align: center; "><br></div><div style="text-align: center; "><font size="2"><font size="3">...سلام...</font><br><br></font></div><font size="2"><br></font><font style="font-family: tahoma,arial,helvetica,sans-serif; " size="2"><br>سه نکته کوچیک:<br></font><font style="font-family: tahoma,arial,helvetica,sans-serif; " size="2"><br></font><br><font size="3">1-&nbsp; کپی از مطالب</font><font size="3"> حتی با ذکر منبع، به هیچ عنوان مجاز نیست. چون دست نوشته خودم و از زندگی خودم و یا زندگی دیگرانه و طبیعتا نباید کپی بشه.</font><br><font size="3">2-&nbsp; من نه دیده شدن می خوام و نه بالا رفتن آمار وب. من می خوام خونده بشم، فهمیده بشم، فکر بشم...</font><br><font size="3">3- لطفا کامنت های خصوصی و تبلیغاتی نذارین. اکثر کامنت های تبلیغاتی رو تایید نمی کنم.</font><br><font size="4"><font size="2"><font style="font-family: tahoma,arial,helvetica,sans-serif; " size="2"><br></font></font></font><div style="text-align: center; "><font size="3"><font style="font-family: tahoma,arial,helvetica,sans-serif; "><br>...ممنون</font>...</font><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="../post/1.html#commentlist" class="comment-link">نظرت...؟!(<script>setCommentCnt(1)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('1','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/182">* عزیزترین *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/10/11-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+<div style="text-align: center; ">
+<img style="width: 363px; height: 404px;" alt="http://koochegard.persiangig.com/image/mother/MOTHER%20u.jpg" src="http://koochegard.persiangig.com/image/mother/MOTHER%20u.jpg"><br><br><br><br><font style="font-weight: bold;" size="3">به رخ بکش مهربانی ات را<br>آنچنان که حسودی ام شود به خویش از داشتن همچون <span style="color: rgb(51, 204, 0);">تویی</span>...!<br><br><br>منت بگذار بخشنگی ات را<br>آنچنان که فکر نکنم وظیفه است خدمت بی شائبه ات...!<br><br><br>فریاد کن خستگی ات را<br>آنچنان که باور کنیم پنهان کردن ِ ناتوانی ات در تونایی های بی شمارت...!<br><br><br>مخفی نکن دردهای گریبان گیرت را<br>آنچنان که بدانیم نوبتی هم باشد نوبت فرمانروایی توست نه دوباره ما...!<br><br><br>بشکن سکوت پر حرفت را<br>آنچنان که به گوش همگان رسد؛ منتشر شود <span style="color: rgb(204, 102, 0);">ناگفته </span>های کتاب پرتجربه زندگی ات...!<br><br><br>افزون نکن آن خوبی های بی همتایت را<br>آنچنان که تلنگری باشد&nbsp;&nbsp; " <span style="color: rgb(0, 0, 153);">شاید </span>"&nbsp;&nbsp; کمی قدر دانیم...!<br><br><br>.<br>.<br>.<br><br><br><br>آه<br><br>شرمنده ام <span style="color: rgb(204, 51, 204);">عزیزترین</span><br><br><br>همانقدر که تو مـــــــــادر خیلی خـــــوبــــــی بودی، من فرزند خیلی بدی بودم...!<img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"></font><br><br><br><br><br><br><br><font style="font-weight: bold; color: rgb(153, 153, 0);" size="3">*******</font><br><div style="text-align: right; font-style: italic; "><font size="2"><br><br><br><br></font><font size="2"><span style="color: rgb(102, 0, 0);"><br></span><br><br><br></font><font size="2">* نامادری آزار جسمی میده اما <span style="color: rgb(0, 204, 204); ">مادر </span>آزار روحی!!!<br><br>کسی این حرف رو بهم زد!<br>می گفت به مادرش هم گفته! بیچاره مادرش که چنین حرفی شنیده!<br><br>چرا ما جوونا فکر می کنیم هرچیزی که خلاف حرف و عقیده ما باشه بده؟!<br>چرا انقدر زود ناراحت میشیم و بهمون برمی خوره؟!<br>چرا فکر نمی کنیم مادر و پدر آینه آینده ما هستن؟!<br>چرا فکر نمی کنیم اونا ده ها پیرهن بیشتر از ما پاره کردن، صدها اتفاق بیشتر دیدن و هزارها تجربه بیشتر دارن؟!<br></font><font size="2">چرا فکر نمی کنیم اگر حرفی می زنن ناشی از عشق، ناشی از دلسوزی، ناشی از مهر، ناشی از نگرانیه؟!</font><br><font size="2">چرا ما جوونا انقدر نسبت به خانواده مون بی وفاییم؟!<br><br>به فرض حرف اون جوون درست باشه اما خدایا،<span style="color: rgb(102, 0, 0);"> هیچ خانواده ای رو بی آزار روحی نکن !!!!!!!<br><br></span></font><font size="1">91/8/19</font><font size="2"><span style="color: rgb(102, 0, 0);"><br></span></font><br><font size="2"><br></font><div style="text-align: center;"><font style="color: rgb(0, 153, 0); font-weight: bold;" size="2">*******</font><br><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>AR-SA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]-->
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><span dir="RTL"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;B Nazanin&quot;; color: rgb(0, 176, 80);" lang="FA"><span dir="RTL"></span></span><font size="2">**
+هر کسی درکشو نداره که تو با سکوتت حرفتو بهش بزنی...</font></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><font size="2">این یه نصیحت از <span style="color: rgb(204, 51, 204);">عزیزترین </span>بود...</font></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><font size="2">یه نصیحت کاربردی...</font></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><font size="1">تابستان </font><font size="1">91</font></p>
+
+<font style="color: rgb(0, 153, 0); font-weight: bold;" size="2">*******</font><font size="2"></font></div><font size="2"><br><font size="1"></font>*** تولدت مبارک <span style="color: rgb(153, 51, 153); font-weight: bold;">عزیزترینم</span>...</font><img src="http://ghalamesiyah.mihanblog.com/public/public/rte/images_new/smiles/8.gif">
+
+
+
+
+</div></div>
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/182#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(182)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('182','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/181">* چشم های منتظر *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/10/4-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><img style="width: 576px; height: 384px;" src="http://cbi.webatu.com/photos/6a08a8cd5335.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">وعده دیدار کی؟!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">آن عطری که فقط برای تو نگه داشتم به نصف
+هم رسید بی آنکه استفاده شده باشد!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">اولین و آخرین بار در آن شب</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">در آن محیط
+امن</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">در آن <span style="color: rgb(153, 51, 0);">دیدار </span>استفاده کردم!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">وعده ی دیدار کی تا تمام نشده؟!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; "><font size="3">91/8/5</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font style="color: rgb(153, 153, 0); " size="3"><span style="font-weight: bold; ">*******</span></font><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">پرسید چند تا دوستم داری؟</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">گفتم <span style="color: rgb(204, 51, 204);">7 </span>تا!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">انتظار داشت بگم خیلی، یا
+اندازه دنیا!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">ناراحت شد!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">نمی دونست من <span style="color: rgb(204, 51, 204);">7 </span>رو خیلی
+دوست دارم، اندازه دنیا!!!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="1">91/8/2</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0);">*******</span></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); "></span><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">&nbsp;<span style="color: rgb(102, 0, 204);">بازگشتن </span>زیباست اگر بدانی رفتنی در پیش نخواهد بود
+دگر...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); ">*******</span></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">&nbsp;ای کاش همیشه معنای خداحافظ تا فردا بود نه
+فردا<span style="color: rgb(204, 0, 0);">ها</span>...</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="1">91/7/30</font></p>
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/181#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(181)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('181','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/179">* به خاطر وطنم *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">پنجشنبه 1391/09/30-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><img style="width: 268px; height: 358px; " src="http://mw2.google.com/mw-panoramio/photos/small/29915528.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">به دست هایش نگاه کرد</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">پرورده بودند اما کافی نبود.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">چشمهای زیادی، دعاکنان منتظر او بودند<br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">و اگر نمی شد <span style="color: rgb(51, 204, 255); ">عشقش </span>بُریده می شد!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">برقی در وجودش درخشید</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><span style="color: rgb(204, 51, 204); ">خدا </span>گویان قدم برداشت</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">به دست هایش نگاه کرد</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">نیرویی عجیب یافته بود:</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">عشق - خدا - مردم - <span style="color: rgb(153, 51, 0); ">وطن </span>- مردیت - غرور - امید - و باز
+هم <span style="color: rgb(153, 51, 0); ">وطن</span>!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">تیر را در کمان گذاشت.</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">چشم ها رابست</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">و بعد...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">چیزی یافت نشد، جز یک تیر که <span style="color: rgb(204, 0, 0); ">جانی </span>را در
+خود حمل کرده بود...</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><font style="font-weight: normal; " size="2">91/8/10</font></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><span style="font-weight: bold; color: rgb(153, 153, 0); ">*******</span><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: right; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: right; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">توفیق اجباری دارم که در هفته حداقل 6
+بار ببینم این اسطوره زیبا را!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">یکی از زیباترین مجسمه هایی که تا به حال دیدم:</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">مجسمه<span style="color: rgb(204, 102, 0); "> آرش
+کمانگیر</span> واقع در اتوبان همت، برج میلاد کبیر...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2">ساختار فوق العاده ای داره.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2"> حس یکی شدن ِ وجود آرش و تیر&nbsp; رو، عالی منتقل می کنه.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">انگار که پا و دستش تبدیل به تیر و کمان شده...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; font-weight: bold; color: rgb(0, 153, 0);"><font size="2">*******</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; font-weight: bold; color: rgb(0, 153, 0); "><font size="2"><br></font></p><span style="font-style: italic; "><font size="2">من از خواری، من از زاری، من از هر چه بیزاریست گریزانم!<br>منم دلبسته این خاک، من فرزند <span style="font-weight: bold; color: rgb(153, 0, 0); ">ایــــــــــــــــــــــــرانم!<br><br></span></font></span><p dir="RTL" style="text-align: center; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; font-weight: bold; color: rgb(0, 153, 0);"><font size="2">*******</font></p><p dir="RTL" style="text-align: center; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; font-weight: bold; color: rgb(0, 153, 0); "><font size="2"><br></font></p><font style="font-style: italic; " size="2">با
+ همه خوب و بدی که داری، با همه مشکلات و دردسر هایی که در تو موج می زنه، 
+با همه حرف هایی که همه می زنن، با همه پیشنهادهای هرچند شوخی گانه ای که 
+برای زندگی در جای دیگه میدن؛ هیچ وقت تنهات نمی ذارم!!! چون اسطوره هایی 
+چه خیالی و چه واقعی برای حفظ تو جون دادن، چون دوستت دارم</font><font style="font-style: italic; " size="2">، چون برام خاطره ای، چون عزیزترین و عزیزانم با تو انس گرفتن...<br>.<br>.<br>.<br>چون منو تحمل کری!<img src="http://ghalamesiyah.mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><br><br><br><span style="font-weight: bold;">راستی <span style="color: rgb(51, 51, 255);">یلداتونم </span>پیشاپیش مبارک</span>... قدر کنار هم بودن رو خوب بدونین... بدون شعار گفتم...<br></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/179#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(179)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('179','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/177">* بارانی ام کن *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/09/27-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><img class="decoded" alt="http://images.persianblog.ir/352274_toQlHyKE.jpg" src="http://images.persianblog.ir/352274_toQlHyKE.jpg"><font size="3"> <br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">بیا <span style="color: rgb(51, 204, 255); ">باران</span></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">می دانم دل تو هم گرفته از این <span style="color: rgb(102, 102, 102); ">بی وفایی</span> ها</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">ببار ای برف سپید پاکی ها</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">زمین جای بسی <span style="color: rgb(204, 102, 0); ">زیبا</span>ست</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br>
+</p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">گناه ِ آدم هاست که زمین زده اند زمین را</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br>
+  </font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">گناه آنهاست که از چشم انداخته اند او را...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(153, 153, 0); "><font size="3">*******</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; "><font size="2"><br></font></p>
+
+<font size="2"><span style="font-style: italic;">*</span></font><font size="2">دیروز؛ زودتر از خورشید، قبل از طلوع، تو هوای تاریک از خونه زدم بیرون به سوی کار همیشگی...</font>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">با سپیدی جالبی رو به رو شدم!</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2"><span style="font-style: italic;">&nbsp;<span style="color: rgb(51, 204, 255);"><span style="color: rgb(51, 102, 255);">برف، </span></span></span>خانواده ی</font><font size="2"><span style="font-style: italic;"><span style="color: rgb(51, 204, 255);"><span style="color: rgb(51, 102, 255);"> </span></span></span></font><font size="2"><span style="color: rgb(0, 204, 204);">بارون</span>...</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">اولین برف پاییزیتون بخیر... خیلی غافل گیر کننده بود اما جدید بود.</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">تهران که تا سفید شدن پیش رفت...</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">اگر در موقعیت مناسبی باشم تو این شرایط فقط راه میرم و
+<span style="color: rgb(153, 51, 153); ">فکر </span>می کنم و بعد غرق میشم...</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">اون وقته که جای آهنگ معین خالی میشه که:</font></p><span style="font-style: italic;"><br></span><p style="margin: 0cm 0cm 10pt; font-style: italic; color: rgb(102, 0, 0);" dir="rtl"><font size="2">بزن <span style="color: rgb(0, 204, 204);">بارون</span></font><font size="2">،</font><font size="2"><span style="color: rgb(0, 204, 204);"> </span>بزن خیسم کن، آبم کن، ترم کن</font></p>
+<p style="margin: 0cm 0cm 10pt; font-style: italic; color: rgb(102, 0, 0);" dir="rtl"><font size="2">کمک کن تازه بارون من غریبم پرپرم کن</font></p>
+<p style="margin: 0cm 0cm 10pt; font-style: italic; color: rgb(102, 0, 0);" dir="rtl"><font size="2">بزن آتیش به جونم شعله کن خاکسترم کن</font></p>
+<p style="margin: 0cm 0cm 10pt; font-style: italic; color: rgb(102, 0, 0);" dir="rtl"><font size="2">بذار سر روی دوشم سایه تو تاج سرم کن</font></p><p style="margin: 0cm 0cm 10pt; font-style: italic; color: rgb(102, 0, 0);" dir="rtl"><font size="2"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0);">*******</span></font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); "></span><br></font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">** مازیار از <span style="color: rgb(0, 204, 204);">باران </span>حس دارد!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">17 آهنگ مازیار فلاحی<font size="1">
+</font>رو بررسی کردم!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">تو 8تای اون از کلمه <span style="color: rgb(0, 204, 204);">بارون </span>استفاده کرده.</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">شاید به قول خودش:</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">یه نفر عاشق ِ عاشق...</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">عاشق ِ صدای <span style="color: rgb(51, 204, 255);">بارون</span>...</font></p><br><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); ">*******</span><br></font></p><br><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">*** تازگیا <span style="color: rgb(0, 204, 204);">بارون </span>رو اصلا دوست ندارم!!!&nbsp; ( <span style="color: rgb(51, 102, 255);">برف </span>رو ترجیح میدم! )<br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">ازش خاطره خوشایندی ندارم، علاوه بر این بهونه ایه که راه دیگه انتخاب کنه!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">آخه اهل قدم زدن زیر <span style="color: rgb(0, 204, 204);">بارون </span>نیست...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">.</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">.</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">.<br></font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">گفت چترتو باز کن.</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2"> یاد حرف سهراب افتادم؛ باز نکردم! لابد دلیلی داشته که گفته چترها را باید بست!<br>
+  </font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2">نزدیکم شد، چترشو گرفت روی سرم...</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="2"><span style="color: rgb(0, 204, 204);">بارون </span></font><font size="2">بهونه ای بود که با هم کوتاه مسیری رو زیر یک چتر بگذرونیم...</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2"><br>
+  </font></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/177#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(177)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('177','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/170">* عزیزک *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/09/20-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><img src="http://media.afsaran.ir/siVTR4_256.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">شیطان <span style="color: rgb(0, 153, 0); ">کوچولو</span>ی عسلی من!</font></p><span style="font-weight: bold; "><br></span>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">وقتی ابروهایت را بالا می اندازی و صدایم می کنی، مبهوت کار
+نگاره گر ازل می مانم که چگونه یکی را اینچنین <span style="color: rgb(51, 204, 255); ">فرشته </span>خویِ بی کینه می آفریند...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">وقتی از همه بریده بودم، نامه های پنهانی ِ تو، کلید نجاتم
+بود...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">وقتی چنگال فکر ِ نبودن، گلویم را روزانه بیش از پیش می فشرد،
+بودن ِ تو، شور ِ زندگی را در من احیا می کرد...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">چرا به دنبال راه های دور روم؟!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><span style="color: rgb(204, 0, 0); ">یار </span>در خانه و من گِردِ جهان می گردم؟!؟!؟!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><font style="font-weight: normal; " size="2">91/6/27</font></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(153, 153, 0); "><font size="3">*******</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><font size="2"><span style="font-style: italic; "><font size="1">با چند روز فاصله،</font> تولدت مبارک <span style="color: rgb(0, 102, 0); ">عزیزک</span>... <br>امیدوارم اون جور که باید برات می بودم، بوده باشم و در آینده هم باشم...<br><br><br></span></font><p dir="RTL" style="text-align: center; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; color: rgb(0, 153, 0); "><span style="font-weight: bold; ">*******</span></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><font size="2">یادت باشه به یادتم</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><font size="2">هر جا باشی تو یادتم</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><font size="2">یادم تورو <span style="color: rgb(102, 102, 102); ">فراموش</span> </font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><font size="2">یادم نکنی خاموش!</font></p>
+
+
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><font size="1">90/10/20<span style="font-weight: bold; "><br></span></font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; "><br></p>
+
+
+
+<div style="text-align: center; color: rgb(0, 153, 0); "><span style="font-weight: bold; ">*******</span><br><br></div><font size="2"><span style="font-style: italic;"><br>نمی دونم چی بگم دیگه.<br>فقط می دونم اگه نبود همه جا خیلی سوت و کور بود...</span><img style="font-style: italic;" src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font>
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/170#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(170)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('170','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/184">* مهربان ترین *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">چهارشنبه 1391/09/15-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><img style="width: 460px; height: 386px;" src="http://www.zarbolmasal.com/wp-content/uploads/2011/05/pray.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">در مقابل ِ تو سر خم
+می کنم</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">تو ای زیباروی ِ
+ازلی ِ من</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">ای مسخ کننده آن
+نگاهت</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">ای <span style="color: rgb(153, 0, 0);">معشوق ِ </span>نازکش ِ
+من</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">بوسه از رخ ِ یگانه ِ تو</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">اکسیر ِ جوانی ِ دلِ
+من</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">لمس ِ وجودِ نازنینت</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">عشق ِ تمام ِ زندگانی ِ من</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">ای <span style="color: rgb(153, 51, 0);">مهربان ترین ِ
+</span>مهربانان</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">ببخش کوتاهی ِ هماره ِ من</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; "><font size="3">91/8/15</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><span style="color: rgb(153, 153, 0); ">*******</span><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; "><font size="2"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">*
+عاشقانه هایم را بد معنا مکن!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">حافظ
+هم دم از می و مستی و پریشانی ِ زلف های نگار می زد!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">نگار
+<span style="color: rgb(0, 204, 204);">آسمانی </span>کجا و زمینی کجا؟!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right;"><font size="1">91/8/15</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="1"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); ">*******</span></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">** </font><font size="2">نبود ِ <span style="color: rgb(204, 0, 0);">تو ای مهربان ترین </span>با نبود ِ دیگران
+فرق داره.</font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">آنقدر که نبود ِ تو = نبود ِ من</font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">اما نبود ِ دیگران = عادت ِ من</font></p>
+<div style="text-align: right; ">
+
+</div>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">معادله ی به ظاهر ساده اما
+پیچیده ایست!!!</font></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2"><font size="1">91/8/15</font></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><font size="2">&nbsp;<span style="font-weight: bold; color: rgb(0, 153, 0);">*******</span></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); "><br></span></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">***</font><font size="2">دلم نمی خواد انسان باشم!</font>
+
+
+</p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="2">دلم می خواد <span style="color: rgb(153, 51, 153);">آدم </span>بشم...!</font></p>
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-style: italic; text-align: right; "><font size="1">91/7/28</font></p>&nbsp;<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/184#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(184)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('184','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/176">* بی عنوان *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/09/13-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br>
+</p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><img style="width: 456px; height: 314px;" alt="http://h1007.persiangig.com/other/fekretanhaeeman/z33.jpg" src="http://h1007.persiangig.com/other/fekretanhaeeman/z33.jpg"></p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br>
+</p>
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">وقتی اولین بار دیدمت، همان شبی بود که شارژ تلفنم تمام
+شد!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">قبل از آن زیاد درباره ات شنیده بودم اما به راستی شنیدن کی
+بُوَد مانندِ <span style="color: rgb(204, 102, 0); ">دیدن</span>؟!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">شاید قبلا هم دیده بودمت اما نفهمیدم!!!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">بعد تکرار شد!</font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">هی تو را دیدم</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">هی حس کردم</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">هی شگفت زده شدم!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">هر وقت دلم می گرفت صدایت می کردم و تو را با خود به
+خلوتگاه می بردم و بعد غرق آغوشت می شدم و دیگر هیچ نبود جز <span style="color: rgb(204, 51, 204); ">آرامش </span>محض...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">گاهی با خودم فکر می کنم آنقدر که من تو را اذیت کردم و تو
+صبوری...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">آنقدر که من اشتباه کردم و تو برطرف سازی...</font><font size="3"><br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">آنقدر که من بد بودم و تو سرشار ِخوبی...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3"> آنقدر که من خطا کردم و تو پنهان کاری...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"> آنـقدر که من اشک ریـختـم و تو دلـداری...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"> آنـقدر که من گناه کردم و تـو بـزرگـواری...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">آنقدر که من بچه بازی کردم و تو خدایی...</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">فعل یادم رفت!</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">" حقا که خدایا، خدایی... "<br></font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; "><font size="2">91/7/17</font></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font style="color: rgb(153, 153, 0); " size="3"><span style="font-weight: bold; ">*******</span></font><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; "><br></p><p dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; "><br></p><br style="font-style: italic;"><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">*</font><font size="2"><span style="color: rgb(153, 51, 153); "> عزیزترین </span>از کسی برام
+نقل کرد که همیشه 2 بار خدارو شکر کن.</font></p>
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">یک بار برای نعمت هایی که
+بهت داده...</font></p>
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">یک بار برای اینکه لیاقت
+شکر رو در وجودت قرار داده...</font></p>
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; color: rgb(102, 0, 204); font-style: italic;"><font size="2">خدایا شکرت، خدایا شکرت</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; color: rgb(102, 0, 204); font-style: italic;"><font size="2"><br></font></p>
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0);">*******</span></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); "></span><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">** همه دم می زنیم از عشق
+تو</font></p>
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">ولی یک لحظه نداریم مهر
+تو...</font></p>
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="1">91/7/28</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); ">*******</span></font></p><br style="font-style: italic;"><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">*** زندگی فعلیم شده مثل
+فیلم های پلیسی و ترسناک و پرخطر!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">چیزی، جایی، <span style="color: rgb(102, 102, 102); ">روزی </span>گم میشه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">کسی، <span style="color: rgb(102, 102, 102); ">روزی</span>، چیزی می بینه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><span style="color: rgb(102, 102, 102); ">روزی</span>، جایی، کسی دچار پیشامدی
+میشه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">کسی، <span style="color: rgb(102, 102, 102); ">روزی</span>، جایی مخفیانه
+وارد میشه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">چیزی، جایی، </font><font style="color: rgb(102, 102, 102);" size="2">روزی</font><font size="2"><span style="color: rgb(102, 102, 102);"> </span>دست کسی
+پیدا میشه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">کسی، <span style="color: rgb(102, 102, 102);">روزی</span>، کسی رو به بازی
+می گیره!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><span style="color: rgb(102, 102, 102);">روزی</span>، کسی، دچار حادثه ای
+میشه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">کسی، <span style="color: rgb(102, 102, 102);">روزی</span>، جوری خیانت می
+کنه!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="1">و....</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><span style="color: rgb(102, 102, 102);">روزی</span>، مسئله مشترک
+بین این ماجراهاست!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">آه. پلیس بازی رو بی خیال.
+از خیر سرنخ ها گذاشتم!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">اصلا خدایا </font><font size="2">سلیقه فیلم
+دیدنم عوض شده؛ نه فیلم پلیسی دوست دارم و نه به هیچ وجه ترسناک!!!</font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">میشه زندگیم بشه یکنواخت و
+بدون هیجان های اینجوری؟!؟!؟!؟</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><font size="2">درسته که هر کدوم از این جملات، یه داستان حقیقیه اما </font>می دونی خدا جون، من که
+گفتم تو امتحان دنیات تنبل ترین شاگردتم!</font></p><span style="font-style: italic;">
+
+
+
+</span><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 204, 204);">خــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــدا ..............</span><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">دیگه مـــــــــــردش نیستم...!!!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><font size="1">اما بی انصافی هم نکنم گاهی هم بی نهایت غرق خوشبختی میشم!</font><br></font></p>
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="1">91/7/23</font></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/176#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(176)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('176','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/175">* خیاط ازل *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/09/6-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="font-weight: bold; text-align: center; "><br></p><p style="font-weight: bold; text-align: center; "><img src="http://www.parkerfordchurch.com/blog/wp-content/uploads/2012/08/child_praying.jpeg" alt="" align="bottom" border="0" hspace="0" vspace="0"></p><p style="font-weight: bold; text-align: center; "><br></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">روزی زنی خیاط با <span style="color: rgb(0, 204, 204); ">عشق </span>پیراهن زیبایی برای
+فرزندش دوخت. </font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">بچه عاشقانه هنر مادرش را دوست می داشت.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br> </font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">بعد ازگذشت مدتی نخ های پیراهن شروع به
+سر شدن کردند.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"> اما مادر به موقع متوجه شد و با زدن گره ای ساده، مانع از بین رفتن
+لباس شد.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">غافل از آنکه...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br> </font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">فرزند وقتی گره را دید، گمان کرد جز زشتی
+و بیهودگی چیزی ندارد و آن را به هر ترتیبی بود باز کرد.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">تا اینکه از لباس دوخته شده با <span style="color: rgb(0, 204, 204); ">عشق </span>جز
+تکه ای نخ بی ارزش باقی نماند...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-weight: bold;"><font size="3">.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-weight: bold;"><font size="3">.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-weight: bold;"><font size="3">.<br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3"><br></font></p><span style="color: rgb(102, 0, 0); ">
+
+</span><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">هیچ وقت برای گره های زندگیت گله نکن!</font></p><span style="color: rgb(102, 0, 0); ">
+
+</span><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">یا حتی گاهی اوقات سعی نکن با چنگ و
+دندان آنها را باز کنی. </font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">شاید خدا آن گره ها را زده تا لباس
+زندگیت از بین نره.</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3"><br> </font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">ما نمی دانیم...</font></p><span style="color: rgb(102, 0, 0); ">
+
+</span><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(102, 0, 0); "><font size="3">"خیاط ازل" خود آگاه تر است!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">یادمان باشد</font></p><div style="text-align: center; "><font style="font-weight: bold; " size="3">
+
+</font><font style="font-weight: bold; " size="3">کاری نکنیم از زندگی داده
+شده با <span style="color: rgb(0, 204, 204); ">عشق</span>، جز روزگاری بی ارزش باقی بماند...<br><br><br><br></font></div>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; "><font size="2">بهمن 89 </font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center;"><font size="2"><span style="font-weight: bold; ">&nbsp;توضیح نوشت</span>: این نوشته رو&nbsp; از یک خواب</font><font size="2"> الهام گرفتم</font><font size="2">!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center;"><font size="2">از یک خوابِ مسخره <span style="color: rgb(51, 102, 102);">درس
+</span>گرفتم!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center;"><font size="2">از چیزهای پوچ و بی
+معنی هم میشه درس گرفت!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center;"><font size="2">برای خودم که جالب بود! </font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-weight: bold; color: rgb(153, 153, 0); "><font size="3">*******</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: right;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: right; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font size="2"><br></font></p><font style="font-style: italic;" size="2">* کربلا نرفتم، اما جایی که بویی از کربلا داشته رفتم!<br>جایگاه اون سرهای عزیز رو دیدم!<br>جایگاه شستشوی سرها!<br>پیش بهترین خواهر تاریخ رفتم!<br>آخ که چقـــــــــــــــــــــــدر غریبه!<br><br><br>&nbsp;روزای اصلی تموم شد. به این سرعت!<br>یه روزی هم چشم باز کنی می بینی عمرت تموم شده! به همین <span style="color: rgb(51, 102, 255);">سرعت</span>...!<br><br>با خودت خلوت کن...<br><br></font><br style="font-style: italic;"><font style="font-style: italic;" size="2">اونقدر که بایـــــــــــــــد، استفاده کردی؟!</font><font style="font-style: italic;" size="2"><br>
+</font><font style="font-style: italic;" size="2">اونقدر که </font><font style="font-style: italic;" size="2">بایـــــــــــــــد، کشـــــف کردی؟!</font><br style="font-style: italic;"><font style="font-style: italic;" size="2">اونقدر که </font><font style="font-style: italic;" size="2">بایـــــــــــــــد،</font><font style="font-style: italic;" size="2"> صداشون کردی؟!<br>اونقدر که </font><font style="font-style: italic;" size="2">بایـــــــــــــــد، آبرو جمع کردی؟!</font><font style="font-style: italic;" size="2"><br>اونقدر که </font><font size="2"><span style="font-style: italic;">بایـــــــــــــــد، به کمــال رفتی؟!</span><br style="font-style: italic;"><br style="font-style: italic;"><span style="font-style: italic; color: rgb(102, 0, 0);">من که نه... اصلا... حتی یه کم...!!!!!!!<br><br><br><br></span><span style="font-style: italic;">یه جمله جالب یکی از دوستان برام میل کرد که:</span><br style="font-style: italic;"><span style="font-style: italic;">" منتظران مهدی(عج) به هوش باشند که حسین را منتظرانش کشتند...</span></font> "<br><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic;"><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0);">*******</span></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); "></span><br></font></p><p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">** وقتی خیلی خسته میشم، وقت ِ خواب، بالش ِ زیر سرم رو بر می دارم!</font></p><p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">طعم سفتی، خواب ِ جالبی برام رقم می زنه!</font></p><p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">بمیرم آقا!</font></p><p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">چقدر <span style="color: rgb(204, 102, 0);">خسته </span>بودی که سفتی ِ نیزه رو بالش ِ زیر سرت کردی؟! <img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"></font></p><p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed; "><i><span style="font-size: 10pt; " lang="AR-SA"><br></span></i></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: center; font-style: italic; "><font size="2"><span style="font-weight: bold; color: rgb(0, 153, 0); ">*******</span><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">*** شهید ِ پیروز، حسین ِ مظلوم</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">اسطوره ی صبر، بانو زینب</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">آقای بی دستِ دستگیر، عباس ِ عزیز</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">جوان ِ شیرمرد، علی اکبر ِ دلیر</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">بیمار ِ خسته، سجاد ِ قوی</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">تنهای ِ اسیر، خانوم رقیه</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2">نوزاد ِ کبیر؛ علی اصغر ِ حبیب</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="1">و...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic;"><font size="2"><span style="color: rgb(102, 51, 102);">رهایم </span>نکنید...</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; text-align: right; font-style: italic; "><font style="font-style: italic;" size="2">خیلی روسیاهم اما انسانم!</font><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/175#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(175)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('175','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/188">* آقا دستم را بگیر *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/08/29-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center; ">
+<img style="width: 416px; height: 429px; " src="http://www.melatmarket.com/images/moharam1.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br></div><br><br><br><div style="text-align: center; font-weight: bold;"><font size="3">صدای جالبی در آن سیاهی ِ شب به گوش می رسید!<br>صدایی شبیه " <span style="color: rgb(153, 153, 153); font-weight: bold;">نِی </span>"<br>سوزناک اما دلنشین...<br><br><br>گوش هایش را تیز کرد<br>عجیب جالب می مانست!<br><br><br>به پشتی صندلی اش تکیه داد.<br>دستانش را زیر سرش قلاب کرد.<br>چشمانش را بست!<br><br><br>.<br>.<br>.<br><br><br>چشم که گشود در برهوت ِ بیابانی گم شده بود.<br><br>احساس تشنگی ِ بی سابقه ای می کرد اما <span style="color: rgb(0, 204, 204);">آبی </span>نبود؛ حتی سرابی هم دیده نمی شد!<br><br>زیر آفتاب ِ سوزان عرق می ریخت اما سایه ای نبود!<br><br><br>فریادش در سکوت ِ گوشخراش ِ بیابان مثل آهی در تنهایی بود!<br>مثل صدای یک ماهی در دریا!<br><br><br><br><span style="color: rgb(153, 0, 0);"><span style="color: rgb(51, 102, 255);">ترسید...</span><br><br></span><br>راه افتاد<br><br><br>از تپه ای عبور کرد...<br><br><br>از چیزی که می دید </font><font size="3"><span style="color: rgb(204, 102, 0);">خشکش </span>زد </font><font size="3">!<br><br><span style="font-weight: bold;">ترسناک ترین و خشن ترین و جنایی ترین فیلم ها دیگر برایش کمدی ای بچه گانه جلوه می کرد!</span><br><br><br><span style="color: rgb(102, 0, 0);">صدا به فریاد بدل شده بود...!</span><br><br><br><br><br>.<br>.<br>.<br><br><br><br>اَلسَّلامُ
+ عَلَى الْحُسَیْنِ وَ عَلى عَلِىِّ بْنِ الْحُسَیْنِ وَ عَلى اَوْلادِ الْحُسَیْنِ
+ وَ عَلى اَصْحابِ الْحُسَیْنِ<br>&nbsp;<br></font></div>
+ <p class="MsoNoSpacing" dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center; font-weight: bold;"><font size="3">اَللّهُمَّ
+ اجْعَلْ مَحْیاىَ مَحْیا مُحَمَّدٍ وَ آلِ مُحَمَّدٍ وَ مَماتى مَماتَ مُحَمَّدٍ
+ وَ آلِ مُحَمَّدٍ</font></p><p class="MsoNoSpacing" dir="RTL" style="direction: rtl; unicode-bidi: embed; text-align: center;"><font size="3">آمین</font><span style="font-size: 10pt; font-family: &quot;Tahoma&quot;,&quot;sans-serif&quot;;" lang="AR-SA"></span><b><span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;" lang="AR-SA"><br></span></b></p><br><font style="font-style: italic;" size="2"><br><br><br><br></font><div style="text-align: center;"><font style="color: rgb(153, 153, 0);" size="2"><font size="3"><span style="font-weight: bold;">*******</span></font></font><br></div><font style="font-style: italic;" size="2"><br><br><br><br><br>این ایام برای بیرون اومدن و هیئت رفتن نیست!<br>این ایام برای از این تکیه به اون تکیه رفتن، برای خوردن نذری ها نیست!<br>این ایام برای دنبال دسته های عزاداری رفتن نیست!<br>این ایام برای <span style="color: rgb(102, 102, 102);">لباس ِ </span>مشکی پوشیدن نیست!<br><br>این ایام برای آدمـــــــــــــــــــــــــــــــــــم شدنه!<br></font><font style="font-style: italic; " size="2">برای کشف اشک ریختنه نه خود اشک ریختن!</font><br><font size="2"><span style="font-style: italic;">برای مشکی پوش شدن ِ دل، نه لباس ِ ظاهر!</span></font><br><font style="font-style: italic;" size="2">برای فکر کردنه، برای به کمال رفتنه، برای <span style="color: rgb(102, 0, 204);">آبرو </span>جمع کردنه!<br><br>این ها همه تلنگری هستن که به خودمون بیایم. خود ِ واقعیمون... خود <span style="color: rgb(0, 204, 204);">خداییمون</span>!<br><br>خواهشا لااقل این ایام بیشتر حواستون باشه! بیشتر رعایت کنید...<br>خیلی آزارم میده دیدن جوونایی که تو این ایام دست از بعضی کارا بر نمی دارن!<br>دنبال دسته های عزاداری راه می افتن اما نه برای عزا بلکه...<br><br>بگذریم...<br>یادتون نره اون دنیایی هم هست و وقتی میگن حتی مادرت</font><span style="font-style: italic;">(نزدیک ترین و دلسوز ترین انسان ِ دنیاییت)</span><font style="font-style: italic;" size="2"> کاری برات نمی کنه؛ پس فقط این عزیزان می مونن...<br>&nbsp;قدرشونو بدونین، از الآن پیششون آبرو جمع کنین. <span style="color: rgb(102, 0, 0);">مراقب باشین زود دیر نشه...!<br><br></span></font><font style="font-style: italic;" size="2">این حرفا رو در درجه اول به خودم گفتم. <span style="color: rgb(0, 51, 0);">خود ِ خودم... </span></font><font style="font-style: italic; " size="2"><br><br><br>به امید شفاعت همه! &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">التماس دعا...</span><br><br><br></font><div style="text-align: center; color: rgb(0, 153, 0); font-style: italic; "><font size="2"><span style="font-weight: bold; ">*******<br></span></font></div><font style="font-style: italic;" size="2"><br></font><font style="font-style: italic;" size="2">
+از قیام تو پیام تو عیان است هنوز...<br><br></font><font style="font-style: italic;" size="2">یه درس بزرگ از آقا:<br>&nbsp;این جمله رو اگه اشتباه نکنم توی یه اتوبان دیدم... </font><br><br><font style="font-style: italic; color: rgb(51, 51, 255);" size="2">"امام حسین: مبادا بر کسی که جز خداوند یاوری ندارد، ستم کنی!</font><span style="color: rgb(51, 51, 255);">"</span><br><font style="font-style: italic;" size="2"><br>مبادا!<br>مبادا!<br>مبادا!</font><br><br><br><br><font size="2"><span style="font-style: italic;">چه صبری داره دل ِ شکسته ی بانو <span style="color: rgb(204, 102, 204);">زینب</span>...</span></font><br><br><font style="font-style: italic;" size="2">به راستی این <span style="color: rgb(204, 0, 0);">حسین </span>کیست که عالم همه دیوانه اوست؟!</font><br><br><br style="font-style: italic;"><div style="text-align: center; font-style: italic; color: rgb(0, 153, 0);"><font size="2"><span style="font-weight: bold; ">*******<br><br></span></font></div><br><font style="font-style: italic;" size="2">فیزیکال فارماسی!<br>چند نمره پایان ترم این درس در گرو امتحانیست که فردای عاشورا برگزار میشه! اون هم درسی که سختی برخی سوالاش مثال زدنی شده!<br>شما بگید؛ واقعا این <span style="color: rgb(102, 51, 102);">انصافه</span>؟!<img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"><br>این روزا وقت و حواسی برای درس خودندن هست؟!</font><br><br><font style="font-style: italic;" size="1">دلم گرفته از این بی انصافی...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; دعا کنید... دعــــــــــــــا...</font><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/188#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(188)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('188','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+            <h2><a href="http://ghalamesiyah.mihanblog.com/post/172">* جادوی لمس *</a></h2>
+
+        <div class="date">
+            <div class="writer">نوشته شده توسط :<a href="../post/author/815483.html">Sun </a></div>
+
+            <div class="time">دوشنبه 1391/08/22-09:00</div>
+
+
+
+        </div>
+        <br />
+
+
+        <div class="body">
+            <p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(255, 102, 0);"><img style="width: 266px; height: 322px;" src="http://www.persianpersia.com/images/mimage/145-12035.jpg" alt="" vspace="0" align="bottom" border="0" hspace="0"></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(255, 102, 0);"><font size="3"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(255, 102, 0);"><font size="3"><br></font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(255, 102, 0); "><font size="3">دستمو بگیر، گم نشم!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">نگاهت کردم!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">در دل خندیدم!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"> به شباهت حرف تو با
+<span style="color: rgb(102, 51, 255); ">بچه </span>ها!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">دستت را گرفتم!!!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><br></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">نگاهت کردم!&nbsp;</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3">شباهتی بین تو و بچه
+ها نبود!</font></p><p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><font size="3"><br></font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center;"><font size="3">از چیز جالبی پر شدم!</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; color: rgb(204, 0, 0); "><font size="3">غوغای درون...</font></p>
+
+<p dir="RTL" style="line-height: normal; direction: rtl; unicode-bidi: embed; font-weight: bold; text-align: center; "><br></p><div style="text-align: center; "><font size="2">91/7/23</font><br><br><br><br><br><br><div style="text-align: center; "><font size="3"><span style="font-weight: bold;"><span style="color: rgb(153, 153, 0);">*******</span><br></span></font><font style="font-style: italic;" size="2"><br><br><br></font><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">بال ندارم، اما <span style="color: rgb(0, 204, 204);">دست </span>دارم</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">دستمو بگیر تا بال در بیارم</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;">91/7/25</p><p dir="RTL" style="text-align: center; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; font-weight: bold; color: rgb(0, 153, 0);"><font size="2">*******</font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">ابراز محبتت را می بینم!</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">سعی می کنی <span style="color: rgb(102, 0, 204);">پنهانی </span>باشد اما غافلی از
+اینکه من خودم عمری در پنهان کردن محبت تلاش کردم. طوری که گاهی انگ بی احساسی
+و سنگ بودن خوردم!!!</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">نزدیک شدنت؛ تماس های مثلا بی قصد یا
+گهگاه حرف هایت</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">دیروز که گفتی کم پیدا شدم درحالی که
+زیادی پیدا هستم!</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">درست مثل آن اتفاق نادر و ناگهانی و جالب کنار آسانسور؛ گرفتن
+دست، گفتن اینکه پشتتم هر چند شوخی گانه، سر گذاشتن روی شانه!!!</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">با تو نبودم؛ با شما بودم!</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; color: rgb(102, 0, 0);"><font size="2">خواستم بگم دل به دل راه داره...</font></p>
+
+<p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="1">91/7/17</font><br></p><p dir="RTL" style="text-align: center; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic; font-weight: bold; color: rgb(0, 153, 0);"><font size="2">*******</font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">3 <span style="color: rgb(204, 102, 0);">محبتِ </span>یکسان از 3 کس در 1 زمان در حالی که فقط و فقط میتونستم به یکیش پاسخ بدم و می دونستم 2 نفر دیگه ناراحت خواهند شد!</font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="2">هر چند بعدش از انتخابم پشیمون نشدم...!</font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font style="font-style: italic;" size="2">اصلا شما بگید چی کار می تونستم بکنم؟!</font></p><p dir="RTL" style="text-align: right; line-height: normal; direction: rtl; unicode-bidi: embed; font-style: italic;"><font size="1">91/7/27</font><br></p></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+                <br>
+                <br>
+
+
+
+            <div class="PostCom"><a style="float: left; margin-right: 18px; margin-left: 21px; margin-top: 4px;" target="_self" href="http://ghalamesiyah.mihanblog.com/post/172#commentlist" class="comment-link">نظرت..؟!(<script>setCommentCnt(172)</script>)</a>&nbsp;
+
+                <div style="margin-top: -23px;"><script>mihanblogPostLike('172','like')</script></div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+                    <div class="post_category">
+                نوع مطلب :<a href="../post/category/5.html">من نوشته</a>&nbsp;
+            </div>
+        
+
+        
+
+
+        
+
+
+    
+<br />
+
+
+<!-- Comment -->
+
+
+<div>
+
+    <style>
+
+            /*** COMMENT BODY***/
+        .comment_body{
+            background: #C3DBB4;
+            margin:10px;
+            border-radius: 5px;
+            border-right:5px solid #a3bf91;
+            overflow:hidden
+        }
+
+
+
+        .comment .comment_reply {
+            background: #EDE574;
+            border-right: 5px solid #d4cd65;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 350px;
+            margin-top:10px;
+            overflow:hidden
+        }
+
+
+        .comment .name {
+            font-weight: 600;
+            color: #4E3E09;
+            padding-right: 5px;
+            text-align: right;
+            line-height: 26px;
+            float: right;
+        }
+
+
+        .comment .date {
+            font-size: 10px;
+            padding: 5px;
+            color: #7E7E7E;
+            float: left;
+        }
+
+
+        .comment .comemnt_web {
+            padding: 5px 0 5px 15px; color: #999; direction: ltr; text-align: left;
+
+        }
+
+
+        .comment .comemnt_web a {
+            color: #554c3d;
+            text-decoration: underline;
+        }
+
+
+
+        .comment_det{
+            border-bottom:1px solid #95ba9c;
+
+        }
+
+        .comment .name,.date,.comemnt_text,.comment_reply{
+            margin-right:3px;
+            padding-right:3px;
+
+        }
+
+            /**** COMMENT FORM ****/
+
+        .comment_form {
+            background: none repeat scroll 0 0 #95ba9c;
+            border-radius: 5px 5px 5px 5px;
+            border-right: 5px solid #6d9a77;
+            direction: rtl;
+            margin: 10px;
+            padding: 20px;
+        }
+
+
+
+        .comment_form label {
+            width: 100px;
+            display: block;
+            float: right;
+            text-align: left;
+            font-size: 11px;
+            color: #555;
+            padding-left: 10px;
+        }
+
+
+        .comment_form .comment_form_row {
+            margin: 3px 0;
+        }
+
+
+        #imageCodeWrapper .imageCode_input #imgstr {
+            font-size: 25px;
+            height: 34px;
+            width: 70px;
+        }
+
+        .comment_form_textbox {
+            width:240px;
+
+        }
+        .comment_form_textarea{
+            width:240px;
+        }
+        .comment_form .comment_form_textarea, .comment_form .comment_form_textbox {
+            border: 1px solid #C5C5C5;
+        }
+
+
+
+
+    </style>
+
+    </div>
+<!-- End Comment-->
+
+
+
+<BR />
+
+
+<br />
+
+
+
+</div>
+
+
+
+
+
+<div class="right clearfix">
+<h3>درباره وبلاگ:</h3>
+<div style="text-align:center;"><img src="../../static.mihanblog.com/public/user_data/web_photo/321/962232.jpg@5270"  /></div>
+<div class="nav">قبل از این که بخواهی در مورد من و زندگی من قضاوت کنی<br />
+کفشهای من را بپوش و در راه من قدم بزن.<br />
+از خیابانها، کوهها و دشت هایی گذر کن که من کردم.<br />
+اشکهایی را بریز که من ریختم...<br />
+دردها و خوشی های من را تجربه کن.<br />
+سالهایی را بگذران که من گذراندم<br />
+روی سنگهایی بلغز که من لغزیدم<br />
+دوباره و دوباره برپاخیز و مجدداً در همان راه سخت قدم بزن<br />
+همانطور که من انجام دادم!<br />
+<br />
+بعد، آن زمان است که می توانی در مورد من قضاوت کنی...<br />
+ <br />
+<br />
+<br />
+<br />
+(لطفا مطالب وب را حتی با ذکر منبع هم کپی نکنید؛ ممنون)</div>
+
+<br />
+<div style="text-align:center"><a href="../post/author/815483.html">Sun </a></div>
+<div class="nav"><a href="../index.html"><span>صفحه نخست</span></a></div>
+<div class="nav"><a href="mailto:sunysun92@yahoo.com"><span>پست الكترونیك</span></a></div>
+<div class="nav"><a href="javascript:messageForm()"><span>تماس با مدیر</span></a></div>
+<div class="nav"><a href="../post/rss/index.html"><span>ار اس اس </span></a></div>
+<div class="nav"><a href="../post/atom/index.html"><span>اتم</span></a></div>
+
+<br />
+
+
+
+
+    <h3>آرشیو:</h3>
+    <div class="nav">
+
+                    <a href="../post/archive/1395/10.html"> دی 1395</a><br />
+                    <a href="../post/archive/1395/7.html"> مهر 1395</a><br />
+                    <a href="../post/archive/1395/2.html"> اردیبهشت 1395</a><br />
+                    <a href="../post/archive/1394/8.html"> آبان 1394</a><br />
+                    <a href="../post/archive/1394/7.html"> مهر 1394</a><br />
+                    <a href="../post/archive/1394/5.html"> مرداد 1394</a><br />
+                    <a href="../post/archive/1394/3.html"> خرداد 1394</a><br />
+                    <a href="../post/archive/1393/12.html"> اسفند 1393</a><br />
+                    <a href="../post/archive/1393/8.html"> آبان 1393</a><br />
+                    <a href="../post/archive/1393/7.html"> مهر 1393</a><br />
+            </div>
+    <div class="nav"><a href="../post/archive.html"><b>لیست آرشیوها</b></a></div>
+    <br />
+
+
+
+
+    <h3>طبقه بندی:</h3>
+
+    <div class="nav">
+                    <a  class="clearfix" href="../post/category/5.html">من نوشته(94)</a>
+                    <a  class="clearfix" href="../post/category/6.html">خصوصی نوشته(1)</a>
+            </div>
+    <br />
+
+
+
+
+    <h3>آخرین پستها:</h3>
+    <div class="nav">
+                    <a  href="../post/266.html">*خواستن، توانستن نیست * </a><br>
+                    <a  href="../post/265.html">* حمد زمینی * </a><br>
+                    <a  href="../post/264.html">* ذهن درد * </a><br>
+                    <a  href="../post/263.html">* خاطره بازی * </a><br>
+                    <a  href="../post/260.html">* و عاشورایی دیگر * </a><br>
+                    <a  href="../post/259.html">* تهرانی بی تو 2 * </a><br>
+                    <a  href="../post/258.html">* تهرانی بی تو * </a><br>
+                    <a  href="../post/257.html">* تو ... تمام * </a><br>
+                    <a  href="../post/256.html">* تو... شروع * </a><br>
+                    <a  href="../post/255.html">* مسخ شدگان * </a><br>
+                    <a  href="../post/253.html">* این روزها * </a><br>
+                    <a  href="../post/252.html">*دل نبند * </a><br>
+                    <a  href="../post/247.html">* واقعیتی تلخ 3 * </a><br>
+                    <a  href="../post/245.html">* غرق در تو * </a><br>
+                    <a  href="../post/244.html">* تا اطلاع ثانوی تعطیل! * </a><br>
+            </div>
+    <div class="nav">
+        <b><a  href="../post/list.html">لیست آخرین پستها</a></b>
+    </div>
+    <br />
+
+
+
+
+    <h3>پیوندها:</h3>
+    <div class="nav">
+                    <a href="../../www.love-phobia.mihanblog.com/index.html" title=""  target="_blank">یابنده عشق</a>	<br />
+
+                    <a href="../../avazemashreghi.mihanblog.com/index.html" title=""  target="_blank">آواز مشرقی</a>	<br />
+
+                    <a href="http://labkhandeekhoda.blogfa.com" title=""  target="_blank">بانوی اردیبهشت</a>	<br />
+
+                    <a href="../../doorooghgoo.mihanblog.com/index.html" title=""  target="_blank">فائق</a>	<br />
+
+                    <a href="http://jebheyejonoob.blogfa.com/" title=""  target="_blank">سرزمین نور</a>	<br />
+
+                    <a href="http://manoagha.persianblog.ir/" title=""  target="_blank">آسمان همیشه ابری نیست</a>	<br />
+
+                    <a href="http://javdane91.blogfa.com/" title=""  target="_blank">همیشه در حرکت</a>	<br />
+
+                    <a href="../../www.technical-aviation.mihanblog.com/index.html" title=""  target="_blank">خلبانی و مهمانداری</a>	<br />
+
+            </div>
+    <div class="nav">
+        <a href="../link/index.html"><b>همه پیوندها</b></a>
+    </div>
+    <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h3>نویسندگان:</h3>
+    <div class="nav">
+                    <p><a href="../post/author/815483.html"><img src="../../static.mihanblog.com/public/user_data/user_photo/272/815483.jpg" style="width:16px;" /></a><a class="clearfix" href="../post/author/815483.html" >Sun (94)</a>	</p>
+            </div>
+    <br />
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+    <h3>آمار وبلاگ:</h3>
+    <div class="nav">کل بازدید : <script>getStatVar('total_view');</script></div>
+    <div class="nav">بازدید امروز :<script>getStatVar('today_view');</script></div>
+    <div class="nav">بازدید دیروز : <script>getStatVar('yesterday_view');</script></div>
+    <div class="nav">بازدید این ماه : <script>getStatVar('this_month_view');</script></div>
+    <div class="nav">بازدید ماه قبل : <script>getStatVar('last_month_view');</script></div>
+    <div class="nav">تعداد نویسندگان : <script>getStatVar('total_author');</script></div>
+    <div class="nav">تعداد کل پست ها : <script>getStatVar('total_post');</script></div>
+    <div class="nav">آخرین بازدید : <script>getStatVar('last_view_date');</script></div>
+    <div class="nav">آخرین بروز رسانی : <script>getStatVar('modify_date');</script></div>
+<br />
+
+
+
+
+<div align="center" ><br />
+<script type="text/JavaScript">
+//courtesy of zabet.ir
+function killCopy(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=killCopy
+document.onclick=reEnable
+}
+</script><br />
+<head><SCRIPT language=javascript><br />
+function noRightClick() {<br />
+if (event.button==2) {<br />
+alert(’راست كلیك در این صفحه به خاطر سوء استفاده ی كپی برداران ممنوع است.’)<br />
+}<br />
+}<br />
+document.onmousedown=noRightClick<br />
+</SCRIPT> </head>
+<center>
+<BR>
+<A href="http://html-codes.blogfa.com/cat-1.aspx" target=_blank>
+<STRONG></STRONG></A>
+</center>
+
+
+<!-- Start code By 20Tools.com --><script language="javascript" src="http://www.20tools.com/salavat/view.php?bg=ffffff&color=000000"></script><div style="display:none"><a href="http://www.mehrskin.com">ابزار و قالب وبلاگ</a><a href="http://www.20tools.com">بیست تولز</a><B><a href=http://www.20tools.com/salavat>کد صلوات شمار برای وبلاگ</a></B></div><!-- End code By 20Tools.com -->
+
+
+<script src="http://helptabriz.com/help/fa_left.js"></script>
+
+
+
+<center><a href="http://reza-tavakolfard.blogfa.com/category/38/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D8%AF-%D9%86%D9%88%D8%A7-%D8%B5%D9%88%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%88%D8%A8%D9%84%D8%A7%DA%AF-%D9%88%D8%B3%D8%A7%DB%8C%D8%AA" target="_blank" title="ÊÕæíÑ äæÇí ÇíÇå " rel="nofollow" ><img src="http://s5.picofile.com/file/8139392292/ro_siah.jpg" alt="ÊÕæíÑ äæÇí ÇíÇå" width="155" height="170" /></a></center>
+
+
+<!-- Nasr19.ir--><br> <script language="javascript" src="http://sound.nasr19.ir/index.php?id=3&
+mp3=http://vip.opload.ir/vipdl/93/4/reza2525/ro-siah.mp3&as=1&ar=1&volume=100"></script><br>
+<!-- start logo cod off http://reza-tavakolfard.blogfa.com/category/38/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D8%AF-%D9%86%D9%88%D8%A7-%D8%B5%D9%88%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%88%D8%A8%D9%84%D8%A7%DA%AF-%D9%88%D8%B3%D8%A7%DB%8C%D8%AA --><p align="center"><p align="center"><a href="http://reza-tavakolfard.blogfa.com/category/38/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D8%AF-%D9%86%D9%88%D8%A7-%D8%B5%D9%88%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%88%D8%A8%D9%84%D8%A7%DA%AF-%D9%88%D8%B3%D8%A7%DB%8C%D8%AA" target="_blank"><img border="0" src="http://8pic.ir/images/52150280600503974684.gif"  width="140" height="20" alt="ÏÑíÇÝÊ ˜Ï äæÇ ÕæÊí"></a></p><!--finish logo cod off http://reza-tavakolfard.blogfa.com/category/38/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D8%AF-%D9%86%D9%88%D8%A7-%D8%B5%D9%88%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%88%D8%A8%D9%84%D8%A7%DA%AF-%D9%88%D8%B3%D8%A7%DB%8C%D8%AA -->
+
+<br></a><a target="_blank" title="" 
+href="http://s5.picofile.com/file/8141835034/Ba_Roye_Siah_www_reza_tavakolfard_blogfa_com.mp3.html" rel="nofollow" >خدایا رهایمان مکن
+</a>
+</div>
+
+<br />
+
+
+
+
+<form id="frm-16076668925fd30ccca2e15" method="get" action="http://ghalamesiyah.mihanblog.com/post/search/fid/16076668925fd30ccca2e15"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+    <div class="search"><input type="text" value="" name="search_text"  class="text" /></div>
+    <div class="search_btn"><input type="submit" value="جستجو" class="btn" /></div>
+<input type="hidden" name="frm-id" value="16076668925fd30ccca2e15" id="frm-id" /></form><BR />
+<BR />
+
+<div class="admin" align="center" ><a href="../../www.admin.mihanblog.com/index.html">
+    <img src="http://mihanblog.com/public/public/images/logo/poweredby.gif" alt="Admin Logo" style="border:0px"/></a>
+</div>
+
+<br />
+<div class="logo" align="center" ><a href="../../www.themebox.mihanblog.com/index.html">
+    <img src="http://mihanblog.com/public/public/user_data/user_files/97/289651/logo.jpg" width="129" height="99" alt="themebox" style="border:0px"/></a>
+</div>
+<br />
+</div>
+
+
+</div>
+<div class="footer">    <div class="page_box">
+
+
+        <ul><li>تعداد کل صفحات:10&nbsp;</li><li><a href="3.html"><i>...</i></a>&nbsp;&nbsp;</li><li><a href="4.html"><span>4</span></a>&nbsp;&nbsp;</li><li><a href="5.html"><span>5</span></a>&nbsp;&nbsp;</li><li><a href="6.html"><span>6</span></a>&nbsp;&nbsp;</li><li><a href="7.html"><b>7</b></a>&nbsp;&nbsp;</li><li><a href="8.html"><span>8</span></a>&nbsp;&nbsp;</li><li><a href="http://ghalamesiyah.mihanblog.com/page/9"><span>9</span></a>&nbsp;&nbsp;</li><li><a href="http://ghalamesiyah.mihanblog.com/page/10"><span>10</span></a>&nbsp;&nbsp;</li></ul>
+
+
+
+    </div>
+</div>
+</div>
+<div class="creadit">The Theme Being Used Is MihanBlog Created By <a href="../../www.themebox.mihanblog.com/index.html">ThemeBox</a></div>
+</td>
+<td class="td3">&nbsp;</td>
+
+
+</tr>
+</table>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'ghalamesiyah.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,2216 @@
+<!DOCTYPE html PUBLIC 
+"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://exo-lover.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1878149*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[2]='24795';commentCnt[194]='1';commentCnt[197]='0';commentCnt[199]='0';commentCnt[200]='0';commentCnt[201]='2';commentCnt[202]='-';commentCnt[204]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[2]='109';
+mihanblogDisLikeArrCnt[2]='4';
+mihanblogLikeArrCnt[194]='2';
+mihanblogDisLikeArrCnt[194]='0';
+mihanblogLikeArrCnt[197]='4';
+mihanblogDisLikeArrCnt[197]='0';
+mihanblogLikeArrCnt[199]='4';
+mihanblogDisLikeArrCnt[199]='0';
+mihanblogLikeArrCnt[200]='7';
+mihanblogDisLikeArrCnt[200]='0';
+mihanblogLikeArrCnt[201]='1';
+mihanblogDisLikeArrCnt[201]='0';
+mihanblogLikeArrCnt[202]='3';
+mihanblogDisLikeArrCnt[202]='1';
+mihanblogLikeArrCnt[204]='4';
+mihanblogDisLikeArrCnt[204]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://exo-lover.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://exo-lover.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','143');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه 14 فروردین 1397');
+	
+	setStatVar('today_view','12');
+	setStatVar('yesterday_view','75');
+	
+	setStatVar('this_month_view','1622');
+	setStatVar('last_month_view','1870');
+
+	setStatVar('total_view','186981');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:03)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://exo-lover.mihanblog.com/statupdate/?data[refereruri]=http://evin1374.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607827019&data[hash]=a3f5a3db7c5720ddeb1314cc3820a920&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://exo-lover.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://exo-lover.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://exo-lover.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+    <head>
+<link href="http://uupload.ir/files/pn4o_9863.png" rel="shortcut icon">
+
+
+              <title>♬ Exo Lover ♬</title>        
+<meta http-equiv="Content-Type" content="text/html; 
+charset=utf-8">        <meta http-equiv="Content-Language" 
+content="fa">        <meta name="description" 
+content="" />        <meta 
+name="keywords" content="" />                
+<link rel="alternate" type="application/rss+xml" 
+title="♬ Exo Lover ♬"           href="http://exo-lover.mihanblog.com/post/rss/" />       
+ <link rel="alternate" type="application/atom+xml" 
+title="♬ Exo Lover ♬"           href="http://exo-lover.mihanblog.com/post/atom/" />      
+  </head>    <style>        
+*{font-family:
+;direction:rtl;color:#00000}        
+#sidebar{float:right;width:200px;margin-right:5px}        
+#content{float:left;width:500px;padding:20px}            
+#body{display:block;font-size:15px}                
+a,a:hover,a.visited{text-decoration:none}        .inbox{list-style:none;
+ padding:0 4px}        ul{padding:3px;margin:5px;}        h2{color:red} 
+       h2 a{color:#000000; font-size:25px; font-family: A Dast Nevis }    
+    h3{color:#000000; margin-top:0; font-size:25px; font-family:B Tabassom
+; text-align:center}        #header h1 a{font-size:35px; 
+font-family:A Dast Nevis; float:center; color:}                #header 
+h1{margin:0; height:50px; overflow:hidden}                .author_box 
+img{float:right;border:none;}        
+.mihan_logo{text-align:center;height:200px;margin-top:10px;    
+background: url() no-repeat top center;}        .slogan{            
+color:#000000; text-align:center; padding:170px 0;            
+background: url(http://uupload.ir/files/cfoe_header.png) repeat;            background: 
+expression(#000000);        }                
+#footer{font-size:9px;display:block;margin-top:50px; float:Right}        
+#footer a,#footer a:hover,#footer a:visited{color:#000000;}                
+.hr{border-top:1px solid #000000;height:1px;margin:3px;}                  
+    body{margin:0; background: #000000 url(http://uupload.ir/files/pjdq_tumblr_nvxz58pyju1uhebk5o1_500.gif) repeat fixed 
+center}                .sidebar_box{background:url(http://uupload.ir/files/86jv_kenaaarrree_vassattt.png); padding:10px 
+5px; line-height:5px; line-height:20px}        
+.sidebar_box_border{background-color:#ff0080; height:1px; display:block; 
+overflow:hidden}        .sidebar_box_border_div{width:185px;}        
+.seprator{margin-bottom:10px}        .main_menu{text-align:center}      
+  .blog_title{color:#000000}                #header{height:0px; 
+overflow:hidden; background: #000000 url() center repeat}        #body{ 
+           background: url(http://uupload.ir/files/d1q_vasaattt.png) repeat;            background:
+ expression(#000000);}        #blog_body{width:771px; 
+margin:200px auto; }        #footer_background{background: url(http://uupload.ir/files/rx5w_footer.png) repeat-x; padding-bottom:320px}            .clearfix {           
+ display:inline-block;        }        .clearfix:after {            
+clear:both;            content:'.';            display:block;           
+ height:0;            visibility:hidden;        }        * html 
+.clearfix {            height:20%;        }        .clearfix {          
+  display:block;        }    </style>    <body>        
+<div id="blog_body">                <div id="">       
+         <h1><p style="text-align:center; margin:0"><a 
+class="blog_title" href="http://exo-lover.mihanblog.com/Exo-Lover" 
+style="margin:10px"></a></p></h1>   
+         </div>                    <div 
+class="slogan">!WE ARE ONE </div>                        
+<div class="clearfix">                            <div 
+id="body" class="clearfix">                                        
+<div id="content">                           
+                         
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                                                            <script>mihanblogPostLike('2','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/2">✴ FIXED PoST ✴</a>                      
+              </h2>                                    <p 
+class="date">                                        
+سه شنبه 11 خرداد 1395 10:25 ق.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                    
+<b>ارسال شده در:</b>                                    
+                                        
+<a href="http://exo-lover.mihanblog.com/post/category/1">                                
+            ♫ EXO ♫                                     
+   </a>،                                    
+                                          
+                  <br>                                
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><div><img src="http://www.emoticons.ir/files/smiles/heart/9981.gif" style="font-family: Mihan-IransansLight; font-size: large;">&nbsp;<font face="Mihan-IransansLight" size="3">به نام آفریننده&nbsp;</font><img src="http://www.emoticons.ir/files/smiles/heart/9981.gif" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://uupload.ir/files/fsnx_ezgif-2-7126f753d9.gif" alt=""></div><div><img src="http://www.emoticons.ir/files/smiles/heart/9984.gif" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">سلام به تموم مراجعه کننده های عزیز</font><img src="http://www.emoticons.ir/files/smiles/heart/9984.gif" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://www.emoticons.ir/files/smiles/heart/9980.gif" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">به وبلاگ </font><font face="Mihan-IransansLight" size="4" color="#993399">اکسو لاور</font><font face="Mihan-IransansLight" size="3"> خیلی خوش اومدید.</font><img src="http://www.emoticons.ir/files/smiles/heart/9980.gif" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://cafe-webniaz.ir/pics/pi/piwebniaz%20%28140%29.gif" alt="cafe-webniaz.ir" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">مراجعه کننده های عزیز لطفا از مطالب وبلاگ کپی برداری نکیند که اصلا مجاز نیست.</font><img src="http://cafe-webniaz.ir/pics/pi/piwebniaz%20%28140%29.gif" alt="cafe-webniaz.ir" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://www.emoticons.ir/files/smiles/other/21877.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">انتقادات و پیشنهادات شما برای من و نویسنده هام ارزشن.</font><img src="http://www.emoticons.ir/files/smiles/other/21877.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://www.emoticons.ir/files/smiles/other/21922.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">نویسنده پذیرفته میشه.</font><img src="http://www.emoticons.ir/files/smiles/other/21922.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://www.emoticons.ir/files/smiles/heart/9933.gif" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">تبادل لینک هم انجام میشه.</font><img src="http://www.emoticons.ir/files/smiles/heart/9933.gif" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><img src="http://www.emoticons.ir/files/smiles/other/21871.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"><font face="Mihan-IransansLight" size="3">امیدوارم لذت کافی رو ببرید.</font><img src="http://www.emoticons.ir/files/smiles/other/21871.gif" alt="شکلک سایز کوچک,شکلک ریزه میزه,شکلک وبلاگ نویسی,شکلک های فانتزی" style="font-family: Mihan-IransansLight; font-size: large;"></div><div><span style="font-family: Mihan-IransansLight; font-size: large;">&nbsp;لوگوی وب:&nbsp; &nbsp;</span></div><div><a href="index.html" target="_blank"><img border="0" src="https://i.imgflip.com/1lv4vs.gif"  alt="Exo Lover"></a></div><div><p align="center"><input type="text" width="356" name="T1" size="15" value="<!-- start logo cod off http://Exo-Lover.mihanblog.com --><p align=&quot;center&quot;><p align=&quot;center&quot;><a href=&quot;http://Exo-Lover.mihanblog.com&quot; target=&quot;_blank&quot;><img border=&quot;0&quot; src=&quot;https://i.imgflip.com/1lv4vs.gif&quot; &nbsp;alt=&quot;Exo Lover&quot;></a></p><!--finish logo cod off http://Exo-Lover.mihanblog.com -->" dir="ltr"></p><p align="center"></p></div></div><div style="text-align: right;"><font face="Mihan-IransansLight" size="3"><br></font></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="3">*این وبلاگ به تازگی بازسازی شده و امیدوارم مثل قبل رجوع کننده هاش راضی باشن.</font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(2)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(2)</script> کامنتای اکسو الا                          
+      </a>                                                        
+        <br/>                                            
+                                    
+<b>برچسبها:</b>                                    
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/tag/EXO" >                                        
+EXO                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/Tao" >                                        
+Tao                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/Music" >                                        
+Music                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/1D" >                                        
+1D                                    </a>،       
+                                               
+                                                  <br/>           
+                                              
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               پنجشنبه 9 فروردین 1397  10:05 ق.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('204','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/204">رای گیری اکسو (جدید)</a>                      
+              </h2>                                    <p 
+class="date">                                        
+سه شنبه 14 فروردین 1397 08:10 ب.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+<div style="text-align: center;"><font face="Mihan-IransansLight" size="3">دوستان گلم سلللاااامممم</font></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="3"><br></font></div><div style="text-align: center;"><div><font face="Mihan-IransansLight" size="3">❌ رای گیری جدید داریم ❌&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">اکسو برای&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3">MTV MIAW 2018 K-POP&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3">نامزد شده&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">&nbsp;باید تو سایت رای بدیم و همزمان هشتگ هایی رو مثل آی هارت توییت کنیم.</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">۱. برای شرکت تو این رای گیری وارد سایت میشین&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><a href="http://miaw.mtv.com.br/categoria/explosao-k-pop" target="_blank" title=""><div><font face="Mihan-IransansLight" size="3">(کلیک)http://miaw.mtv.com.br/categoria/explosao-k-pop</font></div><div></div></a></div><div><font face="Mihan-IransansLight" size="3">۲. به ترتیب شماره ها اکسو رو پیدا میکنین و&nbsp; روی Vote کلیک میکنین و رایتون ثبت میشه</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">۳.با رفرش کردن صفحخ هم میتونین دوباره رای بدین .&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">نکته مهم&nbsp; : مهم تر از رای دادن زدن این هشتگا تو توییتره، هرچقدر واسه آی هارت تلاش کردین ۱۰ برابر واسه این تلاش کنیم.</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">هشتگا :</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">#PremiosMTVMIAW #MTVBRKPOPEXO</font></div><div><font face="Mihan-IransansLight" size="3">#EXO #엑소 #EXOL @weareoneEXO</font></div><div><font face="Mihan-IransansLight" size="3"><br></font></div><div><font face="Mihan-IransansLight" size="3">فایتینگ بیاین اینو ببریم ♥️</font></div></div>
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(204)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(204)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                         
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               چهارشنبه 15 فروردین 1397  09:57 ق.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('202','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/202">نظر سنجی مهم</a>                      
+              </h2>                                    <p 
+class="date">                                        
+دوشنبه 13 فروردین 1397 02:07 ق.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+
+<div style="text-align: center;"><font size="3" face="Mihan-IransansLight">سلام دوستان&nbsp;</font></div><div style="text-align: center;"><font size="3" face="Mihan-IransansLight">یه خبر خیلی خیلی خیلی خیلی خیلی خیلی مهم</font></div><div style="text-align: center;"><font size="3" face="Mihan-IransansLight">یه نظر سنجی مهم گزاشته شده و اکسو الان دومه و بی تی اس اول</font></div><div style="text-align: center;"><font size="3" face="Mihan-IransansLight">توروخدا برین رای بدین اکسو ببره</font></div><div style="text-align: center;"><font size="3" face="Mihan-IransansLight">اینم لینکش&nbsp;</font></div><div style="text-align: center;"><font size="3" face="Mihan-IransansLight">لطططططفففففاااااااااا رای بدین</font></div><div style="text-align: center;"><a href="https://www.billboard.com/articles/news/super-bowl/8098060/who-should-play-2019-super-bowl-vote" target="" title=""><font face="Mihan-IransansLight" size="7" color="#000000">لینک</font></a></div>
+
+
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(202)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(202)</script> ◇•◇                          
+      </a>                                                        
+        <br/>                                            
+                                    
+<b>برچسبها:</b>                                    
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%AE%D8%A8%D8%B1%20%D8%AE%DB%8C%D9%84%DB%8C%20%D9%85%D9%87%D9%85%20%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+خبر خیلی مهم اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/Exo" >                                        
+Exo                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/bts" >                                        
+bts                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D9%86%D8%B8%D8%B1%20%D8%B3%D9%86%D8%AC%DB%8C%20%D9%85%D9%87%D9%85" >                                        
+نظر سنجی مهم                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B4%D9%88%DB%8C%202019" >                                        
+شوی 2019                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B1%D8%A7%DB%8C%20%DA%AF%DB%8C%D8%B1%DB%8C" >                                        
+رای گیری                                    </a>،       
+                                               
+                                                  <br/>           
+                                              
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               یکشنبه 12 فروردین 1397  10:10 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('201','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/201">پخش فیلم سینمایی لی  ( کنگ فو یوگا)</a>                      
+              </h2>                                    <p 
+class="date">                                        
+شنبه 11 فروردین 1397 01:10 ب.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+<div style="text-align: center;"><font size="4" face="Mihan-IransansLight">سلام دوستان</font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="https://upload.wikimedia.org/wikipedia/fa/thumb/f/f6/Kung_Fu_Yoga_poster.jpeg/220px-Kung_Fu_Yoga_poster.jpeg " alt=""></div><div style="text-align: center;"><font size="4" face="Mihan-IransansLight">فیلم لی کنگ فو یوگا الان شبکه 5 تهران داره پخش میکنه&nbsp;</font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://cdn-tehran.wisgoon.com/dlir-s3/10531440506698367617.jpg " alt=""></div><div style="text-align: center;"><font size="4" face="Mihan-IransansLight">حتمااااا ببینیدددددد</font></div>
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(201)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(201)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                         
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               شنبه 11 فروردین 1397  01:55 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('200','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/200">نتیجه ی مسابقه ی کینگ پین Exo و TVXQ</a>                      
+              </h2>                                    <p 
+class="date">                                        
+سه شنبه 7 فروردین 1397 06:51 ب.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+<div style="text-align: center;"><font face="Mihan-IransansLight" size="4">سلام بهترینا</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">دیروز به طور بدی اکسو بدشانسی&nbsp;آورد</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/17.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">و&nbsp;</font></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">نتونست جایزه ی کینگ پین رو تصاحب کنه اما همین ک میدیدیم پسرا خیلی سرحالن و تلاش میکنن خودش یه نوع بردنه...</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">نتیجه ی بازی رو درس یادم نیست اما فک کنم&nbsp;</font></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">56 و 33 به نفع TVXQ&nbsp; تموم شد</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">اکسو الا خیلی تشویق کردن و بعد از بازی یه عالمه&nbsp;پست گزاشتن</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="4">عکساشونو آوردم برای دیدنشون برید ادامه مطلب</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/5.gif"></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://uupload.ir/files/j46r_picsart_03-27-07.42.09.png " alt=""></div>
+
+
+
+
+                                     
+                                               <br>               
+                                                 <a href='http://exo-lover.mihanblog.com/post/200'>ادامه مطلب</a>                                                                
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(200)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(200)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                                    
+<b>برچسبها:</b>                                    
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/exo" >                                        
+exo                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/TVXQ" >                                        
+TVXQ                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/KINGPIN" >                                        
+KINGPIN                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/EXO" >                                        
+EXO                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/CHEN" >                                        
+CHEN                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/CHANYEOL" >                                        
+CHANYEOL                                    </a>،       
+                                               
+                                                  <br/>           
+                                              
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               سه شنبه 7 فروردین 1397  07:23 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('199','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/199">وی لایو ویژه ی چانیول و چن</a>                      
+              </h2>                                    <p 
+class="date">                                        
+دوشنبه 6 فروردین 1397 10:22 ق.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+
+
+
+
+<div style="text-align: center;"><a href="index.html" target="_blank" title=""><font color="#000000"><div><font face="Mihan-IransansLight" size="3">سلام&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font></div><div><font face="Mihan-IransansLight" size="3">عنوانو خوندید دیگه؟</font></div><div><font face="Mihan-IransansLight" size="3">بله&nbsp; امروز اکسو و تی وی اکس کیو مسابقه ی کینگ پین دارن</font></div><div><font face="Mihan-IransansLight" size="3">&nbsp;EXO VS.TVXQ Kingpin Match<img src="http://mihanblog.com/public/public/rte/images_new/smiles/42.gif"></font></div><div><font face="Mihan-IransansLight" size="3">شروعش امروز 26 مارچ ساعت 10 به وقت کره<img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"></font></div><div><font face="Mihan-IransansLight" size="3">و میشه5:30 بعد از ظهر خودمون (فک کنم)<img src="http://mihanblog.com/public/public/rte/images_new/smiles/69.gif"></font></div><div><font face="Mihan-IransansLight" size="3">اینم عکسش&nbsp;</font></div><div><font face="Mihan-IransansLight" size="3"><img hspace="0" border="0" align="baseline" vspace="0" src="http://uupload.ir/files/11co_screenshot_2018-03-26-11-23-24.png " alt=""></font></div><div><font face="Mihan-IransansLight" size="3">حتما وی لایوشونو ببینید<img src="http://mihanblog.com/public/public/rte/images_new/smiles/11.gif"></font></div></font></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(199)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(199)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                                    
+<b>برچسبها:</b>                                    
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%DA%A9%DB%8C%D9%86%DA%AF%20%D9%BE%DB%8C%D9%86" >                                        
+کینگ پین                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/kingpin" >                                        
+kingpin                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D9%87" >                                        
+مسابقه                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%DA%86%D8%A7%D9%86%DB%8C%D9%88%D9%84" >                                        
+چانیول                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%DA%86%D9%86" >                                        
+چن                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D9%88%DB%8C%20%D9%84%D8%A7%DB%8C%D9%88" >                                        
+وی لایو                                    </a>،       
+                                               
+                                                  <br/>           
+                                              
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               دوشنبه 6 فروردین 1397  12:04 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('197','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/197">Happy birthday kim minseok</a>                      
+              </h2>                                    <p 
+class="date">                                        
+یکشنبه 5 فروردین 1397 05:41 ب.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+
+
+
+<div style="text-align: center;"><a href="index.html" target="" title=""><div><font face="Mihan-IransansLight" size="4">سلام</font></div><div><font face="Mihan-IransansLight" size="4"><img hspace="0" border="0" align="baseline" vspace="0" src="http://images6.fanpop.com/image/photos/37400000/hot-xiumin-exo-37470827-364-500.jpg " alt=""></font></div><div><font face="Mihan-IransansLight" size="4">خوبید؟</font></div><div><font face="Mihan-IransansLight" size="4"><img hspace="0" border="0" align="baseline" vspace="0" src="http://uupload.ir/files/hlxd_hot-xiumin-exo-37470827-364-500.jpg " alt=""></font></div><div><font face="Mihan-IransansLight" size="4"><img hspace="0" border="0" align="baseline" vspace="0" src="http://images6.fanpop.com/image/photos/37400000/hot-xiumin-exo-37470827-364-500.jpg " alt=""></font></div><div><font face="Mihan-IransansLight" size="4"><img hspace="0" border="0" align="baseline" vspace="0" src="http://images6.fanpop.com/image/photos/37400000/hot-xiumin-exo-37470827-364-500.jpg " alt=""></font></div><div><font face="Mihan-IransansLight" size="4">فردا تولد شیوئههههههه</font></div><div><font face="Mihan-IransansLight" size="4">تولدت مبارککک<img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"></font></div></a></div>
+
+
+
+
+
+
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(197)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(197)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                         
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               یکشنبه 5 فروردین 1397  07:21 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                                                                <script>mihanblogPostLike('194','like')</script>      
+     <div>                                    <h2>          
+                              <a 
+href="http://exo-lover.mihanblog.com/post/194">وی لایو سوهو</a>                      
+              </h2>                                    <p 
+class="date">                                        
+یکشنبه 27 اسفند 1396 12:03 ب.ظ                             
+       </p>                                </div>           
+                                 <b>نویسنده :</b>           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">             
+                       ツ♡사할♡ツ                             
+    </a>                                                        
+<br/>                                            
+                                         
+                   <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg"  /></a>                           
+     
+
+<div style="text-align: center;"><font face="Mihan-IransansLight" size="3">آنیانگ چینگوها</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="3">سوهو نیم ساعت پیش وی لایو داد با سهون و چانیول</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></div><div style="text-align: center;"><font face="Mihan-IransansLight" size="3">فقط نمیدونم&nbsp;چرا هر کاری میکنم سابتایتال نمیاد برام</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif"></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://uupload.ir/files/1hvc_screenshot_2018-03-18-12-08-02.png" alt=""></div>
+
+
+
+
+
+
+                                     
+                                               <br>               
+                                                                                                                 
+<br>                                <br>                    
+                                <a target="_self" href="javascript:newComment(194)">                                    
+<b>دیدگاه ها : </b>                                    
+<script>setCommentCnt(194)</script> نظرات                          
+      </a>                                                        
+        <br/>                                            
+                                    
+<b>برچسبها:</b>                                    
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D9%88%DB%8C%20%D9%84%D8%A7%DB%8C%D9%88" >                                        
+وی لایو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B3%D9%88%D9%87%D9%88" >                                        
+سوهو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B3%D9%87%D9%88%D9%86" >                                        
+سهون                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%DA%86%D8%A7%D9%86%DB%8C%D9%88%D9%84" >                                        
+چانیول                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D9%88%DB%8C%20%D9%84%D8%A7%DB%8C%D9%88%20%D8%A7%DA%A9%D8%B3%D9%88" >                                        
+وی لایو اکسو                                    </a>،       
+                                                                 <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%AC%D8%AF%DB%8C%D8%AF" >                                        
+جدید                                    </a>،       
+                                               
+                                                  <br/>           
+                                              
+                                                           
+                                        <b>آخرین ویرایش:</b> 
+                               یکشنبه 27 اسفند 1396  12:19 ب.ظ 
+                                                               
+<br><center><img src='http://uupload.ir/files/puv_vassate_vassaat.png'</a></center>        <br>                                                    
+                             
+                                           <br><br>         
+                                                                                 
+                                      تعداد کل صفحات
+ : 21                                
+                          <a href="http://exo-lover.mihanblog.com/page/1"> 
+<b>1</b></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/2"> 
+<span>2</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/3"> 
+<span>3</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/4"> 
+<span>4</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/5"> 
+<span>5</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/6"> 
+<span>6</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/7"> 
+<span>7</span></a>                            
+  
+                          <a href="http://exo-lover.mihanblog.com/page/8"> 
+<i>...</i></a>                            
+                           
+                                                     <div id="footer"
+ class="clearfix">                            <strong>       
+<font color="#000000" size="3px">  
+                       POWERED BY <a 
+href="http://www.exo-lover.mihanblog.com/">                          
+      <font color="purple" size="4px">E</font>xo-Lover.       
+                       <font color="purple" 
+size="4px">M</font>ihanblog.com</a>                           
+ </strong>                        </div>                    
+</div>                                            <div 
+id="sidebar">                            <form id="frm-16076186885fd2508018755" method="get" action="http://exo-lover.mihanblog.com/post/search/fid/16076186885fd2508018755"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search">      
+                           <div class="sidebar_box_border_div">   
+                                 <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">     
+                                   <input type="text" 
+name="search_text" style="width:90px"/>                              
+          <input type="submit" value="Search"/>  
+                                  </div>                          
+          <b class="sidebar_box_border" style="margin:0 
+1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+<input type="hidden" name="frm-id" value="16076186885fd2508018755" id="frm-id" /></form>                                                
+    <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                <div 
+class="sidebar_box_border_div">                                <b 
+class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <div class="sidebar_box">         
+                           <div style="text-align:center">        
+                                <div align="center" 
+style="border:none; width:160px; 
+overflow:hidden"><img src="../static.mihanblog.com/public/user_data/web_photo/627/1878149.jpg@6545"  /></div>    
+ <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/3a6r_l6.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->                      
+              <a 
+href="index.html">Ooپست الکترونیکoO</a><br/>             
+                           <a 
+href="javascript:messageForm()">Ooتماس با ماoO</a><br/>
+                                
+      <div 
+style="text-align:center">♫سلام به تمام دوستان عزیز♫<br />
+<br />
+<br />
+♫به وب اکسویی من خوش اومدید♫<br />
+<br />
+♫امیدوارم از مطالب وب لذت کافی رو ببریـــد♫<br />
+<br />
+<br />
+♫کپی از هر نوع راضی نیستم♫<br />
+<br />
+♫تهمت زدن و بی ادبی هم ممنوعه♫<br />
+<br />
+<br />
+♫توی چالش ها و مسابقه ها شرکت کنیـد♫<br />
+<br />
+♫ممنون از همتون♫<br />
+<br />
+<br />
+♫بهترین وبلاگو ندارم♫<br />
+<br />
+♫امـــــــــــــا وبلاگم جز بهتریناس...♫<br />
+<br />
+♫Fighting♫</div>          
+                              <div class="clearfix" 
+style="margin-right:70px">                                           
+ <a href="http://exo-lover.mihanblog.com/post/rss/"><img style="border:none; 
+float:right" 
+src="../static.mihanblog.com/public/images/icon/rss.gif"/></a>
+                                            <a 
+href="http://exo-lover.mihanblog.com/post/atom/"><img style="border:none; float:right" 
+src="../static.mihanblog.com/public/images/icon/atom.gif"/></a>
+                                        </div>                    
+                </div>                                </div>
+                                <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                            </div>                            
+<div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>             
+                                                        
+
+		<form id="frm-16076186885fd250801889e" method="post" action="http://exo-lover.mihanblog.com/poll/new/fid/16076186885fd250801889e/atrty/1607618688/avrvy/0/key/415e313e5e3eb87eed7a89d9d0542d35/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="374140" id="data[pollid]" />		                                <div 
+class="sidebar_box_border_div">                                    
+<b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border"        
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>      
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">             <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/4yf9_l7.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛نظرسنجی♛</h3>         
+                               کدوم عالیییی ترینه؟<br>             
+                                                    
+                   <label><input type="radio" name="data[answer]" value="v1">Blooming Day</label>                                     
+       <br>                                        
+                         
+                   <label><input type="radio" name="data[answer]" value="v2">Electric kiss </label>                                     
+       <br>                                        
+                         
+                   <label><input type="radio" name="data[answer]" value="v3">The Eve</label>                                     
+       <br>                                        
+                                            
+<input type="submit" value="همیییین"/>              
+                      </div>                                    
+<b class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+
+		<input type="hidden" name="frm-id" value="16076186885fd250801889e" id="frm-id" /></form>                                                  
+                                  <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                    
+<div class="sidebar_box_border_div">                              
+      <b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/xnoc_l8.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛اَبربرچسبها♛</h3>     
+                                          
+                                                     <a 
+href="http://exo-lover.mihanblog.com/post/tag/EXO" 
+style="font-size:1.59em">                        
+                        EXO                        
+                     </a>                                        
+       
+                                                     <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B1%D9%85%D8%A7%D9%86+%D8%A7%DA%A9%D8%B3%D9%88%DB%8C%DB%8C" 
+style="font-size:1em">                        
+                        رمان اکسویی                        
+                     </a>                                        
+       
+                                                     <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%B1%D9%85%D8%A7%D9%86" 
+style="font-size:1em">                        
+                        رمان                        
+                     </a>                                        
+       
+                                                     <a 
+href="http://exo-lover.mihanblog.com/post/tag/Tao" 
+style="font-size:1em">                        
+                        Tao                        
+                     </a>                                        
+       
+                                                     <a 
+href="http://exo-lover.mihanblog.com/post/tag/%D8%A7%DA%A9%D8%B3%D9%88" 
+style="font-size:2em">                        
+                        اکسو                        
+                     </a>                                        
+                                        
+</div>                                        <b 
+class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                            <div 
+class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                    
+<div class="sidebar_box_border_div">                              
+      <b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/zbks_l9.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛موضوعات وب♛</h3>     
+                                           
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/1">                                      
+          ♫ EXO ♫(72)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/19">                                      
+          ♫ EXO-CBX ♫(6)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/17">                                      
+          ♫ EXO-K ♫(26)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/16">                                      
+          ♫ EXO-M ♫(24)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/20">                                      
+          ♫ طنز اکسویی ♫(6)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/13">                                      
+          ♫ مسابقه و چالش برای کاربرا♫(12)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/18">                                      
+          ♫ چالش اکسو ♫(1)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/12">                                      
+          ♫ بیوگرافی ♫(10)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/10">                                      
+          ♫ عکس ♫(51)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/9">                                      
+          ♫ عکس متحرک ♫(8)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/8">                                      
+          ♫ عکس نوشته ♫(11)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/7">                                      
+          ♫ کلیپ ها ♫(12)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/6">                                      
+          ♫ خبــر ♫(26)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/5">                                      
+          ♫ مصاحبه ♫(2)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/15">                                      
+          ♫ نتایج نظر سنجی ♫(5)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/21">                                      
+          ♫ رمان ( جزیره ی عشق-آیلین ) ♫(8)        
+                                    </a>                          
+                  <br/>                                
+        
+                                    <a 
+href="http://exo-lover.mihanblog.com/post/category/14">                                      
+          رمـــــــان ♬I'm not Alone♬(حذف شده)(13)        
+                                    </a>                          
+                  <br/>                                
+                                    
+</div>                                    <b 
+class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                         
+               <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                            
+<div class="sidebar_box_border_div">                              
+                              <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/vtko_l5.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <div>                          
+                  <h3>♛نویسنده های گــل♛</h3>                        
+                                                  
+                      <a href="http://exo-lover.mihanblog.com/post/author/1375311"><img src="../static.mihanblog.com/public/user_data/user_photo/459/1375311.jpg" style="width:16px;" /></a>                           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1375311">                  
+                                  
+ツ♡사할♡ツ (117)                                
+                </a>                                            
+<br/>                                            
+                              
+                      <a href="http://exo-lover.mihanblog.com/post/author/1553505"></a>                           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1553505">                  
+                                  
+♡Lovely girl♡ (1)                                
+                </a>                                            
+<br/>                                            
+                              
+                      <a href="http://exo-lover.mihanblog.com/post/author/1551609"></a>                           
+                     <a href="http://exo-lover.mihanblog.com/post/author/1551609">                  
+                                  
+sadaf motamedi(1)                                
+                </a>                                            
+<br/>                                            
+                                        
+</div>                                    </div>            
+                        <b class="sidebar_box_border" style="margin:0
+ 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                                
+        <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                    <div 
+class="sidebar_box_border_div">                                    
+<b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/ozx_l10.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛صفحات جانبی♛</h3>     
+                                               
+                                    <a href="http://exo-lover.mihanblog.com/extrapage/race">
+                                                اطلاعات مسابقه    
+                                        </a>                      
+                      <br/>                                       
+             
+                                    <a href="http://exo-lover.mihanblog.com/extrapage/download">
+                                                دانلود هــــا    
+                                        </a>                      
+                      <br/>                                       
+             
+                                    <a href="http://exo-lover.mihanblog.com/extrapage/sharayet">
+                                                شرایط نویسندگی    
+                                        </a>                      
+                      <br/>                                       
+             
+                                    <a href="http://exo-lover.mihanblog.com/extrapage/profile">
+                                                پروفایل مدیــــر    
+                                        </a>                      
+                      <br/>                                       
+             
+                                    <a href="http://exo-lover.mihanblog.com/extrapage/instagram_id">
+                                                آیدی اینستاگرام ها    
+                                        </a>                      
+                      <br/>                                       
+                                         
+</div>                                        <b 
+class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                             
+           <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                           
+                         <div class="sidebar_box_border_div">     
+                               <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/89xk_l13.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛مطالب♛</h3>           
+                                            
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1397/1"> فروردین 1397</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/12"> اسفند 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/9"> آذر 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/5"> مرداد 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/4"> تیر 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/3"> خرداد 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/2"> اردیبهشت 1396</a>       
+                                     <br/>                        
+                               
+                             <a 
+href="http://exo-lover.mihanblog.com/post/archive/1396/1"> فروردین 1396</a>       
+                                     <br/>                        
+                                           
+             <a 
+href="http://exo-lover.mihanblog.com/post/archive"><b>همه  
+آرشیوها</b></a>                                    
+</div>                                    <b 
+class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                          
+                                                                        
+          <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                    <div 
+class="sidebar_box_border_div">                                    
+<b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <div class="sidebar_box">      <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/a19w_l12.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                   <h3>♛لینکستان وب♛</h3>        
+                                                    
+                            <a href="http://exolover01.blog.ir" 
+title="" target="_blank">                             
+                   * I ♥ EXO *                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../lovesstory.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   عشق=کره                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../korean-story1.mihanblog.com/index.html#" 
+title="" target="_blank">                             
+                   فن کلاب رمان دابل اس                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://blackxotion.mihanblog.com" 
+title="" target="_blank">                             
+                   اکیپ کیپاپر                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://www.kpopnews1.loxblog.com/" 
+title="" target="_blank">                             
+                   اخبار کی پاپ                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://dokhtarsheyton1383.blogfa.com/" 
+title="" target="_blank">                             
+                   ♫* یه وب باحال ♫*                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://storyland-kairia.mihanblog.com" 
+title="" target="_blank">                             
+                   ..:Story Land:..                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../exo-love1.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   EXO dream Island                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://btsfanfiction.tk" 
+title="" target="_blank">                             
+                   Bts FanFiction                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://freecods.mihanblog.com" 
+title="" target="_blank">                             
+                   کد های مجانی دخترانه                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://hanalittle-world.mihanblog.com/" 
+title="" target="_blank">                             
+                   دنـیای هآنآ                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../barbikalab.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   افسانه گوی شب                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../korean-photo.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   KOREAN PHOTO                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../twilight-sparkle-dash.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   EVER AFTER HIGH &amp; MONSTER HIGH                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://cafe-novels.blogfa.com" 
+title="" target="_blank">                             
+                   کافه رمان                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="../nafas-pardis.mihanblog.com/index.html" 
+title="" target="_blank">                             
+                   دخترونه های مــآ                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://nanoko.avablog.ir" 
+title="" target="_blank">                             
+                   کافه انیمه                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://exo-loveme.mihanblog.com" 
+title="" target="_blank">                             
+                   Negin                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://kimmaria82.mihanblog.com" 
+title="" target="_blank">                             
+                   STORY CITY                                       
+     </a>                                            <br/>  
+                                                          
+                            <a href="http://selectiacastel.mihanblog.com/" 
+title="" target="_blank">                             
+                   princessς੭appleς੭shy                                       
+     </a>                                            <br/>  
+                                                   
+                           <a 
+href="http://exo-lover.mihanblog.com/link/"><b>همه 
+لینکها</b></a>                                    
+</div>                                        <b 
+class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                                  
+      <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                                 
+                                                                       
+<div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                    
+<div class="sidebar_box_border_div">                              
+      <b class="sidebar_box_border" style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                        <div class="sidebar_box">               <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/kmr7_l14.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                                       <div>                      
+                      <h3>♛نوشته های تــازه♛</h3>                   
+                                        
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/204">                                   
+                 رای گیری اکسو (جدید)                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/202">                                   
+                 نظر سنجی مهم                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/201">                                   
+                 پخش فیلم سینمایی لی  ( کنگ فو یوگا)                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/200">                                   
+                 نتیجه ی مسابقه ی کینگ پین Exo و TVXQ                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/199">                                   
+                 وی لایو ویژه ی چانیول و چن                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/197">                                   
+                 Happy birthday kim minseok                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/194">                                   
+                 وی لایو سوهو                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/188">                                   
+                 طنز اکسویی                              
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/187">                                   
+                 طنز اکسویی                              
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/186">                                   
+                 عکس نوشته های باحال (4)                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/185">                                   
+                 عکس نوشته های باحال (3)                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/176">                                   
+                 تریلر فصل اول رمان (StuBBorN)                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/177">                                   
+                 عکس نوشته اکسو (: طنز: )                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/174">                                   
+                 تریلرفصل دوم داستان جزیره ی عشق                             
+                   </a>                                           
+     <br/>                                            
+               
+                                     <a 
+href="http://exo-lover.mihanblog.com/post/173">                                   
+                 عکس هایkoko bop                             
+                   </a>                                           
+     <br/>                                            
+                                       
+ </div>                                    </div>           
+                         <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                      
+                  <div class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                                        
+                                                   
+                     <div class="sidebar_box_border_div">         
+                           <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                <div class="sidebar_box">          <!-- start logo cod off http:// freetems.mihanblog.com --><p align="center"><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://uupload.ir/files/foos_l15.png"  alt=""></a></p><!--finish logo cod off http:// freetems.mihanblog.com -->
+                               <h3>♛آماروبلاگ♛</h3>           
+                             کل بازدید:<script>getStatVar('total_view');</script><br/>  
+                                      بازدیدامروز 
+:<script>getStatVar('today_view');</script><br/>                                        
+بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>                       
+                 بازدیداین ماه : <script>getStatVar('this_month_view');</script><br/>   
+                                     بازدید ماه قبل : 
+<script>getStatVar('last_month_view');</script><br/>                                    
+    تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>                  
+                      تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>   
+                                     آخرین بازدید : 
+<script>getStatVar('last_view_date');</script><br/>                                     
+   آخرین بروزرسانی : <script>getStatVar('modify_date');</script><br/>                   
+                 </div>                                        
+<b class="sidebar_box_border" style="margin:0 1px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 2px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                    <b class="sidebar_box_border" 
+style="margin:0 3px"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></b>
+                                </div>                            
+                                                  
+                                                          <div 
+class="seprator"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                                <div 
+class="sidebar_box_border_div">                                
+لوگوی وب:
+<!-- Start Code Banner By http://Exo-Lover.mihanblog.com --><p style="text-align:center"><a title="Exo-Lover" href="index.html" target="_blank"><img src="http://uupload.ir/files/2k60_logo.gif" alt="Exo-Lover" width="" height=""></a></p><!-- End Code Banner By http://Exo-Lover.mihanblog.com -->
+
+
+
+
+<style> img { border-radius: 4px; border: 1px solid #000000; max-width: 480px; margin: 2px; padding:0px; float:center; filter:alpha(opacity=100); -moz-border-radius: 6px; -webkit-border-radius: 6px; -webkit-transition:all 0.4s ease-in; -moz-transition:all 0.4s ease-in; -o-transition:all 0.4s ease-in; transition:all 0.4s ease-in; opacity:1.0; } img:hover{ border-radius: 7px; border: 1px solid #000; max-width: 480px; margin: 2px; padding:0px; float:center; filter:alpha(opacity=40); opacity:0.4; -moz-border-radius:6px;-webkit-border-radius:6px; box-shadow: 10px 10px 5px #000; -webkit-transition:all 0.4s ease-in; -moz-transition:all 0.4s ease-in; -o-transition:all 0.4s ease-in; transition:all 0.4s ease-in; } img:hover{ opacity:1;filter:alpha(opacity=100); -webkit-transform: rotate(-4deg); -moz-transform: rotate(-4deg); } img:out{ opacity:1;filter:alpha(opacity=100); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); } </style>
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://parlyn50.parsiblog.com">سایت بیوگرافی</a> - سایت بیوگرافی                            </div>                
+            <div class="sidebar_box_border_div">                  
+              <div class="mihan_logo"></div>                
+            </div>                    </div>                
+</div>            </div>                        <div 
+id="footer_background"><img 
+src="../static.mihanblog.com/public/images/empty.gif"/></div>
+                                        </div>                    
+        </body></html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'exo-lover.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,1333 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1068593*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[91]='0';commentCnt[92]='0';commentCnt[93]='0';commentCnt[94]='7';commentCnt[95]='11';commentCnt[97]='1';commentCnt[99]='6';commentCnt[100]='0';commentCnt[102]='1';commentCnt[103]='3';commentCnt[104]='1';commentCnt[105]='2';commentCnt[106]='2';commentCnt[107]='2';commentCnt[109]='1';commentCnt[110]='0';commentCnt[111]='0';commentCnt[112]='1';commentCnt[119]='0';commentCnt[126]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[92]='0';
+mihanblogDisLikeArrCnt[92]='0';
+mihanblogLikeArrCnt[94]='0';
+mihanblogDisLikeArrCnt[94]='0';
+mihanblogLikeArrCnt[97]='0';
+mihanblogDisLikeArrCnt[97]='0';
+mihanblogLikeArrCnt[99]='0';
+mihanblogDisLikeArrCnt[99]='0';
+mihanblogLikeArrCnt[104]='0';
+mihanblogDisLikeArrCnt[104]='0';
+mihanblogLikeArrCnt[105]='0';
+mihanblogDisLikeArrCnt[105]='0';
+mihanblogLikeArrCnt[106]='0';
+mihanblogDisLikeArrCnt[106]='0';
+mihanblogLikeArrCnt[107]='0';
+mihanblogDisLikeArrCnt[107]='0';
+mihanblogLikeArrCnt[109]='0';
+mihanblogDisLikeArrCnt[109]='0';
+mihanblogLikeArrCnt[110]='0';
+mihanblogDisLikeArrCnt[110]='0';
+mihanblogLikeArrCnt[112]='0';
+mihanblogDisLikeArrCnt[112]='0';
+mihanblogLikeArrCnt[126]='0';
+mihanblogDisLikeArrCnt[126]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://galexistar.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://galexistar.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','295');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','چهارشنبه 25 اردیبهشت 1398');
+	
+	setStatVar('today_view','4');
+	setStatVar('yesterday_view','28');
+	
+	setStatVar('this_month_view','1150');
+	setStatVar('last_month_view','849');
+
+	setStatVar('total_view','162875');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (05:10)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://galexistar.mihanblog.com/statupdate/?data[refereruri]=http://galexistar.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1392/2&data[sdate]=1607830718&data[hash]=95dc6ee8b5a3693a027e0fcfa0abd739&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://galexistar.mihanblog.com/post/archive/1392/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://galexistar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://galexistar.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<META NAME="DesignerUrl" CONTENT="http://Avazak.ir">
+<META NAME="Designer" CONTENT="AVAZAK">
+<link rel="alternate" type="application/rss+xml" title="دنیای عروسکی" href="../../rss/index.html" />
+<title>دنیای عروسکی - مطالب  اردیبهشت 1392</title>
+<link href="http://avazak.ir/Theme/style/626.css" type="text/css" rel="stylesheet">
+</style>
+
+</head>
+
+<body>
+<!--Design By : Avazak.ir-->
+<div align =center>
+<table border="0" width="1000" cellspacing="0" cellpadding="0" class="Avazak">
+<tr><td colspan="3" class="page" dir="rtl" >
+<div  class ="header" >
+<h1>دنیای عروسکی</h1>
+<p class="subtitle">دنیــ ـایی دیــگِر</p>
+<p class="menu"><a href="../../../index.html">صفحه اصلی</a> | 
+<a href="../../list.html">عناوین مطالب</a> | 
+<a title"ابزار تماس با ما" href="http://www.avazak.ir/abzar/contact1/mail/?email=javascript:messageForm()">تماس با من</a> | 
+<a title="قالب وبلاگ رایگان" href="http://avazak.ir/">قالب وبلاگ</a>
+</div>
+</td></tr>
+	<!-- end header -->
+<!--Design By : Avazak.ir-->
+<td width="200" valign="top" dir="rtl" >
+<div class="sidebar-l">
+
+<h3>آخرین مطالب</h3>
+<div class="Link"><a href="../../400.html">برای اولین بار</a></div>
+<div class="Link"><a href="../../399.html">هر قاصدکی یک پیامبر است</a></div>
+<div class="Link"><a href="../../398.html">خوشبختی کجاست؟</a></div>
+<div class="Link"><a href="../../397.html">در قیر شب</a></div>
+<div class="Link"><a href="../../396.html">گرانبهاترین دارایی زن</a></div>
+<div class="Link"><a href="../../395.html">ماهی های تازه</a></div>
+<div class="Link"><a href="../../394.html">اگر یک بار دیگر به دنیا میامدم</a></div>
+<div class="Link"><a href="../../392.html">سنگ های مرمر زندگی</a></div>
+<div class="Link"><a href="../../391.html">امید</a></div>
+<div class="Link"><a href="../../390.html">ملاقات با خدا</a></div>
+<div class="Link"><a href="../../389.html">به قول پرستو</a></div>
+<div class="Link"><a href="../../388.html">ویولن نوازی در مترو</a></div>
+<div class="Link"><a href="../../387.html">به همان اندازه</a></div>
+<div class="Link"><a href="../../386.html">مردم شهر</a></div>
+<div class="Link"><a href="../../385.html">قلب تو کجاست</a></div>
+<div class="Link"><a href="../../384.html">کفش های قرمز</a></div>
+<div class="Link"><a href="../../383.html">یادت هست که خدا</a></div>
+<div class="Link"><a href="../../382.html">بیست دلاری</a></div>
+<div class="Link"><a href="../../381.html">مخترع دینامیت</a></div>
+<div class="Link"><a href="../../380.html">دوستت دارم</a></div>
+<div class="FooterSid"></div>
+
+<h3>نویسندگان</h3>
+<div class="Link"><a href="../../author/913443.html">rojin </a></div>
+<div class="Link"><a href="../../author/1828548.html">niloofar         </a></div>
+<div class="Link"><a href="../../author/1828549.html">Aida         </a></div>
+<br>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<h3>لینک دوستان</h3>
+<div class="Link"><a href="http://salimshop.ir" target="_blank" title="زرگترین فروشگاه اینترنتی با ارائه ارزانترین قیمت." >خرید اینترنتی</a></div>
+<div class="Link"><a href="http://webposter.ir/webmasters" target="_blank" title="در آمد میهن بلاگی ها در تیر ماه 95 به 2245000 تومان رسید.
+
+    - در آمد هر پاپ آپ 30 ریال.
+    - در آمد بنر گرافیکی 600 ریال. (جدید)
+
+وب پوستر - هوشمند
+webposter.ir
+
+لطفا این لینک را تایید کنید." >کسب در آمد از سایت و وبلاگ</a></div>
+<div class="Link"><a href="http://eventfullife.mihanblog.com" target="_blank" title="" >خرید مانتو</a></div>
+<div class="Link"><a href="http://shop.panizz.com/product.php?id=31" target="_blank" title="سلام 
+لطفا این لینک را تایید کنید سپس لینک خود را در سایت زیر قرار دهید
+http://link.9rang.com
+ارادتمند" >آموزش بافتنی</a></div>
+<div class="Link"><a href="http://www.flynic.ir" target="_blank" title="ثبت و تمدید دامنه ملی" >ثبت دامین ir</a></div>
+<div class="Link"><a href="http://www.upsara.com/" target="_blank" title="با افتخار میزبان عکس ها و فایل های شما هستیم.
+آپلود رایگان و دائمی عکس
+
+با لینک کردن ما آدرس ما رو فراموش نکنید و از ما حمایت کنید
+
+باتشکر
+آپسرا" >آپلود عکس</a></div>
+<div class="Link"><a href="http://g-shock.ir" target="_blank" title="" >ساعت مچی جی شاک</a></div>
+<div class="Link"><a href="http://shope.eshopfa.net" target="_blank" title="فروشگاه اینترنتی,خرید اینترنتی" >فروشگاه بزرگ پایگان</a></div>
+<div class="Link"><a href="http://grinshop.ir/products/view/529/" target="_blank" title="" >روش ترک سیگار</a></div>
+<div class="Link"><a href="http://www.buyvpn300.in" target="_blank" title="با سلام....
+ 
+وب خیلی خوبی داری . 
+خوشحالم که وبت همیشه به روز هست.
+
+اگه میخوای فیلترشکن خوب بگیری یه سر به سایت ما بزن
+
+http://buyvpn300.in
+
+همیشه موفق باشی" >خرید vpn</a></div>
+<div class="Link"><a href="../../../linkdaily/index.html">آرشیو پیوندهای روزانه</a></div>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+
+<h3>پیوندها</h3>
+<div class="Link"><a href="http://dreamsh.mihanblog.com/" title="" target="_blank" >Dreams of heart</a></div>
+<div class="Link"><a href="http://www.asheghane.net/" title="" target="_blank" >سایت عاشقانه</a></div>
+<div class="Link"><a href="../../../../yek-zan.mihanblog.com/index.html" title="" target="_blank" >ܓܨ ❤❤ بـه رنگِ آرامـش ❤❤ܓܨ</a></div>
+<div class="Link"><a href="http://www.padrchat.cf/chat" title="" target="_blank" >[_[PADR CHAT]_]</a></div>
+<div class="Link"><a href="http://julistars.blogfa.com/" title="" target="_blank" >Like a Song</a></div>
+<div class="Link"><a href="http://homelesses.blogfa.com/" title="" target="_blank" >خلوتگاه</a></div>
+<div class="Link"><a href="http://man4563.blogfa.com/" title="" target="_blank" >رویای عروسکی</a></div>
+<div class="Link"><a href="http://dreamboy76.blogfa.com/" title="" target="_blank" >قلبی خسته از تپیدن ...</a></div>
+<div class="Link"><a href="http://5000chistan.blogfa.com/" title="" target="_blank" >♡❤ چیستان های ناب ❤♡</a></div>
+<div class="Link"><a href="http://bahareasheq.blogfa.com/" title="" target="_blank" >رفیق تنهایی</a></div>
+<div class="Link"><a href="http://www.nilootara.blogfa.com/" title="" target="_blank" >【ツ】دو دختر با یک جعبه آرزو【ツ】</a></div>
+<div class="Link"><a href="http://parisa78sh.blogfa.com/" title="" target="_blank" >دلنوشته های دختر مغرور</a></div>
+<div class="Link"><a href="http://www.lahzehai.blogfa.com/" title="" target="_blank" >لحظه هایی</a></div>
+<div class="Link"><a href="http://www.girlishwishes.blogfa.com/" title="" target="_blank" >✿◕ ‿ ◕✿دخترونه های من✿◕ ‿ ◕✿</a></div>
+<div class="Link"><a href="../../../../pictureclub.mihanblog.com/index.html" title="" target="_blank" >picture club</a></div>
+<div class="Link"><a href="http://alone-girl76.blogfa.com/" title="" target="_blank" >•●❤●•سکوت تنهایی•●❤●•</a></div>
+<div class="Link"><a href="../../../../love-set.mihanblog.com/index.html" title="" target="_blank" >کوچه بــاغ پـــــائــــیــــزی...!</a></div>
+<div class="Link"><a href="http://link118.com" title="" target="_blank" >تبادل لینک</a></div>
+<div class="Link" style="font-size:7pt">
+<a title="قالب میهن بلاگ" href="http://avazak.ir/tag/قالب-میهن-بلاگ/" target="_blank">قالب میهن بلاگ</a>|<a href="http://tools.avazak.ir/theme/avazak/626/قالب-وبلاگ-سه-ستونه-عاشقانه.php" title="قالب وبلاگ عاشقانه" target="_blank">قالب وبلاگ عاشقانه</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://thailandnets.ir/" title="تور تایلند" target="_blank">تور تایلند</a>|<a href="http://www.pasargadtabac.com/shop-pip" title="پیپ" target="_blank">پیپ</a></div><div class="Link" style="font-size:7pt">﻿<a href="http://www.iranhafez.com/%D9%81%D8%A7%D9%84-%D8%AD%D8%A7%D9%81%D8%B8/" title="فال حافظ" target="_blank">فال حافظ</a></div><div class="Link"><a target="_blank" href="http://Avazak.ir">گالری عکس های زیبا</a></div>
+<div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+<!--Design By : Avazak.ir-->
+<h3>برچسب ها</h3>
+<span dir="ltr">
+<div class="Link"><a href="../../tag/سهراب+سپهری.html">سهراب سپهری</a></div>
+<div class="Link"><a href="../../tag/هشت+کتاب.html">هشت کتاب</a></div>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<h3>سایت آوازک</h3>
+<div class="Link" style="font-size:7pt">﻿<a href="http://zoraq.com/hotels?utm_source=website&utm_medium=banner&utm_campaign=zoraq" title="رزرو هتل" target="_blank">رزرو هتل</a>|﻿<a href="https://www.jobrina.com/threads/249" title="پله گرد دوبلکس" target="_blank">پله گرد دوبلکس</a></div>
+<div class="Link" style="font-size:7pt">﻿|﻿<a href="https://darhand.com/representation/" title="مکمل بدنسازی" target="_blank">مکمل بدنسازی</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://gallery.avazak.ir" title="عکس جدید" target="_blank">عکس جدید</a>|﻿<a href="http://www.asaldl.com/tag/علی-صادقی" title="علی صادقی" target="_blank">علی صادقی</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://www.bartarinha.ir/fa/news/109857/8-%D8%AA%D9%88%D8%B5%DB%8C%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3-%D8%A7%D9%88%D9%84%DB%8C-%D9%87%D8%A7" title="بوتاکس" target="_blank">بوتاکس</a>|<a href="https://taghirasion.com/tag/آشپزخانه/" title="آشپزخانه" target="_blank">آشپزخانه</a></div>
+<div class="Link" style="font-size:7pt"><a href="https://www.iran-booking.com/" title="رزرو هتل" target="_blank">رزرو هتل</a></div><div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<h3>طراح قالب: آوازک</h3>
+<div style="text-align: Center"  >
+[ <a title="قالب های آوازک" href="http://Avazak.ir/">طراح قالب: <a tite="ابزار وبلاگ نویسی" href="http://Avazak.ir">آوازک</a> ]<br>
+<div class="FooterSid"></div>
+</td>
+	<!-- end sidebar-l -->
+<!--Design By : Avazak.ir-->
+<td width="550" valign="top" dir="rtl" >
+<div class="bodyposts">
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<a name="126"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/126">در سینه ات نهنگی میتپد</a></h2>
+<div class="Content"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><P><FONT color=#993399 size=2>این که مدارم به سینه ات میکوبد،قلب نیست؛</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>ماهی کوچکی است که دارد نهنگ میشود.</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>ماهی کوچکی که طعم تنگ ازارش میدهد</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>و بوی دریا هوایی اش کرده است...</FONT></P><br><a href='http://galexistar.mihanblog.com/post/126'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <br></div>
+<div class ="date">
+<p class="r">[ دوشنبه 30 اردیبهشت 1392 ]  [ 10:19 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(126)">[ نظرات(<script>setCommentCnt(126)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="119"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/119">اندیشه های زرین انیشتین2</a></h2>
+<div class="Content"><P><FONT color=#993399 size=2>انسان هایی که همچون ما به فیزیک باور دارند،میدانند</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>که تمایز بین گذشته،حال و آینده تنها توهمی لجوجانه است.</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><IMG src="http://oshelam.persiangig.com/image/joda%20saze%202/e18e00986762y2z65xa8lk.gif"></P>
+<P>&nbsp;</P>
+<P><FONT color=#993399 size=2>باید فرصت های زندگی خویش را بین معادلات ریاضی و سیاست تقسیم کرد،</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>ولی معادلات به نظر من خیلی مهم تر از سیاست است.</FONT></P>
+<P>&nbsp;</P>
+<P><IMG src="http://oshelam.persiangig.com/image/joda%20saze%202/e18e00986762y2z65xa8lk.gif"></P>
+<P>&nbsp;</P>
+<P><FONT color=#993399 size=2>بهترین های زندگی آن چیزهایی نیست که با پول بتوان به دست اورد.</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><IMG src="http://oshelam.persiangig.com/image/joda%20saze%202/e18e00986762y2z65xa8lk.gif"></P>
+<P>&nbsp;</P>
+<P><FONT color=#993399 size=2>نمیشود عادت زشت گربه در شکار پرنده را از سرش انداخت.</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><IMG src="http://oshelam.persiangig.com/image/joda%20saze%202/e18e00986762y2z65xa8lk.gif"></P>
+<P>&nbsp;</P>
+<P><FONT color=#993399 size=2>هر خاطره ای رنگی از هستی اکنون ما،یعنی از دیدگاه فریبنده است.</FONT></P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/5.html">
+سخن بزرگان</a>، <br></div>
+<div class ="date">
+<p class="r">[ یکشنبه 29 اردیبهشت 1392 ]  [ 02:22 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(119)">[ نظرات(<script>setCommentCnt(119)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="112"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/112">مهربانی</a></h2>
+<div class="Content"><P><FONT color=#660000 size=2>دخترک برخلاف همیشه که به هر رهگذری میرسید</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>استین لباس او را میگرفت تا یک بسته ادامس به او</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>بفروشد،این بار رو به روی زنی که روی صندلی پارک</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>نشسته و نوزادش را در اغوش گرفته بود،</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>ایستاده بود و او را نگاه میکرد.</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>گاه گاهی که زن به نوزادش لبخند میزد،لب های</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>دخترک نیز بی اختیار از هم باز میشد.</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>مدتی گذشت...دخترک از جعبه ادامس،بسته ای</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>را برداشت و جلوی زن گرفت.</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>زن رو به سمت دیگری کرد و گفت:برو بچه،ادامس نمیخوام.</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>دختر گفت:بگیر،پولی نیست...</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><STRONG><FONT color=#660000 size=2>بیایید از همین امشب یک قانون جدید وضع کنیم:</FONT></STRONG></P>
+<P><STRONG><FONT color=#660000 size=2></FONT></STRONG>&nbsp;</P>
+<P><STRONG><FONT color=#660000 size=2>«همیشه سعی کنیم اندکی از حد لازم مهربان تر باشیم.»</FONT></STRONG></P>
+<P>&nbsp;</P>
+<P><STRONG><FONT color=#660000 size=2>جی.ام.باری</FONT></STRONG></P>
+<P><STRONG><FONT color=#660000 size=2></FONT></STRONG>&nbsp;</P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ چهارشنبه 25 اردیبهشت 1392 ]  [ 06:41 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(112)">[ نظرات(<script>setCommentCnt(112)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="111"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/111">شکست وجود ندارد!</a></h2>
+<div class="Content"><P><FONT color=#330033 size=2>روزی خبرنگار جوانی از«<STRONG>توماس ادیسون</STRONG>»مخترع بزرگ پرسید:</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>«اقای ادیسون،شنیده ایم که برای اختراع لامپ،تاکنون تلاش های</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>زیادی&nbsp;کرده اید و میکنید،اما گویا موفق نشده اید!چرا هنوز،با وجود </FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>بیش از 900 بار شکست،همچنان به فعالیت خود ادامه میدهید؟!»</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>ادیسون با لحنی خونسرد و مطمئن جواب داد<STRONG>:«ببخشید اقا!من</STRONG></FONT></P>
+<P><STRONG><FONT color=#330033 size=2></FONT></STRONG>&nbsp;</P>
+<P><FONT color=#330033 size=2><STRONG>900 بار شکست نخورده ام،بلکه 900 روش یاد گرفتم که لامپ</STRONG></FONT></P>
+<P><STRONG><FONT color=#330033 size=2></FONT></STRONG>&nbsp;</P>
+<P><FONT color=#330033 size=2><STRONG>چگونه ساخته نمیشود.»</STRONG></FONT></P>
+<P><STRONG><FONT color=#330033 size=2></FONT></STRONG>&nbsp;</P>
+<P><FONT color=#330033 size=2>اشخاص عادی،با تجربه اولین شکست،دست از تلاش بر میدارند؛</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>به همین دلیل است که در زندگی با انبوه اشخاص عادی و تنها </FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>با یک<STRONG> «ادیسون»</STRONG> روبه&nbsp;رو هستیم.</FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#330033 size=2>ناپلئون&nbsp; هیل</FONT></P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ چهارشنبه 25 اردیبهشت 1392 ]  [ 06:14 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(111)">[ نظرات(<script>setCommentCnt(111)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="110"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/110">مداد</a></h2>
+<div class="Content"><P><FONT color=#660000 size=2>پسرک از پدربزرگش پرسید:پدربزرگ،درباره چی مینویسی؟</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>پدربزرگ پاسخ داد:درباره تو پسرم؛اما مهمتر از انچه مینویسم،</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>مدادی است که با ان مینویسم.میخواهم وقتی بزرگ شدی،</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>ت</FONT><FONT color=#660000 size=2>و هم مثل این مداد بشوی!</FONT></P>
+<P><FONT color=#660000 size=2></FONT>&nbsp;</P>
+<P><FONT color=#660000 size=2>بقیش در ادامه مطلب برید بخونید کیف کنید نظر یادتون نره</FONT></P>
+<P>&nbsp;</P><br><a href='http://galexistar.mihanblog.com/post/110'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ چهارشنبه 25 اردیبهشت 1392 ]  [ 05:49 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(110)">[ نظرات(<script>setCommentCnt(110)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="109"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/109">یه وقتایی</a></h2>
+<div class="Content"><P><FONT color=#330033 size=2>یه وقتایی دلت میخواد یکی از پشت سر</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>چشماتو بگیره و بگه اگه گفتی من کی ام؟</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>تو هم دستاشو بگیری و بگی هر کی هستی</FONT></P>
+<P><FONT color=#330033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#330033 size=2>باش بمون خیلی تنهام...</FONT></P>
+<P>&nbsp;</P>
+<P><IMG style="WIDTH: 431px; HEIGHT: 300px" border=0 hspace=0 alt="" align=baseline src="http://upload.tehran98.com/img1/fndp5wmz4lrofvfrkg5.jpg" width=486 height=383></P><br><br></p>
+</div>
+<div class ="date">
+<p class="r">[ چهارشنبه 25 اردیبهشت 1392 ]  [ 12:26 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(109)">[ نظرات(<script>setCommentCnt(109)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="107"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/107">جملات باحال</a></h2>
+<div class="Content"><P><FONT color=#990066 size=2>سعی کنید ۵ بار جملات زیر را تکرار کنید</FONT></P>
+<P>&nbsp;</P>
+<P></P>
+<P><FONT color=#cc3333 size=2>۱.دایی چاقه چایی داغه</FONT></P>
+<P><FONT color=#cc3333 size=2></FONT>&nbsp;</P>
+<P><FONT color=#ff0099 size=2>۲.اردکی تو امبولانس میخورد ادامس میزد بالانس</FONT></P>
+<P><FONT color=#ff0099 size=2></FONT>&nbsp;</P>
+<P><FONT color=#6633cc size=2>۳.کشتم شپش شپشکش شش پا را</FONT></P>
+<P><FONT color=#6633cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc0066 size=2>۴.شیش سیخ جیگر سیخی شیش هزار</FONT></P>
+<P><FONT color=#cc0066 size=2></FONT>&nbsp;</P>
+<P><FONT color=#3333cc size=2>۵.دوغ گاز دار گاز دوغدار</FONT></P>
+<P><FONT color=#3333cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#ff0033 size=2>۶.سر بازی سر بازی سر بازی سر سربازی را شکست</FONT></P>
+<P><FONT color=#ff0033 size=2></FONT>&nbsp;</P>
+<P><FONT color=#336600 size=2>۷.اهویی رفت به چرا تا بچراند بچه را تو که رفتی به چرا نه خود چراندی</FONT></P>
+<P><FONT color=#336600 size=2></FONT>&nbsp;</P>
+<P><FONT color=#336600 size=2>نه بچه را چرا رفتی به چرا چرا چرا چرا چرا؟</FONT></P>
+<P><FONT color=#336600 size=2></FONT>&nbsp;</P>
+<P><FONT color=#6666ff size=2>۸.چیپس چسب سس</FONT></P>
+<P><FONT color=#6666ff size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc0000 size=2>9.لره رو لوله راه میره&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setareh</FONT></P>
+<P><FONT color=#6666ff size=2></FONT>&nbsp;</P>
+<P><FONT color=#ff3300 size=2>اگه شما هم از این جملات بلدید تو نظرات بگید</FONT></P>
+<P><FONT color=#ff3300 size=2></FONT>&nbsp;</P>
+<P><FONT color=#ff3300 size=2>که من اضافه کنم تا بقیه هم بهره ببرن</FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#990000 size=2>یادتون نره ها<IMG src="http://parvaane.persiangig.com/sheklak/shekl/new_folder/new_folder/gy.gif"></P></FONT><br><br></p>
+</div>
+<div class ="date">
+<p class="r">[ چهارشنبه 25 اردیبهشت 1392 ]  [ 11:18 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(107)">[ نظرات(<script>setCommentCnt(107)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="106"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/106">دست نوازش</a></h2>
+<div class="Content"><P><FONT color=#993399 size=2>روزی در یک دهکده کوچک،معلم مدرسه از دانش اموزان</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>سال اول خود خواست تا تصویر چیزی را که نسبت به ان</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>قدردان هستند،نقاشی کنند.او با خود فکر کرد که این بچه های</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>فقیر حتما تصاویر بوقلمون و میز پر از غذا را نقاشی خواهند کرد؛</FONT></P>
+<P><FONT color=#993399 size=2></FONT>&nbsp;</P>
+<P><FONT color=#993399 size=2>ولی وقتی «داگلاس»نقاشی ساده کودکانه خود را تحویل داد،</FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#993399 size=2>معلم شوکه شد!</FONT></P><br><a href='http://galexistar.mihanblog.com/post/106'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ یکشنبه 22 اردیبهشت 1392 ]  [ 07:20 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(106)">[ نظرات(<script>setCommentCnt(106)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="105"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/105">کارمند تازه وارد</a></h2>
+<div class="Content"><P><FONT color=#6600cc size=2>مردی به استخدام&nbsp; یک شرکت چند ملیتی درامد.</FONT></P>
+<P><FONT color=#6600cc size=2>در اولین روز کاری خود،با کافه تریا تماس گرفت</FONT></P>
+<P><FONT color=#6600cc size=2>و فریاد زد:یک فنجان قهوه برای من بیاورید.</FONT></P>
+<P><FONT color=#6600cc size=2>صدایی از ان طرف تلفن پاسخ داد:شماره داخلی را</FONT></P>
+<P><FONT color=#6600cc size=2>اشتباه گرفته ای؛میدانی تو داری با کی حرف میزنی؟</FONT></P>
+<P><FONT color=#6600cc size=2>کارمندتازه وارد گفت: نه!</FONT></P>
+<P><FONT color=#3366ff size=2></FONT>&nbsp;</P><br><a href='http://galexistar.mihanblog.com/post/105'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ یکشنبه 22 اردیبهشت 1392 ]  [ 03:33 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(105)">[ نظرات(<script>setCommentCnt(105)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="104"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/104">به قول شاعر که میگه...</a></h2>
+<div class="Content"><P><FONT color=#cc66cc size=2>چرا مردم قفس را افریدند؟</FONT></P>
+<P><FONT color=#cc33cc size=2>چرا پروانه را از شاخه چیدند؟</FONT></P>
+<P><FONT color=#993399 size=2>چرا پرواز ها را پر شکستند؟</FONT></P>
+<P><FONT color=#663366 size=2>چرا اواز ها را سر بریدند؟</FONT></P>
+<P><FONT color=#330033 size=2>پس از کشف قفس،پرواز پژمرد</FONT></P>
+<P><FONT color=#330099 size=2>سرودن بر لب بلبل گره خورد</FONT></P>
+<P><FONT color=#333399 size=2>کلاف لاله سردرگم فروماند</FONT></P>
+<P><FONT color=#6600cc size=2>شکفتن در گلوی گل گره خورد</FONT></P>
+<P><FONT color=#6633ff size=2>چرا نیلوفر اواز بلبل</FONT></P>
+<P><FONT color=#6666cc size=2>به پای میله های سرد پیچید؟</FONT></P>
+<P><FONT color=#33ccff size=2>چرا اواز غمگین قناری</FONT></P>
+<P><FONT color=#3366ff size=2>درون سینه اش از درد پیچید؟</FONT></P>
+<P><FONT color=#3333ff size=2>چرا لبخند گل پرپر شد و ریخت؟</FONT></P>
+<P><FONT color=#000099 size=2>چه شد ان روزهای بهاری؟</FONT></P>
+<P><FONT color=#000066 size=2>چرا در پشت میله خط خطی شد</FONT></P>
+<P><FONT color=#003300 size=2>صدای صاف اواز قناری؟</FONT></P>
+<P><FONT color=#006600 size=2>چرا لای کتابی خشک کردند</FONT></P>
+<P><FONT color=#009900 size=2>برای یادگاری پیچکی را؟</FONT></P>
+<P><FONT color=#33cc00 size=2>به دفتر های خود سنجاق کردند</FONT></P>
+<P><FONT color=#00cccc size=2>پر پروانه و سنجاقکی را؟</FONT></P>
+<P><FONT color=#3366ff size=2>خدا پر داد تا پرواز باشد</FONT></P>
+<P><FONT color=#3333ff size=2>گلویی داد تا اواز باشد</FONT></P>
+<P><FONT color=#000099 size=2>خدا میخواست باغ اسمان ها</FONT></P>
+<P><FONT color=#000066 size=2>به روی ما همیشه باز باشد</FONT></P>
+<P><FONT color=#330099 size=2>خدا بال و پر و پروازشان داد</FONT></P>
+<P><FONT color=#333399 size=2>ولی مردم درون خود خزیدند</FONT></P>
+<P><FONT color=#6600cc size=2>خدا هفت اسمان باز را ساخت</FONT></P>
+<P><FONT color=#cc66cc size=2>&nbsp;<FONT color=#6633ff>ولی مردم قفس را افریدند</FONT></FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000>قیصر امین پور</FONT></P><br><br></p>
+<br><br>
+طبقه بندی: <br></div>
+<div class ="date">
+<p class="r">[ جمعه 20 اردیبهشت 1392 ]  [ 06:13 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(104)">[ نظرات(<script>setCommentCnt(104)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="103"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/103">رویای عشق</a></h2>
+<div class="Content"><P><FONT color=#6600cc size=3>در دختر خاطراتم نوشتم: عشق زیباست!</FONT></P>
+<P><FONT color=#6600cc size=3>معلم دفتر را دید و گفت:این یه رویاست!</FONT></P>
+<P><FONT color=#6600cc size=3>گفتم: معلم تو از عشق چیزی میدانی؟</FONT></P>
+<P><FONT color=#6600cc size=3>گفت در عالم عشق عاشق همیشه تنهاست</FONT></P><br><br></p>
+</div>
+<div class ="date">
+<p class="r">[ جمعه 20 اردیبهشت 1392 ]  [ 02:52 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(103)">[ نظرات(<script>setCommentCnt(103)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="102"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/102">میخوام بفهمی چقدر عاشقت بودم</a></h2>
+<div class="Content"><P><FONT color=#cc33cc size=2>دختر:شنیدم داری ازدواج میکنی... مبارکه خوشحال شدم شنیدم.</FONT></P>
+<P><FONT color=#cc33cc size=2>&nbsp;پسر:ممنون انشالله قسمت شما... </FONT></P>
+<P><FONT color=#cc33cc size=2>دختر: میتونم برای اخرین بار یه چیزی ازت بخوام؟؟؟؟؟ </FONT></P>
+<P><FONT color=#cc33cc size=2>پسر:چی می خوای؟ </FONT></P>
+<P><FONT color=#cc33cc size=2>دختر:اگه یه روز صاحب دختر شدی میشه اسم منو روش بذاری؟</FONT></P>
+<P><FONT color=#cc33cc size=2>&nbsp;پسر:چرا؟میخوای هر موقع که نگاش میکنم ...صداش میکنم درد بکشم؟ </FONT></P>
+<P><FONT color=#cc33cc size=2>دختر: نه... اخه دخترا عاشق باباهاشون می شن... میخوام بفهمی چقدر عاشقت بودم....!! </FONT></P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ جمعه 20 اردیبهشت 1392 ]  [ 09:45 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(102)">[ نظرات(<script>setCommentCnt(102)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="100"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/100">صورتحساب</a></h2>
+<div class="Content"><P><FONT color=#6600cc size=2>پسر بچه ای یک برگ کاغذ به مادرش داد.</FONT></P>
+<P><FONT color=#6600cc size=2>مادر که در حال آشپزی بود،دستهایش را با</FONT></P>
+<P><FONT color=#6600cc size=2>حوله تمیز کرد و نوشته روی کاعذ را خواند.</FONT></P>
+<P><FONT color=#6600cc size=2>او نوشته بود:</FONT></P><br><a href='http://galexistar.mihanblog.com/post/100'>ادامه مطلب فراموش نشه</a><br></p>
+</div>
+<div class ="date">
+<p class="r">[ یکشنبه 15 اردیبهشت 1392 ]  [ 03:19 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(100)">[ نظرات(<script>setCommentCnt(100)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="99"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/99">اندیشه های زرین انیشتین 1</a></h2>
+<div class="Content"><P align=justify><FONT color=#cc33cc size=2>آن کس که خیال نفرینه باشد،نمیداند نیک بختی چیست.</FONT></P>
+<P align=justify><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><A href="http://night-skin.com/"><IMG border=0 alt="نایت اسکین" src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1369888624.gif"></A></FONT></P>
+<P><FONT color=#cc33cc size=2 face=Arial></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><FONT face=tahoma,arial,helvetica,sans-serif>آن زندگی که هدفش ارضا نیازهای شخصی است،</FONT></FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><FONT face=Tahoma>دیر یا زود سبب سرخوردگی فرد خواهد شد.</FONT></FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><A href="http://night-skin.com/"><IMG border=0 alt="نایت اسکین" src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1369888624.gif"></A></FONT></P>
+<P><FONT color=#cc33cc size=2 face=Arial></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><FONT face=tahoma,arial,helvetica,sans-serif>ما در عصری زندگی میکنیم که ابزارها کامل و اهداف سردرگم است.</FONT></FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><A href="http://night-skin.com/"><IMG border=0 alt="نایت اسکین" src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1369888624.gif"></A></FONT></P>
+<P><FONT color=#cc33cc size=2 face=Arial></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><FONT face=tahoma,arial,helvetica,sans-serif>آن کس که به خویشتن نیز جفا میکند،نباید انتظار داشته باشد</FONT></FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><FONT face=Tahoma>که دیگران به او احترام بگذارند.</FONT></FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=arial,helvetica,sans-serif><A href="http://night-skin.com/"><IMG border=0 alt="نایت اسکین" src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1369888624.gif"></A></FONT></P>
+<P><FONT color=#cc33cc size=2 face=Arial></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2 face=tahoma,arial,helvetica,sans-serif>اگر میخواهی زندگی نیک بختی داشته باشی،</FONT></P>
+<P><FONT color=#cc33cc size=2></FONT>&nbsp;</P>
+<P><FONT color=#cc33cc size=2>هدفی برایش پیدا کن...</FONT></P>
+<P>&nbsp;</P>
+<P><A href="http://night-skin.com/"><IMG border=0 alt="نایت اسکین" src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1369888624.gif"></A></P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/5.html">
+سخن بزرگان</a>، <br></div>
+<div class ="date">
+<p class="r">[ یکشنبه 15 اردیبهشت 1392 ]  [ 03:15 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(99)">[ نظرات(<script>setCommentCnt(99)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="97"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/97">خداوندا</a></h2>
+<div class="Content"><P><FONT color=#cc33cc size=2>خداوندا!من با تمام کوچکیم یک چیز از تو بیشتر دارم</FONT></P>
+<P><FONT color=#cc33cc size=2>و ان هم خدایی است که من دارم ولی تو نداری.</FONT></P>
+<P><FONT color=#cc33cc size=1 face=tahoma,arial,helvetica,sans-serif></FONT>دکتر علی شریعتی</P><br><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/5.html">
+سخن بزرگان</a>، <br></div>
+<div class ="date">
+<p class="r">[ سه شنبه 10 اردیبهشت 1392 ]  [ 04:10 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(97)">[ نظرات(<script>setCommentCnt(97)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="95"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/95">عمل قلب</a></h2>
+<div class="Content"><DIV class=CenterPost>
+<DIV><FONT color=#6600cc size=2>دختر: می دونی فردا عمل قلب دارم؟</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پسر: آره عزیز دلم</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>دختر: منتظرم میمونی؟</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پسر رویش را به سمت پنجره اطاق دختر بر میگرداند </FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>تا دختر اشکی که از گونه اش بر زمین میچکد را نبیند</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پسر: منتظرت میمونم عشقم</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>دختر: خیلی دوستت دارم</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پسر: عاشقتم عزیزم</FONT></DIV>
+<DIV><FONT size=2><BR><FONT color=#6600cc></FONT></FONT></DIV>
+<DIV><FONT color=#6600cc size=2>بعد از عمل سختی که دختر داشت و بعد از چندین ساعت بیهوشی</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>&nbsp;کم کم داشت هوشیاری خود را به دست می آورد...</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>به آرامی چشم باز کرد و نام پسر را زمزمه کرد و جویای او شد</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پرستار: آرووم باش عزیزم تو باید استراحت کنی</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>دختر: ولی اون کجاست؟ گفت که منتظرم میمونه </FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>به همین راحتی گذاشت و رفت</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>پرستار: در حالی که سرنگ آرامش بخش را در سرم دختر خالی میکرد </FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>رو به او گفت: میدونی کی قلبش رو به تو هدیه کرده؟</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>دختر: بی درنگ که یاد پسر افتاد و اشک از دیدگانش جاری شد: آخه چرا؟؟؟؟؟؟</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2>&nbsp;چرا به من کسی چیزی نگفته بود و بی امان گریه میکرد...</FONT></DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#6600cc size=2></FONT>&nbsp;</DIV><FONT size=2><BR></FONT></DIV><br><br></p>
+</div>
+<div class ="date">
+<p class="r">[ یکشنبه 8 اردیبهشت 1392 ]  [ 12:28 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(95)">[ نظرات(<script>setCommentCnt(95)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="94"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/94">آزمون استخدامی</a></h2>
+<div class="Content"><P><FONT color=#993399 size=2>یک شرکت بزرگ،قصد استخدام یک مشاور را داشت</FONT></P>
+<P><FONT color=#993399 size=2>اما متقاضیان این فرصت شغلی حدود دویست نفر بودند!</FONT></P>
+<P><FONT color=#993399 size=2>بدین منظور مسئولین شرکت،برای تعیین ان یک نفر،</FONT></P>
+<P><FONT color=#993399 size=2>تصمیم به برگزاری ازمونی گرفتند.این ازمون فقط یک</FONT></P>
+<P><FONT color=#993399 size=2>پرسش داشت!</FONT></P>
+<P><FONT color=#993399 size=2>پرسش این بود:</FONT></P>
+<P><FONT color=#993399 size=3></FONT>&nbsp;</P><br><a href='http://galexistar.mihanblog.com/post/94'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ یکشنبه 8 اردیبهشت 1392 ]  [ 12:03 ب.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(94)">[ نظرات(<script>setCommentCnt(94)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="93"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/93">♥♥♥♥</a></h2>
+<div class="Content"><P><FONT color=#993399 size=2>گرمترین بوسه ها را نصیب کسی کن که در سرد ترین لحظه ها به یاد توست …</FONT></P>
+<P><IMG alt="" src="http://uploadtak.com/images/t9285_89978309104441752199.gif"></P><br><br></p>
+</div>
+<div class ="date">
+<p class="r">[ یکشنبه 8 اردیبهشت 1392 ]  [ 11:58 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(93)">[ نظرات(<script>setCommentCnt(93)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="92"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/92">اگر یک بار دیگر به دنیا می امدم...</a></h2>
+<div class="Content"><P><FONT color=#6600cc size=2>نوشته از«ارما بومبک»</FONT></P>
+<P><FONT color=#6600cc size=2>اگر میتوانستم یک بار دیگر به دنیا بیایم،</FONT></P>
+<P><FONT color=#6600cc size=2>کمتر حرف میزدم و بیشتر گوش میکردم.</FONT></P>
+<P><FONT color=#6600cc size=2>دوستانم را برای صرف غذا به خانه ام دعوات میکردم</FONT></P>
+<P><FONT color=#6600cc size=2>حتی اگر فرش خانه ام کثیف و لکه دار و یا کاناپه ام ساییده</FONT></P>
+<P><FONT color=#6600cc size=2>و فرسوده شده بود.</FONT></P>
+<P><FONT color=#6600cc size=2>بقیه در ادامه مطلب</FONT></P><br><a href='http://galexistar.mihanblog.com/post/92'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ پنجشنبه 5 اردیبهشت 1392 ]  [ 08:52 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(92)">[ نظرات(<script>setCommentCnt(92)</script>) ]</a></div></div>
+<br>
+<div class="post">
+<a name="91"></a>
+<h2 class="Title"><a href="http://galexistar.mihanblog.com/post/91">قلب تو کجاست؟</a></h2>
+<div class="Content"><P><FONT color=#993399 size=2>«رابرت وانیسن زو»قهرمان مشهور ورزش گلف</FONT></P>
+<P><FONT color=#993399 size=2>ارژانتین،زمانی که در یک مسابقه برنده شد،</FONT></P>
+<P><FONT color=#993399 size=2>مبلغ زیادی پول به عنوان جایزه دریافت کرد.</FONT></P>
+<P><FONT color=#993399 size=2>در پایان مراسم،زنی به سوی او دوید و با تضرع</FONT></P>
+<P><FONT color=#993399 size=2>و التماس از رابرت خواست که پولی به او بدهد</FONT></P>
+<P><FONT color=#993399 size=2>تا بتواند فرزندش را از مرگ نجات دهد.</FONT></P>
+<P><FONT color=#993399 size=2>بقیه در ادامه مطلب</FONT></P><br><a href='http://galexistar.mihanblog.com/post/91'>ادامه مطلب</a><br></p>
+<br><br>
+طبقه بندی: <a href="../../category/1.html">
+داستان های کوتاه</a>، <br></div>
+<div class ="date">
+<p class="r">[ پنجشنبه 5 اردیبهشت 1392 ]  [ 08:20 ق.ظ ]  [ rojin  ]
+<p class="l"><span dir="rtl" > <a target="_self" href="javascript:newComment(91)">[ نظرات(<script>setCommentCnt(91)</script>) ]</a></div></div>
+<br>
+<div class="number"><p align="center"><font face="Tahoma" style="font-size: 9pt">
+.: تعداد کل صفحات 2 :. <a href="http://galexistar.mihanblog.com/post/archive/1392/2/page/1"> [  <b>1</b>  ]</a> <a href="http://galexistar.mihanblog.com/post/archive/1392/2/page/2"> [  <span>2</span>  ]</a> <br>
+</p></div></div></td>
+	<!-- end post -->
+<!--Design By : Avazak.ir-->
+<td width="200" valign="top" dir="rtl" >
+<div class="sidebar-r">
+<!--Design By : Avazak.ir-->
+<h3>درباره وبلاگ</h3>
+<div class="About">
+<div style="text-align: justify"  >
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/357/1068593.jpg@2816"  /><div align=center >   </div>
+به نام انکه عشق را در قلبم و <br />
+<br />
+محبت را در سرلوحه زندگیم قرار داد<br />
+<br />
+به نام تنها «کس» بی کسیم :<br />
+<br />
+خـــــــــــــــــــــــــدا<br />
+</div> </div> 
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<h3>آرشیو ماهانه</h3>
+<div class="Link"><a href="../1398/2.html"> اردیبهشت 1398</a></div>
+<div class="Link"><a href="../1398/1.html"> فروردین 1398</a></div>
+<div class="Link"><a href="../1397/12.html"> اسفند 1397</a></div>
+<div class="Link"><a href="../1397/5.html"> مرداد 1397</a></div>
+<div class="Link"><a href="../1397/4.html"> تیر 1397</a></div>
+<div class="Link"><a href="../1396/7.html"> مهر 1396</a></div>
+<div class="Link"><a href="../1395/7.html"> مهر 1395</a></div>
+<div class="Link"><a href="../1395/6.html"> شهریور 1395</a></div>
+<div class="Link"><a href="../1395/5.html"> مرداد 1395</a></div>
+<div class="Link"><a href="../1395/4.html"> تیر 1395</a></div>
+<div class="Link"><a href="../1395/3.html"> خرداد 1395</a></div>
+<div class="Link"><a href="../1395/2.html"> اردیبهشت 1395</a></div>
+<div class="Link"><a href="../1394/10.html"> دی 1394</a></div>
+<div class="Link"><a href="../1394/9.html"> آذر 1394</a></div>
+<div class="Link"><a href="../1394/8.html"> آبان 1394</a></div>
+<div class="Link"><a href="../1393/11.html"> بهمن 1393</a></div>
+<div class="Link"><a href="../1393/10.html"> دی 1393</a></div>
+<div class="Link"><a href="../1393/9.html"> آذر 1393</a></div>
+<div class="Link"><a href="../1393/4.html"> تیر 1393</a></div>
+<div class="Link"><a href="../1393/3.html"> خرداد 1393</a></div>
+<div class="Link"><a href="../1393/2.html"> اردیبهشت 1393</a></div>
+<div class="Link"><a href="../1393/1.html"> فروردین 1393</a></div>
+<div class="Link"><a href="12.html"> اسفند 1392</a></div>
+<div class="Link"><a href="10.html"> دی 1392</a></div>
+<div class="Link"><a href="9.html"> آذر 1392</a></div>
+<div class="Link"><a href="8.html"> آبان 1392</a></div>
+<div class="Link"><a href="7.html"> مهر 1392</a></div>
+<div class="Link"><a href="6.html"> شهریور 1392</a></div>
+<div class="Link"><a href="5.html"> مرداد 1392</a></div>
+<div class="Link"><a href="4.html"> تیر 1392</a></div>
+<div class="Link"><a href="3.html"> خرداد 1392</a></div>
+<div class="Link"><a href="2.html"> اردیبهشت 1392</a></div>
+<div class="Link"><a href="1.html"> فروردین 1392</a></div>
+<div class="Link"><a href="../1391/12.html"> اسفند 1391</a></div>
+<div class="Link"><a href="../1391/11.html"> بهمن 1391</a></div>
+<div class="Link"><a href="../1391/10.html"> دی 1391</a></div>
+<div class="Link"><a href="../1391/9.html"> آذر 1391</a></div>
+<div class="Link"><a href="../1391/8.html"> آبان 1391</a></div>
+<div class="Link"><a href="../1391/7.html"> مهر 1391</a></div>
+<div class="Link"><a href="../../archive.html">لیست آرشیوها</a></div>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<h3>آرشیو موضوعی</h3>
+<div class="Link"><a href="../../category/8.html">عاشقانه - 29</a></div>
+<div class="Link"><a href="../../category/7.html">شعر - 20</a></div>
+<div class="Link"><a href="../../category/5.html">سخن بزرگان - 67</a></div>
+<div class="Link"><a href="../../category/6.html">روانشناسی - 16</a></div>
+<div class="Link"><a href="../../category/1.html">داستان های کوتاه - 165</a></div>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+
+		<form id="frm-16076701165fd31964a1e77" method="post" action="http://galexistar.mihanblog.com/poll/new/fid/16076701165fd31964a1e77/atrty/1607670116/avrvy/0/key/1314287abb3693117642637f13ded520/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="242479" id="data[pollid]" />		
+<h3>نظر سنجی</h3>
+<div style="text-align: Center" >نظرتون درباره وبلاگ چیه؟<br>
+<div style="text-align: Right" dir="rtl" > <label><input type="radio" name="data[answer]" value="v1">عالیه بیسته بیسته</label><br> 
+ <label><input type="radio" name="data[answer]" value="v2">میتونه بهتر هم باشه</label><br> 
+ <label><input type="radio" name="data[answer]" value="v3">ای بدک نیست</label><br> 
+ <label><input type="radio" name="data[answer]" value="v4">ضعیف باید بشتر کار بشه</label><br> 
+ <label><input type="radio" name="data[answer]" value="v5">افتضاح این چه وبلاگیه</label><br> 
+<div align="center"><input type="submit" value="ثبت" class="btn"/></div>
+<div class="FooterSid"></div>
+
+		<input type="hidden" name="frm-id" value="16076701165fd31964a1e77" id="frm-id" /></form><!--Design By : Avazak.ir-->
+<h3>آمار وبلاگ</h3>
+<div style="text-align: Right" >
+<div class="Link">بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class="Link">بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class="Link">كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class="Link">بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class="Link">بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class="Link">تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class="Link">كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center></div>
+<div class="FooterSid"></div>	
+<!--Design By : Avazak.ir-->
+<h3>لینک های ویژه</h3>
+<div class="Link"><a titl="انجمن وبلاگ نویسان" href="http://forum.avazak.ir">انجمن وبلاگ نویسان</a></div>
+<div class="Link"><a titl="اس ام اس جدید" href="http://20payamak.ir">اس ام اس عاشقانه</a></div>
+<div class="Link"><a titl="قالب رایگان" href="http://avazak.ir">قالب وبلاگ</a></div>
+<div class="Link"><a titl="کد آهنگ برای وبلاگ" href="http://music.avazak.ir">کد آهنگ</a></div>
+<div class="Link"><a titl="نغمه سرا" href="http://naghmehsara.ir">سایت عاشقانه</a></div>
+<div class="FooterSid"></div>
+<!--Design By : Avazak.ir-->
+<div class="custom">
+<h3>دیگر امکانات</h3>
+<div align="center"><script src="https://www.shoutbox.com/chat/chat.js.php"></script>
+                            <script> var chat = new Chat(13046);</script>" </div></div>
+<div class="FooterSid"></div>
+</td></tr>
+</div></div>
+	<!-- end sidebar-r -->
+<!--Design By : Avazak.ir-->
+<tr><td width="1000" colspan="3" class="Footer" dir="rtl">
+[ <a title="قالب وبلاگ" href="http://Avazak.ir/">طراح قالب: <a tite="قالب وبلاگ" href="http://Avazak.ir">آوازک</a> | <a title="قالب وبلاگ" href="http://Avazak.ir">Theme By Avazak.ir</a> | <a title="قالب وبلاگ رایگان" href="http://avazak.ir/?feed=rss2">rss</a> ]<br>
+</td></tr></table></div></div>
+<!-- end Footer -->
+<!--Design By : Avazak.ir-->
+<div style="display:none;"><a title="مجله اینترنتی دانستنی ها" href="http://danestaniha.net/">مجله اینترنتی دانستنی ها</a> ، <a title="عکس عاشقانه جدید" href="http://gallery.avazak.ir/thumbnails.php?album=891">عکس عاشقانه جدید</a> ، <a title="اس ام اس های عاشقانه" href="http://20payamak.ir/%D8%A7%D8%B3-%D8%A7%D9%85-%D8%A7%D8%B3-%D9%87%D8%A7%DB%8C-%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87/">اس ام اس های عاشقانه</a></div>
+</body>
+
+</html>
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'galexistar.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

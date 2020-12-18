@@ -1,0 +1,1198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ersaleketab.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('1399/09/22');
+		/*1141772*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[65]='27';commentCnt[139]='0';commentCnt[140]='0';commentCnt[141]='0';commentCnt[142]='0';commentCnt[143]='0';commentCnt[144]='0';commentCnt[145]='1';commentCnt[146]='1';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[65]='0';
+mihanblogDisLikeArrCnt[65]='0';
+mihanblogLikeArrCnt[139]='0';
+mihanblogDisLikeArrCnt[139]='0';
+mihanblogLikeArrCnt[140]='0';
+mihanblogDisLikeArrCnt[140]='0';
+mihanblogLikeArrCnt[141]='0';
+mihanblogDisLikeArrCnt[141]='0';
+mihanblogLikeArrCnt[142]='0';
+mihanblogDisLikeArrCnt[142]='0';
+mihanblogLikeArrCnt[143]='0';
+mihanblogDisLikeArrCnt[143]='0';
+mihanblogLikeArrCnt[144]='0';
+mihanblogDisLikeArrCnt[144]='0';
+mihanblogLikeArrCnt[145]='0';
+mihanblogDisLikeArrCnt[145]='0';
+mihanblogLikeArrCnt[146]='0';
+mihanblogDisLikeArrCnt[146]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://ersaleketab.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://ersaleketab.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','124');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','1398/11/15');
+	
+	setStatVar('today_view','13');
+	setStatVar('yesterday_view','6');
+	
+	setStatVar('this_month_view','377');
+	setStatVar('last_month_view','677');
+
+	setStatVar('total_view','216506');
+	setStatVar('last_view_date','1399/09/22 (13:10)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://ersaleketab.mihanblog.com/statupdate/?data[refereruri]=http://mehraban58.mihanblog.com/linkdaily/&data[postid]=&data[requesturi]=/&data[sdate]=1607781566&data[hash]=5972a00b2b3dff583015233691add088&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://ersaleketab.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://ersaleketab.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://ersaleketab.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Theme Designer" content="66483838.ir">
+<script src="http://mytheme.ir/themes/script.js" language="javascript"></script>
+<meta name="description" content="راحت تر از اون چیزی که فکر میکنید میتونید کتاب مورد نظرتون رو بخرین و هر جایی که خواستین اونو تحویل بگیرین.
+خرید اینترنتی کتاب | فروشگاه اینترنتی کتاب | بانک کتاب | ارسال سریع کتاب | بانک کتاب | آفبا | فاگوزیست">
+<meta name="keywords" content="فروشگاه اینترنتی کتاب, فروشگاه کتاب, ارسال سریع کتاب, بانک کتاب, آفبا, فاگوزیست, ovdn ;jhf, خرید کتاب,fhk; ;jhf"> 
+<link rel="alternate" type="application/rss+xml" title="وبلاگ بانک کتاب پایتخت" href="http://ersaleketab.mihanblog.com/post/rss/">
+<link rel="alternate" type="application/atom+xml" title="وبلاگ بانک کتاب پایتخت" href="http://ersaleketab.mihanblog.com/post/atom/">
+<link href="http://mythemes.ir/t41/style.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="http://mythemes.ir/t41/jquery.js"></script>
+<script type="text/javascript" src="http://mythemes.ir/t41/jfl.js"></script>
+<script language="javascript">
+var jq=jQuery.noConflict();
+jq(document).ready(function() {
+jq.featureList(
+jq("#tabs li a"),
+jq("#output li"), {
+start_item : 0
+});
+});
+</script>
+
+<title>وبلاگ بانک کتاب پایتخت</title>
+</head>
+
+<body>
+
+<div align="center">
+<table class="div000" border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class="div2-mihanblog">
+<div class="div00">
+
+<div class=s1><form id="frm-16076282615fd275e5a60da" method="get" action="http://ersaleketab.mihanblog.com/post/search/fid/16076282615fd275e5a60da"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div class=s2>
+<input type="text" name="search_text" size="27" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; direction:ltr; color:#ffffff;"></div>
+<div class=s3><input type="image" src="http://mythemes.ir/t41/blank.gif" width=30 height=30 value="بگرد"></div>
+<input type="hidden" name="frm-id" value="16076282615fd275e5a60da" id="frm-id" /></form></div>
+
+<div class=div60>
+<div class=div101>
+<div class=div10><font class=title>وبلاگ بانک کتاب پایتخت</font></div></div>
+<div class=div11>
+<div class=div12><font class=des>خرید کتاب, بانک کتاب, ارسال رایگان کتاب, بروزترین فروشگاه اینترنتی کتاب</font></div></div>
+</div>
+
+<div class=ss>
+<div class=s4>
+<div class=s5>
+<a href="http://ersaleketab.mihanblog.com/www.66483838.ir"><img src="http://mythemes.ir/t41/blank.gif" width="150" height="100" border="0"></a>
+<a href="mailto:paytakhteketab@gmail.com"><img src="http://mythemes.ir/t41/blank.gif" width="150" height="100" border="0"></a>
+<a href="http://www.paytakhteketab.com/%D8%AA%D9%85%D8%A7%D9%85%DB%8C-%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA/" target="_blank"><img src="http://mythemes.ir/t41/blank.gif" width="150" height="100" border="0"></a>
+<a href="javascript:messageForm()"><img src="http://mythemes.ir/t41/blank.gif" width="150" height="100" border="0"></a>
+<a href="http://www.paytakhteketab.com/%D8%AA%D9%85%D8%A7%D8%B3-%D8%A8%D8%A7-%D9%85%D8%A7/" target="_blank"><img src="http://mythemes.ir/t41/blank.gif" width="150" height="100" border="0"></a></div></div>
+</div>
+
+<div id="feature_list">
+<ul id="tabs">
+<li><a href="index.html#1"><img src="http://mythemes.ir/t41/sample1.jpg" width="60" height="60" border="0" class="imgs">
+<h3>بروز ترین فروشگاه کتاب</h3>
+<span>توضیح مختصر شما برای این اسلاید در اینجا درج می شود</span></a></li>
+<li><a href="index.html#1"><img src="http://mythemes.ir/t41/sample2.jpg" width="60" height="60" border="0" class="imgs">
+<h3>تخفیف های ثابت و دوره ای</h3>
+<span>توضیح مختصر شما برای این اسلاید در اینجا درج می شود</span></a></li>
+<li><a href="index.html#1"><img src="http://mythemes.ir/t41/sample3.jpg" width="60" height="60" border="0" class="imgs">
+<h3>دانلود قسمتی از کتاب ها رایگان</h3>
+<span>توضیح مختصر شما برای این اسلاید در اینجا درج می شود</span></a></li>
+</ul>
+
+<ul id="output">
+<li>
+<img src="http://mythemes.ir/t41/sample1.jpg" width="600" height="250" border="0">
+</li>
+<li>
+<img src="http://mythemes.ir/t41/sample2.jpg" width="600" height="250" border="0">
+</li>
+<li>
+<img src="http://mythemes.ir/t41/sample3.jpg" width="600" height="250" border="0">
+</li>
+</ul>
+
+</div>
+
+<div class="middle">
+<div class="middle1 , text13">
+<marquee width="540" height="30" scrollamount="3" scrolldelay="0" direction="right" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">به وبلاگ بانک کتاب پایتخت خوش آمدید.اگر کتابی رو تو وبلاگ پیدا نکردین حتما با تلفن 66483838تماس بگیرین</marquee></div>
+<div class="middle2 , text12"><script type="text/javascript" src="http://www.paytakhteketab.com/wp-content/uploads/2015/02/12346.gif"></script></div>
+<div class="middle3">
+<g:plusone size="medium"></g:plusone>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'fa'};
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></div>
+
+</div>
+
+<div class=div0>
+
+<div class=div20>
+
+<div class="ads">
+<a href="http://paytakhteketab.com"><img src="../file.mihanblog.com/public/user_data/user_files/381/1141772/paytakhteketab.gif" width="468" height="60" border="0"></a>
+</div>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/65">بانک کتاب</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+<div align="right" style="text-align: justify;"><a href="http://www.paytakhteketab.com/" target="" title=""><b><font face="Mihan-IransansBold" size="4">بانک کتاب پایتخت</font></b></a></div><div align="center" style="text-align: justify;"><font size="4"><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);">ارسال رایگان کتاب کمک درسی&nbsp;</b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);">، درسی ، زبان و کنکوری از تمامی</b><b style="color: rgb(51, 51, 51); font-family: Mihan-IransansBold;">&nbsp;ناشرین آموزشی</b><b style="color: rgb(51, 51, 51); font-family: Mihan-IransansBold;">&nbsp;و کمک آموزشی به هر نقطه از&nbsp;</b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);">شهرتهران&nbsp; که شما بخواهید</b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);"><div style="display: inline !important;"><b>&nbsp;فقط کافیست با یک تماس با&nbsp;</b></div></b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);"><div style="display: inline !important;"><b>شماره تلفن 66409497 - 021</b></div></b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);">&nbsp;</b><b style="font-family: Mihan-IransansBold; color: rgb(51, 51, 51);"><div style="display: inline !important;"><b>کتاب خود را سفارش دهید.</b></div></b></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sub><sup><font size="3"><font face="Mihan-IransansBold"><br>&nbsp;راهی بزرگ و مطمئن برای خرید ِ کتاب‌های ناشران کوچک و بزرگ...<br>&nbsp;دلیل نوشته شدن این یاداشت، آخرین تلفنی است که همین حالا به نشر شد.<br>این تلفن، تلفن ِ یکی‌یک‌دونه نیست و روزی به طور متوسط 100تا 200نفر مثل همین دوست عزیز زنگ می‌زنند که «الو!&nbsp;</font></font></sup></sub><a href="http://www.paytakhteketab.com/" target="" title=""><font face="Mihan-IransansBold" size="5"><b>بانک کتاب پایتخت</b></font></a><sub><sup><font size="3"><font face="Mihan-IransansBold">؟»<br>- بله. بفرمایید.<br>- کتاب ... می‌خواهم.<br>- دوست عزیز!‌ ما ارسال تکی نداریم. باید از کتابفروشی‌ها تهیه بفرمایید.<br>- به کتابفروشی نزدیک خانه‌مان سر زدم، نداشت. می‌شه با پیک برام بفرستین؟<br>- نه متاسفانه. چنین امکانی نداریم.<br>- یعنی راهی نداره؟<br>- نه ... اما چرا ... اجازه بفرمایید ...<br>الان چند مدتی است که وقتی کتابی را می‌خواهند، می‌گویم کتابهای تا مقطع کنکور را رایگان ارسال میکنیم ولی کتابهای دانشگاهی هزینه می خوره.<br>اوایل فکر می‌کردم شاید جدی نباشد این طرح؟ بعد زنگ زدم به&nbsp; چند مشتری ثابت و ازشون بابت این ایده مشورت خواستم و بالاخره تونستم با خدمات بهتر مشتری های بیشتری را جمع کنم.<br>قصدم تبلیغ نیست و نبوده. فقط خواستم یک وضعیت را برایتان توصیف کنم. خرید تلفنی کتاب با پیک رایگان.<br></font><br>
+
+
+</font></sup></sub>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/44" class=text4>ارسال سریع کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/35" class=text4>خرید کتاب درسی سال 94</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/34" class=text4>سامانه فروش اینترنتی کتاب های درسی</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/20" class=text4>کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/6" class=text4>خرید اینترنتی کتابهای کمک درسی و کنکوری و کمک آموزشی</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/5" class=text4>خرید آنلاین کتابهای کمک آموزش و کنکوری</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/3" class=text4>بانک کتاب ، ارسال رایگان کتاب،ارسال کتاب درب منزل،کتاب،خرید اینترنتی کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/1" class=text4>خدمات رایگان کتاب درمحل کتب کمک درسی ،درسی ،زبان</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA" class=text4>بانک کتاب پایتخت</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%B3%D8%B1%DB%8C%D8%B9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>ارسال سریع کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%AF%D8%B1%D8%A8%20%D9%85%D9%86%D8%B2%D9%84" class=text4>ارسال رایگان کتاب درب منزل</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://www.paytakhteketab.com/" class=text4>بانک کتاب پایتخت</a>، <a href="http://www.paytakhteketab.com/contact" class=text4>خرید کتاب</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/65#commentlist">نظرات (<script>setCommentCnt(65)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1393/02/3</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/146">کتاب های الفبای کنکور هنر انتشارات کارنامه کتاب</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4">
+
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" style="" size="2" color="#ffffff">الفبای کنکور هنر به طبقه بندی موضوعی سوال های درس های رشته هنر در آزمون سراسری هنر طی 16 سال گذشته پرداخته است.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">در این کتاب که از مجموعه کتاب های الفبای کنکور هنر از نشر کارنامه کتاب است سعی شده تا به جای طرح سوال های کنکور هنر به ترتیب تقدم و تأخر زمانی، طبقه بندی موضوعی را مبنای کار قرار دهیم.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">بدین ترتیب که ابتدا مباحث هر درس را در پانزده موضوع متفاوت و مجزا تعریف و سپس سوالات را در موضوع مربوطه فصل بندی کرده ایم که می توان نام فصل ها را به طور یک جا در فهرست کتاب مشاهده کرد.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">از مزایای این شیوه ی طبقه بندی این است که کمک می کند تا پس از مطالعه ی هر مبحث تمامی پرسش های مربوط به آن فصل را پشت سر هم مطالعه کنیم و از زیروبم نحوه ی طرح پرسش ها از هر موضوع مطلع شویم.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">اما مهم ترین مزیتی که از این روش حاصل شده, مشخص شدن مباحثی است که در نظر طراحان کنکور از اولویت و اهمیت بیشتری برخوردار هستند. نتایج حاصل از این نحوه ی تقسیم بندی در انتهای کتاب در قالب جدول هایی آورده شده اند.</font></p><h3 style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">جداول کتاب الفبای کنکور هنر</font></h3><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">جداول اول پراکندگی موضوعی سوالات هر فصل را در پنج سال اول که بین سال های 1383 تا 1387 میباشد، دومی در پنج سال میانی بین سال های 1388 تا 1392 و جدول سوم در شش سال آخر بین سال های 1393 تا 1398 نشان می دهد.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">چهارمین و آخرین جدول به ارائه ی میانگین سه جدول قبلی و در مجموع شانزده سال کنکور هنر می پردازد. از مقایسه ی این جدول ها می توان به سمت و سوی رویکرد طراحان آزمون سراسری هنر می برد و مشخص کرد که کدام مطالب در چه سال هایی بیشتر مدنظر قرار گرفته اند.<br style="box-sizing: border-box;"></font></p><h3 style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">هدف کتاب های الفبای کنکور هنر</font></h3><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">درواقع این کتاب ها می کوشند تا با طبقه بندی موضوعی، فصل بندی دقیق و در نهایت بررسی و مقایسه ی جدول های پایانی در هر کتاب به تحلیلی دقیق تر از پراکندگی سوال های کنکور سراسری رشته هنر در دروس مختلف دست پیدا کنند. امری که می توان به کمک آن برنامه ریزی موثری انجام داد و به سوی یک مطالعه ی هدفمند در یک دوره ی زمانی نسبتاً طولانی گام برداشت.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; text-align: right;"><font face="Mihan-Koodak" size="2" color="#ffffff">برای خرید این کتاب ها از وبسایت&nbsp;<a rel="noreferrer noopener" aria-label="بانک کتاب پایتخت (در یک برگه جدید باز می‌کند)" href="https://www.paytakhteketab.com/" target="_blank" style="box-sizing: border-box; text-decoration-line: none; background-color: transparent;">بانک کتاب پایتخت</a>&nbsp;بر روی لینک زیر کلیک کنید.</font></p><p class="has-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; text-align: center; line-height: 35px;"><a href="https://www.paytakhteketab.com/product-category/%da%a9%d8%a7%d8%b1%d9%86%d8%a7%d9%85%d9%87-%da%a9%d8%aa%d8%a7%d8%a8/alphabet-of-art-entrance-exam/" style="box-sizing: border-box; text-decoration-line: none; background-color: transparent;"><font face="Mihan-Koodak" style="" size="2" color="#ffffff">www.paytakhteketab.com/alefbaye-konkoore-honar-karname-ketab</font></a></p>
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/32" class=text4>کارنامه کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/31" class=text4>انتشارات کارنامه کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/29" class=text4>فروش کتاب با تخفیف</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/28" class=text4>خرید کتاب با تخفیف</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/3" class=text4>بانک کتاب ، ارسال رایگان کتاب،ارسال کتاب درب منزل،کتاب،خرید اینترنتی کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/1" class=text4>خدمات رایگان کتاب درمحل کتب کمک درسی ،درسی ،زبان</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D9%84%D9%81%D8%A8%D8%A7%DB%8C%20%DA%A9%D9%86%DA%A9%D9%88%D8%B1%20%D9%87%D9%86%D8%B1" class=text4>الفبای کنکور هنر</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%DA%A9%D8%A7%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>انتشارات کارنامه کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA" class=text4>بانک کتاب پایتخت</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%DA%AF%DB%8C%20%D9%81%D8%B1%D9%88%D8%B4%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D9%87%D8%A7%DB%8C%20%DA%A9%D8%A7%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>نمایندگی فروش کتاب های کارنامه کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%B1%D8%B4%D8%AA%D9%87%20%D9%87%D9%86%D8%B1" class=text4>رشته هنر</a>، <br><font color="#000">لینک های مرتبط :</font>
+<br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/146#commentlist">نظرات (<script>setCommentCnt(146)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1398/11/15</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/145">سری کتاب های هشتگ امتحان از انتشارات کاگو</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4">
+
+
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" style="" face="Mihan-Iransans">دانش آموزان عزیزی که تا این لحظه هی میگفتن از شنبه دیگه شروع میکنیم به درس خوندن و هیچ وقت هم شروع نمیکردن باید یه مژده بهشون بدم که کتاب های&nbsp;<a href="https://www.paytakhteketab.com/product-category/%da%a9%d8%a7%da%af%d9%88/hashtag-exam/" target="_blank" rel="noreferrer noopener" aria-label="هشتگ امتحان نشر کاگو (در یک برگه جدید باز می‌کند)" style="box-sizing: border-box; text-decoration-line: none; background-color: transparent;">هشتگ امتحان نشر کاگو</a>&nbsp;برای تمامی مقاطع تحصیلی از هفتم تا دوازدهم منتشر شد.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">این دفترچه ها ” کتاب های هشتگ امتحان از انتشارات کاگو ” چه فایده هایی برای شما داره ، به شما الان کامل توضیح میدم.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">دفترچه ی شما خیلی معتبره! چون بیشترین شباهت رو با آزمون های مدرسه تون داره.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">این دفترچه ها کارایی خیلی بالایی داره.! چون تعداد آزمون ها و چیدمان سوالاتش استاندارد هستش.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">آینده در دست شماست! چون در آزمون ده استاد از 10 استاد بنام ایران خواستیم که براتون یه آزمون درست و درمون طراحی کنن ( ده استاد : احمد بابایی, علی احسانی, سکینه اکبری, مریم ترکاشوند, ناهید جوادی, توفیق خالدیان, صادق رمضانی, اکرم ربیعی, مرضیه سادات صفوی, محمد فقیهی فاضل ).</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">این دفترچه ها کلی راهکار ( راه نجات ) داره! چون تله های آموزشی رو نشون میده و یه تابلوی آموزشی برای لحظات آخر امتحان داره که باعث میشه شب راحت بخوابید.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">تمامی این کتاب ها در بروز ترین فروشگاه اینترنتی کتاب یعنی&nbsp;<a href="https://www.paytakhteketab.com/" style="box-sizing: border-box; text-decoration-line: none; background-color: transparent;">بانک کتاب پایتخت</a>&nbsp;هم اکنون موجود و قابل خرید میباشد.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><font color="#cccccc" face="Mihan-Iransans">برای خرید کتاب های هشتنگ امتحان نشر کاگو از بانک کتاب پایتخت همینجا کلیک کنید.</font></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 35px; font-size: 15px; text-align: right;"><a class="wp-block-button__link" href="https://www.paytakhteketab.com/product-category/%da%a9%d8%a7%da%af%d9%88/hashtag-exam" style="box-sizing: border-box; text-decoration-line: none; background-color: rgb(50, 55, 60); border: none; border-radius: 28px; box-shadow: none; cursor: pointer; display: inline-block; font-size: 18px; margin: 0px; padding: 12px 24px; text-align: center; overflow-wrap: break-word;"><font color="#cccccc" style="" face="Mihan-Iransans">برای مشاهده و یا خرید این محصولات همینجا کلیک کنید</font></a></p>
+
+
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/44" class=text4>ارسال سریع کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA" class=text4>بانک کتاب پایتخت</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>خرید اینترنتی کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D9%87%D8%A7%DB%8C%20%D9%87%D8%B4%D8%AA%DA%AF%20%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86" class=text4>خرید کتاب های هشتگ امتحان</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://https://www.paytakhteketab.com/%da%a9%d8%aa%d8%a7%d8%a8-%d9%87%d8%a7%db%8c-%d9%87%d8%b4%d8%aa%da%af-%d8%a7%d9%85%d8%aa%d8%ad%d8%a7%d9%86-%d8%a7%d8%b2-%d8%a7%d9%86%d8%aa%d8%b4%d8%a7%d8%b1%d8%a7%d8%aa-%da%a9%d8%a7%da%af%d9%88/" class=text4>هشتگ امتحان</a>، <a href="http://https://www.paytakhteketab.com/product-category/%da%a9%d8%a7%da%af%d9%88/" class=text4>انتشارات کاگو</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/145#commentlist">نظرات (<script>setCommentCnt(145)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1398/10/12</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/144">دانلود رایگان گام به گام یازدهم رشته انسانی انتشارات منتشران</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4"><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b><span style="box-sizing: border-box; color: rgb(153, 51, 0);">فروش کتاب<span style="box-sizing: border-box;">&nbsp;<a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">راهنمای گام به گام یازدهم رشته انسانی</a>&nbsp;|&nbsp;<a href="https://www.paytakhteketab.com/product-category/%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات منتشران</a></span></span>&nbsp;چاپ 1396 آغاز شد….</b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b>بر روی آیکون زیر کلیک کنید تا قسمتی از این کتاب را به صورت کاملا رایگان دانلود کنید.</b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b>بزودی نمونه کار قرار خواهد گرفت.</b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b><img class="aligncenter wp-image-9269" src="https://www.paytakhteketab.com/wp-content/uploads/2016/02/download-zip.ico" alt="download-link" width="101" height="101" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b>برچسب ها :</b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b><a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">کتاب گام به گام یازدهم رشته انسانی منتشران</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">گام به گام یازدهم رشته انسانی منتشران</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">حل المسائل کتاب های درسی</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">گروه مولفان</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%da%af%d8%a7%d9%85-%d8%a8%d9%87-%da%af%d8%a7%d9%85-%db%8c%d8%a7%d8%b2%d8%af%d9%87%d9%85-%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d9%85%d9%86%d8%aa%d8%b4%d8%b1%d8%a7%d9%86/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات منتشران</a></b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 12px;"><font face="Mihan-Koodak"><b>&nbsp;</b></font></p><div style="box-sizing: border-box; color: rgb(51, 51, 51); font-size: 12px; text-align: right;"><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><b><span style="box-sizing: border-box;">Review</span>&nbsp;by&nbsp;<a href="https://www.paytakhteketab.com/author/admin/" style="box-sizing: border-box; color: rgb(42, 100, 150); transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: 0px;">PaytakhteKetab</a></b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><b>خرید اینترنتی بانک کتاب پایتخت</b></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><b><span style="box-sizing: border-box;">امتیاز :</span>&nbsp;<img class="stars" src="https://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" alt="5 Stars" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></b></font></p></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>خرید کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>بانک کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%AF%D8%B1%D8%B3%DB%8C" class=text4>خرید اینترنتی کتاب درسی</a>، <br><font color="#000">لینک های مرتبط :</font>
+<br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/144#commentlist">نظرات (<script>setCommentCnt(144)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1396/06/11</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/143">کتاب ده آزمون زیست شناسی انتشارات تخته سیاه</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4"><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">سلام</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><span style="box-sizing: border-box; color: rgb(153, 51, 0);">فروش کتاب<strong style="box-sizing: border-box;">&nbsp;<a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">ده آزمون زیست شناسی کنکور تخته سیاه</a>&nbsp;|&nbsp;<a href="https://www.paytakhteketab.com/product-category/%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات تخته سیاه</a></strong></span>&nbsp;چاپ ۱۳۹۶ آغاز شد….</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">بر روی آیکون زیر کلیک کنید تا قسمتی از این کتاب را به صورت کاملا رایگان دانلود کنید.</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">بزودی نمونه کار قرار خواهد گرفت</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><img class="aligncenter wp-image-9269" src="https://www.paytakhteketab.com/wp-content/uploads/2016/02/download-zip.ico" alt="دانلود رایگان قسمتی از کتاب" width="101" height="101" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">برچسب ها :</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">کتاب ۱۰ آزمون زیست شناسی کنکور انتشارات تخته سیاه</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">ده ۱۰ آزمون زیست شناسی کنکور تخته سیاه</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">زیست شناسی تخته سیاه</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">…………..</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/10-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%aa%d8%ae%d8%aa%d9%87-%d8%b3%db%8c%d8%a7%d9%87/" style="box-sizing: border-box; color: rgb(43, 46, 87); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات تخته سیاه</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">&nbsp;</font></p><div style="box-sizing: border-box; color: rgb(51, 51, 51); font-size: 13px; text-align: right;"><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><strong style="box-sizing: border-box;">Review</strong>&nbsp;by&nbsp;<a href="https://www.paytakhteketab.com/author/admin/" style="box-sizing: border-box; color: rgb(42, 100, 150); transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: 0px;">PaytakhteKetab</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak">خرید اینترنتی بانک کتاب پایتخت</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><strong style="box-sizing: border-box;">امتیاز :</strong>&nbsp;<img class="stars" src="https://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" alt="5 Stars" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></p></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AF%D9%87%20%D8%A2%D8%B2%D9%85%D9%88%D9%86%20%D8%B2%DB%8C%D8%B3%D8%AA" class=text4>ده آزمون زیست</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/10%20%D8%A2%D8%B2%D9%85%D9%88%D9%86%20%D8%B2%DB%8C%D8%B3%D8%AA" class=text4>10 آزمون زیست</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AA%D8%AE%D8%AA%D9%87%20%D8%B3%DB%8C%D8%A7%D9%87" class=text4>تخته سیاه</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://https://www.paytakhteketab.com/product/10-%D8%A2%D8%B2%D9%85%D9%88%D9%86-%D8%B2%DB%8C%D8%B3%D8%AA-%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%DA%A9%D9%86%DA%A9%D9%88%D8%B1-%D8%AA%D8%AE%D8%AA%D9%87-%D8%B3%DB%8C%D8%A7%D9%87/" class=text4>آزمون زیست تخته سیاه</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/143#commentlist">نظرات (<script>setCommentCnt(143)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1396/03/3</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/142">کتاب آزمون جامع شبیه سازی کنکور زیست شناسی به روش تک رقمی ها کلک معلم</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4">
+
+
+<div><font face="Mihan-Koodak"><br></font></div><div><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">سلام</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><span style="box-sizing: border-box; color: rgb(153, 51, 0);">فروش کتاب<strong style="box-sizing: border-box;">&nbsp;</strong></span></font><a href="https://www.paytakhteketab.com/product/40-%D8%A2%D8%B2%D9%85%D9%88%D9%86-%D8%B2%DB%8C%D8%B3%D8%AA-%D8%AA%DA%A9-%D8%B1%D9%82%D9%85%DB%8C-%D9%87%D8%A7-%DA%A9%D9%84%DA%A9-%D9%85%D8%B9%D9%84%D9%85/" target="" title="">بیست آزمون زیست شناسی شبیه ساز کنکور به روش تک رقمی ها</a><font face="Mihan-Koodak"><span style="box-sizing: border-box; color: rgb(153, 51, 0);"><strong style="box-sizing: border-box;">&nbsp;|&nbsp;<a href="http://www.paytakhteketab.com/product-category/%DA%A9%D9%84%DA%A9-%D9%85%D8%B9%D9%84%D9%85-%D8%B3%D8%A7%D8%AC%D8%AF%DB%8C/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات کلک معلم</a></strong></span>&nbsp;چاپ ۱۳۹۶ آغاز شد….</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">بر روی آیکون زیر کلیک کنید تا قسمتی از این کتاب را به صورت کاملا رایگان دانلود کنید.</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">بزودی نمونه کار قرار خواهد گرفت</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><img class="aligncenter wp-image-9269" src="http://www.paytakhteketab.com/wp-content/uploads/2016/02/download-zip.ico" alt="download-link" width="101" height="101" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">برچسب ها :</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak"><a href="http://www.paytakhteketab.com/product/40-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%aa%da%a9-%d8%b1%d9%82%d9%85%db%8c-%d9%87%d8%a7-%da%a9%d9%84%da%a9-%d9%85%d8%b9%d9%84%d9%85/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">کتاب آزمون زیست شناسی به روش تک رقمی ها</a>,&nbsp;<a href="http://www.paytakhteketab.com/product/40-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%aa%da%a9-%d8%b1%d9%82%d9%85%db%8c-%d9%87%d8%a7-%da%a9%d9%84%da%a9-%d9%85%d8%b9%d9%84%d9%85/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">آزمون زیست شناسی</a>,&nbsp;<a href="http://www.paytakhteketab.com/product/40-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%aa%da%a9-%d8%b1%d9%82%d9%85%db%8c-%d9%87%d8%a7-%da%a9%d9%84%da%a9-%d9%85%d8%b9%d9%84%d9%85/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">پوریا آیتی</a>,&nbsp;<a href="http://www.paytakhteketab.com/product/40-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%aa%da%a9-%d8%b1%d9%82%d9%85%db%8c-%d9%87%d8%a7-%da%a9%d9%84%da%a9-%d9%85%d8%b9%d9%84%d9%85/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">سروش مرادی</a>,&nbsp;<a href="http://www.paytakhteketab.com/product/40-%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b2%db%8c%d8%b3%d8%aa-%d8%aa%da%a9-%d8%b1%d9%82%d9%85%db%8c-%d9%87%d8%a7-%da%a9%d9%84%da%a9-%d9%85%d8%b9%d9%84%d9%85/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات کلک معلم ساجدی</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-Koodak">&nbsp;</font></p><div style="box-sizing: border-box; color: rgb(51, 51, 51); font-size: 13px; text-align: right;"><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><strong style="box-sizing: border-box;">Review</strong>&nbsp;by&nbsp;<a href="http://www.paytakhteketab.com/author/admin/" style="box-sizing: border-box; color: rgb(107, 107, 107); text-decoration-line: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">PaytakhteKetab</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak">خرید اینترنتی بانک کتاب پایتخت</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-Koodak"><strong style="box-sizing: border-box;">امتیاز :</strong>&nbsp;<img class="stars" src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" alt="5 Stars" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></p></div></div><BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/9" class=text4>خرید اینترنتی کتاب دور دنیا در4ساعت گاج همراه با کنکور94</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/4" class=text4>خرید اینترنتی کتاب فاگو زیست</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>بانک کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%88%D8%B4%20%D8%AA%DA%A9%20%D8%B1%D9%82%D9%85%DB%8C%20%D9%87%D8%A7" class=text4>زیست شناسی به روش تک رقمی ها</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>خرید کتاب</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://https://www.paytakhteketab.com" class=text4>بانک کتاب</a>، <a href="http://https://www.paytakhteketab.com" class=text4>خرید کتاب</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/142#commentlist">نظرات (<script>setCommentCnt(142)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1396/02/5</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/141">دی وی دی جمع بندی زیست شناسی آفبا مطابق با کنکور 96</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4"><p data-mce-style="text-align: center;" style="margin-top: 13px; margin-bottom: 13px; font-size: 15px; text-align: center;"><font face="Mihan-IransansBold">سلام</font></p><p data-mce-style="text-align: center;" style="margin-top: 13px; margin-bottom: 13px; font-size: 15px; text-align: center;"><font face="Mihan-IransansBold"><span data-mce-style="color: #993300;">فروش دی وی دی&nbsp;<strong><a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">جمع بندی زیست شناسی</a>&nbsp;|&nbsp;<a href="https://www.paytakhteketab.com/product-category/%D8%AF%DB%8C-%D9%88%DB%8C-%D8%AF%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D9%81%D8%A8%D8%A7/" data-mce-href="https://www.paytakhteketab.com/product-category/%D8%AF%DB%8C-%D9%88%DB%8C-%D8%AF%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D9%81%D8%A8%D8%A7/">بنیاد دانش بنیان آفبا</a></strong>&nbsp;</span>با ویرایش جدید آغاز شد....</font></p><p data-mce-style="text-align: center;" style="margin-top: 13px; margin-bottom: 13px; font-size: 15px; text-align: center;"><font face="Mihan-IransansBold">بر روی آیکون زیر کلیک کنید تا قسمتی از این دی وی دی&nbsp;را به صورت کاملا رایگان مشاهده و دانلود&nbsp;کنید.</font></p><p data-mce-style="text-align: center;" style="margin-top: 13px; margin-bottom: 13px; font-size: 15px; text-align: center;"><font face="Mihan-IransansBold">تعداد : 8 حلقه</font></p><h4 data-mce-style="text-align: center;" style="margin-top: 15px; margin-bottom: 15px; font-size: 15px; text-align: center;"><a href="http://aparat.com/66483838" target="_blank" data-mce-href="http://aparat.com/66483838"><font face="Mihan-IransansBold" color="#000000"><img class="aligncenter size-full wp-image-9269" src="https://www.paytakhteketab.com/wp-content/uploads/2015/04/download-movie.png" alt="download-link" data-mce-src="https://www.paytakhteketab.com/wp-content/uploads/2015/04/download-movie.png" style="height: auto; max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></font></a></h4><h4 data-mce-style="text-align: center;" style="margin-top: 15px; margin-bottom: 15px; font-size: 15px; text-align: center;"><font face="Mihan-IransansBold">&nbsp;<br></font></h4><p style="margin-top: 13px; margin-bottom: 13px; font-size: 15px;"><font face="Mihan-IransansBold">برچسب ها :</font></p><h6 style="margin-top: 15px; margin-bottom: 15px;"><font face="Mihan-IransansBold"><a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">دی وی دی جمع بندی زیست آفبا</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">بنیاد دانش بنیان آفبا</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">جمع بندی زیست شناسی</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">پدرام فرهادیان</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/" data-mce-href="https://www.paytakhteketab.com/product/%d8%af%db%8c-%d9%88%db%8c-%d8%af%db%8c-%d8%ac%d9%85%d8%b9-%d8%a8%d9%86%d8%af%db%8c-%d8%b2%db%8c%d8%b3%d8%aa-%d8%ac%d8%a7%d9%85%d8%b9-%d8%a2%d9%81%d8%a8%d8%a7/">بنیاد دانش بنیان آفبا</a></font></h6><p style="margin-top: 13px; margin-bottom: 13px; font-size: 15px;"><font face="Mihan-IransansBold"><br></font></p><div style="font-size: 15px;"><p style="margin-top: 13px; margin-bottom: 13px;"><font face="Mihan-IransansBold"><strong>Review</strong>&nbsp;by&nbsp;<a href="https://www.paytakhteketab.com/author/admin/" data-mce-href="https://www.paytakhteketab.com/author/admin/">PaytakhteKetab</a></font></p><p style="margin-top: 13px; margin-bottom: 13px;"><font face="Mihan-IransansBold">خرید اینترنتی بانک کتاب پایتخت</font></p><p style="margin-top: 13px; margin-bottom: 13px;"><font face="Mihan-IransansBold"><strong>امتیاز :</strong>&nbsp;<img class="stars" src="https://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" alt="5 Stars" data-mce-src="https://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" style="height: auto; max-width: 100%;"></font></p></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>بانک کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D9%81%D8%A8%D8%A7" class=text4>افبا</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A2%D9%81%D8%A8%D8%A7" class=text4>آفبا</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://https://www.paytakhteketab.com" class=text4>بانک کتاب</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/141#commentlist">نظرات (<script>setCommentCnt(141)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1396/01/8</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/140">میکرو زیست شناسی دهم انتشارات گاج منتشر شد</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4"><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight">سلام</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight"><span style="box-sizing: border-box; color: rgb(153, 51, 0);">فروش کتاب<strong style="box-sizing: border-box;">&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">زیست شناسی دهم میکرو</a>&nbsp;|<a href="https://www.paytakhteketab.com/product-category/%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">&nbsp;انتشارات گاج</a></strong></span>&nbsp;چاپ ۱۳۹۶ آغاز شد….</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight">بر روی آیکون زیر کلیک کنید تا قسمتی از این کتاب را به صورت کاملا رایگان دانلود کنید.</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: center; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><a href="http://dl.paytakhteketab.com/zist-10-micro-gaj.zip" target="_blank" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><font face="Mihan-IransansLight"><img class="aligncenter wp-image-9269" src="https://www.paytakhteketab.com/wp-content/uploads/2016/02/download-zip.ico" alt="download-link" width="101" height="101" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></a></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight">برچسب ها :</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight"><a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">کتاب زیست شناسی دهم میکرو گاج</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">زیست شناسی دهم میکرو گاج</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">دهم میکرو گاج</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">حمیدرضا زارع</a>,&nbsp;<a href="https://www.paytakhteketab.com/product/%d8%b2%db%8c%d8%b3%d8%aa-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%af%d9%87%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88-%da%af%d8%a7%d8%ac/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">انتشارات گاج</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; text-align: right; line-height: 1.6em; color: rgb(51, 51, 51); font-size: 13px;"><font face="Mihan-IransansLight">&nbsp;</font></p><div style="box-sizing: border-box; color: rgb(51, 51, 51); font-size: 13px; text-align: right;"><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-IransansLight"><strong style="box-sizing: border-box;">Review</strong>&nbsp;by&nbsp;<a href="https://www.paytakhteketab.com/author/admin/" style="box-sizing: border-box; color: rgb(32, 142, 60); text-decoration: none; transition: all 0.2s linear; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">PaytakhteKetab</a></font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-IransansLight">خرید اینترنتی بانک کتاب پایتخت</font></p><p style="box-sizing: border-box; margin: 0px 0px 7px; line-height: 1.6em;"><font face="Mihan-IransansLight"><strong style="box-sizing: border-box;">امتیاز :</strong>&nbsp;<img class="stars" src="https://www.paytakhteketab.com/wp-content/uploads/2015/03/five-stars.png" alt="5 Stars" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; transition: all 0.2s linear;"></font></p></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/44" class=text4>ارسال سریع کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/19" class=text4>بانک کتاب</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>خرید کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>بانک کتاب</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://https://www.paytakhteketab.com" class=text4>خرید کتاب</a>، <a href="http://https://www.paytakhteketab.com" class=text4>بانک کتاب</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/140#commentlist">نظرات (<script>setCommentCnt(140)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1395/12/15</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class="div18 , text6"><a href="http://ersaleketab.mihanblog.com/post/139">تغییر محتوای کتب درسی مقطع یازدهم</a></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class="div56 , text4">
+<h2 style="box-sizing: border-box; line-height: 40px; margin: 1.2em 0px 0.6em; font-size: 34px; text-rendering: optimizeLegibility; text-align: center; direction: rtl; color: rgb(34, 34, 34);"><font face="Mihan-IransansBold">تغییر محتوای کتب درسی مقاطع یازدهم و دوازدهم</font></h2><p style="box-sizing: border-box; margin: 0px 0px 15px; text-align: right; line-height: 1.65em; color: rgb(51, 51, 51); font-size: 13px !important;"><font face="Mihan-IransansBold">رئیس سازمان پژوهش و برنامه‌ریزی آموزشی با اشاره به اینکه محتوای کتب‌ درسی پایه‌های یازدهم و دوازدهم در سال تحصیلی آینده تغییر می کند گفت: کتب جدید مربوط به «محیط زیست»، «سلامت» و توجه به «بهداشت نوجوانان و جوانان» است.<br style="box-sizing: border-box;">&nbsp;حجت‌الاسلام والمسلمین محی‌الدین بهرام محمدیان رئیس سازمان پژوهش و برنامه‌ریزی آموزشی در گفت‌وگو با خبرنگار آموزش و پرورش خبرگزاری فارس، درخصوص «تغییرات کتاب‌های درسی در سال تحصیلی آینده،» اظهار داشت: بحث محتوایی مربوط به پایه‌های یازدهم و دوازدهم است.<br style="box-sizing: border-box;">وی ادامه داد: تلاش می‌کنیم با زمان‌بندی که داریم و برنامه‌ریزی‌های صورت گرفته، تولید محتوا کنیم.<br style="box-sizing: border-box;">&nbsp;حجت‌الاسلام والمسلمین محمدیان اضافه کرد: درحال حاضر گروه‌های شورای برنامه‌ریزی و تالیف کتاب‌ها مشغول برنامه‌ریزی و تالیف هستند و امیدواریم وقتی به بهمن ماه سال جاری رسیدیم، بتوانیم تالیف کتب یاد شده را قسمت به قسمت بر روی سامانه اعتباربخشی قرار دهیم تا معلمان، صاحب‌نظران و کارشناسان درخصوص قسمت‌های تولید شده اظهارنظر کنند.</font></p><p style="box-sizing: border-box; margin: 0px 0px 15px; text-align: right; line-height: 1.65em; color: rgb(51, 51, 51); font-size: 13px !important;"><font face="Mihan-IransansBold">رئیس سازمان پژوهش و برنامه‌ریزی آموزشی متذکر شد: پس از دریافت نظر کارشناسان و معلمان، در نهایت بتوانیم اسفند ماه به جمع‌بندی نهایی برسیم و بعد در اردیبهشت سال آینده به آماده‌سازی و بازبینی نهایی بپردازیم.</font></p><p style="box-sizing: border-box; margin: 0px 0px 15px; text-align: right; line-height: 1.65em; color: rgb(51, 51, 51); font-size: 13px !important;"><font face="Mihan-IransansBold">وی درخصوص «محتوای جدید کتب درسی سال تحصیلی آینده»، تصریح کرد: در این خصوص همان برنامه مصوب شورای عالی آموزش و پرورش است؛ دروس جدیدی که در دوره متوسطه وارد کرده‌ایم؛ شامل «درس تفکر و سواد رسانه‌ای» و کار و کارآفرینی» بود و در حال حاضر کتاب‌های «انسان، سلامت و محیط زیست» و «خانواده و معیشت» را در دستور کار داریم؛ البته شاید نام این کتب تغییر پیدا کند، اما موضوع آنها مربوط به محیط زیست، سلامت و بخصوص رویکرد و توجه به بهداشت و سلامت نوجوانان و جوانان در آستانه ازدواج است.</font></p><p style="box-sizing: border-box; margin: 0px 0px 15px; text-align: right; line-height: 1.65em; color: rgb(51, 51, 51); font-size: 13px !important;"><font face="Mihan-IransansBold">حجت‌الاسلام و المسلمین محمدیان عنوان کرد: بحث دیگر مهارت‌های زندگی یا سبک زندگی اسلامی است و آماده‌سازی دانش‌آموز برای پذیرش مسئولیت‌های خانواده است که این موارد در سال تحصیلی جاری تصویب شده و برای سال تحصیلی ۹۷-۹۶ تولید خواهد شد.</font></p><p style="box-sizing: border-box; margin: 0px 0px 15px; text-align: right; line-height: 1.65em; color: rgb(51, 51, 51); font-size: 13px !important;"><a href="http://www.paytakhteketab.com/" target="" title=""><font face="Mihan-IransansBold">بانک کتاب</font></a></p>
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#000">نوع مطلب :</font>
+<a href="http://ersaleketab.mihanblog.com/post/category/3" class=text4>بانک کتاب ، ارسال رایگان کتاب،ارسال کتاب درب منزل،کتاب،خرید اینترنتی کتاب</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/1" class=text4>خدمات رایگان کتاب درمحل کتب کمک درسی ،درسی ،زبان</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/6" class=text4>خرید اینترنتی کتابهای کمک درسی و کنکوری و کمک آموزشی</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/5" class=text4>خرید آنلاین کتابهای کمک آموزش و کنکوری</a>،&nbsp;<a href="http://ersaleketab.mihanblog.com/post/category/4" class=text4>خرید اینترنتی کتاب فاگو زیست</a>،&nbsp;<br><font color="#000">برچسب ها :</font>
+<a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>بانک کتاب</a>، <a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF%20%DA%A9%D8%AA%D8%A7%D8%A8" class=text4>خرید کتاب</a>، <br><font color="#000">لینک های مرتبط :</font>
+<a href="http://www.paytakhteketab.com" class=text4>بانک کتاب</a>، <br><br></div></div>
+<div class=div26>
+<div class="div27 , text8"><a href="http://ersaleketab.mihanblog.com/post/139#commentlist">نظرات (<script>setCommentCnt(139)</script>)</a></div>
+<div class="div58 , text7"><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+<div class="div581 , text7">1395/10/6</div>
+<div class="sol">
+<a href="http://www.aparat.com/66483838/%D8%A8%D8%A7%D9%86%DA%A9_%DA%A9%D8%AA%D8%A7%D8%A8_%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA"><img src="../static.mihanblog.com/public/user_data/user_files/381/1141772/b21.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://instagram.com/paytakhteketab/"><img src="http://www.paytakhteketab.com/wp-content/uploads/2015/03/b2.png" width="31" height="31" border="0" class="imgs2"></a><a href="https://plus.google.com/113846312621542390779"><img src="http://mythemes.ir/t41/b3.jpg" width="31" height="31" border="0" class="imgs2"></a><a href="http://ersaleketab.mihanblog.com/post/rss/"><img src="http://mythemes.ir/t41/b4.jpg" width="31" height="31" border="0" class="imgs2"></a>
+</div>
+</div>
+
+
+</div>
+<div class=div29></div>
+<div class=div28><font class=text9>
+<br><br>
+( کل صفحات : 16 )&nbsp;&nbsp;&nbsp;
+<a href="http://ersaleketab.mihanblog.com/page/1" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/2" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/3" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/4" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/5" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/6" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/7" class=text4><span>7</span></a>&nbsp;&nbsp;&nbsp;<a href="http://ersaleketab.mihanblog.com/page/8" class=text4><i>...</i></a>&nbsp;&nbsp;&nbsp;</font>
+</div>
+</div>
+
+
+<div class=div170>
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+
+<div class=div341>
+<div class=sm></div>
+<div class="div31 , text1"><center><img src="../static.mihanblog.com/public/user_data/web_photo/381/1141772.jpg@8189"  /><br><br>
+بانک کتاب پایتخت | بزرگترین و به روز ترین سایت فروش آنلاین کتاب<br />
+هر کتابی که شما بخواین در کمترین زمان تهیه و ارسال میشه<br />
+تلفن تماس : 66483838 -021</center><br>
+	<b>مدیر وبلاگ :</b> <a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی</a></div>
+</div><div class=div30></div>
+</div>
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>مطالب اخیر</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/post/146">کتاب های الفبای کنکور هنر انتشارات کارنامه کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/145">سری کتاب های هشتگ امتحان از انتشارات کاگو</a></li><li><a href="http://ersaleketab.mihanblog.com/post/144">دانلود رایگان گام به گام یازدهم رشته انسانی انتشارات منتشران</a></li><li><a href="http://ersaleketab.mihanblog.com/post/143">کتاب ده آزمون زیست شناسی انتشارات تخته سیاه</a></li><li><a href="http://ersaleketab.mihanblog.com/post/142">کتاب آزمون جامع شبیه سازی کنکور زیست شناسی به روش تک رقمی ها کلک معلم</a></li><li><a href="http://ersaleketab.mihanblog.com/post/141">دی وی دی جمع بندی زیست شناسی آفبا مطابق با کنکور 96</a></li><li><a href="http://ersaleketab.mihanblog.com/post/140">میکرو زیست شناسی دهم انتشارات گاج منتشر شد</a></li><li><a href="http://ersaleketab.mihanblog.com/post/139">تغییر محتوای کتب درسی مقطع یازدهم</a></li><li><a href="http://ersaleketab.mihanblog.com/post/138">مجموعه کتاب های شب امتحان</a></li><li><a href="http://ersaleketab.mihanblog.com/post/137">بانک کتاب و خرید اینترنتی کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/136">خرید کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/135">فروش موج آزمون شیمی پایه در فروشگاه بانک کتاب پایتخت آغاز شد</a></li><li><a href="http://ersaleketab.mihanblog.com/post/134">فروش دی وی دی های گروه آموزشی رایان شروع شد</a></li><li><a href="http://ersaleketab.mihanblog.com/post/133">بانک کتاب پایتخت|ارسال رایگان کتاب درسی و کنکوری و درسی ، خرید آنلاین کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/132">دانلود کاملا رایگان دی وی دی های آفبا</a></li></ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>موضوعات</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/post/category/53">موج آزمون شیمی پایه (1)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/52">موج آزمون (1)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/51">گروه آموزشی رایان (1)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/50">دی وی دی رایان (1)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/49">دانلود دی وی دی های آفبا (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/48">موسسه آفبا (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/47">بنیاد دانش بنیان آفبا (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/46">آفبا (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/45">انتشارات مهر و ماه (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/44">ارسال سریع کتاب (13)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/43">کتب درسی آموزش و پرورش (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/42">انتشارات مدرسه (2)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/41">کتاب درسی مدرسه (3)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/40">وزارت آموزش و پرورش (3)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/39">سامانه نام نویسی الکترونیکی دانش آموزان (3)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/38">سامانه خرید اینترنتی کتب درسی (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/37">سامانه خرید اینترنتی کتاب های درسی (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/36">خرید اینترنتی کتاب درسی94 (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/35">خرید کتاب درسی سال 94 (5)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/34">سامانه فروش اینترنتی کتاب های درسی (5)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/33">سامانه فروش اینترنتی کتب درسی (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/32">کارنامه کتاب (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/31">انتشارات کارنامه کتاب (4)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/30">خط ویژه گاج (3)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/29">فروش کتاب با تخفیف (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/28">خرید کتاب با تخفیف (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/27">همایش دانشگاه تهران (7)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/26">بابک سادات (6)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/25">همایش کنکور (7)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/24">رشته تجربی (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/23">استاد بابک سادات (7)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/22">کتاب کنکوری (12)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/21">کتاب درسی (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/20">کتاب (18)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/19">بانک کتاب (25)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/18">افبا (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/17">لیموترش (8)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/16">زیست شناسی روش تک رقمی ها (7)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/15">لقمه مهروماه (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/14">خرید فاگوزیست (13)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/13">فاگوزیست جوادی (13)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/12">فاگوزیست (13)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/11">کتاب کپی برابر اصل (12)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/10">دی وی دی های آفبا (12)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/9">خرید اینترنتی کتاب دور دنیا در4ساعت گاج همراه با کنکور94 (11)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/8">خرید کتاب دور دنیا در4ساعت (9)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/7">خرید کتاب فاگوزیست (13)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/6">خرید اینترنتی کتابهای کمک درسی و کنکوری و کمک آموزشی (32)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/5">خرید آنلاین کتابهای کمک آموزش و کنکوری (32)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/4">خرید اینترنتی کتاب فاگو زیست (18)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/3">بانک کتاب ، ارسال رایگان کتاب،ارسال کتاب درب منزل،کتاب،خرید اینترنتی کتاب (35)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/1">خدمات رایگان کتاب درمحل کتب کمک درسی ،درسی ،زبان (33)</a></li><li><a href="http://ersaleketab.mihanblog.com/post/category/2">وبلاگ کاربردی (2)</a></li></ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/post/archive/1398/11"> بهمن 1398</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1398/10"> دی 1398</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1396/6"> شهریور 1396</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1396/3"> خرداد 1396</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1396/2"> اردیبهشت 1396</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1396/1"> فروردین 1396</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1395/12"> اسفند 1395</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1395/10"> دی 1395</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1395/9"> آذر 1395</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1394/11"> بهمن 1394</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1394/9"> آذر 1394</a></li><li><a href="http://ersaleketab.mihanblog.com/post/archive/1394/7"> مهر 1394</a></li><li><b><a href="http://ersaleketab.mihanblog.com/post/archive">آرشیو كل مطالب</a></b></li>
+</ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://www.paytakhteketab.com/alefbaye-konkoore-honar-karname-ketab" title="" target="_blank">الفبای کنکور هنر</a></li><li><a href="http://www.paytakhteketab.com/" title="سریع ترین مرکز ارسال رایگان کتاب" target="_blank">پایتخت کتاب</a></li><li><a href="http://linkbox.mnti.ir" title="تبادل لینک هوشمند" target="_blank">لینک باکس پر بازدید</a></li><li><a href="../www.admin.mihanblog.com/index.html" title="" target="_blank">میهن بلاگ</a></li><li><a href="http://www.66483838.ir" title="بانک کتاب" target="_blank">بانک کتاب</a></li><li><b><a href="http://ersaleketab.mihanblog.com/linkdaily/">همه پیوندهای روزانه</a></b></li>
+<li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li>
+</ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>پیوندها</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://www.paytakhteketab.com/" title="سریع ترین و به روز ترین مرکز ارسال کتاب" target="_blank">پایتخت کتاب</a></li><li><a href="http://www.paytakhteketab.com" title="" target="_blank">بانک کتاب پایتخت</a></li><li><a href="http://www.66483838.ir" title="book bank-بانک کتاب" target="_blank">بانک کتاب</a></li><li><a href="http://www.paytakhteketab.com" title="بانک کتاب،پیک کتاب،ارسال کتاب،خرید اینترنتی کتاب" target="_blank">بانک کتاب پایتخت</a></li><li><a target="_blank" href="http://www.mytheme.ir">قالب وبلاگ</a></li>
+<li><a target="_blank" href="http://www.webim.ir">طراحی سایت</a></li>
+<li><a target="_blank" href="http://www.mytheme.ir/domain.php">تبدیل وبلاگ به سایت</a></li>
+<li><a target="_blank" href="http://tabligheirani.com/">تبلیغات اینترنتی</a></li>
+<li><a target="_blank" href="http://cafemod.ir/category/مدل-لباس-زنانه/">مدل لباس زنانه</a></li>
+<li><a target="_blank" href="http://cafemod.ir">مدل لباس</a></li>
+<li><b><a href="http://ersaleketab.mihanblog.com/link/">همه پیوندها</a></b></li>
+</ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>نویسندگان</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/post/author/982992">امید اسماعیلی (124)</a></li></ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>صفحات جانبی</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/extrapage/gajbook">انتشارات گاج</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/khoshkhan">انتشارت دانش پژوهان جوان</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/khanezist">انتشارات خانه زیست شناسی</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/joyamajd">انتشارات جویامجد</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/jokar">انتشارات جوکار</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/takhtehsiah">انتشارات تخته سیاه</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/tajik">انتشارات تاجیک</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/parto">انتشارات پرتو دانش</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/banihashemi">انتشارات بنی هاشمی خامنه</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/nobel">انتشارات ایران باستان(نوبل)</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/ostadaneghalam">انتشارات استادان قلم</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/farzanegan">انتشارات فرزانگان</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/golvazheh">انتشارات گل واژه</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/andishefaegh">انتشارات اندیشه فائق</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/alma">انتشارات آلما(سیب ترش)</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/mehromah">انتشارات مهروماه</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/andishmand">انتشارات اندیشمند</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/ghalamchi">انتشارات قلم چی</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/mobtakeran">انتشارات مبتکران</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/olgoo">انتشارات الگو</a></li><li><a href="http://ersaleketab.mihanblog.com/extrapage/kheilisabz">انتشارات خیلی سبز</a></li></ul></font></div><div class=div30></div>
+</div>
+
+		<form id="frm-16076282615fd275e5a7079" method="post" action="http://ersaleketab.mihanblog.com/poll/new/fid/16076282615fd275e5a7079/atrty/1607628261/avrvy/0/key/0bccc46d76706923ebc35a8bba763786/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="232125" id="data[pollid]" />		<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>نظرسنجی</font></div></div>
+
+<div class=div341>
+<div class=sm></div>
+<div class=div31><font class=text1>
+به نظر شما موثرترین راه برای اینکه خودتان(نام موسسه)را از دیگران متمایز کنید چیست؟<br>
+<label><input type="checkbox"  name="data[v1]" id="v1" value="1" />تبلیغات</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />ایده های جدید</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />وابستگی به جای خاص</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />خدمات رسانی مطلوب</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />سایر</label><br><div align="center"><br><input type="submit" value="ثبت نظر" style="font-family: Tahoma; font-size: 9pt"><br><br></div>
+</font></div></div><div class=div30></div>
+</div>
+		<input type="hidden" name="frm-id" value="16076282615fd275e5a7079" id="frm-id" /></form>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>برچسبها</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9+%DA%A9%D8%AA%D8%A7%D8%A8">بانک کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87+%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C+%DA%A9%D8%AA%D8%A7%D8%A8">فروشگاه اینترنتی کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A2%D9%81%D8%A8%D8%A7">آفبا</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%D8%B3%D8%B1%DB%8C%D8%B9+%DA%A9%D8%AA%D8%A7%D8%A8">ارسال سریع کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%86%DA%A9+%DA%A9%D8%AA%D8%A7%D8%A8+%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA">بانک کتاب پایتخت</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF+%DA%A9%D8%AA%D8%A7%D8%A8">خرید کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D9%81%D8%A7%DA%AF%D9%88%D8%B2%DB%8C%D8%B3%D8%AA">فاگوزیست</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%A7%D9%81%D8%A8%D8%A7">افبا</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D8%AE%D8%B1%DB%8C%D8%AF+%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C+%DA%A9%D8%AA%D8%A7%D8%A8">خرید اینترنتی کتاب</a></li><li><a href="http://ersaleketab.mihanblog.com/post/tag/%D9%81%D8%B1%D8%AF%DB%8C%D9%86+%D8%AC%D9%88%D8%A7%D8%AF%DB%8C">فردین جوادی</a></li></ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+
+<div class=div341><font class=text1><ul>
+<li>کل بازدید : <script>getStatVar('total_view');</script></li>
+<li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+<li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+<li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+<li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+<li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+<li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+<li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+<li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+</ul></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>فرم تماس</font></div></div>
+<div class="ft1">
+<form action="http://mytheme.ir/codes/send-mail.php" method="post">
+<input type="hidden" name="to" value="paytakhteketab@gmail.com">
+
+<div class="pm1"><input type="text" name="nm" size="26" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:rtl"></div>
+<div class="pm2 , text1">نام و نام خانوادگی </div>
+
+<div class="pm1"><input type="text" name="ma" size="26" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+<div class="pm2 , text1">آدرس ایمیل </div>
+
+<div class="pm3"><textarea name="txt" cols="44" rows="3" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:rtl" onFocus="if(this.value=='پیام خود را اینجا بنویسید')this.value='';" onBlur="if(this.value=='')this.value='پیام خود را اینجا بنویسید';" type="text" value="پیام خود را اینجا بنویسید">پیام خود را اینجا بنویسید</textarea></div>
+
+<div class="pm4"><input type="image" src="http://mythemes.ir/t41/blank.gif" width=70 height=30></div>
+
+</form>
+</div>
+</div>
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>امکانات دیگر</font></div></div>
+<div class=div341>
+<div class=sm></div>
+<div class=div31><font class=text1>
+<center></center>
+</font></div></div><div class=div30></div>
+</div>
+
+</div>
+
+</div></div>
+</td>
+</tr>
+<tr>
+<td class="b2" valign="top">
+<div class="div00">
+<div class=div7>
+<div class="ft50"><a href="http://www.mytheme.ir" target="_blank"><img src="http://mythemes.ir/t41/blank.gif" border=0 width=200 height=40></a></div>
+<div class="ft51 , text11">کلیه حقوق این وبلاگ برای <b><a href="index.html">وبلاگ بانک کتاب پایتخت</a></b> محفوظ است</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</body>
+
+</html> <script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'ersaleketab.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

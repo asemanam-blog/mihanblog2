@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1630434*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[317]='35';commentCnt[318]='-';commentCnt[320]='30';commentCnt[321]='24';commentCnt[323]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[317]='2';
+mihanblogDisLikeArrCnt[317]='0';
+mihanblogLikeArrCnt[318]='0';
+mihanblogDisLikeArrCnt[318]='0';
+mihanblogLikeArrCnt[320]='5';
+mihanblogDisLikeArrCnt[320]='1';
+mihanblogLikeArrCnt[321]='1';
+mihanblogDisLikeArrCnt[321]='0';
+mihanblogLikeArrCnt[323]='3';
+mihanblogDisLikeArrCnt[323]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://davat-b-tanhaee.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://davat-b-tanhaee.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','244');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','یکشنبه 5 آذر 1396');
+	
+	setStatVar('today_view','7');
+	setStatVar('yesterday_view','44');
+	
+	setStatVar('this_month_view','1488');
+	setStatVar('last_month_view','1544');
+
+	setStatVar('total_view','352144');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:58)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://davat-b-tanhaee.mihanblog.com/statupdate/?data[refereruri]=http://davat-b-tanhaee.mihanblog.com/&data[postid]=&data[requesturi]=/page/2&data[sdate]=1607831494&data[hash]=58a59f5dc2fb2b5b1354dff6d2a95a51&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://davat-b-tanhaee.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://davat-b-tanhaee.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html lang="en">
+    <head>
+        <title>دعوت به تنهایی</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Language" content="fa">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="alternate" type="application/rss+xml" title="دعوت به تنهایی" href="../post/rss/index.html" />
+        <link rel="alternate" type="application/atom+xml" title="دعوت به تنهایی"  href="../post/atom/index.html" />
+        <meta charset="utf-8"
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!--CSS styles-->
+        <link rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/css/bootstrap.css">
+        <link rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/css/perfect-scrollbar-0.4.5.min.css">
+        <link rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/css/magnific-popup.css">
+        <link rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/css/style.css">
+        <link id="theme-style" rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/css/styles/default.css">
+     <link href='http://awebfont.ir/css?id=1116' rel='stylesheet' type='text/css'>
+     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+
+        <!--/CSS styles-->
+        <!--Javascript files-->
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/TweenMax.min.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery.touchSwipe.min.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/modernizr.custom.63321.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery.dropdownit.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery.stellar.min.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/ScrollToPlugin.min.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/jquery.mixitup.min.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/masonry.min.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/perfect-scrollbar-0.4.5.with-mousewheel.min.js"></script>
+
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/magnific-popup.js"></script>
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/js/custom.js"></script>
+
+        <!--/Javascript files-->
+
+
+        <!--Custom Styles for demo only-->
+        <link rel="stylesheet" href="http://www.naqweb.ir/cdn/skins/res2/skin2/custom-style.css">
+        <script type="text/javascript" src="http://www.naqweb.ir/cdn/skins/res2/skin2/custom-style.js"></script>
+        <!--/Custom Styles-->
+
+
+
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <a href="2.html#sidebar" class="mobilemenu"><i class="icon-reorder"></i></a>
+
+            <div id="sidebar">
+                <div id="main-nav">
+                    <div id="nav-container">
+                        <div id="profile" class="clearfix">
+                            <div class="portrate hidden-xs"></div>
+                            <div class="title" dir="rtl">
+                                <h2>دعوت به تنهایی</h2>
+                                <h3>تنهایی قشنگترین حس دنیاست چون برای داشتنش نیاز به “هیـــــچکـــــس” نداری : )</h3>
+                            </div>
+
+                        </div>
+                        <ul id="navigation" dir="rtl">
+                            <li>
+                              <a href="2.html#biography">
+                                <div class="icon icon-book"></div>
+                                <div class="text">مطالب سایت</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="2.html#research">
+                                <div class="icon icon-cogs"></div>
+                                <div class="text">آمار و امکانات</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="2.html#publications" id="publicationsb">
+                                <div class="icon icon-user"></div>
+                                <div class="text">درباره سایت</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="2.html#teaching">
+                                <div class="icon icon-edit"></div>
+                                <div class="text">آخرین عناوین</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="2.html#gallery">
+                                <div class="icon icon-link"></div>
+                                <div class="text">پیوندها</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="2.html#contact">
+                                  <div class="icon icon-envelope"></div>
+                                  <div class="text">تماس با ما</div>
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="http://www.facebook.com/share.php?u=http://davat-b-tanhaee.mihanblog.com"><i class="icon-facebook"></i></a></li>
+                        <li><a href="http://twitter.com/home?status=http://davat-b-tanhaee.mihanblog.com"><i class="icon-twitter"></i></a></li>
+                        <li><a href="../post/rss/index.html"><i class="icon-rss"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="main">
+
+                <div id="biography" class="page home" data-pos="home">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-sm-2 visible-sm"></div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="biothumb">
+                                            <img alt="image" src="http://www.naqweb.ir/cdn/skins/res2/skin2/img/personal/06.jpg" style=" min-height: 160px;"  class="img-responsive">
+                                            <div class="overlay" dir="rtl">
+                                                <h1 class="">دعوت به تنهایی</h1>
+                                                <ul class="list-unstyled">
+                                                    <li>تنهایی قشنگترین حس دنیاست چون برای داشتنش نیاز به “هیـــــچکـــــس” نداری : )</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix visible-sm visible-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="pagecontents">
+                            <!--<div class="section color-1" id="filters">
+                                <div class="section-container">
+                                    <div class="row" dir="rtl">
+                                        <div class="col-md-3 fright" id="sort">
+                                            <span>مرتب سازی پست ها:</span>
+                                            <div class="btn-group pull-left">
+                                                <button type="button" data-sort="data-year" data-order="desc" class="sort btn btn-default"><i class="icon-sort-by-order"></i></button>
+                                                <button type="button" data-sort="data-year" data-order="asc" class="sort btn btn-default"><i class="icon-sort-by-order-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="section color-1" id="filters">
+                                <div class="section-container">
+                                    <div class="row" dir="rtl">
+                                        <div class="col-md-12 fright" id="sort">
+                                            <span>برای مشاهده هر پست، روی آن کلیک کنید تا محتوای آن پست به نمایش درآید</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section color-2" id="pub-grid">
+                                <div class="section-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pitems">
+                                                                                           
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                                                <div class="item mix cpaper" data-year="323" dir="rtl">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                            <a href="2.html#" class="pubcollapse tooltips" title="مشاهده مطلب">
+                                                                <i class="icon-expand"></i>
+                                                            </a>
+                                                            <a href="../post/323.html" class="tooltips" title="لینک مستقیم " target="_blank">
+                                                                <i class="icon-external-link"></i>
+                                                            </a>
+                                                            <a target="_self" href="javascript:newComment(323)" class="tooltips" title="نظر دهید">
+                                                                <i class="icon-comments"></i>
+                                                            </a>
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle">خوزستان ،خاکستان شد وای به روزی که شود عربستان</h4>
+                                                        <div class="pubauthor">نویسنده: <strong><a href="../post/author/1357165.html">جنیفر </a></strong></div>
+                                                        <div class="pubcite"> یکشنبه 1 اسفند 1395 ساعت 01:03 ب.ظ <span class="label label-warning">مشاهده مطلب</span> <span class="label label-success"><a target="_self" href="javascript:newComment(323)">نظرات  <script>setCommentCnt(323)</script></a></span></div>
+
+                                                    </div>
+                                                    <div class="pubdetails">
+                                                       <div class="info-bar">
+                                                                                                                                                                       </div>
+                                                       <div style="clear: both;"></div>
+                                                       <div class="post-body">
+                                                		                                                            <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">دیروز تعطیل بودم
+،امروز هم ،همینطور.ظاهرا صدامون رو شنیدن که زیر خروارها خاک هنوز زنده ایم. سه
+وزیر راهی استان شدن و چندین عکس گرفتن و به تالاب های خشکیده سر زدن تا شهر خاموش
+رو روشن کنن و ثمره ش شد رفتن به ضیافت عربی به همراه عزیزان ستاد بحران استان...<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">ده سالی میشه
+ریزگردها زندگی رو ما رو گاها فلج کردند و همه به چشم دیدند و در اوج وقاحت آب
+کارون و دز رو انتقال دادن به استان های از ما بهترون و حاصلش شد گردو خاکی که مث
+بختک به جون استان افتاده<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">مردم شعار میدادن که
+از پول خودمون خرج خودمون کنین<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">آره پول خودمون،تخمین
+زدن استان میتونه یکی از ثروتمندترین کشورهای جهان بشه اگه استقلال پیدا کنه<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">و من هراس دارم از
+روزی که شعار جدایی طلبی بدن<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">چهارستون بدنم می
+لرزه از فکر اینکه دیگه نگم ایرانی ام و بگم خوزستانی ام<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">وحشت دارم از روزی که
+خط و زبانم بشه عربی<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi">کاش مسئولین عمق
+فاجعه رو میفهمیدن که مسکن درد خوزستان درختکاری نیست راه حل بهتری پیدا کنن تا
+خوزستان ،عربستان دوم نشه</span><span dir="LTR" style="font-size:14.0pt;
+line-height:107%"><o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi"><br></span></p><p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi"><img src="http://s4.picofile.com/file/8170082668/%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86_%D8%AF%D8%B1_%D8%AE%D8%A7%DA%A9_%D8%B9%DA%A9%D8%B3_%D9%85%DB%8C%D9%84%D8%A7%D8%AF_%DA%AF%D9%84_%D8%AF%D8%A7%D8%B1%DB%8C_Rounash_com.jpg" alt="نتیجه تصویری برای خوزستان و خاک"></span></p><p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi"><br></span></p><p class="MsoNormal" dir="RTL"><span lang="FA" style="font-size:14.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:Arial;mso-bidi-theme-font:minor-bidi"><br></span></p>
+
+
+
+
+                                                                                                                    <script>mihanblogPostLike('323','like')</script>                                                                                                                 </div>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="item mix cpaper" data-year="321" dir="rtl">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                            <a href="2.html#" class="pubcollapse tooltips" title="مشاهده مطلب">
+                                                                <i class="icon-expand"></i>
+                                                            </a>
+                                                            <a href="../post/321.html" class="tooltips" title="لینک مستقیم " target="_blank">
+                                                                <i class="icon-external-link"></i>
+                                                            </a>
+                                                            <a target="_self" href="javascript:newComment(321)" class="tooltips" title="نظر دهید">
+                                                                <i class="icon-comments"></i>
+                                                            </a>
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle">دختر خاص سرنوشت من: تولدت مبارک</h4>
+                                                        <div class="pubauthor">نویسنده: <strong><a href="../post/author/1357165.html">جنیفر </a></strong></div>
+                                                        <div class="pubcite"> سه شنبه 19 بهمن 1395 ساعت 07:51 ب.ظ <span class="label label-warning">مشاهده مطلب</span> <span class="label label-success"><a target="_self" href="javascript:newComment(321)">نظرات  <script>setCommentCnt(321)</script></a></span></div>
+
+                                                    </div>
+                                                    <div class="pubdetails">
+                                                       <div class="info-bar">
+                                                                                                                                                                       </div>
+                                                       <div style="clear: both;"></div>
+                                                       <div class="post-body">
+                                                		                                                            
+
+<font face="Mihan-Iransans"><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://s2.picofile.com/file/8264842484/%D8%B9%DA%A9%D8%B3_%D8%B2%D9%87%D8%B1%D8%A7_%D8%AC%D8%A7%D9%86_%D8%AA%D9%88%D9%84%D8%AF%D8%AA_%D9%85%D8%A8%D8%A7%D8%B1%DA%A9.jpg" alt="نتیجه تصویری برای زهرا جون تولدت مبارک">
+
+
+</i></font><div><font face="Mihan-Iransans"><i><br></i></font></div><div><font face="Mihan-Iransans"><i><br></i></font></div><div><font face="Mihan-Iransans"><i><br></i></font></div><div><font face="Mihan-Iransans"><i><br></i></font></div><div><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i>یک سبد احساس را با تو قسمت می کنم</i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i>در شب میلاد تو جان نثارت می کنم</i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i>عشق زیبای تو را رونق دل می کنم</i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i>با تو ای زیباترین احساس بودن می کنم</i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i>تولدت مبارک</i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://gifportal.ru/data/smiles/ornament-109.gif"></i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>امروز روز توست، روز میلادت</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>دنیا تبسم کرده است امروز با یادت</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>امروز بی شک اسمان ابی ترین ابیست</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>چرخ و فلک همچون دلم درگیر بی تابیست</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><span style="box-sizing: border-box; outline: 0px; margin: 0px; padding: 0px; border: 0px; background: transparent;"><span style="box-sizing: border-box; outline: 0px; background: transparent; color: rgb(0, 0, 0); margin: 0px; padding: 0px; border: 0px; transition: all 0.3s ease-out; text-decoration: none !important; font-weight: 700;"><a href="http://www.amazing.ir/1392/07/22/birthday-sms-text-greetings-for-the-new-92/" target="_blank" style="box-sizing: border-box; outline: 0px; background: transparent; color: rgb(0, 0, 0); text-decoration: none !important; margin: 0px; padding: 0px; border: 0px; transition: all 0.3s ease-out;"><font face="Mihan-Iransans"><i>تولدت مبارک</i></font></a></span></span></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsa3197JApPnqXV6LZzorQWRCerbfykV5uu_VTHkBW9cRhF0wUpg" alt="نتیجه تصویری برای زهرا جون تولدت مبارک"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="3"><i>کاش پیشت بودم....</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans"><i><font size="3">کاااااااااااااش</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><span style="box-sizing: border-box; outline: 0px; margin: 0px; padding: 0px; border: 0px; background: transparent;"><font face="Mihan-Iransans"><i><br></i></font></span></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><span style="box-sizing: border-box; outline: 0px; margin: 0px; padding: 0px; border: 0px; background: transparent;"><font face="Mihan-Iransans"><i><img src="http://gifportal.ru/data/smiles/ornament-145.gif"></i></font></span></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><span style="box-sizing: border-box; outline: 0px; margin: 0px; padding: 0px; border: 0px; background: transparent;"><font face="Mihan-Iransans"><i><br></i></font></span></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>میلادت ای دوست مبارک باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>پیوسته دلت شاد سعادت باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>هر سبزۀ سبز رنگ بهارت باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>راهـت سپید راه عــدالـت باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>چـــشـــم شــادی نگارت باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>ایــــــزد پـشـت و پـناهت باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>میلادت ای دوست مبارک باشد</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><span style="box-sizing: border-box; outline: 0px; margin: 0px; padding: 0px; border: 0px; background: transparent;"></span></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>دلـشاد ازین اهل جماعت باشد<img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://gifportal.ru/data/smiles/ornament-129.gif"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://smskhor.ir/wp-content/uploads/birthday_freebies.jpg" alt="نتیجه تصویری برای تولدت مبارک"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>روز تولد تو روز نگاه باران</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>بر شوره زار تشنه بر این دل بیابان</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>روز&nbsp;<span style="box-sizing: border-box; outline: 0px; font-weight: 700; margin: 0px; padding: 0px; border: 0px; background: transparent;">تولد</span>&nbsp;تو گویی پر از خیال است</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>یاس و کبوتر و باد در حیرت تو خواب است</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>تولدت مبارک</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties/animaatjes-floaties-87132.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><font color="#33cc00">دخترخاص سرنوشت من </font>،<font color="#ff6600">زهرای دوست داشتنی</font></i></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/11.gif" style="font-size: 11px;"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>تو این شب عزیز از خدا میخوام که قلبت رو عاری از غم کنه</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i>و لبخند رو از لبهات پاک نکنه<img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://bahar-20.com/ftp/zibasazi/09/image/17.gif" alt="تصاویر زیباسازی وبلاگ ، عروسک یاهو ، متحرک             www.bahar-20.com"><img src="http://bahar-20.com/ftp/zibasazi/09/image/17.gif" alt="تصاویر زیباسازی وبلاگ ، عروسک یاهو ، متحرک             www.bahar-20.com" style="font-size: 11px;"><img src="http://bahar-20.com/ftp/zibasazi/09/image/17.gif" alt="تصاویر زیباسازی وبلاگ ، عروسک یاهو ، متحرک             www.bahar-20.com" style="font-size: 11px;"><img src="http://bahar-20.com/ftp/zibasazi/09/image/17.gif" alt="تصاویر زیباسازی وبلاگ ، عروسک یاهو ، متحرک             www.bahar-20.com" style="font-size: 11px;"><img src="http://bahar-20.com/ftp/zibasazi/09/image/17.gif" alt="تصاویر زیباسازی وبلاگ ، عروسک یاهو ، متحرک             www.bahar-20.com" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans" color="#cc0000"><i><b>بهترین ها نصیبت زهرای من<img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif" style="font-size: 11px;"></b></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><img src="http://www.animaatjes.nl/plaatjes/f/floaties-bloemen/floaties-bloemen-animaatjes-33.gif"><img src="http://www.animaatjes.nl/plaatjes/f/floaties-bloemen/floaties-bloemen-animaatjes-33.gif" style="font-size: 11px;"><img src="http://www.animaatjes.nl/plaatjes/f/floaties-bloemen/floaties-bloemen-animaatjes-33.gif" style="font-size: 11px;"></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; font-size: 13px; text-align: center;"><font face="Mihan-Iransans"><i><br></i></font></p><p style="outline: 0px; box-sizing: border-box; margin: 5px 0px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 20px; color: rgb(63, 63, 63); font-size: 12px; text-align: center;"><br></p></div>
+
+
+
+                                                                                                                    <script>mihanblogPostLike('321','like')</script>                                                                                                                 </div>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="item mix cpaper" data-year="320" dir="rtl">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                            <a href="2.html#" class="pubcollapse tooltips" title="مشاهده مطلب">
+                                                                <i class="icon-expand"></i>
+                                                            </a>
+                                                            <a href="../post/320.html" class="tooltips" title="لینک مستقیم " target="_blank">
+                                                                <i class="icon-external-link"></i>
+                                                            </a>
+                                                            <a target="_self" href="javascript:newComment(320)" class="tooltips" title="نظر دهید">
+                                                                <i class="icon-comments"></i>
+                                                            </a>
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle">انگشتان پا و شخصیت</h4>
+                                                        <div class="pubauthor">نویسنده: <strong><a href="../post/author/1357165.html">جنیفر </a></strong></div>
+                                                        <div class="pubcite"> پنجشنبه 30 دی 1395 ساعت 12:00 ق.ظ <span class="label label-warning">مشاهده مطلب</span> <span class="label label-success"><a target="_self" href="javascript:newComment(320)">نظرات  <script>setCommentCnt(320)</script></a></span></div>
+
+                                                    </div>
+                                                    <div class="pubdetails">
+                                                       <div class="info-bar">
+                                                        <span class="label label-info"><a href="../post/category/4.html" >جالب انگیز</a></span>                                                                                                               </div>
+                                                       <div style="clear: both;"></div>
+                                                       <div class="post-body">
+                                                		                                                            
+
+<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3"><strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">آزمون‌های شخصیتی</strong>&nbsp;مختلفی در مجلات و وب‌گاه‌های مختلف وجود دارند؛ یکی کف دست‌تان را می‌خواند و دیگری از روی&nbsp; صورت‌‌تان نوعِ شخصیت‌تان را به شما می‌گوید. همه‌ی این آزمون‌ها بر اساس علوم مختلفی به وجود آمده‌اند؛ عده‌ای آنها را قبول دارند و عده‌ای دیگر در صحت‌شان شک دارند. با این حال، اگر جز هر کدام از این دو گروه باشید، می‌خواهیم به شما<strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">جدیدترین آزمون شخصیتی</strong>&nbsp;را معرفی کنیم:<strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">&nbsp;۱۰۰ نوع پا، و آن‌چه آنها از شخصیت‌تان می‌گویند!</strong></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><a title="شخصیت شناسی انگشت پا" href="http://www.alamto.com/toes-personality-test.html" target="_blank" style="margin: 0px; padding: 0px; vertical-align: baseline; background: transparent; color: rgb(33, 125, 211); outline: none 0px; text-decoration: none; transition: background-color 0.2s linear, color 0.2s linear;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/dgfj.jpg" alt="dgfj.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></a></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۱. پای رومی</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/1-15-e1453065365109.jpg" alt="1-15-e1453065365109.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">بر اساس آمارها، پای رومی یکی از رایج‌ترین شکل‌های پا در جهان است. انگشت شصت پا از بقیه‌ی انگشتان بزرگ‌تر است؛ همه‌ی انگشتان راست و مستقیم و دقیقا شبیه چیزی هستند که در شکل زیر می‌بینید. آدم‌هایی که چنین پاهایی دارند، اجتماعی و خوش‌مشرب هستند. اگر بخواهیم شخصیت‌شان را در یک جمله توصیف کنیم باید بگوییم فوق‌العاده جذاب هستند. آنها می‌توانند کسب‌وکار بزرگی داشته باشند و هرگز از سخنرانی در مقابل جمع نمی‌ترسند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۲. پای مربعی</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/2-15-e1453065459639.jpg" alt="2-15-e1453065459639.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">این نوع پا نسبت به پای رومی رواج کم‌تری دارد. همه‌ی انگشتان تقریبا هم‌اندازه‌ هستند و همین عامل باعث می‌شود پا مربع یا مستطیل‌شکل دیده شود. گفته می‌شود، آدم‌هایی که چنین پاهایی دارند آرام و قابل اعتماد هستند. عمل‌گرا هستند و در شرایط دشوار با عقل و منطق و بدون احساسات، راهِ درست را پیدا می‌کنند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۳. پای یونانی</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/3-16-e1453065504163.jpg" alt="3-16-e1453065504163.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">این پا رایج‌تر از پای مربعی است، و نشانه‌اش این است که در پاهای یونانی، انگشت دوم از همه‌ی انگشتانِ دیگر بلندتر است. آدم‌هایی که پای یونانی دارند بسیار با انگیزه و با شور و هیجان بالایی هستند؛ چنان‌که بسیاری از هنرمندان و ورزشکاران دارای چنین پایی هستند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۴. پای کشیده</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/4-16-e1453065553281.jpg" alt="4-16-e1453065553281.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">این نوع از پا دارای ظاهری ظریف و کشیده است و انگشتان در آن به گونه‌ای هستند که از شصت تا کوچک‌ترین انگشت به ترتیبِ قد قرار گرفته‌اند. آدم‌هایی که چنین پاهایی دارند، افرادی دمدمی‌مزاج و عجول هستند. هم‌چنین حریم خصوصی این آدم‌ها برای‌شان بسیار با اهمیت است، و رازداری را نکته‌ی کلیدیِ زندگی می‌دانند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۵. ناتوانی در باز کردن انگشت کوچک</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/5-15.jpg" alt="5-15.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">اگر پایی داشته باشید که نتوانید انگشت کوچک‌تان را از انگشت کناری‌اش فاصله دهید، فردی هستید که برای‌تان نظم و تشکیلات بسیار با ارزش است و با گذشت زمان تبدیل به یک همراهِ وفادار می‌شوید.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۶. توانایی در باز کردن انگشت کوچک</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/6-15.jpg" alt="6-15.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">اگر می‌توانید انگشت کوچک‌تان را از انگشت کناری‌اش فاصله دهید، به این معنی است که آدمی هستید که همیشه در زندگی‌تان دنبال تغییر هستید، خیلی زود از همه چیز خسته می‌شوید و دنبال فرصت‌های مختلف هستید. چنین افرادی همیشه دنبال کارهای هیجان‌آور و تصادفی هستند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۷. انگشت کوچک از بغلِ پا بیرون زده است</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/7-15.jpg" alt="7-15.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">اگر انگشت کوچک‌تان از کنار پای‌تان بیرون زده است، یعنی شما آدم سرکش و جسوری هستید و می‌خواهید همه چیز به هر طریقِ ممکن بر وفق مرادتان انجام شود.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۸. فاصله بین انگشت دوم و سوم</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/8-15.jpg" alt="8-15.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">آدم‌هایی که چنین فاصله‌ای در پای‌شان دارند، به بهترین نحو می‌توانند احساسات‌شان را در زندگی کنترل کنند. می‌توانند در زندگی از هر چیزی به راحتی دل بکنند.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۹. انگشت سوم کج است</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/9-12.jpg" alt="9-12.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">اگر انگشت سومِ پای‌تان کج باشد، شما مهارت بالایی در سازمان‌دهی دارید و همیشه برای زندگی‌تان برنامه‌ریزی می‌کنید و کاملا بر همه چیز کنترل دارید.</font></p><h2 style="margin: 20px 0px 15px; padding: 10px 0px 15px; border-width: 1px 0px; border-top-style: solid; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: rgb(241, 241, 241); border-right-color: initial; border-bottom-color: rgb(241, 241, 241); border-left-color: initial; border-image: initial; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 1em; font-weight: normal; color: rgb(51, 51, 153);"><font face="Mihan-Iransans" size="3">۱۰. انتهای انگشت دوم نازک است</font></h2><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: center;"><font face="Mihan-Iransans" size="3"><img src="http://www.alamto.com/wp-content/uploads/2016/02/10-13.jpg" alt="10-13.jpg" style="margin: 5px; padding: 4px; border: 1px solid rgb(235, 235, 235); outline: 0px; vertical-align: baseline; background: transparent; max-width: 599px; height: auto;"></font></p><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(94, 96, 102); text-align: justify;"><font face="Mihan-Iransans" size="3">اگر انتهای انگشت دوم‌تان نازک ولی سرِ آن مانند انگشتانِ دیگر است، به این معنی است که آدم سخنور و فصیحی هستید و دوست دارند در مورد همه چیز اغراق کنند. آنها دوست دارند در لحظاتِ شادِ دیگران سهیم باشند، ولی وقتی بداخلاق می‌شوند حتما باید آنها را جدی بگیرید.</font></p>
+
+
+
+
+
+
+                                                                                                                    <script>mihanblogPostLike('320','like')</script>                                                                                                                 </div>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="item mix cpaper" data-year="317" dir="rtl">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                            <a href="2.html#" class="pubcollapse tooltips" title="مشاهده مطلب">
+                                                                <i class="icon-expand"></i>
+                                                            </a>
+                                                            <a href="http://davat-b-tanhaee.mihanblog.com/post/317" class="tooltips" title="لینک مستقیم " target="_blank">
+                                                                <i class="icon-external-link"></i>
+                                                            </a>
+                                                            <a target="_self" href="javascript:newComment(317)" class="tooltips" title="نظر دهید">
+                                                                <i class="icon-comments"></i>
+                                                            </a>
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle">ملک تسخیر شده‌ خانواده &quot; پِرون&quot;</h4>
+                                                        <div class="pubauthor">نویسنده: <strong><a href="../post/author/1357165.html">جنیفر </a></strong></div>
+                                                        <div class="pubcite"> یکشنبه 12 دی 1395 ساعت 10:29 ق.ظ <span class="label label-warning">مشاهده مطلب</span> <span class="label label-success"><a target="_self" href="javascript:newComment(317)">نظرات  <script>setCommentCnt(317)</script></a></span></div>
+
+                                                    </div>
+                                                    <div class="pubdetails">
+                                                       <div class="info-bar">
+                                                        <span class="label label-info"><a href="../post/category/4.html" >جالب انگیز</a></span>                                                                                                               </div>
+                                                       <div style="clear: both;"></div>
+                                                       <div class="post-body">
+                                                		                                                            
+<p><img src="http://images.kojaro.com/2016/7/faae26d0-d35e-4773-b707-f8a4e147a603.jpg" alt="نتیجه تصویری برای ملک تسخیر شده‌ خانواده &quot; پِرون&quot;">
+</p>
+<p><font face="Mihan-Iransans" size="3">در زمستان سال ۱۹۷۰، "راجر و کارولین پرون" به همراه ۵ دختر خود آندره‌آ (آنی)، نانسی ، کریستین )، سیندی و اپریل به یک عمارت دو طبقه‌ی عجیب واقع در منطقه‌ی "هریس‌ویل" "رُدآیلند" نقل مکان کردند، عمارتی که به نام "ملک آرنولد پیر" نامگذاری شده بود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">ظاهر این خانه‌ی اربابی نشان نمی‌داد که چه ترس و وحشتی را در دل خود پنهان کرده است، ترسی که به زودی دامن‌گیر این ساکنان جدید می‌شد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">مدت‌ها بود که والدین به دنبال خرید خانه‌ای رویایی بودند که تا حد امکان راحتی فرزندان آنها را فراهم کند. خانواده از این جابجایی راضی بودند، این خانه‌ی ۱۰ اتاق خوابه که در زمینی به وسعت ۲۰۰ جریب ساخته شده بود، فضای کافی را برای همه دختران فراهم کرده بود، از سوی دیگر چشم‌انداز این منطقه نیز زیبا و رویایی بود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">پرون‌ها از همان اولین ساعات ورود به خانه حس می‌کردند چیزی ناخوشایند خانه‌ی دوست داشتنی آنها را تحت تأثیر خود قرار داده است. شاید این مسئله به تاریخچه‌ی این خانه باز می‌گشت.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">این ملک نخستین بار در سال ۱۶۸۰ بنا نهاده شده بود. هشت نسل از یک خانواده در این عمارت متولد شده، زندگی کرده و در نهایت جان سپرده بودند، مرگ و میری که همیشه هم طبیعی نبود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">به‌عنوان مثال خانم "جان آرنولد" در سن ۹۳ سالگی خود را در اصطبل خانه دار زده بود. همچنین چندین مورد دیگر خودکشی به وسیله‌ی سم یا دار زدن نیز در طی این سال‌ها گزارش شده بود. به این آمار باید قتل یک کودک ۱۱ ساله به نام "پرودنس آرنولد" توسط یک کارگر مزرعه و البته پیدا شدن اجساد ۴ مرد را اضافه کرد که به شکلی اسرارآمیز منجمد شده بودند. شاید به همین دلیل بود که فروشنده‌ی خانه به راجر توصیه کرد در تمام طول شب، چراغ‌ها را روشن بگذارد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">تقریبا تمام اعضای این خانواده به اشکال مختلف حوادث ماورایی را تجربه کردند، اما در این میان، مادر خانواده بیش از دیگران در مرکز توجه ارواح قرار داشت. او یکی از اولین تجربیات خود را این گونه بیان می‌کند: یک بار با یک زن ملبس به لباس خاکستری مواجه شده که سرش گویی از یک سو آویزان بود و با صدایی ناخوشایند خطاب به او گفت:
+</font></p>
+<p><font face="Mihan-Iransans" size="3">" برو بیرون، من شما را با مرگ و تاریکی از این خانه بیرون می‌رانم".
+</font></p>
+<p><font face="Mihan-Iransans" size="3">روزها یکی پس از دیگری با حوادثی عجیب و غیر قابل توضیح سپری می‌شد. تختخواب‌ها تکان می‌خوردند، اسباب و وسایل منزل یا از این گوشه و به آن گوشه سر می‌خوردند یا در هوا معلق بودند. شب هنگام سر و صداهایی عجیبی در خانه به گوش می‌رسید. گوشی تلفن در هوا معلق بود گویی دستی آن را نگه داشته است، اما با ورود افراد به اتاق، گوشی ناگهان محکم به روی تلفن کوبیده می‌شد. صندلی‌ها با ورود مهمانان ناپیدا جابجا شده و تابلوهای آویزان از دیوارها سقوط می‌کردند. پرون‌ها حتی ادعا می‌کردند یک بار یک دیوار به طور کامل محو شده و از آن چیزی باقی نمانده بود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">این بخشی از دردسرهای سکونت در این عمارت بود، اما شاید در مقابل اتفاقات پیش رو، بخشی ناچیز به شمار می‌آمد. چهره‌ی ترس به زودی بیش از پیش خود را به خانواده نشان داد. در ورودی منزل نیمه شب باز می‌شد و سپس با صدایی بلند بسته می‌شد. بعضی از درها تکان می‌خوردند و بعضی قفل می‌شدند، یک بار گویی نیرویی کل خانه را می‌لرزاند. روح پسربچه‌ای چهار ساله هر شب در خانه پرسه می‌زد و مادرش را صدا می‌کرد: "ماما مااااما".
+</font></p>
+<p><font face="Mihan-Iransans" size="3">نیمه شب‌ها کسی به دخترها لگد می‌زد یا موهای آنها را می‌کشید. حتی روح کودکی به "سیندی" گفته بود که اجساد هشت سرباز در دیوار خانه‌ی آنها مدفون شده است، اما بدترین قسمت ماجرا زمانی فرا رسید که یک روح خبیث، کارولین را هدف قرار داده و شروع به شکنجه، آزار و اذیت او کرد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">نام این زن "بتشیبا تایر" بود. او در سال ۱۸۱۲ در "رُدآیلند" متولد شد و تمام عمرش را به همراه همسرش "جادسون شرمن" در حومه‌ی "هریس‌ویل" سپری کرد. گفته می‌شد او صاحب چهار فرزند شد که سه تای آنها در همان اوان کودکی جان سپردند.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">اگرچه در آن زمان آمار مرگ و میر کودکان بالا بود، اما مرگ فرزندان، بتشیبا را در مرکز سؤظن قرار داد. به خصوص به دلیل زخم‌های مرموزی که روی سر کودکان دیده شد، گویی کسی با یک وسیله‌ی تیز سوزن مانند، جمجمه آنها را سوراخ کرده بود. مردم فکر می‌کردند که دلیل این اتفاقات شوم، دست داشتن او در جادوی سیاه و شیطان‌پرستی است.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">بعدها گفته شد که او حتی نوه‌اش را هم در همین راه قربانی کرده است. دادگاهی برای او تشکیل شد ولی به دلیل کمبود ادلّه‌ی لازم، رأی به بی‌گناهی او داده شد. "بتشیبا" شاید از نظر قانونی بی‌گناه بود، ولی این امر ذهنیتی که مردم از او داشتند را تغییر نداد. به ویژه که در آن زمان گفته می‌شد او خدمتکاران را به دلیل خطاهای جزئی مورد آزار و شکنجه قرار داده و به آنها گرسنگی می‌دهد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">در نهایت او در ۲۵ ماه می ۱۸۸۵ با حلق آویز کردن خود از درختی در پشت اصطبل به زندگیش خاتمه داد. پزشک قانونی که او را معاینه کرد، گفت تا به حال چنین چیزی ندیده است. بدن لاغر "بتشیبا" به گونه‌ای خشک شده که گویی از سنگ ساخته شده بود. اکنون به نظر می‌رسید روح بتشیبای عصبانی این خانه را تسخیر کرده است.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">در ابتدا روح از فشارهای فیزیکی برای مجبور کردن کارولین به ترک خانه استفاده کرد، او را نیشگون گرفته یا به صورتش سیلی می‌زد. اما رفته رفته این شکنجه ابعاد بدتری به خود گرفت. روح بعدا کارولین را با آتش مورد حمله قرار داد و حتی آن گونه که کارولین توصیف می‌کند، او را با چیزی شبیه به سوزن زخمی می‌کرد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">او می‌گوید یک بار که روی کاناپه دراز کشیده بود، حس کرده که چیزی سوزن مانند به پایش فرو رفته است، وقتی به پایش نگاه کرده حفره‌ای خون آلود مشاهده کرده که گویی با سوزن خیاطی سوراخ شده است. اما ظاهرا کارولین و خانواده‌اش قصد ترک خانه را نداشتند. اینجا بود که روح ناراضی تصمیم گرفت این بار کارولین را از درون مورد هجوم قرار دهد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">این حمله‌ها دیگر بیش از تاب و توان کارولین بود به طوری که خانواده حس کردند کارولین تسخیر شده است، برای همین دست کمک به سوی دو محقق عالم ارواح دراز کردند و اینجا بود که بالاخره زوج معروف "وارِن" وارد ماجرا شدند.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">"لورن و اد وارن" محققان دنیای ماورالطبیعه‌ای بودند که به دلیل تحقیقاتشان پیرامون مسئله‌ی "عمارت اِمیتی ویل" و همچنین "عروسک تسخیر شده‌ی آنابل" شهرتی قابل توجه داشتند. به محض ورود به خانه‌ی پرون، لورن نیروی تاریکی را از وجود کارولین حس کرد. به نظر می‌رسید روح بتشیبای عصبانی این خانه و به خصوص یکی از ساکنانش را تسخیر کرده است.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">یکی از اولین فرضیات به محلی نبودن این خانواده می‌پردازد؛ آنها در اینجا غریبه بودند و همچنین باورهای مذهبی دیگر مسئله‌ی مورد اشاره بود. در آن زمان به نظر می‌رسید ایمان خانواده‌ی پرون چند مستحکم نیست.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">لورن وارن می‌گوید:
+</font></p>
+<p><font face="Mihan-Iransans" size="3">"ایمان، حافظ شماست. من به خدا باور دارم و همین ایمان به من کمک می‌کند. خدا از من حمایت کرده و مرا در انجام مسئولیت‌هایم یاری می‌کند. در آن زمان خانواده‌ی پرون فاقد چنین باوری بود و این چیز خطرناکی است."
+</font></p>
+<p><font face="Mihan-Iransans" size="3">در تلاش برای رهایی خانواده از این طلسم و تسخیر، وارن‌ها سعی کردند با روش‌های مخصوص، خانه را از ارواح پاک‌سازی کنند. اما البته در جریان این کار آنها متوجه حقایق جالب دیگری نیز شدند.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">اینکه "بتشیبا" تنها روح ساکن این عمارت نیست. ارواح درگذشتگان، مدام در این خانه در جنب و جوش بوده و بعضی از آنها هم ظاهرا بی‌آزار و حتی مهربان بودند. به‌عنوان مثال روحی بود که بوی رایحه گل می‌داد، روح دیگری هر شب دخترها را برای شب بخیر می‌بوسید. مرد ریزه و میزه و بامزه‌ای هم بود که دوست داشت یکجا نشسته و بازی بچه‌ها را تماشا کند و گاهی دستی نامرئی ماشین‌های اسباب بازی را هل می‌داد. حتی یک روح عاشق نظافت و تمیزی نیز در منزل زندگی می‌کرد. پرون‌ها اشاره می‌کردند گاهی با شنیدن سروصدا به آشپزخانه رفته و می‌دیدند که جارو به گوشه و کنار آشپزخانه حرکت کرده و حتی یک کپّه آشغال در وسط آشپزخانه روی هم انباشه و در انتظار دور ریخته شدن است.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">اما این ارواح آن چیزی نبودند که کارولین را از درون و بیرون مورد شکنجه قرار داده بود. تحمل این شکنجه‌ها دیگر خارج از تحمل کارولین بود. لورن‌ها به این نتیجه رسیدند که شاید جن‌گیری تنها راه نجات کارولین باشد. آنها برای انجام چنین کاری نیازمند اجازه‌ی مخصوص از واتیکان بودند، اما کارولین فرصت چندانی نداشت.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">آندره‌آ، دختر بزرگ پرون‌ها، در مورد شب جن‌گیری مادرش چنین می‌گوید:
+</font></p>
+<p><font face="Mihan-Iransans" size="3">"آن شب یکی از بدترین شب‌های زندگیم بود، تصور می‌کردم که مادرم زیر این فشار و ترس شدید می‌میرد. او با صدایی عجیب که پیش از این هرگز نشنیده بودیم صحبت می‌کرد. نیرویی شدید که به نظر من متعلق به این جهان نبود او را به فاصله ۲۰ فوت و به اتاق دیگر پرتاب کرد."
+</font></p>
+<p><font face="Mihan-Iransans" size="3">ماجرای ترس و وحشت حاکم بر این خانه در سال ۲۰۱۳ و در قالب فیلم ترسناک (The Counjuring) روانه‌ی پرده‌ی نقره‌ای سینما شد. لورن وارن خود در مقام مشاور به کارگردان "جمیز وان" (James wan) کمک کرد. این فیلم به گوشه‌ای از آن چیزی می‌پردازد که کارولین پرون در آن دوران متحمل شد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">اما پایان ماجرای واقعی خانواده‌ی پرون چیز دیگری است. بر خلاف آن چیزی که در فیلم شاهد آن هستیم، زوج وارن موفق به حل کامل مسئله‌ی خانواده‌ی پرون نشد. در ابتدا به نظر می‌رسید همه چیز رو به بهبود است، اما خیلی زود اوضاع حتی از قبل هم بدتر شد.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">در حقیقت این گونه که به نظر می‌رسد، محققان فعالیت‌های فراواقعی به جای حل مشکل، ظاهرا تنها بر خشم نیروهای تاریکی افزوده بودند. پرون‌ها به دلیل وضعیت وخیم اقتصادی آن زمان، ناگزیر همچنان در این خانه زندگی کردند و سال‌های ترسناکی را یکی پس از دیگری پشت سر گذاشتند. سرانجام در سال ۱۹۸۰ خانواده بالاخره موفق به فروش املاک شد و از بند این هراس هر روزه رهایی یافت.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">پرون‌ها به جرجیا نقل مکان کرند، جایی که به حد کافی از تاریکی حاکم بر "عمارت آرنولد پیر" فاصله داشت. هر چند بر اساس گزارش‌های موجود، نیروهای ماورایی آنها را حتی تا جنوب نیز تعقیب کردند، ولی ظاهرا از شدت و قدرت آنها به حد قابل توجهی کاسته شده بود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">آندره‌آ ، تجربیات خود را در قالب یک مجموعه کتاب سه جلدی به نام "خانه‌ی تاریکی‌ها، خانه‌ی نور" (House of Darkness House of Light) منتشر کرد که به نوعی روز شمار زندگی خانواده‌ی پرون در این خانه و شرح مصائبی است که در آن سال‌ها بر آنها رفته است.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">به گفته‌ی او ساکنان بعدی خانه نیز از این وضعیت در عذاب بودند. مردی که خانه را خریداری کرد، یک روز بدون هیچ دلیلی و بدون برداشتن هیچ کدام از اسباب و اثاثیه، فریاد زنان منزل را ترک کرده بود.
+</font></p>
+<p><font face="Mihan-Iransans" size="3">مالک فعلی خانه "نورما ساتکلیف" است که در سال ۱۹۸۳ این خانه را خریداری کرد و به همراه همسرش "گری" در آن سکونت دارد. این خانواده و بازدید کنندگان این عمارت عجیب، هنوز هم از فعالیت‌هایی ماورایی آن خبر می‌دهند. از درهایی که باز و بسته می‌شوند، مه‌ای که گاهی خانه را فرا می‌گیرد، صدای قدم زدن افراد ناپیدا، لرزش اسباب و اثاثیه و البته روح زنی مسن که ساکت و آرام و شناور در فضا، این سو و آن سو می‌رود. اما به هر حال اوضاع به اندازه‌ی زمان سکونت خانواده‌ی پرون وخیم و غیر قابل تحمل نیست.
+</font></p>
+
+                                                                                                                    <script>mihanblogPostLike('317','like')</script>                                                                                                                 </div>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="item mix cpaper" data-year="318" dir="rtl">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                            <a href="2.html#" class="pubcollapse tooltips" title="مشاهده مطلب">
+                                                                <i class="icon-expand"></i>
+                                                            </a>
+                                                            <a href="http://davat-b-tanhaee.mihanblog.com/post/318" class="tooltips" title="لینک مستقیم " target="_blank">
+                                                                <i class="icon-external-link"></i>
+                                                            </a>
+                                                            <a target="_self" href="javascript:newComment(318)" class="tooltips" title="نظر دهید">
+                                                                <i class="icon-comments"></i>
+                                                            </a>
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle">مریم تسنیم دوست داشتنی تولدت مبارک</h4>
+                                                        <div class="pubauthor">نویسنده: <strong><a href="../post/author/1357165.html">جنیفر </a></strong></div>
+                                                        <div class="pubcite"> سه شنبه 23 آذر 1395 ساعت 10:31 ب.ظ <span class="label label-warning">مشاهده مطلب</span> <span class="label label-success"><a target="_self" href="javascript:newComment(318)">نظرات  <script>setCommentCnt(318)</script></a></span></div>
+
+                                                    </div>
+                                                    <div class="pubdetails">
+                                                       <div class="info-bar">
+                                                                                                                                                                       </div>
+                                                       <div style="clear: both;"></div>
+                                                       <div class="post-body">
+                                                		                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://www.parsnaz.ir/images/2016/11/1293202353-parsnaz-ir.jpg" alt="نتیجه تصویری برای تولد دوست">
+
+
+<div><br></div><div><br></div><div><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4" color="#ff0000">امروز سالروز تولد توست</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4" style="background-color: rgb(255, 204, 0);">و من برایت هدیه ای نخریده ام</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4" color="#ff6666">که آنچه خریدنی است بی شک ٬ لایق تو نیست</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><ul><li><font face="Mihan-Iransans" size="4" style="background-color: rgb(204, 51, 204);">من روز تولدت خود متولد می شوم</font></li></ul></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4" color="#ff0000"><b>تولدمان مبارک</b></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4" color="#ff0000"><b><br></b></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><img src="http://www.amazing.ir/wp-content/uploads/2013/10/happybirthday-Amazing-ir-8.jpg" alt="نتیجه تصویری برای تولد دوست"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="5" face="Mihan-Iransans" color="#ff0000"><i>زیباترین چشم انداز تندیس نگاه توست</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="5" face="Mihan-Iransans" color="#ff0000"><i>و قشنگترین لحظه لحظه روییدن توست</i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="5" face="Mihan-Iransans"><i><font color="#ff0000">سالروز</font><font color="#cc33cc"> تولدت</font><font color="#ff0000"> را با تقدیم یک سبد&nbsp;</font><span style="color: rgb(255, 0, 0); box-sizing: border-box; outline: 0px; font-weight: 700; margin: 0px; padding: 0px; border: 0px; background: transparent;">گل</span><font color="#ff0000">&nbsp;سرخ تبریک می گویم</font></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="5" face="Mihan-Iransans"><i><font color="#ff0000"><br></font></i></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><img src="http://www.amazing.ir/wp-content/uploads/2013/10/happybirthday-Amazing-ir-14.jpg" alt="متن تبریک تولد, اس ام اس تبریک تولد, تبریک تولد جدید ,عکس تبریک تولد , کارت پستال تبریک تولد"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4">مریم عزیزم</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4">نیستی ولی خاطرت همیشه با من است</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font face="Mihan-Iransans" size="4">تولدت مبارک ای گل همیشه خندان</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><img src="https://public.blu.livefilestore.com/y1p9W73raHiYNwnfxlt5BLly1lbDo_btPOSRKcc0Ivhuz1SaW9daN8eBRidrSvYiHUt41Ywj0chQyqtR0eMgOUeHA/baby%20box%20cake%20(1).jpg?psid=1" alt="نتیجه تصویری برای تولد دوست کیک"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans"><br></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans">عزیزم بهترین ها رو برات آرزو میکنم</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans">و اولین آرزوی من برای تو قبولی در داشگاهی که لایقشی</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans">و میدونم نه من و نه تک تک عزیزانت رو نا امید نمیکنی</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans">مهربونم :</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4" face="Mihan-Iransans" color="#cc0000">خوشبختیت آرزومه</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/11.gif"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><img src="http://cdn.mashreghnews.ir/files/fa/news/1395/2/29/1638322_190.jpg" alt="نتیجه تصویری برای دانشگاه تهران"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4"><br></font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4">خیلی دوست دارم خواهر گلم</font></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><font size="4">و بی صبرانه منتظر روزی هستم که با خبرهای خوب به وبستان برگردی</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><br></p><p style="box-sizing: border-box; outline: 0px; margin: 5px 9px; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; min-height: 10px; text-align: center;"><img src="http://www.wisgoon.com/media/pin/images/o/2015/8/14/22/1439575842882277.png" alt="نتیجه تصویری برای خواهری دوست دارم"></p></div>                                                                                                                    <script>mihanblogPostLike('318','like')</script>                                                                                                                 </div>
+                                                    </div>
+                                                </div>
+                                                                                         
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="row">
+                                                                                                        </div>
+<center><a href="http://snowalone.ir/" target="" title="SNOW ALONE :: سایت عاشقانه اسنو الون"><img hspace="0" border="0" align="" vspace="0" src="../../file.mihanblog.com/public/user_data/user_files/553/1656101/Banner/1.gif" alt="سایت عاشقانه اسنوالون"></a>
+
+<a href="http://snowalone.ir/" target="" title="SNOW ALONE :: سایت عاشقانه اسنو الون"><img hspace="0" border="0" align="" vspace="0" src="../../file.mihanblog.com/public/user_data/user_files/553/1656101/Banner/1.gif" alt="سایت عاشقانه اسنوالون"></a><center/>
+                                </div>
+                            </div>
+                                                        <div class="section color-2" id="filters">
+                                <div class="section-container">
+                                    <div class="row" dir="rtl">
+                                        <div class="col-md-12 fright">
+                                          <center>
+                                                                                      <span class="label label-info"><a href="1.html"><span>1</span></a></span>
+                                                                                      <span class="label label-info"><a href="2.html"><b>2</b></a></span>
+                                                                                      <span class="label label-info"><a href="3.html"><span>3</span></a></span>
+                                                                                      <span class="label label-info"><a href="4.html"><span>4</span></a></span>
+                                                                                      <span class="label label-info"><a href="5.html"><span>5</span></a></span>
+                                                                                      <span class="label label-info"><a href="6.html"><span>6</span></a></span>
+                                                                                      <span class="label label-info"><a href="7.html"><span>7</span></a></span>
+                                                                                      <span class="label label-info"><a href="8.html"><i>...</i></a></span>
+                                                                                    </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+
+
+                    <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="title text-center">
+                                            <h3>آرشیو</h3>
+                                        </div>
+                                                                                <ul class="ul-dates" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1396/9.html"> آذر 1396</a></h4>
+                                                    <p>مشاهده مطالب  آذر 1396</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1396/6.html"> شهریور 1396</a></h4>
+                                                    <p>مشاهده مطالب  شهریور 1396</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1396/4.html"> تیر 1396</a></h4>
+                                                    <p>مشاهده مطالب  تیر 1396</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1396/3.html"> خرداد 1396</a></h4>
+                                                    <p>مشاهده مطالب  خرداد 1396</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1396/1.html"> فروردین 1396</a></h4>
+                                                    <p>مشاهده مطالب  فروردین 1396</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1395/12.html"> اسفند 1395</a></h4>
+                                                    <p>مشاهده مطالب  اسفند 1395</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1395/11.html"> بهمن 1395</a></h4>
+                                                    <p>مشاهده مطالب  بهمن 1395</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive/1395/10.html"> دی 1395</a></h4>
+                                                    <p>مشاهده مطالب  دی 1395</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-calendar"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/archive.html">آرشیو سایت</a></h4>
+                                                    <p>آرشیو کل مطالب سایت</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                                                            </div>
+                                    <div class="col-md-5" dir="rtl">
+                                        <div class="title text-center">
+                                            <h3>برچسب ها</h3>
+                                        </div>
+                                                                                <ul class="ul-dates" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/تاریخ.html" title="همه مطالب با برچسب تاریخ">تاریخ</a></h4>
+                                                    <p>مشاهده مطالب با برچسب تاریخ</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/داستان+کوتاه.html" title="همه مطالب با برچسب داستان کوتاه">داستان کوتاه</a></h4>
+                                                    <p>مشاهده مطالب با برچسب داستان کوتاه</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/خاطرات.html" title="همه مطالب با برچسب خاطرات">خاطرات</a></h4>
+                                                    <p>مشاهده مطالب با برچسب خاطرات</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/جنیفر+نوشت.html" title="همه مطالب با برچسب جنیفر نوشت">جنیفر نوشت</a></h4>
+                                                    <p>مشاهده مطالب با برچسب جنیفر نوشت</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/دیو.html" title="همه مطالب با برچسب دیو">دیو</a></h4>
+                                                    <p>مشاهده مطالب با برچسب دیو</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/سپاه+ابرهه.html" title="همه مطالب با برچسب سپاه ابرهه">سپاه ابرهه</a></h4>
+                                                    <p>مشاهده مطالب با برچسب سپاه ابرهه</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/قرآن.html" title="همه مطالب با برچسب قرآن">قرآن</a></h4>
+                                                    <p>مشاهده مطالب با برچسب قرآن</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-tag"></i></span>
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/tag/مکه.html" title="همه مطالب با برچسب مکه">مکه</a></h4>
+                                                    <p>مشاهده مطالب با برچسب مکه</p>
+                                                </div>
+                                            </li>
+                                                                                    </ul>
+                                                                            </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="section color-1">
+                            <div class="section-container">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div id="labp-heads-wrap">
+
+                                            <div id="lab-carousel">
+                                                <div><img alt="image" src="http://www.naqweb.ir/cdn/skins/res2/skin2/img/lab/lab5.jpg" width="120" height="120" class="img-circle lab-img" /></div>
+                                                <div><img alt="image" src="http://www.naqweb.ir/cdn/skins/res2/skin2/img/lab/lab2.jpg" width="120" height="120" class="img-circle lab-img" /></div>
+                                                <div><img alt="image" src="http://www.naqweb.ir/cdn/skins/res2/skin2/img/lab/lab1.jpg" width="120" height="120" class="img-circle lab-img" /></div>
+                                                <div><img alt="image" src="http://www.naqweb.ir/cdn/skins/res2/skin2/img/lab/lab4.jpg" width="120" height="120" class="img-circle lab-img" /></div>
+                                            </div>
+                                            <div>
+                                                <a href="2.html#" id="prev"><i class="icon-chevron-sign-left"></i></a>
+                                                <a href="2.html#" id="next"><i class="icon-chevron-sign-right"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div id="lab-details" dir="rtl">
+                                            <div>
+                                                <h3>دعوت به تنهایی</h3>
+                                                <h4>تنهایی قشنگترین حس دنیاست چون برای داشتنش نیاز به “هیـــــچکـــــس” نداری : ) </h4>
+                                                <a href="../index.html" class="btn btn-info">صفحه نخست</a>
+                                            </div>
+                                            <div>
+                                                <h3>مدیر سایت</h3>
+                                                <h4>جنیفر </h4>
+                                                <a href="../post/author/1357165.html" class="btn btn-info">نوشته های مدیر</a>
+                                            </div>
+                                            <div>
+                                                <h3>آرشیو مطالب</h3>
+                                                <h4>لیست کامل مطالب سایت</h4>
+                                                <a href="../post/archive.html" class="btn btn-info">آرشیو</a>
+                                            </div>
+                                            <div>
+                                                <h3>با ما در تماس باشید</h3>
+                                                <h4> </h4>
+                                                <a href="javascript:messageForm()" class="btn btn-info">تماس با ما</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                <div class="title text-center" style=" border-bottom: 0px; margin-top: 45px;" dir="rtl">
+                                    <h3>کلیه حقوق این سایت محفوظ است.</h3>
+                                </div>
+                                <div class="title text-center" style=" border-bottom: 0px; margin-top: 80px;" dir="rtl">
+                                        <h3>قالب : سایت عاشقانه اسنوالون</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="research" class="page">
+                    <div class="pageheader">
+
+                        <div class="headercontent">
+
+                            <div class="section-container" dir="rtl">
+                                <h2 class="title" style="border-bottom: 0px; text-align: center;">آمار و امکانات سایت</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagecontents">
+
+
+                        <div class="section color-2">
+                            <div class="section-container">
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-4">
+                                        <center><!-- PersianStat -->
+<!-- URL: http://davat-b-tanhaee.mihanblog.com/ -->
+<script language='javascript' type='text/javascript' src='http://www.persianstat.com/service/stat.js'></script>
+<script language='javascript' type='text/javascript'>
+persianstat(10296603, 0);
+</script>
+<!-- /PersianStat -->
+</center>
+                                    </div>
+                                    <div class="col-md-4 text-center hidden-xs hidden-sm">
+                                        <i class="icon-coffee icon-huge"></i>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="subtitle text-center">
+                                            <h3>آمار سایت</h3>
+                                        </div>
+                                                                                <ul class="ul-boxed list-unstyled">
+                                              <li>بازدید کل: <script>getStatVar('total_view');</script></li>
+                                              <li>بازدید امروز: <script>getStatVar('today_view');</script></li>
+                                              <li>بازدید دیروز: <script>getStatVar('yesterday_view');</script></li>
+                                              <li>بازدید ماه قبل: <script>getStatVar('last_month_view');</script></li>
+                                              <li>بازدید این ماه: <script>getStatVar('this_month_view');</script></li>
+                                              <li style="font-size: 12px;">آخرین بازدید: <script>getStatVar('last_view_date');</script></li>
+                                              <li style="font-size: 12px;">بروزرسانی: <script>getStatVar('modify_date');</script></li>
+                                              <li>تعداد مطالب: <script>getStatVar('total_post');</script></li>
+                                              <li>نویسندگان: <script>getStatVar('total_author');</script></li>
+                                        </ul>
+                                                                            </div>
+                                </div>
+                                
+		                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="publications" class="page">
+                    <div class="page-container">
+                        <div class="pageheader">
+                            <div class="headercontent">
+                                <div class="section-container" dir="rtl">
+
+                                    <h2 class="title" style="border-bottom: 0px; text-align: center;" >درباره سایت</h2>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                    <div class="row" dir="rtl">
+                                        <div class="col-md-12">
+                                        <p><center><img src="../../static.mihanblog.com/public/user_data/web_photo/544/1630434.jpg@6880"  /></center></p>
+                                            <p><center>میان هیاهوی مزرعه دنیا<br />
+مترسکی هستم که بی باکم از کلاغ ها<br />
+درد ندارد زخمی که بر سرم میزنن<br />
+مرهمم آن است که جایگاهش گنبد کبود است و بس<br />
+همانکه می گوییم یکی بود ، هیچکس نبود<br />
+از کنار مزرعه افکارم رد شدی<br />
+نگاهی بر من افکن<br />
+مرا ببین........<br />
+مرا ببین میان هیاهوی آدم نماها<br />
+رسوخ کن میان تار و پود وجودم<br />
+من همانی هستم که نامم مجازیست<br />
+دنیایم مجازیست<br />
+مرا لابه لای پست هایم بیاب<br />
+مرا از اعماق کامنتهایم بجوی<br />
+میخواهم واقعی باشم در دنیای دروغ مجازی<br />
+مرا بیاب........<br />
+</center></p>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    </div>
+                </div>
+
+
+                <div id="teaching" class="page">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container" dir="rtl">
+                                <h2 class="title" style="border-bottom: 0px; text-align: center;">آخرین عناوین، موضوعات و نویسندگان</h2>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagecontents">
+                        <div class="section color-2">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-12">
+                                        <div class="title text-center">
+                                            <h3>موضوعات</h3>
+                                        </div>
+                                                                                <ul class="ul-dates" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-bookmark"></i></span>
+                                                    <span>16</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/category/4.html">جالب انگیز</a></h4>
+                                                    <p>همه مطالب با موضوع جالب انگیز</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-bookmark"></i></span>
+                                                    <span>49</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/category/3.html">دانستنی</a></h4>
+                                                    <p>همه مطالب با موضوع دانستنی</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-bookmark"></i></span>
+                                                    <span>18</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/category/2.html">جنیفر نوشت</a></h4>
+                                                    <p>همه مطالب با موضوع جنیفر نوشت</p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-bookmark"></i></span>
+                                                    <span>26</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/category/1.html">تاریخ</a></h4>
+                                                    <p>همه مطالب با موضوع تاریخ</p>
+                                                </div>
+                                            </li>
+                                                                                    </ul>
+                                                                            </div>
+                                    <div class="col-md-4" dir="rtl">
+                                        <div class="title text-center">
+                                            <h3>نویسندگان</h3>
+                                        </div>
+                                                                                <ul class="ul-dates-gray" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-user"></i></span>
+                                                    <span>244</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../post/author/1357165.html">جنیفر </a></h4>
+                                                    <p>همه نوشته های جنیفر </p>
+                                                </div>
+                                            </li>
+                                                                                    </ul>
+                                                                            </div>
+                                    <div class="col-md-4" dir="rtl">
+                                        <div class="title text-center">
+                                            <h3>آخرین عناوین</h3>
+                                        </div>
+                                                                                <ul class="ul-card">
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">یکشنبه 5 آذر 1396</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/330.html">زهرا جونم تولدت مبارک</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">سه شنبه 7 شهریور 1396</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/328.html">پرنده ابابیل</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">پنجشنبه 1 تیر 1396</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/327.html"> انسانهایی که توسط حیوانات بزرگ شده اند .</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">جمعه 19 خرداد 1396</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/322.html">« زن لوط » کیست؟ </a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">سه شنبه 1 فروردین 1396</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/324.html">سال نو مبارک</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">یکشنبه 1 اسفند 1395</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/323.html">خوزستان ،خاکستان شد وای به روزی که شود عربستان</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">سه شنبه 19 بهمن 1395</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/321.html">دختر خاص سرنوشت من: تولدت مبارک</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-pencil"></i></span>
+                                                    <span class="degree">پنجشنبه 30 دی 1395</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/320.html">انگشتان پا و شخصیت</a></p>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dy">
+                                                    <span class="year"><i class="icon-list"></i></span>
+                                                    <span class="degree">لیست کامل مطالب سایت</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where"><a href="../post/list.html">لیست کامل</a></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                                             </div>
+                </div>
+
+                <div id="gallery" class="page color-3">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container" dir="rtl">
+
+                                <h2 class="title" style="border-bottom: 0px; color: #555;text-align: center;">پیوندها و روزانه ها</h2>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagecontents">
+
+                        <div class="section color-3">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="title text-center">
+                                            <h3>پیوندها</h3>
+                                        </div>
+                                                                                <ul class="ul-dates" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://tanhakhodam76.blogfa.com/" target="_blank" title="">زندگی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../cod-1395.mihanblog.com/index.html" target="_blank" title="">روزمرگی هام</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://www.biologychemistry.blogfa.com/" target="_blank" title="">شهر زیست و شیمی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://www.lovekade.com/" target="_blank" title="">لاو کده</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://mansourgholizadeh89.blogfa.com/" target="_blank" title="">داستان های کوتاه منصور2</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://yechibegam.mahdiblog.com/" target="_blank" title="">الهام جون</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://autmnlady.blogfa.com/" target="_blank" title="">سوگند جون</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://tishehayeashk.blogfa.com/" target="_blank" title="">به سوی نور هستی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://w-sherlock-holmes.blog.ir/" target="_blank" title="">شادی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://khoshe-harf.blogfa.com/" target="_blank" title="">یه خوشه حرف</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../eshghegomshodeyeman.mihanblog.com/index.html" target="_blank" title="">حصار تنهایی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://mamadivazezejon.mihanblog.com/" target="_blank" title="">しѺ√乇❀✘₪غریبی های یک دختر..✘₪இ ❀しѺ√乇</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../cafe-tedium.mihanblog.com/index.html" target="_blank" title="">مرضیه جونی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../kash-donya.mihanblog.com/index.html" target="_blank" title="">یگانه جووووووووووونم</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://k4m64violin.blogfa.com/" target="_blank" title="">من یک نوازنده ام</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://so-sha.mihanblog.com/" target="_blank" title="">سونیا</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://baharzsa.persianblog.ir/" target="_blank" title="">از تبار بهار</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../love-barren.mihanblog.com/index.html" target="_blank" title="">عشق بی ثمر</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../../shoogedel.mihanblog.com/index.html" target="_blank" title="">جناب پارسا</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://mosafer7776fg.blogfa.com/" target="_blank" title="">مسافر روشنی</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../link/index.html">لیست کامل پیوندها</a></h4>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                                                            </div>
+                                    <div class="col-md-5" dir="rtl">
+                                        <div class="title text-center">
+                                            <h3>روزانه ها</h3>
+                                        </div>
+                                                                                <ul class="ul-dates-gray" dir="rtl">
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-external-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="http://yahoo2.blogfa.com/" target="_blank" title="">دنیای بی جواب</a></h4>
+                                                </div>
+                                            </li>
+                                                                                        <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-list"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="../linkdaily/index.html" >لیست کامل پیوندهای روزانه</a></h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dates">
+                                                    <span><i class="icon-external-link"></i></span>
+                                                    <span> </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="javascript:linkdailyForm()">ارسال لینک</a></h4>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="page stellar">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container" dir="rtl">
+                                <h2 class="title" style="border-bottom: 0px; text-align: center;">تماس با ما</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagecontents">
+                        <div class="section contact-office2" data-stellar-background-ratio="0.1">
+                            <div class="section-container">
+
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-4">
+                                        <p>با ما در ارتباط باشید و ما را از نظرات ارزشمند خود مطلع کنید</p>
+                                    </div>
+                                    <div class="col-md-4 text-center hidden-xs hidden-sm">
+                                        <i class="icon-envelope icon-huge"></i>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <strong><i class="icon-user"></i>  </strong>
+                                                <span>مدیر سایت: جنیفر </span>
+                                            </li>
+                                            <li>
+                                                <strong><i class="icon-envelope"></i>  </strong>
+                                                <span></span>
+                                            </li>
+                                            <li>
+                                                <strong><i class="icon-external-link"></i>  </strong>
+                                                <span>http://davat-b-tanhaee.mihanblog.com</span>
+                                            </li>
+                                            <li>
+                                                <strong><i class="icon-flag"></i>  </strong>
+                                                <span>شعار سایت: تنهایی قشنگترین حس دنیاست چون برای داشتنش نیاز به “هیـــــچکـــــس” نداری : )</span>
+                                            </li>
+                                            <li>
+                                                <strong><i class="icon-calendar"></i>  </strong>
+                                                <span><script>setTodayDate()</script></span>
+                                            </li>
+                                            <li>
+                                                <strong><i class="icon-phone"></i>  </strong>
+                                                <span><a href="javascript:messageForm()">فرم تماس با ما</a></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay"></div>
+            </div>
+        </div>
+    </body><!--  1395/6/3  -->
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'davat-b-tanhaee.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

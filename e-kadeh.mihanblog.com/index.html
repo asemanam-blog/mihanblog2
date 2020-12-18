@@ -1,0 +1,2917 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1798895*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[42]='33';commentCnt[607]='1';commentCnt[608]='0';commentCnt[609]='0';commentCnt[610]='0';commentCnt[611]='0';commentCnt[612]='0';commentCnt[613]='0';commentCnt[614]='0';commentCnt[615]='0';commentCnt[616]='0';commentCnt[617]='0';commentCnt[618]='0';commentCnt[619]='0';commentCnt[620]='3';commentCnt[621]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[42]='10';
+mihanblogDisLikeArrCnt[42]='0';
+mihanblogLikeArrCnt[607]='0';
+mihanblogDisLikeArrCnt[607]='0';
+mihanblogLikeArrCnt[614]='0';
+mihanblogDisLikeArrCnt[614]='0';
+mihanblogLikeArrCnt[617]='0';
+mihanblogDisLikeArrCnt[617]='0';
+mihanblogLikeArrCnt[620]='0';
+mihanblogDisLikeArrCnt[620]='0';
+mihanblogLikeArrCnt[621]='0';
+mihanblogDisLikeArrCnt[621]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://e-kadeh.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://e-kadeh.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','580');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','پنجشنبه 21 آذر 1398');
+	
+	setStatVar('today_view','12');
+	setStatVar('yesterday_view','14');
+	
+	setStatVar('this_month_view','2360');
+	setStatVar('last_month_view','2391');
+
+	setStatVar('total_view','114435');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (21:13)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://e-kadeh.mihanblog.com/statupdate/?data[refereruri]=&data[postid]=&data[requesturi]=/&data[sdate]=1608228999&data[hash]=cec848263411865bd228325ccd488301&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://e-kadeh.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://e-kadeh.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link rel="alternate" type="application/rss+xml" title="علم کده" href="post/rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="علم کده" href="post/atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099942/style.css" type="text/css" rel="stylesheet">
+
+    <title>علم کده</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td class=div2>
+<div class=div00>
+
+<div class=div60>
+    <div class=div101>
+        <div class=div10><font class=title>علم کده</font></div></div>
+    <div class=div11>
+        <div class=div12><font class=des>♀♂دانـــωـــتنــــ یا ندانــωــتنـــــــ مــωــئـــــله اینــــــ اωـتـــــ♀♂</font></div></div>
+</div>
+
+<div class=ss>
+    <div class=s1><form id="frm-16082153895fdb6b5d1ccc1" method="get" action="http://e-kadeh.mihanblog.com/post/search/fid/16082153895fdb6b5d1ccc1"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div class=s2>
+            <input type="text" name="search_text" size="20" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+        <div class=s3><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=33 height=33 value="جستجو"></div>
+    <input type="hidden" name="frm-id" value="16082153895fdb6b5d1ccc1" id="frm-id" /></form></div>
+
+    <div class=s4>
+        <div class=s5><font class=text10>
+            <a href="index.html">صفحه نخست</a><br>
+            <a href="javascript:messageForm()">تماس با مدیر</a><br>
+            <a href="mailto:zanganehali13790@gmail.com">پست الکترونیک</a><br>
+            <a href="post/rss/index.html">RSS</a><br>
+            <a href="post/atom/index.html">ATOM</a></font></div></div>
+</div>
+
+<div class=div17></div>
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div31><font class=text1><center><img src="http://static.mihanblog.com//public/user_data/web_photo/600/1798895.jpg?7265"  /><br><br>
+                یک عمل درست، بهتر است از هزار نصیحت.</center><br>
+                <b>مدیر وبلاگ :</b> <a href="post/author/1485225.html">A . z</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="post/category/1.html">هوا فضا و نجوم (165)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/6.html">پزشکی و روان پزشکی (160)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/9.html">فناوری (91)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/8.html">طبیعت و حیوانات (81)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/5.html">متفرقه (55)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/4.html">نانو (35)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/category/7.html">تاریخ و ماقبل تاریخ (30)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">        </font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="post/621.html">کانال تلگرام ما</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/620.html">تلسکوپ شکارچی ویژه شناسایی خطرناک‌ترین سیارک در مدار کره زمین</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/619.html">کارشناسان در یک قدمی کشف نشانه‌های حیات بر سطح یک سیارک</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/618.html">بیماری‌هایی که در فضا سراغ فضانوردان می‌آیند</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/617.html">نگاهی به یکی از قدیمی‌ترین دفترچه‌های دستنویس جهان</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/616.html">کامپیوتری که یک قرن پیش از میلاد مسیح ساخته شد</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/615.html">امکان خرید سوغات سفر انسان به ماه ممکن شد</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/614.html">خوشحالی دانشمندان از تولد نوزاد نهنگ در حال انقراض</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/613.html">ناتوانی در تشخیص چهره آسیایی‌ها از هم، حقه مغز است</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/612.html">کشف فسیل یک جاندار 70 میلیون ساله+تصویر</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/611.html">با این4روش بینایی خود را در خانه تقویت کنید +بهترین زمان سنجش</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/610.html">حافظه مولکولی هم به بازار آمد</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/609.html">کشف سیاه‌چاله‌هایی که به دور خود می‌چرخند</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/608.html">تولید رباتی که از فضاهای تنگ و باریک عبور می‌کند</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/607.html">دید ماهواره‌ای از ابرها+عکس</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">        </font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="post/archive/1398/9.html"> آذر 1398</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1398/4.html"> تیر 1398</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1396/5.html"> مرداد 1396</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1396/4.html"> تیر 1396</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1396/1.html"> فروردین 1396</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/11.html"> بهمن 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/6.html"> شهریور 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/5.html"> مرداد 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/4.html"> تیر 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/2.html"> اردیبهشت 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1395/1.html"> فروردین 1395</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/archive/1394/12.html"> اسفند 1394</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">            <ul><li><b><a href="post/archive.html">آرشیو كل مطالب</a></b></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+        </font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="post/author/1485225.html">A . z (563)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/author/1485407.html">R . E (17)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="post/author/1584876.html">محمد  کاشانی (0)</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">        </font></div><div class=div30></div>
+    </div>
+    
+		<form id="frm-16082153895fdb6b5d1cf8a" method="post" action="http://e-kadeh.mihanblog.com/poll/new/fid/16082153895fdb6b5d1cf8a/atrty/1608215389/avrvy/0/key/3e7d3bf8bac2794e827eef73a78015ec/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="358356" id="data[pollid]" />		<div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نظرسنجی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div31><font class=text1>
+                کدام یک از موضوعات وبلاگ را می پسندید<br>
+                <label><input type="radio" name="data[answer]" value="v1">هوافضا نجوم</label><br><label><input type="radio" name="data[answer]" value="v2">ماقبل تاریخ و تاریخ</label><br><label><input type="radio" name="data[answer]" value="v3">فناوری</label><br><label><input type="radio" name="data[answer]" value="v4">طبیعت و حیوانات</label><br><label><input type="radio" name="data[answer]" value="v5">نانو</label><br><label><input type="radio" name="data[answer]" value="v6">پزشکی و روان پزشکی</label><br>                <div align="center"><br><input type="submit" value="ثبت" style="font-family: Tahoma; font-size: 9pt"><br><br></div>
+            </font></div></div><div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16082153895fdb6b5d1cf8a" id="frm-id" /></form>
+    
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="http://30arg.mihanblog.com" title="" target="_blank">حکمت و حکایت</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://khande-vane.ir/fa/" title="وب سایت هواداران خندوانه" target="_blank">خندوانه</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://khanesalamati.mihanblog.com/" title="" target="_blank">خانه سلامتی</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://romiaqd.avablog.ir/" title="" target="_blank">خادم الزهرا</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://cborzu.mihanblog.com/" title="" target="_blank">موج</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://taravtelahzeha.mihanblog.com/" title="" target="_blank">طراوت لحظه ها</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://taravtelahzeha.mihanblog.com/" title="" target="_blank">طراوت لحظه ها</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://www.yaranesadr.ir/category/photo" title="" target="_blank">گالری عکس</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://elmino1379.mihanblog.com" title="" target="_blank">علمینو</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3"><ul><li><a href="http://kayhanbozorg.mihanblog.com" title="" target="_blank">کیهان بزرگ</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">            <ul><li><b><a href="linkdaily/index.html">همه پیوندهای روزانه</a></b></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+        </font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li><a href="http://tovama.com" title="" target="_blank">محصولات دست ساز تو و ما</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">            <ul><li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li><b><a href="link/index.html">همه پیوندها</a></b></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+        </font></div><div class=div30></div>
+    </div>
+    
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div341><font class=text1>
+            <ul><li>کل بازدید : <script>getStatVar('total_view');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>بازدید امروز :<script>getStatVar('today_view');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+            <ul><li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li></ul><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099942/mytheme.ir_13.gif" width="238" height="3">
+        </font></div><div class=div30></div>
+    </div>
+    <div class=div024><center><center><script language="javascript" src="http://www.sibtheme.com/tools/danesh/cod3.js"></script></center><div style='display:none'><h1><a title='قالب وبلاگ ' href='http://www.sibtheme.com'>سیب تم</a></h1></div>
+
+
+
+
+
+<center><script language="javascript" src="http://www.sibtheme.com/tools/alexa/code.php?link=http://e-kadeh.mihanblog.com/&bgi=8&global=1&country=1&links=1&bgc=000000&borderw=1&borderc=0000FF"></script></center><div style='display:none'><h1><a title='قالب وبلاگ ' href='http://www.sibtheme.com'>سیب تم</a></h1></div>
+
+
+
+
+
+
+<script
+ type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 
+'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" language="javascript" 
+src="http://night-skin.com/blogcode/google-plus/gplus2.js"></script>
+<div style="display:none"><a 
+href="http://night-skin.com/">نایت اسکین</a>-<a 
+href="http://night-skin.com/blogcode/google-plus/">ابزار گوکل 
+پلاس</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</center>
+        <style>
+            .mihan_logo {
+                background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                height: 131px;
+                margin-top: 10px;
+                text-align: center;
+            }
+        </style>
+        <div class="mihan_logo"></div>
+
+    </div>
+
+</div>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/42.html">علــــــــــــــــ :) ـــــــــــــــــــــم</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+<img src="http://www.imna.ir/images/docs/000094/n00094774-t.jpg" class="irc_mi" style="margin-top: 67px;" height="333" width="703"><font size="2"><br><br></font><font color="#FF0000"><span style="background-color: rgb(255, 204, 255);"><font face="Mihan-IransansBold" color="#000099" size="2"><span class="mw-headline" id=".D9.BE">«تا جهان بود از سر 
+آدم فـراز//<br>&nbsp;کـس نبود از راه دانش بی‌نیاز//<br>&nbsp;مردمان ِ بخرد، اندر 
+هرزمان//<br>راه دانش را به‌هرگونه زبان// <br>گـرد کردند و گرامـی داشتنـد//<br>&nbsp;تا 
+به‌سنــگ‌اندر همی‌بنگاشتند//<br>&nbsp;دانش اندر دل چراغ روشن است//<br>&nbsp;وزهمه بد برتن 
+تو جوشن است» 
+</span></font><br></span></font><br>
+
+
+
+
+
+
+
+
+<div><font face="Mihan-Iransans" size="2">از اینکه قدم روی چشم من گذاشتید و به وبلاگ من سر زدید واقعا خوشحالم&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">امیدوارم توی وبلاگ من مطالب مفید و کاربردی و همینطور جذابی ببینید&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">لطفا اگه از مطالب خوشتون اومد اونارو لایک و اگر خوشتون نیامد اونارو دیس لایک کنید&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">و توی نظرسنجی هم حتما شرکت کنید&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">برای تبادل لینک هم کامنت بذارید&nbsp;</font></div><div><font face="Mihan-Iransans" size="2">ممنون از بازدیدتون</font></div><div><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/5.html" class=text4>متفرقه</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/42.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(42)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/42.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 19 اسفند 1394<br><a href="post/author/1485407.html">R . E</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('42','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/621.html">کانال تلگرام ما</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+
+با توجه به سهولت دسترسی و ارسال موضوعات در&nbsp; تلگرام تصمیم گرفتیم کانال وبلاگ رو ایجاد کنیم و از این به بعد در اونجا هم فعالیت کنیم
+
+
+<div>خوشحال میشیم به کانالمون سر بزنید</div><div>برای عضویت&nbsp;<a href="Telegram.me/danayeeee.html" target="_blank" title="">اینجا</a>&nbsp;کلیک کنید</div><div>Telegram.me/danayeeee</div>
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/621.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(621)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/621.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>پنجشنبه 21 آذر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('621','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/620.html">تلسکوپ شکارچی ویژه شناسایی خطرناک‌ترین سیارک در مدار کره زمین</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نزدیک شدن سیارکی مرموز به مدار کره زمین و احتمال وقوع حوادثی غیرقابل پیش بینی سبب شده است تا کارشناسان تلسکوپی پیشرفته برای ردیابی به فضا بفرستند.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">کارشناسان با توجه به وجود سیارک‌های فضایی در منظومه شمسی و احتمال برخورد آن‌ها با سیاره زمین و بروز فاجعه‌هایی غیرقابل جبران در نظر دارند تلسکوپی فضایی برای رصد سیارک‌ها بسازند. &nbsp; پیش‌تر طرح تلسکوپ فضایی NEOCam از سوی دانشمندان برای شناسایی زودهنگام سیارک‌های بالقوه خطرناک در مدارکره زمین معرفی شده بود، این تلسکوپ فضایی از دسته تلسکوپ‌های مبتنی بر فناوری نورمادون قرمز است، اما ۱۰ سال پیش به دلیل هزینه‌های بالا و تخصیص نیافتن بودجه ساخت آن اجرایی نشد. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">کارشناسان اعلام کرده اند سیارک‌ها و اجرام فضایی با حداقل قطر ۱۴۰ متر برای کره زمین در صورت اصابت با زمین خطری جدی باشند؛ محققان علامت اختصاری NEOs را به کلیه عامل‌های خطرزا در نزدیک مدار کره زمین قرار داده اند که خطری برای انسان ها، طبیعت و تاسیسات کره‌ زمین خواهد بود. &nbsp; تاکنون شناسایی سیارک‌ها به وسیله تلسکوپ‌های زمینی یا تلسکوپ هابل انجام شده، اما در برخی موارد شناسایی سیارک دربازه زمانی مناسب انجام نشده و در زمان نزدیکی یا برخورد با زمین سیارک شناسایی شده است. &nbsp; کارشناسان در نظر دارند با ساخت تلسکوپ فضایی مخصوص شکار سیارک‌ها بتوانند تا ۹۰ درصد سیارک‌های اطراف مدار کره زمین را در سال‌های آینده شناسایی کنند. &nbsp; افزون بر کشف سیارک‌های خطرناک برای کره زمین دانشمندان طرح‌هایی برای محافظت از کره زمین در برابر برخورد‌های سیارکی در دست اجرا دارند؛ از جمله این طرح‌ها می‌تواند پرتاب نوع خاصی از فضاپیما را نام برد که به سیارک برخورد می‌کند و با منفجر شدن به کاهش میزان خسارت و آسیب سیارک به زمین منجر می‌شود. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">کارشناسان در نظر دارند با ساخت تلسکوپ ویژه شکار سیارک از سال ۲۰۲۳ تا ۲۰۳۲ حدود ۹۰ درصد از سیارک‌های خطرناک در مدار کره زمین را شناسایی و راهکار‌هایی برای نابودی یا منحرف کردن مسیر حرکتی آن‌ها بیابند. &nbsp; یکی از سیارک‌های بسیار خطرناکی که به گفته کارشناسان در سال ۲۰۲۹ به مدار کره زمین بسیار نزدیک می‌شود و امکان دارد خطری جدی برای ساکنان زمین باشد، سیارکی به نام Apophis است؛ به گفته محققان یکی از دلایل سرعت در ساخت تلسکوپ پروژه NEOCam شناسایی زودهنگام حرکت سیارک و تصمیم گیری درباره نوع حرکت مداری آن در آینده است.&nbsp; &nbsp; &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گفته محققان کارساخت تلسکوپ شکارچی سیارک از سال آینده میلادی شروع می‌شود و افزون بر شناسایی سیارک‌ها می‌توان برای دیگر بررسی‌های علمی و نجومی هم از آن استفاده کرد.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">باشگاه خبرنگاران جوان</span></font></div><div><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;"><font face="Mihan-Iransans">a</font></span></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/620.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(620)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/620.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>شنبه 22 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('620','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/619.html">کارشناسان در یک قدمی کشف نشانه‌های حیات بر سطح یک سیارک</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">تحلیل قدمت سیارک فضایی ریوگو نشانه‌هایی از حیات اولیه در اختیار دانشمندان قرار می‌دهد.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">کارشناسان ژاپنی اعلام کرده‌اند نمونه‌های سنگ و خاک سیارک ریوگو Ryugu با استفاده از ابزار‌های تعبیه شده درون کاوشگر فضایی هایابوسای ۲ استخراج و در آینده نزدیک به زمین برای مطالعه‌های بیشتر بازگردانده خواهد شد. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">کاوشگر هایابوسای ۲ اکنون به مطالعه درباره سیارک فضایی ریوگو می‌پردازد و در فاز دوم ماموریت خود با استفاده از تجهیزاتی ویژه نمونه‌هایی از خاک سیارک را به زمین ارسال خواهد کرد. &nbsp; کارشناسان اعتقاد دارند انجام این ماموریت فضایی می‌تواند سبب پیشرفت تحقیقات علمی و ارسال نسل جدیدی از کاوشگر‌های فضایی به ماموریت‌های اکتشافی برای کشف اسرار منظومه شمسی شود. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">نمونه برداری از سنگ و خاک سیارک ریوگو پس از تلاش ماه آپریل سال میلادی جاری کاوشگر فضایی هایابوسای ۲ روی داد که در آن کاوشگر با استفاده از نوعی گلوله و شلیک به سطح سیارک موفق به پراکنده کردن گاز و گرد و غبار اطراف آن و دسترسی به فضایی واضح از سطح آن برای تصویربرداری شد. &nbsp; در جدیدترین مرحله از ماموریت، کاوشگر هایابوسای ۲ به سطح سیارک متصل می‌شود وبه استخراج دربازه زمانی ۴۰ دقیقه برای برداشت نمونه‌ها می‌پردازد. &nbsp; تمام مراحل دریافت نمونه‌ها به وسیله آژانس فضایی ژاپن، JAXA پوشش داده می‌شود، به گفته دانشمندان این مرحله از ماموریت بسیار اهمیت دارد، اما هر گونه خطا می‌تواند سبب آسیب دیدن کاوشگر فضایی و به تعویق افتادن ماموریت و شکست پروژه ارسال نمونه‌ها به سیاره زمین شود. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><img class="fr-fin fr-tag" alt="کارشناسان در یک قدمی کشف نشانه‌های حیات بر سطح یک سیارک" src="http://www.kanoon.ir/FileRepository/ImageUpload/121389/13980421Pzdrgz8154.png" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">در ماموریت هایابوسای یک که در سال‌های گذشته انجام شد، دانشمندان نمونه‌هایی از سیارک را مورد بررسی قرارداده اند و حال درماموریت جدید بررسی نمونه‌های سیارک ریوگو اطلاعات جدیدی درباره اجزای شیمیایی و جنس خاک و سنگ سیارک در اختیار دانشمندان قرار می‌دهد. &nbsp; برای استخراج نمونه‌ها و بررسی سطح سیارک، کاوشگر هایابوسا مجهز به دو کاوشگر کوچک‌تر به نام MINERVA-II۲ است که اطلاعات را به مرکز پشتیانی در زمین منتقل می‌کنند و برسطح سیارک قرار گرفته اند. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">قدمت سیارک فضایی ریوگو به گفته دانشمندان به حدود ۴.۶ میلیارد سال پیش و در زمان اولیه شکل گیری منظومه شمسی باز می‌گردد و مطالعه درباره آن می‌تواند داده‌های منحصربه فردی درباره منظومه شمسی و احتمال یافت نشانه‌هایی از حیات اولیه در اختیار دانشمندان قرار دهد. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">محققان در این مرحله از ماموریت در نظر دارند کاوشگر فضایی را به فاصله ۲۰ متری از سطح سیارک کاهش ارتفاع دهند تا بازوی رباتیک کاوشگر بتواند نمونه‌های مورد نظر از سطح سیارک را استخراج کند. &nbsp; کارشناسان اعلام کرده اند در صورت موفقیت آمیز بودن استخراج نمونه ها، کاوشگر هایابوسا تا پایان سال میلادی جاری نمونه‌ها را به زمین ارسال خواهد کرد. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px; line-height: 30px;"><font face="Mihan-Iransans">کاوشگر فضایی هایابوسای ۲ درسال ۲۰۱۴ برای جمع آوری نمونه‌هایی از خاک و سنگ سیارک ریوگو که سیارکی در منظومه شمسی بین زمین، خورشید و مریخ است به فضا پرتاب شد، قطر سیارک ریوگو حدود نیم مایل است و جنس سطح آن پوشیده از انواع سنگ‌ها به ویژه ماده کربن است. &nbsp; با توجه به وجود کربن دراین سیارک کارشناسان احتمال می‌دهند در آن اسید‌های آمینه و بلوک‌های پروتئینی وجود داشته باشند و به این ترتیب احتمال یافت نشانه‌هایی از حیات در آن می‌رود. &nbsp; سیارک فضایی ریوگو اولین بار درسال ۱۹۹۹ میلادی کشف و در سال ۲۰۱۵ نام ریوگو بر آن گذاشته شد که به معنی کاخ اژد‌ها در فرهنگ باستانی کشور ژاپن است. &nbsp; در طرحی مشابه کاوشگر فضایی Osiris-rex ناسا هم به مطالعه درباره سیارک فضایی مشهور بنو Bennu می‌پردازد. سیارک بنو ابعادی کوچک‌تر از سیارک ریوگو دارد، به گفته کارشناسان نمونه‌های جمع آوری شده از سیارک بنو در سال ۲۰۲۳ به زمین باز گردانده خواهد شد. &nbsp; در یک همکاری مشترک بین محققان ناسا و آژانس فضایی ژاپن قرار است نمونه‌های جمع آوری شده از سیارک بنو و سیارک ریوگو مبادله شوند تا دانشمندان بتوانند به مطالعه درباره آن‌ها بپردازند.</font></p>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/619.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(619)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/619.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>شنبه 22 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('619','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/618.html">بیماری‌هایی که در فضا سراغ فضانوردان می‌آیند</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">فضانوردان در سفر گرفتار برخی بیماری‌ها می‌شوند و به همین دلیل باید تجهیزات درمانی کامل همراه خود داشته باشند.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در کنار ساخت سفینه‌های فضایی پیشرفته برای سفر به سیاره سرخ، یکی از اصلی‌ترین موارد حفظ سلامت فضانوردان است؛ افزون بر محافظت از سلامت آنها در برابر اشعه‌های کیهانی، امکان بروز حادثه در حین این پرواز سه ساله، چون شکستگی اعضای بدن یا بروز سوختگی وجود دارد. &nbsp; فضانوردان به طور کلی از افراد کاملاً سالم از نظر جسمی و روانی انتخاب می‌شوند اما تاکنون هیچ فردی به سفری چنین طولانی در فضای عمیق نرفته است و امکان بروز انواع حوادث وجود دارد. &nbsp; کارشناسان آژانس فضایی اروپا، ESA به تازگی راهکار‌هایی برای کاهش خطر‌های تهدید کننده سلامت فضانوردان ابداع کرده‌اند که از آن جمله می‌توان درمان سوختگی با استفاده از چاپ سه بعدی سلول‌های پوستی و درمان شکستگی را نام برد. &nbsp; نکته جالب استفاده از پلاسمای خونی خود فضانوردان برای تهیه ماده اولیه برای چاپگر سه بعدی است، زیرا امکان بازگشت به زمین و بهره‌مند شدن از خدمات درمانی وجود ندارد. &nbsp; برای درمان شکستگی استخوان هم با استفاده از سلول‌های بنیادی به ترمیم استخوان آسیب دیده پرداخته می‌شود؛ سلول بنیادی در این روش با استفاده از نوعی ترکیب سیمانی تشکیل شده از فسفات کلسیم fi درمان و ترمیم استخوان شکسته کمک می‌کند. &nbsp; به گفته محققان از جمله چالش‌های پیش روی دانشمندان برای حفظ سلامت فضانوردان در جریان سفر‌های فضایی و ارائه خدمات درمانی، وجود وضعیت میکروگرانشی است که بر کار تجهیزات علمی و درمانی اثر می‌گذارد. &nbsp; کارشناسان برای بررسی نحوه عملکرد چاپگر‌های سه بعدی در فضای میکروگرانشی در نظر دارند و در جدیدترین پرتاب کپسول فضایی کارگو دراگون به ایستگاه فضایی، یک چاپگرسه بعدی به فضا ارسال کنند که در آینده و همزمان با توسعه تجهیزات روزی بتواند به چاپ سه بعدی اعضای بدن انسان بپردازد. &nbsp; تیم محققان ESA در نظر دارند پس از موفقیت در تولید پوست مصنوعی و ترمیم استخوان که توسعه آن حداقل ۱۰ سال به طول می‌انجامد به تولید غضروف مصنوعی بپردازند. &nbsp; اکنون برخی سازمان‌های علمی پژوهشی به تولید فناوری چاپگر‌های سه بعدی زیستی پرداخته اند و درنظر دارند آنها را درفضای میکرو گرانشی مورد آزمایش قرار دهند. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">فرمول‌های عجیب برای درمان بیماری‎‌های فضانوردان</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">یکی دیگر از مشکل‌های فضانوردان در سفر‌های طولانی مدت فضایی از دست رفتن بافت عضلانی و تحلیل رفتن آنهاست؛ برای جلوگیری از بروز این مشکل دانشمندان در نظر دارند با هورمون درمانی قدرت عضله‌های فضانوردان را افزایش دهند. &nbsp; بنابر مطالعه‌های انجام شده، هورمون تستوسترون نقش بسیارمهمی در تنظیم بافت پروتئینی عضله‌ها دارد و استفاده از این هورمون می‌تواند سبب تقویت عضله‌های فضانوردان شود؛ در کنار هورمون درمانی تنظیم شیوه‌های جدید انجام تمرین‌های ورزشی هم می‌تواند بافت عضله‌های فضانوردان را حفظ کند. &nbsp; زندگی در فضا بر اعضای بدن فضانوردان اثر می‌گذارد و حتی سبب بالا رفتن فشار درون چشم و حالت فیزیکی آنها می‌شود؛&nbsp; برای بررسی اثر‌های زندگی در موقعیت میکرو گرانشی، دانشمندان روی ۲۴ داوطلب به مدت ۷۰ روز آزمایش انجام داده اند؛&nbsp; این داوطلبان در طی این مدت به حالت خوابیده و افقی قرار گرفته اند و وضعیت سلامت آنها بررسی شده است. &nbsp; نتیجه آزمایش نشان داد حجم توده عضلانی بدن بیشتر داوطلبان پس از طی این مدت کاهش یافته است؛ محققان اعتقاد دارند ترکیب&nbsp; ورزش و استفاده از دارو‌های هورمونی زیر نظر پزشکان می‌تواند سبب استحکام بافت عضلانی بدن فضانوردان شود. &nbsp; مطالعه روی اسکلت بدنی فضانورد ناسا که رکورددار اقامت در فضا به مدت ۵۲۰ روز بوده است، نشان داد زندگی در وضعیت میکروگرانش اثر‌های فراوان بر سلامت بدن انسان می‌گذارد و او در طول مدتاقامت در فضا دچار کاهش توده استخوانی ، ضعف عضلانی، گردش خون نامناسب و تپش قلب بسیار شدید شده بود . &nbsp; طی حضور در فضا DNA فضانوردان آسیب می‌بیند و حتی ممکن است دچار جهش‌هایی ناخواسته شود؛ مچنین سیستم ایمنی بدن ضعیف و تحریک می‌شود و به این ترتیب فضانوردان درمعرض ابتلا به انواع بیماری‌ها قرار می‌گیرند. &nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">بیشتر فضانوردان در اولین روز‌های ورود به ایستگاه فضایی بین المللی و پیش از عادت کردن به زندگی در وضعیت میکروگرانشی دچار عوارضی چون سردرد، تهوع، سرگیجه، مشکل‌های گوارشی و مواردی از این دست می‌شوند. &nbsp; در ایستگاه فضایی حسگر‌های فراوان وجود دارد که سبب ایجاد آلودگی صوتی می‌شود و عامل سردرد در بیش از ۸۰ درصد فضانوردان است. &nbsp; فضانوردان به طور متوسط هرماه حدود ۲-۱ درصد از وزن توده استخوانی خود را از دست می‌دهند؛&nbsp; مشکل‌های قلبی و عروقی هم به دلیل کم شدن جرم قلب روی می‌دهد و به دلیل وضعیت میکروگرانشی خون به طورمناسب دربدن گردش نمی‌کند بنابراین تجمع خون در مغز روی می‌دهد. &nbsp; استرس و احساس افسردگی و دوری از اعضای خانواده و دوستان و احتمال بروز حادثه‌های پیش بینی نشده درحین ماموریت هم بر سلامت روان فضانوردان اثر می‌گذارد.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">باشگاه خبرنگاران جوان</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;<a href="post/category/6.html" class=text4>پزشکی و روان پزشکی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/618.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(618)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/618.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>شنبه 22 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('618','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/617.html">نگاهی به یکی از قدیمی‌ترین دفترچه‌های دستنویس جهان</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">دفترچه دستنویس متعلق به «سیمون فورمن» و «ریچارد نپیر» از مشهورترین اطبای تجربی قرن 17 در انگلستان بود. آن ها به خاطر استفاده از علم نجوم و ستاره شناسی برای درمان انواع بیماری ها شهره شده بودند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">دفترچه دستنویس متعلق به «سیمون فورمن» و «ریچارد نپیر» از مشهورترین اطبای تجربی قرن 17 در انگلستان بود. آن ها به خاطر استفاده از علم نجوم و ستاره شناسی برای درمان انواع بیماری ها شهره شده بودند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این نسخه قدیمی حاوی اطلاعات 80 هزار بیمار است و تا به حال از گزند زمان محفوظ نگاه داشته شده اما استفاده از سمبل های پیچیده و زبان خاص آن دوران، کار فهم این دستخط را برای عموم سخت و دشوار می کند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به همین خاطر محققان دانشگاه کمبریج که روی رمزگشایی این دستنویس کار می کنند تصمیم گرفتند به پاس 10 ساله شدن این پروژه برخی از دستنوشته های ترجمه شده را در یک کتابخانه دیجیتال در اختیار عموم قرار دهند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این مجموعه شامل پرونده های پزشکی متنوعی می شود. از بیماران مالیخولیایی و افسرده گرفته تا مبتلایان به اسهال خونی و بیماری های مقاربتی، در آن مورد مطالعه و درمان قرار گرفته اند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">پروژه مطالعه این دستنوشته تاریخی در واقع دریچه ای به دنیای مرموز و کثیف پزشکی قرن 17ام است. تمام پرونده ها حاوی نام، سن، شغل و علائم بیماران بوده و نشان دهنده رنج مردمی است که صدها سال پیش می زیسته و اثری به جز درد از آن ها باقی نمانده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">با اینکه علایم بیماری به زبان همان روزها نوشته شده (مثلا یکی از آن ها احساس می کرد که چیزی در سرش شنا می کند)، اما در واقع همین بیماریهائیست که این روزها مردم را به مطب پزشک می کشاند. سرماخوردگی، تب، سردرد، سقط جنین، بیخوابی، شکست عاطفی و...</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">پرتره ای از چهره فورمن</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">ریچارد فورمن یکی از نویسندگان این دستنوشته تاریخی ، دانشجوی اخراجی آکسفورد بود که به لندن نقل مکان کرده و نتوانست در تجارت هم موفقیتی کسب کند. او بعد از اینکه به طاعون مبتلا شد و به گفته خودش توانست بیماری اش را درمان کند، به عنوان یک طبیب بدون مجوز شروع به کار کرد. با اینکه پزشکان عقیده داشتند او یک شیاد است اما فورمن طی دوره کاری اش طبابت پر رونقی داشت. نپیر هم که یک کشیش روستایی بود به عنوان شاگرد در کنار فورمن به درمان بیماران می پرداخت.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">روش آنها به این صورت بود که در هنگام مراجعه بیمار، تاثیر وضعیت و حرکت ستارگان و سیارات را بر سلامت بیمار مورد مطالعه قرار می دادند. سپس با تهیه یک جدول ستاره شناسی، راه درمان را پیدا می کردند.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">انتخاب</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/7.html" class=text4>تاریخ و ماقبل تاریخ</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/617.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(617)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/617.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>شنبه 22 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('617','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/616.html">کامپیوتری که یک قرن پیش از میلاد مسیح ساخته شد</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">بسیاری از افراد تصور می کنند که کامپیوترها متعلق به زمان حال هستند و درواقع از ساخته های معاصر بشر محسوب می شوند. این در حالی است که یافته های باستان شناسی نشان می دهد یک قرن پیش از میلاد مسیح نیز کامپیوترها وجود داشته اند.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">بسیاری از افراد تصور می کنند که کامپیوترها متعلق به زمان حال هستند و درواقع از ساخته های معاصر بشر محسوب می شوند. این در حالی است که یافته های باستان شناسی نشان می دهد یک قرن پیش از میلاد مسیح نیز کامپیوترها وجود داشته اند.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش سرویس آی تی و فناوری انتخاب، "ماشین آنتیکیترا" را می توان نخستین کامپیوتر آنالوگ باستانی جهان دانست. دستگاهی خیره کننده که با توجه به امکانات محدود زمان خود کارکردی منحصر به فرد داشته است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">ماشین آنتیکیترا و تکنولوژی پشت این دستگاه تا زمانی که ساعتهای مبتنی بر ستاره شناسی و نجوم در قرن چهاردهم وارد اروپا نشد، شناخته نشدند، ماشین آنتیکتیترا در سال 1900 در یک کشتی باستان یونان کشف شد. کارکنان موزه این دستگاه را به مدت دو سال نادیده گرفته بودند چرا که در نگاه اول، به نظر می رسید که فقط یک توده از برنز و چوب زنگ زده و بی ارزش است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">اما بررسی های دقیق تر نشان داد ماجرا بسیار مهمتر است و این دستگاه می تواند موقعیت های نجومی را در یک تاریخ خاص پیشبینی کند. چرخش یک دست میل این دستگاه تاریخ را تغییر داده و باعث می شود که دستگاه به طور همزمان موقعیت ماه، خورشید، مدار ماه، گرفتگی ماه و چرخه های تقویم را محاسبه کند. همچنین ممکن است قادر به پیش بینی موقعیت سیارات است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این دستگاه پیشرفته را می توان نخستین تلاش بشر برای ساخت یک کامپیوتر خانگی دانست.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">انتخاب</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/9.html" class=text4>فناوری</a>،&nbsp;<a href="post/category/7.html" class=text4>تاریخ و ماقبل تاریخ</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/616.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(616)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/616.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>شنبه 22 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('616','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/615.html">امکان خرید سوغات سفر انسان به ماه ممکن شد</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش ایسنا و به نقل از اسپیس،&nbsp;شرکت "Master Replicas Group" یکی از جذاب‌ترین تصاویری که از سفر به ماه به جای مانده است را در قالب یک یادگاری تولید کرده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این شرکت از ردپای پوتین "باز آلدرین" روی سطح ماه یک مدل ۳ بعدی ساخته است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">باز آلدرین دومین انسانی است که در مأموریت آپولو ۱۱ روی سطح ماه قدم نهاد که عکس ردپای وی به یکی از مشهورترین عکس‌های باقی مانده از آپولو ۱۱ تبدیل شد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">مدل رد پای مصنوعی که توسط شرکت "Master Replicas Group" ساخته شده است، هم اندازه ردپای واقعی است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">"استیو دیمسزو" مدیر شرکت " Master Replicas Group" اظهار کرد، این مدل قطعاً ردپای "باز آلدرین است. نه "نیل آرمسترانگ".</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">قطعاً ردپای این دو فضانورد اسبق ناسا از یکدیگر متفاوت است و علائم ویژه‌ای روی پوتین آن‌ها وجود دارد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="امکان خرید سوغات سفر انسان به ماه ممکن شد" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980419P99zojl226.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out 0s; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آلدرین و آرمسترانگ در تاریخ ۲۰ ژوئیه ۱۹۶۹ میلادی طی مأموریت "آپولو ۱۱" به ماه سفر کردند و به اولین انسان‌هایی که روی ماه قدم گذاشته اند، تبدیل شدند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این فضانوردان دو ساعت و نیم در خارج از فرودگر قمری خود روی ماه پیاده‌روی کردند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">تیم تحقیقاتی شرکت Master Replicas از تصاویر رد پای آن‌ها که با رزولوشن بالا بود استفاده کردند و از طریق فناوری "تصویرسنجی"(photogrammetry) یک مدل سه‌بعدی ساختند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">تصویرسنجی فرایند اندازه‌گیری مختصات هندسی اجسام از روی عکس‌های هوایی است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در نهایت برای ساخت مدل از قالب رزین استفاده شد. این به این معناست که مدل مذکور سبک وزن و با دوام است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آزمایشات مدل نشان می‌دهد که این رد پا شکسته نمی‌شود.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">اندازه این مدل سه‌بعدی ۲۸ در ۴۰ سانتی‌متر است و به قیمت ۱۹۵ دلار به فروش خواهد رسید.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">قیمت بالای این محصول به دلیل کیفیت بالا در ساخت آن است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">خرید این مدل سه بعدی از ردپای آلدرین برای علاقمندان آن از طریق سایت https://www.masterreplicasgroup.com/products/apollo-boot-print امکان پذیر است.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">ایسنا</span></font></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/615.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(615)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/615.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 19 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('615','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/614.html">خوشحالی دانشمندان از تولد نوزاد نهنگ در حال انقراض</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="خوشحالی دانشمندان از تولد نوزاد نهنگ در حال انقراض" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980418Pq59ff9760.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out 0s; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش خبرنگار گروه علمی و دانشگاهی خبرگزاری فارس به نقل از یاهونیوز، تولد یک نوزاد دختر از خانواده نهنگ های قاتل یا ارکا که به شدت با خطر انقراض مواجه هستند، موجب خوشحالی جانورشناسان شده است. با تولد این نوزاد دختر جمعیت کلی این نهنگ ها در سواحل کانادا به 76 عدد افزایش یافته است.<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="خوشحالی دانشمندان از تولد نوزاد نهنگ در حال انقراض" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980418Phl65sd93.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out 0s; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نوزاد دختر نهنگ قاتلی که در سواحل جنوبی انگلیس زندگی می کند در ماه می متولد شده است، اما دانشمندان به تازگی موفق شدند از آن عکس هایی تهیه شده و از صحت و سلامت این نهنگ مطمئن شوند. جنسیت این آبزی نیز با بررسی عکس های یادشده تایید شده است. تاریخ دقیق تولید این نهنگ قاتل 24 ماه می اعلام شده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">تصویر یادشده در نزدکی سواحل منطقه San Juan در ونکور کانادا تهیه شده است. در تصویر تهیه شده از این نهنگ کوچک مادر وی و یک نهنگ ماده دیگر نیز مشاهده می شوند. جانورشناسان مونث بودن نوزاد نهنگ متولد شده را بسیار مهم دانسته و امیدوارند که این امر به ازدیاد جمعیت آنها بینجامد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نهنگ قاتل یا ارکا پستانداری دریایی است که به خانواده دلفین‌های اقیانوسی تعلق دارد و بزرگ‌ترین جاندار در میان دلفین‌سانان است. نهنگ‌های قاتل در اقیانوس‌های سراسر جهان، از دریاهای قطبی گرفته تا دریاهای گرمسیری، یافت می‌شوند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آن‌ها طعمه‌های گوناگونی را به‌عنوان غذا اختیار می‌کنند، با این حال بعضی گروه‌ها تنها به دنبال یک طعمه می‌روند. بعضی تنها از ماهی‌ها تغذیه می‌کنند و برخی دیگر به گله‌های پستانداران دریایی، مانند فک، شیر دریایی، گراز دریا و حتی نهنگ‌ها نیز حمله می‌کنند. نهنگ‌های قاتل در بالای هرم غذایی هستند، دشمنان طبیعی ندارند و گاه کوسه‌های بزرگ را نیز طعمه خود می‌کنند.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">فارس</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/8.html" class=text4>طبیعت و حیوانات</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/614.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(614)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/614.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 19 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('614','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/613.html">ناتوانی در تشخیص چهره آسیایی‌ها از هم، حقه مغز است</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><font face="Mihan-Iransans">نتایج یک پژوهش جدید نشان داد که ناتوانی افراد در تمایز چهره اعضای گروه‌های نژادی خاص از هم، ریشه عصبی دارد.</font><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">شاید عبارت «همه شأن شبیه هم هستند» در اشاره به یک گروه نژادی خاص، بارها به گوشتان خورده باشد و حتی به نظرتان نژادپرستانه هم آمده باشد. این جمله این معنا را القا می‌کند که افراد متعلق به یک نژاد در درک ویژگی‌های چهره اعضای نژادهای دیگر با مشکل روبه‌رو هستند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">یک تیم تحقیقاتی متشکل از محققان دانشگاه کالیفرنیا و دانشگاه استنفورد در مطالعه جدیدی این فرضیه را بین گروه کوچکی از مردان سفیدپوست جوان، به آزمایش گذاشتند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در آزمایش اول، داوطلبان به عکس‌هایی از افرادی که بعضاً سیاه پوست و بعضاً سفیدپوست بودند نگاه کردند و همزمان مغز آن‌ها مورد اسکن اف ام آر آی (تصویرسازی تشدید مغناطیسی کارکردی) قرار گرفت. پژوهشگران با بررسی نتایج به دست آمده دریافتند که آن بخش از مغز این داوطلبان که در شناسایی چهره نقش دارد در برخورد با چهره سفیدپوستان نسبت به سیاه پوستان فعال‌تر است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در آزمایش دوم، عکس چهره‌هایی به داوطلبان نشان داده شد که بدون در نظر گرفتن رنگ پوست شبیه هم بودند. بنا بر گزارش محققان از نتایج این آزمایش، مغز داوطلبان فارغ از رنگ پوست، به هنگام تشخیص تفاوت در بین چهره‌ها، فعال می‌شد. فعالیتی که در برخورد با چهره یک سفیدپوست همچنان به طور قابل توجهی بیشتر بود.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در آزمایش سوم، از داوطلبان خواسته شد تا پس از مشاهده یک سری عکس میزان تفاوتی که میان آنها شناسایی می‌کنند را درجه بندی کنند. نتایج این آزمایش نشان داد که به دید این داوطلبان سفیدپوست، چهره سیاه پوستان بیشتر از سفیدپوستان به هم شباهت دارد و احتمال اینکه چهره یک فرد سفیدپوست برایشان آشنا به نظر برسد هم بیشتر است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نتایج این پژوهش از ریشه عصبی ناتوانی افراد در تشخیص تفاوت‌ها میان چهره افرادی از نژادهای دیگر حکایت دارد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">البته به گفته دست اندرکاران این پژوهش، اینکه افراد دوست یا آشنایانی از نژادهای مختلف داشته باشند، در این فرآیند تعیین کننده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">جزئیات این مطالعه در مجله Proceedings of the National Academy of Sciences منتشر شده است.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">ایرنا</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/6.html" class=text4>پزشکی و روان پزشکی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/613.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(613)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/613.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 19 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('613','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/612.html">کشف فسیل یک جاندار 70 میلیون ساله+تصویر</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+<div><font face="Mihan-Iransans"><br></font></div><div><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش خبرنگار گروه علمی و دانشگاهی خبرگزاری فارس به نقل از دیلی‌میل، معدنچیان سنگ‌های قیمتی در کانادا به طور اتفاقی موفق به کشف فسیل یک جاندار شده‌اند که میلیون‌ها سال پیش زندگی می‌کرده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گفته محققان، این فسیل متعلق به&nbsp;تیلوسور است؛&nbsp;این جاندار یکی از درنده‌ترین&nbsp;و دومین موساسوریان بزرگ تاریخ بعد از&nbsp;موساسور و با 12 متر طول یکی از بزرگ‌ترین&nbsp;گوشتخواران تاریخ بوده‌است.&nbsp;</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این کشف که در نزدیکی آلبرتا رخ داده به محققان برای تحقیقات بیشتر در زمینه جاندارانی که میلیون‌ها سال پیش زندگی می‌کردند، به ویژه خزندگان دریایی کمک می‌کند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="کشف فسیل یک جاندار 70 میلیون ساله+تصویر" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980417P247gcx957.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="کشف فسیل یک جاندار 70 میلیون ساله+تصویر" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980417P2846r7729.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="کشف فسیل یک جاندار 70 میلیون ساله+تصویر" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980417P1v8r7f134.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">فارس</span></font></div></div>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/7.html" class=text4>تاریخ و ماقبل تاریخ</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/612.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(612)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/612.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 18 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('612','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/611.html">با این4روش بینایی خود را در خانه تقویت کنید +بهترین زمان سنجش</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش خبرنگار&nbsp;حوزه&nbsp;کلینیک&nbsp;گروه علمی پزشکی باشگاه خبرنگاران،&nbsp;حفظ سلامت چشم&nbsp;به دلیل اهمیت بسیار زیاد این عضو امری ضروری و لازم است؛ مراقبت‌هایی که در مراحل اولیه با برخی راه‌کارهای درمانی به سادگی در خانه انجام پذیر خواهد بود.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در این خبر برخی موارد که می‌توانند در کوتاه‌ترین زمان ممکن سلامت چشم شما را تضمین کنند،‌ به شما معرفی می‌کنیم.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">امتحان جامع سنجش چشم</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">بسیاری از پزشکان متخصص توصیه می‌کنند هر ۶ ماه یک‌بار&nbsp;سنجش چشم&nbsp;را انجام دهید تا از بیماری‌های چشمی که ممکن است گریبانگیرتان شود، مطلع شوید.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">پزشکان متخصص تشخیص داده‌اند پس از میانسالی احتمال بروز انواع بیماری‌ها همچون آب مروارید، قوز قرنیه و فشار خون وجود دارد و به همین دلیل باید از طریق سنجش چشم سلامت بینایی خود را تضمین کرد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">رژیم غذایی مناسب</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">خوردن مواد غذایی سالم، ویتامین‌، مواد معدنی، پروتئین‌ و امگا ۳ برای حفظ سلامت چشم اهمیتی زیاد دارد به همین دلیل بیشتر پزشکان متخصص توصیه می‌کنند برای داشتن چشمانی سالم از ماهی، انواع سبزی ومیوه‌‌هایی مانند هویج کمک بگیرید.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="با این4روش بینایی خود را در خانه تقویت کنید +بهترین زمان سنجش" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980416P46fhvw395.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آب فراوان بنوشید</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آب آشامیدنی برای سلامت بدن مهم است و می‌تواند تمام اسید‌های مضر را از بدن خارج کند، به همین دلیل پزشکان متخصص توصیه می‌کنند برای داشتن چشمانی سالم آب فراوان بنوشید.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">از عینک محافظ استفاده کنید</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">اگر ورزشکار هستید و با توپ سر و کار دارید یا جوشکار و تراشکار هستید باید از عینک محافظ استفاده کنید؛ این عینک از چشمان شما در برابر آلودگی محافظت خواهد کرد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="با این4روش بینایی خود را در خانه تقویت کنید +بهترین زمان سنجش" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980416Pz45h5a182.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">باشگاه خبرنگاران جوان</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/6.html" class=text4>پزشکی و روان پزشکی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/611.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(611)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/611.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 18 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('611','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/610.html">حافظه مولکولی هم به بازار آمد</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><font face="Mihan-Iransans">محققان آمریکایی در پژوهشی موفق شدند که داده‌ها را در مولکول‌هایی ذخیره سازند که کار سوخت‌وساز بدن انسان را بر عهده دارند.</font><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">محققان دانشگاه «براون» در آمریکا با انجام این پژوهش نشان داده‌اند که دی. ان. ای تنها مولکولی نیست که می‌توانیم برای ذخیره‌سازی دیجیتالی از آن استفاده کنیم. این محققان نشان دادند که حلال‌های حاوی قندها، آمینواسیدها و سایر مولکول‌های کوچک را می‌توان جایگزین «هارد درایوها» (دیسک‌های سخت) کرد. این محققان موفق شدند که تصاویری از یک گربه مصری، یک لنگر و یک کوه را با استفاده از آرایه‌ای از این مولکول‌های کوچک ذخیره و بازیابی کنند. آنها می‌گویند که این رویکرد باعث ایجاد ذخیره‌سازی‌هایی می‌شود که آسیب‌پذیری کمتری نسبت به هک شدن دارند و در شرایط سخت زیست محیطی نیز می‌تواند کارایی داشته باشد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">محققان دانشگاه براون با الهام از تحقیقات اخیر که نشان دادند ذخیره‌سازی داده در دی. ان. ای امکان‌پذیر است در این پژوهش درصدد بررسی این موضوع برآمدند که آیا مولکول‌های کوچک‌تر و ساده‌تر نیز می‌توانند اطلاعات فشرده را کدگذاری کنند یا خیر.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">قند دیجیتالی</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">محققان برای بررسی این موضوع مخلوط‌هایی از متابولیت‌های (اجزای شرکت‌کننده در سوخت‌وساز سلولی) متعارف ایجاد کردند. آنها حلال‌های حاوی قندها، آمینو اسیدها و سایر مولکول‌های کوچکی که انسان‌ها و سایر ارگانیسم‌های زنده برای هضم غذا و یا انجام سایر عملکردهای مهم شیمیایی از آنها استفاده می‌کنند، درست کردند. ایده محققان این بود که از حضور و یا عدم حضور متابولیت‌های خاص در این مخلوط‌ها به عنوان کدهای دو دویی برای رمزگذاری اطلاعات دیجیتالی استفاده شود.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">برای مثال به منظور ایجاد تصور یک کوه، محققان از مخلوط‌هایی از شش متابولیت مختلف استفاده کردند که توسط ربات‌ها بر روی یک ظرف نقطه‌گذاری می‌شدند. آنها در مجموع هزار و ۲۴ نقطه ایجاد کردند که در هر نقطه این شش متابولیت یا حضور داشتند و یا نداشتند و به این ترتیب اطلاعات کافی باینری را برای کدگذاری تصویر ۶۱۴۲ پیکسلی فراهم کردند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">محققان در این پژوهش موفق شدند که این داده‌ها را با دقت حدود ۹۹ درصدی بازیابی کنند. آنها برای این کار با استفاده از یک طیف‌سنج جمعی مخلوط شیمیایی هر قطره را تجزیه و تحلیل کردند. آنها همچنین با استفاده از مخلوط‌هایی از ۱۲ متابولیت موفق شدند که تصویری با شفافیت بسیار بالاتری از یک گربه مصری را ذخیره کنند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">داده‌های فشرده</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">محققان برای کدگذاری این تصاویر که تقریباً به اندازه ناخن انگشت شصت هستند، از صفحات استانداردی به اندازه کف دست استفاده کردند. با این حال آنها متذکر شدند که با کوچک‌تر کردن اندازه فیزیکی ابزارهای ذخیره‌سازی متابلویک می‌توان سرعت این رویه را افزایش داد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">مولکول‌های متابولیت از دی. ان. ای و پروتئین‌ها بسیار کوچک‌تر هستند و انواع مختلفی از آنها وجود دارد. این به آن معنی است که آنها می‌توانند مقادیر کمی از داده را به صورت فشرده‌تری از دی. ان. ای ارائه دهند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این مولکول‌ها برای بازیابی اطلاعات نیازی به صرف انرژی ندارند و بسته به مولکول‌ها و شرایط زیست‌محیطی، داده‌ها می‌توانند ماه‌ها یا سال‌ها باقی بمانند. در حقیقت حافظه مولکولی می‌تواند با توجه به ویژگی‌های مولکول‌ها در شرایطی مانند دمای شدید، فشار و نیروی مکانیکی از حافظه الکترونیکی پایدارتر باشد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">همچنین با استفاده از ذخیره‌سازی مولکولی می‌توان مقادیر زیادی از داده‌ها را به صورت آفلاین ذخیره و از هک شدن اطلاعات جلوگیری کرد.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">ایرنا</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/9.html" class=text4>فناوری</a>،&nbsp;<a href="post/category/4.html" class=text4>نانو</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/610.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(610)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/610.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 18 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('610','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/609.html">کشف سیاه‌چاله‌هایی که به دور خود می‌چرخند</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><font face="Mihan-Iransans">ستاره‌شناسان با استفاده از داده‌های رصدخانه «چاندرا» و روش ریزهم‌گرایی گرانشی موفق به کشف پنج ابر سیاه‌چاله شدند که به دور خود می‌چرخند؛ یکی از این سایه‌چاله‌ها با سرعتی 70 درصد سرعت نور به دور خود می‌چرخد.</font><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">ستاره‌شناسان در یک مطالعه جدید با استفاده از داده‌های رصدخانه چاندرا و روش هم‌گرایی گرانشی (استفاده از گرانش اجرام آسمانی برای بزرگنمایی اجرام بسیار دور) موفق شدند سرعت چرخش پنج ابر سیاه‌چاله را که در دور دست قرار دارند و به سرعت در حال رشد هستند، اندازه بگیرند. این مطالعه نشان داد که ماده اطراف یکی از این سیاه‌چاله‌ها با سرعتی بیش از حدود ۷۰ درصد سرعت نور در حال چرخش است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در این مطالعه اخیر، ستاره‌شناسان از رصدخانه چاندرا و هم‌گرایی گرانشی برای مطالعه شش کوازار استفاده کردند که هر کدام حاوی یک ابر سیاه‌چاله هستند. سپس از یک کهکشان میانی برای بزرگنمایی تصاویر این کوازارها استفاده کردند؛ در این روش که به ریزهم‌گرایی (microlensing) معروف است، یک کهکشان نقش یک ذره‌بین کیهانی یا یک تلسکوپ طبیعی را ایفا می‌کند، به طوری که امکان رصد اجرام دور دستی را که با استفاده از تلسکوپ‌های فعلی برای مطالعه بسیار کم نور و ضعیف هستند، فراهم می‌کند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این مطالعه مشخص کرد که یک سیاه‌چاله در کوازار (اختروش) «صلیب اینشتین» با سرعت ۷۰ درصد سرعت نور می‌چرخد؛ سرعتی که تنها از لحاظ تئوری میسر است و بقیه سیاه‌چاله‌های شناسایی شده در این مطالعه با نصف این سرعت در حال چرخش هستند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">در این مطالعه ریزهم‌گرایی گرانشی (که در این مورد بزرگنمایی با استفاده از ستاره‌های منفرد از کیهان) به شناسایی چرخش این ابر سیاه‌چاله‌ها کمک کرد.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">ایرنا</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/609.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(609)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/609.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 18 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('609','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/608.html">تولید رباتی که از فضاهای تنگ و باریک عبور می‌کند</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش&nbsp;خبرگزاری مهر&nbsp;به نقل از انگجت، پشت سر گذاشتن برخی چالش های عادی برای انسان ها از جمله دشوارترین کارهایی است که معمولاً ربات ها از پس آنها بر نمی آیند. عبور از فضاهای باریک و فشرده از جمله این چالش هاست. اما ربات اطلس بر این مشکل هم غلبه کرده است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نمونه اولیه این ربات که در سال ۲۰۱۳ تولید شد، حتی برای گام برداشتن هم نیازمند کنترل یک اپراتور بود. اما حالا حتی در صورت هل داده شدن نیز می تواند تعادل خود را حفظ کند و از سقوط خود جلوگیری کند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">نصب یک نرم افزار جدید بر روی این ربات به آن امکان می دهد با دریافت دستورات انسان ها از فضاهای باریک و تنگ هم عبور کند. ربات یادشده با کمک این نرم افزار و با استفاده از حسگرهای مختلف می تواند به طور دقیق ابعاد محیطی که در آن قرار دارد را بررسی و در نهایت یک مدل کامل از محیط اطراف را خلق کند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">سپس ربات با استفاده از همین مدل می تواند گام های خود را در محیط های باریک و بسته به درستی بردارد و از نقطه آغاز حرکت به سمت مقصد حرکت کند. ربات یادشده به خصوص برای کمک رسانی در مناطق سانحه دیده قابل استفاده خواهد بود. پیش از این ناسا ربات مشابهی به نام واکیری تولید کرده بود که توان حرکتی آن محدود بوده و تنها قادر به برداشتن چند قدم کوتاه بود.</font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">مهر</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/9.html" class=text4>فناوری</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/608.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(608)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/608.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 18 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('608','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div016><a href="javascript:window.print()"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=46 height=44></a></div>
+            <div class=div18><font class=text6><a href="post/607.html">دید ماهواره‌ای از ابرها+عکس</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div class="artbody IranSans clearfix" style="box-sizing: border-box; margin: 0px; padding: 0px; min-height: 200px; line-height: 30px; color: rgb(51, 51, 51); font-size: 16px !important;"><article style="box-sizing: border-box; margin: 0px; padding: 0px;"><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">به گزارش ایسنا و به نقل از ناسا،&nbsp;این تصویر در واقع یک دید ماهواره‌ای از ابرهایی است که در ارتفاعات بالا در اتمسفر زمین تشکیل می‌شوند که تمرکز تشکیل آن‌ها هم بالای قطب شمال است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">برای ساخت این تصویر فضاپیمای ناسا "سپیدایی" یا "آلبدو"(albedo) را اندازه‌گیری کرد. در این فرآیند درصد بازتاب نور از ابرهای مرتفع به فضا سنجیده شد.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">دمای یک سیاره عملاً تحت تأثیر میزان انعکاس انرژی خورشیدی، موسوم به آلبدوی سیاره، و اثرات گازهای گلخانه‌ای است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">آلبدوی سیاره زمین ۰/۳۷ است، بدین معنی که ۳۷٪ انرژی خورشیدی را سریعاً منعکس می‌کند. بنابراین ۶۳٪ آن را جذب می‌نماید.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">این نقشه یک دید مرکب است که حاصل عبور چندین ماهواره است و دیدهای مختلف ماهواره‌ای در کنار هم قرار گرفته‌اند و تصویر مزبور را تشکیل داده‌اند.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans">تصاویر حاصل شده از ماهواره "ایم" (AIM) و تحقیقات محققان دانشگاه "کلرادو بولدر" این تصویر را به وجود آورده است. ماهواره "ایم" با هدف مطالعه ۲۶ ماهه ابرهای شب‌تاب به فضا پرتاب شد. ولی مأموریت آن ادامه پیدا کرد و هنوز هم در حال اجرا است.</font></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><img class="fr-fin fr-tag" alt="دید ماهواره‌ای از ابرها+عکس" src="http://www.kanoon.ir/FileRepository/ImageUpload/409891/13980411Pcn51i254.jpg" style="box-sizing: border-box; margin: auto; padding: 4px; border: 1px solid rgb(221, 221, 221); vertical-align: middle; max-width: 100%; display: block; border-radius: 0px; transition: all 0.2s ease-in-out; height: auto;"></p><p class="fr-tag" style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px;"><font face="Mihan-Iransans"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></font></p></article></div><div class="text-left IranSans" style="box-sizing: border-box; margin: 0px; padding: 10px; color: rgb(51, 51, 51); font-size: 13.3333px; line-height: 22.8571px;"><font face="Mihan-Iransans"><span style="box-sizing: border-box; margin: 0px; padding: 0px;">منبع :&nbsp;</span><span rel="author" style="box-sizing: border-box; margin: 0px; padding: 0px;">ایسنا</span></font></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="post/category/1.html" class=text4>هوا فضا و نجوم</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                                <br><br></font>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div26-1><a href="post/607.html"><img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" width=90 height=30 border=0></a></div>
+            <div class=div27><font class=text8><b><script>setCommentCnt(607)</script></b></font><font class=text7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="post/607.html#commentlist">نظرات</a></font></div>
+            <div class=div58><font class=text7>یکشنبه 16 تیر 1398<br><a href="post/author/1485225.html">A . z</a></font>
+
+                <div style="float: left;margin-left: 28px; margin-top: -17px;"><script>mihanblogPostLike('607','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+            .mihanblog_like_cnt{
+                top: 0;
+            }
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:600px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 67px; padding:0 0 10px 0;}
+            .com1{ width:582px; float:left; background:#9c2687; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:355px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:562px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:562px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:572px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+        ( کل صفحات : 39 )&nbsp;&nbsp;&nbsp;
+            <a href="page/1.html" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="page/2.html" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="page/3.html" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<a href="page/4.html" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="page/5.html" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="page/6.html" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;<a href="page/7.html" class=text4><span>7</span></a>&nbsp;&nbsp;&nbsp;<a href="page/8.html" class=text4><i>...</i></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+</div>
+
+
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=b2>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2099942/blank.gif" border=0 width=204 height=35></a></div>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 545px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'e-kadeh.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

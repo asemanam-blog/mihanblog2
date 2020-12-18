@@ -1,0 +1,1473 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*428439*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[296]='3';commentCnt[298]='0';commentCnt[299]='1';commentCnt[300]='2';commentCnt[301]='0';commentCnt[302]='0';commentCnt[303]='2';commentCnt[304]='0';commentCnt[305]='1';commentCnt[308]='0';commentCnt[390]='25';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[296]='2';
+mihanblogDisLikeArrCnt[296]='0';
+mihanblogLikeArrCnt[298]='0';
+mihanblogDisLikeArrCnt[298]='0';
+mihanblogLikeArrCnt[299]='0';
+mihanblogDisLikeArrCnt[299]='0';
+mihanblogLikeArrCnt[300]='0';
+mihanblogDisLikeArrCnt[300]='0';
+mihanblogLikeArrCnt[301]='0';
+mihanblogDisLikeArrCnt[301]='0';
+mihanblogLikeArrCnt[302]='0';
+mihanblogDisLikeArrCnt[302]='0';
+mihanblogLikeArrCnt[303]='1';
+mihanblogDisLikeArrCnt[303]='0';
+mihanblogLikeArrCnt[304]='0';
+mihanblogDisLikeArrCnt[304]='0';
+mihanblogLikeArrCnt[305]='0';
+mihanblogDisLikeArrCnt[305]='0';
+mihanblogLikeArrCnt[308]='0';
+mihanblogDisLikeArrCnt[308]='0';
+mihanblogLikeArrCnt[390]='0';
+mihanblogDisLikeArrCnt[390]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://deldadegan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://deldadegan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','312');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','یکشنبه 19 شهریور 1396');
+	
+	setStatVar('today_view','35');
+	setStatVar('yesterday_view','43');
+	
+	setStatVar('this_month_view','1765');
+	setStatVar('last_month_view','3323');
+
+	setStatVar('total_view','1056687');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (17:02)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://deldadegan.mihanblog.com/statupdate/?data[refereruri]=http://deldadegan.mihanblog.com/&data[postid]=&data[requesturi]=/page/6&data[sdate]=1607780945&data[hash]=e4935a4121623312dd331b64be364998&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://deldadegan.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://deldadegan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://deldadegan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<script type="text/javascript">var jaba_user_id = 295;</script>
+<script type="text/javascript" src="http://jaba.ir/website/js"></script>
+<head>
+<link href="http://www.filedoon.ir/upload/xsrg_00122.ico" rel="shortcut icon">
+<title>دلدادگان</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="Blog Skin">
+<meta name="author" content="سید حسن محفوظی موسوی">
+<meta name="language" content="Farsi">
+<meta name="designerUrl" content="http://www.blogskin.ir/">
+<script src="http://www.blogskin.ir/blog.js" language="javascript"></script>
+<meta name="description" content="دلدادگان -  - دلدادگان">
+<meta name="keywords" content="دلدادگان,deldadegan,عرفان،علامه،قاضی،بهجت،الطافی،حسن زاده،دلدادگان،مرعشی،شیخ،خیاط،دولابی،کل احمد آقا،دلدادگان و عارفان الهی،(DIVINES INAMORATAS AND MYSTICS), Blog, Weblog, Persian,Iran, Farsi, Weblogs, Blogskin">
+<link rel="alternate" type="application/rss+xml" title="دلدادگان" href="../post/rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="دلدادگان" href="../post/atom/index.html" />
+<link href="http://deldadeha.persiangig.com/newww.css" type="text/css" rel="stylesheet">
+<script src="http://blogskins.ir/scroll.js" language="javascript"></script>
+<style>
+.top{background:url(http://deldadeha.persiangig.com/newdel/picture/newtop2.jpg) no-repeat top right;height:300;width:100%}
+</style>
+<SCRIPT language="javascript">
+function checkform(){	
+if (blogskin.name.value =='')	{alert('لطفا نام خود را وارد كنید');	return false;	}
+if (blogskin.adres.value =='')	{alert('لطفا آدرس پست الكترونیك خود را وارد كنید');	return false;	}
+if (blogskin.msg.value =='')	{alert('لطفا متن ارسالی خود را وارد كنید');	return false;	}
+return true;}
+</SCRIPT>
+
+</head>
+
+<body>
+<div align=center id=ali><div style="width:1003">
+<div class=blogskin-bg><div class=blogskin-back>
+<div class=blogskin>
+
+<div class=top>
+<div class=top-blogskin><div style="float:right;width:780">
+<div style="padding-top:15">
+<div class=topskin></div>
+</a>
+</div>
+
+
+
+
+
+
+</div>
+
+</div>
+
+<div class=titr></div><div class=des></div></div>
+
+
+
+
+
+
+
+
+<div class=top-link>
+<div class=top-blogskin2>
+<div style="float:right;width:710px;direction:rtl; height:20px">
+<div style="padding:3 20 0 0">
+<a href="../../www.deldadegan.mihanblog.com/index.html">صفحه اصلی</a>
+<a href="../../www.deldadegan.mihanblog.com/index.html">فعالیت های علمی گروه</a>
+<a href="../../www.deldadegan.mihanblog.com/index.html">فعالیت های مذهبی گروه</a>
+<a href="6.html#postz">آخرین مطالب</a>
+<a href="http://shadegani.mihanblog.com/" title=آشنایی با شهرستان شادگان">شادگان کجاست؟</a>
+</div></div>
+
+
+
+
+
+<form method="Get" action="http://google.com/search" class=sch><input name="sitesearch" value="deldadegan.mihanblog.com" type="hidden">
+	<a href="../post/rss/index.html" title="RSS"><img border="0" src="http://blogskins.ir/47/x.gif" width="25" height="20"></a>&nbsp;&nbsp;
+	<input type="text" name="q" size="21" class=txt>&nbsp;&nbsp;<input type="submit" value=" " class=but>
+</form>
+
+</div>
+
+
+
+
+</div>
+
+<div class=mainbg>
+
+<div class=mainr>
+
+<div class=menu> 
+
+<div class="tmenu b5"><div class=tmenu2>معرفی گروه</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div style="text-align:center;"><img src="../../static.mihanblog.com/public/user_data/web_photo/143/428439.jpg@2339"  /></div>
+<br>
+<br></div>
+		</div>
+<div class=bmenu></div>
+
+<div class=tmenu><div class=tmenu2>موضوعات</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="../post/category/47.html">تمدن سازی نوین اسلامی (1)</a></div><div class=xmenu1><a href="../post/category/43.html">زندگی به سبک عارفان (5)</a></div><div class=xmenu1><a href="../post/category/44.html">هفته نامه دلدادگان (1)</a></div><div class=xmenu1><a href="../post/category/42.html">موانع سلوک (1)</a></div><div class=xmenu1><a href="../post/category/41.html">..::معرفی کتاب (4)</a></div><div class=xmenu1><a href="../post/category/40.html">استاد دینانی (2)</a></div><div class=xmenu1><a href="../post/category/23.html">..:::کتب عرفانی-اخلاقی  (44)</a></div><div class=xmenu1><a href="../post/category/13.html">کتب صوتی  (4)</a></div><div class=xmenu1><a href="../post/category/25.html">کتب مخصوص کامپیوتر  (35)</a></div><div class=xmenu1><a href="../post/category/15.html">کتب مخصوص موبایل  (23)</a></div><div class=xmenu1><a href="../post/category/10.html">..:::کلیپ های عرفانی-اخلاقی  (53)</a></div><div class=xmenu1><a href="../post/category/27.html">کلیپ مخصوص کامپیوتر  (40)</a></div><div class=xmenu1><a href="../post/category/26.html">کلیپ مخصوص موبایل  (4)</a></div><div class=xmenu1><a href="../post/category/36.html">..:::سیر و سلوک وشهداء (2)</a></div><div class=xmenu1><a href="../post/category/37.html">..:::کد های جاوا اسکریپت مخصوص وبلاگ های اخلاقی-عرفانی (3)</a></div><div class=xmenu1><a href="../post/category/9.html">..:::سخنرانی های عرفانی-اخلاقی  (42)</a></div><div class=xmenu1><a href="../post/category/17.html">..:::پرسش و پاسخ های عرفانی-اخلاقی  (5)</a></div><div class=xmenu1><a href="../post/category/16.html">..:::نرم افزار های عرفانی-اخلاقی  (5)</a></div><div class=xmenu1><a href="../post/category/34.html">..:::تصاویر عرفانی-اخلاقی  (10)</a></div><div class=xmenu1><a href="../post/category/24.html">..:::عرفا (107)</a></div><div class=xmenu1><a href="../post/category/29.html">آیت الله شیخ محمد بهاری(ره) (6)</a></div><div class=xmenu1><a href="../post/category/35.html">حضرت آیت الله الهی(ره) (5)</a></div><div class=xmenu1><a href="../post/category/31.html">آیت الله نجابت(ره) (8)</a></div><div class=xmenu1><a href="../post/category/30.html">آیت الله سعادت پرور(ره) (10)</a></div><div class=xmenu1><a href="../post/category/21.html">آیت الله حق شناس(ره) (8)</a></div><div class=xmenu1><a href="../post/category/11.html">علامه حسن زاده(حفظه الله و رزقنا الله زیارته)  (25)</a></div><div class=xmenu1><a href="../post/category/32.html">آیت الله شیخ عبدالقائم شوشتری(حفظه الله)  (11)</a></div><div class=xmenu1><a href="../post/category/39.html">آیت الله ناصری دولت آبادی(حفظه الله) (2)</a></div><div class=xmenu1><a href="../post/category/12.html">ایت الله صمدی آملی(حفظه الله)  (11)</a></div><div class=xmenu1><a href="../post/category/38.html">آیت الله خوشوقت(حفظه الله) (4)</a></div><div class=xmenu1><a href="../post/category/6.html">علامه طباطبایی(ره)  (9)</a></div><div class=xmenu1><a href="../post/category/22.html">علامه مصطفوی(ره) (6)</a></div><div class=xmenu1><a href="../post/category/20.html">علامه طهرانی(ره) (10)</a></div><div class=xmenu1><a href="../post/category/19.html">میرزا جواد ملکی تبریزی (ره) (10)</a></div><div class=xmenu1><a href="../post/category/33.html">آیت الله شاه آبادی(ره) (7)</a></div><div class=xmenu1><a href="../post/category/18.html">امام خمینی (ره) (5)</a></div><div class=xmenu1><a href="../post/category/14.html">آیت الله بهجت(ره)  (31)</a></div><div class=xmenu1><a href="../post/category/1.html">آیت الله قاضی(ره)  (12)</a></div><div class=xmenu1><a href="../post/category/3.html">آیت الله شیخ محمد جواد انصاری همدانی(ره)  (6)</a></div><div class=xmenu1><a href="../post/category/7.html">آیت الله بهاءالدینی(ره)  (10)</a></div><div class=xmenu1><a href="../post/category/4.html">آیت الله عبد الکریم کشمیری(ره)  (5)</a></div><div class=xmenu1><a href="../post/category/8.html">شیخ رجبعلی نکوگویان(خیاط)  (9)</a></div><div class=xmenu1><a href="../post/category/5.html">آیت الله کوهستانی(ره)  (5)</a></div><div class=xmenu1><a href="../post/category/28.html">بانوی مجتهده، نصرت الملوک امین(ره) (7)</a></div><div class=xmenu1><a href="../post/category/2.html">..:::عمومی  (39)</a></div></div>
+<div class=bmenu></div>
+<div class="tmenu b6"><div class=tmenu2>نویسندگان</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="../post/author/313875.html"><img src="../../static.mihanblog.com/public/user_data/user_photo/105/313875.jpg" style="width:16px;" /></a> <a href="../post/author/313875.html">سید حسن محفوظی موسوی</a></div></div>
+<div class=bmenu></div>
+<div class=tmenu><div class=tmenu2>ابر برچسب ها</div></div>
+<div class=xmenu>
+<div class=xmenu2><a href="../post/tag/مجموعه+سخنرانی+های+آیت+الله+خوشوقت(حفظه+الله).html" style="font-size:1em">
+		مجموعه سخنرانی های آیت الله خوشوقت(حفظه الله)</a> <a href="../post/tag/مردی+از+ملکوت+در+شرح+احوالات+میرزا+جواد+آقا+ملکی+تبریزی(ره).html" style="font-size:1em">
+		مردی از ملکوت در شرح احوالات میرزا جواد آقا ملکی تبریزی(ره)</a> <a href="../post/tag/بهار+بی‌باران.html" style="font-size:1em">
+		بهار بی‌باران</a> <a href="../post/tag/شهید+ثانی؛.html" style="font-size:1em">
+		شهید ثانی؛</a> <a href="../post/tag/علامه+طهرانی.html" style="font-size:2em">
+		علامه طهرانی</a> <a href="../post/tag/مستند+عرفانی+اخلاقی.html" style="font-size:1em">
+		مستند عرفانی اخلاقی</a> <a href="../post/tag/فیضی+از+ورای+سکوت.html" style="font-size:2em">
+		فیضی از ورای سکوت</a> <a href="../post/tag/اهمیت+ماه+شعبان+المعظم.html" style="font-size:1em">
+		اهمیت ماه شعبان المعظم</a> <a href="../post/tag/برگی+از+دفتر+آفتاب.html" style="font-size:2em">
+		برگی از دفتر آفتاب</a> <a href="../post/tag/علامه+مجلسی؛.html" style="font-size:1em">
+		علامه مجلسی؛</a> <a href="../post/tag/دانلود+مستند+حدیث+سرو.html" style="font-size:1em">
+		دانلود مستند حدیث سرو</a> <a href="../post/tag/شرح+صحیفه+سجادیه.html" style="font-size:1em">
+		شرح صحیفه سجادیه</a> <a href="../post/tag/شرح+حال+و+کرامات+اولیای+الهی.html" style="font-size:2em">
+		شرح حال و کرامات اولیای الهی</a> <a href="../post/tag/در+محضر+بهجت.html" style="font-size:1em">
+		در محضر بهجت</a> <a href="../post/tag/ابن+ابی+جمهور+احسائی؛.html" style="font-size:1em">
+		ابن ابی جمهور احسائی؛</a> <a href="../post/tag/مفاخر+و+مشاهیر+ایران+و+جهان.html" style="font-size:1em">
+		مفاخر و مشاهیر ایران و جهان</a> <a href="../post/tag/بهجت+عارفان.html" style="font-size:2em">
+		بهجت عارفان</a> <a href="../post/tag/هیأت+تحریریه+مؤسسه+فرهنگی+مطالعاتی+شمس‌الشموس.html" style="font-size:1em">
+		هیأت تحریریه مؤسسه فرهنگی مطالعاتی شمس‌الشموس</a> <a href="../post/tag/نویسنده+%253A+محمد+لک+علی+آبادی.html" style="font-size:2em">
+		نویسنده : محمد لک علی آبادی</a> <a href="../post/tag/استاد+طیب.html" style="font-size:1em">
+		استاد طیب</a> <a href="../post/tag/هیچ+اتفاقی+تصادفی+نیست.html" style="font-size:1em">
+		هیچ اتفاقی تصادفی نیست</a> <a href="../post/tag/دریافت+کتاب+دلشدگان.html" style="font-size:2em">
+		دریافت کتاب دلشدگان</a> <a href="../post/tag/علامه+حلی؛.html" style="font-size:1em">
+		علامه حلی؛</a> <a href="../post/tag/استاد+كاظم+صدیقی.html" style="font-size:1em">
+		استاد كاظم صدیقی</a> <a href="../post/tag/فیضى+از+وراى+سكوت.html" style="font-size:1em">
+		فیضى از وراى سكوت</a> <a href="../post/tag/اهمیت+ماه+شعبان+المعظم+از+زبان+استاد+طیب.html" style="font-size:1em">
+		اهمیت ماه شعبان المعظم از زبان استاد طیب</a> <a href="../post/tag/شهید+اول؛.html" style="font-size:1em">
+		شهید اول؛</a> <a href="../post/tag/زندگانی+مرحوم+آیت+الله+سید+جمال+گلپایگانی(ره).html" style="font-size:2em">
+		زندگانی مرحوم آیت الله سید جمال گلپایگانی(ره)</a> <a href="../post/tag/در+شرح+حال+آیت+الله+معلم+دامغانی(ره).html" style="font-size:1em">
+		در شرح حال آیت الله معلم دامغانی(ره)</a> <a href="../post/tag/درآشنایی+با+زندگی+حضرت+آیت+الله+شیخ+محمد+تقی+آملی(ره).html" style="font-size:1em">
+		درآشنایی با زندگی حضرت آیت الله شیخ محمد تقی آملی(ره)</a> <a href="../post/tag/مالک+اشتر+رهبر.html" style="font-size:1em">
+		مالک اشتر رهبر</a> <a href="../post/tag/فیض+کاشانی؛.html" style="font-size:1em">
+		فیض کاشانی؛</a> <a href="../post/tag/مجموعه+سخنرانی+های+بانو+امین(ره).html" style="font-size:1em">
+		مجموعه سخنرانی های بانو امین(ره)</a> <a href="../post/tag/آقا+بزرگ+تهرانی.html" style="font-size:2em">
+		آقا بزرگ تهرانی</a> <a href="../post/tag/زمزمه+وصل.html" style="font-size:1em">
+		زمزمه وصل</a> <a href="../post/tag/دریافت+سخنرانی+جناب+کربلایی+احمد+حسینعلی+تهرانی(ره).html" style="font-size:1em">
+		دریافت سخنرانی جناب کربلایی احمد حسینعلی تهرانی(ره)</a> <a href="../post/tag/دانلود+مستند+عَلمِ+عِلم+و+طود+تحقیق.html" style="font-size:1em">
+		دانلود مستند عَلمِ عِلم و طود تحقیق</a> <a href="../post/tag/سری+جدید+مستند+حدیث+سرو.html" style="font-size:2em">
+		سری جدید مستند حدیث سرو</a> <a href="../post/tag/برگى+از+دفتر+آفتاب.html" style="font-size:1em">
+		برگى از دفتر آفتاب</a> <a href="../post/tag/مستند+راهی.html" style="font-size:1em">
+		مستند راهی</a> <a href="../post/tag/گریه+و+دلدادگی+سردار+سلیمانی.html" style="font-size:1em">
+		گریه و دلدادگی سردار سلیمانی</a> <a href="../post/tag/آقا+محمد+بید+آبادی+(ره+)؛.html" style="font-size:1em">
+		آقا محمد بید آبادی (ره )؛</a> <a href="../post/tag/دریافت+کتاب+با+پسوند+HTML.html" style="font-size:2em">
+		دریافت کتاب با پسوند HTML</a> <a href="../post/tag/مشکلات+طریقت.html" style="font-size:1em">
+		مشکلات طریقت</a> <a href="../post/tag/از+دل+به+دفتر+از+دفتر+به+دلها؛+مقدمه+حضرت+علامه+آیه+الله+حسن+زاد.html" style="font-size:1em">
+		از دل به دفتر از دفتر به دلها؛ مقدمه حضرت علامه آیه الله حسن زاد</a> <a href="../post/tag/شرح+مناجات+شعبانیه.html" style="font-size:1em">
+		شرح مناجات شعبانیه</a> <a href="../post/tag/صاحب+دلان(1)%253A+پرده+نشین.html" style="font-size:1em">
+		صاحب دلان(1): پرده نشین</a> <a href="../post/tag/قبض+و+بسط‌های+معنوی.html" style="font-size:1em">
+		قبض و بسط‌های معنوی</a> <a href="../post/tag/حکومت+اسلامی.html" style="font-size:1em">
+		حکومت اسلامی</a> <a href="../post/tag/شرح+حال+شیخ+‌السالكین+حضرت+آیت+اللّه+العظمی+بهجت+و_____%257C(dot)%257C__________%257C(dot)%257C__________%257C(dot)%257C_____.html" style="font-size:1em">
+		شرح حال شیخ ‌السالكین حضرت آیت اللّه العظمی بهجت و...</a> </div>
+</div>
+<div class=bmenu></div>
+<div class="tmenu b9"><div class=tmenu2>آمار سایت</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+			بازدیدهای امروز : <span class=a><script>getStatVar('today_view');</script></span> نفر<br>
+بازدیدهای دیروز 
+			: <span class=a><script>getStatVar('yesterday_view');</script></span> نفر<br>
+			كل بازدیدها : <span class=a><script>getStatVar('total_view');</script></span> نفر<br>
+بازدید این ماه 
+			:<span class=a> <script>getStatVar('this_month_view');</script></span> نفر<br>
+بازدید ماه قبل 
+			: <span class=a><script>getStatVar('last_month_view');</script></span> نفر<br>
+تعداد نویسندگان 
+			: <span class=a><script>getStatVar('total_author');</script></span> عدد<br>
+كل مطالب ارسال شده: <span class=a><script>getStatVar('total_post');</script></span> عدد<br>
+آخرین بازدید : <span class=a><script>getStatVar('last_view_date');</script></span><br>
+آخرین بروز رسانی : <span class=a><script>getStatVar('modify_date');</script></span>
+</div>
+</div>
+<div class=bmenu></div>
+<div class="tmenu b2"><div class=tmenu2>تبلیغات</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div id="c" style="text-align:center">
+<a href="https://clients.netafraz.com/aff.php?aff=6846" rel="nofollow" target="_blank"><img src="http://www.netafraz.com/banners/new/Netafraz-120x240.gif"  border="0"></a>
+
+<DIV class=content>
+<P><A href="../post/277.html" target=_blank><IMG title="سامانه پیامکی دلدادگان" border=0 alt="سامانه پیامکی دلدادگان اخلاقی" src="http://deldadeha.persiangig.com/new_folder/003.jpg"></A></P></DIV>
+
+
+ 
+</a>
+<DIV class=content>
+<P><A href="http://shop.parandco.com/index.php/refer_code/71870676/" target=_blank><IMG title="" border=0 alt="" src="http://deldadeha.persiangig.com/image/price/parand1.jpg"></A></P></DIV><br>
+</div>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+</div>
+</div>
+
+<div class=mainl>
+
+<div class=post>
+
+<!--------------- block sabet ---------------------->
+<blogskin><div class=ad1></div><div class=xpost><div class=page22>
+
+ <div align="center"><font size="6" face="Mihan-Iransans">کانال دلدادگان<br></font><br><font size="6" face="Mihan-Iransans"><font color="#009900">به کانال دلدادگان بپیوندید<br></font><a href="http://telegram.me/s_deldadegan" target="_blank" title="">لینک ورود</a><br><br></font><a href="http://telegram.me/s_deldadegan" target="_blank" title=""><img src="http://deldadeha.persiangig.com/telegram_channel/Telegram.png" alt="" align="bottom" border="0" height="230" hspace="0" vspace="0" width="520"></a><br></div> 
+
+
+</div></div><div class=ad3><br></div></blogskin>
+<!--------------- block sabet ---------------------->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=tpost><div class=title><a href="../post/390.html">کانال تفسیر آیت الله جوادی آملی</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/390&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : یکشنبه 19 شهریور 1396</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>بسم الله الرحمن الرحیم<br>کانال تفسیر آیت‌الله جوادی‌آملی(حفظه‌الله) آغاز بکار کرد.<br><div align="center"><font size="4"><a href="https://t.me/tafsirjavadi" target="" title="">https://t.me/tafsirjavadi</a></font></div><div align="center"><br></div><div align="center"><div align="center"><img src="http://moballeq.ir/images/javadi%206sfnd91%20ata.jpg" alt="" width="371" vspace="0" border="0" align="bottom" hspace="0" height="247"></div><div align="center"><br></div></div><font size="2">در این کانال فایل صوتی درس‌های تفسیر معظم‌له، به‌همراه متن (بصورت لینک Instant View و یکجا) قرار داده شده است.<br>لازم به ذکر است که این کانال ارتباطی با دفتر معظم‌له ندارد و توسط دوستداران ایشان اداره می‌شود.<br>امید است این کار کوچک، واسطه‌ای باشد برای دسترسی راحت‌تر به معارف ناب اسلامی.<br>برای ارتباط با ادمین به لینک درج شده در bio مراجعه نمایید.</font><br>--------------------------------<br>
+
+
+				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(390)" > نظرات (<script>setCommentCnt(390)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/308">مرکز حفظ و نشر آثار آیت الله خوشوقت(ره)</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/308&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : پنجشنبه 28 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <p>بسم رب العرفا</p><p><br></p><p align="center"><font size="4"></font><a href="http://www.sahebeamr.org/" target="_blank" title="">مرکز حفظ و نشر آثار آیت الله خوشوقت(ره)</a><font size="4"></font></p><p align="center"><font size="4"><br></font></p><p align="center"><a href="http://www.sahebeamr.org/" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://www.sahebeamr.org/images/madineh.jpg" alt=""></a></p><p align="center"><br></p><p align="center">http://www.sahebeamr.org/</p>
+
+
+				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(308)" > نظرات (<script>setCommentCnt(308)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/305">شرح آرزومندی;شرح زندگانی حضرت آیت اله محمد شجاعی</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/305&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : پنجشنبه 28 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <p>بسم رب العرفا</p><p><br>شرح آرزومندی</p><p><br>در بیان شرح احوالات و زندگانی با بركت عالم ربانی حضرت آیت اله استاد محمد شجاعی حفظ الله</p><p><br></p><p align="center"><img hspace="0" border="0" align="baseline" vspace="0" src="http://www.ahsanalhadis.com/wp-content/uploads/2012/07/shojaee.jpg" alt=""></p><p align="right"><br>قلم را آن زبان نبود كه سرّ عشق گوید باز     / &nbsp;ورای حدّ تقدیر است شرح آرزومندی<br><br>«بسم الله الرحمن الرحیم»<br><br>علم بسان فرشته است ـ فرشته ای فرود آمده از بالاترین آسمان. می‌گردد تا یافتن منزلی. فرشته در خاكدان منزل نمی‌كند، فرشته پشت شیشة غبار گرفتة خانه‌های متروك نمی‌نشیند. فرشتة‌ سپیدبال آشیانه‌ای می‌خواهد در خور ظرافت طبعش و منزلی در شان پاكی و قداستش.<br>منزل فرشته علم دلی است كه پیش از آن كه از روزن آن آفتاب دانستن فرو ریزد، باران تزكیه بر سقفش می‌بارد. و این گونه است كه دل و جان عالمان مهبط فرشتگان و جایگاه نزول زلالترین باران‌های فیض الهی است:<br><br>خلوت دل نیست جای صحبت اغیار     دیو چون بیرون رود فرشته در آید<br>زندگی مردان خدا و عالمانی كه فرشتگان علم و تقوا در قلب آنها منزل كرده‌اند فصل درس آموزی است كه جویندگان وصال، برگ برگ آن را مشتاقانه می‌خوانند و از واژه واژه‌اش اندرز می‌گیرند و از جمله جمله‌اش چراغ راه بر می‌افروزند.<br>عالمی كه اینك چراغ زندگانی پربارش را به نظاره می‌نشینیم نیز از ان دسته مردان خداست. مردانی كه با تمام دلیری در طی طریق الی الله، خاضعانه راه خاموشی گرفته‌اند و آنگاه كه از حیات طیبة ایشان می‌پرسی كلامی بر نمی‌آورند و دمی نمی‌كشند. این استاد فرزانه بارها مورد چنین تقاضایی قرار گرفته بودند و همواره می‌فرمودند: من بارها گفته‌ام كه زندگی من خلاصه در این سه جمله است كه: نادان به دنیا آمدم، نادان بزرگ شدم و نادان هستم.<br>آری، غایت دانستن در نزد مردان خدا به بیكرانه‌تر از محیط فهم زمینیان است و ریسمانی است كه رشته در آسمان دارد. اما در یك عصر دل‌انگیز تابستان، در سال 1383 هنگامیكه توفیق زیارتشان نایب گردید، آنگاه كه اصرار مشتاق محبی را دیدند، شاید تنها به حكم شاد كردن دل مؤمنی بود كه لب به كلام گشودند، و صد البته كه ناگفتنی‌های فراوان از كمالات و آفاق شریفة خود را همچنان در محاق سكوت نگاه داشتند و آنچه از گفتنی‌ها بازگو كردند، بازیرسبیل پرهیز از خودنمایی و بیشتر در شرح فضایل اساتیدشان بود تا بیان شرح حال خود.<br><br>گركسی وصف او زمن پرسد     بیدل از بی‌نشان چه گوید باز!<br>عاشقان كشتگان معشوق‌اند     برنیاید ز كشتگان آواز<br>زنجان، به سال 1319 هجری شمسی مردی آورد كه فرشتة علم در لحظة ولادت آهنگ فرود آمدن بر قلب او كرد و بالهای خود را بر چشمان او سایید. حضرت آیت الله محمد شجاعی در سال 1319 هجری شمسی در زنجان دیده به هستی باز كردند. ایشان نیز، چون عضوی از منظومة خورشیدی عالمان، در همان آغاز طفولیت، آثار استادی و فرزانگی بر چهره داشت و چشمهای باطن بین را به فردایی درخشنده در عرصة ایمان و اجتهاد و مجاهده نوید می‌داد.<br>تحصیلات ابتدایی را در زادگاه به سرانجام رساند و پس از آن بی‌درنگ، به سال 1331 هجری شمسی، راه اكتساب علوم آل محمد، صلوات اله علیهم اجمعین، را در حوزة علمیه زنجان در پیش گرفت. مقدمات حوزوی و نیز ... در همانجا آموخت و از لمعات آن توشه‌های نور برگرفت و برای شناخت قوانین اصول فقه، كتاب فوانین در اصول را آموخت و سپس آموختن منظومتین مرحوم سبزواری را بابی برای ورود به كهكشان زیبای حكمت الهی قرار داد. حصرت آیت الله استاد محمد شجاعی به سال 1335 هجری شمسی، از گوشه‌های حجرات حوزه علمیة زنجان، به سرزمین دانش و تقوا، قم، هجرت كردند ـ سرزمینی كه آشنایی با بزرگان عرصه علم و اجتهاد و فلسفه و عرفان واستفاده از آنان از مهمترین بركات آن بود. در همانجا رسایل آموخت و رسالت علم‌اندوزی را به كمال رساند. مكاسب فرا گرفت و تقوا و دانش كسب كرد و كفایه را در خود به كفایت به اندكی از زندگی دنیا بدل ساخت. آنگاه از درواز‌های متون نوشته شده خارج گردید و خود را به باب شهر درس خارج از اصول فقه فقیهی اصولی و عارفی فیلسوف، حضرت امام خمینی (ره)، رساند تا او را به اصولی‌ترین مبانی علم اصول فقه رهنمون گرداند و هم فروع را نزد وی روشن و آشكار سازد.<br>همزمان، تلمند در محضر فقهی حضرت آیت الله العظمی محقق داماد (ره) و شركت در درس خارج فقه ایشان راه استنباط احكام شرعی و اجتهاد را برای او هموار نمود. علاوه بر این بهره‌های مقطعی ایشان از درسهای خارج فقه و اصول برخی از آیات عظام چون ابرهای عابر بهاری او را نه سیراب، بلكه غرق در فراوانی فهم نمود.<br>اما بهره‌هایی كه از مائده آسمانی حضرت علامه طباطبایی (ره) بر گرفت، غذای روح سالیان او را رقم زد و او را به شاگرد ممتاز و مخصوص علامة طباطبایی رضوان اله علیه بدل ساخت. آموختن فلسفه، شفا یافتن از حكمت الهی سینوی در درس شفا و سفر از خویش به خدا، همراه با خلق، در درس اسفار صد را با حضور در كلاسهای درس عمومی، و بهره‌مندیاز خلوت آكنده از اسرار درس‌های خصوصی حضرت علامه (ره) گوشه‌هایی از این خوشه‌چینی معنوی از بوستان علم و حكمت بود.<br>ارتباط علمی و معنوی تنگاتنگ میان استادی علامه و شاگردی عالم، او را در شمار نزدیكان حضرت طباطبایی در آورده بود تا آنجا كه همة رساله‌های دست‌نویس علامه را كه مزین به دستخط نورانی ایشان بود و استنساخ آنها را به بعضی از شاگردانشان اجازه می‌دادند، استنساخ نمود و این افتخار را هم نصیب خود داشت.<br>به هر حال، بهره‌مندی استاد حضرت آیت الله شجاعی از سایة پرمهر و پرخیز استادی وارسته و واصل چون حضرت علامه طباطبایی حقیقتی است كه آثار و بركات آن همچنان در دل و جان ایشان جاری است.<br>گواه ارادت و لطف متقابل او و علامه (ره) همین بس زمانی، با درگذشت پدربزرگوار استاد (آیت الله شجاعی) كه علامه طباطبایی به منظور مسافرت تابستانی به زنجان عزیمت نموده و ایامی را در این شهر اقامت می‌كنند، از درگذشت پدر ایشان مطلع می‌كردند، و به دیدار و تسلیت شاگردی می‌شتابند و منزل پدری ایشان را به نور حضور خویش منور می‌نمایند. به همین دلیل، سالها بعد كه قرار بود منزل پدری حضرت آیت الله شجاعی برای مرمت و بازسازی تخریب گردد، به یمن همین خاطرة تابناك و ارزشمند، با اكراه تمام، تخریب آن اتاق نورانی را به اطرافیان اجازت فرمودند.<br>زی طلبگی از ارزشمندترین دستاویزهایی است كه تمام عالمان ربانی، به ویژه در دوران جوانی، خود را به زیور آن آراسته‌اند. ایشان نیز در دوران جوانی، طلبگی را با مرام سادگی عجین ساختند.<br>در نز د خدا، شكم پر مبغوض است و از مبغوض حكیم، حكمت بر نمی‌آید. این است كه خالی نگه داشتن اندرون از طعام، سر اولیای خداست در وصول به حكمت‌های ناب آسمانی.<br><br>اندرون از طعام خالی دار     تا در آن نور كبریا بینی<br>حضرت آیت الله شجاعی نیز در زمرة پارسایانی بود كه فقر شدید دوران جوان نه تنها مخل علم آموزی و تهذیب او نگردید، بلكه ارادة او را در طی طریق تقوی و دانش صد چندان نمود. او، كه گاه از شدت فقر، استطاعت خرید حتی یك قرص نان سنگك 4 ریالی را هم نداشت و سه سال تمام در نهایت فقر، از نان سیر نگشت، با تمامی این مشقات لحظه‌ای از آموختن نیاسود.<br>او هر روز پس از نماز صبح تا ساعت 12 شب به جز یك ساعت در ظهر، به قصد ادای فریضه و تناول غذایی مختصر، به سختی به درس و مطالعه می‌پرداخت. با اینهمه سخت‌كوشی، ایشان در بیاناتشان با تواضعی ستودنی از اینكه در مقاطع مختلف عمر خویش اوقاتی را بیهوده ضایع كرده است تاسف دایم دارند.<br>در آن زمان كه به دلیل كمبود بعضی از كتابهای درسی و عدم گسترش صنعت چاپ، طلاب پرتلاش ناچار به استنساخ بعضی از كتابها بودند، گاه، نوبت استنساخ ایشان به دیر هنگام می‌افتاد و دشواری دیگری بر مشقات ایشان می‌افزود. برای مثال تنها وقتی كه برای استنساخ كتاب شفا (كه فقط پنج نسخه در كلاس درس موجود بود) در اختیار استاد قرار داشت، 11 تا 12 هر شب در آن زمان بوده است. دراین ساعت هر شب می‌رفتند و كتاب را از صاحب آن می‌گرفتند و درس فردا را استنساخ می‌نمودند و كتاب را بر می‌گرداندند. امان این صفرا، در كام علم خواه او انگبین فزود.<br>شاید درك این ماجرا دشوار باشد، اما گواه گویایی است بر جدیت ایشان در علم آموزی در كنار تمام مرارت هایش. ایشان بعد از تاهل در محله‌های فقیرنشین قم با اجاره كردن یك و گاهی دو اتاق كوچك به تحصیل ادامه می‌دادند. در آن روزگار در بعضی از این محله‌ها فقط یك روز در میان امكان استفاده از برق را داشتند، آنهم تنها استفاده از یك لامپ 25 واتی، لاجرم، شبهایی كه برق در اختیار نبود، با بازكردن در چراغ والور به نور كمرنگ شعله بسنده می‌كردند و به مطالعه و نوشتن می‌پرداختند و از لحظه‌لحظه عمر برای دانستن و فهمیدن بهره‌ می‌بردند.<br>در سال 1346 هجری شمسی، باگذشت چهارسال از تبعید حضرت امام خمینی (ره)، پس از وقایع خرداد 1342 و تعطیلی دروس ایشان و همچنین درگذشت حضرت آیت الله محقق داماد و نیز درس حضرت علامه به منظور ادامة تالیف و تكمیل اثرعظیم‌القدر خود، المیزان، استاد شجاعی، كه هر تابستان در زنجان اقامت می‌كردند و در آغاز سال تحصیلی هر سال مجددا به قم باز می‌گشتند، در این سال (1346 هجری شمسی) با تعطیل شدن تمام درسهایشان در قم، دیگر به قم باز نمی‌گردند<br>این واقعه اگرچه برای استاد غم انگیز و سنگین بود، امام آثار مباركی داشت و منشا بركات و سرآغاز تشكیل جلسات و مباحث معارفی و تهذیب نفس و تفسیر حضرت آیت الله شجاعی در زنجان گردید.<br>این عالم فرزانه از زمرة اوتادی است كه به عینه علم را با عمل و جهاد را با اجتهاد در آمیخت. او كه فضای فاسد رژیم ستم‌شاهی را مخل مبانی شریعت و معاند با احكام نورانی اسلام می‌دید، براساس آنچه از تفكر ناب محمدی (ص) حضرت امام (ره) آموخته بود، در اوج خفقان رژیم طاغوت، در خلال مباحث اخلاقی و دینی خود به طرح اعتراضات سیاسی نیز می‌پرداخت و به همین دلیل توسط ساواك زنجان مكرر مورد مؤاخذه و سؤال و جواب و تهدید قرار می‌گرفت ولیكن به كار خود ادامه می‌داد. تا اینكه در سال 1351 هجری شمسی توسط مامورانی كه از ساواك تهران آمده بودند با كمك ساواك زنجان دستگیر و دو شبانه روز به دست ماموران اعزامی از تهران در شهر بانی زنجان مورد آزار و شكنجه بسیار سخت قرار گرفت و سپس، بعد از دو روز، به ساواك تهران منتقل گردید و دو ماه در كمیتة ضد خرابكاری كه كمیتة مشترك ساواك و شهربانی بود به جهت فعالیتهای گوناگون بر علیه رژیم، به صورت شد ید و خطرناكی آزار و شكنجه شد.<br>او دراین ایام مصداق كریمة ”واوذوافی سبیلی...“ بود.<br>بعد از آن 8 ماه دیگر در زندان قصر تحت مراقبت شدید زندانی بود و تنها با توكل كامل به خدای متعال و انقطاع از ما سوی الله و توسل به حضرات معصومین سلام الله علیهم اجمعین خصوصا در آویختن دامان حضرت ثامن الحج، علی بن موسی الرضا، صلوات الله و سلامه علیه، توانست از مهلكة رژیم طاغوت جان به سلامت به در برد و سایة پر بار خود را بر سر مشتاقان توحید و حكمت و تهذیب حفظ نماید. ادامة راه جهاد و اجتهاد و دغدغة اصلاح جامعه، بعد از مدتی مجددا او را در چنگال خون آلود ساواك انداخت و بار دیگر فصلی از شكنجه‌های طاقت فرسا را بر جسم مهذب او روا داشت. اما پس از زمان كوتاهی باز با عنایات خاصة ربوبی و توجهات مخصوص حضرات معصومین صلوات الله علیهم اجمعین از زندان رژیم آزاد گردید.<br>با به ثمر نشستن نهال انقلاب اسلامی ایران، حضرت استاد، كه عرصة سیاست هم برای او میدان عبودیت و بندگی خدا و خدمت به خلق بود، نمایندگی مردم زنجان را با اصرار زیاد خود مردم آن دیار در دورة اول مجلس شورای اسلامی پذیرفتند، اما چندی نگذشت كه به دلیل شدت كسالات به جا مانده از دوران زندان، از این سمت استعفا نموده و از آن پس، با اقامت در تهران، با تشكیل جلسات درس و بحث در باب تزكیه و خودسازی، تفسیر و معارف قرآنی دیگر، راه را بر جویندگانی بسیار، هموار ساختند.<br>جلسات عمومی و خصوصی درسها و مباحث عرفانی، تفسیری و معارفی استاد در دو دهة 40 و 50 شمسی در زنجان و دو دهة 60 و 70 شمسی در تهران بی‌شك گواراترین سرچشمه‌های زلال حكمت و عمل را در كام طالبین جویندگان معرفت روا داشته است كه ثمرة آن شاگردان و بهره‌مندان زیاد از این محافل است.<br>ابداعات و ابتكارات زیبا و مؤثر عرفانی و معارفی همراه با استدلالات و براهین قوی و تحلیل‌های مخصوص در استفاده از آیات قرآن كریم و روایات و ادعیة معصومین، سلام الله علیهم اجمعین، در مباحث خودسازی و تزكیة النفس، تفسیر و معارف جقة الهیه، شیوة منحصر به فرد این استاد عالیقدر است. جالب آنكه سلیقة عرفانی و ذوقی استاد و علاقة ایشان به ارباب معرفت، از جمله مولوی و حافظ، بر زیبایی كلام و اندیشة ایشان، صورتی دیگر بخشیده و جامه‌ای زربفت از لطایف پوشانده است.<br>آنچه درشرح زندگانی ایشان نباید مغفول بماند، این است كه ایشان نیز درست مانند استاد خود، حضرت علامه طباطبایی، در تمام پیشرفت‌های علمی و عرفانی، خود را مرهون فداكاریها و زحمات همسر فداكار خود می‌‌دانند و وجود چنین همسری را از تفضلات حضرت حق بر می‌شمرند.<br>حاصل عمر با بركت ایشان در عرصة علم و عمل تاكنون آثار ارزشمندی را به جا نهاده كه مشتاقان حقایق الهی را از زخارف دیگر بی‌نیاز می‌كند.<br><br>این گنجینة گرانبها شامل آثار زیر است:<br>ـ كتاب معاد یا بازگشت به سوی خدا در دو جلد چاپ شركت انتشار<br>ـ كتاب مقالات دربارة تزكیه و خودسازی در سه جلد انتشارات سروش<br>ـ انسان و خلافت الهی<br>ـ 6 جلد كتاب برگرفته از برخی از مباحث استاد در جلساتشان درخصوص معاد در خصوص خواب با تنظیم حجه الاسلام كاشفی، چاپ كانون اندیشة جوان با عناوین:<br>بازگشت به هستی، عروج روح، قیام قیامت، تجسم عمل شفاعت، مواقف حشر، و نشانه‌های خواب<br><br>مجموعه آثار آیت الله محمد شجاعی:<br>1- مقالات، سه جلد، چاپ از انتشارات سروش<br>2- معاد یا بازگشت به سوی خدا، دو جلد، چاپ شركت انتشار.<br>3- انسان و خلافت الهی، یك جلد<br>4- اسماء حسنی، یك جلد، چاپ دوم از انتشارات سروش<br>5- پنج رساله، یك جلد، چاپ اول از مركز مطالعات بنیادین خاورمیانه<br>6- ملائكه، یك جلد، چاپ دوم<br>7- بقیة الله ...، یك جلد، چاپ اول<br>8- خواب و نشان‌های آن، یك جلد، چاپ سوم<br>9- بازگشت به هستی، یك جلد، چاپ دوم<br>10- عروج روح، یك جلد، چاپ دوم<br>11- قیام قیامت، یك جلد، چاپ دوم<br>12- مواقف حشر، یك جلد، چاپ دوم<br>13- تجسم عمل و شفاعت، یك جلد، چاپ دوم<br>14- مرگ تا قیامت، یك جلد، چاپ دوم<br><br>منتشر می‌شودِ:<br><br>1- خواب و نشان‌های آن، چاپ چهارم.<br>2- دروس تزكیه، در چند جلد، چاپ اول.<br>ـ آرشیو نوار بزرگی شامل مباحث ارزشمند ایشان دربارة خودسازی و تزكیه، تفسیر، و معارف مختلف.<br>نكتة دیگری كه شایان ذكر است آنكه مباحث گرانمایة این استاد فرزانه در باب تزكیه و خودسازی با عنوان برنامة” كیمیای وصال“ از سال 79 تا كنون از رادیو قرآن برای علاقمندان پخش شده است. بی‌شك كیمیای كلام و اندیشة این عالم ربانی مس وجود را به طلای ناب بدل می‌كند:<br><br>دست از مس وجود چون مردان ره بشوی &nbsp;/&nbsp;     تا كیمیای عشق بیابی و زر شوی</p>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(305)" > نظرات (<script>setCommentCnt(305)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/304">تفسیر قرآن کریم حضرت آیت الله جوادی آملی(صوتی و مکتوب)</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/304&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : پنجشنبه 28 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>بسم رب العرفا</P>
+<P><BR></P>
+<P align=center><FONT size=5>فایل های صوتی و مکتوب</FONT></P>
+<P align=center><FONT size=5>&nbsp;تفسیر قرآن کریم </FONT></P>
+<P align=center><FONT size=5>حضرت آیت الله العظمی جوادی آملی(حفظه الله)</FONT></P>
+<P><BR></P>
+<P align=center><A title="" href="http://www.portal.esra.ir/Pages/Index.aspx?Command=Q29udGVudHNHcm91cExpc3QxJjc%3d-u9F35IQ9NWo%3d&amp;admin=200&amp;skinid=66&amp;lang=257&amp;Argument=IyMjQ29udGVudCMjIw%3d%3d-NXnF4ID5GRE%3d" target=_blank><IMG style="WIDTH: 624px; HEIGHT: 417px" border=0 hspace=0 alt="" align=baseline src="http://deldadeha.persiangig.com/image/IMA.jpg" width=701 height=533></A></P>
+<P><BR></P>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(304)" > نظرات (<script>setCommentCnt(304)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/303">أَشِدَّاء عَلَى الْكُفَّارِ رُحَمَاء بَیْنَهُمْ</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/303&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : سه شنبه 26 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>بسم رب العرفا</P>
+<P>شاید این پست کمی با موضوع وبلاگ تفاوت داشته باشد ولی این پست را گذاشتم چون واقعا من را یاد آیه شریفه&nbsp;انداخت.</P>
+<P>مُّحَمَّدٌ رَّسُولُ اللَّهِ وَالَّذِینَ مَعَهُ أَشِدَّاء عَلَى الْكُفَّارِ رُحَمَاء بَیْنَهُمْ تَرَاهُمْ رُكَّعًا سُجَّدًا <BR>یَبْتَغُونَ فَضْلًا مِّنَ اللَّهِ وَرِضْوَانًا سِیمَاهُمْ فِی وُجُوهِهِم مِّنْ أَثَرِ السُّجُودِ ذَلِكَ مَثَلُهُمْ فِی التَّوْرَاةِ&nbsp;...</P>
+<P align=center><IMG border=0 hspace=0 alt="" align=baseline src="http://x-vahabi.persiangig.com/%D8%B5%D8%AD%D8%A7%D8%A8%D9%87.jpg"></P><A title="" href="http://host18.aparat.com//public/user_data/flv_video_new/301/9209fe39169e0ad04e5f0f5b4076cd6a902549.mp4" target=_blank>
+<P>تعجب صدای آمریکا از روحیه سرلشکر سلیمانی</P></A>
+<DIV id=video-one>
+<DIV class=videoOne_title><A title="" href="http://host18.aparat.com//public/user_data/flv_video_new/293/55307fa8be5c0f4c54604d84109374e1877322.mp4" target=_blank>گریه و دلدادگی سردار سلیمانی در آغوش قالیباف </DIV></DIV>
+<P></A><A title="" href="http://host10.aparat.com//public/user_data/flv_video_new/356/2ff86144112729f80ed6e12322c44e551067838.mp4" target=_blank>گریه سردار قاسم سلیمانی بر سر پیکر شهید کاظمی</A></P>
+<P align=center><A title="" href="http://www.khabarsaz.net/wp-content/uploads/IMG19580901.jpg" target=_blank><IMG style="WIDTH: 278px; HEIGHT: 338px" border=0 hspace=0 alt="" align=baseline src="http://t0.gstatic.com/images?q=tbn:ANd9GcSSqtbHlQQUkOCRvRK3hJ0C0Vb3FYiJ7CGG3-0h_3XIDrBcijc8" width=194 height=338></A></P>
+<P align=center>&nbsp;</P>
+<P align=right>&nbsp;</P>
+<P align=left>&nbsp;</P>
+<P align=right>&nbsp;</P>				<br><br><b></b>
+				<font style="font-size:8pt;"><br>
+			طبقه بندی: <a href="../post/category/43.html">
+			زندگی به سبک عارفان</a>،&nbsp;<a href="../post/category/2.html">
+			..:::عمومی </a>،&nbsp;				<br>
+						برچسب ها:
+													<a href="http://deldadegan.mihanblog.com/post/tag/%D9%85%D8%A7%D9%84%DA%A9%20%D8%A7%D8%B4%D8%AA%D8%B1%20%D8%B1%D9%87%D8%A8%D8%B1" >مالک اشتر رهبر</a>، 
+													<a href="http://deldadegan.mihanblog.com/post/tag/%DA%AF%D8%B1%DB%8C%D9%87%20%D9%88%20%D8%AF%D9%84%D8%AF%D8%A7%D8%AF%DA%AF%DB%8C%20%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1%20%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C" >گریه و دلدادگی سردار سلیمانی</a>، 
+																</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(303)" > نظرات (<script>setCommentCnt(303)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/302">برنامه ای جهت سیر و سلوک</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/302&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : یکشنبه 17 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>بسم رب العرفا</P>
+<P align=center><A href="http://www.farhangnews.ir/sites/default/files/content/images/story/92-12/06/66470-199289-1393278243.jpg" target=_blank><SPAN style="LINE-HEIGHT: 1.53em"><U><IMG style="LINE-HEIGHT: 1.53em; WIDTH: 403px; HEIGHT: 552px" alt="" src="http://www.farhangnews.ir/sites/default/files/content/images/story/92-12/05/66470-199282-1393266858.jpg" width=500 height=700></U></SPAN></A></P><A title="" href="http://www.farhangnews.ir/sites/default/files/content/attaches/story/91-12/16/merajossaadah%20molla%20ahmad%20naraghi.pdf" target=_blank>
+<P align=center>دریافت کتاب پی دی اف</P>
+<P align=center></A><A title="" href="http://deldadegan.mihanblog.com/post/35" target=_blank>دریافت کتاب موبایل</P></A>				<br><br><b></b>
+				<font style="font-size:8pt;"><br>
+			طبقه بندی: <a href="../post/category/15.html">
+			کتب مخصوص موبایل </a>،&nbsp;									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(302)" > نظرات (<script>setCommentCnt(302)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/301">توصیه های طوبی محبت برای سبک زندگی</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/301&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : یکشنبه 17 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>بسم رب العرفا</P>
+<P>&nbsp;</P>
+<DIV style="WIDTH: 47%" class=lead>حاج محمد اسماعیل دولابی در محافل خود پیرامون درک متفاوت و فراگیری از دین با تکیه بر مفاهیم محبت و زیبایی بود و این بیان جدید باعث جذب جوانان و قشر تحصیل‌کرده در جلسات هفتگی وعظ و سخنرانی ایشان بود. </DIV>
+<P>&nbsp;</P>
+<DIV style="CLEAR: both"></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="LINE-HEIGHT: 1.53em"><SPAN style="COLOR: #ff0000"><STRONG>به گزارش فرهنگ نیوز</STRONG></SPAN> ، بیشترین اهتمام آن عارفان گرانمایه در پرورش و رشد اخلاقی علاقمندان ، متوجه ایجاد تحول در نگرش آنها به هستی و زندگی ، به گونه ای که همه چیز را از منظر توحیدی و از مآی جمال الهی بنگرند و منعطف نمودن عشق و محبت آنان و متمرکز نمودن توجهشان به خدا و اولیای الهی،به گونه ای که از هر چه جز این ، چه دنیوی و چه اخروی ، فارق گردند،و نیز ایجاد حسن ظن و اعتماد به خدا و اولیای الهی،و حاکم ساختن روحیه تسلیم و رضا بر انان بود.</SPAN></DIV>
+<DIV>در محضر آن بزرگوار چنان روح رجاء و امیدواری به فضل الهی موج می زد که هر نومید و مایوس از نجات و فلاح را شور و نیرو می بخشید و به وادی کمال رهنمون و در طریق وصال رهسپار می ساخت .</DIV>
+<DIV>&nbsp;</DIV></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="COLOR: #0000ff"><STRONG>زندگینامه نامه ی میرزا اسماعیل دولابی از زبان خودشان</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">محمد اسماعیل دولابی در روستای دولاب از توابع تهران زاده شد. در جوانی به شغل کشاورزی اشتغال داشت و در عین حال به صورت آزاد به دانش‌آموزی در جلسات علمای دینی معاصر مانند آیت‌الله سید محمد شریف شیرازی، آیت‌الله شاه‌آبادی، آیت‌الله تقی بافقی، شیخ غلامعلی قمی و شیخ محمدجواد انصاری پرداخت.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>حاج محمد اسماعیل دولابی در محافل خود پیرامون درک متفاوت و فراگیری از دین با تکیه بر مفاهیم محبت و زیبایی بود و این بیان جدید باعث جذب جوانان و قشر تحصیل‌کرده در جلسات هفتگی وعظ او بود.</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="COLOR: #0000ff"><STRONG>آن عارف بزرگ در اشاره اجمالی به سرگذشت سیر عرفانی خویش چنین می فرمود :</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>در ایام جوانی همراه پدرم به نجف اشرف مشرف شده بودم . در آن زمان به شدت تشنه علوم و معارف دینی بوده و با تمام وجود خواستار این بودم که در نجف بمانم و در حوضه تحصیل کنم ؛ ولی پدرم که مسن بود و جز من پسر دیگری که بتواند در کارها به او کمک کند نداشت ، با ماندنم در نجف موافق نبود.</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>در حرم امیرالمؤمنین (ع) به حضرت التماس می کردم ترتیبی دهند که در نجف بمانم و درس بخوانم و آن قدر سینه ام را به ضریح حضرت فشار می دادم و می مالیدم که موهای سینه ام کنده و تمام سینه ام زخم شده بود. حالم به گونه ای بود که احتمال نمی دادم به ایران برگردم .</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>به خود می گفتم یا در نجف می مانم و مشغول تحصیل می شوم و یا اگر مجبور به بازگشت شوم همین جا جان می دهم ،می میرم . با علماء نجف هم که مشکلم را درمیان گذاشتم تا مجوزی برای ماندم در نجف از آنها بگیرم به من گفتند که وظیفه تو این است که رضایت پدرت را تامین کنی و برای کمک به ائ به ایران بازگردی .</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">در نتیجه نه التماس هایم به حضرت امیر کاری از پیش برد و نه متوسل شدنم به علماء مرا به خواسته ام رساند . تا اینکه با همان حال ملتهب همراه پدرم به کربلا مشرف شدیم . در حرم حضرت اباعبدالله (ع) در بالاسر ضریح حضرت همه چیز حل شد و هرچه را می خواستم به من عنایت کردند ، به طوری که هنگام مراجعت حتی جلوتر از پدرم بدون هرگونه ناراحتی به راه افتادم و به ایران بازگشتم .</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: center" class=body><IMG style="WIDTH: 415px; HEIGHT: 600px" alt="" src="http://www.farhangnews.ir/sites/default/files/content/images/story/92-11/08/62864-188804-1390894870.jpg"></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">در ایران اولین کسانی که برای دیدن من به عنوان زائر عتبات، به منزل ما آمدند دو نفر آقا سید بودند . آنها را به اتاق راهنمائی کردم و خودم برای آوردن وسائل پذیرائی رفتم . وقتی داشتم به اتاق بر می گشتم جلوی در اتاق پرده ها کنار رفت و حالت مکاشفه ای به من دست داد و در حالیکه سفره به دستم بود حدود بیست دقیقه در جای خود ثابت ماندم . دیدم بالای سر ضریح امام حسین (ع) هستم و به من حالی کردند که آنچه را می خواستی از حالا به بعد تحویل بگیر .</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>آن دو آقا سید هم با یکدیگر صحبت می کردند و می گفتند او در حال خلسه است . از همان جا شروع شد . آن اتاق شد بالای سر ضریح حضرت و تا سی سال عزاخانه اباعبدالله(ع) بود و اشخاصی که به آنجا می آمدند بی آنکه لازم باشد کسی ذکر مصییبت بکند می گرستند . در اثر عنایات حضرت ابا عبدالله(ع) کار به گونه ای بود که خیلی از بزرگان مثل مرحوم حاج ملا آقا جان ، مرحوم آیت الله شیخ محمد تقی بافقی و مرحوم آیت الله شاه آبادی ، بدون اینکه من به دنبال آنها بروم و از آنها التماس و درخواست کنم ، با علاقه خودشان به آنجا می امدند .</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>بعد از آن مکاشفه به ترتیب به چهار نفر برخوردم که مرا دست به دست به یکدیگر تحویل دادند .</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">خداوند لطف فرمود و در هر یک از این کلاسها افراد برجسته و ممتاز آن کلاس را به من نشان داد ؛ ولی کاری کرد که هیچ جا متوقف نشدم ، بلکه تماشا کردم و بهره بردم و عبور کردم تا اینکه به وادی توحید رسیدم . در طول این دوران همیشه یکه شناس بودم و به هر کس که دل می دادم خودم و زندگی و خانواده ام را قربانی او می کردم تا اینکه خود او مرا به بعدی تحویل می داد و من که وی را بالاتر از قبلی می دیدم از آن پس دور او می گشتم .</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>به هر تقدیر همه عنایاتی که به من شد از برکات امام حسین(ع) بود.از راه سایر ائمه هم می توان به مقصد رسید ، ولی راه امام حسین (ع) خیلی سریع انسان را به نتیجه می رساند . جون کشتی امام حسین(ع) در آسمان های غیب خیلی سریع راه می رود ، و هر کس در سیر معنوی خود حرکتش را از آن حضرت آغاز کند ، خیلی زود به مقصد می رسد .</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify" class=body>&nbsp;</DIV>
+<DIV class=body><SPAN style="COLOR: #0000ff"><STRONG>خدایا از تو طلب استغفار می کنم مثل کسی که فرار کند از تو به خودت «هَارِبٍ مِنْكَ إِلَیْكَ »</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: center" class=body>
+<DIV id=audio-player>
+<OBJECT style="OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium" id=audioplayer_211 name=audioplayer_211 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width="100%" height=24><PARAM NAME="_cx" VALUE="18679"><PARAM NAME="_cy" VALUE="635"><PARAM NAME="FlashVars" VALUE="soundFile=http://www.farhangnews.ir/sites/default/files/content/audios/story/92-11/08/17_farar_az_khoda_be_khoda.mp3&amp;titles=17_farar_az_khoda_be_khoda.mp3&amp;autostart=no&amp;animation=no&amp;playerID=audioplayer_211"><PARAM NAME="Movie" VALUE="/sites/all/themes/farhangnews4/player.swf"><PARAM NAME="Src" VALUE="/sites/all/themes/farhangnews4/player.swf"><PARAM NAME="WMode" VALUE="Transparent"><PARAM NAME="Play" VALUE="0"><PARAM NAME="Loop" VALUE="-1"><PARAM NAME="Quality" VALUE="High"><PARAM NAME="SAlign" VALUE="L"><PARAM NAME="Menu" VALUE="0"><PARAM NAME="Base" VALUE=""><PARAM NAME="AllowScriptAccess" VALUE=""><PARAM NAME="Scale" VALUE="NoScale"><PARAM NAME="DeviceFont" VALUE="0"><PARAM NAME="EmbedMovie" VALUE="0"><PARAM NAME="BGColor" VALUE="FFFFFF"><PARAM NAME="SWRemote" VALUE=""><PARAM NAME="MovieData" VALUE=""><PARAM NAME="SeamlessTabbing" VALUE="1"><PARAM NAME="Profile" VALUE="0"><PARAM NAME="ProfileAddress" VALUE=""><PARAM NAME="ProfilePort" VALUE="0"><PARAM NAME="AllowNetworking" VALUE="all"><PARAM NAME="AllowFullScreen" VALUE="false"><PARAM NAME="AllowFullScreenInteractive" VALUE="false"></OBJECT>
+<SCRIPT type=text/javascript>
+							AudioPlayer.embed("audioplayer_211", 
+								{
+									soundFile: "http://www.farhangnews.ir/sites/default/files/content/audios/story/92-11/08/17_farar_az_khoda_be_khoda.mp3",
+									titles: "17_farar_az_khoda_be_khoda.mp3",
+									autostart: "no",
+									animation: "no",
+								}
+							);
+						</SCRIPT>
+17_farar_az_khoda_be_khoda.mp3 | <A style="CLEAR: both" href="http://www.farhangnews.ir/sites/default/files/content/audios/story/92-11/08/17_farar_az_khoda_be_khoda.mp3"><FONT color=#062b84>دانلود فایل</FONT></A></DIV></DIV>
+<DIV style="TEXT-ALIGN: center" class=body>&nbsp;</DIV>
+<DIV class=body>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: rgb(0,0,255)"><STRONG>۱۵توصیه حاج آقا دولابی برای سبک زندگی</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">استاد بزرگ اخلاق آقای میرزا اسماعیل دولابی پیش از وفات برای زندگی مومنانه 15 دستورالعمل را ذکر می‌کند که به ترتیب در ذیل آورده شده است:</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">1. هر وقت در زندگی‌ات گیری پیش آمد و راه بندان شد، بدان خدا کرده است؛ زود برو با او خلوت کن و بگو با من چه کار داشتی که راهم را بستی؟ هر کس گرفتار است، در واقع گرفته ی یار است.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">2.زیارتت، نمازت، ذکرت و عبادتت را تا زیارت بعد، نماز بعد، ذکر بعد و عبادت بعد حفظ کن؛ کار بد، حرف بد، دعوا و جدال و… نکن و آن را سالم به بعدی برسان. اگر این کار را بکنی، دائمی می شود؛ دائم در زیارت و نماز و ذکر و عبادت خواهی بود.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">3.اگر غلام خانه‌زادی پس از سال ها بر سر سفره صاحب خود نشستن و خوردن، روزی غصه دار شود و بگوید فردا من چه بخورم؟ این توهین به صاحبش است و با این غصه خوردن صاحبش را اذیت می کند. بعد از عمری روزی خدا را خوردن، جا ندارد برای روزی فردایمان غصه دار و نگران باشیم.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">4. گذشته که گذشت و نیست، آینده هم که نیامده و نیست. غصه ها مال گذشته و آینده است. حالا که گذشته و آینده نیست، پس چه غصه ای؟ تنها حال موجود است که آن هم نه غصه دارد و نه قصه.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">5.موت را که بپذیری، همه ی غم و غصه ها می رود و بی اثر می شود. وقتی با حضرت عزرائیل رفیق شوی، غصه هایت کم می شود. آمادگی موت خوب است، نه زود مردن. بعد از این آمادگی، عمر دنیا بسیار پرارزش خواهد بود. ذکر موت، دنیا را در نظر کوچک می کند و آخرت را بزرگ. حضرت امیر علیه السلام فرمود:یک ساعت دنیا را به همه ی آخرت نمی دهم. آمادگی باید داشت، نه عجله برای مردن.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">6.اگر دقّت کنید، فشار قبر و امثال آن در همین دنیاقابل مشاهده است؛ مثل بداخلاق که خود و دیگران را در فشار می گذارد.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">7.تربت، دفع بلا می‌کند و همه ی تب ها و طوفان ها و زلزله ها با یک سر سوزن از آن آرام می شود. مؤمن سرانجام تربت می‌شود. اگر یک مؤمن در شهری بخوابد، خداوند بلا را از آن شهر دور می‌کند.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">8.هر وقت غصه دار شدید، برای خودتان و برای همه مؤمنین و مؤمنات از زنده ها و مرده ها و آنهایی که بعدا خواهند آمد، استغفار کنید. غصه‌دار که می‌شوید، گویا بدنتان چین می‌خورد و استغفار که می‌کنید، این چین ها باز می شود.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">9. تا می گویم شما آدم خوبی هستید، شما می گویید خوبی از خودتان است و خودتان خوبید. خدا هم همین طور است. تا به خدا می گویید خدایا تو غفّاری، تو ستّاری، تو رحمانی و…خدا می فرماید خودت غفّاری، خودت ستّاری، خودت رحمانی و… . کار محبت همین است.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">10.با تکرار کردن کارهای خوب، عادت حاصل می شود. بعد عادت به عبادت منجر می شود. عبادت هم معرفت ایجاد می کند. بعد ملکات فاضله در فرد به وجود می آید و نهایتا به ولایت منجر می شود.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">11.خدا عبادت وعده ی بعد را نخواسته است؛ ولی ما روزی سال های بعد را هم می خواهیم، در حالی که معلوم نیست تا یک وعده ی بعد زنده باشیم.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">12. لبت را کنترل کن. ولو به تو سخت می گذرد، گله و شکوه نکن و از خدا خوبی بگو. حتّی به دروغ از خدا تعریف کن و این کار را ادامه بده تا کم کم بر تو معلوم شود که به راست ی خدا خوب خدایی است و آن وقت هم که به خیال خودت به دروغ از خدا تعریف می کردی، فی الواقع راست می گفتی و خدا خوب خدایی بود.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">13.ازهر چیز تعریف کردند، بگو مال خداست و کار خداست. نکند خدا را بپوشانی و آنرا به خودت یا به دیگران نسبت بدهی که ظلمی بزرگ تر از این نیست. اگر این نکته را رعایت کنی، از وادی امن سر در می آوری. هر وقت خواستی از کسی یا چیزی تعریف کنی، از ربت تعریف کن. بیا و از این تاریخ تصمیم بگیر حرفی نزنی مگر از او. هر زیبایی و خوبی که دیدی رب و پروردگارت را یاد کن، همانطور که امیرالمؤمنین علیه السلام در دعای دهه‌ی اول ذیحجه می فرماید: به عدد همه چیزهای عالم لا اله الا الله</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">14.دل های مؤمنین که به هم وصل می‌شود، آب کُر است. وقتی به علــی علیه السّلام متّصل شد، به دریا وصل شده است...شخصِ تنها ، آب قلیل است و در تماس با نجاست نجس می شود ، ولی آب کُر نه تنها نجس نمی شود ، بلکه متنجس را هم پاک می کند."</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">15.هر چه غیر خداست را از دل بیرون کن. در "الا"، تشدید را محکم ادا کن، تا اگر چیزی باقی مانده، از ریشه کنده شود و وجودت پاک شود. آن گاه "الله"را بگو همه ی دلت را تصرف کند.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: rgb(0,0,255)"><STRONG>توصیف عشق حقیقی از زبان حاج محمد حسین دولابی:</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: rgb(0,0,255)"><STRONG></STRONG></SPAN><BR>haj mohammad.flv |&nbsp;<A href="http://www.farhangnews.ir/sites/default/files/content/videos/story/92-11/08/haj%20mohammad.flv" alt="haj mohammad.flv"><FONT color=#062b84>دانلود فیلم</FONT></A></DIV></DIV></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV></DIV>
+<DIV class=body>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #ff0000"><STRONG>رزق از منظر حاج اسماعیل دولابی</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">حتی یک ساعت به فکر رزقت نباش، به دنبال کسب و کار هم که می‌روی، بدان که در رزق، فاعل تام، خدای متعال است، ان الله هوالرزاق ذوالقوة المتین: هر آینه، خداوند همان روزی دهنده نیرومند و محکم کار است.</DIV>
+<DIV style="TEXT-ALIGN: justify">عقیق:رزق، مقدر و مقسوم است و رزاق خداست، رزقمان هنر ما نیست و حرص و تقلای ما آن را زیاد نخواهد کرد.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">حتی یک ساعت به فکر رزقت نباش، به دنبال کسب و کار هم که می‌روی، بدان که در رزق، فاعل تام، خدای متعال است، ان الله هوالرزاق ذوالقوة المتین: هر آینه، خداوند همان روزی دهنده نیرومند و محکم کار است.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>رزق دو گونه است</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">رزق دو گونه است، یکی آن که تو را طلب می‌کند و یکی آن که تو در طلب او هستی و عاقبت به تو نمی‌رسد، جز آن چه در طلب توست. رزق روحی هم همین طور است.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG><SPAN style="LINE-HEIGHT: 1.53em">امور دنیوی خود را به خدا واگذار کن</SPAN></STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">اگر امور دنیوی خود را به خدا واگذار کنی، امور اخروی را نیز خدا تأمین خواهد کرد، اما اگر بخواهیم امور دنیایی خود را با تقلای خودمان تأمین کنیم، ضمن این که چون رزق مقدر و مقسوم است، تقلای بیهوده و بی ثمری است، آخرتمان را هم تباه کرده‌ایم.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>نگران آینده نباش</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">تا به حال آنچه رزقت بوده، مصرف کرده‌ای و آنچه رزقت نبوده، به تو نرسیده است. حتی آنچه را از راه حرام تهیه کردی و خوردی، حرص و تقلایت آن را نجس کرد، و الّا اگر صابر بودی، همان رزق از راه حلال، همان وقت به دستت می‌رسید. پس زاهد حقیقی تو هستی، چون ذره‌ای بیش از رزق خود نخورده‌ای. از این به بعد هم همین طور خواهد بود، پس نه نسبت به گذشته غصه داشته باش و نه نگران آینده باش.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">هر چیزی که به تو نرسیده، بدان که از اول مال تو نبوده است.</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG><SPAN style="LINE-HEIGHT: 1.53em">خدا مقدر كرده است</SPAN></STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">خدا قبل از عالم تشریع، رزقی را برای بنده‌ای مثلاً در روز ماه رمضان بریده است. حالا او در روز ماه رمضان فراموش می‌کند که روزه است و آن غذا را می‌خورد، بعداً یادش می‌افتد که روزه بوده است. نه روزه‌اش باطل است و نه قضا دارد. این خدا بود که این فراموشی را بر او مسلط کرد تا رزقی را که برای او مقدر کرده بود، به او بخوراند. حضرت رضا(ع) می‌فرمایند: {وقتی خداوند امری را اراده کند، عقل عبد را می‌گیرد و آن کار را به دست او جاری می‌کند، بعد عقلش را به او باز می‌گرداند.} بسیاری از خیراتی که خدا به ما رسانده، این‌گونه بوده است و الّا اگر به عقل خودمان بود، آن کار را نمی‌کردیم.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>برای روزی فردایمان نگران نباشیم</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">اگر غلام خانه زادی پس از سال‌ها بر سفره صاحب خود نشستن و خوردن، روزی غصه‌دار شود و بگوید فردا من چه بخورم؟ این توهین به صاحبش است و با این غصه خوردن، صاحبش را اذیت می‌کند. بعد از عمری روزی خدا را خوردن، جا ندارد برای روزی فردایمان غصه دار و نگران باشیم.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>دوست اهل بیت</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">دوست اهل بیت(ع) دست به دهان است، چیزی گیرش آمد، به قدر نیاز می‌خورد و بقیه را می‌بخشد، چیزی ذخیره نمی‌کند.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG><SPAN style="LINE-HEIGHT: 1.53em">خدا روزی می‌دهد</SPAN></STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">{ان الله یرزق من یشاء به غیر حساب} همانا خداوند، هرکس را که بخواهد بی حساب روزی می‌دهد.</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">به غیر حساب سه معنی دارد:</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">۱- آن چه را می‌دهد، به این حساب نبوده که در قبال حسناتی باشد که انجام داده‌ای.</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">۲- از آن چه داده، حساب نمی‌کشد.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">۳- بی اندازه و بی حساب و زیاد می‌دهد.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>گله و شکایت نکن</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">خدا در مورد روزی‌ای که به مۆمنین داده است، از آن‌ها حساب نمی‌کشد و سۆال نمی‌کند، بلکه از دلشان و محبتشان که امانت خدا نزد مۆمن است، سۆال می‌کند که به چه کسی سپرده‌اند.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">حالا که خدا از روزی سۆال نمی‌کند، تو هم از او سۆال نکن، چون دستور دادن به صاحب‌خانه، عیب است. گله و شکایت هم نکن. اگر هم یک وقت از دهانت پرید، زود استغفار کن.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>انفاق راه رهایی از فقر</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">قرآن فرمود: من قدر علیه رزقه فلینفق: هر کس روزی‌اش تنگ شد، پس باید از همان چیزی که دارد انفاق کند.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="LINE-HEIGHT: 1.53em">امیرالمۆمنین(ع) فرمودند: اذا املقتم فتاجروا الله بالصدقه: هنگامی که فقیر شدید، پس با صدقه دادن با خدا تجارت کنید، صدقه کلید رزق است.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG>مبادا دیگران در خیر بر ما سبقت بگیرند</STRONG></SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify"><SPAN style="COLOR: #0000ff"><STRONG></STRONG></SPAN><BR>sebghat (2).flv | <A href="http://www.farhangnews.ir/sites/default/files/content/videos/story/92-11/08/sebghat%20%282%29.flv" alt="sebghat (2).flv"><FONT color=#062b84>دانلود فیلم</FONT></A></DIV>
+<DIV style="TEXT-ALIGN: justify">&nbsp;</DIV></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><STRONG style="TEXT-ALIGN: justify; LINE-HEIGHT: 1.53em; COLOR: rgb(0,0,255)">ما خودمان گم شده ایم</STRONG></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">ما مثل بچه ای هستیم كه پدرش دست او را گرفته است تا &nbsp;به جایی ببرد و در طول مسیر از بازاری عبور می كنند.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body><SPAN style="LINE-HEIGHT: 1.53em">بچه شیفته ویترین مغازه ها می شود و دست پدر را رها می كند و در بازار گم می شود. وقتی هم متوجه می شود كه دیگر پدر را نمی بیند، گمان می كند پدرش گم شده است؛ در حالی كه در واقع خودش گم شده است. انبیاء و اولیاء، پدران خلقند و دست خلائق را می گیرند تا آنها را به سلامت از بازار دنیا عبور دهند. غالب خلائق، شیفته متاع های دنیا شده اند. امام زمان(عج الله تعالی فرجه الشریف) هم گم و غائب نشده است؛ ما گم و محجوب گشته ایم.</SPAN></DIV>
+<DIV style="TEXT-ALIGN: justify" class=body align=left><SPAN style="LINE-HEIGHT: 1.53em"><A title="" href="http://www.farhangnews.ir/content/61787" target=_blank>
+<DIV style="TEXT-ALIGN: justify" class=body align=left><SPAN style="LINE-HEIGHT: 1.53em">منبع</SPAN></DIV></A></SPAN></DIV>				<br><br><b></b>
+				<font style="font-size:8pt;"><br>
+			طبقه بندی: <a href="../post/category/43.html">
+			زندگی به سبک عارفان</a>،&nbsp;									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(301)" > نظرات (<script>setCommentCnt(301)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/299">زندگی به سبک عارفان</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/299&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 15 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>زندگی به سبک عارفان</P>
+<P align=center><A title="" href="http://deldadeha.persiangig.com/jadiiiiiiiiiid/Untitled-4.jpg" target=_blank><IMG style="DISPLAY: block" id=iimmgg6 src="http://deldadeha.persiangig.com/jadiiiiiiiiiid/Untitled-4.jpg/thumb"></A></P>				<br><br><b></b>
+				<font style="font-size:8pt;"><br>
+			طبقه بندی: <a href="../post/category/43.html">
+			زندگی به سبک عارفان</a>،&nbsp;									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(299)" > نظرات (<script>setCommentCnt(299)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/300">زیارت قبر سید العرفا،آیت الحق سید علی قاضی طباطبایی(ره)</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/300&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 15 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>زیارت قبر سید العرفا،آیت الحق سید علی قاضی طباطبایی(ره) در سفر اینجانب(مدیر وبلاگ)به عراق در اربعین</P>
+<P>شنیدن حکایت زیارت قبر آقا سید علی قاضی توسط اینجانب هم&nbsp;خالی از لطف نیست.</P>
+<P>حکایت از آنجا شروع شد که بعد از زیارت آقا امیرالمومنین(ع) ا قامه نماز ظهر به هتل بازگشتم،هنگام صرف ناهار مدیر کاروان گفتند که حدود ساعت 3 و نیم ظهر به زیارت قبرستان وادی السلام و همچنین زیارت قبر آیت الله قاضی خواهند رفت و هرکس که مایل باشد همراه ایشان برود.</P>
+<P>من که خیلی خسته بودم بعد ازصرف ناهار اندکی خوابیدم که به خیال خود بعد از خواب همراه مدیر کاروان بروم.ولی وقتی از خواب بلند شدم دیدم ساعت گذشته و آن ها رفته اند.</P>
+<P>دل را به دریا زدم و تنها برای اولین بار و آن هم نزدیکی های غروب آفتاب به قبرستان وادی السلام رفتم.از بزرگی وسعت قبرستان چیزی نگویم بهتر است،که شما بهتر می دانید.</P>
+<P align=center><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_163255.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_163255.jpg/thumb"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_165538.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_165538.jpg/thumb"></A></P>
+<P>در قبرستان قدم میزدم و به قبر ها نگاه می کردم،تصویر قبر آیت الله قاضی در ذهنم آمد که اتاقی کنار قبر ایشان بود با همین امید دور و اطرافم را خوب میگشتم.</P>
+<P>درهمین حین جوانی مرا دید و پرسید میدانی قبر آیت الله قاضی کجاست؟ در جوابش گفتم که خودم هم دارم دنبال قبر ایشان میگردم.چیزی نگفت و رفت.دو سه جوان دیگر را دیدم که دنبال مقبره حضرت هود (ع)&nbsp;بودند که باز هم اظهار بی اطلاعی کردم.پس از مدتی از فردی که سوار بر موتور&nbsp;سه چرخ بود و ظاهرا کارش مسافر کشی در قبرستان بود پرسیدم که قبر آیت الله قاضی کجاست که نمی دانست،آن سه جوان هم از او آدرس مقبره حضرت هود را پرسیدند که بهشان گفت میدانم کجاست،سوار سه چرخ شدند و رفتند.</P>
+<P>من هم که هیچ آدرسی نداشتم&nbsp;به دنبال آن ها قدم زنان راهشان را در پیش گرفتم به امید اینکه شاید مسیر&nbsp;قبر آیت الله قاضی هم باشد.</P>
+<P>همان طور که در قبرستان مشغول جستوجوی قبر آیت الله قاضی بودم یاد حکایت زیارت آیت الله حسن زاده از قبر آمیرزا جواد آقا ملکی تبریزی افتادم که گفتند شخصی آمد و قبر را نشانم داد.از او پرسیدم از کجا میدانستی که دنبال این قبرم،گفت ما مشتری هایمان می شناسیم.با خودم گفتم اگه آیت الله قاضی بخواهند که زیارتشان کنم حتما میشود.با این افکار به خودم امید میدادم.</P>
+<P>بعد از کلی قدم زدن در قبرستان کیوسکی را دیدم که چند مرد میانسال در آن بودند ازشان پرسیدم که میدانید قبر سید علی قاضی کجاست؟بالاخره پاسخ مثبتی شنیدم که باید به سمت چپ بروم.به همان راهی که گفته بودند رفتم.در میان راه فرد مسنی را دیدم که روی زمین نشسته بود از او پرسیدم که قبر سید علی قاضی&nbsp; را می شناسی؟گفت خیر.کمی بیشتر برایش توضیح دادم که مجتهد بودند و ... ناگهان گفت که تو ایرانی هستی؟گفتم بله.گفت آها قبر سید علی قاضی را می خواهی،همین جاست کمی جلوتر سمت راست.</P>
+<P>به گفتش عمل کردم و رفتم.</P>
+<P>بعد از اندکی خودم را سر قبر شریف سید علی قاضی (ره) یافتم.</P>
+<P align=center><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_164857.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_164857.jpg/thumb"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_165415.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_165415.jpg/thumb"></A></P>
+<P>ولی هنوز که هنوز است،آن پیرمرد در&nbsp;خاطرم هست که تا متوجه شد من ایرانی هستم یاد&nbsp; سید علی قاضی معروف افتاد،که این نشان دهنده آن است که ایرانی ها&nbsp;سر قبر بزرگی همچون سید علی قاضی زیاد&nbsp;میروند.</P>
+<P>تصاویر:</P>
+<P><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_163331.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_163331.jpg/thumb"></A></P>
+<P><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_164455.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_164455.jpg/thumb"></A></P>
+<P><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_165521.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_165521.jpg/thumb"></A></P>
+<P><A title="" href="http://deldadeha.persiangig.com/ghazi/20131220_165552.jpg" target=_blank><IMG src="http://deldadeha.persiangig.com/ghazi/20131220_165552.jpg/thumb"></A></P>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(300)" > نظرات (<script>setCommentCnt(300)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/298">کتاب رستگاران</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/298&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 15 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>&nbsp;</P>
+<P>کتاب رستگاران</P>
+<P><IMG border=0 hspace=0 alt="" align=baseline src="http://www.rasekhoon.net/_Websitedata/Library/Image/8254c33c-c063-4ef7-a258-037651595e1c.jpg"></P>
+<P></P>
+<P>
+<TABLE style="TEXT-ALIGN: right" dir=rtl id=ctl00_ContentPlaceHolder1_tblMain border=0 cellSpacing=0 borderColor=#d8d8d8 cellPadding=3 width="95%">
+<TBODY>
+<TR vAlign=top>
+<TD>
+<P><SPAN id=ctl00_ContentPlaceHolder1_lblBookTitle><FONT size=2>رستگاران</FONT></SPAN></P>
+<P><SPAN><FONT size=2></FONT></SPAN>&nbsp;</P></TD></TR>
+<TR style="FONT-WEIGHT: bold">
+<TD><FONT size=2>موضوع:</FONT></TD></TR>
+<TR>
+<TD>
+<TABLE style="BORDER-COLLAPSE: collapse" id=ctl00_ContentPlaceHolder1_rptSubject border=0 cellSpacing=0>
+<TBODY>
+<TR>
+<TD><FONT size=2><SPAN id=ctl00_ContentPlaceHolder1_rptSubject_ctl00_NameLabel>مجتهدان و علما - سرگذشتنامه</SPAN><BR></FONT></TD></TR>
+<TR>
+<TD><FONT size=2><SPAN id=ctl00_ContentPlaceHolder1_rptSubject_ctl01_NameLabel>عارفان - سرگذشتنامه</SPAN><BR></FONT></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD><FONT size=2>پدیدآورنده:</FONT></TD></TR>
+<TR>
+<TD>
+<TABLE style="BORDER-COLLAPSE: collapse" id=ctl00_ContentPlaceHolder1_rptAuthor border=0 cellSpacing=0>
+<TBODY>
+<TR>
+<TD><FONT size=2><SPAN id=ctl00_ContentPlaceHolder1_rptAuthor_ctl00_NameLabel>به‌اهتمام:علی قاسمی</SPAN><BR></FONT></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD><FONT size=2>ناشر:</FONT></TD></TR>
+<TR>
+<TD>
+<P><FONT size=2><SPAN id=ctl00_ContentPlaceHolder1_rptPublisher_ctl00_NameLabel>هنارس</SPAN><BR></FONT></P></TD></TR>
+<TR>
+<TD><FONT size=2>276 صفحه - وزیری (شومیز) - چاپ 1 - 5000 نسخه 6 -65-8736-964-978</FONT></TD></TR>
+<TR>
+<TD><SPAN id=ctl00_ContentPlaceHolder1_lblISBN><FONT size=2>978-964-8736-65-6 </FONT></SPAN></TD></TR>
+<TR>
+<TD><SPAN id=ctl00_ContentPlaceHolder1_lblIssueDate><FONT size=2>تاریخ نشر:25/10/89</FONT></SPAN></TD></TR>
+<TR>
+<TD><SPAN id=ctl00_ContentPlaceHolder1_lblprice><FONT size=2>قیمت پشت جلد :39000 ریال</FONT></SPAN></TD></TR>
+<TR>
+<TD><SPAN id=ctl00_ContentPlaceHolder1_lblDoe><FONT size=2>كد دیویی:297.9965</FONT></SPAN></TD></TR>
+<TR>
+<TD><SPAN id=ctl00_ContentPlaceHolder1_Labellang><FONT size=2>زبان كتاب:فارسی</FONT></SPAN></TD></TR>
+<TR>
+<TD>
+<P><SPAN id=ctl00_ContentPlaceHolder1_lblplace><FONT size=2>محل نشر:قم - قم</FONT></SPAN></P><SPAN><FONT size=6><STRONG><A title="" href="http://www.ayehayeentezar.com/attachments/410d1307360126-rastegaran.jar" target=_blank>
+<P align=center><SPAN><FONT size=6><STRONG>دریافت فایل جاوا</STRONG></FONT></SPAN></P>
+<P align=center></A></STRONG></FONT></SPAN>&nbsp;</P></TD></TR></TBODY></TABLE></P>
+<P></P>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(298)" > نظرات (<script>setCommentCnt(298)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://deldadegan.mihanblog.com/post/296">دریافت کتاب دلشدگان، شرح حال و کرامات اولیای الهی</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=deldadegan.mihanblog.com/post/296&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 15 فروردین 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P>دریافت کتاب دلشدگان، شرح حال و کرامات اولیای الهی</P>
+<P align=center><IMG border=0 hspace=0 alt="" align=baseline src="http://www.rasekhoon.net/_Websitedata/Library/Image/20ed57e6-3443-4fc6-bc1b-8c24ac5c2b76.jpg"></P>
+<P align=right>دلشدگان، شرح حال و کرامات اولیای الهی </P>
+<P align=right><BR>نویسنده : محمد لک علی آبادی <BR>ناشر : انتشارات هنارس <BR>تعداد صفحات : 255 </P>
+<P align=right>(ناشر محترم;در صورت عدم رضایت نشر مجازی کتاب در نظرات همین پست اعلام بفرمایید.)</P>
+<P align=right>&nbsp;</P><FONT size=6><FONT size=6><A title="" href="http://deldadeha.persiangig.com/book/delshodegan.zip/download" target=_blank>
+<P align=center><FONT size=6>دریافت</FONT></P></A></FONT></FONT>				<br><br><b></b>
+				<font style="font-size:8pt;"><br>
+			طبقه بندی: <a href="../post/category/41.html">
+			..::معرفی کتاب</a>،&nbsp;<a href="../post/category/23.html">
+			..:::کتب عرفانی-اخلاقی </a>،&nbsp;<a href="../post/category/25.html">
+			کتب مخصوص کامپیوتر </a>،&nbsp;<a href="../post/category/24.html">
+			..:::عرفا</a>،&nbsp;<a href="../post/category/29.html">
+			آیت الله شیخ محمد بهاری(ره)</a>،&nbsp;<a href="../post/category/35.html">
+			حضرت آیت الله الهی(ره)</a>،&nbsp;<a href="../post/category/31.html">
+			آیت الله نجابت(ره)</a>،&nbsp;<a href="../post/category/30.html">
+			آیت الله سعادت پرور(ره)</a>،&nbsp;<a href="../post/category/21.html">
+			آیت الله حق شناس(ره)</a>،&nbsp;<a href="../post/category/11.html">
+			علامه حسن زاده(حفظه الله و رزقنا الله زیارته) </a>،&nbsp;<a href="../post/category/32.html">
+			آیت الله شیخ عبدالقائم شوشتری(حفظه الله) </a>،&nbsp;<a href="../post/category/39.html">
+			آیت الله ناصری دولت آبادی(حفظه الله)</a>،&nbsp;<a href="../post/category/12.html">
+			ایت الله صمدی آملی(حفظه الله) </a>،&nbsp;<a href="../post/category/38.html">
+			آیت الله خوشوقت(حفظه الله)</a>،&nbsp;<a href="../post/category/6.html">
+			علامه طباطبایی(ره) </a>،&nbsp;<a href="../post/category/22.html">
+			علامه مصطفوی(ره)</a>،&nbsp;<a href="../post/category/20.html">
+			علامه طهرانی(ره)</a>،&nbsp;<a href="../post/category/19.html">
+			میرزا جواد ملکی تبریزی (ره)</a>،&nbsp;<a href="../post/category/33.html">
+			آیت الله شاه آبادی(ره)</a>،&nbsp;<a href="../post/category/18.html">
+			امام خمینی (ره)</a>،&nbsp;<a href="../post/category/14.html">
+			آیت الله بهجت(ره) </a>،&nbsp;<a href="../post/category/1.html">
+			آیت الله قاضی(ره) </a>،&nbsp;<a href="../post/category/3.html">
+			آیت الله شیخ محمد جواد انصاری همدانی(ره) </a>،&nbsp;<a href="../post/category/7.html">
+			آیت الله بهاءالدینی(ره) </a>،&nbsp;<a href="../post/category/4.html">
+			آیت الله عبد الکریم کشمیری(ره) </a>،&nbsp;<a href="../post/category/8.html">
+			شیخ رجبعلی نکوگویان(خیاط) </a>،&nbsp;<a href="../post/category/5.html">
+			آیت الله کوهستانی(ره) </a>،&nbsp;<a href="../post/category/28.html">
+			بانوی مجتهده، نصرت الملوک امین(ره)</a>،&nbsp;<a href="../post/category/2.html">
+			..:::عمومی </a>،&nbsp;				<br>
+						برچسب ها:
+													<a href="http://deldadegan.mihanblog.com/post/tag/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%AF%D9%84%D8%B4%D8%AF%DA%AF%D8%A7%D9%86" >دریافت کتاب دلشدگان</a>، 
+													<a href="http://deldadegan.mihanblog.com/post/tag/%D8%B4%D8%B1%D8%AD%20%D8%AD%D8%A7%D9%84%20%D9%88%20%DA%A9%D8%B1%D8%A7%D9%85%D8%A7%D8%AA%20%D8%A7%D9%88%D9%84%DB%8C%D8%A7%DB%8C%20%D8%A7%D9%84%D9%87%DB%8C" >شرح حال و کرامات اولیای الهی</a>، 
+													<a href="http://deldadegan.mihanblog.com/post/tag/%D9%86%D9%88%DB%8C%D8%B3%D9%86%D8%AF%D9%87%20:%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%84%DA%A9%20%D8%B9%D9%84%DB%8C%20%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C" >نویسنده : محمد لک علی آبادی</a>، 
+													<a href="http://deldadegan.mihanblog.com/post/tag/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%DA%A9%D8%AA%D8%A7%D8%A8%20%D8%A8%D8%A7%20%D9%BE%D8%B3%D9%88%D9%86%D8%AF%20HTML" >دریافت کتاب با پسوند HTML</a>، 
+																</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط سید حسن محفوظی موسوی</div></div>
+<div class=nz><a target="_self" href="javascript:newComment(296)" > نظرات (<script>setCommentCnt(296)</script>)</a></div></div>
+
+<div id="postz">
+<div class=tpost-x >آخرین مطالب</div>
+<div class=xpost><div class=xpost2><a href="../post/390.html">کانال تفسیر آیت الله جوادی آملی</a></div>
+<div class=xpost2><a href="../post/385.html">امروز نوبت اسلام است...</a></div>
+<div class=xpost2><a href="../post/378.html">شرح دفتر دل حسن زاده آملی</a></div>
+<div class=xpost2><a href="../post/379.html">«روم ز دانه‌ی انگور سُبحه‌ای سازم/ برای رفتن میخانه استخاره کنم»</a></div>
+<div class=xpost2><a href="../post/377.html">دستور العمل های عرفانی از علمای بزرگ اخلاق</a></div>
+<div class=xpost2><a href="../post/376.html">سلسه جلسات سیری در صحیفه سجادیه-استاد فاطمی نیا</a></div>
+<div class=xpost2><a href="../post/375.html">#اختلاف_ممنوع</a></div>
+<div class=xpost2><a href="../post/374.html">سگی را به سگی ببخش....</a></div>
+<div class=xpost2><a href="../post/293.html">ای فرس با تو چه رخ داده که خود باخته ای </a></div>
+<div class=xpost2><a href="../post/367.html">داستانی شیرین از شهید احمدی روشن</a></div>
+<div class=xpost2><a href="../post/366.html">مجموعه بانک های جامع با موضوع مقام معظم رهبری</a></div>
+<div class=xpost2><a href="../post/365.html">مجموعه پوستر های سبک زندگی سلامی</a></div>
+<div class=xpost2><a href="../post/364.html">دانلود «مستند جهانشهری ها»</a></div>
+<div class=xpost2><a href="../post/363.html">دریافت نسخه کامل مجموعه «پیشوایان هدایت»  </a></div>
+<div class=xpost2><a href="../post/360.html">کتاب انسان۲۵۰ساله+ لینک دانلود</a></div>
+<div class=xpost2><a href="../post/356.html">علامه جوادی آملی:روز قدس حضور حماسی امت اسلامی</a></div>
+<div class=xpost2><a href="../post/347.html">گنج سعادت(مجموعه آثار آیت الله سعادت پرور تهرانی)</a></div>
+<div class=xpost2><a href="../post/354.html">آرشیو صوتی و تصویری برنامه معرفت+متن گلچین برنامه ها</a></div>
+<div class=xpost2><a href="../post/346.html">دریافت سه جلد کتاب نفیس در محضر آیت الله بهجت(ره)</a></div>
+<div class=xpost2><a href="../post/353.html">یا مجیر</a></div>
+<div class=xpost2><a href="../post/352.html">سنگی که فکر و ذکر دلم را دچار کرد</a></div>
+<div class=xpost2><a href="../post/351.html">اجرنا من النار یا مجیر</a></div>
+<div class=xpost2><a href="../post/350.html">پوستر هایی زیبا با موضوع عرفا و علما</a></div>
+<div class=xpost2><a href="../post/344.html">کتاب جرعه وصال(چکیده ای از اندیشه های آیت الله بهجت)</a></div>
+<div class=xpost2><a href="../post/343.html">دریافت  کتاب به سوی محبوب (مخصوص کامپیوتر)</a></div>
+<div class=xpost2><a href="../post/342.html">و عجّل فرجهم...</a></div>
+<div class=xpost2><a href="../post/341.html">روزه، رمضان و قرآن;آیت الله جوادی آملی</a></div>
+<div class=xpost2><a href="../post/336.html">هفته نامه دلدادگان</a></div>
+<div class=xpost2><a href="../post/340.html">توصیه بزرگان به حفظ قرآن</a></div>
+<div class=xpost2><a href="../post/328.html">بیانات مقام معظم رهبری در رابطه با حضرت آیت الله علی آقا پهلوانی + فیلم</a></div>
+</div><div class=bpost-x></div></div>
+
+
+<div class=ad1></div>
+<div class=xpost>
+<div class=page22>
+			(تعداد کل صفحات:32)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			<a href="2.html">[<i>...</i>]</a>&nbsp;&nbsp;			<a href="3.html">[<span>3</span>]</a>&nbsp;&nbsp;			<a href="4.html">[<span>4</span>]</a>&nbsp;&nbsp;			<a href="5.html">[<span>5</span>]</a>&nbsp;&nbsp;			<a href="6.html">[<b>6</b>]</a>&nbsp;&nbsp;			<a href="7.html">[<span>7</span>]</a>&nbsp;&nbsp;			<a href="8.html">[<span>8</span>]</a>&nbsp;&nbsp;			<a href="http://deldadegan.mihanblog.com/page/9">[<span>9</span>]</a>&nbsp;&nbsp;			<a href="http://deldadegan.mihanblog.com/page/10">[<i>...</i>]</a>&nbsp;&nbsp;</div>
+			</div><div class=ad3><br></div>
+<script src="http://blogskins.ir/47/code.js"></script>
+	
+<div class="tmenu b3"><div class=tmenu2>آرشیو مطالب</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="../post/archive/1396/6/3.html"> هفته سوم شهریور 1396</a></div><div class=xmenu1><a href="../post/archive/1394/10/2.html"> هفته دوم دی 1394</a></div><div class=xmenu1><a href="../post/archive/1394/6/2.html"> هفته دوم شهریور 1394</a></div><div class=xmenu1><a href="../post/archive/1394/6/1.html"> هفته اول شهریور 1394</a></div><div class=xmenu1><a href="../post/archive/1393/8/2.html"> هفته دوم آبان 1393</a></div><div class=xmenu1><a href="../post/archive/1393/6/3.html"> هفته سوم شهریور 1393</a></div><div class=xmenu1><a href="../post/archive/1393/6/1.html"> هفته اول شهریور 1393</a></div><div class=xmenu1><a href="../post/archive/1393/5/4.html"> هفته چهارم مرداد 1393</a></div><div class=xmenu1><a href="../post/archive/1393/4/4.html"> هفته چهارم تیر 1393</a></div><div class=xmenu1><a href="../post/archive/1393/4/3.html"> هفته سوم تیر 1393</a></div><div class=xmenu1><a href="../post/archive/1393/4/2.html"> هفته دوم تیر 1393</a></div><div class=xmenu1><a href="../post/archive/1393/2/2.html"> هفته دوم اردیبهشت 1393</a></div><div class=xmenu1><a href="../post/archive/1393/2/1.html"> هفته اول اردیبهشت 1393</a></div><div class=xmenu1><a href="../post/archive/1393/1/4.html"> هفته چهارم فروردین 1393</a></div><div class=xmenu1><a href="../post/archive/1393/1/3.html"> هفته سوم فروردین 1393</a></div><div class=xmenu1><a href="../post/archive/1393/1/2.html"> هفته دوم فروردین 1393</a></div><div class=xmenu1><a href="../post/archive/1393/1/1.html"> هفته اول فروردین 1393</a></div><div class=xmenu1><a href="../post/archive/1392/12/2.html"> هفته دوم اسفند 1392</a></div><div class=xmenu1><a href="../post/archive/1392/12/1.html"> هفته اول اسفند 1392</a></div><div class=xmenu1><a href="../post/archive/1392/11/4.html"> هفته چهارم بهمن 1392</a></div><div class=xmenu1><a href="../post/archive/1392/11/3.html"> هفته سوم بهمن 1392</a></div><div class=xmenu1><a href="../post/archive/1392/6/3.html"> هفته سوم شهریور 1392</a></div><div class=xmenu1><a href="../post/archive/1392/5/2.html"> هفته دوم مرداد 1392</a></div><div class=xmenu1><a href="../post/archive/1392/4/4.html"> هفته چهارم تیر 1392</a></div><div class=xmenu1><a href="../post/archive/1392/4/3.html"> هفته سوم تیر 1392</a></div><div class=xmenu1><a href="../post/archive/1392/4/2.html"> هفته دوم تیر 1392</a></div><div class=xmenu1><a href="../post/archive/1392/3/3.html"> هفته سوم خرداد 1392</a></div><div class=xmenu1><a href="../post/archive/1391/12/4.html"> هفته چهارم اسفند 1391</a></div><div class=xmenu1><a href="../post/archive/1391/12/1.html"> هفته اول اسفند 1391</a></div><div class=xmenu1><a href="../post/archive/1391/11/3.html"> هفته سوم بهمن 1391</a></div><div class=xmenu1><a href="../post/archive/1391/11/2.html"> هفته دوم بهمن 1391</a></div><div class=xmenu1><a href="../post/archive/1391/10/4.html"> هفته چهارم دی 1391</a></div><div class=xmenu1><a href="../post/archive/1391/9/1.html"> هفته اول آذر 1391</a></div><div class=xmenu1><a href="../post/archive/1391/6/4.html"> هفته چهارم شهریور 1391</a></div><div class=xmenu1><a href="../post/archive/1391/6/3.html"> هفته سوم شهریور 1391</a></div><div class=xmenu1><a href="../post/archive/1391/5/4.html"> هفته چهارم مرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/5/2.html"> هفته دوم مرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/5/1.html"> هفته اول مرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/4/4.html"> هفته چهارم تیر 1391</a></div><div class=xmenu1><a href="../post/archive/1391/4/2.html"> هفته دوم تیر 1391</a></div><div class=xmenu1><a href="../post/archive/1391/4/1.html"> هفته اول تیر 1391</a></div><div class=xmenu1><a href="../post/archive/1391/3/4.html"> هفته چهارم خرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/3/3.html"> هفته سوم خرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/3/2.html"> هفته دوم خرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/3/1.html"> هفته اول خرداد 1391</a></div><div class=xmenu1><a href="../post/archive/1391/1/1.html"> هفته اول فروردین 1391</a></div><div class=xmenu1><a href="../post/archive/1390/12/4.html"> هفته چهارم اسفند 1390</a></div><div class=xmenu1><a href="../post/archive/1390/10/1.html"> هفته اول دی 1390</a></div><div class=xmenu1><a href="../post/archive/1390/8/2.html"> هفته دوم آبان 1390</a></div><div class=xmenu1><a href="../post/archive/1390/7/3.html"> هفته سوم مهر 1390</a></div></div>
+<div class=bmenu></div>
+
+		<form id="frm-16077374015fd420397f855" method="post" action="http://deldadegan.mihanblog.com/poll/new/fid/16077374015fd420397f855/atrty/1607737401/avrvy/0/key/3aa541e3769e76af2fa40e6dff90018c/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="132395" id="data[pollid]" />		
+<div class="tmenu b7"><div class=tmenu2>ختم صلوات</div></div>
+<div class=xmenu>
+<div class=xmenu1>طرح ختم صلوات به نیت سلامتی و ظهور آقا امام الزمان(عج)<br><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />100 صلوات</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />50صلوات</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />20 صلوات</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />10 صلوات</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />5 صلوات</label><br><br><input type="submit" value="ثبت"></div>
+</div>
+<div class=bmenu></div>
+		<input type="hidden" name="frm-id" value="16077374015fd420397f855" id="frm-id" /></form>
+
+<div class="tmenu b8"><div class=tmenu2>صفحات جانبی</div></div>
+<div class=xmenu><div class=xmenu1><a href="../extrapage/290.html">مقام معظم رهبری فرمودند:راه حق، راه اهل عرفان و طریقه «مرحوم قاضی» است.</a></div><div class=xmenu1><a href="../extrapage/kimya.html">دریافت متن کتاب نفیس کیمیای محبت(یادنامه شیخ رجبعلی خیاط).</a></div></div>
+<div class=bmenu></div>
+<div class="tmenu b4"><div class=tmenu2>پیوند های روزانه</div></div>
+<div class=xmenu><div class=xmenu1><a target="_blank" href="http://7themes.ir/" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+محمد - سون تم - مرجع تخصصی قالب وردپرس و پوسته های وبسایت های وردپرس">قالب وردپرس</a></div><div class=xmenu1><a target="_blank" href="http://shopingg.ir" title="سلام دوست عزیز
+وب مفید و خوبی دارید
+من به شما سر زدم خوشحال میشم شما هم به من سر بزنید.">شاپ نت</a></div><div class=xmenu1><a target="_blank" href="http://massir.blog.ir/" title="مسیر(تشکل های دانشجویی)">قرارگاه فرهنگی مَسیر</a></div><div class=xmenu1><a target="_blank" href="../../zafun.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+مجله اینترنتی زافان | ZA FUN">ZA FUN</a></div><div class=xmenu1><a target="_blank" href="http://www.sabafile.com/file/1249/" title="سلام
+وقتت بخیر دوست عزیزم. اگه برات مقدوره لینک منو با اسم &quot;کتاب راز&quot; تایید کنی خیلی ازت ممنون می شم.
+موفق باشی عزیزم.">کتاب راز</a></div><div class=xmenu1><a target="_blank" href="http://www.herosms.ir" title="با سلام..ممنون میشم اگه لینک منو تایید کنی سپاگذارم">اس ام اس جدید 93</a></div><div class=xmenu1><a target="_blank" href="http://www.javabkade.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.">جواب کده</a></div><div class=xmenu1><a target="_blank" href="http://www.mehran-system.ir" title="با سلام و عرض ادب
+داشتم مطالب وبلاگتون رو میخوندم،محو خوندن مطالب زیباتون شدم و خیلی مفید بودند،خسته نباشید
+من سایتی دارم که توی زمینه نرم افزارهایی که میسازم و همچنین آموزشی هست،خوشحال میشم تشریف بیارین و استفاده کنید و نظرتون هم بدید.
+اگر دوست داشتین میتونین مارو لینک کنید یا بنرمونو بزارین وبلاگتون.
+میتونین واسه حمایت کردن ما ،آنتی ویروس دیده بانی که ساختم رو توی وبلاگتون بزارین تا کاربراتون از آنتی ویروس ایرانی و وطنی خودمون استفاده کنند.
+منتظر نظرتون هستم.
+www.mehran-system.ir
+ممنونم">مهران سیستم</a></div><div class=xmenu1><a target="_blank" href="../../karvaneshgh.mihanblog.com/index.html" title="ای دل بسوز تا شب احیا نیامده
+تقدیر ماهنوز به دنیا نیامده
+فرقی نکرده ایم زاحیای سال پیش
+توبه چرا سراغ دل ما نیامده
+گویی به گوش عده ای از ما هنوز هم
+هل من معین غربت آقا (عج )نیامده
+آری برای بنده شدن وقتمان کم است
+ای دل بسوز تا شب احیا نیامده
+ای که دستت میرسد بر زلف یار
+درحضورش نام ماراهم بیار 
+
+التماس دعای فرج
+یا مهدی (عج)">یا زهرا (س) مددی ...</a></div><div class=xmenu1><a target="_blank" href="http://www.sedabaz.ir" title="سلام دوست عزیزم
+وبلاگ خیلی خوبی داری
+میدونی که لینک شدن تو سایت های پربازدید و با ایندکس زیاد تو گوگل خیلی خوبه و باعث افزایش رتبه تو در گوگل و در نتیجه افزایش بازدیدت میشه. اگه خواستی میتونی منو با 
+دانلود آهنگ جدید
+یا
+دانلود آهنگ های جدید
+و یا
+دانلود آهنگ
+(هر کدوم که دوس داشتی) و با آدرس: www.sedabaz.ir 
+لینک کن و بیا به قسمت لینکستان سایتم و خودتو از پایین صفحه به صورت اتوماتیک لینک کن ( باید اول منو تو وبلاگت لینک کنی تا بتونی خودتو تو سایتم لینک کنی ).
+اینم آدرس لینکستان سایتم: www.sedabaz.ir/linkestan
+بعد از لینک کردن من برو به این آدرس بالا و خودت رو لینک کن ( تو پایین صفحه )
+راستی از صفحات لینکستان سایتم روزانه 1500-2000 نفر بازدید میکنن که اگه خودت رو لینک کنی از این طریق بازدید هم میگیری
+با آرزوی بهترین ها برای تو دوست عزیز">مسعود</a></div><div class=xmenu1><a target="_blank" href="http://moshavere-tmt92.ir/" title="عرض سلام و درود
+
+دانشجوی مشاوره ام و مشاوره میدم به بچه های کنکوری هرسال جاری 
+
+93-94
+
+ممنون میشم درراستای هدفم شما هم با تاییدش این کینک کمکی کرده باشید
+
+با تشکر
+اسپمر جدید مین بلاگ : WWW.SPammer313.Mihanblog.com
+ID : RADBENKICK313">مشاوره بـــــچه های کــــــنکوری</a></div><div class=xmenu1><a target="_blank" href="http://donyalar.com" title="با سلام بازم بهتون حتما سر می زنم  راستی در  صورت امکان لینک من رو تائید بفرمائید بسیار ممنون
+
+ساناز">جدیدترین</a></div><div class=xmenu1><a target="_blank" href="../../moshavere-tmt92.mihanblog.com/index.html" title="سلام دوست عزیزم 
+
+بنده مجید صادقی هستم دانشجوی رشته راهنمایی ومشاوره در دانشگاه فرهنگیان (تربیت معلم سابق) 
+بنده مشاوره تحصیلی میدم به دانش اموزان و کنکوری های پیش رو 
+و پاسخ میدم به سوالای کنکوری ها
+ممنون میشم در راستای هدفم شما هم کمکی کرده باشید و لینک بنده رو تایید کنید
+باز هم تشکر میکنم از شما">وبلاگ راهنمایی ومشاوره -مشاوره کنکوری </a></div><div class=xmenu1><a target="_blank" href="http://WWW.SNWS.IR" title="سلام  
+به گیاهان زینتی علاقه داری؟
+دوست داری تراریوم و بونسای درست کنی؟
+مطالب بی شمار در مورد گیاهان زینتی و کاکتوس
+ اگه مایل به تبادل لینک هستی منو با نام سبز نیوز لینک کن و اطلاع بده تا تو رو لینک کنم
+WWW.SNWS.IR">علیزاده</a></div><div class=xmenu1><a target="_blank" href="http://www.asia98.ir" title="عضو شوید و صاحب سایت با امکانات  شوید و و و پشتیبانی آنلاین 24 ساعته
+WWW.Asia98.ir
+و اگر هم مایل به تبادل لینک هستید به آدرس زیر بروید
+www.asia98.ir/link">ساخت سایت  رایگان</a></div><div class=xmenu1><a target="_blank" href="http://mihanproje.ir" title="سلام دوست گلم هر گونه مقاله ای چیزی خواستی از سایتمون رایگان میتونی برداری با هزینه خیلی کم کم">دانلود مقاله رایگان</a></div><div class=xmenu1><a target="_blank" href="http://www.ayegraphy.blogfa.com/" title="">آیه گرافی</a></div><div class=xmenu1><a target="_blank" href="http://www.free-downloadha.com" title="سلام
+وب زیبایی داری
+به منم سر بزن.
+منتظرتم">سرگرمی و دانلود</a></div><div class=xmenu1><a target="_blank" href="http://www.photo44religious.blogfa.com" title="باعرض سلام و ادب و احترام خدمت شما سرور گرامی.سایت/وبلاگ وزینی دارید.چنانچه تمایل به تبادل لینک دارید زحمت کشیده و نام وبلاگم رو تحت عنوان(جامع ترین گالری عکسهای مذهبی و اسلامی)لینک نمائید با آدرس 
+http://www.photo44religious.blogfa.com
+و در قسمت نظرات وبلاگم بفرمائید با چه نامی شما را لینک کنم.موفق باشید . بدرود">جامع ترین گالری عکسهای مذهبی و اسلامی</a></div><div class=xmenu1><a target="_blank" href="http://entezar-ta-zohoor.blogfa.com/" title="مسلمانان! یا بمیرید و یا گوش هایتان را بگیرید تا نشنوید، صدای الرحیل می آید....!">چــــــــشمــ بـــــــهـ راهـ</a></div><div class=xmenu1><a target="_blank" href="http://www.meshkini1.blogfa.com/" title="">حضرت آیت الله مشکینی</a></div><div class=xmenu1><a target="_blank" href="http://www.all-norani.blogfa.com" title="">علامه نورانی</a></div><div class=xmenu1><a target="_blank" href="http://www.sadeghin.net" title="">عالم ربانی آقای حاج سید حسین یعقوبی قائنی</a></div><div class=xmenu1><a target="_blank" href="http://www.kholgh.ir/" title="">پایگاه 598</a></div><div class=xmenu1><a target="_blank" href="http://www.andisheyenab.ir" title="با عرض سلام و خسته نباشید خدمت شما دوست عزیز،
+داشتم در بین صفحات وب گشت می‌زدم كه با وبلاگ شما برخورد كردم. وبلاگ زیبا و پرمحتوایی دارید، می‌خواستم اگه بشه، یه لینك از پینودهاتون رو به تارنمای ما اختصاص بدید. اگه این این كارو انجام بدید ممنون میشم.
+                  با تشكر 
+  * مدیریت تارنمای &quot;اندیشه نـــاب&quot; *
+     ::: www.andisheyenab.ir :::">اندیشه ناب</a></div><div class=xmenu1><a target="_blank" href="../../day999.mihanblog.com/index.html" title="">نخونک آزاد</a></div><div class=xmenu1><a target="_blank" href="http://chargebuy.ir" title="خرید اینترنتی کارت شارژ ایرانسل، همراه اول و تالیا.">خریدشارژ ایرانسل</a></div><div class=xmenu1><a target="_blank" href="http://shiraz-arfan.persianblog.ir/" title="">دلسوختگان خدا</a></div><div class=xmenu1><a target="_blank" href="../../leader.mihanblog.com/index.html" title="">ولایت فقیه،حکومت اسلامی</a></div><div class=xmenu1><a target="_blank" href="http://www.samaninsurer.com/cargo-insurance.php" title="">بیمه سامان(نمایندگی شیرخانی)</a></div><div class=xmenu1><a href="http://www.blogskin.ir" target="_blank">قالب وبلاگ</a></div>
+<div class=xmenu1><a href="../linkdaily/index.html"><b>همه پیوندهای روزانه</b></a></div>
+<div class=xmenu1><a href="javascript:linkdailyForm()"><b>ارسال پیوند روزانه</b></a></div>
+</div>
+<div class=bmenu></div>
+
+<!------------block ----------------------->
+<div class="tmenu b2"><div class=tmenu2>هفته نامه</div></div>
+<div class=xmenu><div class=xmenu2>
+<center>
+
+<P align=center><A title="هفته نامه دلدادگان" href="../post/category/44/index.html" target=_blank><IMG border=0 hspace=0 alt="" align=baseline src="http://www.filedoon.ir/upload/zela_untitled-1.jpg"></A></P> 
+</center>
+</div></div><div class=bmenu></div>
+<!------------block ----------------------->
+
+
+
+
+<!------------block ----------------------->
+<div class="tmenu b2"><div class=tmenu2>مستند حدیث سرو</div></div>
+<div class=xmenu><div class=xmenu2>
+<center>
+<div style="text-align: center;"><img src="http://www.filedoon.ir/upload/uuqn_caae7c516e8e455d470ffe1a123d1afe.jpg" alt="" hspace="0" vspace="0" align="bottom" border="0"> </div>
+
+
+<br><br><br><br><a href="../post/168.html">زندگانی آیت الله سید علی قاضی(ره)</a><br><br><a href="../post/187.html">زندگانی آیت الله بهجت(رحمه الله)</a><br>
+ <br> <a href="../post/205.html">زندگانی آیت الله میرزا محمدعلی شاه آبادی</a>(ره)<br> <br> <a href="../post/337.html">زندگانی آیت الله سید جمال گلپایگانی(ره)</a><br>
+<br><a href="../post/164.html">مردی از ملکوت</a>(آیت الله میرزا جواد آقاملکی تبریزی)<br><br><a href="../post/71.html">مستند حکیم اصحاب</a>(آیت الله شیخ محمد بهاری)<br><br><br><br>سایر مستندها<br>
+<br><a href="../post/254.html">مستند منظومه حسن(علامه حسن زاده)</a><br><br><a href="../post/264.html">مستند عزیز خدا </a>(آیت الله خوشوقت)<br><br><a href="../post/222.html">مستند مردان خدا ـ معرفی بزرگان دین </a><br><br><a href="../post/167.html">مستند راهی،در شرح حال آیت الله معلم دامغانی(ره)</a><br><br><a href="../post/166.html">مستند عَلمِ عِلم و طود تحقیق</a> آیت الله شیخ محمد تقی آملی(ره)<br><br><a href="../post/165.html">مستند صهبای حکمت</a> آیت الله آقا محمد رضا قمشه ای(ره)<br><br><a href="../post/72.html">جمال آفتاب - یادبود عارف واصل حاج شیخ علی آقای سعادت پرور(ره)</a><br><br><a href="../post/29.html">مستند سر دلبران</a>(علامه طباطبایی)<br><br><a href="../post/12.html">زندگانی شیخ رجبعلی خیاط(ره)</a><br><br><br>
+
+
+
+</center>
+</div></div><div class=bmenu></div>
+<!------------block ----------------------->
+
+
+
+
+
+
+
+
+
+
+<!------------block ----------------------->
+<div class="tmenu b2"><div class=tmenu2>امکانات وبلاگ</div></div>
+<div class=xmenu><div class=xmenu2>
+<center>
+
+
+
+
+<!-- Start code By 20Tools.com --><script language="javascript" src="http://www.20tools.com/salavat/view.php?bg=C4F1FF&color=04080F"></script><div style="display:none"><a href="http://www.mehrskin.com">ابزار و قالب وبلاگ</a><a href="http://www.20tools.com">بیست تولز</a><B><a href=http://www.20tools.com/salavat>کد صلوات شمار برای وبلاگ</a></B></div><!-- End code By 20Tools.com -->
+
+<style type="text/css">//Ashoora.ir|Hadith Begins</style><script language="javascript" src="http://www.ashoora.biz/mazhabi-projects/hadith/hadith.php?mod=1&cat=1,1,1,1,1,1,1,1,1,1,1,1,1,1&color5=000000&color4=663300&color3=000000&color2=000000&color1=000000&width=150&select=1,1,1,1,1"></script><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1581;&#1583;&#1740;&#1579; &#1605;&#1608;&#1590;&#1608;&#1593;&#1740;</a><style type="text/css">//Ashoora.ir|Hadith Ends</style>
+_______________
+
+<style type="text/css">//Ashoora.ir|Tadabor Begins</style><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/png.js"></script><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/tadabor/tadabor.php?mod=6&cat=1,1,1,1,1,1,1,1,1,1,1,1&color3=F30A36&color2=F30A36&color1=000000&width=150"></script><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1570;&#1740;&#1607; &#1602;&#1585;&#1570;&#1606;</a><style type="text/css">//Ashoora.ir|Tadabor Ends</style>
+
+
+<script>
+document.getElementById('mihan_page_advert').style .display='none';
+</script> 
+
+</center>
+</div></div><div class=bmenu></div>
+<!------------block ----------------------->
+
+</div>
+</div>
+
+</div>
+
+<div class=footer>
+<div class=right>
+<div class=form>فرم تماس با ما</div>
+<div class=txt>
+<FORM METHOD="POST" ACTION="http://blogskins.ir/45/email.php" name="blogskin" onsubmit="return checkform()" target="_blank">
+
+<INPUT NAME="email" value="adres@yahoo.com" style="display:none">
+
+<div>نام و نام خانوادگی: <INPUT NAME="name" class=ii autocomplete="off"></div>
+<div>پست الكترونیك : <INPUT NAME="adres" class=ii autocomplete="off"></div>
+<div>	<TEXTAREA onfocus="javascript:;if (this.value =='در این قسمت متن خود را بنویسید.'){ this.value = ''}" name="msg" class=ix>در این قسمت متن خود را بنویسید.</TEXTAREA></div>
+<div><center><INPUT TYPE="image" src="http://blogskins.ir/47/send.jpg"></center></div>
+</FORM></div>
+</div>
+<div class=left id="linkz">
+<div class=linkz>
+<div class=titrx>لینک دوستان</div>
+<div class=zz>
+<div><div><a href="../link/index.html"><b>آرشیو پیوندها</b></a></div></div>
+<div><div><a target="_blank" href="http://massir.blog.ir/" title="مسیر(تشکل های دانشجویی)">قرارگاه فرهنگی مَسیر</a></div></div><div><div><a target="_blank" href="http://www.ayegraphy.blogfa.com/" title="">آیه گرافی</a></div></div><div><div><a target="_blank" href="http://ostad-haghighi.ir/" title="">سایت رسمی استاد کریم محمود حقیقی</a></div></div><div><div><a target="_blank" href="http://entezar-ta-zohoor.blogfa.com/" title="مسلمانان! یا بمیرید و یا گوش هایتان را بگیرید تا نشنوید، صدای الرحیل می آید....!">چــــــــشمــ بـــــــهـ راهـ</a></div></div><div><div><a target="_blank" href="http://www.kholgh.ir/" title="">پایگاه 598</a></div></div><div><div><a target="_blank" href="http://shiraz-arfan.persianblog.ir" title="">پایگاه اطلاع رسانی دلسوختگان خدا</a></div></div><div><div><a target="_blank" href="http://mehrdadghan.blogfa.com/" title="">پایگاه اطلاع رسانی طریق الی الله</a></div></div><div><div><a target="_blank" href="http://farsi.khamenei.ir/" title="">پایگاه اطلاع رسانی دفتر مقام معظم رهبری</a></div></div><div><div><a target="_blank" href="http://abna.co/index.asp?lang=1" title="">پایگاه اطلاع رسانی اهل بیت</a></div></div><div><div><a target="_blank" href="http://www.shia-news.com/" title="">پایگاه اطلاع رسانی شیعه نیوز</a></div></div><div><div><a target="_blank" href="http://ashura.ir/" title="">پایگاه اطلاع رسانی زنان عشورایی</a></div></div><div><div><a target="_blank" href="http://www.dardedeel.sub.ir/" title="من این وبلاگ رو برای توجیع و آشنایی عزیزان با دیار اجدادیمان و سرزمین کهن ایران زمین و هر آنچه به عنوان مشکل و کمبود در آن می بینم ساخته ام . باشد که حضور گرمتان موجب دلگرمی من برای ادامه این اندیشه باشد . امید دارم بتونم حرفهای ناگفته ای را که کسی نمی توا">پایگاه اطلاع رسانی سرزمین اجدادی</a></div></div><div><div><a target="_blank" href="../../math90.mihanblog.com/index.html" title="رسودوكوعمل كاپركارمسئله ریاضی عددسه لایه ایمسابقهسخنان بزرگانشروع به فعالیت">پایگاه اطلاع رسانی آموزش ریاضیات زیبا</a></div></div><div><div><a target="_blank" href="../../elel.mihanblog.com/index.html" title="">پایگاه اطلاع رسانی باران</a></div></div><div><div><a target="_blank" href="../../www.rahbariyoon.mihanblog.com/index.html" title="منتظر یاران خراسانی خویشم...">پایگاه اطلاع رسانی یار خراسانی</a></div></div><div><div><a target="_blank" href="http://balaghah.net/nahj-htm/far/id/library/main.htm" title="">كتابخانه تخصصى نهج البلاغه</a></div></div><div><div><a target="_blank" href="http://rasekhoon.ir/Library/default.aspx" title="">كتابخانه راسخون</a></div></div><div><div><a target="_blank" href="http://ghadeer.org/index.html" title="">كتابخانه غدیر</a></div></div><div><div><a target="_blank" href="http://www.tebyan.net/index.aspx?pid=103089" title="وابسته به : مؤسسه فرهنگی و اطلاع‌رسانی تبیان وابسته به سازمان تبلیغات اسلامی">كتابخانه تبیان</a></div></div><div><div><a target="_blank" href="http://ketaab.iec-md.org/fehrest_kotob_alefbaaei_naame_ketaab.html" title="بسم رب القلم
+مخزن كتاب شامل فهرست الفبایی كلیه كتاب های فارسی موجود در كتابخانه ما می باشد كه با فرمت اچ-تی-ام-ال قابل دیدن توسط نمایشگر ها است . لیست دیگری از كتب با فرمت های دیگر (فشرده ، پی-دی-اف ، انگلیسی) از صفحه نخست قابل دسترسی می باشد .">کتابخانه مرکز تعلیمات اسلامی واشنگتن</a></div></div><div><div><a target="_blank" href="http://salehin.com" title="سایتی مشابه این وبلاگ">سایت صالحین</a></div></div>
+</div>
+</div>
+<div class=rss><br><a href="6.html#ali" title="ما ز بالاییم و بالا میرویم"><img border="0" src="http://blogskins.ir/47/x.gif" width="70" height="60"></a></div>
+
+<div class=down><div class=ft>
+تمام حقوق این وبلاگ و مطالب آن متعلق به 
+<a href="../../www.deldadegan.mihanblog.com/index.html">دلدادگان</a> می باشد.</div>
+</div></div>
+
+
+</div>
+</div></div></div></div><div id="seo">
+<h2><a href="http://www.blogskin.ir" title="قالب وبلاگ">قالب وبلاگ</a></h2>
+
+
+
+</div>
+<script type=text/javascript>document.getElementById('s'+'e'+'o').style.display='none';</script> 
+</body></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'deldadegan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

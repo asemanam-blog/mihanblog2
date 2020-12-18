@@ -1,0 +1,1240 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1986561*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[384]='3';commentCnt[385]='17';commentCnt[386]='6';commentCnt[387]='10';commentCnt[388]='10';commentCnt[389]='12';commentCnt[390]='12';commentCnt[392]='10';commentCnt[393]='22';commentCnt[394]='8';commentCnt[395]='8';commentCnt[396]='6';commentCnt[397]='0';commentCnt[398]='3';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[384]='0';
+mihanblogDisLikeArrCnt[384]='0';
+mihanblogLikeArrCnt[385]='0';
+mihanblogDisLikeArrCnt[385]='0';
+mihanblogLikeArrCnt[386]='0';
+mihanblogDisLikeArrCnt[386]='0';
+mihanblogLikeArrCnt[387]='0';
+mihanblogDisLikeArrCnt[387]='0';
+mihanblogLikeArrCnt[388]='0';
+mihanblogDisLikeArrCnt[388]='0';
+mihanblogLikeArrCnt[389]='0';
+mihanblogDisLikeArrCnt[389]='0';
+mihanblogLikeArrCnt[390]='0';
+mihanblogDisLikeArrCnt[390]='0';
+mihanblogLikeArrCnt[392]='0';
+mihanblogDisLikeArrCnt[392]='0';
+mihanblogLikeArrCnt[393]='0';
+mihanblogDisLikeArrCnt[393]='0';
+mihanblogLikeArrCnt[394]='0';
+mihanblogDisLikeArrCnt[394]='0';
+mihanblogLikeArrCnt[395]='0';
+mihanblogDisLikeArrCnt[395]='0';
+mihanblogLikeArrCnt[396]='0';
+mihanblogDisLikeArrCnt[396]='0';
+mihanblogLikeArrCnt[398]='0';
+mihanblogDisLikeArrCnt[398]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://dsatan-skyland.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://dsatan-skyland.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','380');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه 30 اردیبهشت 1399');
+	
+	setStatVar('today_view','17');
+	setStatVar('yesterday_view','98');
+	
+	setStatVar('this_month_view','2171');
+	setStatVar('last_month_view','2023');
+
+	setStatVar('total_view','157983');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (04:28)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://dsatan-skyland.mihanblog.com/statupdate/?data[refereruri]=http://dsatan-skyland.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1398/8&data[sdate]=1607821573&data[hash]=1217aeb36ab01b6655d07502279f4a1d&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://dsatan-skyland.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://dsatan-skyland.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+<title>~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~ - مطالب  آبان 1398</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~ - مطالب  آبان 1398,ᴀ Lᴀɴᴅ Oғ Fᴀɴᴛᴀsʏ Aɴd Color oғ тнe ѕĸy мαde oғ ɢlαѕѕ.,~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~">
+<meta name="keywords" content="~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~ - مطالب  آبان 1398,Dsatan-skyland">
+<link rel="alternate" type="application/rss+xml" title="~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~" href="../../rss/index.html" />
+
+<style>
+body{font-family:Tahoma;font-size:8pt;background:#FFFFFF url('http://s11.picofile.com/file/8392678250/1f1d3ae3ed9c7b49229077fd9b3e0af1.jpg') repeat scroll;}
+.tempkade{direction:rtl;width:760px;}
+a{color:#80A2FF;text-decoration:none;}
+a:hover{color:#61C5FF;font-weight:none;font-style:none;text-decoration:none;}
+
+.li-block{padding:3px 13px 5px 5px;background:url('http://s10.picofile.com/file/8392678168/kjwtedjk2ehd.gif') 100% 5px no-repeat;}
+
+#header{width:670px;height:287px;background:#FFFFFF url('http://s11.picofile.com/file/8392678642/%DB%B2%DB%B0%DB%B2%DB%B0%DB%B0%DB%B3%DB%B3%DB%B1_%DB%B1%DB%B3%DB%B3%DB%B7%DB%B2%DB%B0.jpg') no-repeat center;border-right:2px dotted #7DA0FF;border-left:2px dotted #7DA0FF;border-top:1px dotted #7DA0FF;border-bottom:1px dotted #7DA0FF;border-radius:60px 60px 60px 60px;margin-top:0px;margin-bottom:10px;background-size:auto;}
+
+.BlogTitle{padding:125px 0px 0px 0px;font-size:18pt;color:#FFFFFF;font-weight:bold;text-align:right;}
+.Description{padding:10px 0px 0px 0px;font-size:8pt;color:#FFFFFF;text-align:right;}
+
+#back-menu{width:640px;padding:3px;background:#80A2FF;border-right:2px solid #80A2FF;border-left:2px solid #80A2FF;border-top:1px solid #80A2FF;border-bottom:1px solid #80A2FF;border-radius:60px 60px 60px 60px;margin-top:10px;margin-bottom:5px;}
+.c-menu{padding:6px;font-size:8pt;color:#000000;text-align:center;}
+.c-menu a{margin:2px;padding:3px;color:#FFFFFF;font-weight:bold;}
+.c-menu a:hover{background:#FFFFFF;transition-duration:.5s;-moz-transition-duration:.5s;color:#80A2FF;border-radius:8px;text-decoration:none;}
+
+#post{float:right;direction:rtl;width:540px;overflow:hidden;}
+.block-post{width:500px;background:#FFFFFF;border-right:2px solid #FFFFFF;border-left:2px solid #FFFFFF;border-top:20px solid #FFFFFF;border-bottom:20px solid #FFFFFF;border-radius:60px 60px 60px 60px;padding:10px 10px 25px 10px;margin-top:8px;margin-bottom:25px;}
+.Top-Post{padding:8px 30px 17px 0px;font-size:8pt;color:#73B9FF;font-weight:bold;text-align:right;border-bottom:2px dotted #FFFFFF;border-radius:60px;margin-bottom:15px;}
+.Top-Post a{color:#73B9FF;}
+.Top-Post a:hover{color:#80A2FF;}
+.C-post{width:100%;font-size:8pt;color:#000000;text-align:right;overflow:hidden;}
+.C-post a{color:#80A2FF;}
+.C-post a:hover{color:#61C5FF;}
+.date-post{width:100%;padding:15px 0px 0px 0px;font-size:8pt;color:#000000;text-align:center;}
+.date-post a{color:#80A2FF;}
+.date-post a:hover{color:#61C5FF;}
+
+.pagination{direction:ltr;font-size:8pt;text-align:center;}
+.pagination a{display:inline-block;padding:6px;padding-top:3px;padding-bottom:3px;margin:2px;background:#232323;color:#fff;border:2px solid #ccc;border-radius:60px;text-decoration:none;}
+.pagination a:hover,.pagination .current,.pagination_current,pagination a.current{background:#ccc;color:#232323;border-color:#232323;}
+
+table tr td{font-size:8pt;color:#000000;padding:3px 0px 3px 0px;}
+
+#Sidebar{float:right;direction:rtl;width:220px;overflow:hidden;}
+.block-sid{width:180px;background:#FFFFFF;border-right:2px solid #7DA0FF;border-left:2px solid #7DA0FF;border-top:1px solid #7DA0FF;border-bottom:1px solid #7DA0FF;border-radius:60px 60px 60px 60px;padding:10px 8px 35px 8px;margin-top:8px;margin-bottom:25px;}
+.Top-Sid{padding:8px 0px 17px 0px;font-size:8pt;color:#80A2FF;font-weight:bold;text-align:center;border-bottom:2px dotted #7DA0FF;border-radius:60px;margin-bottom:15px;}
+.C-Sid{font-size:8pt;color:#000000;text-align:right;overflow:hidden;}
+.C-Sid a{color:#80A2FF;}
+.C-Sid a:hover{color:#80E5FF;}
+
+.foot{float:right;direction:rtl;width:100%;overflow:hidden;}
+.footer{width:530px;padding:15px 10px 15px 10px;background:#80A2FF;border-right:2px solid #80A2FF;border-left:2px solid #80A2FF;border-top:1px solid #80A2FF;border-bottom:1px solid #80A2FF;border-radius:60px 60px 60px 60px;margin-top:10px;margin-bottom:10px;}
+.c-footer{font-size:8pt;color:#FFFFFF;text-align:center;}
+.c-footer a{color:#FFFFFF;}
+.c-footer a:hover{color:#FFFFFF;}
+</style>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+</head>
+<body>
+
+<div align=center><div class=tempkade>
+
+<div id=header>
+<div class=BlogTitle>~s ᴋ ʏ  ʟ ᴀ ɴ ᴅ~</div><div class=Description>ᴀ Lᴀɴᴅ Oғ Fᴀɴᴛᴀsʏ Aɴd Color oғ тнe ѕĸy мαde oғ ɢlαѕѕ.</div>
+</div>
+
+<div id=back-menu><div class=c-menu>
+<a title="home" href="../../../index.html">Home</a> • 
+<a title="profile" href="../../../extrapage/profile.html" target="_blank">Profile</a> 
+</div></div>
+
+<div id=post>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=block-Post>
+<div class=Top-Post><a title="#سهون_علیه_ایکس_سهون" href="../../398.html">#سهون_علیه_ایکس_سهون</a></div>
+<div class=C-post>
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<div style="text-align: center;"><font size="2"><i><b><font face="Mihan-Nassim">*برای دیدن تیزر سهون و ایکس سهون،رو عکس ها کلیک کنین*</font></b></i></font></div><div style="text-align: center;"><font size="5" color="#FF0000"><b><i><font face="Mihan-Nassim">X-SEHUN</font></i></b></font></div><div style="text-align: center;"><a href="https://www.instagram.com/p/B42Z_bQBuPs/" target="_blank" title=""><img src="http://s6.picofile.com/file/8378225968/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B4_%DB%B1%DB%B8_%DB%B4%DB%B7_%DB%B2%DB%B2.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></div><div style="text-align: center;"><font size="5"><i><b><font face="Mihan-Nassim">SEHUN</font></b></i></font></div><div style="text-align: center;"><a href="https://www.instagram.com/p/B42aO9KplxA/" target="_blank" title=""><img src="http://s7.picofile.com/file/8378225942/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B4_%DB%B1%DB%B8_%DB%B4%DB%B6_%DB%B4%DB%B8.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">فقط میتونم بگم:ساچ ا وااااااااو*----*</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">سهون خودمون عیییینن بازیگرایی شده که نقش یه پلیسو بازی میکنه*-----*♡</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">شت شت چقدر جذاب شده اینجا*---*</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">تیزر سهون اکسو رو که دیدم یاد سوهو افتادم:"جوری تو دوربین نگاه میکرد!اصن کشنده بود!!~<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">در مورد ایکس سهونم...تیزرشو که دیدم گرخیدم:|| چشماشم اصن هیچی.__.ولی اینم جذابه*---*</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ولی بدونین که من همیشه طرف اوه سهون اعظم هستمD:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">یا کلا بگم:طرف اکسو هستم و خواهم بودXD<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">پ.ن:اگه برنده رو اعلام کردن تو همین پست میگم:)♡</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">پ.ن۲:شاید باورتون نشه ولی من ضایع شدم:|چرا؟</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">چون هی میگفتم بعد چانیول ،نوبت سوهوعه ولی تا تیزر و فوتو تیزرای سهون اومد دیگه هیچی نگفتم:|||||</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">باس باید به فکر این باشم که بعد کیه:|سوهوعه؟ببک؟چن چنی؟</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">خدا میداند:&gt;</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">فعلا♡</font></div>
+
+
+
+
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ پنجشنبه 23 آبان 1398 ] [ 08:16 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(398)">نظرات (<script>setCommentCnt(398)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#چانیول_علیه_ایکس_چانیول" href="../../397.html">#چانیول_علیه_ایکس_چانیول</a></div>
+<div class=C-post>
+
+<i>
+</i><div style="text-align: center;"><font size="2"><b><i><font face="Mihan-Nassim">*برای دیدن تیزر چانیول و ایکس چانیول،رو عکس ها کلیک کنین*</font></i></b></font></div><div style="text-align: center;"><font size="5" color="#FF0000"><i><b><font face="Mihan-Nassim">X-CHANYEOL</font></b></i></font></div><div style="text-align: center;"><i><a href="https://www.instagram.com/p/B4xQbbGBCmD/" target="_blank" title=""><img src="http://s6.picofile.com/file/8378225092/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B4_%DB%B1%DB%B8_%DB%B4%DB%B5_%DB%B5%DB%B2.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></i></div><div style="text-align: center;"><i><font size="5"><b><font face="Mihan-Nassim">CHANYEOL</font></b></font></i></div><div style="text-align: center;"><i><a href="https://www.instagram.com/p/B4xQkySpM0q/" target="_blank" title=""><img src="http://s6.picofile.com/file/8378225118/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B4_%DB%B1%DB%B8_%DB%B4%DB%B5_%DB%B2%DB%B6.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></i></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">درود دوستانD:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">خوب میدونین این پستو میخواستم دیروز بزارم اما گشادیم نذاشتXD</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">برای همین دیر این پستو میزارم!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">+ایکس چانیوله در حدی وحشتناکه که نگو:"</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">از چشماش بیشتر میترسم:|</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">حتی اخماشم ترسناکه:|</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">همین تیزرشو که دیدم برگای پاییزیم ریخت:"||||||||<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ولی باز باید بگم که کای از همه ترسناک تر بود:"|||||</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">*یاد تیزر ایکس کای پشم ریزون میوفتد*</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ولی چانیول خودمون بسی جذاب شده بودD:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">با اون کلاهه*^*</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">و نتیجه جنگ بین این دو لنگ دراز ها،چانیول اکسو برنده شد*----*♡</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">+تصمیم گرفتم بعد تموم شدن تیزرای اعضا و تیزر گروهی،عکسایی که به عنوان پاداش گروه برنده هستو تو یه پست آپ کنم^-^♡</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">فعلاD:<br></font></div><i></i>
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ پنجشنبه 23 آبان 1398 ] [ 08:10 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(397)">نظرات (<script>setCommentCnt(397)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#باور_نمیکنم!!!!" href="../../396.html">#باور_نمیکنم!!!!</a></div>
+<div class=C-post>
+
+
+
+
+
+
+<div align="center"><font size="4" face="Mihan-Nassim">اشاره به پست<a href="../../395.html" target="_blank" title=""><font size="6">"عن شانسی"</font></a></font><img src="http://s6.picofile.com/file/8378136700/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B3_%DB%B1%DB%B8_%DB%B2%DB%B1_%DB%B5%DB%B6.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></div><div align="center"><br></div><div align="center"><font size="4"><font face="Mihan-Nassim">ترجمه توییت بکهیون:</font></font><img src="http://s6.picofile.com/file/8378136734/SmartSelectImage_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B1%DB%B1_%DB%B1%DB%B3_%DB%B1%DB%B8_%DB%B4%DB%B2_%DB%B5%DB%B9.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></div><div align="center"><font size="4"><font face="Mihan-Nassim">منبع:پیچ اکسولاورز3</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ناموسا بکهیونی از کجا میدونه من امتحانا پدرسگی شروع میشه؟:------------:</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">از کجا میدونه امتحان دارم؟:--------:</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">باورم نمیشه!یا به قول چن یا بک تو آهنگ تمپو:آی کنت بیلیو!&gt;&lt;</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">*اشک در چشمانش جاری میشود*</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">میسی که بهم انگیزه میدی درس بخونم*^*<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">میسی فرشته من که به فکر ما،اری ها کردیT_______T<br></font></font></div>
+
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ چهارشنبه 22 آبان 1398 ] [ 07:29 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(396)">نظرات (<script>setCommentCnt(396)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#کای_علیه_ایکس_کای!!!" href="../../395.html">#کای_علیه_ایکس_کای!!!</a></div>
+<div class=C-post>
+
+<div align="center"><b><i><font size="2" face="Mihan-Nassim">*برای دیدن تیزر کای و ایکس کای رو عکس ها کلیک کنید*</font></i></b></div><div align="center"><font color="#FF0000"><i><font size="5"><b><font face="Mihan-Nassim">X-KAI</font></b></font></i></font></div><div align="center"><i><font size="5"><b><font face="Mihan-Nassim"><a href="https://www.instagram.com/p/B4sG1aRB413/" target="_blank" title=""><img src="http://s6.picofile.com/file/8377906850/XK.PNG" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></font></b></font></i></div><div align="center"><i><font size="5"><b><font face="Mihan-Nassim">KAI</font></b></font></i></div><div align="center"><i><font size="5"><b><font face="Mihan-Nassim"><a href="https://www.instagram.com/p/B4sHMo8pVU2/" target="_blank" title=""><img src="http://s7.picofile.com/file/8377909042/K.PNG" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></font></b></font></i></div><div align="center"><font size="4"><font face="Mihan-Nassim">به نام خدا،پشم و کرک پر ریخته است:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ناموسا باید اعتراف کنم که وقت تیزر ایکس کای رو دیدم ازش ترسیدم:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">همین تیزر کای اکسو رو دیدم آروم شدمXDباز کای خودمون بهتره!<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ای اکسوالا!ایمان بیاورید!<br></font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">+اکسو گفته که یه رقابت بین اکسوالاس.</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">تو پیچ اکسو و ایکس اکسو،وقتی تیزر و فوتو تیزر یه عضو از این دو گروه میاد،باید ریتوییت و کامنت و لایک بکنین(اینا مال توییتره.برای اینستا فیسبوک هم هست و تعداد لایک یا کامنت حساب میشه)</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اگه تعداد لایک و کامنت و اینچیزا(توییتر و اینستا و غیره)گروه بیشتر از گروه دیگه باشه،برندس!(نمیدونم پاداشش چی بود فکر کنم اطلاعات این کامبکو به گروه برنده میده،ولی برای گروه بازنده رو نمیدوم!)<br></font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">و الان چند ساعتی گذشته،بیشترین تعداد لایک وکامنت و اینچیزا،مال کای اکسو هستش که تعدادش حدود پنچ میلیون و خورده ای هست.ولی برای کای ایکس اکسو،دو میلیون و خورده ایه!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">و تا ساعت شش و نیم عصر وقت دارین برای پست های اکسو یا ایکس اکسو،کامنت یا لایک بدین!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+خوبD:به احتمال زیاد کای میبره!هر چند از دو تا ورژنش خوشم میاد ولی نمیدونم چرا تیزر ایکس کایو دیدم ترسیدم:"|عین فیلمای ترسناک بود:||<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">به نظرتون،فردا روز بیستو یکم،نوبت کیه؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">فکر کنم چانیول باشه...مطمئن نیستم!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">فعلاD:&lt;</font></font><br></div><b><i><font size="2">
+
+
+</font></i></b>
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ دوشنبه 20 آبان 1398 ] [ 05:12 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(395)">نظرات (<script>setCommentCnt(395)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#عن_شانسی..." href="../../394.html">#عن_شانسی...</a></div>
+<div class=C-post>
+<div align="center"><font size="4" face="Mihan-Nassim">تو کلاس مدرسه،وقتی برنامه ریده شده مستمرو برامون میدن:</font></div><div align="center"><font size="4" face="Mihan-Nassim"><img src="https://i.pinimg.com/736x/08/6a/fa/086afa0211f30135b64d4ab42361cce0.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></div><div align="center"><font size="4" face="Mihan-Nassim">من:</font><i><font size="4" face="Mihan-Nassim">یعنی من اکسوال بدبخت،خیلی شانس گندی دارم!</font></i><i><font size="4" face="Mihan-Nassim">امتحانای مستمر پشت سر هم،دوازده تا امتحان.</font></i><div align="center"><i><font size="4" face="Mihan-Nassim">حتی امتحان عنینه عربی افتاده روز کامبک اکسو:|</font></i></div><div align="center"><i><font size="4" face="Mihan-Nassim">خیلی شانس عنی برای منِ اکسوال دارم:|</font></i></div><div align="center"><i><font size="4" face="Mihan-Nassim">خدایا،چرا آخه؟T_____T<br></font></i></div></div><p><b></b></p>
+</div>
+<div class=date-post>[ یکشنبه 19 آبان 1398 ] [ 06:25 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(394)">نظرات (<script>setCommentCnt(394)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#WAOE_EOAW" href="../../393.html">#WAOE_EOAW</a></div>
+<div class=C-post>
+
+
+
+
+<div style="text-align: center;"><span style="font-family: Mihan-Nassim; font-size: large;">We are one EXO&nbsp; ×&nbsp;&nbsp;</span><font size="4" face="Mihan-Nassim">EXØone are we</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">برای دیدن تیزر آلبوم آبسشن رو این عکس کلیک کنین.</font></div><div style="text-align: center;"><a href="https://www.instagram.com/p/B4kYdscnicI/" target="_blank" title=""><img src="https://i.pinimg.com/originals/8d/f0/33/8df0338b81e45ecc4511b97f8728510f.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></div><div style="text-align: center;"><span style="font-family: Mihan-Nassim; font-size: large;"><i>-این تیزره از خود آخر الزمان ترسناک تره:|-</i><br></span></div><div style="text-align: center;"><span style="font-family: Mihan-Nassim; font-size: large;">وات د فااااااااک؟شت شت هولی فاکککککک!</span></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">این...این چه کوفتی بود؟این چی بود خدایش؟</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ایکس اکسو ها تیریپ مانسترو زده بودن:------:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">البته بکهیونم بیشتر تو تیپ مانستر بووووووودT^T</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">چرا انقدر خفن؟؟؟؟هان؟</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">لعنتیا قلبم!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">سوهو با اون سیکس پکاش:---:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">چانی چشم رنگیییی</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">بکهیون خیلییی بیش از حد خفن:-----:</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">کای بسی سسکی!!!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">چن خیلیییی وحشتناک خفن!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">سهون جذاااااب!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ناموسا چرا؟...T^T</font></div><div style="text-align: center;"><img src="http://s7.picofile.com/file/8377529250/EIx74qIXUAAEQSS.jpeg" alt="" vspace="0" hspace="0" border="0" align="bottom"></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">-----------------------</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">اکسو باز یه پیچ توییتر و اینستا زده که در واقع پیچ ایکس اکسوعهXD</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">@EXO.onearewe</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">این برعکس این پیچهXD</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">@weareone.EXO</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">+همین"exoonearewe"به زبان ویتنامی یا کره ای میشه:<i>بقیه اعضا کجان؟</i></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">و به انگلیسی میشه:<i>اون یکی از ماست.</i></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">دیگه پشم ندارم:)<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ناموسا خیلی کامبک خیلییییی خفنیه!منتظرشمT____T</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">پ.ن:این اکسو و ایکس اکسو و ردفورس،دقیقا منو یاد سونیک و متال سونیک و دکتر اگمن میندازهXD(فقط طرفدارای سونیک میدونن چی میگمXD)</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">+آخر تیزر بعد از لوگو اس ام،سهونو نشون میده که با یه تیر کمون،میخواد یکیو بزنه.این یعنی این سهون واقعیه:)</font></div><div style="text-align: center;"><font size="6"><i><font face="Mihan-Nassim">-LET THE FIGHT BEGIN-<br></font></i></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">فعلا:"</font></div>
+
+
+
+
+
+
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ پنجشنبه 16 آبان 1398 ] [ 08:22 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(393)">نظرات (<script>setCommentCnt(393)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#خشن_طور!!" href="../../392.html">#خشن_طور!!</a></div>
+<div class=C-post>
+
+<div align="center"><font face="Mihan-Nassim"><font size="4"><img src="https://i.pinimg.com/originals/bb/0f/88/bb0f88257fcdc1a1d179171296fc1607.gif" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">سلام دوستان*^*خوبید؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">وبمو مشاهده میکنین؟<img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif">بسی خفن و خشن طور شده!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">و این که خودتون قالبمو دوست دارین یا نه؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">آهنگای وبم چطورن؟^^</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">(رو آهنگ"look at me now"بزنین پخش میشه.)به وبم میخوره یا نه؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+چند ساعت دیگه مونده تا اکسو یه چیزی منتشر کنن.____.بدجور ذهنمو مشغول کرده:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+چند تا سوال:</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+الان رو کدوم آهنگ قفلی زدین؟(من:فعلا لاو شات،لوک ات می نو،لایتز آپ)<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+الان هوس چه خوراکی کردین؟(من:همچی...مخصوصا پیتزاXD)<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+رنگ قرمز،چه حسی بهتون میده؟(من:حس خفنی و خشن طور:)))))))</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">پ.ن:دو گیفو ببینین!</font></font><font size="4"><font face="Mihan-Nassim"><font size="4"><font face="Mihan-Nassim"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"></font></font>چقدر خفنن.</font></font><font size="4"><font face="Mihan-Nassim"><font size="4"><font face="Mihan-Nassim"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"></font></font>عاشق ام ویشمD:<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">فعلا:)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim"><img src="https://i.pinimg.com/originals/bd/05/4e/bd054e26bd0d91bd1891662b33ac4cb6.gif" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div>
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ پنجشنبه 16 آبان 1398 ] [ 01:49 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(392)">نظرات (<script>setCommentCnt(392)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#وسواس!!!" href="../../390.html">#وسواس!!!</a></div>
+<div class=C-post>
+
+
+
+<div style="text-align: center;"><i><font size="3">برای مشاهده تیزر،رو زیر عکس کلیک کنین.</font></i><br></div><div style="text-align: center;"><a href="https://www.instagram.com/p/B4aFObDpXAf/" target="_blank" title=""><img src="http://s6.picofile.com/file/8377230134/SmartSelectImage_۲۰۱۹_۱۱_۰۴_۱۶_۱۳_۴۰.png" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">EXO</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">vs</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">X-EXO<br></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>-----------------------<br>.Questionable beings have been spotted around the globe,causing abnormal activities</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>,It was witnessed by many that these beings,radiating red energy</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>.move and create phenomena beyond human level<br></i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>.From research,it has been confirmed there are a total of six these exotic beings <br></i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>.They are assumed to ne similar in from with &lt;EXO&gt;,a being that has been tracked long now<br></i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>---</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>موجودات مشکوکی سراسر جهان مشاهده شده که باعث فعالیت های غیر طبیعی شده اند.</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>بسیاری از افراد شاهد بودند که این موجودات نور قرمز منتشر می کند،</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>حرکت کرده و پدیده هایی را فراتر از سطح بشر ایجاد می کند.</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>با توجه به تحقیقات در مجموع 6 مورد از این موجودات عجیب و غریب وجود دارد.</i></font></b></font></div><div style="text-align: center;"><font size="4"><b><font face="Mihan-Nassim"><i>به نظر می آید این موجودات از لحاظ ساختاری مشابه&lt;اکسو&gt; هستند،موجودی که مدت هاست ردگیری می شود.</i></font></b></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim"><font size="4" face="Mihan-Nassim">ترجمه:پیچ اکسولاورز3<br></font></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim"><font size="4" face="Mihan-Nassim">----------------------------------------<br></font></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">اینم تیزر آلبوم جدید اکسو°___°</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ناموسا این کامبکش خیلییی مشکوکه!(صد البته پشم ریزون)<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">حتی این متنی که توی تیزر گذاشته شده در واقع نشون میده که درفورس(نیروی قرمز)کاری کرده که یه نسخه تقلبی از اکسو بسازه.</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">به اسم ایکس اکسو(X-EXO)که اینا اکسو تقلبی هستن.<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">تو تیزر که میبینید اسم های اعضا توی پایین تیزر زیر نویس میکنه.اما نکته اینجاست که اسم های اعضا اکسو یه جورایی عجیب به نظر میان!</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">مثل:<br>BAЁKHYUN&nbsp;&nbsp; |&nbsp;&nbsp; BAEKHYUN<br>CHANYEØL&nbsp;&nbsp; |&nbsp;&nbsp; CHANYEOL<br>CHЁN&nbsp;&nbsp; |&nbsp;&nbsp; CHEN<br>KĀI&nbsp;&nbsp; |&nbsp;&nbsp; KAI<br>SEHŮN&nbsp;&nbsp; |&nbsp;&nbsp; SEHUN<br>SUHØ&nbsp;&nbsp; |&nbsp;&nbsp; SUHO<br>"شکل اسما رو ببینین.یه جورایی متفاوتن.این یعنی دو تا اکسو داریم.</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ردیف راست اعضاهای اکسو واقعی و ردیف چپ،اعضاهای ایکس اکسو هستن."</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">خیلی تو تئوریا میگن تو لوکی وان و کوکوباپ و تمپو و لاوشات،اعضا ها خیلی مشکوک بودن و اینا ایکس اکسو بودن.</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">(و این یعنی اکسوالا توهم زدن که اینمدت داشتیم ایکس اکسو رو استن میکردیمXDDاکسو واقعی رو پس بدین!)</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">خلاصه بگم زیاد تئوری اکسو رو نخونین بیشر گیج میشین:|بزارین کامبک بیادXD</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">خیلی ذوق دارم*^*<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">پ.ن:این کامبک شش نفرس و لی تو کامبک حضور نداره:(</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">ولی خودم مطمئن نیستم واقعا نیست تو کامبک یا هست.</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">یه سری میگن هست یه سری میگن نیست...:)</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">همین!<br></font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">فعلا:))))</font></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim">*لبخند شیطانی میزند*<br></font></div>
+
+
+
+
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ دوشنبه 13 آبان 1398 ] [ 07:01 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(390)">نظرات (<script>setCommentCnt(390)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#لوگو_اکسو_جدید!!!" href="../../389.html">#لوگو_اکسو_جدید!!!</a></div>
+<div class=C-post>
+
+
+
+<div align="center"><font size="5"><i><font face="Mihan-Nassim">-لوگو جدید اکسو برای آلبوم کامل ششم-</font></i></font></div><div align="center"><font face="Mihan-Nassim" size="5"><i>ق.ن(قبل نوشت):اسم آلبوم ششم"OBSESSION"بید.</i></font></div><div align="center"><font face="Mihan-Nassim" size="5"><i>روز شش آذر(یعنی ده روز قبل از تولدم:"|)آلبوم منتشر میشه:--:</i></font></div><div align="center"><i><font face="Mihan-Nassim"><font size="4"><img src="http://s6.picofile.com/file/8376845042/EXOlogo.PNG" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></i></div><div align="center"><font face="Mihan-Nassim"><font size="4">بله:|من داشتم یه چیزی میخوندم.بعد گفتم برم نت ببینم چه خبره.</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">بعد این که رفتم خبر اکسو رو دنبال کنم،که با این عکس مواجه شدم!!!!</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">این...این یه لوگو فاکی جدید اکسو بود.______.</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اول پشمام ریخت،بعد ذوقی کردم که مامانم فهمید،گفت چی شده؟</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">گفتم:هیچی!اکسو میخواد آلبومشو اوایل آذر بده!یعنی تو ماه تولدم منتشر کنه!(بگم مامانم زیاد با اکسو آشنایی نداره ولی میدونه که من علاقه به این گروه دارم!همچنین خواهرم)</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">یهو خواهرم گفت:این آلبومه باشه برای هدیه تولدت:|||</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اصن این به کنار!</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">این لوگو بدجور ذهن منو درگیر کرده!دو تا پرچم...</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اصن نمیتونم بفهمم مفهوم این لوگوعه چیه؟</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اکسوالا هم رفتن یه تحقیقایی کردن که نگو.__.</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">مثلا،این پرچم سیاه با خط سفید میگن این پرچمه توسط زیر دریایی های "اتحاد مجاهیر شوروی" استفاده میشده که اسمش "اِری" بید.</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">تئوری دیگه این که امروز که یک نوامبر هستیم،دقیقا این روز،روزی بود که در سال1984 خورشید گرفتگی ایجاد شده بوده.یه سری میگن"1984"اسم کتاب رمان مشهوریه(اسم نویسندشو یادم رفته...)<br></font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">تئوری دیگش این بود که سر این میله ها"پیکان"دارن(با ماشین پیکان اشتباه نکنینXD)</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">الان دیدم که دقیق تئوری که بود اینکه پرچم سیاه با خط سفید یعنی اکسو میخواد صنعت موسیقی رو پاره کنه(ناموسا؟؟)</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اون پرچم کاملا سیاه یعنی حساب باکنی میسوزه و خاکستر میشه:|(یعنی چی...سردر نمیارم:|)<br></font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">تئوریای عجیب و غریب تو اینستا دیده بودم که اصن نمیتونم سردربیارم:|</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">اصن تئوری های اکسوالو ول کنین-.-</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">به نظرتون کامبکشون چجوری باشه؟</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">پ.ن:از نظر خودم این ترسناک ترین لوگو اکسو ایه که میبینم.احساس میکنم تمش جنگی،یا سلطنتی یا یه چیز دیگه باشه...والا معلوم نی:|تا هفت روز دیگه ببینیم چه خواهد شد:|||</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">+خوب،گفتم فعلا دو تا پست از پیج اکسولاورز3 که در مورد این لوگو تحلیل کردن،یعنی این تحلیلا پشم ریزونه و مغز آدمو هنگ میکنه رو ببینین:|</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">رو هر دو کلمه کلیک کنین.</font></font></div><div align="center"><font size="6"><i><font face="Mihan-Nassim"><a href="https://www.instagram.com/p/B4S47bDF_xT/" target="_blank" title="">تحلیل لوگو پارت اول</a><br></font></i></font></div><div align="center"><font face="Mihan-Nassim"><i><font size="6"><a href="https://www.instagram.com/p/B4TA36ZFuQA/" target="" title="">تحلیل لوگو پارت دوم</a></font></i></font><br><font size="6"><i><font face="Mihan-Nassim"></font></i></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">+اسم آلبوم هم مشخص شد،"OBSESSION"!!</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">حتی اسمشم مشکوک به نظر میاد:"||||</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">و گفته شده ده ترک در ژانر های مختلف داره!!!</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">یا خدا:"|قراره ما اکسوالا کشته بشیم؟؟</font></font></div><div align="center"><br></div><div align="center"><font face="Mihan-Nassim"><font size="4">فعلا!<br></font></font></div>
+
+
+
+
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ جمعه 10 آبان 1398 ] [ 12:47 ق.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(389)">نظرات (<script>setCommentCnt(389)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#کلام_کوچک" href="../../388.html">#کلام_کوچک</a></div>
+<div class=C-post>
+<div align="center"><font size="4"><font face="Mihan-Nassim"><img src="https://i.pinimg.com/originals/15/8e/f2/158ef20a110104d5855485a08f7c83bf.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">از زندان متروکه دقیقا به نام مدرسه،آزاد میشم و سوار ماشین سرویس میشم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">منتظر هم سرویسم میشم تا بیان سوار ماشین بشن.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">همه اومدن.ماشینم به حرکت در میاد.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">به بیرون ماشین نگاه میکنم،آسمون نیمه ابری که مثل یه نقاشی میمونه.جذابه!<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ساختمونای قدیمی کهنه درب و داغون،که بیشتر شبیه خونه جن زدس.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ساختمون های جدید بلند که جلو آسمونو گرفته.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">آدم های جورواجور.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">به زمین نگاه میکنم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">زباله های روی زمین.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ماشین های مختلف که بعضیاشون کمی داغونن و بعضی از اون ها هم نو و جدیدن.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">اینا زیاد برام جالب نبود.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">اما دیدن گربه ها و بچه گربه های شیطون و پشمالو و نرم برای من جذاب بود!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">هر وقت به چشمای رنگیشونو میبینم،انگاری چشماشون روشنه.مثل لامپ.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">پیکر های پشمالو و نرم که رنگای مختلفی داشت.سیاه،سفید،نارنجی...</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">و حالا،به مقصدم رسیدم.از ماشین پیاده میشم،کلید رو از کیفم در میارم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">وارد خونه میشم...</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">-----------------------</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">پ.ن:این دقیقا موقع برگشتنه اینطوری میگذرونم.اصن دیدن گربه برام لذت بخشه*^*</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">پ.ن2:میدونم زیاد ادبی نبود و از نظر خودمم زیاد جالب ننوشتم.XD</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">3&gt;<br></font></font></div>
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ پنجشنبه 9 آبان 1398 ] [ 07:43 ق.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(388)">نظرات (<script>setCommentCnt(388)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#BEBAF" href="../../387.html">#BEBAF</a></div>
+<div class=C-post>
+
+<div align="center"><img src="https://i.pinimg.com/564x/e4/c7/55/e4c75599ab2ddd6ae12e3d457ad6c590.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"><div><font size="5"><i><font face="Mihan-Nassim"><span><span dir="ltr">What do you want from me? Why don't you run from me?</span></span><br><span><span dir="ltr">What are you wondering? What do you know?</span></span><br><span><span dir="ltr">Why aren't you scared of me? Why do you care for me?</span></span><br><span><span dir="ltr">When we all fall asleep, where do we go?</span></span></font></i></font></div></div><div align="center"><font size="4"><font face="Mihan-Nassim"><br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">billie eilish&nbsp;&nbsp; |&nbsp;&nbsp; bury a friend</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">--------------------------------<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">هالویین مبارک:)</font></font><br></div>
+
+
+
+
+<p><b></b></p>
+<div class=li-block>موضوعات: <a title="Lyrics" href="../../category/16.html">Lyrics</a> ، </div>
+</div>
+<div class=date-post>[ چهارشنبه 8 آبان 1398 ] [ 06:42 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(387)">نظرات (<script>setCommentCnt(387)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#WTF" href="../../386.html">#WTF</a></div>
+<div class=C-post>
+
+<div style="text-align: center;"><font face="Mihan-Nassim" size="4"><i>وقتی صبح از خواب پا میشی و با بی حالی میری دستشویی و بعد از اون میری سراغ نت و با این خبر مواجه میشی!!!</i></font></div><div style="text-align: center;"><i><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8376573918/SmartSelectImage_۲۰۱۹_۱۰_۲۹_۰۹_۰۴_۱۸.png" alt=""></i></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">(منبع:مال پیچ اینستا اکسولاوز۳ هست)</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4"><i>من:فااااااااکککککککسنیتبتثتیتیتیتس کامبککیکصنزتسنرتیتتیتقیتاتقنی</i></font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4"><i>اکسو ای کامینگگیکیتیتیرنقتبحتقبحقتینسنیتثحستسط<sup>*خودجری*</sup></i></font></div><div style="text-align: center;"><i><font face="Mihan-Nassim" size="4">نت:</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"></i></div><div style="text-align: center;"><i><font face="Mihan-Nassim" size="4">موبایل مامانم:</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><font size="4" face="Mihan-Nassim"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif">ودف؟؟</font></i></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4"><i>وجدانم:خواهرم آروم:|</i></font></div><div style="text-align: center;"><i><font face="Mihan-Nassim" size="4">اکسو:EXO IS COMING</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"></i></div><div style="text-align: center;"><font size="4" face="Mihan-Nassim" style="">-------------------</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">وایییی بچه اصن باورم نمیشه!کامبک اکسو میوفته اوایل آذر ماه*--*</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">(چی میشد کامبکو مینداختن روز تولد خودم.__.ولی بازم تو اوایل آذر ماه خیلی خوبه*---*)</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">باورم نمیشه!!انگار همین دیروز بود که کامبک دونت مس آپ مای تمپو اومده بودT___T</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">تو پست قبلی گفتم که دلم کامبک اکسو و بی تی اس خواست.</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">امروزم خبر دادن که کم تر یه ماه دیگه کامبک میدناقتیتینیثتس</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">خیلی ذوق گشتم!!</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">فعلا برم چند تا ام وی سولو ها اکسو و خود اکسو استریم کنم&gt;&lt;</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="4">*میرود و آهنگ لاو شات میخوند*</font></div>
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ سه شنبه 7 آبان 1398 ] [ 09:09 ق.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(386)">نظرات (<script>setCommentCnt(386)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#حال_و_هوای_من" href="../../385.html">#حال_و_هوای_من</a></div>
+<div class=C-post>
+
+<div align="center"><font face="Mihan-Nassim"><font size="4"><img src="https://i.pinimg.com/originals/4d/d5/2e/4dd52ebbf2e6b7c8b60615065841ac28.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div><div align="center"><font size="4" face="Mihan-Nassim">(نگاه چانیول تو دوربین تو حلق خودمXD)</font></div><div align="center"><font size="4"><font face="Mihan-Nassim">------------------------------</font></font></div><div align="center"><u><i><font size="4"><font face="Mihan-Nassim">ق.ن(همون قبل نوشتXD):الان که دارم پست میزارم هوای تهران بسیار ترسناک و پشم ریزون شده:|یه رعد و برقی میاد آدم برگاش میریزه:||<br></font></font></i></u></div><div align="center"><font size="4"><font face="Mihan-Nassim">سلام دوستان*^*خوبید؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ای خدا دلم برای پست گذاشتن تنگ شده بود.حداقل میخواستم یه تکونی به وبم بدم!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">چه خبر؟تو مدرسه چه میکنین؟درسا حالشون خوبه؟...</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ودف؟چی دارم میگم؟؟؟<img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">بیخیال.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">واقعا نمیدونم چی پست کنم.هیچ ایده ای برای پست گذاشتن نداشتم:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">یا این اصن گشادیم نمیزاشت پست بزارم:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">بیشتر تو پیچ پینترست خودمم میرم و هی عکسارو سیو میکنم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">گاهی وقتا آهنگ گوش میکنم،مثل همیشه.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">(البته بگم رو آهنگ هری "لایتز آپ"قفلی زدم بدجور!!)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">خوب...میگم چطوره یه کمی از مدرسه خودم تعریف کنم؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+خوب.بنده که میدونین من دهمیم و رشته ام انسانیه.انسانی که همش خوندنیه.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">تو مدرسه ما سه تا کلاس دهمی داریم.یه کلاس تجربی و دو کلاس انسانی.فکر کنم رشته ریاضی امسال برای دهم نداشتیم تو مدرسه(حالا دلیلشو نمیدونم...)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">بعد این که تو کلاس بیست و شیش نفر هستیم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">حالا معلمامون چطورین؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم منطق و دین و زندگی خیلی خوب درس میده،وقتی میاد سر کلاسمون یه سلامی میکنه قشنگXD</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">بعد معلم تفکر و زبان معلم خنثی بید:|نه بده نه خوب.در کل خوب درس میده ولی از نظر اخلاقیش...همون حنثی فرض کنیم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">بعد مربی ورزشیم که هیچی.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم ادبیات و علوم فنون و نگارش اصن یه جوریه:|رحمم نمیکنه:|بعد انقدر گیر میده میگه:غلط املاییه،بد خطه و فلان و بهمان...</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم دفاعی که معمولیه و اخلاقش خوبه.این که توضیح زیادی نمیخواد.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم جامعه که خوبه اینم توضیح خاصی نمیخواد(کلا حال ندارم توضیح بدمXD)<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">و اما!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">دو تا معلم ترسناک که اصن برای ما یه کابوسه:|||||||</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم عربی که اصن اخلاق نداره.اصن رحم نمیکنه:|خیلی مشق زیاد میده.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">معلم اقتصاده هم معلم خشنیه:|میخواد بپرسه اگه کسی ببینه درس خوب نخونده تهدیدمون میکنه.یعنی میگه:پرتت میکنم بیرون.کتکت میزنم.با این کتاب میزنمت:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">قیافشم چه موقع درس پرسیدن چه درس دادن پر از حرصه:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">خلاصه این که اینم مدرسه ما و معلم هامون:|</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+نمیدونم چرا دلم کامبک بی تی اس و اکسو خواستT_T</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">تا این جایی که میدونم تا دو ماه دیگه اکسو کامبک میده.یه سریشون میگن تمش از لاو شات سکشی تره!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">اکسو که کلا میخواد کامبکو اسپویل کنه کلاXDولی سوهو نمیزارهXD</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">کامبک بی تی اس که فکر کنم اسمش"map of the soul:shadow"بید.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">تمشم دارکه.(کلا دوست دارم بی تی اس تم آلبوماش دارک باشه*^^^*)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">حالا باس منتظر میمونیم تا ببینیم چی میشه...</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+آها راستی!یادم نبود نتایج نظر سنجیو بزارم!</font></font></div><div align="center"><br><table class="pollResult"><tbody><tr><th colspan="3" style="line-height:25px;font-weight:bold;text-align:right">کدوم حالت آسمونو دوست داری؟(چند گزینه)
+	</th></tr>
+	<tr>
+		<th colspan="3" style="line-height:25px;text-align:left;color:#555">ششم مهر 98 ساعت 20:40:07
+	</th></tr>
+			<tr>
+			<th>
+				ماه کامل و ستاره ها			</th>
+			
+							<td width="150">
+				<div class="pollbar" style="width:150px;">
+					<span>55.26 درصد </span>
+					
+				</div>
+			</td>
+			<td width="75" align="right">
+				(21 رای)			</td>
+		</tr>
+			<tr>
+			<th>
+				آفتابی			</th>
+			
+							<td width="150">
+				<div class="pollbar" style="width:150px;">
+					<span>15.79 درصد </span>
+					
+				</div>
+			</td>
+			<td width="75" align="right">
+				(6 رای)			</td>
+		</tr>
+			<tr>
+			<th>
+				ابری یا بارونی			</th>
+			
+							<td width="150">
+				<div class="pollbar" style="width:150px;">
+					<span>28.95 درصد </span>
+					
+				</div>
+			</td>
+			<td width="75" align="right">
+				(11 رای)			</td>
+		</tr>
+		
+		<tr>
+			<th>شرکت کنندگان</th>
+			<td colspan="2">28 نفر </td></tr></tbody></table></div><div align="center"><font size="4"><font face="Mihan-Nassim">واو*^*من که عاشق این حالتیم که ماه کامل باشه و پرستاره&gt;&lt;</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">برین تو نظر سنجی جدید شرکت کنین!<br></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">----------------------------------------</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+الان که نزدیک هالویینه،دوست دارین تو هالویین چی باشین؟(مثلا زامبی یا جادوگر و اینا...)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">خوب،دوست دارم روح باشمXDنمیدونم علاقه زیادی به روح دارمD:::::</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+تو هوای بارونی چه آهنگی گوش میکنی؟(چه خارجی چه کره ای)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">+آخرین کتابی که خوندید چیه؟</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">فعلا:)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim"><img src="https://i.pinimg.com/564x/95/2c/8b/952c8b0d842fdd62a3ef3a1e79da6b6b.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div>
+
+
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ دوشنبه 6 آبان 1398 ] [ 08:45 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(385)">نظرات (<script>setCommentCnt(385)</script>)</a> ]</div></div>
+<div class=block-Post>
+<div class=Top-Post><a title="#هپی_مائو_دی!" href="../../384.html">#هپی_مائو_دی!</a></div>
+<div class=C-post>
+<div align="center"><font face="Mihan-Nassim"><font size="4"><img src="https://i.pinimg.com/originals/39/5e/28/395e2896994cf7f546577ccd39f55323.gif" alt="" vspace="0" hspace="0" border="0" align="bottom"></font></font></div><div align="center"><br><div><font size="5" face="Mihan-Nassim"><i><b><span><span dir="ltr">-넌 마치 fly like a butterfly</span></span><br><span><span dir="ltr">날 멀리 데려갈 wings wings</span></span><br><span><span dir="ltr">이대로 fly like a butterfly</span></span><br><span><span dir="ltr">귓가엔 바람 소리 wing wing wing-</span></span></b></i></font></div><div><font size="5" face="Mihan-Nassim"><span><span dir="ltr"><font size="4">LOONA&nbsp;&nbsp; |&nbsp;&nbsp; Butterfly</font></span></span></font></div><div><font size="5" face="Mihan-Nassim"><span><span dir="ltr"><font size="4">---------------------------------</font><br></span></span><b><span><span dir="ltr"></span></span></b><i><b><span><span dir="ltr"></span></span></b></i></font></div></div><div align="center"><font face="Mihan-Nassim"><font size="4">امروز،روز تولد یه اوتاکو خوش ذوق و دوست داشتنیه!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">عاشق انیمه هاست.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">اسمش"مائو تامایی"بید!اوتاکو خوش ذوق و گوگولی ما!</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">تولدت مبارک*^*</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">ایشالله تو کارات موفق باشی و آرزو سلامتی و شادی برات میکنم!همچنین آرزو میکنم که به هدفی که دوست داری برسی:)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">رفیق اوتاکویی منی:)</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">عا راستی قرار بود برات نقاشی بکشم اما خوب میدونی سرم خیلی شلوغه و وقت نمیکنم نقاشی بکشم.</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">یا احتمالا این که کلا گشادم و نمیتونم برم سراغ برنامه نقاشیمXD</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">دیگه ببخشیدT____T</font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">به هر حال،تولدت بسییییییییی مبارک کیوتی*^^^^^*</font></font></div><div align="center"><font face="Mihan-Nassim"><font size="4">-----------------------------------</font></font><br><div><b><font size="5" face="Mihan-Nassim"><i><span><span dir="ltr">화려함에 담긴 청순함이</span></span></i></font></b></div></div><div align="center"><b><font size="5" face="Mihan-Nassim"><i>The innocence inside that fanciness<br><span><span dir="ltr">도도함에 담긴 순수함이</span></span></i></font></b></div><div align="center"><b><font size="5" face="Mihan-Nassim"><i>The purity inside that chicness<br><span><span dir="ltr">처음부터 끝까지 모든 게 다</span></span></i></font></b></div><div align="center"><b><font size="5" face="Mihan-Nassim"><i> Everything from the start until the end<br><span><span dir="ltr">멈추질 않아 내 아름다움이</span></span></i></font></b></div><div align="center"><font size="4"><font face="Mihan-Nassim"><b><font size="5"><i>There’s no end. My beauty</i></font></b></font></font></div><div align="center"><font size="4"><font face="Mihan-Nassim">CLC&nbsp;&nbsp; |&nbsp;&nbsp; ME<br></font></font></div><div align="center"><img src="https://i.pinimg.com/originals/11/99/ca/1199ca000b4c8a2e7d610b995fbc26e2.gif" alt="" vspace="0" hspace="0" border="0" align="bottom"></div>
+
+
+<p><b></b></p>
+</div>
+<div class=date-post>[ جمعه 3 آبان 1398 ] [ 12:09 ب.ظ  ] [ <a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ </a> ] [ <a target="_self" href="javascript:newComment(384)">نظرات (<script>setCommentCnt(384)</script>)</a> ]</div></div>
+
+<div class=block-Post>
+<div class=Top-Post>Latest content</div>
+<div class=C-post>
+<div class=li-block><a title="#نابودی_میهن..." href="../../466.html">#نابودی_میهن...</a></div>
+<div class=li-block><a title="#جذابیت:]" href="../../465.html">#جذابیت:]</a></div>
+<div class=li-block><a title="#دینگ_دینگ" href="../../463.html">#دینگ_دینگ</a></div>
+<div class=li-block><a title="#کمی_حرف_هپی_سهونی_دی!" href="../../461.html">#کمی_حرف_هپی_سهونی_دی!</a></div>
+<div class=li-block><a title="#روز_یک_گروه_افسانه_ای" href="../../459.html">#روز_یک_گروه_افسانه_ای</a></div>
+<div class=li-block><a title="#بیایم_عشق_بورزیم" href="../../458.html">#بیایم_عشق_بورزیم</a></div>
+<div class=li-block><a title="For melika♡ 2" href="../../455.html">For melika♡ 2</a></div>
+<div class=li-block><a title="For melika♡" href="../../454.html">For melika♡</a></div>
+<div class=li-block><a title="#هپی_شیومین_دی!" href="../../453.html">#هپی_شیومین_دی!</a></div>
+<div class=li-block><a title="#سال_نو_مبارک*----*" href="../../452.html">#سال_نو_مبارک*----*</a></div>
+<div class=li-block><a title="#آخرین_پست_سال" href="../../450.html">#آخرین_پست_سال</a></div>
+<div class=li-block><a title="#بلک_سوان" href="../../449.html">#بلک_سوان</a></div>
+<div class=li-block><a title="#سکوت_و_خلوت!" href="../../448.html">#سکوت_و_خلوت!</a></div>
+<div class=li-block><a title="#بیست_و_پنچ_روز_تا_سال_نو" href="../../447.html">#بیست_و_پنچ_روز_تا_سال_نو</a></div>
+<div class=li-block><a title="#موبایل_گرفتممممم_آیدی_اینستام" href="../../446.html">#موبایل_گرفتممممم_آیدی_اینستام</a></div>
+</div></div>
+
+
+</div>
+
+<div id=Sidebar>
+
+<div class=block-sid>
+<div class=Top-Sid>About</div>
+<div class=C-Sid>
+<p align="center"><img src="../../../../static.mihanblog.com/public/user_data/web_photo/663/1986561.jpg@4527"  /></p>
+Iɴ ᴛʜᴇ ɴᴀᴍᴇ ᴏғ ɢᴏᴅ<br />
+<br />
+<br />
+HI.i'm sahar Saeby<br />
+1382/9/16<br />
+2003/12/7<br />
+.<br />
+I'м пσ ƨшεεт ɔяεαм, вυт I'м α нεʟʟ σғ α пıɢнт<br />
+.<br />
+Oh, it's just me, myself and I<br />
+Solo ride until I die<br />
+'Cause I got me for life<br />
+.<br />
+I'll try to pass the night away with somebody new<br />
+But they don't have a shot when I compare them to you<br />
+It's too late, too late<br />
+Baby, I know I'll never find you again<br />
+Find you again<br />
+.<br />
+☆And I'll be shinin' with you☆<br />
+.<br />
+No sleep tonight<br />
+We makin’ love<br />
+Until the sun shines down on us<br />
+.<br />
+I'm so sorry but it's fake love<br />
+.<br />
+I love it when you call me señorita<br />
+I wish I could pretend I didn't need ya<br />
+But every touch is ooh la la la<br />
+It's true, la la la<br />
+Ooh, I should be running<br />
+Ooh, you keep me coming for you<br />
+.<br />
+Adam and Eve<br />
+Don't fall too far from the apple tree<br />
+.<br />
+I appreciate the way you watch me, I can't lie<br />
+I drop it down, I pick it up, I back it off the county line<br />
+I fell from Heaven, now I'm living like a devil<br />
+You can't get me off your mind<br />
+I appreciate the way you want me, I can't lie<br />
+I drop it low, I back it up, I know you wanna think you're mine<br />
+Baby, I totally get it, you can't guess so<br />
+You can't get me off your mind<br />
+We in it together, but don't call me angel<br />
+.<br />
+이미 알고 있었다고 해도<br />
+처음 느끼는 기분으로<br />
+널 리드할게 lean on me<br />
+나에게만 너의 특별한 시간을<br />
+보낼 수 있는 자격이 있단 걸 난 알아<br />
+I know that, I know that, I know<br />
+그래 우린 지금<br />
+한남동 UN Village hill<br />
+언덕에서 달을 보며<br />
+You and me, umm yeah<br />
+UN Village hill, eh<br />
+나란히 우린 달을 보며<br />
+You and me, relax and chillin', eh yeah<br />
+.<br />
+Isn't it lovely, all alone?<br />
+Heart made of glass, my mind of stone<br />
+Tear me to pieces, skin to bone<br />
+Hello, welcome home<br />
+.<br />
+You make a weekend feel like a year<br />
+Baby, you got me changing<br />
+24/7, I want you here<br />
+I hope you feel the same thing<br />
+.<br />
+수많은 별이 그랬듯이<br />
+언제나 같은 자리<br />
+제 몫의 빛으로 환하게 비출 테니<br />
+숨기지 말고 너를 보여줄래 편히<br />
+네 모습 그대로 그래 괜찮아 괜찮아도<br />
+.<br />
+They say I may be making a mistake<br />
+I woulda followed all the way, no matter how far<br />
+I know when you go down all your darkest roads<br />
+I woulda followed all the way to the graveyard<br />
+Oh, 'cause I keep diggin' myself down deeper<br />
+I won't stop 'til I get where you are<br />
+I keep running when both my feet hurt<br />
+I won't stop 'til I get where you are<br />
+Oh, when you go down all your darkest roads<br />
+I woulda followed all the way to the graveyard <br />
+.<br />
+All the lights couldn't put out the dark<br />
+Runnin' through my heart<br />
+Lights up and they know who you are<br />
+Know who you are<br />
+Do you know who you are?<br />
+.<br />
+If you don't wanna see me dancing with somebody<br />
+If you wanna believe that anything could stop me<br />
+.<br />
+내가 찾던 단 한 사람 단 한 사람 you are<br />
+ Yeah you are<br />
+ 하루 종일 네 생각에 난 미칠 것만 같아 <br />
+Baby you are<br />
+.<br />
+ʙᴀʙʏ ᴡᴇ ᴄᴀɴ sᴛᴀʏ ᴜᴘ<br />
+.<br />
+Aʟʟ ᴛʜᴇ sʜᴀᴍᴇ<br />
+Wʜᴇɴ ʏᴏᴜ ᴄᴀʟʟᴇᴅ ᴍʏ ɴᴀᴍᴇ<br />
+I ғᴇʟᴛ ᴘᴀɪɴ<br />
+Wʜᴇɴ ʏᴏᴜ ᴄᴀᴍᴇ<br />
+.<br />
+BAЁKHYUN   |   BAEKHYUN<br />
+CHANYEØL   |   CHANYEOL<br />
+CHЁN   |   CHEN<br />
+KĀI   |   KAI<br />
+SEHŮN   |   SEHUN<br />
+SUHØ   |   SUHO<br />
+<br />
+<br />
+<br />
+°~☆S.L☆~°<br />
+</div></div>
+
+<div class=block-sid>
+<div class=Top-Sid>writer</div>
+<div class=C-Sid>
+<div class=li-block><a href="../../author/1418195.html">S.Я sᴀᴇʙʏ•ɴᴜᴛᴇʟʟᴀ ، 380</a></div>
+</div></div>
+
+<div class=block-sid>
+<div class=Top-Sid>Archives</div>
+<div class=C-Sid>
+<div class=li-block><a href="../1399/2.html"> اردیبهشت 1399 ، 2 </a></div>
+<div class=li-block><a href="../1399/1.html"> فروردین 1399 ، 8 </a></div>
+<div class=li-block><a href="12.html"> اسفند 1398 ، 3 </a></div>
+<div class=li-block><a href="11.html"> بهمن 1398 ، 2 </a></div>
+<div class=li-block><a href="10.html"> دی 1398 ، 12 </a></div>
+<div class=li-block><a href="9.html"> آذر 1398 ، 17 </a></div>
+<div class=li-block><a href="8.html"> آبان 1398 ، 14 </a></div>
+<div class=li-block><a href="7.html"> مهر 1398 ، 11 </a></div>
+<div class=li-block><a href="6.html"> شهریور 1398 ، 26 </a></div>
+<div class=li-block><a href="5.html"> مرداد 1398 ، 13 </a></div>
+<div class=li-block><a href="4.html"> تیر 1398 ، 19 </a></div>
+<div class=li-block><a href="3.html"> خرداد 1398 ، 8 </a></div>
+</div></div>
+
+<div class=block-sid>
+<div class=Top-Sid>friends</div>
+<div class=C-Sid>
+<div class=li-block><a title="قالب ساز آنلاین" href="http://www.tempkade.ir/online-template/" target="_blank">قالب ساز آنلاین</a></div>
+<div class="li-block"><a title="مرجع مطالب ، داستان ، رمان عاشقانه" href="http://www.lovekade.com/" target="_blank" rel="nofollow">سایت عاشقانه</a></div>
+<div class="li-block"><a title="متفاوت ترین مرجع عاشقانه" href="http://forum.lovekade.com/" target="_blank" rel="nofollow">انجمن عاشقانه</a></div>
+<div class=li-block><a target="_blank" href="http://kiyana.rayda.ir/">راز بقای من</a></div>
+<div class=li-block><a target="_blank" href="../../../../me-myselfandi.mihanblog.com/index.html">ME MY SELF &amp; I</a></div>
+<div class=li-block><a target="_blank" href="http://symphony-of-mylife.blog.ir/">Symphony of my life</a></div>
+<div class=li-block><a target="_blank" href="http://dokhtaroneh1383.mihanblog.com/">|loving doesn't change|</a></div>
+<div class=li-block><a target="_blank" href="http://mmbb2020.loxblog.com/">دختران جادویی</a></div>
+<div class=li-block><a target="_blank" href="http://my-rainy-life.blogfa.com/">RalngiRL</a></div>
+<div class=li-block><a target="_blank" href="../../../../grotesque.mihanblog.com/index.html">در عالم خیال</a></div>
+<div class=li-block><a target="_blank" href="../../../../khateratekoudaki.mihanblog.com/index.html">Just me</a></div>
+<div class=li-block><a target="_blank" href="../../../../mjorvajorm.mihanblog.com/index.html#">جورواجور</a></div>
+<div class=li-block><a target="_blank" href="../../../../symphony-of-mylife.mihanblog.com/index.html">symphony of my life</a></div>
+<div class=li-block><a target="_blank" href="../../../../my-redlife.mihanblog.com/index.html">white life</a></div>
+<div class=li-block><a target="_blank" href="../../../../bishoujoroyale.mihanblog.com/index.html">Bishoujo Royale</a></div>
+<div class=li-block><a target="_blank" href="../../../../www.ruins-of-mymind.mihanblog.com/index.html">ruins of my mind</a></div>
+<div class=li-block><a target="_blank" href="../../../../shirinhi.mihanblog.com/index.html">عروسکی</a></div>
+<div class=li-block><a target="_blank" href="../../../../armyforever.mihanblog.com/index.html">army land</a></div>
+<div class=li-block><a target="_blank" href="../../../../www.martadupancheng.mihanblog.com/index.html">magical anime</a></div>
+<div class=li-block><a target="_blank" href="../../../../japanlover.mihanblog.com/index.html">سر زمین رویا های من</a></div>
+<div class=li-block><a target="_blank" href="http://my-green-life.blogfa.com/">RaIngiRL</a></div>
+<div class=li-block><a target="_blank" href="../../../../wildestdreams.mihanblog.com/index.html">WildestDREAMS</a></div>
+<div class=li-block><a target="_blank" href="../../../../apparition77.mihanblog.com/index.html">Apparition nastaka</a></div>
+<div class=li-block><a target="_blank" href="../../../../s-1383.mihanblog.com/index.html">DOKHi KHASA</a></div>
+<div class=li-block><a target="_blank" href="../../../../www.yaddashthayenegin.mihanblog.com/index.html">دنیا نگینD:</a></div>
+<div class=li-block><a target="_blank" href="../../../../design-city.mihanblog.com/index.html">design city</a></div>
+<div class=li-block><a target="_blank" href="../../../../aridelmz.mihanblog.com/index.html">Teenage life</a></div>
+<div class=li-block><a target="_blank" href="../../../../mmnnbbaa.mihanblog.com/index.html">dark queen</a></div>
+<div class=li-block><a target="_blank" href="http://zeinabbanoo84.blogfa.com/">دنیای زینب</a></div>
+<div class=li-block><a target="_blank" href="http://drowned-in-fantasies.mihanblog.com/">Fiction</a></div>
+<div class=li-block><a target="_blank" href="../../../../dindinsama-world.mihanblog.com/index.html">Amusingly world</a></div>
+<div class=li-block><a target="_blank" href="http://astro-iran-aroha.blogfa.com/">وبلاگی برا طرفداران آسترو</a></div>
+<div class=li-block><a target="_blank" href="http://myb-a-c-w.mihanblog.com/">:)میس نایت(:</a></div>
+<div class=li-block><a target="_blank" href="../../../../movieismyworld.mihanblog.com/index.html">Life is like a movie...so i like it:)</a></div>
+<div class=li-block><a target="_blank" href="../../../../mano-m-darsam.mihanblog.com/index.html">HI WORLD:)</a></div>
+<div class=li-block><a target="_blank" href="../../../../u-m-r.mihanblog.com/index.html">یلی ساما!</a></div>
+<div class=li-block><a target="_blank" href="http://millii.blogfa.com">جادوگر درون من</a></div>
+<div class=li-block><a target="_blank" href="http://idontknow.mihanblog.com">Nothing</a></div>
+<div class=li-block><a target="_blank" href="../../../../hayola.mihanblog.com/index.html">حس و حال منو هیولا</a></div>
+<div class=li-block><a target="_blank" href="../../../../zbloom.mihanblog.com/index.html">شاهزاده جادویی وینکسی</a></div>
+<div class=li-block><a target="_blank" href="http://girly--land.mihanblog.com/">سرزمین دخترونه</a></div>
+<div class=li-block><a target="_blank" href="http://arashi-fans.mihanblog.com/">ARASHI</a></div>
+<div class=li-block><a target="_blank" href="http://moonchild.blog.ir/">یادداشت های دختر ضد گلوله</a></div>
+<div class=li-block><a target="_blank" href="../../../../heroescode.mihanblog.com/index.html">سفارشات شاکیا بارنز</a></div>
+<div class=li-block><a target="_blank" href="http://z-f-d-happysad.mihanblog.com">HAPPY &amp; SAD</a></div>
+<div class=li-block><a target="_blank" href="http://naghashinaghashi.blogfa.com/">دنیایی به نام سرزمین عجایب</a></div>
+<div class=li-block><a target="_blank" href="http://levi.blogfa.com/">دنیای انیمه</a></div>
+<div class=li-block><a target="_blank" href="http://dokhmalayefootbally.mihanblog.com/">دختر فوتبالیست</a></div>
+<div class=li-block><a target="_blank" href="http://thedarksideofme.mihanblog.com/">the dark side of me</a></div>
+<div class=li-block><a target="_blank" href="http://monika74.loxblog.com/">تاریک تر سریع تر قوی تر</a></div>
+<div class=li-block><a target="_blank" href="http://deltarik.blogfa.com/">دل تاریک</a></div>
+<div class=li-block><a target="_blank" href="http://i-love-myself.mihanblog.com/">Love yourself</a></div>
+<div class=li-block><a target="_blank" href="http://army-land.mihanblog.com/#">Army land</a></div>
+<div class=li-block><a target="_blank" href="http://teentalking.blogfa.com/">Words form my heart</a></div>
+<div class=li-block><a target="_blank" href="http://silentthings.mihanblog.com/">my silent things</a></div>
+<div class=li-block><a target="_blank" href="http://fire-tiger.mihanblog.com/">آب و آتش</a></div>
+<div class=li-block><a target="_blank" href="http://www.foxcomic.ir">Mr-fox</a></div>
+<div class=li-block><a target="_blank" href="../../../../teenage-dna.mihanblog.com/index.html">هوا و هوایDNAنوجوون!</a></div>
+<div class=li-block><a target="_blank" href="../../../../mathandtheother.mihanblog.com/index.html">Magic world</a></div>
+<div class=li-block><a target="_blank" href="../../../../web-eater.mihanblog.com/index.html">Web eater</a></div>
+<div class=li-block><a target="_blank" href="../../../../224339.mihanblog.com/index.html">بهترین وب سفارشی پونی و انیمه</a></div>
+<div class=li-block><a target="_blank" href="http://animelovers33.blogfa.com/">jusst anime</a></div>
+<div class=li-block><a target="_blank" href="../../../../soniasmemories.mihanblog.com/index.html">My crazy memories</a></div>
+<div class=li-block><a title="قالب وردپرس" href="https://www.tempkade.ir/product/" target="_blank">قالب وردپرس</a></div>
+</div></div>
+
+
+		<form id="frm-16078140835fd54bc3b00ff" method="post" action="http://dsatan-skyland.mihanblog.com/poll/new/fid/16078140835fd54bc3b00ff/atrty/1607814083/avrvy/0/key/b84e8e9203d6db0dda9e9a68414d89ad/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="378798" id="data[pollid]" />		
+<div class=block-sid>
+<div class=Top-Sid>Survey</div>
+<div class=C-Sid>
+<div class=li-block><b>توی بهار،چه چیزی دوست داری؟(چند گزینه)</b></div>
+<label><input type="checkbox"  name="data[v1]" id="v1" value="1" />گل ها</label><br>
+<label><input type="checkbox"  name="data[v2]" id="v2" value="1" />آسمون بدون ابر</label><br>
+<label><input type="checkbox"  name="data[v3]" id="v3" value="1" />هوای بارونی</label><br>
+<label><input type="checkbox"  name="data[v4]" id="v4" value="1" />صدای پرنده ها</label><br>
+<br>
+<input type="submit" value="ثبت">
+</div></div>
+
+		<input type="hidden" name="frm-id" value="16078140835fd54bc3b00ff" id="frm-id" /></form>
+<div class=block-sid>
+<div class=Top-Sid>Side plates</div>
+<div class=C-Sid>
+<div class=li-block><a href="../../../extrapage/profile.html">My Profile</a></div>
+<div class=li-block><a href="../../../extrapage/mybestfriands.html">My best Frinds</a></div>
+<div class=li-block><a href="../../../extrapage/webstore.html">Ɯєв Sтσяє&quot;Colorful sky&quot;sahar shali</a></div>
+<div class=li-block><a href="../../../extrapage/paintinggallery.html">Ƥαιηтιηg ƓαƖƖєяу</a></div>
+<div class=li-block><a href="../../../extrapage/saharshali.html">Sαяıиα $hαlι</a></div>
+</div></div>
+
+<div class=block-sid>
+<div class=Top-Sid>اother</div>
+<div class=C-Sid>
+<div style="text-align:center;">more
+
+
+
+
+
+
+
+
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/axotasvir/rotate13.js'></script></p>
+
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/link/linkcheshmak.js'></script></p>
+
+
+
+
+
+
+
+
+
+
+
+Friends logo
+
+<!-- start logo cod off http://sonicnadia.blogfa.com --><p align="center"><p align="center"><a href="http://sonicnadia.blogfa.com" target="_blank"><img border="0" src="http://s3.picofile.com/file/8212653592/Capturez.JPG"  width="170" height="150" alt="سونیکی هااااا"></a></p><!--finish logo cod off http://sonicnadia.blogfa.com -->
+
+
+<!-- start logo cod off http://martadupancheng.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../../www.martadupancheng.mihanblog.com/index.html" target="_blank"><img border="0" src="http://s9.picofile.com/file/8293570792/797e6b461dd99f9f442e6f3ce5eedb54.gif" width="150" height="150" alt="magical anime"></a></p><!--finish logo cod off http://martadupancheng.mihanblog.com/ -->
+
+
+<!-- start logo cod off http://b-lovely.mihanblog.com --><p align="center"><p align="center"><a href="../../../../b-lovely.mihanblog.com/index.html" target="_blank"><img border="0" src="http://s8.picofile.com/file/8330633226/PicsArt_07_01_03_48_25.png "  width="200" alt="Rainy world"></a></p><!--finish logo cod off http://b-lovely.mihanblog.com -->
+
+
+music
+
+<!-- Music player by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/player/?pl=2&start=1&color=80A2FF"></script>
+<script>var listmusic1abzar=[];listmusic1abzar[0] = {title:"Let's love",url: "http://dl.musicsbaran.ir/Musicbaran/Artist/EXO/SUHO%20-%20Self-Portrait%20-%20The%201st%20Mini%20Album/02.%20Let%CA%BCs%20Love.mp3"};listmusic1abzar[1] = {title:"Made in you ",url: "http://dl.musicsbaran.ir/Musicbaran/Artist/EXO/SUHO%20-%20Self-Portrait%20-%20The%201st%20Mini%20Album/03.%20Made%20In%20You.mp3"};listmusic1abzar[2] = {title:"Self portrait",url: "http://dl.musicsbaran.ir/Musicbaran/Artist/EXO/SUHO%20-%20Self-Portrait%20-%20The%201st%20Mini%20Album/05.%20Self-Portrait.mp3"};</script><div style="display:none"><h2><a href="http://www.1abzar.com/abzar/music.php">&#1605;&#1608;&#1586;&#1740;&#1705; &#1662;&#1604;&#1740;&#1585;</a></h2></div>
+<!-- Music player by www.1abzar.com --->
+
+Suho  |  Let's love • made in you • self portrait </div>
+</div></div>
+</div>
+
+<div class=foot>
+<div class=footer><div class=c-footer>[ Designed Theme By : <a title="تمپ کده دات آی آر" href="http://www.tempkade.ir/" target="_blank" rel="nofollow">www.tempkade.ir</a> ]</div></div>
+</div>
+
+</div></div>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+</body>
+﻿</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'dsatan-skyland.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

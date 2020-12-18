@@ -1,0 +1,1579 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1444425*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[18]='3';commentCnt[19]='3';commentCnt[23]='4';commentCnt[24]='4';commentCnt[25]='3';commentCnt[29]='8';commentCnt[30]='2';commentCnt[31]='1';commentCnt[32]='2';commentCnt[33]='2';commentCnt[34]='5';commentCnt[35]='0';commentCnt[39]='3';commentCnt[42]='2';commentCnt[43]='2';commentCnt[45]='3';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[31]='0';
+mihanblogDisLikeArrCnt[31]='0';
+mihanblogLikeArrCnt[34]='0';
+mihanblogDisLikeArrCnt[34]='0';
+mihanblogLikeArrCnt[35]='0';
+mihanblogDisLikeArrCnt[35]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://golbarge82.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://golbarge82.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','570');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','شنبه 4 مرداد 1399');
+	
+	setStatVar('today_view','10');
+	setStatVar('yesterday_view','28');
+	
+	setStatVar('this_month_view','1495');
+	setStatVar('last_month_view','1710');
+
+	setStatVar('total_view','293605');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (07:11)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://golbarge82.mihanblog.com/statupdate/?data[refereruri]=http://golbarge82.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1393/4&data[sdate]=1607831913&data[hash]=09650236a05b388c2427297879ac0b46&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://golbarge82.mihanblog.com/post/archive/1393/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>دل نوشته های یک دختر چادری - مطالب  تیر 1393</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="دل نوشته های یک دختر چادری - مطالب  تیر 1393 -  - دل نوشته های یک دختر چادری">
+<meta name="keywords" content="دل نوشته های یک دختر چادری - مطالب  تیر 1393,golbarge82, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="دل نوشته های یک دختر چادری" href="../../rss/index.html" />
+<link href="http://template.pichak.net/pichak/182/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>دل نوشته های یک دختر چادری</div><div class=Description></div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="../../../index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:gollbarge82@chmail.ir">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="../../rss/index.html" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../author/1217535.html">گلبرگ سمائی  482 </a></div><div class=li-Sid>
+<a href="../../author/1469370.html">شکوفه   2 </a></div><div class=li-Sid>
+<a href="../../author/1564494.html">-راضیه -  0 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16076305625fd27ee23b4ee" method="post" action="http://golbarge82.mihanblog.com/poll/new/fid/16076305625fd27ee23b4ee/atrty/1607630562/avrvy/0/key/40c151709e7030435152aea5966b81bc/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="379015" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+راجع به کدام شهید بزرگوار بیشتر مطلب بگذاریم؟<br><label><input type="radio" name="data[answer]" value="v1">شهید سپهبد سلیمانی</label><br><label><input type="radio" name="data[answer]" value="v2">شهید حججی</label><br><label><input type="radio" name="data[answer]" value="v3">شهید ابراهیم هادی</label><br><label><input type="radio" name="data[answer]" value="v4">شهید احمد کاظمی</label><br><label><input type="radio" name="data[answer]" value="v5">سایر شهدا(در نظرات بفرمایید)</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16076305625fd27ee23b4ee" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khorshid81.mihanblog.com/index.html">مبینا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../maryamjo0n.mihanblog.com/index.html">مریم جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://doostareHejab.blogfa.com/">مریم جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../baran2k5.mihanblog.com/index.html">باران جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.roman-biyoosa.mihanblog.com/index.html">بیوسا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../sora811.mihanblog.com/index.html">سورا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mohajabe82.mihanblog.com/index.html">زینب جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../pat09.mihanblog.com/index.html">نگارجون</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/182/">قالب وبلاگ چادر</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../../extrapage/mylogo.html">لوگوهای من</a></div><div class=li-Sid>
+<a href="../../../extrapage/porofailegolbarg.html">پروفایل گلبرگ</a></div><div class=li-Sid>
+<a href="../../../extrapage/maryam.html">پروفایل مریم</a></div><div class=li-Sid>
+<a href="../../../extrapage/galery.html">گالری عکس</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/سردار+دلها.html" style="font-size:1em">
+		سردار دلها</a> </div>
+</center><div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://hamva.ir/" title="سلام دوست خوبم وبلاگ زیبا و جالبی داشتی ،منم یه سایت کنکوری دارم  به من هم سر بزن و لطفا لینک من رو هم تایید کن . مرسی
+منتظر حضورت هستم">تخمین رتبه کنکور</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://http:/windpumpshop.ir/" title="">کمپرسور باد فندکی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://linux-web.ir/" title="روش کلیک نکن،به هیچ وجه!">هاست لینوکس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jonbeshnet.ir/news/53727" title="سلام
+
+در پی اهنانت دشمنان اسلام ، جنبش اینترنتی پیامیر رحمت (ص   راه اندازی شد از‌این‌رو،‌ از تمامی فعالان فضای مجازی دعوت می کنیم
+
+ با قراردادن لوگوهای« جنبش اینترنتی پیامیر رحمت ( ص)   در پایگاه های اینترنتی و وبلاگ های خود و همچنین انتشار ، و بازنشر مطالب مربوط به این جنبش  ما را در این امر خطیر یاری فرمایند 
+
+و نام خود را  در زمره خادمین پیامیر رحمت (ص) ثبت فرمائید .
+
+ضمنا جهت دریافت کد لوگو به آدرس  مراجعه فرمائید و پس از درج لوگو ولینک کردن ، در بخش نظرات اعلام نمائید تا پایگاه شما نیز در صفحه جنبش پیامیر رحمت (ص) لینک شود
+
+**من عاشق محمدم**
+
+http://www.jonbeshnet.ir/news/53727">من عاشق محّمدم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jonbeshnet.ir/news/33132" title="سلام 
+خیلی خوشحالم كه با وبلاگ شما آشنا شدم بدون تعارف وبلاگ خوبی دارید خوشحال میشم بیشتر با هم تو زمنیه وبلاگ نویسی تعامل كنیم 
+از شما فعالان فضای مجازی دعوت می کنیم 
+با قرار دادن «لوگوهای جنبش » در پایگاه های اینترنتی و  وبلاگ های خود و همچنین با تولید، انتشار و... ما را در این امر خطیر یاری فرمایند.
+
+لطفا گروه اینترنتی رهروان ولایت را لینك كرده و به ما هم در سایت در بخش نظرات بفرمائید تا شمارو لینك كنیم .
+ منتظر لینكتون هستم .
+http://www.jonbeshnet.ir/news/33132">نهی از منکر</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.pichak.net">قالب وبلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب های پیچک</a></div></div>
+<div class=LowSid></div>
+
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<!-- motarjem -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/29">رمضان ماه مهمانی خدا مبارک(پست فعلا ثابت)</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+<div style="text-align: center;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 158px; height: 157px;" src="http://0up.ir/do.php?imgf=0-%D8%B1%D9%85%D8%B6%D8%A7%D9%86.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0">&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 158px; height: 154px;" src="http://0up.ir/do.php?imgf=9-hhr295.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0">&nbsp;&nbsp;&nbsp; <br><br><br>ماه میهمانی خداوند مبارک<br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('29','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 27 تیر 1393  | 09:09  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(29)">به حرمت این ماه پاک نظر بده  <script>setCommentCnt(29)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/45">خطای دید</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>تو این عکسا چند تا آدم وجود داره؟<br><br><img style="width: 191px; height: 245px;" src="http://0up.ir/do.php?imgf=e-%DB%8C3.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><img style="width: 190px; height: 251px;" src="http://0up.ir/do.php?imgf=e-%DB%8C4.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><img src="http://0up.ir/do.php?imgf=3-9%D8%A7.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><img style="width: 188px; height: 245px;" src="http://0up.ir/do.php?imgf=3-7%D8%A7.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><img style="width: 195px; height: 260px;" src="http://0up.ir/do.php?imgf=7-%D8%A74.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><br>دیو ودلبر یا؟<br><br><img style="width: 239px; height: 179px;" src="http://0up.ir/do.php?imgf=7-6%D8%A7.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><img style="width: 363px; height: 204px;" src="http://0up.ir/do.php?imgf=7-%D8%A72.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br>کمی هم از اخبارد فوتبال<br><img src="http://0up.ir/do.php?imgf=7-%D8%A710.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('45','like')</script><div class=LowPost><div class=Comment>تاریخ : چهارشنبه 25 تیر 1393  | 20:55  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(45)">خطا دیدی؟   <script>setCommentCnt(45)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/34">برای داداشی که عاشق پیشی می باشد</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+
+
+<br><br>داداش خان ما عاشق پیشی می باشد<img src="http://www.pic4ever.com/images/644zw9c.gif" border="0"> این هم عکسش است:<br><br><br><br><img src="http://www.pic.tooptarinha.com/images/964kwsfbcyqgrrfo66v_thumb.jpg" alt="964kwsfbcyqgrrfo66v.jpg" border="0"><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "></span><font color="#525252"><font style="FONT-SIZE: 14pt"><font color="#000000"><font style="FONT-SIZE: 8pt"><font color="#000000"><p style="text-align: center; "><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><br></span></p><p style="text-align: center; "><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><br></span></p></font></font></font></font></font><br><br><br><br>هر وقت یک گربه می بیند خوشحال می شود و گربه هارا خیلی دوست می دارد<br><br><img src="http://www.pic.tooptarinha.com/images/yv8jpt1ee16o4gc05iw_thumb.jpg" alt="yv8jpt1ee16o4gc05iw.jpg" border="0"><br><br><br>و وقتی که گربه ها به فضا رفتند&nbsp; تشویقشان خواهد کرد<br><br><br><img src="http://www.pic.tooptarinha.com/images/xtv64ev4qsckgot0lgu_thumb.jpg" alt="xtv64ev4qsckgot0lgu.jpg" border="0"><br><br><br>به همین دلیل که ایشان عاشق پیشی است تصویر خانگی کامپیوترمان رابه این عکس&nbsp; تغییر دادیم<br><br><img style="width: 161px; height: 120px;" src="http://www.pic.tooptarinha.com/images/9rmvxqzjnwav744n8t_thumb.jpg" alt="9rmvxqzjnwav744n8t.jpg" border="0"><br><br><br>و مخصوصا از بچه پیشی ها خو شش می آید<br><br><br><br><br><img src="http://www.pic.tooptarinha.com/images/b5ccuzp8hmt99olr5yz_thumb.jpg" alt="b5ccuzp8hmt99olr5yz.jpg" border="0"><br><br><br><br>و به کارتون هایی که پیشی&nbsp; دارند علاقه دارد<br><br><br><a href="http://www.pic.tooptarinha.com/viewer.php?file=sa5hvatvhkpsppmg844.jpg"><img style="width: 113px; height: 84px;" src="http://www.pic.tooptarinha.com/images/sa5hvatvhkpsppmg844_thumb.jpg" alt="sa5hvatvhkpsppmg844.jpg" border="0"></a><br><br><br><br><br>&nbsp;فعلا دوستان<img src="http://mihanblog.com/public/public/rte/images_new/smiles/83.gif"><br><br><br><br><br><img src="http://www.pic.tooptarinha.com/images/yopkdspx10cu8gialrg_thumb.jpg" alt="yopkdspx10cu8gialrg.jpg" border="0"><font color="#525252"><font style="FONT-SIZE: 14pt"><font color="#000000"><font style="FONT-SIZE: 8pt"><font color="#000000"><p style="text-align: center; "><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><img src="http://www.yoursmiles.org/gsmile/birthday/g34060.gif"></span></p><p style="text-align: center; "><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><br></span></p><p style="text-align: center; "><span class="Apple-style-span" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><br></span></p></font></font></font></font></font><br><br><br>
+
+
+
+
+
+
+
+<br>
+											برچسب ها:
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%B4%DB%8C" >پیشی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%DA%AF%D8%B1%D8%A8%D9%87" >گربه</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%DA%AF%D8%B1%D8%A8%D9%87%20%D9%86%D8%A7%D8%B2%20%D9%86%D8%A7%D8%B2%DB%8C" >گربه ناز نازی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%B4%DB%8C%20%D9%86%D8%A7%D8%B2%D9%86%D8%A7%D8%B2%DB%8C" >پیشی نازنازی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AF%D8%A7%D8%AF%D8%A7%D8%B4%D9%85" >داداشم</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AF%D8%AF%D8%A7%D8%B4%20%D8%AC%D9%88%D9%86" >دداش جون</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AF%D8%A7%D8%B4" >داش</a>، 
+												  
+					<br>					<br>
+</div></div>
+<script>mihanblogPostLike('34','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 24 تیر 1393  | 15:47  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(34)">نظرات  <script>setCommentCnt(34)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/43">تقدیم به بهترین آدم دنیا</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+ سلام آقا<br><br>خیلی دوستت دارم<br><br>تو خیلی برای میهنمون ایران زحمت کشیدی <br><br><br><img src="http://0up.ir/do.php?imgf=8-1_fcfb3.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><br><div style="text-align: right;">&nbsp;&nbsp;&nbsp; آقا جونم&nbsp; تولدت مبارک <img src="http://www.getsmile.com/emoticons/funny-smileys-68129/cake.gif">&nbsp; <img src="http://www.pic4ever.com/images/confetti.gif" border="0"><br>&nbsp;&nbsp; چند سال پیش در همین روز فرشته ای چشم به دنیا گشود می دانی آن فرشته که بود؟ تو بودی تو<img src="http://www.getsmile.com/emoticons/smileys-91853/u/ylflower.gif"><br><br>&nbsp;&nbsp; آقا جونم من آرزوی دیدنت رو دارم <br><br>&nbsp;&nbsp; حتی از کاشان تا تهران برای دیدنت اومدم<br><br>&nbsp;( روز فوت امام اومدم&nbsp; مرقد امام&nbsp; اون روز قرار بود سخنرانی داشته باشی اما ...<br><br>&nbsp; من می خواستم&nbsp; شما رو از نزدیک ببینم و به آرزوم برسم من اون موقع شش سالم بود و با بابام اومدم مردونه&nbsp; فقط برای این که تو رو ببینم اما اون روز من به <br><br>&nbsp; خاطر جمعیت زیاد&nbsp; دو ساعت طول کشید تا بیاییم داخل مرقد&nbsp; به همین خاطر وقتی رسیدیم&nbsp; شما سخنرانی ات تموم شده بود&nbsp; ویه نفر دیگه سخنرانی میکرد <br>&nbsp; وشما اون جلو جلو ها نشسته بودی ومن خیلی عقب تر شاید بافاصله ی صد متری<img src="http://www.pic4ever.com/images/164.gif" border="0"><br><br>&nbsp;&nbsp; من فقط از پشت سر شما رو با فاصله ی خیـــــلــی دور ...<br><br>&nbsp;&nbsp; آخرش به آ رزوم نرسیدم<img src="http://www.pic4ever.com/images/297.gif" border="0">)<br><br>&nbsp;&nbsp; ولی خیلی دوست دارم خیـــــلی<br><div style="text-align: center;"><img src="http://0up.ir/do.php?imgf=8-4_3ba68.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><br><br><div style="text-align: right;">جانم فدای رهبر<br><br><br><br><br><img src="http://0up.ir/do.php?imgf=1-%D8%AC3.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><img style="width: 371px; height: 272px;" src="http://0up.ir/do.php?imgf=1-%D8%AC2.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><img src="http://0up.ir/do.php?imgf=1-%D8%AC4.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><br><br><br><br>شمام مثل همه&nbsp; به جنگ رفتی<br><br><br>شمام دستت رو فدای انقلاب کردی<br><br><br><img src="http://0up.ir/do.php?imgf=6-th.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><br><br>خیلی دوستت دارم <br><br><br>به امید روزی که او ظهور کند<br><br></div></div><br></div> 
+
+
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <br>									<br>
+</div></div>
+<script>mihanblogPostLike('43','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 24 تیر 1393  | 14:31  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(43)">برای آقا هم که شده یادگاری بنویسید  <script>setCommentCnt(43)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/42">بخونش</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font style="font-size: 8pt" color="#009999" face="Tahoma"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><font color="#657038"><span style="font-size: small;">1. ﺑﺎﯾﺪ ﯾﻪ ﺣﺮﻑ ﻣﻬﻤﯽ ﺭﻭ ﺑﻬﺖ ﺑﮕﻢ, ﺷﻤﺎﺭﻩ 5 ﺭﻭ ﺑﺨﻮﻥ</span><img title="چشمک" src="http://www.persianblog.ir/editor/images/smilies/3.gif" alt="چشمک" border="0"><br><br><span style="font-size: small;">2. ﺑﺮﺍﯼ ﺩﻭﻧﺴﺘﻦ ﺟﻮﺍﺏ ﺷﻤﺎﺭﻩ 11 ﺭﻭ ﻧﮕﺎﻩ ﮐن<img title="نیشخند" src="http://www.persianblog.ir/editor/images/smilies/4.gif" alt="نیشخند" border="0"></span>
+<p><br><span style="font-size: small;">3. ﻻﺯﻡ ﻧﯿﺴﺖ ﻧﺎﺭﺍﺣﺖ ﺑﺸﯽ, ﺷﻤﺎﺭﻩ 15 ﺭﻭ ﻧﮕﺎﻩ ﮐﻦ<img title="زبان" src="http://www.persianblog.ir/editor/images/smilies/10.gif" alt="زبان" border="0"></span></p>
+<p><br><span style="font-size: small;">4. ﺁﺭﻭﻡ ﺑﺎﺵ, ﻧﺎﺭﺍﺣﺖ ﻧﺸﻮ, ﺷﻤﺎﺭﻩ 13 ﺭﻭ ﻧﮕﺎﻩ ﮐﻦ<img title="شیطان" src="http://www.persianblog.ir/editor/images/smilies/19.gif" alt="شیطان" border="0"></span></p>
+<p><br><span style="font-size: small;">5. ﺍﻭﻝ ﺷﻤﺎﺭﻩ 2 ﺭﻭ ﻧﮕﺎﻩ ﮐﻦ<img title="از خود راضی" src="http://www.persianblog.ir/editor/images/smilies/15.gif" alt="از خود راضی" border="0"></span></p>
+<p><br><span style="font-size: small;">6. ﺍﯾﻨﻘﺪ ﻋﺼﺒﯽ ﻧﺒﺎﺵ,ﺷﻤﺎﺭﻩ 12 ﺭﻭ ﻧﮕﺎﻩ ﮐﻦ<img title="زبان" src="http://www.persianblog.ir/editor/images/smilies/10.gif" alt="زبان" border="0"></span></p>
+<p><br><span style="font-size: small;">7. ﻣﯿﺨﻮﺍﺳﺘﻢ ﺑﮕﻢ ﮐﻪ ﺧﯿﻠﯽ ﻧﺎﻣﺮﺩﯼ ﺍﮔﻪ کامنتﻧدی!!!<img title="قلب" src="http://www.persianblog.ir/editor/images/smilies/8.gif" alt="قلب" border="0"></span></p>
+<p><br><span style="font-size: small;"> 8. ﭼﯿﺰﯼ ﮐﻪ ﻣﻦ ﻣﯿﺨﻮﺍﻡ ﺑﮕﻪ ﺍﯾﻨﻪ ﮐﻪ .... ﺑﺎﯾﺪ 14 ﺭﻭ ﺑﺒﯿﻨﯽ<img title="نیشخند" src="http://www.persianblog.ir/editor/images/smilies/4.gif" alt="نیشخند" border="0"></span></p>
+<p><br><span style="font-size: small;">9. ﯾﻪ ﮐﻢ ﺗﺤﻤﻞ ﺩﺍﺷﺘﻪ ﺑﺎﺵ, ﺷﻤﺎﺭﻩ 4 ﻧﮕﺎﻩ ﮐﻦ</span><img title="خنده" src="http://www.persianblog.ir/editor/images/smilies/21.gif" alt="خنده" border="0"><br><br><br><span style="font-size: small;">10. ﺑﺮﺍﯼ ﺑﺎﺭ ﺁﺧﺮ , ﺑﻪ ﺷﻤﺎﺭﻩ 7 ﻧﮕﺎﻩ ﮐﻦ<img title="ماچ" src="http://www.persianblog.ir/editor/images/smilies/11.gif" alt="ماچ" border="0"></span></p>
+<p><br><span style="font-size: small;">11. ﺍﻣﯿﺪﻭﺭﺍﻡ ﮐﻪ ﺧﯿﻠﯽ ﻧﺎﺭﺍﺣﺖ ﻧﺸﺪﻩ ﺑﺎﺷﯽ, 6 ﺭﻭ ﺑﺒﯿﻦ<img title="چشمک" src="http://www.persianblog.ir/editor/images/smilies/3.gif" alt="چشمک" border="0"></span></p>
+<p><br><span style="font-size: small;">12. ﻣﻌﺬﺭﺕ ﻣﯿﺨﻮﺍﻡ, ﻭﻟﯽ ﺑﺎﯾﺪ 8 ﺭﻭ ﻧﮕﺎﻩ ﮐﻨﯽ</span><img title="نیشخند" src="http://www.persianblog.ir/editor/images/smilies/4.gif" alt="نیشخند" border="0"><br><br><span style="font-size: small;">13. ﻧﺎﺭﺍﺣﺖ ﻧﺸﻮ ﺩﯾﮕﻪ, 10 ﺭﻭ ﻧﮕﺎﻩ ﮐﻦ<img title="شیطان" src="http://www.persianblog.ir/editor/images/smilies/19.gif" alt="شیطان" border="0"></span></p>
+<p><br><span style="font-size: small;">14. ﻧﻤﯿﺪﻭﻧﻢ ﭼﻪ ﺟﻮﺭﯼ ﺑﻬﺖ ﺑﮕﻢ, ﻭﻟﯽ ﺑﺎﯾﺪ 3 ﺭﻭ ﻧﮕﺎﻩ ﮐﻨﯽ<img title="چشمک" src="http://www.persianblog.ir/editor/images/smilies/3.gif" alt="چشمک" border="0"></span></p>
+<p><br><span style="font-size: small;">15.ﺣﺘﻤﺎ ﺧﯿﻠﯽ ﻧﺎﺭﺍﺣﺖ ﺷﺪﯼ, ﻭﻟﯽ ﻧﺎﺭﺍﺣﺖ ﻧﺒﺎﺵ, ﺑﻪ ﺷﻤﺎﺭﻩ 9 نگاه کن</span></p></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('42','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 24 تیر 1393  | 13:38  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(42)">نظرات  <script>setCommentCnt(42)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/39">ای وای</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:Arial;
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]-->
+
+<p dir="RTL" style="text-align: right; direction: rtl; unicode-bidi: embed;"><span style="font-size: 9pt; font-family: &quot;Tahoma&quot;,&quot;sans-serif&quot;; color: rgb(51, 51, 51);" lang="FA">یه
+روز سه تا خانوم مرغه به هم میرسن اولی میگه چه روزگاری شده ، دیشب تو کیف دخترم
+یه عکس جوجه خروس پیدا کردم ..... دومی میگه این که چیزی نیست یه روز دیدم دخترم
+تو خیابون داره با یه خروسه میگه و میخنده .... سومی میگه اینها که چیزی نیست من
+دیشب تو کیف دخترم یه تخم مرغ پیدا کردم</span></p><p dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:embed"><img src="http://0up.ir/do.php?imgf=6-15200465008287367521.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><span dir="LTR" style="font-size:
+9.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:#333333"></span></p>
+
+
+
+
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('39','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 21 تیر 1393  | 15:53  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(39)">به افتخار مرغه نظر بده  <script>setCommentCnt(39)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/35">عکس هایی مخصوص ماه رمضان</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+اگه می خواید عکس هارو ببینید<img src="http://mihanblog.com/public/public/rte/images_new/smiles/104.gif"><br><br><br>
+
+
+
+
+
+
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/35'>بیاید اینجا کلیک کنین</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('35','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 21 تیر 1393  | 12:07  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(35)">نظر تو بنویسدرموردعکس ها  <script>setCommentCnt(35)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/33">به به چه بوی خوبی میاد</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+
+باز هم سلام <img src="http://www.pic4ever.com/images/wubpink.gif" border="0"><br><br><br><br><img style="width: 183px; height: 137px;" src="http://www.pic.tooptarinha.com/images/jdfsn7jegd9hokhv3qhr_thumb.jpg" alt="jdfsn7jegd9hokhv3qhr.jpg" border="0"><br><br><br><br>تصویر مربوطه مرتبط با پیتزایی است که با کمک جناب عالی(بسیار عالی)و خانواده محترم پروژه اش به اتمام رسیده است <br><br>وفقط به همچین چیزی نیاز دارد:<img src="http://www.pic4ever.com/images/176.gif" border="0"><br><br><br>و بد شانس کسی است که این شرایط را داشته باشد<img src="http://www.pic4ever.com/images/be8.gif" border="0"><br><br>وبرای خانمانی که می ترسند قرمزی پاک شود<img src="http://www.pic4ever.com/images/bf9.gif" border="0"> <br><br><br>و کسانی که تازه مسواک زده اند<img src="http://www.pic4ever.com/images/90.gif" border="0"><br><br><br><br>وکسانی که می گن ضرر داره<img src="http://www.pic4ever.com/images/SEVeyesB04_th.gif" border="0"><br><br><br>وکسانی که اینجا حضور ندارند و ممکن است در حادثه درگیری باشند<img src="http://www.pic4ever.com/images/t5.gif" border="0"><br><br><br>وکسانی که روحشان شاد&nbsp; فوت کرده اند<img src="http://www.pic4ever.com/images/129fs238648.gif" border="0">مانند موزی که دقایقی پیش فوت کرد و روحش در حال ورزش می باشد<img src="http://www.pic4ever.com/images/banana_smiley_41.gif" border="0">و ورودش به دنیا ممنوع است<img src="http://www.pic4ever.com/images/banana_smiley_27.gif" border="0"><br><br><br>دیکه فک نکنم گروه دیگری از این لحاظ بدشانس باشند<img src="http://www.pic4ever.com/images/169.gif" border="0"><br><br><br><br>دوستانی که بلد نیستند این پروژ را تمام کنند با احترام بروند ادامه<img src="http://mihanblog.com/public/public/rte/images_new/smiles/104.gif"><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/33'>برای اتمام پروژه کلیک بفرمایید</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('33','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 20 تیر 1393  | 14:19  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(33)">نظردون  <script>setCommentCnt(33)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/32">شنیدید؟!  خیلی دوسش دارم....</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<h2 class="Title"><font face="arial,helvetica,sans-serif"><span style="color: #ff0000;"><span style="font-size: medium;">غریبه</span></span><span style="font-size: medium;"> چونکه ما عاشقش نشدیم...... </span></font></h2><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="color: #ff0000;"><span style="font-size: medium;">غریبه</span></span><span style="font-size: medium;"> بنده ی&nbsp;لایقش نشدیم.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="color: #ff0000;"><span style="font-size: medium;">غریبه</span></span><span style="font-size: medium;"> رهرو&nbsp;ِصادقش نشدیم.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">امون ز غفلت امون ز تهمت.......</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">از دست ما تو غیبته حضرت حجت.......</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">گناه شد عادت....... غیبت عبادت.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">جالب اینه گذاشتیم سر خدا هم منت...</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">هرجا ریا شد به اسم خدا شد.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">&nbsp;همه دُکان وا کرده ایم حتی تو هئیت.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">چیو ببینه؟؟؟!! دله سیاه رو یا رو زبون اللهم <span style="font-size: medium;">ا</span>رزقت<span style="font-size: medium;">ی</span> شهادت.....</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">&nbsp;از امر به معروف ترسیدیم..... حاجی<span style="font-size: medium;">و</span> دور شیطان گردیدیم......</span></strong></font></p><font face="arial,helvetica,sans-serif">
+</font><p><font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;">&nbsp;همسایه یتیمُ و سیر خوابیدیم...... ما به زمین خورده خندیدیم....</span></strong></font></p><p><font face="arial,helvetica,sans-serif"><br><strong><span style="font-size: medium;"></span></strong></font></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<font face="arial,helvetica,sans-serif"><strong><span style="font-size: medium;"><span style="color: #ff0000;"></span></span></strong></font><br>
+
+
+
+
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/32'>برای خوندن بقیه ی شعر کلیک بفرما</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('32','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 19 تیر 1393  | 18:40  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(32)">نظرات  <script>setCommentCnt(32)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/31">بادکنک های زندگی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><p style="text-align: center;"><font size="2"><span style="font-family:tahoma,geneva,sans-serif;">در سمیناری به حضار گفته شد اسم خود را روی بادکنکی بنویسید.<br>
+	همه اینکارو انجام دادند و تمام بادکنک ها درون اتاقی دیگر قرار داده شد.<br>
+	اعلام شد که هر کس بادکنک خود را ظرف 5 دقیقه پیدا کند.<br>
+	همه به سمت اتاق مذکور رفتند و با شتاب و هرج و مرج به دنبال بادکنک خود گشتند ولی هیچکس نتوانست بادکنک خود را پیدا کند.<br>
+	دوباره اعلام شد که این بار هر کس بادکنکی که برمیدارد به صاحبش دهد.<br>
+	طولی نکشید که همه بادکنک خود را یافتند.<br>
+	دوباره بلندگو به صدا درآمد که این کار دقیقاً زندگی ماست.<br>
+	وقتی تنها به دنبال شادی خودمان هستیم به شادی نخواهیم رسید<br>
+	در حالی که شادی ما در شادی دیگران است، شما شادی را به دیگران هدیه دهید و شاهد آمدن شادی به سمت خود باشید.</span></font></p>
+<div style="text-align: center;"><img style="width: 240px; height: 157px;" src="http://www.pic.tooptarinha.com/images/ltbju0wk7zg96ernjymw_thumb.jpg" alt="ltbju0wk7zg96ernjymw.jpg" border="0"></div>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('31','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 19 تیر 1393  | 18:37  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(31)">نظرات  <script>setCommentCnt(31)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/30">قاطی کردم!</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+بستنی ما ایرانیا:<br><br><img style="width: 280px; height: 256px;" src="http://www.pic.tooptarinha.com/images/um39pvbz8lo0mfs90dw_thumb.jpg" alt="um39pvbz8lo0mfs90dw.jpg" border="0"><br><br><br><br><br><br><br>اونوقت بستنی خارجیا:<br><br><br><img style="width: 279px; height: 137px;" src="http://www.pic.tooptarinha.com/images/kucojsfszzfbujym9eep_thumb.jpg" alt="kucojsfszzfbujym9eep.jpg" border="0"><br><br><br><br><br>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('30','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 19 تیر 1393  | 18:24  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(30)">نظرات  <script>setCommentCnt(30)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/25">شیرینی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<font style="font-size: 10pt;" face="Tahoma">استادی قبل از شروع کلاس 
+فلسفه اش در حالی که وسایلی را به همراه داشت در کلاس حاضر شد. وقتی کلاس 
+شروع شد بدون هیچ کلامی شیشه خالی سس مایونزی را برداشت و با توپ های گلف 
+شروع کرد به پر کردن آن<a target="_blank" href="http://www.slidetheme.ir">.</a></font><!-- zibasazi --><p align="center"><br></p><p align="center">سپس
+ از دانشجویان پرسید که آیا شیشه پر شده است؟ آنها تایید کردند. در همین 
+حال استاد سنگریزه هایی را از پاکتی برداشت و در شیشه ریخت و به آرامی شیشه
+ را تکان داد<a target="_blank" href="http://www.slidetheme.ir">.</a><br></p><font style="font-size: 10pt;" face="Tahoma">سنگریزه
+ ها با تکان استاد وارد فضاهای خالی بین توپ های گلف شدند و استاد مجددا 
+پرسید که آیا شیشه پر شده است یا نه؟ دانشجویان پذیرفتند که شیشه پر شده 
+است…<br>این بار استاد بسته ای از شن را برداشت و در شیشه ریخت و شن تمام 
+فضای های خالی را پر کرد. استاد بار دیگر پرسید که آیا باز شیشه پر شده 
+است؟ دانشجویان به اتفاق گفتند: بله!<br>استاد این بار دو ظرف از شکلات را 
+به حالت مایع در آورد و شروع کرد به ریختن در همان شیشه به طوری که کاملا 
+فضاهای بین دانه های شن نیز پر شود. در این حالت دانشجویان شروع کردند به 
+خندیدن<a target="_blank" href="http://www.slidetheme.ir">.</a><br>وقتی 
+خندیدن دانشجویان تمام شد استاد گفت: “حالا”، ” می خواهم بدانید که این 
+شیشه نمادی از زندگی شماست. توپ های گلف موارد مهم زندگی شما هستند مانند: 
+خانواده، همسر، سلامتی و دوستان و اموالتان است. چیز هایی که اگر سایر 
+موارد حذف شوند زندگی تان چیزی کم نخواهد داشت. سنگریزه ها در واقع چیز های
+ مهم دیگری هستند مانند شغل، منزل و اتومبیل شما. شن ها هم همان وسایل و 
+ابزار کوچکی هستند که در زندگی تان از آنها استفاه می کنید…<br>و این طور 
+صحبتش را ادامه داد: اگر شما شن را در ابتدا در شیشه بریزید در این صورت 
+جایی برای سنگریزه ها و توپ های گلف وجود نخواهد داشت. و این حقیقتی است که
+ در زندگی شما هم اتفاق می افتد. اگر تمام وقت و انرژِی خود را بر روی 
+مسائل کوچک بگذارید در این صورت هیچگاه جایی برای مسائل مهم تر نخواهید 
+داشت. به چیز های مهمی که به شاد بودن شما کمک می کنند توجه کنید.در ابتدا 
+به توپ های گلف توجه کنید که مهم ترین مسئله هستند. اولویت ها را در نظر 
+آورید و باقی همه شن هستند و بی اهمیت<a target="_blank" href="http://www.slidetheme.ir">.</a></font><a target="_blank" href="http://www.slidetheme.ir"></a><p align="center"><a title="قالب وبلاگ" target="_blank" href="http://slidetheme.ir"><img src="http://zibasaz.net/yahoo2/49.gif" border="0"></a></p>﻿<!-- zibasazi --><font style="font-size: 10pt" face="Tahoma"><br>دانشجویی دستش را بلند کرد و پرسید: پس شکلات نماد چیست؟<br>استاد
+ لبخند زد و گفت: خوشحالم که این سئوال را پرسیدی! و گفت: نقش شکلات فقط 
+این است که نشان دهد مهم نیست که چه مقدار زندگی شما کامل به نظر می رسد 
+مهم این است که همیشه جایی برای شیرینی وجود دارد.
+</font>
+
+
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('25','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 14 تیر 1393  | 17:07  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(25)">نظرات  <script>setCommentCnt(25)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/24">داستانی خواندنی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font style="font-size: 10pt;" face="Tahoma">ویست و پنجاه سال پیش از 
+میلاد؛ در چین باستان؛ شاهزاده ای تصمیم به ازدواج گرفت. با مرد خردمندی 
+مشورت کرد و تصمیم گرفت تمام دختران جوان منطقه را دعوت کند، تا دختری 
+سزاوار را انتخاب کند. وقتی خدمتکار پیر قصر، ماجرا را شنید غمگین شد چون 
+دختر او هم مخفیانه عاشق شاهزاده بود<span style="text-decoration: underline;">.</span></font><p align="center"><a title="قالب وبلاگ" target="_blank" href="http://slidetheme.ir"><img src="http://zibasaz.net/yahoo2/37.gif" border="0"></a></p>﻿<!-- zibasazi --><font style="font-size: 10pt;" face="Tahoma"><br>دختر
+ گفت او هم به آن مهمانی خواهد رفت. مادر گفت: تو شانسی نداری، نه ثروتمندی
+ و نه خیلی زیبا. دختر جواب داد: می دانم که شاهزاده هرگز مرا انتخاب نمی 
+کند، اما فرصتی است که دست کم یک بار او را از نزدیک ببینم<a target="_blank" href="http://www.slidetheme.ir">.</a><br>روز
+ موعود فرا رسید و همه آمدند. شاهزاده رو به دختران گفت: به هر یک از شما 
+دانه ای می دهم، کسی که بتواند در عرض شش ماه زیباترین گل را برای من 
+بیاورد، ملکه آینده چین می شود. همه دختران دانه ها را گرفتند و بردند. 
+دختر پیرزن هم دانه را گرفت و در گلدانی کاشت. سه ماه گذشت و هیچ گلی سبز 
+نشد، دختر با باغبانان بسیاری صحبت کرد و راه گلکاری را به او آموختند، اما
+ بی نتیجه بود، گلی نرویید<a target="_blank" href="http://www.slidetheme.ir">.</a><br>روز
+ ملاقات فرا رسید، دختر با گلدان خالی اش منتظر ماند و دیگر دختران هر کدام
+ گل بسیار زیبایی به رنگها و شکلهای مختلف در گلدانهای خود داشتند.&nbsp;</font><p align="center"><a title="قالب وبلاگ" target="_blank" href="http://slidetheme.ir"><img src="http://zibasaz.net/yahoo2/25.gif" border="0"></a></p>﻿<!-- zibasazi --><font style="font-size: 10pt" face="Tahoma">لحظه 
+موعود فرا رسید شاهزاده هر کدام از گلدانها را با دقت بررسی کرد و در پایان
+ اعلام کرد دختر خدمتکار همسر آینده او خواهد بود!<br>همه اعتراض کردند که 
+شاهزاده کسی را انتخاب کرده که در گلدانش هیچ گلی سبز نشده است. شاهزاده 
+توضیح داد: این دختر تنها کسی است که گلی را به ثمر رسانده که او را سزاوار
+ همسری امپراتور می کند: گل صداقت ... همه دانه هایی که به شما دادم عقیم 
+بودند، امکان نداشت گلی از آنها سبز شود.
+</font>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('24','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 14 تیر 1393  | 16:46  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(24)">نظرات  <script>setCommentCnt(24)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/23">رمضونه وگشنگی    :)))</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+اگه دلت بستنی خواست خوراکی خواستنی خواست به دور و بر نگاه بکن&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><div style="text-align: center;">.<br><br>.<br><br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br></div>اگه کسی نبود برو سر یخچال هرچی خواستی بخور ولی اگه کسی هم بود بزن پس کلت<img src="http://www.pic4ever.com/images/4fvgdaq_th.gif" border="0"> بگو ای وای یادم نبود روزم<img src="http://www.pic4ever.com/images/dancegirl2.gif" border="0">بعدهم از محل حادثه بگریز<img src="http://www.pic4ever.com/images/th_running1.gif" border="0"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; پس &nbsp; تا بعد&nbsp;&nbsp; <img src="http://www.pic4ever.com/images/rose.gif" border="0"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+
+
+
+
+
+
+<br>
+											برچسب ها:
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%B1%D9%85%D8%B6%D9%88%D9%86%D9%87%20%D8%AF%DB%8C%DA%AF%D9%87" >رمضونه دیگه</a>، 
+												  
+					<br>					<br>
+</div></div>
+<script>mihanblogPostLike('23','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 10 تیر 1393  | 16:46  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(23)">نظرات  <script>setCommentCnt(23)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/19">قلب</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+&nbsp; <img src="http://www.pic4ever.com/images/16.gif" border="0">...
+
+
+
+
+<br>
+											برچسب ها:
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AA%D9%86%D9%87%D8%A7%DB%8C%DB%8C" >تنهایی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AA%D9%86%D9%87%D8%A7%DB%8C%D9%85" >تنهایم</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AA%D9%86%D9%87%D8%A7%20%D9%86%D8%A8%D9%88%D8%AF%D9%86%D8%AA" >تنها نبودنت</a>، 
+												  
+					<br>					<br>
+</div></div>
+<script>mihanblogPostLike('19','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 5 تیر 1393  | 11:00  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(19)">نظرات  <script>setCommentCnt(19)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/18">احولات جدیدمان </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+<img src="http://www.pic4ever.com/images/2uge4p4.gif" border="0">دیروز رفتم واسه کلاس ششم ثبت نام کنم<img src="http://www.pic4ever.com/images/18.gif" border="0"> .خانوم مدیره خوشال شد که من همه ی نمره هام بیسته <img src="http://www.pic4ever.com/images/kaffeetrinker_2.gif" border="0">عاغا فرم مدرسه رو آویزون کرده بودن رو دیفال <img src="http://www.pic4ever.com/images/2lbkos0.gif" border="0">ماما نم&nbsp; می گف آبی نفتی بوده<img src="http://www.pic4ever.com/images/greenstars.gif" border="0"> ونوار های سنتی هم داشته<img src="http://www.pic4ever.com/images/loveshower.gif" border="0"> آخه من تا توی دفتر رفتم همه جا رم&nbsp; نیگا کردم<img src="http://www.pic4ever.com/images/Just_Cuz_06.gif" border="0"> ولی نمدو نم چرا ندیدمش<img src="http://www.pic4ever.com/images/297.gif" border="0"> خیلی ناحارتم<img src="http://www.pic4ever.com/images/tantrumsmiley.gif" border="0"> بعد که رفتیم&nbsp;خیاطی اونجا هم می گف فقط یه دونه دوختن دادن به عنوان نمونه به مدرسه&nbsp;&nbsp; ینی هنوز غیر اون ندوختن <img style="width: 37px; height: 19px;" src="http://www.pic4ever.com/images/306.gif" border="0">&nbsp; ولی خود خانم خیاط می گف فرمش خعلی قیشنگه<img style="width: 30px; height: 50px;" src="http://www.pic4ever.com/images/Laie_28.gif" border="0"> الهی همین طور باشه ولی از دو طرف خوشالم&nbsp; 1این که بالاخره ثبت نام کردم&nbsp;&nbsp; <img src="http://www.pic4ever.com/images/298.gif" border="0">&nbsp; 2این که فرممون&nbsp; قیشنگه<img src="http://www.pic4ever.com/images/connie_24.gif" border="0">
+
+
+
+
+
+<br>
+											برچسب ها:
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D8%AF%D8%B1%20%D9%85%D8%AF%D8%B1%20%D8%B3%D9%87" >ثبت نام در مدر سه</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D9%82%D9%84%D9%85%20%DA%86%DB%8C" >قلم چی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%A2%D8%B2%D9%85%D9%88%D9%86%20%DA%AF%D8%A7%D8%AC" >آزمون گاج</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%A2%D8%B2%D9%85%D9%88%D9%86%20%D9%82%D9%84%D9%85%20%DA%86%DB%8C" >آزمون قلم چی</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%DA%AF%D8%A7%D8%AC" >گاج</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AA%D8%A7%D8%A8%D8%B3%D8%AA%D8%A7%D9%86" >تابستان</a>، 
+													<a href="http://golbarge82.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87%20%D8%B3%D8%AE%D8%AA%D9%87" >دانشگاه سخته</a>، 
+												  
+					<br>					<br>
+</div></div>
+<script>mihanblogPostLike('18','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 5 تیر 1393  | 10:12  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(18)">یادگاری ها  <script>setCommentCnt(18)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#d9e6ea;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#d9e6ea"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/482/1444425.jpg@2460"  /><br>سلام<br />
+خوش آمدید</p></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1399/5.html"> مرداد 1399 ، 4 </a></div><div class=li-Sid>
+<a href="../1399/4.html"> تیر 1399 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/5.html"> مرداد 1397 ، 28 </a></div><div class=li-Sid>
+<a href="../1395/4.html"> تیر 1395 ، 1 </a></div><div class=li-Sid>
+<a href="../1395/3.html"> خرداد 1395 ، 26 </a></div><div class=li-Sid>
+<a href="../1395/2.html"> اردیبهشت 1395 ، 9 </a></div><div class=li-Sid>
+<a href="../1395/1.html"> فروردین 1395 ، 11 </a></div><div class=li-Sid>
+<a href="../1394/12.html"> اسفند 1394 ، 5 </a></div><div class=li-Sid>
+<a href="../1394/11.html"> بهمن 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/10.html"> دی 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../1394/9.html"> آذر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/8.html"> آبان 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../1394/7.html"> مهر 1394 ، 3 </a></div><div class=li-Sid>
+<a href="../1394/6.html"> شهریور 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/5.html"> مرداد 1394 ، 6 </a></div><div class=li-Sid>
+<a href="../1394/4.html"> تیر 1394 ، 104 </a></div><div class=li-Sid>
+<a href="../1394/3.html"> خرداد 1394 ، 6 </a></div><div class=li-Sid>
+<a href="../1394/2.html"> اردیبهشت 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/1.html"> فروردین 1394 ، 14 </a></div><div class=li-Sid>
+<a href="12.html"> اسفند 1393 ، 25 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1393 ، 124 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1393 ، 13 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1393 ، 13 </a></div><div class=li-Sid>
+<a href="8.html"> آبان 1393 ، 14 </a></div><div class=li-Sid>
+<a href="7.html"> مهر 1393 ، 28 </a></div><div class=li-Sid>
+<a href="6.html"> شهریور 1393 ، 47 </a></div><div class=li-Sid>
+<a href="5.html"> مرداد 1393 ، 26 </a></div><div class=li-Sid>
+<a href="4.html"> تیر 1393 ، 14 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../926.html">رذل مثل آمریکا</a></div><div class=li-Sid>
+<a href="../../925.html">حنجره های اجاره ای سلبریتی های ما...</a></div><div class=li-Sid>
+<a href="../../924.html">پست ثابت</a></div><div class=li-Sid>
+<a href="../../923.html">خاطره ای از شهید حججی</a></div><div class=li-Sid>
+<a href="../../922.html">#اعدام_کنید</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/5.html">      ماه من،خرداد  3 </a></div><div class=li-Sid>				
+<a href="../../category/4.html">رمان  13 </a></div><div class=li-Sid>				
+<a href="../../../../www.golbarge82.mihanblog.com/post/category/3.html">رمان*(رویای بارانی)*  14 </a></div><div class=li-Sid>				
+<a href="../../category/6.html">تعبیر خواب  1 </a></div><div class=li-Sid>				
+<a href="../../category/2.html">مسابقات  9 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">کدهای مجانی  30 </a></div></div>			
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<!-- Started code by varoone.ir ---- YahooID: davod_v2008  -->
+<script type="text/JavaScript" language="javascript">
+msg = "♡دل نوشته های یک دختر چادری♡"; msg = "..." + msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos > msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</script>
+<p>
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="display:none;"><h3><li><a href="http://pichak.net/paper/?categories=56">paper</a> | <a href="http://buylink.ir">بک لینک</a>
+ | <a href="http://saleslink.ir/">فروش لینک</a>
+</li></h3></div></body><script type='text/javascript' src='http://pichak.net/upper/jquery.min.js' ></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pichak.net/upper/scrolltopcontrol.php?t=15' ></s"+"cript>");</script>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'golbarge82.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

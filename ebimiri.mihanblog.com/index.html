@@ -1,0 +1,1700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ebimiri.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*217360*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[443]='1';commentCnt[444]='2';commentCnt[445]='0';commentCnt[446]='0';commentCnt[447]='0';commentCnt[449]='4';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[443]='14';
+mihanblogDisLikeArrCnt[443]='0';
+mihanblogLikeArrCnt[444]='13';
+mihanblogDisLikeArrCnt[444]='0';
+mihanblogLikeArrCnt[445]='10';
+mihanblogDisLikeArrCnt[445]='0';
+mihanblogLikeArrCnt[446]='9';
+mihanblogDisLikeArrCnt[446]='0';
+mihanblogLikeArrCnt[447]='9';
+mihanblogDisLikeArrCnt[447]='0';
+mihanblogLikeArrCnt[449]='5';
+mihanblogDisLikeArrCnt[449]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://ebimiri.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://ebimiri.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','397');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 18 آبان 1395');
+	
+	setStatVar('today_view','22');
+	setStatVar('yesterday_view','65');
+	
+	setStatVar('this_month_view','1693');
+	setStatVar('last_month_view','2739');
+
+	setStatVar('total_view','453404');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:58)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://ebimiri.mihanblog.com/statupdate/?data[refereruri]=http://baraneaseg.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607830344&data[hash]=e1695a5b4b89de45310fdb6e9e6d62b6&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://ebimiri.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://ebimiri.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://ebimiri.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="ابراهیم میری ، پسر مشرق زمین ، شرقی ترین پسر ایران زمین ،miri،ldld"/>
+<meta name="keywords" content="ابراهیم میری ،میری،miri،ldld، ابراهیم , پسر مشرق زمین ، شرقی ترین پسر ایران زمین "/>
+<link href="http://www.FontFarsi.ir/fontfarsi/css/Far_Beirut.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://birjandit.ir/wp-content/uploads/2013/08/Letter-E-icon.ico" />
+<script src="http://orir.ir/im/tooltip/01/jquery.js" type="text/javascript"></script>
+<script src="http://orir.ir/im/tooltip/01/tooltip-text.js" type="text/javascript"></script>
+<script src="http://orir.ir/im/tooltip/02/tooltip-image-viewer.js" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="وبلاگ شخصی ابراهیم میری" href="http://ebimiri.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="وبلاگ شخصی ابراهیم میری" href="http://ebimiri.mihanblog.com/post/atom/" />
+
+<title>وبلاگ شخصی ابراهیم میری</title>
+
+
+<style type="text/css">
+
+
+img{
+border-radius:5px;
+transition:all 0.6s ease-in;
+}
+img:hover{
+border-radius:3px;
+transition:all 0.6s ease-in;
+}
+
+::-moz-selection {
+background-color:#FFFF99;color:#FF0000;
+}
+
+
+#tooltip{
+position:absolute;
+border:1px solid #eee;
+background:#f9f9f9;
+padding:2px 5px;
+color:#000000;text-shadow:5px 1px 8px #000000;
+display:none;
+font: 11px B Homa,Tahoma;
+}
+#preview{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	}
+
+
+
+body{
+
+	background:#C4DFE6 url("http://www.webdesign24.ir/images/topbg.jpg") no-repeat center top ;
+
+    color:#444444;text-shadow: 0px 0px 3px rgb(79, 79, 79);
+    font: 12px Tahoma,Arial;
+    padding: 0px;
+    direction:rtl;
+    text-align:right;
+    margin:0;
+
+}
+
+a img{
+	border:none;
+}
+/* ***************************************************************************** CLEAR FIX  */
+.clearfix {display: inline-block;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* ************************************************************************** EO CLEAR FIX   */
+.wrapper{
+	background:url("http://mihanblog.com/public//public/user_data/user_files/97/289651/pen/grund-mitte.gif") repeat-y scroll 0 0 #FFFFFF;
+    margin:0 auto;
+    padding:0;
+    width:753px;
+}
+
+a{
+	color:#336699;
+    text-decoration:none;
+}
+a:hover{
+	color:#FF9933;
+}
+.header{
+	background:url("../static.mihanblog.com/public/user_data/user_files/73/217360/pic/logo.jpg") no-repeat scroll 0 0 transparent;
+    height:162px;
+    margin:0;
+    padding:0 10px 0 0 ;
+    text-align:right;
+font-family:b titr;
+}
+.move {
+	margin:7px 0 0 0;
+}
+.box {
+	width:309px;
+	float:right;
+	margin:0 2px 0 0
+}
+
+.header  a{
+    color:#EEEEEE;text-shadow:1px 0px 5px #4791ff;
+ font-family:Far.Beirut,Tahoma, Sans-Serif;
+   font-size:24px;
+    text-decoration:none;
+    float:right;
+    text-align:right;
+    width:330px;
+    overflow:hidden;
+}
+.slogan{
+	width:330px;
+	color:#EEEEEE;
+	margin-top:5px;
+}
+.left{
+	float:left;
+	width:518px;
+}
+.right{
+	color:#000000;
+	float:right;
+	width:200px;
+}
+.nav{
+	margin-bottom:15px;
+	padding-right:5px;
+	overflow:hidden;
+}
+.nav a{
+	background:url("http://mihanblog.com/public//public/user_data/user_files/97/289651/pen/bullet.gif") no-repeat scroll right 6px transparent;
+    display:block;
+    padding:2px 15px 2px 2px;
+    margin-right:10px;
+}
+.nav h2{
+	border-bottom:1px solid #DDDDDD;
+    color:#000000;text-shadow:1px 0px 5px #4791ff;
+
+    font:bold 13px b titr,tahoma,sans-serif;
+    margin:1px 10px;
+    padding:0 0 5px 0;
+    text-align:center;
+-moz-box-shadow: 0px 4px 3px #1236e8;
+-webkit-box-shadow: 0px 4px 3px #1236e8;
+box-shadow: 1px 4px 3px #1236e8;;
+
+
+}
+.post{
+	padding:10px;
+
+
+
+}
+.post h2{
+	background:none repeat scroll 0 0 #EEEEEE;
+    color:#030303;
+
+    font:1.6em 'trebuchet ms',B Homa,B Homa,tahoma,arial,sans-serif;
+    margin:1px 0 7px;
+    padding:0 5px 5px;
+    overflow:hidden;
+-moz-box-shadow:inset -3px -3px 0px #1472ff;
+-webkit-box-shadow:inset -3px -3px 0px #1472ff;
+box-shadow:inset -3px -3px 0px #1472ff;
+
+}
+.date{
+	border-bottom:1px solid #DDDDDD;
+    color:#FF9933;
+    margin:1px 0;
+    text-align:right;
+    padding-bottom:5px;
+}
+.post-body{
+	text-align:justify;
+	line-height:25px;
+	overflow:hidden;
+      
+}
+.page_box ul{
+	direction:rtl;
+	height:17px;
+	margin:3px auto;
+	max-width:460px;
+	text-align:left;
+	width:390px;
+	list-style:none;
+}
+.page_box ul{
+	height:17px;
+}
+.page_box li{
+	float:right;
+	margin-right:5px;
+	list-style:none;
+	background:none;
+	color:#444;
+	font-family: Tahoma, Arial, Times New Roman;
+	font-size: 14px;
+}
+
+.page_box a{
+	border:1px solid #AAAAAA;
+	color:#336699;
+	display:block;
+	line-height:17px;
+	text-align:center;
+	width:17px;
+}
+.page_box a:hover{		
+	text-decoration:none;
+	color:#FF9933;	
+}
+.page_box a b{
+	color:#333;
+	display:block;
+	line-height:17px;
+	text-align:center;
+	width:17px;
+	background-attachment: scroll;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: repeat;
+	background-position: 0 0;
+}
+.menu{
+float:left;
+width:243px;
+margin-left:2px;margin-right:4px;margin-top:4px;
+overflow:hidden;
+}
+.menu_box{
+margin-bottom:20px;
+overflow:hidden;
+border-radius:9px;
+filter:alpha(opacity=50);opacity:0.5;
+transition:all 0.8s ease-in;
+}
+
+.submit{
+	float:right;
+}
+.text{
+	float:right;
+	width:100px;
+}
+.postCom{
+	background:none repeat scroll 0 0 #F5F5F5;
+    border-bottom:1px solid #EEEEEE;
+    border-top:1px solid #EEEEEE;
+    color:#666666;
+    margin-bottom:27px;
+    margin-top:15px;
+    padding:5px 5px 5px 5px;
+}
+.comment-link{
+	background:url("http://mihanblog.com/public//public/user_data/user_files/97/289651/pen/kommentar-icon.gif") no-repeat scroll right 0 transparent;
+	padding-right:17px;
+}
+.feed a{
+	background:transparent url(http://mihanblog.com/public//public/user_data/user_files/97/289651/pen/feed-icon-12x12.png) no-repeat scroll right 3px;
+	padding-right:16px;
+}
+.footer{
+	text-align:center;
+	width:753px;
+	margin:10px auto;
+}
+.sidebar{
+	
+		padding-left:5px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="wrapper">
+		<div class="header clearfix">
+			<a class="tooltip" title="به وبلاگ شخصی ابراهیم میری خوش آمدید" href="index.html" id="logo">وبلاگ شخصی ابراهیم میری</a>
+			<br>
+			<div class="slogan">شرقی ترین پسر ایران زمین</div>
+<br>
+<div class="slogan"> امروز: <script>setTodayDate()</script></div>
+<br>
+<style>
+
+@keyframes myfirst2
+{
+ 
+0%   {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+50%  {color: #ff0000;text-shadow: 0px 0px 5.5px #00bbff}
+100% {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+}
+
+
+@-moz-keyframes myfirst2 /* Firefox */
+{
+
+0%   {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+50%  {color: #ff0000;text-shadow: 0px 0px 5.5px #00bbff}
+100% {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+}
+
+@-webkit-keyframes myfirst2 /* Safari and Chrome */
+{
+
+0%   {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+50%  {color: #ff0000;text-shadow: 0px 0px 5.5px #00bbff}
+100% {color: #ff0000;text-shadow: 0px 0px 0.5px #00bbff}
+}
+</style>
+
+<div id="tickerAnchor" style="animation:myfirst2 0.5s infinite;-moz-animation:myfirst2 0.5s infinite; /* Firefox */-webkit-animation:myfirst2 0.5s infinite; /* Safari and Chrome */" dir="rtl" align="center"></div><script language="JavaScript" type="text/javascript">
+<!--
+// Ticker startup
+function startTicker()
+{
+	// Define run time values
+	theCurrentStory     = -1;
+	theCurrentLength    = 0;
+	// Locate base objects
+	if (document.getElementById) {	
+		    theAnchorObject     = document.getElementById("tickerAnchor");
+			runTheTicker();   	
+		 }
+	else {
+            document.write("<style>.ticki{display:none;}.ticko{border:0px; padding:0px;}</style>");
+            return true;
+	}
+}
+// Ticker main run loop
+function runTheTicker()
+{
+	var myTimeout;  
+	// Go for the next story data block
+	if(theCurrentLength == 0)
+	{
+		theCurrentStory++;
+		theCurrentStory      = theCurrentStory % theItemCount;
+		theStorySummary      = theSummaries[theCurrentStory].replace(/"/g,'"');		
+		theTargetLink        = theSiteLinks[theCurrentStory];
+		theAnchorObject.href = theTargetLink;
+		thePrefix 	     = "<span class=\"tickls\">" + theLeadString + "</span>";
+	}
+	// Stuff the current ticker text into the anchor
+	theAnchorObject.innerHTML = thePrefix + 
+	theStorySummary.substring(0,theCurrentLength) + whatWidget();
+	// Modify the length for the substring and define the timer
+	if(theCurrentLength != theStorySummary.length)
+	{
+		theCurrentLength++;
+		myTimeout = theCharacterTimeout;
+	}
+	else
+	{
+		theCurrentLength = 0;
+		myTimeout = theStoryTimeout;
+	}
+	// Call up the next cycle of the ticker
+	setTimeout("runTheTicker()", myTimeout);
+	
+}
+// Widget generator
+function whatWidget()
+{
+	if(theCurrentLength == theStorySummary.length)
+	{
+		return theWidgetNone;
+	}
+
+	if((theCurrentLength % 2) == 1)
+	{
+		return theWidgetOne;
+	}
+	else
+	{
+		return theWidgetTwo;
+	}
+}
+// -->
+      </script>
+
+
+	<script language="JavaScript" type="text/javascript">
+	<!--
+var azkar=new Array(7);
+var rooz=new Array(7);
+
+azkar[0]="یا ذاالجلال و الاکرام";
+azkar[1]="یا قاضی الحاجات";
+azkar[2]="یا ارحم الراحمین";
+azkar[3]="یا حی و یا قیوم";
+azkar[4]="لا اله الا الله الملک الحق المبین";
+azkar[5]="اللهم صل علی محمد وآل محمد وعجل فرجهم ";
+azkar[6]="یا رب العالمین";
+
+rooz[0]="یکشنبه";
+rooz[1]="دوشنبه";
+rooz[2]="سه شنبه";
+rooz[3]="چهارشنبه";
+rooz[4]="پنج شنبه";
+rooz[5]="جمعه";
+rooz[6]="شنبه";
+
+var funrooz=new Date();
+var funrooz2=funrooz.getDay();
+var funzekr=azkar[funrooz2];
+var funrooz3=rooz[funrooz2];
+
+	var theCharacterTimeout = 50;
+	var theStoryTimeout     = 5000;
+	var theWidgetOne        = "_";
+	var theWidgetTwo        = "-";
+	var theWidgetNone       = "";
+	var theLeadString       = "";
+
+	var theSummaries = new Array();
+	var theSiteLinks = new Array();
+
+	var theItemCount = 6;
+	
+	theSummaries[0] = "ذکر روز "+funrooz3+" : "+funzekr+"";
+	theSiteLinks[0] = "";
+	
+        theSummaries[1] = "به وبلاگ شخصی ابراهیم میری خوش آمدید.";
+	theSiteLinks[1] = "/";
+
+        theSummaries[2] = "پنجره زیباست اگر بگذارند/چشم مخصوص تماشاست اگر بگذارند.";
+	theSiteLinks[2] = "/";
+
+        theSummaries[3] = "من از اظهار نظر های دلم فهمیدم/عشق هم صاحب فتواست اگر بگذارند.";
+	theSiteLinks[3] = "/";
+
+        theSummaries[4] = "از این که به وبلاگ من سر زدید نهایت تشکر را دارم  .";
+	theSiteLinks[4] = "/";
+
+        theSummaries[5] = "با قرار دادن نظرات در وبلاگ در بهتر شدن مطالب ما را یاری کنید .";
+	theSiteLinks[5] = "/";
+
+	startTicker();
+	//-->
+
+	  </script>
+
+	</div>
+	<div class="main clearfix">
+
+			<div class="left">
+<div style="text-align: center;"><img src="../file.mihanblog.com/public/user_data/user_files/73/217360/pic/asr.gif" height="150" width="370"></div>
+<br>
+<div style="text-align: center;"><img src="../static.mihanblog.com/public/user_data/user_files/73/217360/pic/amanyojib.png" height="45" width="370"></div>
+
+
+					<div class="post">
+
+								<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+								<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:سه شنبه 13 مهر 1395-11:49 ب.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="نماز حسین !!" href="http://ebimiri.mihanblog.com/post/449">نماز حسین !!</a></h2>
+<script>mihanblogPostLike('449','like')</script>
+						
+						<div class="post-body">
+							<p> <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>به مدعی بگویید : اول نماز حسین ! دوم عذای حسین ...!
+
+
+<div><br></div><div><br></div><div style="text-align: center;"><img src="http://file.mihanblog.com//public/user_data/user_files/73/217360/pic/Ashoora_Namaz2.jpg" height="200"  width="250"></div><br><br></p>
+						</div>
+																			<div class="post-tag">
+								<b> برچسب ها: </b>
+													 				<a href="http://ebimiri.mihanblog.com/post/tag/moharam95">moharam95</a> 
+					 										</div>
+													
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/449&title=نماز حسین !!"> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/449#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(449)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+												<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:یکشنبه 5 اردیبهشت 1395-06:51 ق.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="باز این دل دیوانه " href="http://ebimiri.mihanblog.com/post/447">باز این دل دیوانه </a></h2>
+<script>mihanblogPostLike('447','like')</script>
+						
+						<div class="post-body">
+							<p> <p> باز این دل دیوانه , عاشق شده دزدانه<br>می نالد و می گردد , زاین خانه به آن خانه<br><br>مقتول پی قاتل , هر گز نشود مایل<br>اما دل من دارد , رسم و ره پروانه<br><br>ای داد و فغان از دل , فریاد و امان از دل<br>آنگاه که خون گرید , پیمانه به پیمانه<br><br>در پا ی تو افتادن , افتادن و جان دادن<br>بهتر بود این دل را , از بستر شاهانه<br><br>کافر نکند جانا , کاری که کنی با ما<br>هرگز نکند اینسان , بیگانه به بیگانه<br><br>گفتم به دلم روزی , دیوانه چرا سوزی<br>جانم به لب آوردی , از اینهمه افسانه<br><br>با خنده رندانه , با پند حکیمانه<br>گفتا نزند طعنه , دیوانه به دیوانه
+</p><br><br></p>
+						</div>
+																			
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/447&title=باز این دل دیوانه "> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/447#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(447)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+												<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:سه شنبه 22 دی 1394-10:20 ق.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="قربون همه برادرای با معرفت" href="http://ebimiri.mihanblog.com/post/446">قربون همه برادرای با معرفت</a></h2>
+<script>mihanblogPostLike('446','like')</script>
+						
+						<div class="post-body">
+							<p> 
+من بهش میگم رفیق شما اسمشو بزار داداش یا برادر&nbsp;<div>ولی برا من چهار تا برادرم فقط چهار تا برادر نیستن چهار تا کوه هستن پشت سرم که هر جای دنیا هم کارم گیر کنه اولین کسایی که &nbsp;به کمکم میان داداشام هستن .&nbsp;</div><div><br></div><div style="text-align: center;"><img src="http://nmedia.afs-cdn.ir/v1/image/7KPC8lQbq6E9HefOcXsXZOnGNM9hYqs5OLTWTdu6kj0fTAD8mKcEgg/s/w535/" height="250"  width="250"></div>
+
+<br><br></p>
+						</div>
+																			
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/446&title=قربون همه برادرای با معرفت"> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/446#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(446)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+												<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:یکشنبه 6 دی 1394-08:30 ق.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="تمنا" href="http://ebimiri.mihanblog.com/post/445">تمنا</a></h2>
+<script>mihanblogPostLike('445','like')</script>
+						
+						<div class="post-body">
+							<p> خدای خوبم ، خدای مهربانم ، ای خدایی که هر چه خواستم به من دادی ، ای خدایی راضی ام به رضایت&nbsp;<div>ای خدایی که به من آموختی هر چه میخواهم از تو بخواهم و لاغیر&nbsp;</div><div>یاری ام کن&nbsp;</div><div>یاری ام کن فراموش کنم آنچه بر من گذشته و تلاش کنم بر آنچه آرزو دارم&nbsp;</div><div>یاری ام کن ظلم نکنم دروغ نگویم تهمت نزنم و آبروی بنده ای را نریزم&nbsp;</div><div>یاری ام کن جبران کنم آنجا که به بیراهه رفته ام&nbsp;</div><div><br></div><br><br></p>
+						</div>
+																			
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/445&title=تمنا"> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/445#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(445)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+												<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:یکشنبه 22 آذر 1394-01:21 ب.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="فقط کافیست خدا با شما باشد .." href="http://ebimiri.mihanblog.com/post/444">فقط کافیست خدا با شما باشد ..</a></h2>
+<script>mihanblogPostLike('444','like')</script>
+						
+						<div class="post-body">
+							<p> <div style="text-align: center;">نمیدانم چقدر به خدا اعتماد داری !&nbsp;</div><div style="text-align: center;">اما بدان هر چقدر به خدا اعتماد داری میزان ایمانت همانقدر است&nbsp;</div><div style="text-align: center;">کسی که ایمان به خدا دارد از هیچ نمیترسد &nbsp;چرا که :</div><div style="text-align: center;"><br></div><div style="text-align: center;"><font color="#009900">وَ اللَّهُ أَعْلَمُ بِأَعْدائِکُمْ وَ کَفی‏ بِاللَّهِ وَلِیًّا وَ کَفی‏ بِاللَّهِ نَصیراً &nbsp;(سوره : نساء آیه 45)</font></div><div style="text-align: center;"><font color="#009900"><br></font></div><div style="text-align: center;"><img src="http://file.mihanblog.com//public/user_data/user_files/73/217360/pic/4.jpg" height="200"  width="200"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font color="#cc0000"><b>من از هیچ چیز و هیچ کس نمیترسم چون خدا یاور من است ...</b></font></div><br><br></p>
+						</div>
+																			
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/444&title=فقط کافیست خدا با شما باشد .."> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/444#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(444)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+												<div class="date clearfix">
+							<div style="float:right">نگارنده:<a href="http://ebimiri.mihanblog.com/post/author/121388">ابراهیم میری</a></div>
+		
+							<div style="float:left">تاریخ:دوشنبه 18 آبان 1394-01:47 ب.ظ</div>
+						</div>
+
+
+
+						<h2><a class="tooltip" title="ترس ...." href="http://ebimiri.mihanblog.com/post/443">ترس ....</a></h2>
+<script>mihanblogPostLike('443','like')</script>
+						
+						<div class="post-body">
+							<p> روز سختی بود ... ترس تمام وجودش را فرا گرفته بود . مدام فکر میکرد افکار منفی و خیالات وجودش را فرا گرفته بود .&nbsp;<div>آن روز به دلیل حرف هایی که بین او و رئیسش رد و بدل شده بود به او گفته بودند که <font color="#cc0000">اخراج </font>میشود .</div><div>به تمام کسانی که میشناخت فکر میکرد که با کدام یک صحبت کند تا رئیس از اخراجش صرف نظر کند !!&nbsp;</div><div>لحظه های سختی بود&nbsp;</div><div>ترس از دست دادن شغل&nbsp;</div><div>ترس رو به رو شدن با مقامات بالاتر&nbsp;</div><div>ترس بی آبرو شدن&nbsp;</div><div>و ...</div><div>صدای اذان که به گوش رسید خودش را به نماز خانه رساند در حال نماز ترس بیشتر وجودش را گرفت.&nbsp;</div><div><br></div><div>افکارش به یک باره متمرکز یک چیز شد "&nbsp;<font color="#cc0000">إِیَّاكَ نَعْبُدُ وإِیَّاكَ نَسْتَعِینُ</font> " " <font color="#009900">تنها تو را میپرستم و تنها از تو یاری میجویم</font> "&nbsp;</div><div><br></div><div>&nbsp;پس چرا من ترسیدم ؟&nbsp;</div><div><br></div><div>چرا به خدا پناه نبردم ؟&nbsp;</div><div><br></div><div>مگر خدا حامی و راهنمای من نیست ؟</div><div><br></div><div>مگر من کاری غیر از چیزی که خدا گفته انجام داده ام ؟</div><div><br></div><div>پس چرا خدا را فراموش کردم ؟</div><div>&nbsp;</div><div>ای بنده ی من مگر از من قدرتی بالاتر هست ؟&nbsp;<font color="#009900">لا حَوْلَ وَلا قُوَّهَ اِلا بِالله اَلعَلِیِّ العَظیمِ</font></div><div><font color="#009900"><br></font></div><div><font color="#009900"><br></font></div><div>ای بنده من مگر من تو را تنها میگذارم ؟&nbsp;<font color="#009900">وَ نَحْنُ أَقْرَبُ إِلَیْهِ مِنْ حَبْلِ الْوَرید</font></div><div><font color="#009900"><br></font></div><div><br></div><div><span style="text-align: center;">نمازش تمام شد و &nbsp;دلش آرام شد</span><font color="#009900" style="text-align: center;">&nbsp;أَلا بِذِكرِ اللَّهِ تَطْمَئِنُّ القُلُوبُ&nbsp;</font></div><div><font color="#009900" style="text-align: center;"><br></font></div><div><font color="#009900" style="text-align: center;"><br></font></div><div style="text-align: center;"><font color="#000099">از این ماجرا سالها میگذرد و بعد از آخرین عملیاتی که با توکل به خدا ترسش را ریخت و پا به میدان مین گذاشت هنوز پیکرش پیدا نشده دوستانش گفتند تنها شخصی بود که زیر گلوله باران دشمن، &nbsp;معبر را باز کرد ولی در آخرین قدم ها بر اثر انفجار ذره ای از بدنش باقی نماند ....&nbsp;</font></div><div style="text-align: center;"><br></div><div style="text-align: center;">متن از ابراهیم میری&nbsp;</div><div><font color="#009900" style="text-align: center;"><br></font></div><div><font color="#009900" style="text-align: center;"><br></font></div><br><br></p>
+						</div>
+																			
+												<br>
+
+						<div class="comment clearfix">
+							<a style="float:left;margin-left:15px;"  target="_blank"  
+								href="http://www.cloob.com/share/link/add?
+								url=http://ebimiri.mihanblog.com//post/443&title=ترس ...."> 
+								<img alt="داغ کن - کلوب دات کام" src="http://cloob.com/public/public/images/icon/100c.gif" style='border: none; padding: 0px'/> 
+
+							</a>
+
+							<div  class="PostCom"> <a  target="_self" href="http://ebimiri.mihanblog.com/post/443#commentlist"  class="tooltip" title="نظرات دوستان راجب این مطلب "> نظرات (<script>setCommentCnt(443)</script>)  </a>&nbsp;</div>
+
+
+							<hr>			
+
+						</div>
+											</div>
+                    
+
+                    <!-- Comment -->
+                             
+                    
+<div>
+
+
+<style>
+
+/*** COMMENT BODY***/
+.comment_body{
+	 background: #F0F1F3;
+	 margin:10px;
+	 border-radius: 5px;
+	 border-right:5px solid #D7D7D7;
+	 overflow:hidden
+}
+
+
+
+.comment .comment_reply {
+background: #B8AB9A;
+border-right: 5px solid #a09383;
+border-radius: 5px;
+width: 350px;
+margin-top:10px;
+color:#ffffff;text-shadow:0px 0px 3px #ffffff;
+font:10px b titr,tahoma,sans-serif;
+overflow:hidden
+}
+
+
+
+.comment .name {
+font-weight: 600;
+color: #4E3E09;
+padding-right: 5px;
+text-align: right;
+line-height: 26px;
+float: right;
+}
+
+
+.comment .date {
+font-size: 10px;
+padding: 5px;
+color: #7E7E7E;
+float: left;
+}
+
+
+.comment .comemnt_web { 
+	 padding: 5px 0 5px 15px; color: #FF9933; direction: ltr; text-align: left; 
+	
+}
+
+
+.comment .comemnt_web a {
+color: #FF9933;
+text-decoration: underline;
+}
+
+
+
+.comment_det{
+	border-bottom:1px solid #EDEFFE;	
+	
+}
+
+.comment .name,.date,.comemnt_text,.comment_reply{
+	margin-right:3px;
+	padding-right:3px;	
+	
+}
+
+/**** COMMENT FORM ****/
+
+.comment_form {
+    background: none repeat scroll 0 0 #CCC;
+    border-radius: 5px 5px 5px 5px;
+    border-right: 5px solid #D7D7D7;
+    direction: rtl;
+    margin: 10px;
+    padding: 20px;
+}
+
+
+
+.comment_form label {
+	width: 100px;
+	display: block;
+	float: right;
+	text-align: left;
+	font-size: 11px;
+	color: #555;
+	padding-left: 10px;
+}
+
+
+.comment_form .comment_form_row {
+    margin: 3px 0;
+}
+
+
+#imageCodeWrapper .imageCode_input #imgstr {
+    font-size: 25px;
+    height: 34px;
+    width: 70px;
+}
+
+
+.comment_form .comment_form_textarea, .comment_form .comment_form_textbox {
+	border: 1px solid #C5C5C5;
+}
+.comment_form_textbox {
+	width:240px; 
+	
+}
+.comment_form_textarea{
+	width:240px; 
+}
+
+
+
+
+</style>
+
+</div>
+                    
+                 
+                    
+                    <!-- End Comment-->
+                    
+                    
+                    
+									<br>
+				<br>
+				<div align="center" class="page_box clearfix">
+											<ul>
+							<li>
+								<b>تعداد صفحات :</b>67							</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/1"><b>1</b></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/2"><span>2</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/3"><span>3</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/4"><span>4</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/5"><span>5</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/6"><span>6</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/7"><span>7</span></a>&nbsp;&nbsp;
+									</li>
+																<li>
+										<a href="http://ebimiri.mihanblog.com/page/8"><i>...</i></a>&nbsp;&nbsp;
+									</li>
+													</ul>
+									</div>
+
+				
+</div>
+			<div class="right">
+				<div class="sidebar">
+					<div class="nav">
+					  
+		<form id="frm-16077973325fd50a549208c" method="post" action="http://ebimiri.mihanblog.com/poll/new/fid/16077973325fd50a549208c/atrty/1607797332/avrvy/0/key/3a6923d502e0f26b1225e1319089ace9/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="292792" id="data[pollid]" />		
+					 	<div class="nav">
+					 		<h2>نظر سنجی</h2>
+					 		نظر شما در مورد وبلاگ؟		 					<br>
+															<label><input type="radio" name="data[answer]" value="v1">مثبت </label> <br>
+															<label><input type="radio" name="data[answer]" value="v2">منفی </label> <br>
+														<br>
+							<br>
+							<div align="center">
+								<input type="submit" value="ثبت رای " class="subbtn"/>
+							</div>	
+					 	</div>
+
+
+
+					 
+		<input type="hidden" name="frm-id" value="16077973325fd50a549208c" id="frm-id" /></form>
+						<h2>صفحات</h2>
+<a class="tooltip" title="صفحه اصلی " href="index.html">خانه</a>
+<a class="tooltip" title="تماس با مدیریت وبلاگ " href="javascript:messageForm()">تماس با مدیر</a>
+<a class="tooltip" title="جهت مشاهده وصیت نامه کد ملی بنده را وارد نمایید  " href="http://ebimiri.mihanblog.com/post/protected/429">وصیت نامه من </a>
+<a class="tooltip" title="گوگل پلاس " href="https://plus.google.com/109429512774237964115">من در گوگل پلاس</a>
+
+<a class="tooltip" title="پرفایل من در کلوب " href="http://www.cloob.com/name/ebimiri">من در کلوب</a>
+
+<a class="tooltip" title="من در اینستاگرام " href="http://instagram.com/ebimiri">من در اینستاگرام</a>
+
+
+<a class="tooltip" title="گروه اینترنتی بچه های مشرق زمین " href="http://orir.ir/group/">گروه اینترنتی من</a>
+
+<a class="tooltip" title="سایت شخصی من " href="http://orir.ir/ebi/" >سایت شخصی من</a>
+<a class="tooltip" title="سایت کاری من " href="http://birjandit.ir/" >سایت کاری من</a>
+
+					
+</div>
+
+
+					<div class="nav">
+						<h2>درباره وبلاگ</h2>
+
+	<div style="text-align:center; margin-bottom:10px;"><img src="../static.mihanblog.com/public/user_data/web_photo/73/217360.jpg@1875"  /></div>
+		
+							<div style="text-align:justify; direction:rtl;">سلام . من ابراهیم کوچکترین بنده خدا روزی آرزوهای بزرگی داشتم بزرگترین آرزوی من خوش نامی بود اما امروز بزرگترین آرزوی من گمنامی هست. شما هم دعا کنید من به آرزوی خودم برسم . </div>		
+					</div>
+											<div class="nav">
+							<h2>آرشیو</h2>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1395/7/2"> هفته دوم مهر 1395</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1395/2/1"> هفته اول اردیبهشت 1395</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/10/4"> هفته چهارم دی 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/10/1"> هفته اول دی 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/9/4"> هفته چهارم آذر 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/8/3"> هفته سوم آبان 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/8/1"> هفته اول آبان 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/7/4"> هفته چهارم مهر 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/7/2"> هفته دوم مهر 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/2/4"> هفته چهارم اردیبهشت 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/2/3"> هفته سوم اردیبهشت 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/2/1"> هفته اول اردیبهشت 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/1/4"> هفته چهارم فروردین 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/1/3"> هفته سوم فروردین 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1394/1/2"> هفته دوم فروردین 1394</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/12/4"> هفته چهارم اسفند 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/12/1"> هفته اول اسفند 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/11/4"> هفته چهارم بهمن 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/8/3"> هفته سوم آبان 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/8/2"> هفته دوم آبان 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/6/4"> هفته چهارم شهریور 1393</a>
+												    		<a href="http://ebimiri.mihanblog.com/post/archive/1393/6/3"> هفته سوم شهریور 1393</a>
+								
+				    
+							<a href="http://ebimiri.mihanblog.com/post/archive"><b>لیست آرشیوها</b></a></li>
+						</div>
+										
+					
+											<div class="nav">
+							<h2>آخرین پستها</h2>
+
+							
+			      				<a class="tooltip" title="نماز حسین !!"  href="http://ebimiri.mihanblog.com/post/449">نماز حسین !! </a>						
+				    		
+			      				<a class="tooltip" title="باز این دل دیوانه "  href="http://ebimiri.mihanblog.com/post/447">باز این دل دیوانه  </a>						
+				    		
+			      				<a class="tooltip" title="قربون همه برادرای با معرفت"  href="http://ebimiri.mihanblog.com/post/446">قربون همه برادرای با معرفت </a>						
+				    		
+			      				<a class="tooltip" title="تمنا"  href="http://ebimiri.mihanblog.com/post/445">تمنا </a>						
+				    		
+			      				<a class="tooltip" title="فقط کافیست خدا با شما باشد .."  href="http://ebimiri.mihanblog.com/post/444">فقط کافیست خدا با شما باشد .. </a>						
+				    		
+			      				<a class="tooltip" title="ترس ...."  href="http://ebimiri.mihanblog.com/post/443">ترس .... </a>						
+				    		
+			      				<a class="tooltip" title="سیصد و سیزده قمر"  href="http://ebimiri.mihanblog.com/post/442">سیصد و سیزده قمر </a>						
+				    		
+			      				<a class="tooltip" title="داستان شهادت "  href="http://ebimiri.mihanblog.com/post/441">داستان شهادت  </a>						
+				    		
+			      				<a class="tooltip" title="خدایا دوستت دارم "  href="http://ebimiri.mihanblog.com/post/440">خدایا دوستت دارم  </a>						
+				    		
+			      				<a class="tooltip" title="من یک انقلابی ام "  href="http://ebimiri.mihanblog.com/post/438">من یک انقلابی ام  </a>						
+				    		
+			      				<a class="tooltip" title="بترس از خدایم "  href="http://ebimiri.mihanblog.com/post/436">بترس از خدایم  </a>						
+				    		
+			      				<a class="tooltip" title="آغوش"  href="http://ebimiri.mihanblog.com/post/435">آغوش </a>						
+				    		
+			      				<a class="tooltip" title="می جویم تو را ..."  href="http://ebimiri.mihanblog.com/post/434">می جویم تو را ... </a>						
+				    		
+			      				<a class="tooltip" title="نیایش زیبا"  href="http://ebimiri.mihanblog.com/post/433">نیایش زیبا </a>						
+				    		
+			      				<a class="tooltip" title="با خدا ..."  href="http://ebimiri.mihanblog.com/post/432">با خدا ... </a>						
+				    		
+			      				<a class="tooltip" title="میم مثل مادر ..."  href="http://ebimiri.mihanblog.com/post/431">میم مثل مادر ... </a>						
+				    		
+			      				<a class="tooltip" title="کعبه به جز خانه دل نیست ..."  href="http://ebimiri.mihanblog.com/post/430">کعبه به جز خانه دل نیست ... </a>						
+				    		
+			      				<a class="tooltip" title="وصیت نامه"  href="http://ebimiri.mihanblog.com/post/429">وصیت نامه </a>						
+				    		
+			      				<a class="tooltip" title="ﻣﺸﺘﯽ‌‌ ﺧﺎﮎ"  href="http://ebimiri.mihanblog.com/post/427">ﻣﺸﺘﯽ‌‌ ﺧﺎﮎ </a>						
+				    		
+			      				<a class="tooltip" title="سال نو مبارک"  href="http://ebimiri.mihanblog.com/post/425">سال نو مبارک </a>						
+				    		
+			      				<a class="tooltip" title="روزهای بارونیتون خوش ..."  href="http://ebimiri.mihanblog.com/post/424">روزهای بارونیتون خوش ... </a>						
+				    		
+			      				<a class="tooltip" title="آیا تو چنان که می نمایی هستی؟"  href="http://ebimiri.mihanblog.com/post/423">آیا تو چنان که می نمایی هستی؟ </a>						
+				    		
+			      				<a class="tooltip" title="روز عشق مبارک "  href="http://ebimiri.mihanblog.com/post/422">روز عشق مبارک  </a>						
+				    		
+			      				<a class="tooltip" title="اهداف من "  href="http://ebimiri.mihanblog.com/post/421">اهداف من  </a>						
+				    		
+			      				<a class="tooltip" title="بیانات رهبر معظم انقلاب"  href="http://ebimiri.mihanblog.com/post/419">بیانات رهبر معظم انقلاب </a>						
+				    										<b><a  href="http://ebimiri.mihanblog.com/post/list">لیست آخرین پستها</a></b>
+			    		</div>
+										
+					 					 	<div class="nav">
+					 		<h2>پیوندها</h2>
+					 					    				<a class="tooltip" href="http://mohamadebrahim12.blogfa.com/" title=""  target="_blank">مشق شمع</a>							
+			   							    				<a class="tooltip" href="http://www.komeil66.blogfa.com" title="سلام غریبه"  target="_blank">سلام غریبه</a>							
+			   							    				<a class="tooltip" href="../aznooo.mihanblog.com/index.html" title=""  target="_blank">شهدای زنجانرود</a>							
+			   							    				<a class="tooltip" href="http://deltangiamsalam.mihanblog.com/" title=""  target="_blank">بغض بی صدا</a>							
+			   							    				<a class="tooltip" href="http://hosna2151.mihanblog.com/" title="به نام پادشاه بی عیب"  target="_blank">به نام پادشاه بی عیب</a>							
+			   							    				<a class="tooltip" href="../baraneaseg.mihanblog.com/index.html" title="باران عشق"  target="_blank">باران عشق</a>							
+			   							    				<a class="tooltip" href="http://raini.fardablog.com/" title="علوی"  target="_blank">علوی</a>							
+			   							    				<a class="tooltip" href="http://www.sayehaye77sefid.blogfa.com/" title="سایه های سفید"  target="_blank">سایه های سفید</a>							
+			   							    				<a class="tooltip" href="../www.siiahcheshm.mihanblog.com/index.html" title="ســــیه چشـــــم"  target="_blank">ســــیه چشـــــم</a>							
+			   							    				<a class="tooltip" href="http://20man30to.mihanblog.com/" title="دنیـــای موزیــــک"  target="_blank">دنیـــای موزیــــک</a>							
+			   							    				<a class="tooltip" href="http://missbahejab.mihanblog.com/" title=""  target="_blank">دختران مؤمن چادری</a>							
+			   							    				<a class="tooltip" href="../forhearts.mihanblog.com/index.html" title=""  target="_blank">بــــــــــرای دلــــــــــمـ</a>							
+			   							    				<a class="tooltip" href="http://www.opr89-fer.blogfa.com/" title="تكنولوژیست های جراحی فردوس"  target="_blank">تكنولوژیست های جراحی فردوس</a>							
+			   							    				<a class="tooltip" href="http://tajaleiiman.blogfa.com/" title=""  target="_blank">بسیج پیراپزشكی فردوس</a>							
+			   							    				<a class="tooltip" href="http://nazdiktaraz.mihanblog.com/" title=""  target="_blank">خداوند، نزدیک تر از...</a>							
+			   							    				<a class="tooltip" href="http://shahre-computer.iran.sc/" title=""  target="_blank">شهر کامپیوتر</a>							
+			   							    				<a class="tooltip" href="../www.beheshtiyan.mihanblog.com/index.html" title=""  target="_blank">بهشتیان</a>							
+			   							    				<a class="tooltip" href="../manto2.mihanblog.com/index.html" title="عاشقانه هایم"  target="_blank">عاشقانه هایم</a>							
+			   							    				<a class="tooltip" href="http://jebheyejonoob.blogfa.com/" title=""  target="_blank">سرزمین نور</a>							
+			   							    				<a class="tooltip" href="http://emzabazar.mihanblog.com/" title=""  target="_blank">طراحی امضا</a>							
+			   							    				<a class="tooltip" href="http://javanroodcity.mihanblog.com/" title=""  target="_blank">جوانرودسیتی</a>							
+			   							    				<a class="tooltip" href="../baran-nataly.mihanblog.com/index.html" title=""  target="_blank">بــ♥ـــاران</a>							
+			   							    				<a class="tooltip" href="http://parvin327.blogfa.com/" title="مهربانترین"  target="_blank">مهربانترین</a>							
+			   							    				<a class="tooltip" href="http://basirat-313.ir/" title="منتظران یوسف زهرا"  target="_blank">منتظران یوسف زهرا</a>							
+			   							    				<a class="tooltip" href="http://www.asal-bala.blogfa.com/" title=""  target="_blank">عسل بلا</a>							
+			   							    				<a class="tooltip" href="http://birjandit.ir" title=""  target="_blank">بیرجند آی تی</a>							
+			   							    				<a class="tooltip" href="http://zeinabkashan.blogfa.com/" title="امان از تنهایی"  target="_blank">امان از تنهایی</a>							
+			   							    				<a class="tooltip" href="http://nightl-o-v-e.mihanblog.com/" title=""  target="_blank">سکوت شب</a>							
+			   							    				<a class="tooltip" href="http://www.mrzh65.blogfa.com/" title="ღ♥ღچشمـــ های خیــ ــسღ♥ღ"  target="_blank">ღ♥ღچشمـــ های خیــ ــسღ♥ღ</a>							
+			   							    				<a class="tooltip" href="http://mohajerdow.mihanblog.com/" title=""  target="_blank">دلنوشته</a>							
+			   							    				<a class="tooltip" href="http://www.orir.ir" title="پایگاه مجازی شرق ایران | پاتوق بچه های مشرق زمین | شهر بیرجند | استان خراسان جنوبی"  target="_blank">پاتوق بچه های مشرق زمین</a>							
+			   					
+			    		<a href="http://ebimiri.mihanblog.com/link/"><b>همه پیوندها</b></a>
+			    		</div>
+					 					 
+					 
+					 						 <div class="nav">
+					
+						 </div>
+					 					 
+					 
+					  
+					 
+					 
+					 
+					
+					 
+					 
+					 					 	<div class="nav">
+					 		<h2>نویسندگان</h2>
+					 				        				<p><a href="http://ebimiri.mihanblog.com/post/author/121388"><img src="../static.mihanblog.com/public/user_data/user_photo/41/121388.jpg" style="width:16px;" /></a><a class="clearfix" href="http://ebimiri.mihanblog.com/post/author/121388" >	ابراهیم میری(397)</a>	</p>			
+									        		</div>
+					 <center>
+							<br>
+-----------------
+							<br>
+من در یاهو مسنجر:
+<script language="javascript" src="http://orir.ir/yahoo/index.php"></script>
+							<br>
+							<br>
+-----------------
+							<br>
+
+من در گوگل پلاس :
+				     	<a href="https://plus.google.com/109429512774237964115"><img src="http://blog.hubspot.com/Portals/249/images/google-plus-logo.jpg" height="100" width="100" alt="Admin Logo" style="border:0px"/></a>
+</center>
+
+
+
+
+							<br>
+
+							<br>
+
+
+		 
+					 
+					 					 	<div class="nav">
+					 		<H2>ابر برچسبها</H2>
+					 									
+								<a href="http://ebimiri.mihanblog.com/post/tag/moharam95" style="font-size:1em">	moharam95</a> 
+													</div>
+					 					 
+					 
+										 					 <div class="nav">
+					 	<h2>آمار وبلاگ</h2>
+					 	کل بازدید : <script>getStatVar('total_view');</script>						<br>
+						بازدید امروز :<script>getStatVar('today_view');</script>						<br>
+						بازدید دیروز : <script>getStatVar('yesterday_view');</script>						<br>
+						بازدید این ماه : <script>getStatVar('this_month_view');</script>						<br>
+						بازدید ماه قبل : <script>getStatVar('last_month_view');</script>						<br>
+						تعداد نویسندگان : <script>getStatVar('total_author');</script>						<br>
+						تعداد کل پست ها : <script>getStatVar('total_post');</script>						<br>
+						آخرین بازدید : <script>getStatVar('last_view_date');</script>						<br>
+						آخرین بروز رسانی : <script>getStatVar('modify_date');</script>					 </div>
+								 <br>
+					 <br>
+					 <div align="center" >
+				     	<br>
+				     	<a href="http://www.birjandit.ir"><img src="http://birjandit.ir/wp-content/uploads/2012/04/logo.gif" alt="Admin Logo" style="border:0px"/></a>
+
+
+				     	<br>
+<br>
+<div style="text-align: center;"><a href="http://www.mahak-charity.org/main/fa/iwanttohelpmahakrightnow" target="_blank" title="کمک به کودکان سرطانی محک"><img src="http://mahak-charity.org/main/templates/mahak/images/mahak_chareity.png"></a></div>
+		     	<br>
+<br>
+<div style="text-align: center;"><a href="http://www.ehda.ir/home.aspx" target="_blank" title="اهدا عضو"><img src="http://www.ehda.ir/StaticPages/Pictures/120X120.gif"></a></div>
+		     	<br>
+
+ <div style="position:fixed;bottom:15px;z-index:300;left:15px;"color:#ff0000">
+	<a href="http://orir.ir/group" target="" title="عضویت در گروه"><img src="http://www.webdesign24.ir/images/newslfix.png"></a>
+
+</div>
+				     	<br>
+				     	<div align="center" ></div>
+				     	<br>
+				     	<br>
+				     	<br>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	
+</div>
+<div class="footer">
+				<p><b>POWERED  BY <font style="color:#f00;font-size:14px">B</font>irjand <font style="color:#f00;font-size:14px">IT</font>.IR</b> .Theme is created by: <a href="http://www.birjandit.ir"><b>Ebrahim Miri</b></a></p>
+<br>
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=2095079&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=2095079" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+
+</div>
+
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'ebimiri.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

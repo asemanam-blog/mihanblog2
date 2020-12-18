@@ -1,0 +1,1653 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 1399/09/22');
+		/*1469522*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[226]='2';commentCnt[227]='0';commentCnt[230]='1';commentCnt[231]='0';commentCnt[232]='0';commentCnt[233]='0';commentCnt[234]='0';commentCnt[235]='0';commentCnt[236]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[226]='0';
+mihanblogDisLikeArrCnt[226]='0';
+mihanblogLikeArrCnt[227]='0';
+mihanblogDisLikeArrCnt[227]='0';
+mihanblogLikeArrCnt[230]='0';
+mihanblogDisLikeArrCnt[230]='0';
+mihanblogLikeArrCnt[231]='0';
+mihanblogDisLikeArrCnt[231]='0';
+mihanblogLikeArrCnt[232]='0';
+mihanblogDisLikeArrCnt[232]='0';
+mihanblogLikeArrCnt[235]='0';
+mihanblogDisLikeArrCnt[235]='0';
+mihanblogLikeArrCnt[236]='0';
+mihanblogDisLikeArrCnt[236]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://diarebehesht.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://diarebehesht.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','223');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','چهارشنبه 1398/12/28');
+	
+	setStatVar('today_view','39');
+	setStatVar('yesterday_view','36');
+	
+	setStatVar('this_month_view','2134');
+	setStatVar('last_month_view','2009');
+
+	setStatVar('total_view','253330');
+	setStatVar('last_view_date','شنبه 1399/09/22 (16:53)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://diarebehesht.mihanblog.com/statupdate/?data[refereruri]=http://diarebehesht.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1395/1&data[sdate]=1607780150&data[hash]=237a228b94f50eda8a32fd8240cfe791&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://diarebehesht.mihanblog.com/post/archive/1395/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://diarebehesht.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://diarebehesht.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>شهربهشت(رضوانشهر)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="geo.region" CONTENT="IR" />
+<meta name="googlebot" content="INDEX, follow" />
+<meta name="robots" content="index, follow">
+<meta name="description" content="شهربهشت(رضوانشهر) - مطالب  فروردین 1395 -                خدا را برآن بنده بخشایش است             که خلق از وجودش در آسایش است (سعدی)   - شهربهشت(رضوانشهر)">
+<meta name="keywords" content="شهربهشت(رضوانشهر) - مطالب  فروردین 1395,diarebehesht, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="شهربهشت(رضوانشهر)" rel="nofollow" href="../../rss/index.html">
+<link href="http://www.weblogskin.com/themes/011/m11.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div align="center">
+<div class=Back-WS>
+	
+<table border="0" width="1000" cellspacing="0" cellpadding="0">		
+
+
+<tr><td colspan="3" id=Header-WS>			
+
+
+<div id=BlogTitle><br>شهربهشت(رضوانشهر)</div><div style="width:100%;height:23;float:right"></div>
+<div id=BlogDescription>               خدا را برآن بنده بخشایش است             که خلق از وجودش در آسایش است (سعدی)  </div>	
+	
+
+<div class=TopMenu><div style="float:right;width:782;direction:rtl">
+<div style="width:30;height:20;float:right"></div>
+
+<a href="../../../index.html"><img border="0" src="http://www.weblogskin.com/themes/011/blank.gif" width="80" height="32" hspace="1"></a>
+<a href="../../list.html"><img border="0" src="http://www.weblogskin.com/themes/011/blank.gif" width="80" height="32" hspace="1"></a>
+<a href="javascript:messageForm()"><img border="0" src="http://www.weblogskin.com/themes/011/blank.gif" width="80" height="32" hspace="1"></a>
+<a target="_blank" href="http://www.weblogskin.com"><img border="0" src="http://www.weblogskin.com/themes/011/blank.gif" width="80" height="32" hspace="1"></a>
+<a target="_blank" rel="nofollow" href="../../rss/index.html"><img border="0" src="http://www.weblogskin.com/themes/011/blank.gif" width="70" height="32" hspace="1"></a>
+
+</div>
+
+
+</div>    
+
+
+</td></tr>
+
+<tr><td width="220" valign="top">
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نویسندگان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../author/1235435.html">  حمید عزیزی (خاک)  223 </a></div></div>
+<div class=LowSid></div></div>
+
+
+		
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://www.weblogskin.com">قالب وبلاگ</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://farsi.khamenei.ir">پایگاه اطلاع‌رسانی دفتر حفظ و نشر آثار حضرت آیت‌الله‌العظمی سیدعلی خامنه‌ای (مد‌ظله‌العالی)</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.leader.ir/langs/fa/">پایگاه اطلاع رسانی دفتر مقام معظم رهبری</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.shabestan.ir/pages/makarem">صفحه شخصی آیت الله مکارم شیرازی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.nahad.ir">نهاد نمایندگی مقام معظم رهبری در دانشگاهها</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://makarem.ir/index.aspx?lid=0">دفترحضرت آیت الله مکارم شیرازی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.irdc.ir">مرکزاسناد انقلاب اسلامی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://maarefquran.net">پایگاه تخصصی قرآن کریم</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://parsquran.com">جستجوی قرآن کریم _فارسی  عربی  انگلیسی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://basij-fani.irib.ir/">بسیج سازمان صدا وسیما</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://rahpouyansepehr.ir/fa/index.php?option=com_content&amp;view=frontpage">باشگاه فرهنگی ورزشی رهپویان سپهر رضوانشهر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://gilan.basij.ir">پایگاه اطلاع رسانی سپاه گیلان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.gilan.ir">استانداری گیلان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://rezvanshahr.gilan.ir">فرمانداری رضوانشهر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.rezvanshahr.ir/">شهرداری رضوانشهر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.nedayeenghelab.com/">ندای انفلاب</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.bmi.ir/">بانک ملی ایران</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.irannuclear.net">ایران وفناوری هسته ای</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://www.ebanksepah.ir">بانکداری اینترنتی بانک سپه</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.sabteahval.ir/">ثبت احوال کشور</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.time.ir/">ساعت وتقویم رسمی ایران</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.farsnews.com/newsv.php?srv=4">تازه ترین اخبار ورزشی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.tebyan.net/newindex.aspx?pid=18392">تبیان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.ana.ir">خبرگزاری آنا</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.iauctb.ac.ir">دانشگاه آزاداسلامی واحدتهران مرکزی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.iaurasht.ac.ir">دانشگاه آزاداسلامی واحدرشت</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://fshiau.ac.ir/default.aspx">دانشگاه آزاد اسلامی واحد فومن وشفت</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://sowmesaraiau.ac.ir/">دانشگاه آزاداسلامی واحدصومعه سرا</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://kayhan.ir">روزنامه کیهان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://gilnegah.ir">روزنامه‌های-گیلان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://davary.com/newspapers.aspx">فهرست روزنامه های ایران</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../www.mihanblog.com/index.html">میهن بلاگ</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.weblogskin.com">قالب میهن بلاگ</a></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/azizi.html">حجت الاسلام احمدرضا عزیزی رضوان شهری در گفت‌و‌گو اختصاصی با خبرنگار صبح توس</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/b.html">رضوانشهر گیلان</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/21.html">دیوان شمس/مرده بدم زنده شدم گریه بدم خنده شدم</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/20.html">سعدی شیرازی:خدا را برآن بنده بخشایش است        که خلق از وجودش در آسایش است</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/14.html">متن کامل زیارت عاشورا همراه با ترجمه فارسی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/11.html">احادیث وپند واندرز</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/13.html">شعروادب</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/c.html">سیاسی ،اجتماعی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/d.html">مذهبی ،اعتقادی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/g.html">طبیعی ،جغرافیایی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/10.html">فرهنگی ورزشی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/12.html">معرفی غذاها وآشپزی</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/k.html">خواص حبو بات ،دانه ها</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/f.html">خواص میوه ها، سبزیجات1</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/18.html">خواص میوه ها سبزیجات2</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/i.html">بستگان</a></div><div class=li-Sid>
+<a rel="nofollow" href="../../../extrapage/j.html">دوستان</a></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/امام+حسین.html" style="font-size:1.6em">
+		امام حسین</a> 				<a href="../../tag/نقشه+جامع+علمی+کشور.html" style="font-size:1.4em">
+		نقشه جامع علمی کشور</a> 				<a href="../../tag/علم+درایران.html" style="font-size:1.4em">
+		علم درایران</a> 				<a href="../../tag/بهار.html" style="font-size:1.1em">
+		بهار</a> 				<a href="../../tag/یامحول.html" style="font-size:1.1em">
+		یامحول</a> 				<a href="../../tag/امام+خمینی.html" style="font-size:1.8em">
+		امام خمینی</a> 				<a href="../../tag/عراق.html" style="font-size:1.1em">
+		عراق</a> 				<a href="../../tag/پیامبر.html" style="font-size:1em">
+		پیامبر</a> 				<a href="../../tag/احادیث.html" style="font-size:1.4em">
+		احادیث</a> 				<a href="../../tag/آمریکا.html" style="font-size:1.7em">
+		آمریکا</a> 				<a href="../../tag/یامقلب.html" style="font-size:1.1em">
+		یامقلب</a> 				<a href="../../tag/وضعییت+دانشگاهها.html" style="font-size:1.4em">
+		وضعییت دانشگاهها</a> 				<a href="../../tag/وبلاگ+رضوانشهر.html" style="font-size:1.5em">
+		وبلاگ رضوانشهر</a> 				<a href="../../tag/انتخابات.html" style="font-size:1.1em">
+		انتخابات</a> 				<a href="../../tag/شاه.html" style="font-size:1.4em">
+		شاه</a> 				<a href="../../tag/ملت.html" style="font-size:1em">
+		ملت</a> 				<a href="../../tag/علی+اکبر.html" style="font-size:1em">
+		علی اکبر</a> 				<a href="../../tag/حمید+عزیزی.html" style="font-size:1.5em">
+		حمید عزیزی</a> 				<a href="../../tag/عیدفطر.html" style="font-size:1em">
+		عیدفطر</a> 				<a href="../../tag/ولایت.html" style="font-size:1.2em">
+		ولایت</a> 				<a href="../../tag/پژوهش.html" style="font-size:1.4em">
+		پژوهش</a> 				<a href="../../tag/سوریه.html" style="font-size:1.3em">
+		سوریه</a> 				<a href="../../tag/امام+علی(ع).html" style="font-size:2em">
+		امام علی(ع)</a> 				<a href="../../tag/دانش+آموزان.html" style="font-size:1em">
+		دانش آموزان</a> 				<a href="../../tag/انقلاب.html" style="font-size:1em">
+		انقلاب</a> 				<a href="../../tag/دروغ.html" style="font-size:1em">
+		دروغ</a> 				<a href="../../tag/اربعین.html" style="font-size:1em">
+		اربعین</a> 				<a href="../../tag/فاطمه.html" style="font-size:1.1em">
+		فاطمه</a> 				<a href="../../tag/حج.html" style="font-size:1.1em">
+		حج</a> 				<a href="../../tag/بقیه+الله.html" style="font-size:1.5em">
+		بقیه الله</a> 				<a href="../../tag/برجام.html" style="font-size:1.1em">
+		برجام</a> 				<a href="../../tag/یامدبر.html" style="font-size:1.1em">
+		یامدبر</a> 				<a href="../../tag/تروریسم.html" style="font-size:1.2em">
+		تروریسم</a> 				<a href="../../tag/شهادت.html" style="font-size:1.2em">
+		شهادت</a> 				<a href="../../tag/عاشورا.html" style="font-size:1.2em">
+		عاشورا</a> 				<a href="../../tag/روزپاسدار.html" style="font-size:1.1em">
+		روزپاسدار</a> 				<a href="../../tag/انگلیس.html" style="font-size:1em">
+		انگلیس</a> 				<a href="../../tag/مناسبتها.html" style="font-size:1.5em">
+		مناسبتها</a> 				<a href="../../tag/امامت.html" style="font-size:1.1em">
+		امامت</a> 				<a href="../../tag/کربلا.html" style="font-size:1.6em">
+		کربلا</a> 				<a href="../../tag/سال+نو.html" style="font-size:1.1em">
+		سال نو</a> 				<a href="../../tag/کیفیت+آموزش+عالی.html" style="font-size:1.4em">
+		کیفیت آموزش عالی</a> 				<a href="../../tag/پادشاهی.html" style="font-size:1.5em">
+		پادشاهی</a> 				<a href="../../tag/ارتباط+صنعت+بادانشگاه.html" style="font-size:1.3em">
+		ارتباط صنعت بادانشگاه</a> 				<a href="../../tag/روز+زن.html" style="font-size:1em">
+		روز زن</a> 				<a href="../../tag/انرژی+هسته+ای.html" style="font-size:1.5em">
+		انرژی هسته ای</a> 				<a href="../../tag/امام+خامنه+ای.html" style="font-size:1.1em">
+		امام خامنه ای</a> 				<a href="../../tag/عیدنوروز.html" style="font-size:1.1em">
+		عیدنوروز</a> 				<a href="../../tag/ایران.html" style="font-size:1em">
+		ایران</a> 				<a href="../../tag/لبنان.html" style="font-size:1.1em">
+		لبنان</a> </div>
+</center><div class=LowSid></div></div>
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.martier.ir" title="فروشگاه قهوه مارتیر
+
+قهوه اسپرسو
+قهوه فرانسه
+قهوه ترک
+قهوه فوری
+هات چاکلت
+کاپوچینو
+چای بلومینگ
+دمنوش
+پودرکاکئو
+
+فروشگاه قهوه مارتیر
+تهران خیابان مولوی میدان محمّدیه خیابان خیام جنوبی پاسا دُرّ محمّدیه واحد 32
+شماره 1 : 02155165138
+شماره 2 : 02155165139
+فلسفی : 09120231730
+غفاری : 09194499854">فروشگاه قهوه مارتیر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.martier.ir" title="فروشگاه قهوه مارتیر
+
+قهوه اسپرسو
+قهوه فرانسه
+قهوه ترک
+قهوه فوری
+هات چاکلت
+کاپوچینو
+چای بلومینگ
+دمنوش
+پودرکاکئو
+
+فروشگاه قهوه مارتیر
+تهران خیابان مولوی میدان محمّدیه خیابان خیام جنوبی پاسا دُرّ محمّدیه واحد 32
+شماره 1 : 02155165138
+شماره 2 : 02155165139
+فلسفی : 09120231730
+غفاری : 09194499854">فروشگاه قهوه مارتیر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://gizmusic.com" title="دانلود اهنگ جدید ایرانی">دانلود آهنگ قدیمی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://arawebco.ir/category/wp-themes/" title="دانلود قالب فارسی وردپرس">دانلود قالب فارسی وردپرس</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://mohandes360.ir" title="شبیه سازی با سیلواکو (Silvaco)">وبسایت مهندسی الکترونیک و کامپیوتر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://carpetcrm.ir/" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.">قالیشویی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://tnvj.ir/" title="باسلام و احترام
+وبلاگ بسیار مفید و کاربردی ایجاد کرده اید، بسیار خرسندم از بررسی وبلاگتان. در صورت تمایل حاضر به تبادل لینک هستیم. آدرس سایت ما http://tnvj.ir/ می باشد.
+در صورت تمایل به تبادل لینک ابتدا لینک ما را در قسمت پیوندهای وبلاگتان درج نمایید و سپس از طریق ایمیل به آدرس HAMID.AZADI74@GMAIL.COM اطلاع دهید.
+پیشاپیش از همکاری و مساعدت شما سپاسگزارم.">تبادل لینک</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://www.zarrinhoor.com" title="سلام
+وبلاگی با محتوای جالبی دارید خسته نباشید
+ما هم یک سایت مهندسی داریم که کلی پست جذاب و اختصاصی آماده کردیم (ترفند های فتوشاپ ،ویندوز،اندروید و...+آموزشهای برنامه نویسی و ...) که همشون رایگانه...
+در کنارشم ممبر واقعی تلگرام و برای فروش داریم ..
+ممنون میشم بهمون سر بزنید و لینکمون رو تایید کنید">ممبر تلگرام</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://www.banehome.com/" title="لوازم خانگی در بانه">فروشگاه بانه</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://khod-pardaz.ir" title="سلام فرهیخته گرامی لطفا ما را لینک کنید   با تشکر">خودپرداز</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://hamva.ir/" title="سلام دوست خوبم وبلاگ زیبا و جالبی داشتی ،منم یه سایت کنکوری دارم  به من هم سر بزن و لطفا لینک من رو هم تایید کن . مرسی
+منتظر حضورت هستم">تخمین رتبه کنکور</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://raze22.blogfa.com" title="">رازهای پنهان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://goroohema94.blogfa.com" title="">دوستان معراجی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.tashohada.ir" title=""> سایت تا شهدا </a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../azvaj.mihanblog.com/index.html" title="">ازواج</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://link118.com" title=""> تبادل لینک</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://jomalatziba.blogfa.com" title="">حکیمانه</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://hamedzamani11.persianblog.ir/" title="">طرفداران حامد زمانی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.sainaroshan.com" title="">تبادل لینک هوشمند</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../sanazahra.mihanblog.com/index.html" title="">درس مفید</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.nabae.blog.ir" title="با سلام....
+ 
+این یک وبلاگ علمی فرهنگی و تفریحی است از شما تقاضا میشود در صورت تمایل لینک تبادل را قرار دهید.
+این هم آدرس کانل تلگرامی وبلاگ:https://telegram.me/nabaeblog">نبآ</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://hamisheonline.com" title="وبلاگ بسیار عالی و فعالی داری
+واقعا مطالبت معرکست و عالین
+لطفا همینطور ادامه بده و پیشنهاد میدم یک دامنه بخر و تبدیل به سایتش کن
+من سروناز هستم و هر از چند گاهی بهتون سر میزنم به من هم سر بزن خوشحال میشم
+دوستدار شما سروناز">کارشناسی ارشد فراگیر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://messagefa.ir/category/sms/%D8%A7%D8%B3-%D8%A7%D9%85-%D8%A7%D8%B3-%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87/" title="مرجع اس ام اس های عاشقانه | جوک | فلسفی | زیبا | دلتنگی 
+
+مسیج فا">اس ام اس عاشقانه</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../akharinmouod.mihanblog.com/index.html" title="">وبلاگ حضرت حجت بن الحسن (ع)</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://sedayburoon.blogfa.com" title="">یه کوله دلشکستگی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../mahbarkoohan.mihanblog.com/index.html" title="">دکترنظری چروده</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://shargh.us/forum/index.php" title="">دانشنامه دین اسلام</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://sedayepayekhaterat.persianblog.ir" title="">صدای پای خاطرات</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.shohadaisaarnezamyian.blogsky.com" title="">بسیجیان ،جهادگران و نظامیان دریادل</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.trane.roomfa.com" title="">ترانه زندگی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://parandebash10.blogfa.com" title="">پرنده</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://rahgozare72.blogfa.com" title="">ره گذر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://upload-pic.ir" title="اگر میخوای بازدیدت چند برابر بشه لینکمو تایید کن تا لینکتو تو سایتم قرار بدم وبلاگ خوبی داری">آپلود عکس</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../khotbehsara.mihanblog.com/index.html" title="">آنایوردم ایران سرای امید</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.1abzar.com" title="">ابزار سایت و وبلاگ</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://iphone-tasviri.ir/13-iphone-taba" title="آیفون تصویری تابا">آیفون تصویری تابا</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://oshaghabalfazl.blogfa.com/" title="">کانون عشاق ابوالفضل</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.hejabefafe80.blogfa.com" title="">حجاب من سنگر من</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://potak.ir/" title="سلام همکار عزیز، وب بسیار زیبایی دارید لطفا تعرفه تبلیغات تو وبت رو برام ارسال کن بعدم یه سر بزن حتما کارت دارم درباره همکاری در زمینه های دیگه موفق باشی">تبلیغات در وب شما</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../mahdinameh.mihanblog.com/index.html" title="">مهدی نامه</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.ashoora.ir" title="">پایگاه جامع عاشورا</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://taleshen.ir" title="">پایگاه تالش شناسی علی عبدلی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://ir-proje.ir" title="">مرکز دانلود انواع طرح توجیهی و کارآفرینی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../malayer55.mihanblog.com/index.html" title="">پاتوق یاران مهدی(عج) ملایر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://doosti123.blog.ir" title="">یادشان همیشه جاودان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://masal72.blogfa.com" title="">حجاب </a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../rahe-rastegare.mihanblog.com/index.html" title="">راه سعادت انسان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://hadiseeshghtwo.blogsky.com/" title="">حدیث عشق(2)</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../maryam-doosti123.mihanblog.com/index.html" title="">من وخــــــــــــــــــدا</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://hadiseeshghtwo.blogfa.com" title="">حدیث عشق</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://leader313.blogfa.com/" title="">حضرت عشق</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../www.janfadayerahbar.mihanblog.com/index.html" title="">جانم فدای رهبر</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://pish.ir/" title="">بهترین سایتهای ایران زمین</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.tanzimekhanevadeh.com/" title="">پایگاه اطلاع رسانی تنظیم خانواده</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.khazaronline.com/" title="">خزرانلاین</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://monoblog.ir" title="">وبلاگ رایگان</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../tarikhy.mihanblog.com/index.html" title=""> نگاه به تاریخ اسلام</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="../../../../sarbazaneemamezaman.mihanblog.com/index.html" title=""> رضوانشهر شهر بهشت2</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.rouzshomar.ir/" title="">روزشمار-تاریخ-انقلاب</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.rasekhoon.net/calender/" title="">تقویم تاریخ( راسخون)</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.cgie.org.ir/fa/news-129" title=""> مرکز دائر‌ه‌المعارف بزرگ اسلامی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://tabdil.net/Calendar/Calendar.aspx" title="">روز شمار و تقویم تاریخ </a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="https://billing.mci.ir/billing" title="">رویت صورتحساب تلفن همراه اول</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.mci.ir/" title="">تلفن همراه اول</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.hadithlib.com/" title="">کتابخانه احادیث</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.basirat.ir/Default/" title="">پایگاه تحلیلی خبری بصیرت</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.aviny.com/" title="">سایت جامع فرهنگی مذهبی شهید آوینی</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.sibtayn.com/fa" title="">مؤسسه جهانی سبطین</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://pichak.net" title="">پیچک</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://www.irimo.ir/" title="">هواشناسی کشور</a></div><div class=li-Sid>
+<a target="_blank" rel="nofollow" href="http://negarkhaneh.ir/~han" title="">نگارخانه ایرانی</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.weblogskin.com" title="قالب میهن بلاگ">قالب میهن بلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://www.weblogskin.com/themes">قالب وبلاگ</a></div></div>
+<div class=LowSid></div></div>
+	
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک های مفید</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://sanel.ir">مجله تفریحی</a>
+</div>
+<div class=li-Sid><a href="http://behinpayam.com">سامانه پیام کوتاه</a>
+</div>
+<div class=li-Sid><a rel="follow" title="کارت شارژ" href="http://tehrancardcharge.com/">کارت شارژ</a>
+</div>
+<div class=li-Sid><a href="http://salamt.niniyoo.com/">سلامت</a>
+</div>
+<div class=li-Sid><a rel="follow" title="کاشت مو" href="http://bartarinha.com/category/335/%DA%A9%D8%A7%D8%B4%D8%AA-%D9%85%D9%88/%D8%AF%DA%A9%D8%AA%D8%B1-%D9%BE%D9%88%D8%B3%D8%AA-%D9%88-%D9%85%D9%88">کاشت مو</a>
+</div>
+</div>
+<div class=LowSid></div></div>
+			
+</td>
+
+
+<td width="563" valign="top">
+
+<div align="center">
+
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/236">تبریک ولادت حضرت امام جوادالائمه(ع)</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<div align="center"><font face="Mihan-IransansBold" size="4"><font color="#CC33CC">سالروز ولادت خجسته وپربرکت&nbsp;</font> <font color="#009900">حضرت امام جواد(ع)</font><font color="#CC33CC">مبارکبا<b>د</b></font></font><br></div><div align="center"><img src="http://www.netshahr.com/images/netshahr/akhbar/ejtemaei/94/FarvardinMah/emam-javad.jpg" class="irc_mi iD86ZO50CgJA-pQOPx8XEepE" alt="" style="margin-top: 0px;" height="198" width="456"><br><p style="text-align: justify;" align="justify"><span style="color: #800080;"><strong>&nbsp;<font face="Mihan-Iransans">امام نهم شیعیان حضرت جواد (ع ) در ۱۰ رجب سال ۱۹۵ هجری در مدینه به دنیا آمد.</font></strong></span></p><div align="justify"><font face="Mihan-Iransans">
+</font></div><p style="text-align: justify;" align="justify"><font face="Mihan-Iransans" color="#000099">&nbsp;</font><font face="Mihan-Iransans" color="#000099">نام نامی اش محمد معروف به جواد و تقی است
+ . القاب دیگری مانند : رضی و متقی نیز داشته ، ولی تقی از همه معروفتر می 
+باشد . مادر گرامی اش سبیکه یا خیزران است که این دو نام در تاریخ زندگی آن
+ حضرت ثبت است .</font><font face="Mihan-Iransans" color="#000099"><br></font></p><p style="text-align: justify;" align="justify"><font face="Mihan-Iransans" color="#000099">امام محمد تقی (ع ) هنگام وفات پدر 8 ساله
+ بود . پس از شهادت جانگداز حضرت رضا علیه السلام در اواخر ماه صفر سال 
+203ه مقام امامت به فرزند ارجمندش حضرت جوادالأئمه (ع ) انتقال یافت . 
+مأمون خلیفه عباسی که همچون سایر خلفای بنی عباس از پیشرفت معنوی و نفوذ 
+باطنی امامان معصوم و گسترش فضایل آنها در بین مردم هراس داشت ، سعی کرد 
+ابن الرضا را تحت مراقبت خاص خویش قرار دهد . " از اینجا بود که مأمون 
+نخستین کاری که کرد ، دختر خویش ام الفضل را به ازدواج حضرت امام جواد (ع )
+ درآورد ، تا مراقبی دایمی و از درون خانه ، بر امام گمارده باشد .</font></p><div align="justify"><font face="Mihan-Iransans">
+</font></div><div style="text-align: justify;" align="justify"><font face="Mihan-Iransans">&nbsp;</font><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font></font></div></div>
+
+
+
+
+
+
+<br><a href='http://diarebehesht.mihanblog.com/post/236'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/15.html">
+			ولایت وامامت</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AC%D9%88%D8%A7%D8%AF" >امام جواد</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF%D8%AA%D9%82%DB%8C" >محمدتقی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%A7%D9%85%D9%88%D9%86%20%D8%AE%D9%84%DB%8C%D9%81%D9%87%20%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C" >مامون خلیفه عباسی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA" >احتجاجات</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%B9%D8%AA%D8%B5%D9%85%20%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C" >معتصم عباسی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%20%D8%A7%D9%84%D9%81%D8%B6%D9%84" >ام الفضل</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B8%D9%85%DB%8C%D9%86" >کاظمین</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 1395/01/30  ]  [ 07:15  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(236)">نظرات  <script>setCommentCnt(236)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/235">مناسبت روز ارتش جمهوری اسلامی ایران</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+<div align="center"><font face="Mihan-IransansBold" color="#CC9933" size="3"><font color="#3333FF"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">روزخجسته</font> ارتش <font color="#33CC00">جمهوری<font color="#FF99FF"> </font></font><font color="#FF99FF">اسلامی </font><font color="#FF0000">ایران </font>،<font color="#3333FF">برغیورمردان</font> ارتش <font color="#3333FF">و</font><font color="#6600CC">سلحشوران </font>قوای نظامی <font color="#3333FF">و</font><font color="#FF0000">ملت دلاور پرور ایران</font> اسلامی مبارکباد<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div><div align="center"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/01/29/1393012911501038_PhotoL.jpg" class="irc_mi io9kBw4MM7Qg-pQOPx8XEepE" alt="" style="margin-top: 0px;" height="227" width="515"><br><div class="title"> 	<h2 class="Htags" align="justify"> 	<a class="title" href="http://www.yjc.ir/fa/news/4809556/%DA%86%D8%B1%D8%A7-29-%D9%81%D8%B1%D9%88%D8%B1%D8%AF%DB%8C%D9%86-%D8%B1%D9%88%D8%B2-%D8%A7%D8%B1%D8%AA%D8%B4-%D9%86%D8%A7%D9%85-%DA%AF%D8%B1%D9%81%D8%AA"> 		<font face="Mihan-Iransans">چرا 29 فروردین روز ارتش نام گرفت؟ 	</font></a><font face="Mihan-Iransans"> 	</font></h2><div align="justify"><font face="Mihan-Iransans"> </font></div></div><div align="justify"><font face="Mihan-Iransans">  	</font></div><div class="subtitle" align="justify"><font face="Mihan-Iransans">نیروهای
+ سه گانه ارتش جمهوری اسلامی ایران، در طول هشت سال دفاع مقدس آنچه در توان
+ داشتند برای دفع تجاوز و كسب پیروزی و افتخار انجام دادند.</font></div><div align="justify"><font face="Mihan-Iransans">   	<img class="img-responsive2" style="margin: 4px;border: 1px solid #000;" src="http://cdn.yjc.ir/files/fa/news/1393/1/30/2185277_619.jpg" align="left"><span lang="FA"><span id="NewsDetails1_lblBody" class="lnH20"><span id="dnn_ctr718_CrossArticleDetail_lblArticle"><span style="line-height: 150%; font-size: 10pt;"><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><span lang="FA"><span lang="FA"><span style="text-align: justify; line-height: 1.538em;"><span lang="FA"><a name="OLE_LINK1"><span lang="FA"><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><span lang="FA"><span lang="FA"><span lang="FA"><span lang="FA"><span style="font-size: 13px; line-height: 22px; text-align: justify; background-color: rgb(255, 255, 255);"><span lang="FA"><span style="font-size: 12px"><span style="font-size: 12px"><span style="font-size: 12px"><span id="NewsDetails1_lblBody"><span style="FONT-SIZE: 12px"><span style="mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-language: FA" lang="FA"><span style="BACKGROUND-COLOR: rgb(255,255,255)"><span style="text-align: justify; color: rgb(51, 51, 51);"><span style="FONT-SIZE: 12px"><span style="FONT-SIZE: 12px"><span lang="FA"><span style="TEXT-ALIGN: justify"><span style="line-height: 150%; font-size: 10pt;"><span style="FONT-FAMILY: " lang="FA"><span id="ctl00_body_spnDetail"><span style="TEXT-ALIGN: justify">به گزارش<span style="FONT-SIZE: 12px"><span style="FONT-SIZE: 12px"><span style="TEXT-ALIGN: justify"><span lang="FA"><span style="FONT-SIZE: 12px"><span style="TEXT-ALIGN: justify"><span lang="FA"> </span></span></span></span></span></span><span style="FONT-SIZE: 12px"><span style="TEXT-ALIGN: justify"><span lang="FA"><span style="FONT-SIZE: 12px"><span style="TEXT-ALIGN: justify"><span lang="FA"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></a><a style="COLOR: rgb(255,0,0)" href="http://www.yjc.ir/fa/services/10">گروه وبگردی باشگاه خبرنگاران</a>،</span></span></span></span></span></span></span></span></span></span></span></span>حالا37 سالی می شود که ارتش جمهوری اسلامی ایران یک روز از تقویم رسمی کشور
+ را به نام خود می بیند. روزی که برای اولین بار به فاصله حدود 2 ماه پس از
+ پیروزی انقلاب اسلامی ایران، توسط امام خمینی(ره) به نام ارتش نام گذاری 
+شد تا پاسخی مناسب باشد به وفاداری ارتشیان به آرمانهای انقلاب اسلامی. اما
+ چه شد که 29 فروردین به نام ارتش نام گذاری شد؟از 19 بهمن 57 و دیدار 
+همافران نیروی هوایی ارتش با امام خمینی(ره) ارتشی ها با سرعت بیشتری به 
+انقلاب اسلامی پیوستند و پس از پیروزی انقلاب اسلامی، از همان اولین روز ، 
+کار خود را برای دفاع از انقلاب اسلامی ایران شروع کردند.اولین درگیری و نا
+ آرامی در منطقه ترکمن صحرا و در نزدیک مرزهای شوروی(سابق) توسط گروهکهای 
+چپ و مزدوران استکبار با هدف خودمختاری منطقه آغاز شد که با اعزام یگانی از
+ کارکنان داوطلب نیروی زمینی ارتش سرکوب شد. ارتش به سراغ کنترل ناآرامی 
+های سایر مناطق مثل کردستان و آذربایجان غربی رفت. همزمان جنگ روانی علیه 
+ارتش در داخل و خارج کشور به راه افتاده بود و به دنبال آن بود تا ارتش را 
+یک نیروی ضد مردمی و عامل امپریالیسم معرفی کند که همچنان سرکوب مردم را 
+ادامه می داد و بایستی منحل می شد و جای خود را با یک ارتش خلقی یا بی طبقه
+ توحیدی عوض می کرد .</font><br></div><br><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font></font></div>
+
+<br><a href='http://diarebehesht.mihanblog.com/post/235'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/1.html">
+			پیامها ومناسبتها</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)" >امام خمینی(ره)</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B2%20%D8%A7%D8%B1%D8%AA%D8%B4" >روز ارتش</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/29%D9%81%D8%B1%D9%88%D8%B1%D8%AF%DB%8C%D9%86" >29فروردین</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AF%D9%81%D8%A7%D8%B9%20%D9%85%D9%82%D8%AF%D8%B3" >دفاع مقدس</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B3%D8%AA%D8%A7%D8%AF%D9%85%D8%B4%D8%AA%D8%B1%DA%A9%20%D8%A7%D8%B1%D8%AA%D8%B4" >ستادمشترک ارتش</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF%D9%82%D8%B1%D9%86%DB%8C" >شهیدقرنی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C%20%D9%85%D8%B3%D9%84%D8%AD" >نیروهای مسلح</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ شنبه 1395/01/28  ]  [ 15:07  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(235)">نظرات  <script>setCommentCnt(235)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/234">تسلیت سالروزشهادت حضرت امام هادی(ع)</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<p align="center"><font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot1" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top1"></a><font face="Mihan-IransansBold" size="4"><font color="#000099">سالروز</font><font color="#FF0000">شهادت</font> <font color="#000099">دهمین پیشوای شیعیان جهان</font> <font color="#CC33CC">حضرت امام هادی (ع)</font>تسلیت باد</font></font></p><p align="justify"><br><font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot1" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top1">حضرت امام علی&nbsp;النقی&nbsp;الهادی&nbsp; (ع )
+</a><br>
+تولد امام دهم شیعیان حضرت امام علی&nbsp;    
+النقی&nbsp; (ع ) را نیمه ذیحجه سال 212
+هجری&nbsp;قمری&nbsp; نوشته اند . پدر آن حضرت ، امام محمد تقی&nbsp;جوادالائمه (ع ) 
+و مادرش       
+سمانه از زنان درست کردار پاکدامن بود . نام آن حضرت - علی&nbsp;- کنیه آن امام       
+همام " ابوالحسن " و لقبهای&nbsp;مشهور آن حضرت " هادی " و " نقی " بود . حضرت       
+امام هادی&nbsp;(ع ) پس از پدر بزرگوارش در سن 8 سالگی&nbsp;به مقام امامت رسید و      
+دوران امامتش 33 سال بود .      
+در این مدت 20سال زندگی&nbsp;امام هادی&nbsp;(ع ) در سامرا ، به صورتهای&nbsp;مختلف       
+کارگزاران حکومت عباسی&nbsp; ، مستقیم و غیر مستقیم ، چشم مراقبت بر حوادث 
+زندگی&nbsp;     
+امام و رفت و آمدهایی&nbsp; که در اقامتگاه امام (ع ) می شد ، داشتند از 
+جمله :      
+" حضور جماعتی&nbsp;از بنی&nbsp; عباس ، به هنگام فوت فرزند امام دهم ، حضرت سید 
+محمد      
+- که حرم مطهر وی&nbsp; در نزدیکی&nbsp;سامرا ( بلد ) معروف و مزار است - یاد 
+شده است .      
+این نکته نیز می رساند که افرادی&nbsp;از بستگان و مأموران خلافت ، همواره به 
+منزل       
+امام سر می زده اند .</font><br><img src="http://rozup.ir/up/mohbenahlebeit/04.jpg" class="irc_mi" style="margin-top: 34px;" height="172" width="490"></p><div align="justify"><font face="Mihan-Iransans"> </font></div><p align="justify"> <font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot2" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top2"></a></font>&nbsp;<font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot3" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top3"></a></font><font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot4" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top4">شهادت امام هادی&nbsp; (ع )
+</a></font><font face="Mihan-Iransans"><br></font></p><p align="justify"><font face="Mihan-Iransans">امام دهم ، حضرت هادی&nbsp;(ع ) در 
+سال 254هجری&nbsp; به وسیله زهر به شهادت 
+رسید . در سامرا در خانه ای&nbsp; که تنها فقط فرزندش امام حسن عسکری&nbsp;بر 
+بالین او      
+بود . معتمد عباسی&nbsp;امام دهم را مسموم کرد . از این سال امام حسن 
+عسکری&nbsp;پیشوای&nbsp;     
+حق شد و بار تعهد امامت را بر دوش گرفت . و در همان خانه ای&nbsp;که در آن بیست       
+سال زندانی&nbsp;و تحت نظر بود ، سرانجام به خاک سپرده شد .      </font></p><div align="justify"><font face="Mihan-Iransans"> </font></div><p align="justify"> <font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font></font><font face="Mihan-Iransans"><a target="_self" class="METB" id="#Bot5" href="http://www.tebyan.net/newindex.aspx?pid=42771&amp;BiogId=12#Top5"></a></font></p>
+
+
+
+
+
+
+<br><a href='http://diarebehesht.mihanblog.com/post/234'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/15.html">
+			ولایت وامامت</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D9%87%D8%A7%D8%AF%DB%8C(%D8%B9)" >امام هادی(ع)</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AC%D9%88%D8%A7%D8%AF(%D8%B9)" >امام جواد(ع)</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%D9%86%20%D8%B9%D8%B3%DA%A9%D8%B1%DB%8C(%D8%B9)" >امام حسن عسکری(ع)</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%81%D9%82%D9%87%20%D8%B4%DB%8C%D8%B9%D9%87%20%D8%AC%D8%B9%D9%81%D8%B1%DB%8C" >فقه شیعه جعفری</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B3%D8%A7%D9%85%D8%B1%D8%A7" >سامرا</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%AA%D9%88%DA%A9%D9%84%20%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C" >متوکل عباسی</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 1395/01/23  ]  [ 08:00  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(234)">نظرات  <script>setCommentCnt(234)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/233">تبریک ولادت امام محمدباقر(ع)</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+<div align="center"><font face="Mihan-Iransans" size="2"><font color="#CC33CC"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">سالروز ولادت خجسته وپربرکت شکافنده علوم</font> <font color="#009900">حضرت امام محمدباقر(ع)</font><font color="#CC33CC">مبارکبا<b>د<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></b></font></font></div><div align="justify"><div align="center"><div align="right"><div align="center"><font face="Mihan-Iransans" color="#000099"><b>بسمه تعالی</b><br></font></div><div align="center"><font face="Mihan-Iransans" color="#000099"><b>ابوجعفر، محمد بن علی الباقر</b>، مشهور به <b>محمــــد باقر</b> پنجمین امام <a href="https://fa.wikipedia.org/wiki/شیعیان" title="شیعیان" class="mw-redirect">شیعیان</a> بعد از پدرش امام <a href="https://fa.wikipedia.org/wiki/سجاد" title="سجاد">سجاد</a> (ع)و قبل از پسرش امام <a href="https://fa.wikipedia.org/wiki/جعفر_صادق" title="جعفر صادق">جعفر صادق</a> (ع)می باشد. کنیه‌اش <b>ابوجعفر</b> و لقبش <b>باقرالعلـوم</b> و زادهٔ اول <a href="https://fa.wikipedia.org/wiki/رجب" title="رجب" class="mw-redirect">رجب</a> یا سوم صفرسال ۵۷ هجری در <a href="https://fa.wikipedia.org/wiki/مدینه" title="مدینه">مدینه</a> می باشد. مادرش <a href="https://fa.wikipedia.org/wiki/فاطمه_بنت_حسن_بن_علی" title="فاطمه بنت حسن بن علی" class="mw-redirect">فاطمه بنت حسن بن علی</a> دختر <a href="https://fa.wikipedia.org/wiki/حسن_بن_علی" title="حسن بن علی" class="mw-disambig">حسن بن علی</a>
+ می باشد و بنابراین او اولین امام شیعیان است که از نسل هر دو نوه ی حضرت پیامبر(ص)، 
+حسن و حسین است. روایات و سخنان حکیمانه ی فراوانی ازحضرت امام محمــــدباقر(ع) نقل شده 
+است. او به عنوان پنجمین امام مورد احترام شیعیان می باشد و به عنوان یک فقیه
+ و عالم بزرگ اسلامی مورد احترام اهل سنت است.</font><img src="http://www.parsine.com/files/fa/news/1392/5/24/76491_187.jpg" class="irc_mi" style="margin-top: 22px;" height="236" width="500"><br></div></div><font face="Mihan-Iransans">ضریح امامان درقبرستان بقیع قبل ازتخریب بدست خاندان آل سعود(لعنه الله علیه)</font><br></div><div align="center"><font face="Mihan-Iransans" color="#6600CC">امام محمدباقر(ع)درحماسه عطیم کربلا حدودسه یاچهارساله بود،آنحضرت درهفتم ذی الحجه سال114 ه.ق درسن 57 سالگی به شهادت رسید ودرقبرستان بقیع مدینه به خاک سپرده شد</font><img src="http://cdn.mashreghnews.ir/files/fa/news/1393/5/14/673924_544.jpg" class="irc_mi" style="margin-top: 0px;" height="226" width="503"></div></div>
+
+
+
+
+
+<br>
+	<br><br>			طبقه بندی: <a href="../../category/15.html">
+			ولایت وامامت</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D9%85%D8%AD%D9%85%D8%AF%D8%A8%D8%A7%D9%82%D8%B1" >امام محمدباقر</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A8%D8%A7%D9%82%D8%B1%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85" >باقرالعلوم</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%B3%D8%AC%D8%A7%D8%AF" >امام سجاد</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AC%D8%B9%D9%81%D8%B1%D8%B5%D8%A7%D8%AF%D9%82" >امام جعفرصادق</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D9%86%D9%87" >مدینه</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%82%D8%A8%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%20%D8%A8%D9%82%DB%8C%D8%B9" >قبرستان بقیع</a>، 
+													<a href="../../tag/فاطمه.html" >فاطمه</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ شنبه 1395/01/21  ]  [ 07:26  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(233)">نظرات  <script>setCommentCnt(233)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/232">درد در سمت راست قفسه سینه</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<font face="Mihan-IransansBold" size="3"><font size="2">﻿نویسنده :دکترفتحی</font><br><font color="#CC33CC">درد در سمت راست قفسه سینه
+
+						
+			
+		
+			
+		
+		</font></font><div class="content clearfix">
+
+		
+
+<p style="text-align: justify;"><img src="http://www.foodregime.com/images/35/Right-side-Chest-pain.jpg" alt="درد قفسه سینه" title="درد قفسه سینه" style="display: block; margin-left: auto; margin-right: auto;" height="185" border="0" width="472"><font face="Mihan-Iransans">درد
+ در سمت راست قفسه سینه ممکن است نشان دهنده شرایط پزشکی جدی باشد که 
+معمولاً به قلب مربوط نیست اما شامل علل مختلفی است اگر شما تجربه درد قفسه
+ سینه سمت راست غیر قابل توضیح دارید شما باید بلافاصله با دکتر خود تماس 
+بگیرید.</font></p><font face="Mihan-Iransans">
+ 
+</font><p style="text-align: justify;"><font face="Mihan-Iransans"><br>در اغلب موارد، درد قفسه سینه 
+بلافاصله با شروع حمله قلبی است اما آنها همچنین می توانند علائم دیگری از 
+شرایط پزشکی همراه باشد درد قفسه سینه هرگز نباید نادیده گرفته شود درد در 
+سمت چپ قفسه سینه به طور معمول به شرایط زمینه ای قلبی مرتبط است و درد در 
+سمت راست قفسه سینه نشان دهنده مشکلات جدی سلامت می باشد بنابر این، درد در
+ سمت راست قفسه سینه به خصوص در افراد مسن نباید نادیده گرفته شود. <br>بر 
+اساس تحقیقات انجام شده توسط مراکز کنترل بیماری ها (CDC&nbsp; ) و موسسه ملی 
+بهداشت ( NIH )، درد قفسه سینه یک نشانه معمول گزارش شده است از آنجا که 
+قلب در سمت چپ حفره قفسه سینه قرار گرفته است مردم به طور معمول درد در این
+ منطقه را نگران کننده و مرتبط با مشکلات قلبی می دانند جالب توجه است، 
+مردم درد در سمت راست قفسه سینه، را در ارتباط با التهاب کیسه صفرا، التهاب
+ کبد و آنژین می دانند آنژین صدری درد قفسه سینه است که نشان دهنده عدم 
+جریان خون به عضله قلب است که ممکن است به توجه فوری پزشکی نیاز داشته 
+باشد.</font><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2"><br></font></font></p><p style="text-align: justify;"><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font></font></p></div>
+
+
+
+<br><a href='http://diarebehesht.mihanblog.com/post/232'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/20.html">
+			بهداشت ودرمان</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AF%D8%B1%D8%AF%D9%82%D9%81%D8%B3%D9%87%20%D8%B3%DB%8C%D9%86%D9%87" >دردقفسه سینه</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%82%D9%84%D8%A8" >قلب</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%DA%A9%DB%8C%D8%B3%D9%87%20%D8%B5%D9%81%D8%B1%D8%A7" >کیسه صفرا</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%DA%A9%D8%A8%D8%AF" >کبد</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%B9%D8%AF%D9%87" >معده</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%81%D9%84%DA%A9%D8%B3" >رفلکس</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87%20%DA%AF%D9%88%D8%A7%D8%B1%D8%B4" >دستگاه گوارش</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ سه شنبه 1395/01/17  ]  [ 14:17  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(232)">نظرات  <script>setCommentCnt(232)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/231">تجزیه بدن انسان پس از مرگ را ببینید!</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+
+<div class="news_print_content">
+<div class="rutitr print_date"><div align="center"><div align="right"><font face="Mihan-Iransans" color="#330033" size="2">مقدمه مدیروبلاگ:</font></div><font face="Mihan-Iransans" color="#3333FF">بسمه تعالی</font><br></div><div align="center"><div align="center"><font face="Mihan-Iransans" color="#3333FF"><font color="#CC33CC" size="3">به کجاچنین شتابان؟؟؟؟ &nbsp;&nbsp;&nbsp; عاقبت خاک گل کوزه کران خواهیم شد</font></font><br></div><font face="Mihan-Iransans" color="#3333FF">(البته دراین روزگارنوین دیگرخاک گل کوزه کران هم نخواهیم شد}</font><br></div><font face="Mihan-Iransans" color="#3333FF"><br></font><div style="text-align: center;" align="center"><font face="Mihan-Iransans" color="#3333FF"><img src="http://persianv.com/pimg/picmtt/blog_1/1352_1.jpg" height="123" width="386"></font></div><div align="justify"><font face="Mihan-Iransans"><font color="#3333FF">به گزارش خبرنگاران کلینیک گروه علمی پزشکی باشگاه خبرنگاران جوان،پژوهشی درموردچگونگی تجزیه بدن انسان پس ازمرگ صورت گرفته است که خیلی جالب توجه ونیزبسیارآموزنده وهشداردهنده است .درموردکسانی که توجه به انساندوستی وکمک به همنوعان خودوانجام سفارشات دین (حق الله وحق الناس)نمی نمایند وحتی تا می توانند انواع ظلم رابه دیگران روامیدارند وطوری به جاذبه های فریب دهنده دنیاچسبیده اند که لحظه ای تصورنمی نمایندکه روزی تمام دلبستگی های این دنیا راکنارخواهندگذاشت وخواهندرفت خیلی خوب است که ما وآنها این گزارش راببینند ولحظاتی به آن توجه نمایند وبیندیشندکه شترمرگ عنقریب درکنارمنزلگاه مازانوخواهدزد،آیادرآنوقت فرصت جبران گذشته است؟؟؟؟</font></font><br><font face="Mihan-Iransans"><font color="#3333FF">هم اینک توجه همه عزیزان رابه این گزارش جلب مینماید:</font></font><br></div></div><div align="justify"><font face="Mihan-Iransans">
+</font></div></div><div align="justify"><font face="Mihan-Iransans">
+</font></div><div class="news_print_container"><div align="justify"><font face="Mihan-Iransans">
+
+</font></div><div class="title_c" align="justify"><font face="Mihan-Iransans">تجزیه بدن انسان پس از مرگ را ببینید!</font></div><div align="justify"><font face="Mihan-Iransans">
+</font></div><div class="print_subtitle" align="justify"><font face="Mihan-Iransans">پس از مرگ تجزیه بدن انسان طی مراحلی همراه با انتشار 
+گازی منحصر به فرد اتفاق میفتد و شامل اتفاقات شوکه‌کننده‌ای است که بسیاری افراد 
+از شندین این حقیقت تلخ گریزانند.</font></div><div align="justify"><font face="Mihan-Iransans">
+</font></div><div class="body"><div align="justify"><font face="Mihan-Iransans">
+</font></div><div align="justify"><font face="Mihan-Iransans"><span style="TEXT-ALIGN: right">به گزارش&nbsp;</span><span style="TEXT-ALIGN: right; FONT-WEIGHT: bold"><span style="TEXT-ALIGN: justify"><span style="TEXT-ALIGN: right">&nbsp;</span><a style="COLOR: rgb(255,0,0)" href="http://www.yjc.ir/fa/sicence/161">خبرنگار 
+کلینیک</a>&nbsp;<a style="COLOR: rgb(255,0,0)" href="http://www.yjc.ir/fa/sicence">گروه علمی پزشکی باشگاه 
+خبرنگاران</a>؛&nbsp;</span></span>وقتی جسدی به خاک سپرده می‌شود تغییر و تحولاتی در آن 
+بوجود می‌آید که به طور عینی هیچ ردی از آن باخبر نیست و اطلاعات کافی راجع چگونگی 
+تجزیه بدن انسان در دهه‌های گذشته در دست نبوده است زیرا بررسی جسد پس از مرگ و 
+وارسی گور در بیشتر کشورها و نقاط جهان خلاف قانون و شرع است.</font></div><div align="justify"><font face="Mihan-Iransans">
+</font></div><div align="justify"><font face="Mihan-Iransans">در این بین برخی افراد از جمله پزشکان پزشکی قانونی و محققان همواره در صدد 
+بودند تا در کلاس‌های پزشکی و تشریح جسد انسان به این مهم دست یابند. به همین علت 
+گروهی از محققان و پزشکان گروه پزشکی قانونی در دانشگاه تگزاس اسکلت‌های بدن افراد 
+را در گورستان آزمایشگاهی خود جمع‌آوری کردند تا بر روی آن‌ها تحقیقاتی انجام 
+دهند.</font><font face="Mihan-Iransans">
+</font></div><div align="justify"><font face="Mihan-Iransans">فعالیت‌ها اندام‌ها و ماهیچه‌های بدن پس از مرگ متوقف می‌شود و عملکرد پمپ‌ها 
+در غشاء سلولی منجر به انتشار کلسیم در بدن می‌شود و سبب سفت و سخت شدن اندام‌ها 
+می‌شود. تجزیه شدن بدن انسان پس از مرگ سبب می‌شود که بدن انسان مجدد به خاک 
+بازگردد.</font><font face="Mihan-Iransans">
+</font></div><div><font face="Mihan-Iransans"><br></font></div><font face="Mihan-Iransans">
+</font><div style="TEXT-ALIGN: center" align="center"><font face="Mihan-Iransans"><img style="border-width: medium; border-style: none; border-color: -moz-use-text-color;" title="تجزیه بدن انسان پس از مرگ را ببینید!" alt="تجزیه بدن انسان پس از مرگ را ببینید!" src="http://cdn.yjc.ir/files/fa/news/1395/1/15/4333921_143.jpg" height="225" width="502"></font></div><font face="Mihan-Iransans">
+</font><div><br><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font></font></div><font face="Mihan-Iransans"></font><br></div></div>
+
+
+
+
+
+
+
+
+
+
+<br><a href='http://diarebehesht.mihanblog.com/post/231'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/21.html">
+			علمی،پژوهشی</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AC%D8%B3%D8%AF%D8%A7%D9%86%D8%B3%D8%A7%D9%86%20%D9%BE%D8%B3%20%D8%A7%D8%B2%D9%85%D8%B1%DA%AF" >جسدانسان پس ازمرگ</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B4%20%D8%AA%D8%AF%D9%81%DB%8C%D9%86" >روش تدفین</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AA%D8%A7%D8%A8%D9%88%D8%AA" >تابوت</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D9%88%D9%85%DB%8C%D8%A7%DB%8C%DB%8C" >مومیایی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A8%D8%A7%DA%A9%D8%AA%D8%B1%DB%8C%20%D9%87%D8%A7%DB%8C%20%D8%A8%D8%AF%D9%86" >باکتری های بدن</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87%20%D8%AA%DA%AF%D8%B2%D8%A7%D8%B3" >دانشگاه تگزاس</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B4%DA%AF%D8%A7%D9%87%20%D8%AE%D8%A8%D8%B1%D9%86%DA%AF%D8%A7%D8%B1%D8%A7%D9%86%20%D8%AC%D9%88%D8%A7%D9%86" >باشگاه خبرنگاران جوان</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 1395/01/16  ]  [ 07:39  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(231)">نظرات  <script>setCommentCnt(231)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/230">روزطبیعت مبارکباد</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+<div align="center"><font face="Mihan-IransansBold" color="#006600" size="4">روزطبیعت برتمامی عاشقان وحافظان وپرورش دهندگان طبیعت مبارکباد</font><br></div><div align="center"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADhAOEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2ejbTFNLmvRPOJVpm2jfUYNFilIeif89KbsT1qRUfn/virkiJHs8xNju3/joHbmsm+U2KUkPl0ttAnl/3ET7341dubW2kkTy5/wB2/wDwKoLDZJ5iSbP9lP4fxpc+g+TUfBAiW0ryI7/3Pl/Dmql7Enmb44E/h+5WhFJDbiTy/wCBd6PztYjrx2/rVG6u/tEaeYiJJ/f/AL30qIPmYW+yItu/l/cf/a/z+dNs7V5PMm/gT73+z6VMkk32Xfv/AN7r83OO1JJJbR2yfvvJkf8Agf8AiwPbp7VfOE4ImUpUL7P9iqcL/wAcfz1JHNj5JH2f59qu3Kc/JzfEWbJvLl/g37fl3+9Nht7O4ud/yJPu2bUUeg7/AJ1ZiVPKTzE/5ZNu3qfmI/hHvVhLOG7igeN/J+bZ/tdM4475zz6Vk56nZGGhzMtjNbyXHmJvjTcm9F3c1c0mws/990+8n5/n6fjWpHYvHfRp52/+OWL2/HqTyKlufs1hJvk/1e5mVP7vGeMd+Rx7UOpze7Enk5SpN9m8vfGn3/8Aa79/8+1Ytzs8zfTl1BJP30bp8i/oOBkY4PGaq+aknz11U4SicdeopL3S/brDVpESs2E/5/vVcSb/AJ6VTRnCp7peiVMfcp6xp/cqvE9SpNWLRpFlhEpwqNXp6tis2bJj9tJto8yl30i+YNtFJRSEYqPiljNURN+8p8M7p89bc5jFF1P9Zsp5hfzJE/jSmQ3CSf6yPZI/3f8A4r/PpVm6f/Rk+zr52z7zp/EO36n9KjnZv7MLJuE/77/GtFIfMtvOk2fd/wCBcZ/p/IVStV+0RI8m/Z/FEn3l7cZ6nvT5508tPsH+/t/P+lc89+Y0hEihgmj+TZvkdW2/N8ynNLaK8kcjyfuf73y0+6uofsMHlzum/du+X6Z60+4lufsyP5KP83z9d23+VSpc3vXLjYc/+iR747VH2N8z8MrL061jtD/pMcEkyfP8/wAmdvP8P+fStayie4keGSHZBt3/AOy3P+f8mnvZpJ/q3/0v/e+7j29MVUPdfvD5FIiSzvI/9ZDv2f7X3QOnQ9az9eh8y2R/I2fKu1/9ntn8f88V0iXXl20iSeTvT76bh7etV/3N/HIm/wC+3zRfw/7w96I1XfmE4acpzWhP9k2eW+9Jlb/voHnHFXWiR/MfYnzrv/GtOXTPsnzxp/eSL+LaD14PU8Cs62V4/nuH/wCBU3O75hQXLFRkaSSJeW0HmJ5Lp91Hb7vYd8VSu5Jo737fBCm+FGTZu2/y71L5G+P93/q/v/7y1LBD5cv9/fu2/wCz/npQjTlKljqSb/OuERHm+TZv+83Pc+3pU1jaWn+l3N3cpNHcsq+Vz+7b+ec/yqK/0xJLHfJsSeFt+/ltpPTgdaj0uO2kuZ0+5doypF8v3hj39/x6VpZWcomb6RKkltDd2Mj733zMyJ03Lg49OR/jVacWEcUaSJ5MibYt6N/F9P8AHpXSSJ9juUufneRPkZEx8zf/AK/6VS1W0s7+SR7v5NjfIlu33hx9/rzn+lYqvU9ooy2v+FjKpRUlzWMQu8fyRukyJt/X/wCvSvdPJJskT959z/gVazJ9nj+x2cyPBD/GmN3IztOPrWbdB+Xk8lJ/++eev54xXdRxEKrOSpRcRY5OtWoZ6zZnf7Ts3/P/AJxUkweCXY/yP/sfmK3cbmOsDVSTirKPWPDPVyOSsZwN4S5i9vpFkqqZqElqOQ1LmfeiqXm0Ucg9DIuLSaCT76eZ/c3/ADc57fhWhI1n9iTy/vp975vug+2OfzqlDCn27f8Acj83+Bvm/M8Zq7cWH2SKSbYj/Ns8p/4ecjp1/wDr81x3OtU1G4tzapHbQPbuiRzfJufH3h/If/WpLC78v9zcf3fvv/ez/wDq/OpbmRLi5Ty53fZs+dPyPGemB+lMvZIY/wDWbNm7+Bfu46celXCfMuUprl94niXy/nkff83y/wCzn+E+1WJJ4Y4oUjT9+/3f502BJvLk8tPn2/L+lPgk/eRpJ/q9vzbKUZ865iYvm6EFxF/oX7tNiP8AOv8AErH+lQw3VzaR/vHdHRdn+7WtqKw28aTRo6fd/wBrav0z0rMmTfc/vIZk3r8yIvzZ9Rn35/GuGo4e0Ur/AC/4BcYmzbXH+hJ++RPl/jX5vQ/hWBF/o7+TGiO77dsv93v/AE/StPTp4ZJNnkzO+3Z8/wDTnip7ySGMJ5j+TvX5n3DbtrebduUqxmazbTfaUf5Heb5k2L97jt71Jo+y3kVL/ejuu/c+f8461disoZ73fv8AufcX/Z/vD34p9/8A9NPn/wBnd945/Qc9ferc9OWJk0780ivc3yeX9/f/APq9+lQOIZI5E2ff/j/i/wA/41Xu08uJP+eb/wAH92nabK8kcn7zZ/jU04/a7Cb1LlvBNHL9lk+ePb8r/wCe9aELeX88mz5KyQ37uTzPvo2zZ976/wA+tSK/nx/f2fN8yPn/AL6+tVdR+LQcWXHt/tFzJ5bujp/B/F0649DUka+RJvk/fOkXy/7vqD+FUrW9f7SfMR5nRfl2Z3fp/Kj/AFkW+RPnTdv6/LnIHTvXOsXTlU9n1RVvtEC3FzGJ/L+SCZm3I/zNGe/Pfn9KZeWM13HIkd1skm3bpU/ix6DP+cVfFrbSXMj3D740/wCWqMV+n1PXmpl05PKuId+x0ZXVk+8vovuMV1Rra80diHAx4dJtpLFH+5OjL5vzbd2ODg45yRVTU9P8yTf5+/fKrsr/AHlGeMjv68eldPNb+ZbSJHs/ff8AfOevf/PFZtxBc+U8FvDvf7zfMFZewZCevpg04t8/NAzcFb3jL03TkkuJfLREk83Yj8s2M9SD0GP5VYj07z7395sTY7fKzfK2O2OozUkn2zSN/wDpkKJ5Xyu8R/iPOCM/dPOCOhqjqd28lsk+xEk3b3lT/lp/XgcV1xc5v3TJpRXvFuaSzj+eTfDPD935flU9evfHSsyW7eST/pn9/wD3c/SrFhffbPM/fIn7r7rruVjn3Ofyqm89nHs8tHf7yN823nt/jVw93SRlN83vRLCT1L5lZSSVN51aWM+Y0PMoqt5v+d1FFjP2jILRU8rybx/ubW/2m9z+lS2d5beXJ++ffu/jX5c9fvdDx+PFcrFeP5mz/lm/1+7n7p9fzrZfUfMtoIY7WGGBNvyf7WM9DXhqvC/JE9qnUhE1IpN8kHlp/eRmRNu1QMrkYwR+tak+yOK18zyZv3TI0qKPl7jIrLtJP3W+PfDI7Kn4Z9+neobu9ezi864RHjRl+583yjqwx7ZrSdRUnzRQe9I2reT7PG/2ff8Aeb5nzu/X6Ukz/wCofZ/t7N35j9KzLa9ee5/dp8j/AHevbPtj2/8A11fafzAieX/uP9K0pv3PdE/dNC21f91Onzvs27d/8XTj+tWI75P+WifI7fx/XFYl1E//AC0T7/z/AHahik/db5E/+KU9/wAqia5XuOLhI3omhj/4+P8AVvu2/wCz/XP1qjNvk8v7O7+ejfMn3lYD6/560mmy+Z/x8Pv+b+P+72xUxu/3kiW/8HyflSfvcxWn2S5bibzbiaPYmzd8v3mX/IqhqCIkSPIX+79x/f0x7EmpFuX+/wDOm/8AmP50yWH7f/qHd3+Xd/DuX+lXTSIa0J9Nh8v5Lj77r8ru27bn39elXLOxSP55ET512MqfNtPXd9elUrmw/eSXtxO77G/1SL2/PJ9KtNv8rZbz/Ztnzrv+70HXPWh3toSSX6P8iR/J/Av0559+/H0rnvJmjlk+zvvg+5uT1PTg1ZmuLm089JH2ed8m/wB+zcD/APXmuevPOklksrd3fY372Xbt2qR/6EeMDsDk+/LUcpxfuX+dv67i05jobZHs4t8bpN/AybffP59PyrZkffbbPnTZ91/9r+9muSjmmtJE8x/3b/PtRfu/nn39K27C4eSJHjffv/ufw/kMVrGhyrm6FF22g/5YybE2Mvzp6EcfXnFNvVvI5U8yb7n8SL9fz7frVHHmSeTb73R5Vf5HO5cZxVueP7ZJazee6eS2/bxu4yDzj0/nmqqU3GHuDb194bFHcx6bH86TTou9t/8AE3fgDr/UVix31/JqT+XMjv5Xm7E+8qnIx/sngGtyzn8+WRLd/ufP5v8Ad/2cevUZrEkvbOw1aT59k+75vl+bZtH3z69eBThNQhyS9CGuZ8xEljNcXv8ApbzbEZk3y/N8vOeQMc+vuKJrOwj8yaP5E+/t2hvL7r9V9cc/hmr7zJdyJNJDNDJDu8+J4iqqowT19e351g3OqQxx77hEmjdV2/74PDHPU100XtGJnNKJLNcWDyJNaeck6bvldQy7f4eT1GKx9vl/99f0rWuRbXfnzWfyR7V2p+A+Ue9ZM7/vESuuL937jlnAmSb5qmif5jVKH/XVai6mun7JxE++io/O/wBuipNOUx0sofLge0d3jdfmV/6fp+daVtHDcW0Dz70jhXZ/ven8v85rirLW5vtGy3ukmgeLzVVGPy4x1756Y+nNaqXN/dxp5aP5ibt2/wDu5xuxnn0P418/Dkj0PYsonbWZhk8/7O+/Z91P/r+tJJG89jInkQuj/J+9/i68Y/P8657T5k+5Inz/ACv93uOc/nWxBOk/8e/Z93/eP+elarkqw5YlQa+yXbHZYRp/y2+X5peF789BgDmr73aeZv8AkrLuHSOLf+5fZ8j7227v/r98VTkV5JN/nJsT7qf8tFPfv05FatOPwGkY6+8bj3fmbIfvwffZ933fT8ahuYEj8zy/v/xL/Cy/T1FZEWpfvf7mz5P9ncfx64HSrjTvJEX3/wAP+TUxgXIr3V59j8h49/kPuT5/m25HGcds4H41dtLrzI/3j/vPm3r/AHccfzrg/FHiN9MjngjmmSS5ZIl2f7TbWZCOhUYPryPw6nQZ3uIt/wDrp3be/wDCqp1C/UA/zqrQjflIN+3ukf5P+Wm3fu/Tp29Klike3k/eVm29yj/PH/q3Zkb6A43Dnpkd/wCWKrsZo7n95sexT/UInzM2erH0Azj9aUYKK90ho6qwuk/jf94/8qSOZ/tMn8Gzbt2fdbPWsbS5Ps9xJ583yfw7F+VR2Hv9f0qz572n+r+f+6/978B3rnqTVJOcy3/dNLUY0k2PcO/yfIyf/rrJ1Gy/dJNYP52xWfb7ddp9OtaUc3+k/PDNN833t3y7s/Tjr3qK/ebSIinnfI7futi9yeFI9D0qKNRzfNpZGc1oY0l8n/Hzs2Rv5US7/mVcnB6ep6GrOmzJJFJ/ZE/nfwfIw79Rj1/OuJvLh9b8i1jtpv7NRv8ASt/yrcOrkhEH9wYGSR83Tp176wvZpIpHuNk2z5G8rO3BPP8ADyAeRWyxcJN8uyEaOnXcP2aR5IUSR12N0+bHsPx/On3SzSW0jxvsjT+5/L6c/pXH6tqvmXP+h7JoH27WixtkYDHXGOvfr7Vp6FqLySSwXEOy72/wMGVcdcd8VjTxSnPk6j+FEkulTSRyeW++0+Xf09Mkg4ypB/kKfc6Q/wBmRLR9juyPFK+Oo5x8x54HTpWvbxzf66P9y/zP8+WXnPzEcf8A6u9Yo/tL7TfPaed9htm+Tfv8xuATjIzgcjj+ldM4875pA/dRTmtb+S8nttTd0j2rFE23zGZd56AH0I9uKkuF8vyNPlsN+/csUvlblyckMO+efu+3ei5keO2TVrz/AI/fmdN6+WygDhcenJGD2xzmqdp4mucSJboj3Vzu3LFjavICsD3+n8qmM7GF19osWenJavcW3zzf8B+bB46diPXmoL/SvIeBNiTb1Z2lfK7ef6Yzn9KspqLp5nmJ+/m2/vXz834evbNJrF7DJIn2h0edItkqfdZfX+R/OumNR8/vEtLlOfuIUt5Pv75P/QT/AFpqz8Vfvpvs8UiW6b7R/nid1+ZWwOQf0IrEuF/1nl/J/H/Ou2Nbm+I5J0/5S7v/AM7aKzvtqf3/AOdFL2sCPYyOQ8N2Nhqd7PNJeQwpC3yp93zOu3j/AOt3rutKh8u22eck29mTb/dUemRx1zXK+GtHsJLa7n2edGjM67JfmXIGEOOCTj145+lT6jOn2n95/o0DyrFEqfKu08lj26KP++q8yPuLY9hr+U7FLxJI9mxHT/d/T+dLFP5ckiSJsd/4/u7s49K5jSLuGPz/AJ/4m3JuRWYDIz83X14/xrTtNchktpIfOSGR/wDnqw+6MAY46msX/ee/QUVr7xdv7xJJEtfJfy/lT+83oWyev1rNupJv+WiO8c25PvH5Tx8w79BUmlr5kkkNwj79zIz7vl+np2+tUtW1L7PbOke99it+952svIZsEc4x1HH0yK6YWhDm/rQ1aRDb6ynmMnn/ACJKu13+Xcc7B+Z/PNdFBdPBYx+Yj/3/AJPxx+H+NePG6eTW4Jrib/RJdrxdPvqDgcdAeD/wH8K7fSWvPLR7x3+fd8squy8AZ+Xr3PTmsYzUlzXJfvIxPH175ljpySf6z7cnz7f4+/09fyrv7fUIY/njfZsVU2P8u1uAO3GM/nXknxPPl21q8exP3qurp91s5x+Ix+Rx2rf8GRzanFBrupvNNO+9LW3/AOWcKDgtgcFj6mtI1nNuNtyfsnotxc21xHJZRpNCm1drcfvEGN2ATkDHqB1q81/9s+yvbpCkG3f8i+ucc54B64/P0riV1J55JHjR/u7Fb+Jv72O2Dgd+31rV8O3vmW0nmP8Au/KR/wDgJGe34Vnz8zlLoVc7G6uk+zInyTR/K+xPvfp04H+RUun3MMn8e/8AjXZ/L9TWHDefvN8j75HZUTYqfMhAAb881dnurPTLlIfPT7VNE0qxSqe2A3PC4+YDrWU+fSSehcU5fCjfuL6FIkSRPv8Aybk9uvTOKL17aTTfv+T9123r97n7vp2FUrqezjtnSOZIZEl2fd+bJ57cDIxgmi2vrPU4pLaf/lju9V9g3XP+R61VOajNRkzN+8isg+z6jJB5MMME219sq7l6Zb8+v4Vo6cl/5t3D5D/uV2Lv/ijyTjPduwzWDptvqsnmPv8AtMCSqi9G2sAPnHQ9AOO/sempoGvX8l9Ja3EL7/vs7xfLkfeAx36/4UVq6uoRuYQSIbXSku4vOv38l7bci72KrHh2zj/6/qKSFZhcnzJtkaLvg2L8y8kkZznHHI9q6FJ4bvz9Pu9j72+/93cpOe3bHHvWVFpltb3s/l3Oz5dzRM3mbdp+Uc89SAM9QaIU1fmX/D+pXyG2kb3f7m4meaDdvVufXAB9hn/PStqLfHH+/wDkRPu/Nt3f0rmdGlf7TI9m6P8A3f7zeuc9O3GK6t54ZLYpvh3o3zL/AA7hW7b6ii7mBqV3c38f2X50gferz/JuUqB69cZ3Hg+lYz2unW9tJi1SZ/4pef3gH/PPnPAGSPr1FLbxPealOmp/bbOB5Xf/AFW1VzgFs444IXk4/HrPNY/2Zc/YpNiQfZVdXlYeXIVwm5+cL94en3utZ8rFdSM5fFb3HmJcW29PK+T5uxGRzWRf6h52pfc/fuquzbvqP6Uy/n+eRPs3k+T+6ZfNLLuHG0Z5x1x9ayhJ5mrf9sF/75y1NzUV7pg583MdBDP+6/z6VBNPvlnf5Pu/wfj/AFqitx5csn+x8/8An9fypsj/ALuT/rkv9c0RrpmcWUvtKf8APSiuS89/+e7/APfX/wBeij2x1ch0N7rVnJbXc1hdPvtpWSKLb5ayKw+aUkHly2eAfujjNcPear5nlw3jzPGn/TXtk52cYAOaLuB44oPsk00yTKu7eu3aw6r7455qCHZ5X+kbPk+7XmrFNo6R0urTfYk/0p0/gWJ5d3yAnBPpgEL6HB6Vo6Rr0MdtPDcf6TJNEvlbG/1ZBPXPr/h61jX7fa4tnyfJ/n/J96wYoZo7nZ/HWrmpe8Set2+uzSRSah+5h37U27T8rLkfJzwSCfy/KCx1J/ss9t5yeXMq/O8u3aBksM9ADwMeoFcH5s32Lydn8W/9PSty2ENv56Xj7NjKmzbuZnZSRgD6flRzz+z7xTZYufDL3fmQSXv2CP5HZJfl+YgtwByT0xgc55rp/CurpdyJpOr2sMOq20TJ87FVkXGA6eoIz9D+FV9Nun0i+nmvN774vs6Rbt21SOOR3wABWPr9kmrxJNG7213D/qpXzuVgeCM8gc9ya6IWjD30Q5om8c6V9o0meH78+1pYv9kg/d/EfqawfAviC5u7JPDnnOlrN/pDOjbZFT+KJG/hyTkn0zj20dK8TPqcsltqaJDqVsux4uFWbjG4e/t/kcHqcE3h7W4J7dPk3ebF+HO3+n40aQfLDTsEG9YyPYorpPtNokaJbfZItixJ93HAH6A07Rp3t9Nvn3/Ik8vldNyhcDnH8IO7r2xXOaLqFzJokEyTpNd3bfaJXf5drN2HoFxj8KwLC+1jW5NS0zSJv9BmlZ5Zed21uSmT23Fq4FBtuN9AV5HX+G/FcNxLP++33027yonbaqgZ27z0Un3xywFWZ/Gt5bxSWWp6TN58O23ZXX7ueXbIzyXA7HI96xtJuv7I0270mwSy+Rn82W4iDSLlUGEPUEsDx25NP8Xa5DH4oj+0XTzQJEz/AD5Xa6gA/wC9ySc9+K2b9z3P63KjaJ1Fj4ym8qf7fazfarhfKVrhTHHsDkpy2N2PwzjngZrsfDckNppmxLn/AK6o/wAzbiSxbgZ74rzDTb651bW01D7N9pghXyoLJ22q2chpTkEZxxgjj19e/wBL1KGO+2fatk7szrBt2qydBsOTkDgYHTpgUqcOd819Sr8x2+lyzQSQPZw74Jt3+zt478cfjWrJqFtH5/2dP4V83Y33R0HHboa5KC7mjineN/vsvyO33Ux0x35qPTbvzJYEs/nSFfl+by9xJyUPHGAB/np0Ovy1OSaDk5jpUZ4/njh3wbW9G+uPQ9Ov6U5B58iw3GxN7K+9PVclee+D61xvirX7/T7bZYQzeXNs2fKP3fz4OW6c8DpUeg+I0/18c33Iv+PfduZT/ef0z6e1afWFJ8sUKK15ZHosVlClzJcyPD57t8v44/UrVG60p7eO4SOf9/MrJFcOu5Vz0V/9n6VVs77zLm1eR7l/3Su3yj5c9OB2IP4Z9qvTT+ZseSd5rH7nm7u/ff7dOferneNjLk/mOa1zWZtMjntb90eCZmiZrfG5cYO4KT155PY49q5rWnv7uVPvzWv3IpUUbZOmWIX1xnn0HpXXapolhHbXc2yFEm/5ZXCjbnGDg/wOcdj1Geeg52zle3ubWHSEd7GFtksr/ezjJ+U9e/IH54pTTl7xm0/hKOl3L3F7JDOm+d1fav8AFvwSOx6YrH1JPL1+R402QPAm1/4ZDk52HoRz07cV0E19bXd7qT2iedH56J9oSI/uy4ARh0D5ZuAfYjrVTW40n02xff8A6d+/83zc7mQgY/eEYY4B4/lxWFnYjk9x8xmRWu+1v72SbZGm2Lv8x+Y/y55qndz+XoEj/wAbwfr2rpILa2j8JSJd3U0L30W9UeI/fUkhhyN4IIwRwDnPWs3xPpSf2RaJHNZwokC/N5pbzCME54+U5OMEADHXuY5NQ9nsU/7Mtv770VofZ9F/6DL/APgA/wD8VRRcjUzLrRP9G86RE89IkeVd38BHyt789x6dawrqxT/XR20LwOu/5P3m76HAP510fiKVLu2S1s9PS2vtrP8A6PKNzAEEeZuIyu3J5HauOW68uWR7ebf5P+tdPur249s+nWvnYw19x/n/AF6Hpc6sSwafDcD7+yTb/H93pxjj/Oaz7jRZo5ZPLTfs/j3DvWg2oJJbSPHdbN/3k2hty55bjODjtU1hd2Enz2j77vd8qOv04x/IH35rSNSpD3h2TOL1CymST7jo/wDn0qnNLcwRyW2zf53zs/3WVsk9c/N+PP8AX1VIbZxJ86P/AB7NqL6DdtIwKJdLTytn2bfGn3d6p7f/AF/StIZvye7JB7A898OzTSXsH2+92QfNuZ23beMd/bIH1rTfxH5f/Evj+exh2or7fmbH8R4GM+n861pdMht/MSNPvt5vZl+lZx0hPM3yQp8/3X3fL/gD9fWvQWYwkuUwdNmbqscOs+R/y7To37q4/wDZT+P+etYOs6lNPYz6fq6f6dbN5sUv97t+ZGfrXTrY/Y5JHkR/vfx4/lWb4j0lL+xnuvuTwrvXp90clff2rSFaGhEHyvlkc9Y6xc/2Qmk2/wAm+X/W/wCweSv9fzr0Lw/HZ2lsttZ7N6KvmyxMV/DPQn26V514MjSfW4Ek3vG+75Ysbm4JGM49K9X03Rvsdt9pkR/Mdtmx1HygLkLjHp1NaVFP7BtNmabS51PW9Vtrf+CKKJn4XjaTjjuSwFc6I7bVvFEFrJ5yWlnu83Zhm3A/Ng+5wB9M1NqmvpYXuuvbzP57rEkSRZX59v3j04A/zzVPwHDcyef9jsvOndldpZZRHHGo9SfX+dVNaOUfkHL9o9wgS2kiktbBHs02q6ypFt3IXyuCevGAffnjByyK1SSPZJsm2bvm8obo3xuHynkcEc99341gG5v/ACrGG7mhsILRWf8A0dR5bMHIC9zjHGOPU/w1aj1HzIjDafJv/dL/AHlPHT+6QM9Mc0/aUov3iG19o29LlvPs2zZ9meFm2u6mRWz1467SM55OPypHhvpPtFrfw20P2ZvleKU7m77sbcHd1B9e3FTG+SCT7NveHYqfM+Wbb1247jGKulbl4rt98zom1Il2hupYjheuM/hmsKqdXmpSf9f1+Qc/KaSaPDrVhavq6TTeSv3UndY+P76g/Mfc+9Zt54Oto47uawhh8vzVeKKJvvDoV6AA5zxntVWHUL+S52SJND8yxSq6nr36Dnr2P8q6S0uH0i2neN98D7nb5fmVuO2emM8etJzU3ypOy0u99v6ZfxGdYf2pbyJDGjvdp8nm8behJR8/xY6Gkm8RvpsmpafJs2J96V8KzKOo5OMjP61jv4omjsr57CymmtXb975s5jkUlcFo+OfvA8Z5rKufC9zYSTzyTO9jMrXC/vfOXt15yTnHH9a9GyUFFT+fUmKZ3sPiCwv7K0to/wB95yq+/wA1P3fUgEk8HI+h559eOhtk/wCEkT7BdXMOopOtxvu5QqsGzmMKnU4KlSevPTFJq4h8yDUPDl1ssdypO8SurRp/z18vqVz2A/CsC21G51fy4bfU5rbWfNWKBZYgu3A4wxXhj6+5HpWNNzlza6d9Nfx+4HY9WtrpLTTYLLX4bLz4W2Kz42tt4VsnjoePSni+sNajntvJ2bLVVT7R/q2wexxkHPfHIb3rg9G1z/Sf7J8TXTzSbtkVxLAPlfIxlWAwOvOOh/LY868sNRg1C01OGa0udu1fNDRqVfJToCM8fNjHOPrvFcr5ZCbUkNtYrOSSdLhLaGeHdLFKmfLyvKxAHg885PJ7574Gs2yfaf3d7DNBubbsb5dgIPfnHPA/wNdJfyQz2yTJew+RctLtSL/lmR/Djpx+vFclremzRxwJJaukjqz73+9tABPAPHDZ9TRNLRxJnHQqbrD/AJ7vRWRt/wB/9KKw55/8+fwOX/t0m1fxDZve3cN5pKJPuVJ7h8qsZ5ByAD04INcynjdNPkkS0tYUtZlV/K3fMr98nqc4PX26963ivxMnia4nmt38mdF37JcKtwg6d8FlJPbkE9Mc8Y7objZJvh/g+f1/SvJw+Cg4fvY69Vdnof3TorfVfMuZPs6bI3b5Yn+b8PfH0qxHqkMX76PZCny/Jv8Amzj88HmsHyfsmfMeF/4/3Uu5u42n06/yqhev/rPs/wBybbu3r8y4HOCOxz+grs9jCQ7cp3UHimHzY/LmTfu/u/p26fTtW9puuzTxyfO6f+y/ge1eQ2tw8fyRoj/K3zbfmXr61cs9Vff+8/759qyrZfCS2Fzfyns8OvQ3EUiSOj/8B+n41HHeW3myfc2Ov3ff69f/ANdeWW2rTR/5/P8Az71r2mueZH9/f/sfz5/KuB5aofCLncmel2NhDPbfu3R3/uf7Pfjr+NY2uWSWOlaq/wDcglb8MH/P4VgW2vW1v++jR/4UVHl3e3PAz3qPxv4j8zw3Okcn/H4yxbf/AEL9K56OErxrLX3WbqcLe9uct8N5Ej8Uab/H8zJt/wCAmvZJtbmt/Mmt3tn+95qOv3UHA5+g614t8Oin/CUWr7N+xXdv7vCkfzxXo3jmf7H4cu3j+T7TFtX/AGskof1B616uLxU6VdUodbfmEaPOua5wdukPibx1J5abLV5d/wAn9xR6++Pyr2ez0zTbS2S1t5tlqi72f+HBBBZ+nPAHPHp0rzb4RWXlyX15Iif6ryl+vHT35r1pJLaOODy3TyPub3ztyMdf1r0IV6Euak3qrEWkZ+pW1/ZxbNI2XmyJvNR1+WRTgLsxxkAdP51VWez+zWN7JClnduq7oopflkTLZYejcYOfb1wbX2ry9XSa3uUm3srxO8vy9MnjI46cdwfyyLy6hktpX+y7Pmfzf7vJHTrjnnB9SOamtUov+vyMZbHbedbSWKJfwpNP99ZUnTcvQtnHb2robS5hj0mC1sJof338SS/d4OOB1/ya89t/9Isd9u/zpA+10XvjAX/CtLTZba3kSyu5/Jn27/N2hV9T9ecew/Or9g5Pmja3cUI6+8dhpGnJHFJa3bw/vmaLurNxlWH1+U9fas+O5huJJ7XzoX+ZkZtwXcfTn17detc3canNcWyfYJ38yGVU7fNno/pzzjHTmtGTV7a78i5jg3yW2yKWV3Kqud3G1upG3kjrj3rGo+VLkN2+W8YliPwxbXdj9iuE2SPO77uPl3KEKOPTvkHIbB7cY2haP4n0zVp7LTL1L/Z8jJcb5F5O0cknbgHOc/4VrQXcMmrJDZv+7f51bn5SRnj1B9j+VUJ7TUtTstSS3+0/arb54P8AlnG0v0bkDb29+1dkKkL+9v2XRkNKPwl++094NNurK4RLaSb52SJjPHMrZATkA7lJB2nrkduvG6t4Oh/fzSag7+TO8TL5Xk+X5YyMjkqSO23AyT0Fbes+Lof7N/syObydYSVNjxSmSGZyf41x8y88jGfmOOa5Wbw54gtLKPzJtMeDc3muk5aTqcbwM56n16ComvswBvm90oI15HeyJ++fZ8m5/vKoOB1710Ft+8tbv5Hhk2ruf+91x/X865KWdLCWRNkz6ikq7tjfu9uOMd8/5+uhY+IfIuZE+d3T597/AMX+z/n0oi1Fe+cy/vGxpus3MF9PD/qYIYtn3vmztwfoPmH5n3NbH/CU/aLLfcQ/bJ0Xylut25o8fLxg4OVJBPcKuc15ldX00l9v3w+Y++Vvl/h34GB06evpWhpd75ex40875dnlbT1Prz14zWMak+fct/ymn/bg/uJ/30//AMVRVzKf8+EP/fiP/wCKorv9tU/nQ+Q8PmkSS5/eIiP8z7EUbcn0/wAKkNnc3kfnfO8f3N/930H5VpXek+Xeokn/AAJNv1wK0/DD3Ml4trYXNzDG/wDyyiZ/Lk6/fAOCCMjnPU8V5rrcsLo1RzMdlNHJJDJ+5dPvI/y7c+xHuPzoui9vFs+dJNv6HpXdWdxYaZq93NBp6TRv8/2fbuVVXBznngcn14/CovFulPd21ldaZ5N5p25082KA+XG5w3U9Bz0PcHvWUcT76TWj6mns9LnICFJdkmz/AIFVGeP7Pcmt2y0PVdTuXstItpr++RWlaKJfm2LjPB9M/qKxLppoPM+0I6SJ8jI6lWVh655H0NdUe5kWXm/55/6z/wCtRFN5f+xVAyeZJ+8/2ac6/vP3b7/9v8/Ucf8A1xRYCxNetJIj4+RG+bZ+OP8APtTJp2u4kS4+4jM//AarLD5kX/Aqm8lPM/uPuqrIDX8GXP2C5km/j27F/wB4nP8ASrPi/W5buKCz370Rt/8Aujk4/Nia58TPBHH8/wDe/wA/yqmX/jk3/wC9+tZ+yTqe1luOLcT0rwhqSaZpqJJMiSbvN/oPx6/nXXW+s21xbSfaP4F+5/DyQT/Q143DefvN+xPkX5d6j5fof8PWti1vJpPMSN3eR12bPfqfx+n0rgr4FTfOJvmPUre7tv7NRI55oUmbf8jfd6H8ehP1+lODpH89u/8AwP7zL69jz6Vwllrif2RPayJv+ZXSX7zKv8QBP3R9Pf1pItc/dfu3ff8AL/X9a5qmCnfmgyH/AHT0KwvvLiu4fOdJ3+RUiX2IGD0z7n1qrNqU1p5LvapvuV8qVd3zccd+gOBnjoO+atfDHQJvFttqT/afJe2VPK3/AHWck/K/fGBj8a5nWbp45Z/Mfzndvmf+8wzhs9evfg12QrV6SUZ7dCdftGrqUj+Zvj2eX5WxXT5fk+gIBxjikhk8vTZ7K/hmS+SVZVfnawx3BOOuDnrWJp2qfa5JPM3/AD/e3569u/bn8+tdIyQ/ZvOj33Oz+/8AN8vv2HpxXm18VOD5ZFwgu5PpF3NdybPkT7N86u8u3aufmYZzyc49q6Gz1V/tyQyIjwIrPF/EshwScnuAe3T8a53S7GaSKS6j0+ab7J/rdi/LHnOM9+OvT/Gsp73y7n/SHfy933+flB649iDW+Gx04JR1/r9DZ2iekx+GdI1e5TWZLJ/tX8MVvPt3FQSjOMHJx147dD353XbKaTUr680SaGG1eL7R9n2yeWxBBbO5QvOSxHJGCPrd8JapbeVss5nSx+Z9kq7mjI9+oBGTjP4daq6zdzXetwXsn2lIN2+W3fLKoIOCgGC3GeSPz7+hXxcILmvqZv8AmOYv7R7jTY5tQtne+fbtRFO1oSpO/cv8QIwVPr7VzECPHJ/t/wD6q9GvNamtNI/syLe/yt/pG4bsHJVhj1B5z/iK5vVUST/j3h8mB4lTYm/apHr6nk/99Vy/Xacupk4nBwI/9pXbyP8A3fufxcZ/Ad8VeEjj+DZ/B+tWZLJI9SkuZPn8773/ANapnVJItmyt/rMBO5l+ef8AborR2JRT9sguWYQkd7515ClzabvNZXY7cdNhIGRgHt0JolTR5LaeG0kmtnT97FuT72OiEgcEcj0471Nf39t5WyOFES2/es8uf3inA2dxj8M81iT6gl3cyPH8nnfwfntGe/1PPBrignPXVf12OqD5UTWq3kkd2n7l4H2oyPs3Ngg7R3OeMkcnvVjR7ebzPIkufsFp5S27Oi/K2SeXBIyBuYE56DqOKbZwPHsf5/4fI+v8PPr9PSrMxS8k/wBL2eWisnyewHzZ7jvn2q3P7IRfL7w3wn4n1vwJr91NHDC8zqqXMUq7lYD5hhuoznPHXPQ8Vg6tp2q3+talNqlrN/as07eerr8zTE4I59zjH0x2ruby1ttMitL23eG5TcvyuoZl24zkHtkY9K9gvfAcPimW11u4mudNurmJLhoos7oZDGuRknAPrgA8dc8114atUxVO1NbfL1/ELJnytr2iXnhnV77SNTTZPbuu75vlwQGBz3GOao/ZZoLmRLyGaGeH/WxSqY2X6gjI/EV9Y+LvhvoN/qSeIPE166R20CJdO+yNZtg+85PTPoKxL74Q6D4x1KTxNYeIL1LXUWW6Xylj28gZwWGR9D06dq9J4eWvKQfPeq2lhJc/adFh1CG18hZZUuFP7lSQoO7upJGD3zWPMyf9tP8AOa+o/iJoOlQeDPGuq6Zf/bPtGnwWssCPHIsfkNtXBAyDycg96+Upt7pJ5e/y3X+fv6Vm6fsrK4Nm/cacml32hvq8aXMFzFBey28Uu1mhY5CkkYUsvP0YV1njL4iaPfaBreh+GfDNlp2lXc8VwkrIFm3AKH+TkK2RjKnhc9zmvUU+HXhj4naTp2uWGpzWc72sEU9vb+W3lvHGE2EEZUjGPQ7QfrEf2btK/wChg1P/AL9R/wCFbxpVOgHjvhT4Va/r2r6Xa4Szg1Gx+3pdS52rDv284/jzj5fRga2viD8IdV8CaT/a39oW2pWCOqSssRjaMk4B2kkEE8ZB6kV9At4Ie0sPD/meI9Qtv7F3f6QmyPzosqQknbA2iofF2iaV8VPDcdtp+vummwzs8v2LbJ5jrkDOewPI9c554q/YK1upNj5R8J6dqXiLVfsGiQ+ddeU8uzdt+SMbjz79B7kVreGNMm8SXsGn2Cf8TG5ZvKiT+6FZm3k/d4AA+hr3/wADfBGz8H+I4NY0zXNSd03I0TxLtmQ9UOO3Q/UCrOh/B220TxRa67Ya1qCTwy7/ACkiTayn7yH2I4/WsHhHKwzzb4Kzv/a2uaZG7211caTP/vRkYw31BNaeg/CTxBrWkfar+aHSpHX91FKpaT/gYH3f1PtXp/hr4cab4avtZ1PTHm/tW+llZbqVN32dXbdsROBgH1znA7cVj2nwkb/hJINZv/FviK7uoZVl+8I92DnZwMBT02gDgn1prBRsudXCx8+X8lz4e1e+0+/g2X1tLsl2Pu5HofQgg5+laOj6ul/KiF9n++3y/j6VV+NO7/hbPibH3PPi/wDRMdc/oZeOTivKxWFhqYvc9n8N+JNY0y2u9M0x0ufte9U+X94pxjcCOpwPfpxXJ6uJp/8AWP8A7Hz43Va+Ht9c2fizTp4IfOkSdU2P/tcFfrgnHuKb4nfy9b1WGPYkaXUsSt/dxIf0rgnCfKru9tP1DU3PDfhbUoPC8/iCSHztO2s/2dG2ySKMgvyDhRz0IPXFYniDxF+8geN3SPyNm3zSzLgnr79PevZND/s3U9ATUNM1Z3gh0drWWwSUNGuFOWK9mBPX2H4/MurM8gP+1XdiMLCChHv/AF+po/dO30668yy86SHfaPK0Sy/7eASufXBBptzP5f8Asf3Vf+KtHwfO8/wzv7WSBHgtryKVbj7vzsCrKT6gAf8AfVcxqtwkmz7/AP8AYjpXl1KCjUXL6kODLB2Sf6z5Pz/pSXUf+r8uH7/+1/KoLdEktv3e/wA/+H/a/wAP881JKjx22+Tzkn3f6p13buv5dKcXys1hTcit9juf7j/98H/Cipsv/wBNv+/Roq+ep3DTt+Buaj4f+16I/l2uy6Rvmf2Bxt/L0rm7nS/LiR7R5vk3eajrtbIOOMdc/ptrZ067v7/zHjR7l3Vtzvj7p4OO/UfpW1b2VzPGl5HCmx1XbFx8ykYPB/8ArcVhGvPD+7N/12IdTlRxs37uS1g/tNJkRfmaJD+7ySO/Xt6d/qdjwzJYR3t2lx53775IpbdPmjz8u7yzww5+7kZyfpSrpzyXBtrjYiQ7kgt3fa0YP+1jhc9BznPTvVe8gms7mBJP+WK/NsX/AFj5P5Dpj2/KupVYv3f8v6/r5l+0Udj1HSovC3huOfU7zU4dYuvvxWtvB5fI5H7rcccjOScD8K5Xw74h0HXdb8QXPxBfZJdr+4i58uMDsGH8QwAM+/rise0vX8yTz9jx7W2xe3pxnGc/p7VW1KS2+0x+ZD+7f5P7rZOPQc4rSGNatD2asun/AA4RqanLXFnxO+zYm790rtubHbJ7mjTbRLiTyZNnzts312VjBD8j/uXg/iTdu5z06Y4H/wCumx6TDPFvtHRE3Mu3d82cZ4HXAyc+1YPFpXuEXDnOZ1XR0kkTy/ng/hlRfl4OGx64OBmq40T/AEZJt8Lo7fd27vb8OcYrrrOCztLaBLvfDP8APEz/AI5BH/fWf84rM1Ce2g8xI02QfLtTd/FgAt/n1q6eKm7Qj0/E0jySmYNvpT2+y5gTZ9750b73OOfz/StKS0S3srV7j5/m+X+7xz/OtqeBI7aR7S53wOqI391iDnGP5cdfSmvZO8iJI6fd2fe+VQf5HNS8Vz+8XVh7K0ZHN2NjCnmTXCJs/uJ/n86kGmWc8n7z5N6/d3bmXrweBg8+lX5YfL/cSf6xG+ZU+b6duMUXWnXMcnnf8s0/jRt3/wCr8a1dTme9jB+6ztY9L8A6Lpsjx21zqs81msW//lnHN19ipyuep4A55qnPpnhaPwBd/a7ab/hJ3ffAnMbMGIChDyCgXBIPPXoSDXO2d09uIJrjZs3fLs+9kdP5GtPc+p21r5jumxv3W9vl259Og/8Ar4pVMbUjPm5FbYr3HA4WfRHjiPyb0/8AHl9/rViPSba3tk8xN+/738LL/iK7H/Q/kfZ9pnhb50f7rEDOQSD7n8ayL2yuZJZ5vJ/22+X7vtx069PSphinP3ZaGU4cvwu5Thsbb+zeETejbPk+61aHhe10KRfsupvNYT7vlvUXz41Ho8XB7cMD36VX050kk8mPZ8/3f4d3fnnrV15Ht/8AV/J/d2euc/1x/wDro9s4Skt/Uyhe/vHpFteeFvAemz3uiXMOt6/Mv7qXjbHn2Gdo9uSenSuJ0c+F/EMmzxFeXuiX38V0jiSG4Y9WO4Eo2c55x9K59tTST5/k/wBtEX5W/wDr1Yt4rG7/ANZ+5/u9Ovv07Ct3i2rc0FZdCnPl6HoWt32g+HvC13oXgbZeT3i+VeX/AJo+ZO43AfMxGR8vAyT1rlND8MeE9dvS954jm0eBP9bp1woZv91LjIUj0ymayf7ISPb5dzv/AL7J/CP61GsMMdz/AKQn8P8AB/Pn/PFH1+8+aya6KxPtNTrfiN4ks/7MtfDnhW2+zaHaNv8ANT5fOfn5vUjqcnkmvM4jM8n3/k/u11LvDJbfvE3/AO393b/iarQW1tPJst9/mf5+asJ4p1W5ziL2juS6c6W/8fnSfK/yKfl/EHINTahqFyP9fbQ/J93epZsHI6nqKp5ms/MeN/3bsu76/X1/xqB7j7XJIk82z+6j52qeM568YzWHs1KfNudcK84Q5Yk/9oR/8+sP/j//AMVRWR5w/wCe9Fb+wX9XF7SodH4c8nTPnuLrZIn7rdz83f8AL60s2uTfJ9n+TyZdjbG+Zuv144FYw1HzLZId8Kf7cv3l+np0rEFx5cuyN0SP/P4+n5U44Xnm5zOTk5viOwk1SaTVvtV3Cnlp8i7GHzHGRn1IJ69qztQu/Mk877m9mfb/AOzdPwz3q9EbB9E/cPvunZdy+/fj8f1rL8UTwvqMcMCIiJAibf7xGenp2oowXPypeX3Cg9SOPUX8z/c27v6Z9e9TTXaXZ2Sb9n+P+c8VkGH+OP8A1e75n/lUcUr/AO3XV7FfFE1sdDFL5YSG3+5u2M/+z/e56f5+lTtMkezy5pvPh+7Lu+VTjBxz7YyKxIpkjuUSTe6ff/u/zq/IbaSxkeR9j7di/wC1x39KwnT1FblJo76b93Ds85PmRdntzxUMknmSbJJk2fNtf73PHtx0FXNOtIbS2S8kud8m1nVE9u5z2GM1oX2n23/CN/2tJvffeLar83y/dLNnA64K/r6cqFpTtFDg9TF0/UHjj+zSTOkE3yM/8PqP8+1dv4Q+HWq61bR3sl19gsf4biX7zAH+BRjj3OPbNeYapN9n/wCWyOn+x91SMgDp1xXsug+LdA8b+DNN8O3Gof2Vr9tEsUG9v3bOoCrz0O4Y4PPXHbPbh8NTm3P8Nrm86nMkcN4luLbRL670+zf7TBbysiy7g3mccNxx09KydOu3u/M8x/8AbaszxbHc2erXdrfpsvrZvKlV/Uf0xyPY1ufC6z/t3W00yN9k827bL/dAUsf5Afia5nhnb3VqzBr+U63WNDTw74a0bVre5Sae583dv+6rZ4AH94Luznjr7CuLv9VeSKNI9ifNs+79M/y57812fiWR/wDhUPhx7jekiXlwjfUSMPw6GuU+H+nWfijxhHp+oXvk+bBK8Cp96STado9z1bHfbir+q81Raa6fl/mE/efKaGkGHCTXb/xbO23n26gDr/kVoxTuY5H86b/nkzbt24duB19PxrlNNt7nUtWtdJsE33U0vlLFu/i7se4UdSf9k13fiXQLbRfDdprOka0mq2Ls1vOyY2rMOybeg4PBycj3riqYGpNOquhMU/sHM6yifIkabPl/3uB04/H+VZNx50EW+RHdP4d/8TEdvaq954i+13qeZ8kfyoyp/EAf51aSbz4pIf77Ltfaen0Pf8MjNFOE4Jc6K1t7xkpeeXJ+8/g21etzvk/dv/epbvR38zfGm/8A9B4+vT35ra0m2sPsMkNwm93+bz0b5o3Gc8dCMY/XnsNaleCheI1DmKsNxN8n3H+98m0bvxAH0qc3MLxI8j/OjL99f8inWcltaRXFrd2X2mO42xRS+asbRv6gkEDr34471jO/lyzp8+9N25OOoOD9a51BTZq4OxYvT5n/AB7/ACf7P3f1NVIppo5N8f8ArP7+6ovP8yT95/q/8/jVqwVPtOyR3SP++nzbePQc/h1re3IjFU2XDq959h/eI+/d/rUY7c9sgcenXjpVW5SHykSR/wB/t+/uDfXOD1+vJqOTZaeZ9nufO875JU8oqy88deO386guS/mb9iJ935Nu32pwpq/u6Dd4rlkR5T/b/wC+KKb5jf8APNP++v8A69Fa8rHYxkeGP/WP/wCO/wAPfvUUUyeZvkT/AD2qvEv/AAPe3+f51cSPy/M/j2Lvb8cD8ByK9GwFm3uPLl+/s/jb8/8APFMvbrzPn/j+5v8Aaq02/FVv+Wm+SlGEfiFY1be78iLZG/yf3f731/oKdPI8kSeWnyfw/kP1rJz5fz1p2V7/AKN+8f7n3Pl/z/k1Dhy+8Fi1bSfc8z+D7vzVYkk8uT92m+P5f/r1i/bf3n/TP/2Wr6eTPF+8m2f3V/ibnt2H+JFRKFveYfCbdpdJJIkO9Nif3P1/w9vxr0L4cePLPw9Y3Gjavp/nWLy+auzY21jxtIY4bOPzBrxyzmS3uZPMR/k3bN/3s/3v/rVs6Jczfaf3EyW11/C7OfuYIZDgd+P8ms0p4d+1gXC8nyntk/xT8Ax/6zRpv/BdF/jVc/F34dx/8wSb/wAFkX+NeS2tjbSSKkkMP2W8i8qW6uE3NbuOd2B05A5HYn8MJ9K+1f2rNBdeda2EW/fFhu+B1IypPO4A4zyOtd9LMJS3/L+ups6c4o0fi/4msvFPjGTVtI+0pYvAkX71drb1HzcAnsV/StL4K+GtV1nxRa3un74bHTp45Z71vurg5Kg92I7eh5xXMeG/F95oH+jPDZ6lpztvk03UIBNCzf3gD91vcfjmuz8W/Fu/1Pw4mjaPplnoOm+VslitW3bl9B8qhV9QBz61q+Rvnn9xhY7Xwx8UNB0y21LT9ftnvLX7ZLcWrpAJFYMxxwx+pBHrXS2/xJ8GpZQatb+H72G1dmSK9TTI1XeODhgetfMMBe4f+/XpSeOr+bwCnhrZbJaoyIrou1pIwc7SOhy2DnuAaiGJlShyv5aE8/Kd1rHxo8P6Zbed4V0PffP/ABywJCuM85Kkk1z/AI4+J+leLPAF9pkekTabqU0sUvybGjYrIpZtwwc7Vxkj2rz/AFC1e7lk/vovzfN90dv/ANVUGg/d/u3+/WH1+pNFKZTs9O3yfvHeus0iSbykhjff/H86/d6fy9awLbf9+rUc7x/PG/7z7n/Aa4K6cyW3blidHFqNzbyFJP4/7/p/PvUTXUMkeyNET/c98k/zrCt7r/P4cVZf9x/rP465XQUWTFKPxFu4hTy3/j/9m/Lpxmqdt9ogj2SQ74/7lMgk8vb8/wDF/wB9NWqkjz/x7/8AgNU7w90TqOJQmkhj+eO2++q/fb5s98fX+tMad/KkTZ/t79v3c4H9AKuzTzPJ+8R9ifdbb/n3qOOCbypPL+fev3P4v/1Ur/zFxrKXxFRFf5Pk+R/n/wD1frUbweXGk39/7qpj7vv+VSWt75En3P8AYalvJ4Z5d8aeT8vzJ7960XPc6NLDvtKf3P8AyIP/AImimfJ/z6v/AN9//XoosZciOXt/9Z/wH+tJb/62T/e/oKKK9ckdd/x/57Cq46p/vf0oopLYB5/1n/Al/kaW1/49k/3V/lRRVAQp0T/cb+QrStv9Yv8Avf0ooqJCZYn+7B/1y/xqXSv+Qkf+A/zFFFYS+AqJ2vgv/kGXn+4n8zXmU/8Aq5Px/maKK4sB/HrfL8jsrfw4fMpz/wDHyn+838qmu/8A4n+dFFex1ONk+kdZP91v5Gtaz/4+E/3KKKwqkSLq/wDINP8AvGktP+PaT/gNFFcfciJTm/4/U/65VPdf6ySiirNRIf8AVQf71P7R0UU63xEMdJ0T/gX8quS/8e0n+7/VaKK55dCGakv/ACCU/wCuCfzaqtt/rI/92iiuRfDIyiVdS/1Un+6tYxoortobHTDYr0UUVqI//9k=" alt="" height="225" width="489"><br></div>
+
+
+
+
+
+
+
+
+<br>
+	<br><br>			طبقه بندی: <a href="../../category/5.html">
+			فرهنگی ،اجتماعی</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B2%D8%B7%D8%A8%DB%8C%D8%B9%D8%AA" >روزطبیعت</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ جمعه 1395/01/13  ]  [ 09:40  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(230)">نظرات  <script>setCommentCnt(230)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/227">متن کامل بیانات رهبرمعظم انقلاب دردیدارمداحان اهل بیت (ع)</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+<p align="justify"><font face="Mihan-Iransans" color="#000099">بسم‌الله‌الرّحمن‌الرّحیم‌<br>الحمد لله ربّ العالمین و الصّلاة و 
+السّلام علی سیّدنا و نبیّنا ابی‌القاسم المصطفی محمّد و آله الاطیبین 
+الاطهرین المنتجبین الهداة المهدیّین المعصومین. اللّهمّ صلّ علی فاطمة و 
+ابیها و بعلها و بنیها صلواتک و صلوات ملائکتک و اولیائک علیهم.</font></p><p align="justify"><font face="Mihan-Iransans" color="#000099">&nbsp;تبریک
+ عرض میکنم روز عید مبارک را و تشکّر میکنم از برادران عزیزی که برنامه 
+اجرا کردند و جدّاً ما استفاده کردیم و لذّت بردیم. این سرود آخر جلسه هم 
+هر سال حُسن ختامی است برای این جلسه که جناب آقای سازگار این سرود را هر 
+سال انشاء میکنند؛ امسال خیلی هم خوب اجرا شد؛ مضامین خوب، مفاهیم خوب، 
+درس، تعلیم، تذکّر.</font></p><p align="justify"><img src="http://cdn.asriran.com/files/fa/news/1389/3/13/137746_775.jpg" class="irc_mi" style="margin-top: 0px;" height="272" width="513"><font face="Mihan-Iransans" color="#000099"> در این جلسه که شما برادران عزیز حضور دارید 
+-البتّه خواهران گرامی هم هستند- خطاب من بیشتر به شما برادرانی است که به 
+افتخار مدّاحی و ذاکری سیّدالشهداء (سلام‌الله‌علیه) و اهل‌بیت 
+(علیهم‌السّلام) مفتخرید. الحمدلله کمّیّت مدّاحان -بخصوص جوانان- در این 
+عرصه کمّیّت بسیار مطلوب و زیاد و خوبی است، کیفیّت‌ها هم در بعضی از جاها 
+واقعاً خوب است. این مسئله‌ی مدّاحی در کشور ما یک پدیده‌ای است؛ شبیه این 
+را ما در هیچ جای دیگری نداریم. البتّه اختصاصات جامعه‌ی شیعه و چیزهای 
+اختصاصی که در سایر جوامع اسلامی و غیر اسلامی نیست، متعدّد است؛ خود اصلِ 
+عزاداری مثلاً یا اصل مصیبت‌خوانی برای اهل‌بیت (علیهم‌السّلام) که معمولاً
+ همراه است با موعظه و نصیحت و [بیان] معارف و مسائل روز و بیانات گوناگون و
+ هرچه اقتضای هر زمانی میباشد، جزو اختصاصات شیعه است و از زمان ائمّه 
+(علیهم‌السّلام) تا امروز ادامه داشته است؛ در جاهای دیگر نیست و خَلأاش را
+ احساس میکنند. خلأاش را در جاهای دیگر احساس میکنند و سعی میکنند یک جوری 
+پر کنند و نمیشود. لکن این پدیده‌ی مدّاحی و نغمه‌سرایی در باب مدح و مصیبت
+ و مرثیه و ذکر و امثال اینها هم یکی از اختصاصات است؛ این هم جای دیگری 
+نیست و به این شکل وجود ندارد؛ به این عمومیّت و به این وسعت -چه وسعت از 
+لحاظ کمیّت، چه وسعت از لحاظ معانی و مفاهیم و مانند اینها- نیست. این 
+پدیده درخورِ کار علمی است؛ یعنی واقعاً جا دارد دانشجویان ما، اساتید ما، 
+محقّقین ما بنشینند و روی این پدیده فکر کنند، کار کنند؛ هم تفسیر و تحلیل 
+کنند، هم راه‌های علمیِ گسترش این را به ما نشان بدهند و یاد بدهند. ما در 
+واقع دستِ‌کم گرفتیم این پدیده را؛ خیلی پدیده‌ی مهمّی است. خب، ما 
+بحمدالله این توفیق را داشتیم، این فرصت را داشتیم که در طول این سی‌وچند 
+سال گذشته مثل امروز، هر سال این جلسه را با برادران مدّاح تشکیل دادیم. 
+شاید در بین شما جمعیّت، کسانی که عمرشان از عمر این جلسه کمتر است، کم 
+نباشند. سی‌وچند سال است که این جلسه برقرار است. پس فرصت خوبی است برای 
+اینکه راجع به این پدیده یک مقداری صحبت کنیم.</font></p><p align="right"><font face="Mihan-Iransans" color="#000099"><font color="#CC33CC" size="2">لطفاًبقیه را درادامه مطلب مطالعه بفرمائید:</font><br></font></p>
+
+<br><a href='http://diarebehesht.mihanblog.com/post/227'>ادامه مطلب</a>
+	<br><br>			طبقه بندی: <a href="../../category/12.html">
+			چراغ هدایت</a>، <br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AC%D8%A7%D9%85%D8%B9%D9%87%20%D9%85%D8%AF%D8%A7%D8%AD%D8%A7%D9%86" >جامعه مداحان</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D8%AF%D8%A7%D9%81%D8%B9%DB%8C%D9%86%20%D8%AD%D8%B1%D9%85" >مدافعین حرم</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA" >اینترنت</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B4%D9%88%D8%B1%D9%88%DB%8C" >شوروی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%85%D9%88%D8%B4%DA%A9%20%D8%B3%D9%BE%D8%A7%D9%87" >موشک سپاه</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%20%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA%DB%8C" >اقتصاد مقاومتی</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%AF%D8%B9%D8%A8%D9%84%20%D8%AE%D8%B2%D8%A7%D8%B9%DB%8C" >دعبل خزاعی</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ پنجشنبه 1395/01/12  ]  [ 08:21  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(227)">نظرات  <script>setCommentCnt(227)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://diarebehesht.mihanblog.com/post/226">تبریک ولادت حضرت فاطمه الزهرا(س)وروزمادر</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<div style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif" style="font-size: 11px;"><font size="3">خجسته میلادباسعادت حضرت فاطمه الزهرا(س)وروزمادر وروز زن برتمامی زنان پاکدامن ومادران زحمتکش مبارکباد<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div>
+
+
+
+
+<br>
+	<br><br>										برچسب ها:
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7" >فاطمه الزهرا</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B2%D9%85%D8%A7%D8%AF%D8%B1" >روزمادر</a>، 
+													<a href="http://diarebehesht.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B2%20%D8%B2%D9%86" >روز زن</a>، 
+												  
+					<br>					
+				
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ سه شنبه 1395/01/10  ]  [ 11:02  ]  [ <a href="../../author/1235435.html">  حمید عزیزی (خاک) </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(226)">نظرات  <script>setCommentCnt(226)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+	
+
+		
+<center><b><font color="#3f3f3f" size="1">.:</font></b><a target="_blank" href="http://www.weblogskin.com"><span style="text-decoration: none">
+
+<font style="FONT-SIZE: 8pt" color="#666666"> Weblog Themes By</font><font style="FONT-SIZE: 9pt" color="#e1e1e1"> </font>
+
+<font class=text5 size="1"><b><font color="#B81B1F">Weblog</font><font color="#666666"> </font><font color="#666666">Skin</font></b></span></a><b></b> </font><b><font color="#3f3f3f" size="1">:.</font>
+
+</b><font color="#FF9933"></a></font><br></center>
+
+</div>
+</td>
+
+<td width="220" valign="top">	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/490/1469522.jpg@4929"  /><br>إِلَهِی وَ رَبِّی مَنْ لِی غَیْرُكَ<br />
+اى خدا اى پروردگار جز تو من كه را دارم<br />
+-------------------------------------------------<br />
+سلام<br />
+به وبلاگ من خوش آمدید<br />
+این وبلاگ جهت تبادل افکار واستفاده ازنظرات شما ایجادگردیده است لطفا مارا همراهی نمائید.<br />
+                                                                                        متشکرم<br />
+_______________________<br />
+گفت دانایی که: گرگی خیره سر،<br />
+هست پنهان در نهاد هر بشر!...<br />
+هر که گرگش را در اندازد به خاک<br />
+رفته رفته می شود انسان پاک<br />
+وآن که با گرگش مدارا می کند<br />
+خلق و خوی گرگ پیدا می کند<br />
+در جوانی جان گرگت را بگیر!<br />
+وای اگر این گرگ گردد با تو پیر<br />
+روز پیری، گر که باشی هم چو شیر<br />
+ناتوانی در مصاف گرگ پیر<br />
+مردمان گر یکدگر را می درند<br />
+گرگ هاشان رهنما و رهبرند...<br />
+وآن ستمکاران که با هم محرم اند<br />
+گرگ هاشان آشنایان هم اند<br />
+گرگ ها همراه و انسان ها غریب<br />
+با که باید گفت این حال عجیب؟ <br />
+ فریدون مشیری</p></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1398/12.html"> اسفند 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/10.html"> دی 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/7.html"> مهر 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/6.html"> شهریور 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/5.html"> مرداد 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/4.html"> تیر 1398 ، 1 </a></div><div class=li-Sid>
+<a href="../1398/3.html"> خرداد 1398 ، 3 </a></div><div class=li-Sid>
+<a href="../1398/2.html"> اردیبهشت 1398 ، 2 </a></div><div class=li-Sid>
+<a href="../1398/1.html"> فروردین 1398 ، 2 </a></div><div class=li-Sid>
+<a href="../1397/12.html"> اسفند 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/11.html"> بهمن 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/10.html"> دی 1397 ، 2 </a></div><div class=li-Sid>
+<a href="../1397/9.html"> آذر 1397 ، 2 </a></div><div class=li-Sid>
+<a href="../1397/8.html"> آبان 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/7.html"> مهر 1397 ، 2 </a></div><div class=li-Sid>
+<a href="../1397/6.html"> شهریور 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/5.html"> مرداد 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/4.html"> تیر 1397 ، 1 </a></div><div class=li-Sid>
+<a href="../1397/3.html"> خرداد 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/2.html"> اردیبهشت 1397 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/1.html"> فروردین 1397 ، 1 </a></div><div class=li-Sid>
+<a href="../1396/12.html"> اسفند 1396 ، 2 </a></div><div class=li-Sid>
+<a href="../1396/11.html"> بهمن 1396 ، 2 </a></div><div class=li-Sid>
+<a href="../1396/10.html"> دی 1396 ، 4 </a></div><div class=li-Sid>
+<a href="../1396/9.html"> آذر 1396 ، 1 </a></div><div class=li-Sid>
+<a href="../1396/8.html"> آبان 1396 ، 3 </a></div><div class=li-Sid>
+<a href="../1396/7.html"> مهر 1396 ، 2 </a></div><div class=li-Sid>
+<a href="../1396/6.html"> شهریور 1396 ، 3 </a></div><div class=li-Sid>
+<a href="../1396/5.html"> مرداد 1396 ، 2 </a></div><div class=li-Sid>
+<a href="../1396/4.html"> تیر 1396 ، 1 </a></div><div class=li-Sid>
+<a href="../1396/3.html"> خرداد 1396 ، 3 </a></div><div class=li-Sid>
+<a href="../1396/2.html"> اردیبهشت 1396 ، 3 </a></div><div class=li-Sid>
+<a href="../1396/1.html"> فروردین 1396 ، 1 </a></div><div class=li-Sid>
+<a href="12.html"> اسفند 1395 ، 2 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1395 ، 3 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1395 ، 2 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1395 ، 3 </a></div><div class=li-Sid>
+<a href="8.html"> آبان 1395 ، 3 </a></div><div class=li-Sid>
+<a href="7.html"> مهر 1395 ، 2 </a></div><div class=li-Sid>
+<a href="6.html"> شهریور 1395 ، 11 </a></div><div class=li-Sid>
+<a href="5.html"> مرداد 1395 ، 5 </a></div><div class=li-Sid>
+<a href="4.html"> تیر 1395 ، 11 </a></div><div class=li-Sid>
+<a href="3.html"> خرداد 1395 ، 7 </a></div><div class=li-Sid>
+<a href="2.html"> اردیبهشت 1395 ، 11 </a></div><div class=li-Sid>
+<a href="1.html"> فروردین 1395 ، 7 </a></div><div class=li-Sid>
+<a href="../1394/12.html"> اسفند 1394 ، 7 </a></div><div class=li-Sid>
+<a href="../1394/11.html"> بهمن 1394 ، 5 </a></div><div class=li-Sid>
+<a href="../1394/10.html"> دی 1394 ، 3 </a></div><div class=li-Sid>
+<a href="../1394/9.html"> آذر 1394 ، 4 </a></div><div class=li-Sid>
+<a href="../1394/8.html"> آبان 1394 ، 3 </a></div><div class=li-Sid>
+<a href="../1394/7.html"> مهر 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../1394/6.html"> شهریور 1394 ، 4 </a></div><div class=li-Sid>
+<a href="../1394/5.html"> مرداد 1394 ، 3 </a></div><div class=li-Sid>
+<a href="../1394/4.html"> تیر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/3.html"> خرداد 1394 ، 4 </a></div><div class=li-Sid>
+<a href="../1393/11.html"> بهمن 1393 ، 3 </a></div><div class=li-Sid>
+<a href="../1393/10.html"> دی 1393 ، 4 </a></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../460.html">تبریک سال نو عید نوروزباستانی</a></div><div class=li-Sid>
+<a href="../../459.html">در رسای شهادت مالک اشتر زمان سپهبد سردار قاسم سلیمانی</a></div><div class=li-Sid>
+<a href="../../457.html">گرامی داشت روز دانش آموز و روز ملی مبارزه با آمریکا</a></div><div class=li-Sid>
+<a href="../../455.html">تبریک آغازسال تحصیلی</a></div><div class=li-Sid>
+<a href="../../454.html">محرم ماه خون وقیام فرا رسید</a></div><div class=li-Sid>
+<a href="../../453.html">عیدغدیرخم</a></div><div class=li-Sid>
+<a href="../../452.html">27 تیر؛سالروز اعلام پذیرش قطعنامه 598 شورای امنیت از سوی ایران</a></div><div class=li-Sid>
+<a href="../../450.html">تبریک عیدسعید فطر</a></div><div class=li-Sid>
+<a href="../../451.html">سالگردارتحال رهبرکبیرانقلاب اسلامی ایران،حضرت امام خمینی(رضوان الله تعالی)</a></div><div class=li-Sid>
+<a href="../../449.html">تسلیت سالروزشهادت حضرت امام علی(ع)</a></div><div class=li-Sid>
+<a href="../../376.html">تبریک حلول ماه مبارک رمضان</a></div><div class=li-Sid>
+<a href="../../13.html">مناسبتها</a></div><div class=li-Sid>
+<a href="../../405.html">سالروز ولادت منجی عالم بشریت،حضرت مهدی موعود عج الله</a></div><div class=li-Sid>
+<a href="../../448.html">گرامی داشت ولادت حضرت امام حسین (ع) و رور پاسدار</a></div><div class=li-Sid>
+<a href="../../446.html">تبریک عید نوروز و سال نو</a></div><div class=li-Sid>
+<a href="../../447.html">چهارشنبه سوری شما مبارک</a></div><div class=li-Sid>
+<a href="../../445.html">تبریک میلاد حضرت فاطمه الزهرا و روز مادر</a></div><div class=li-Sid>
+<a href="../../444.html">تسلیت شهادت مرزبانان سپاه پاسداران انقلاب اسلامی</a></div><div class=li-Sid>
+<a href="../../442.html">گرامی داشت چهلمین سالگرد انقلاب اسلامی ایران</a></div><div class=li-Sid>
+<a href="../../441.html">تسلیت ایام فاطمیه(س)</a></div><div class=li-Sid>
+<a href="../../439.html">گرامیداشت 12 بهمن سالروز ورود امام خمینی به کشور</a></div><div class=li-Sid>
+<a href="../../437.html">تبریک سال نو میلادی</a></div><div class=li-Sid>
+<a href="../../436.html">تسلیت ارتحال حضرت آیت الله هاشمی شاهرودی</a></div><div class=li-Sid>
+<a href="../../434.html">تبریک شب یلدا</a></div><div class=li-Sid>
+<a href="../../432.html">گرامیداشت روز دانشجو</a></div><div class=li-Sid>
+<a href="../../431.html">سالروز ولادت حضرت محمدمصطقی و حضرت امام جعفر صادق(ع)</a></div><div class=li-Sid>
+<a href="../../430.html">گرامی داشت هفته بسیج</a></div><div class=li-Sid>
+<a href="../../429.html">آغاز امامت و ولایت حضرت مهدی موعود(عج)</a></div><div class=li-Sid>
+<a href="../../427.html">نکوداشت اربعین حسینی</a></div><div class=li-Sid>
+<a href="../../426.html">محکومیت حمله جنایتکارانه تروریست وهابی به مردم اهواز</a></div><center><a href="../../list.html"><b>لیست آخرین مطالب</b></a></center></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/17.html">امام خمینی وانقلاب اسلامی  11 </a></div><div class=li-Sid>				
+<a href="../../category/12.html">چراغ هدایت  50 </a></div><div class=li-Sid>				
+<a href="../../category/15.html">ولایت وامامت  22 </a></div><div class=li-Sid>				
+<a href="../../category/16.html">عاشورائیان  13 </a></div><div class=li-Sid>				
+<a href="../../category/2.html">رضوانشهر   2 </a></div><div class=li-Sid>				
+<a href="../../category/19.html">انتظار  7 </a></div><div class=li-Sid>				
+<a href="../../category/7.html">مذهبی ومعارف  14 </a></div><div class=li-Sid>				
+<a href="../../category/21.html">علمی،پژوهشی  2 </a></div><div class=li-Sid>				
+<a href="../../category/20.html">بهداشت ودرمان  2 </a></div><div class=li-Sid>				
+<a href="../../category/18.html">تاریخ و سیاست  7 </a></div><div class=li-Sid>				
+<a href="../../category/14.html">تروریسم  4 </a></div><div class=li-Sid>				
+<a href="../../category/13.html">استکبار،قدرت پوشالی  4 </a></div><div class=li-Sid>				
+<a href="../../category/11.html">جبهه وجنگ  14 </a></div><div class=li-Sid>				
+<a href="../../category/10.html">بربال ااندیشه ها  8 </a></div><div class=li-Sid>				
+<a href="../../category/9.html">موضوعات انرژی  5 </a></div><div class=li-Sid>				
+<a href="../../category/5.html">فرهنگی ،اجتماعی  20 </a></div><div class=li-Sid>				
+<a href="../../category/8.html">امورتغذیه  4 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">پیامها ومناسبتها  31 </a></div></div>			
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک های مفید</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://yourfun.ir">پورتال جامع یورفان</a></div>
+<div class=li-Sid><a href="http://soft90.ir">سافت 90</a>
+</div>
+<div class=li-Sid><a rel="follow" title="آتلیه عکاسی" href="http://bartarinha.com/group/131/%D8%A2%D8%AA%D9%84%DB%8C%D9%87-%D8%B9%DA%A9%D8%A7%D8%B3%DB%8C">آتلیه عکاسی</a>
+</div>
+<div class=li-Sid><a href="http://www.mamamoshaver.com/"><span style="font-size: 7pt">تست بچه دار شدن</span></a>
+</div>
+<div class=li-Sid><a href="http://forums.pichak.net/forum37.html">انجمن شیمی</a>
+</div>
+</div>
+<div class=LowSid></div></div>
+		
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>امکانات وب</b></div></div>
+<div class=CenterSid>
+<center>
+<font face="Tahoma" style="font-size: 8pt" color="#666666"><center><style type="text/css">//Ashoora.ir|Date Begins</style><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/rooz/date.php?color1=663300&color2=66FF66&color3=66FF66&size=11px&size2=5px&style=double&width=160&selected=1,1,1,1&mod=1"></script><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1578;&#1575;&#1585;&#1740;&#1582; &#1585;&#1608;&#1586;</a><style type="text/css">//Ashoora.ir|Date Ends</style>
+
+_____________
+<script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/clock/saat.php?mod=22&width=150"></script></center><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1587;&#1575;&#1593;&#1578; &#1601;&#1604;&#1588; &#1605;&#1584;&#1607;&#1576;&#1740;</a><style type="text/css">//Ashoora.ir|Clock Ends</style>
+<center><script language="javascript" src="http://PicHaK.NeT/oghat/badge.php?mod=4&az=1&kadr=1&shahr=8-3"></script></center><div style='display:none'><h3><a href='http://PicHaK.NeT/oghat'>اوقات شرعی</a></h3></div>
+----------------------------
+<style type="text/css">//Ashoora.ir|Moharam Begins</style><div align="center"><script type="text/javascript"src="http://www.ashoora.biz/mazhabi-projects/moharam/moharam.php?mod=1"></script></div><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1585;&#1608;&#1586;&#1588;&#1605;&#1575;&#1585; &#1605;&#1581;&#1585;&#1605; &#1593;&#1575;&#1588;&#1608;&#1585;&#1575;</a><style type="text/css">//Ashoora.ir|Moharam Ends</style>
+-------------------------------
+<!-- News by www.1abzar.com --->
+<script type="text/javascript"  src="http://1abzar.ir/abzar/tools/news/?cat=1&data=all&n=20&w=170&bg=F9FAE9&kc=DDF872&kadr=1&c=333333&titr=1&j=t&h=300"></script><div id="abzar_1all"></div><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/news.php">&#1705;&#1583; &#1575;&#1582;&#1576;&#1575;&#1585;</a></h3></div>
+<!-- News by www.1abzar.com --->
+__________________
+
+<p align="center"><a title="تعبیر خواب" href="http://pichak.net/fun/tabir" target="_blank"><img src="http://www.pIchAk.nEt/blogcod/tabir/image/05.jpg" border="0" alt="تعبیر خواب آنلاین"></a><div style='display:none'><ul><li><a title='تعبیر خواب' href='http://pichak.net/fun/tabir/'>تعبیر خواب</a></li></ul></div></p> ﻿<div style="display:none;"><li><a href="http://download-game.ir">دانلود بازی</a>
+</li></div>
+-----------------------------
+<script src="http://www.Pichak.Net/roozanehfall/4.js" language="javascript" ></script>﻿<div style="display:none;"><li><a href="http://takstart.ir">تک استارت</a>
+</li></div>
+------------------------
+<p align="center"><a title="فال حافظ" href="http://pIcHaK.net/hafez" target="_blank">
+<img alt="فال حافظ" src="http://pIcHaK.net/hafez/image/19.gif" border="0" width="140" height="140"></a></p>
+_______________________
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=6&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=6&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+_______________________
+<style type="text/css">//Ashoora.ir|aghshar Begins</style><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/png.js"></script><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/aghshar/aghshar.php?mod=1&cat=1,1,1,1,1,1&color3=FF6600&color2=3399FF&color1=FF0000&width=160"></script><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1608;&#1589;&#1740;&#1578; &#1588;&#1607;&#1583;&#1575;</a><style type="text/css">//Ashoora.ir|aghshar Ends</style>
+________________________
+<!-- start logo cod off http://hadiseeshghtwo.blogfa.com/ --><p align="center"><p align="center"><a href="http://hadiseeshghtwo.blogfa.com/" target="_blank"><img border="0" src="http://s3.picofile.com/file/8225798876/%D9%84%D9%88%DA%AF%D9%88%DB%8C_%D9%88%D8%A8_%D8%AD%D8%AF%DB%8C%D8%AB_%D8%B9%D8%B4%D9%82.png" width="192" height="100" alt="لوگوی وب حدیث عشق"></a></p><!--finish logo cod off http://hadiseeshghtwo.blogfa.com/ -->
+_____________
+<!-- Weather by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/weather/hava.php?color=0B0833&shahr=057&bg=E4F095&kc=E85D82&kadr=0"></script><div style="display:none"><h1><a href="http://www.1abzar.com">&#1608;&#1590;&#1593;&#1740;&#1578; &#1570;&#1576; &#1608; &#1607;&#1608;&#1575;</a></h1></div>
+<!-- Weather by www.1abzar.com --->
+------------------------
+
+</center></font></div>
+<div class=LowSid></div></div>
+
+</td></tr>
+
+<tr><td width="1000" colspan="3" id="footer-WS">
+
+	[   طراحی : <a href="http://www.weblogskin.com"target="_blank"> وبلاگ اسکین </a> ]  [  <a href="http://www.weblogskin.com"target="_blank">  Weblog Themes By :  weblog skin </a>]  	
+</td></tr></table></div><script src="http://sibtheme.com/inc/asw.js"></script><div style="display:none;"><ul> <li><a href="http://freedownloadcenter.ir">مرکز دانلود رایگان</a>
+</li><li><a href="http://arismob.ir">آریس موب</a>
+</li><li><a href="http://ghasedakiha1.ir">کارت پستال قاصدک</a>
+</li><li><a href="http://posteh.ir">قالب وبلاگ</a>
+</li></ul></div></body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'diarebehesht.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

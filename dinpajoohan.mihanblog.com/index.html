@@ -1,0 +1,1488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://dinpajoohan.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*836538*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[320]='-';commentCnt[1128]='0';commentCnt[1129]='0';commentCnt[1130]='0';commentCnt[1131]='0';commentCnt[1132]='0';commentCnt[1133]='0';commentCnt[1134]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[320]='0';
+mihanblogDisLikeArrCnt[320]='0';
+mihanblogLikeArrCnt[1128]='0';
+mihanblogDisLikeArrCnt[1128]='0';
+mihanblogLikeArrCnt[1129]='0';
+mihanblogDisLikeArrCnt[1129]='0';
+mihanblogLikeArrCnt[1130]='0';
+mihanblogDisLikeArrCnt[1130]='0';
+mihanblogLikeArrCnt[1131]='0';
+mihanblogDisLikeArrCnt[1131]='0';
+mihanblogLikeArrCnt[1132]='0';
+mihanblogDisLikeArrCnt[1132]='0';
+mihanblogLikeArrCnt[1133]='0';
+mihanblogDisLikeArrCnt[1133]='0';
+mihanblogLikeArrCnt[1134]='0';
+mihanblogDisLikeArrCnt[1134]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://dinpajoohan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://dinpajoohan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1006');
+	setStatVar('total_author','9');
+	setStatVar('modify_date','دوشنبه 14 فروردین 1396');
+	
+	setStatVar('today_view','51');
+	setStatVar('yesterday_view','204');
+	
+	setStatVar('this_month_view','4493');
+	setStatVar('last_month_view','4242');
+
+	setStatVar('total_view','1453729');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (07:15)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://dinpajoohan.mihanblog.com/statupdate/?data[refereruri]=http://shahadat-ir.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607831855&data[hash]=6d5170eca36301da3efbec7c09069c89&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://dinpajoohan.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://dinpajoohan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://dinpajoohan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="designer" content="inventor_robot@yahoo.com"/>
+<meta name="author" content=". ."/>
+<meta name="language" content="Farsi"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/> 
+
+<link rel="alternate" type="application/rss+xml" title="دین پژوهان" href="http://dinpajoohan.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="دین پژوهان" href="http://dinpajoohan.mihanblog.com/post/atom/" />
+
+<title>دین پژوهان</title>
+
+<link rel="stylesheet" type="text/css" href="../static.mihanblog.com/public/user_data/user_files/153/458214/BlackMihanblog/Style.css" media="screen"/> 
+<!--[if IE]>
+<link href="http://static.mihanblog.com//public/user_data/user_files/153/458214/BlackMihanblog/IEStyle.css" rel="stylesheet" type="text/css"/>
+<![endif]-->
+
+
+</head>
+
+<body>
+<!-- Start BG -->
+<div id="bg">
+<!-- Start Header -->
+<div class="header" style="background: url('../static.mihanblog.com/public/user_data/user_files/153/458214/Baner/dinpajoohanB.jpg') no-repeat top;">   
+</div>
+<!-- End Header -->
+<!-- Start Menu -->
+<div class="nav">
+            <div class="nav2">
+		    <ul>
+		    <li><a href="javascript:messageForm()">تماس با مدیر وبلاگ</a></li>
+		    <li><a target="_blank" href="http://dinpajoohan.mihanblog.com/post/list">آرشیو مطالب</a></li>
+			<li><a target="_blank" href="http://dinpajoohan.mihanblog.com/m/">مشاهده در موبایل</a></li>
+			<li><a target="_blank" href="mailto:dinpajoohan@gmail.com">پست الكترونیك</a></li>
+			</ul>
+		    </div>
+		    <div class="nav3">
+			<form method="get" action="http://google.com/search" class="sch"><input name="sitesearch" value="http://dinpajoohan.mihanblog.com" type="hidden"/>
+			<input type="text" name="q" class="txt" value="جستجو در وبلاگ" onblur="if(this.value=='')this.value='جستجو در وبلاگ'" onfocus="if(this.value=='جستجو در وبلاگ') this.value='';" id="searchBox"/> <input type="submit" value=" " class="btn"/>
+			</form>
+		    </div>
+		    <div class="rss">
+            <a title="خروجی RSS وبلاگ" href="http://dinpajoohan.mihanblog.com/post/rss/" target="_blank">
+            <img src="../static.mihanblog.com/public/user_data/user_files/153/458214/BlueBlogfa/RSS.png" title="RSS" height="24" width="24"/></a> 
+		    </div>
+		    <div class="home">
+            <a title="صفحه ی اصلی" href="index.html" >
+            <img src="../static.mihanblog.com/public/user_data/user_files/153/458214/BlueBlogfa/home.png" title="صفحه ی اصلی" height="32" width="32"/></a> 
+		    </div>
+</div>
+<!-- End Menu -->
+<!-- Start Con-->
+<div id="con">
+<!-- Start scsl -->
+<div id="scs1">
+<div id="sc-all"><div id="sc">
+        <font face= Tahoma size=2px color=blue >
+				<MARQUEE onmouseover=this.stop() onmouseout=this.start() scrollAmount=2 
+		      	scrollDelay=2 direction=right   width=520 style="height: 20px">امام باقر (علیه السلام) می فرمایند: آیا دین چیزی جز محبت است؟
+		        </MARQUEE>	
+        </font>
+<!--Start Post-->
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/320">وبلاگ دین پژوهان</a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<p align="center" style="text-align: right;">&nbsp;</p><p align="center" style="text-align: center;"></p><hr><p></p><p align="center"></p><table class="MsoNormalTable" border="0" cellpadding="0" style="text-align: center;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 30pt; border-collapse: collapse; "><tbody style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><tr style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; height: 30pt; "><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://dinpajoohan.mihanblog.com/extrapage/2" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span lang="FA" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; font-family: Tahoma, sans-serif; color: rgb(0, 99, 165); "><span lang="EN-US" dir="LTR" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="صفحه اصلی" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-home.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span></span><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;">دیـن پژوهان</span></span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://dinpajoohan.mihanblog.com/post/category/9" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="تالار گفتگو" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-froum.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span><span class="Apple-style-span" style="font-size: small;">اتــــاق فـکر</span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://www.jonbeshnet.ir/lifestyle" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="سبک زندگی" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-live.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; ">&nbsp;</span></span><span class="Apple-style-span" style="font-size: small;">سبـک زندگـی</span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://dinpajoohan.mihanblog.com/extrapage/1111" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="ویژه نامه ها" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-special.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span><span class="Apple-style-span" style="font-size: small;">ویژه نامه ها</span></a></u></span></font></p></td></tr><tr style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; height: 30pt; "><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://www.lenzor.com/dinpajoohan/1705" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; font-family: Tahoma, sans-serif; color: rgb(0, 99, 165); "><span dir="LTR" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="گالری تصاویر" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-photo.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span></span><span lang="FA" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;">گالری تصاویر</span></span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://www.aparat.com/dinpajoohan" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span lang="FA" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; font-family: Tahoma, sans-serif; color: rgb(0, 99, 165); "><span lang="EN-US" dir="LTR" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="گالری فیلم" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-clip.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span></span><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;">گالری فیلم</span></span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://dinpajoohan.mihanblog.com/post/comment/260" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span lang="FA" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; font-family: Tahoma, sans-serif; color: rgb(0, 99, 165); "><span lang="EN-US" dir="LTR" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="پرسش و پاسخ" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-qaa.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; "></span></span></span><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;">پرسش و پاسخ</span></span></a></u></span></font></p></td><td width="158" style="padding-top: 0.75pt; padding-right: 0.75pt; padding-bottom: 0.75pt; padding-left: 0.75pt; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; width: 118.5pt; height: 30pt; "><p class="MsoNormal" dir="RTL" style="text-align: left;padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><font class="Apple-style-span" color="#0063A5" face="Tahoma, sans-serif" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><span class="Apple-style-span" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 12px; "><u style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><a href="http://dinpajoohan.mihanblog.com/extrapage/1" target="" title="" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-decoration: none; color: rgb(2, 146, 198); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><span style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 99, 165); text-decoration: none; "><span class="Apple-style-span" style="font-size: small;"><img alt="ارتباط با ما" id="imgTopmenu" src="http://zitova.ir/uploads/t-icon-contactus.png" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-bottom-width: 0px; border-bottom-color: initial; border-left-width: 0px; border-left-color: initial; width: 24px; height: 24px; vertical-align: middle; border-top-width: 0px; border-top-color: initial; border-right-width: 0px; border-right-color: initial; ">&nbsp;</span></span><span class="Apple-style-span" style="font-size: small;">ارتباط با ما</span></a></u></span></font></p></td></tr></tbody></table><p></p><p align="center" style="text-align: center;"></p><hr><p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/320&title=وبلاگ دین پژوهان"> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">شنبه 7 اردیبهشت 1392 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/218558">احمد صادقی</a></span> | 
+	        <a target="_self" href="javascript:newComment(320)" >نظرات(<script>setCommentCnt(320)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1134"> سیب زمینی‌های اجتماع </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			
+                        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-taxonomy-term view-id-taxonomy_term view-display-id-page view-list-articles view-dom-id-6e008fdcbfd4d4eea9697718504a855a">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/12308_70720.jpg?itok=5oCdqj0_" alt="غیرت مردانه" title="سیب‌زمینی‌های اجتماع" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">در
+ عرف امروز اجتماع به کسی که خاصیت و رگ غیرت ندارد از باب تشبیه، سیب 
+زمینی اطلاق می‌کنند. مردان بی غیرتی که نوامیس خود را به صورت بسیار زننده
+ به خیابان‌ها می‌آورند و به بدترین نحو در معرض دید عموم جامعه به نمایش 
+می‌گذارند این به ظاهر مردان، نه تنها غیرتی ندارند، بلکه جالب‌تر این‌که 
+بی‌غیرتی خود را...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70720">ادامه مطلب</a></span></span><br></div>  </div>  </div></div></div></div></div></div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1134&title= سیب زمینی‌های اجتماع "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1134)" >نظرات(<script>setCommentCnt(1134)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1133"> چرا در داستان حضرت سلیمان، هدهد خبررسان شد؟ </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/1634_70710.jpg?itok=9JVTqdgK" alt=" هدهد پرنده‌ای بی اشتباه است، نکته‌ای که در کار خبر(دریافت کامل، برداشت صحیح و انتقال صادقانه) به شدت مهم است." title="چرا هدهد؟" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">خبر،
+ گزارشی بی‌طرف، دقیق و در عین حال، صحیح و عینی از یك روی‌داد است.[1] هر 
+خبری برای تحقق خود، محتاج اجزا، ارکان و شرایطی است. یکی از ارکان خبر، 
+وجود خبرنگار و گزارش‌گری است که آن خبر را ضبط کرده و منتقل سازد و بدین 
+وسیله عامل شکل‌گیری خبر شود. حال سوال کلیدی در این‌جا این است که این 
+خبرنگار...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70710">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1133&title= چرا در داستان حضرت سلیمان، هدهد خبررسان شد؟ "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1133)" >نظرات(<script>setCommentCnt(1133)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1132"> الکی مثلا من دلم پاکه!!! </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/12308_70507.jpg?itok=tl0-xxo5" alt="حجاب" title="الکی مثلا من دلم پاکه" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">در
+ فرهنگ قرآن دل پاک تنها کالایی است که در قیامت برای انسان نافع است 
+چنانکه فرمود: ﴿ یوم لاینفع مال و لابنون¤ إلا من أتی الله بقلب 
+سلیم﴾[شعراء/88-89]«روزی كه اموال و فرزندان سودی به حال انسان نمی بخشند¤ 
+جز كسی كه با قلب سلیم در پیشگاه خداوند حضور یابد».
+همیشه شنیده‌ایم که بدحجاب‌ها می‌گویند ما...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70507">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1132&title= الکی مثلا من دلم پاکه!!! "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1132)" >نظرات(<script>setCommentCnt(1132)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1131"> پوشش و حجاب زنان در آیین یهود </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/12701_70066_0.jpg?itok=xFjeinln" alt="پوشش وحجاب در دین یهود" title="پوشش وحجاب در دین یهود" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">رعایت
+ عفت و حجاب توسط زنان انبیا و بزرگان بنی‌اسرائیل در تورات كنونی و تلمود 
+كاملاً مشهود است؛ به طوری كه رعایت نكردن عفت، یكی از عوامل نزول عذاب 
+الاهی بر بنی‌اسرائیل دانسته‌ شده است. قانون سخت حجاب زنان یهودی، به 
+اعتراف مورخان، غیر قابل انكار است. اصلی‌ترین كتاب فقهی یهودیان كه 
+«تلمود» نام دارد،...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70066">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1131&title= پوشش و حجاب زنان در آیین یهود "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1131)" >نظرات(<script>setCommentCnt(1131)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1130"> تعیین «حقوق بشر» سزاوار کیست؟ </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/160_70674.jpg?itok=TOWvJGOk" alt="حقوق بشر" title="تعیین «حقوق بشر» سزاوار کیست؟" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">وقتی
+ از حقوق انسان‌ها و یا به اصطلاح؛ «حقوق بشر»، صحبت می‌شود، یک چیز نباید 
+فراموش شود و آن این است که شخصی می‌تواند این حقوق را تعیین کند که انسان 
+را کاملا بشناسد و به مصالح و مفاسد او آگاهی کلی داشته باشد.
+
+تعیین حقوق بشر، سزاوار خداست
+بدون هیچ‌گونه شکی، تنها موجودی که به انسان و تمامی موجودات...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70674">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1130&title= تعیین «حقوق بشر» سزاوار کیست؟ "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1130)" >نظرات(<script>setCommentCnt(1130)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1129"> عوامل و اهداف تخریب روحانیّت از نگاه امام خمینی </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-6 views-row-even">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/148_70414_0.jpg?itok=08vBTCE2" alt="رضا شاه و روحانیت" title="عوامل و اهداف تخریب روحانیّت از نگاه امام خمینی" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">مبارزه
+ با استکبار از اساسی ترین آموزه‌های اسلام است. در قرآن کریم بر لزوم 
+شناخت دشمن و مبارزه و مقابله با او تأکید شده است.[1] در این راستا در طول
+ تاریخ، روحانیّت به عنوان اصیل‌ترین جریان اسلامی به مبارزه همه جانبه با 
+مستکبرین پرداخته و عَلَم مبارزه با مظاهر ریز و درشت شیطانی را بالا برده 
+است.
+به...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70414">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1129&title= عوامل و اهداف تخریب روحانیّت از نگاه امام خمینی "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1129)" >نظرات(<script>setCommentCnt(1129)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+            <div class="post clearfix">
+            <div class="p-head">
+            <div class="p-head1">
+            <div class="p-head2">		
+			<b><a href="http://dinpajoohan.mihanblog.com/post/1128"> پوشش و حجاب در آیین مسیحیت </a></b>
+			</div>
+            </div>
+            </div>
+	        <div class="p-con clearfix">
+	        <div class="p-con1">
+	        <div class="p-con2">
+	        <div class="p-photo">
+	        </div>
+	        <div class="p-height">
+			    
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content" align="center"><img src="http://www.welayatnet.com/sites/default/files/styles/article_list/public/media/image/12701_70466.jpg?itok=4xwAxPnb" alt="پوشش مسیحیان" title="پوشش و حجاب در آیین مسیحیت" width="400" height="280"></div>  </div><br><div class="views-field views-field-body">        <div class="field-content">در
+ این&nbsp;پست درباره پوشش و عفت زنان در آیین زرتشت و یهود مطالبی را بیان 
+کردیم. در نوشتار حاضر، به اهمّیّت این بحث در بین زنان و دختران آیین 
+مسیحیت می‌پردازیم.
+
+پوشش و عفت در دین مسیحیت:
+در آیین مسیحیت، پوشش اهمیت زیادی داشته و زنان معتقد به حضرت 
+عیسی(علیه‌السلام) می‌كوشیدند مانند حضرت مریم(...<br><br><span class="views-field views-field-title"><span class="field-content"><a href="http://www.welayatnet.com/fa/news/70466">ادامه مطلب</a></span></span><br></div>  </div>  </div>
+
+
+</div><br><b></b>
+			<br><br><font style="font-size:8pt;">
+<br>
+			داغ کن:
+			<a   target="_blank"  
+			href="http://www.cloob.com/share/link/add?url=http://dinpajoohan.mihanblog.com//post/1128&title= پوشش و حجاب در آیین مسیحیت "> 
+			<img alt="داغ کن - کلوب دات کام" src="../static.mihanblog.com/public/user_data/user_files/153/458214/orangeZitova/100c.gif" style='border: none; padding: 0px'/> 
+			</a>
+			
+			</font>
+	        </div>
+	        </div>
+	        <div class="p-con3"><div class="p-con4">
+	        نوشته شده در تاریخ : <span style="color:#0292c6">دوشنبه 14 فروردین 1396 </span> | توسط : <span style="color:#0292c6"><a href="http://dinpajoohan.mihanblog.com/post/author/1576080">میهن بلاگ</a></span> | 
+	        <a target="_self" href="javascript:newComment(1128)" >نظرات(<script>setCommentCnt(1128)</script>)</a>
+	        </div></div>
+	        </div>
+            </div>
+<!--End Post-->
+<!--Start List&Pages-->
+			<div class="cb_page_box clearfix"><ul>
+			<li>تعداد کل صفحات :&nbsp;<font color="red"><b>144</b></font>&nbsp; صفحات :</li> 
+			<li><a href="http://dinpajoohan.mihanblog.com/page/1"><b>1</b></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/2"><span>2</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/3"><span>3</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/4"><span>4</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/5"><span>5</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/6"><span>6</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/7"><span>7</span></a>&nbsp;&nbsp;</li><li><a href="http://dinpajoohan.mihanblog.com/page/8"><i>...</i></a>&nbsp;&nbsp;</li>			</ul>
+			</div>
+<!--End List&Pages-->
+</div></div>
+<!--End sc-all&sc-->
+<!-- Start sl -->
+<div class="sl">
+            <div class="menul">
+            <div class="tmenu">
+	        <div class="tmenu2">
+	        <b>انتخاب زبان</b></div></div>
+	        <div class="xmenu"><div class="menu-txt">
+			<center>
+			<a href="http://translate.google.com/translate?u=http://dinpajoohan.mihanblog.com&sl=fa&tl=ar&hl=en&ie=UTF-8">
+			العربیة</a>&nbsp;&nbsp;   
+			<a href="http://translate.google.com/translate?u=http://dinpajoohan.mihanblog.com&sl=fa&tl=en&hl=en&ie=UTF-8">
+			English</a>&nbsp;&nbsp;  
+			<a href="http://translate.google.com/translate?u=http://dinpajoohan.mihanblog.com&sl=fa&tl=fr&hl=en&ie=UTF-8">
+			French</a> <br>
+			<br>
+			امروز : <script>setTodayDate()</script>			</center></div></div>
+			<div class="s"></div></div>
+			<div class="menul">
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>وبلاگ دوستان</b></div></div>
+			<div class=xmenu><marquee scrollamount=1 scrolldelay=1 onmouseover='this.stop()' onmouseout='this.start()' direction=up style="height: 200px;width:195px">			<div class=menu-txt>
+			<a target="_blank" href="http://sabahat.ir/">صباحت</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://negin114.blogfa.com/">نگین 114</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://celamhedayt.blogfa.com/">کلام هدایت</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://zaydiyya.mihanblog.com/">مطالعات زیدیه</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://www.netdarnet.ir">مجله اینترنتی نت در نت</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://m-r2015.mihanblog.com/#">صدف مشکی،مروارید آبی</a></div>			<div class=menu-txt>
+			<a target="_blank" href="../khodashenasi.mihanblog.com/index.html">خداشناسی</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://asrezohoor14.mihanblog.com/">عصر ظهور</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://maadshenasi.mihanblog.com/">آخرت</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://jahanshenasi.mihanblog.com/">جهان شناسی</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://www.montazeram.ir/">من هنوز منتظرم</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://kamitaamol.mihanblog.com/">کمی تامل</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://pourakbari.blogfa.com/">فروردین</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://womenhc.com/">سامانه وبلاگ مدارس</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://www.andisheqom.com/">اندیشه قم</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://www.rasanews.ir/">خبرگزاری رسا</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://samabachemosalmoon.blogfa">بچه مسلمون</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://sahel786.blogfa.com/">سخن آغاز گفتن نیست...</a></div>			<div class=menu-txt>
+			<a target="_blank" href="http://www.ghasemmolla.blogfa.com/">قاسم ملا</a></div></marquee><br><br><a href="http://dinpajoohan.mihanblog.com/link/"><b style="padding: 10px"><font color="red">»</font>&nbsp;همه لینک ها </b></a><br></div>
+			<div class=s></div></div>
+          
+			<div class=menul>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>وبلاگ های دین پژوهی </b></div></div>
+			<div class=xmenu> <div class=menu-txt>
+			<a target="_blank" href="http://www.netdarnet.ir" title="مجله اینترنتی نت در نت">
+			مجله اینترنتی نت در نت</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://www.sobhevesal.ir/forum/index.php" title="پورتال جامع صبح وصال
+ممنون میشم ما رو هم لینک کنید 
+تا ما هم تو نشر فرهنگ و دین موثر باشیم
+چند بار هم رتبه داشتیم تو جشنواره های مختلف به لطف خدا و همکاری و یاری شما دوستان بهتر هم خواهیم شد 
+با تشکر حامد زاهدی از تیم مدیریت صبح وصآل">
+			صبح وصال</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://waladiat.blogfa.com" title="">
+			والعادیات</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://www.yjc.ir/fa/list/10/95" title="">
+			باشگاه خبرنگاران</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://goftomanedini.com/forum.php" title="">
+			جامعه مجازی گفتمان دینی</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://www.javab.ir/" title="">
+			سایت جواب</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://maaref.porsemani.ir/term282" title="">
+			پرسمان دانشجویی</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://serajnet.org/default.aspx?lang=Fa" title="">
+			سراج اندیشه</a></div> <div class=menu-txt>
+			<a target="_blank" href="http://www.islamquest.net/intro" title="">
+			اسلام کوئست </a></div> <div class=menu-txt>
+			<a target="_blank" href="http://www.pajoohe.com/fa/index.php?Page=frontpage" title="">
+			پژوهشكده باقرالعلوم</a></div><br><a href="http://dinpajoohan.mihanblog.com/linkdaily/"><b style="padding: 10px"><font color="red">»</font>&nbsp;آرشیو پیوندهای روزانه</b></a><br>
+            <br><a href="javascript:linkdailyForm()"><b style="padding: 10px"><font color="red">»</font>&nbsp;ارسال لینک به ما</b></a><br> </div>
+			<div class=s></div></div>
+ 
+			<div class=menul>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>صفحات جانبی</b></div></div>
+			<div class=xmenu><div class=menu-txt>  
+            <a href="http://dinpajoohan.mihanblog.com/extrapage/1111" target="_blank">ویژه نامه ها </a></div><div class=menu-txt>  
+            <a href="http://dinpajoohan.mihanblog.com/extrapage/12" target="_blank">نگارخانه دین پژوهان</a></div><div class=menu-txt>  
+            <a href="http://dinpajoohan.mihanblog.com/extrapage/11" target="_blank">حلقه های دین پژوهی</a></div><div class=menu-txt>  
+            <a href="http://dinpajoohan.mihanblog.com/extrapage/2" target="_blank">دین پژوهان در تالارهای گفتگو</a></div><div class=menu-txt>  
+            <a href="http://dinpajoohan.mihanblog.com/extrapage/1" target="_blank">تماس با ما</a></div></div>
+			<div class=s></div></div>
+			<div class=menul>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>ابر برچسب ها</b></div></div>
+			<div class=xmenu> <div class=menu-txt2>  
+          					
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA+%D8%B9%D9%84%DB%8C" 
+	        style="font-size:1.17em">
+	        حضرت علی 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%AD%D8%AC%D8%A7%D8%A8" 
+	        style="font-size:1.09em">
+	        حجاب 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D9%88%D9%87%D8%A7%D8%A8%DB%8C%D8%AA" 
+	        style="font-size:1.17em">
+	        وهابیت 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%A7%D9%87%D9%84+%D8%B3%D9%86%D8%AA" 
+	        style="font-size:1.63em">
+	        اهل سنت 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%AF%DB%8C%D9%86" 
+	        style="font-size:2em">
+	        دین 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" 
+	        style="font-size:1em">
+	        خدا 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%B4%DB%8C%D8%B9%D9%87" 
+	        style="font-size:1.05em">
+	        شیعه 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%A7%D8%B3%D9%84%D8%A7%D9%85" 
+	        style="font-size:2em">
+	        اسلام 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D9%82%D8%B1%D8%A2%D9%86" 
+	        style="font-size:1.05em">
+	        قرآن 
+	        </a>
+	        				
+	        <a href="http://dinpajoohan.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86" 
+	        style="font-size:1.21em">
+	        امام زمان 
+	        </a>
+	        	
+            </div></div>
+			<div class=s></div></div>
+            <div class=menul>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>آماروبلاگ </b></div></div>
+			<div class=xmenu><div class="menu-txta">
+							کل بازدید:<span style="color:#0292c6"><script>getStatVar('total_view');</script></span><br/>
+				بازدید امروز :<span style="color:#0292c6"><script>getStatVar('today_view');</script></span><br/>
+				بازدید دیروز :<span style="color:#0292c6"><script>getStatVar('yesterday_view');</script></span><br/>
+				بازدید این ماه :<span style="color:#0292c6"><script>getStatVar('this_month_view');</script></span><br/>
+				بازدید ماه قبل :<span style="color:#0292c6"><script>getStatVar('last_month_view');</script></span><br/>
+				تعداد کل مطالب :<span style="color:#0292c6"><script>getStatVar('total_post');</script></span><br/>
+				آخرین بازدید :<span style="color:#0292c6"><script>getStatVar('last_view_date');</script></span><br/>
+				آخرین بروز رسانی :<span style="color:#0292c6"><script>getStatVar('modify_date');</script></span><br/>
+            <center><SCRIPT language=JavaScript type=text/javascript src="http://www.welayatnet.com/sites/default/files/webtools/telgram.js"></SCRIPT></center></div></div>
+			<div class=s></div></div>     
+</div>
+<!--End SL -->
+</div>
+<!-- End scsl -->
+<!-- Start SR -->
+<div class="sr">
+            <div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>درباره وبلاگ</b></div></div>
+			<div class=xmenu><div class=menu-txt2>  
+            <div style="text-align:center;"><img src="../static.mihanblog.com/public/user_data/web_photo/279/836538.jpg@2968"  /></div>
+            <br><div class="descri">تمام تلاش ما در این وبلاگ حول این محوراست که به دور از پیچیده گویی، مباحث دینی را با دو نگاه درون دینی و بیرون دینی به شما مخاطب گرامی عرضه کنیم <br />
+در نگاه درون دینی تلاش می کنیم که باورهای دینی را اثبات کنیم و نسبت به سوالات دینی دوستان بازدید کننده پاسخ‌هایی در حد توان ارائه دهیم این رویکردی است که در در مباحث کلامی به آن توجه می‌شود و در نگاه بیرون دینی، تلاش می‌کنیم گزارشی تحلیلی از باورهای دینی ارائه دهیم. رویکردی که در فلسفه دین، مورد توجه است <br />
+امیدوارم با کمک شما بتوانیم مباحث خوبی را اینجا ارائه دهیم.</div></div></div>
+			<div class=s></div></div>
+
+<div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>پاسخگویان آنلاین اعتقادات</b></div></div>
+			<div class=xmenu><div class=menu-txt2>  
+            <div style="margin:0px auto;width:172px;min-height:70px;padding-top:8px"><div style="width:86px;float:right;text-align:center"><!-- 
+
+Begin http://zitova.ir ‍Yahoo Status --><a  target="_self" title="http://zitova.ir" href = "ymsgr:sendim?
+
+zitova3"><img src="http://www.zitova.com/YState/ystat.php?id=zitova3&mod=5" border="0"></a><br/><!-- 
+
+End  http://zitova.ir Yahoo Status -->
+            <div style="padding-top:20px"><a href='ymsgr:addfriend?zitova3'>اضافه کردن</a></div></div>
+				<div style="width:86px; float:right;text-align:center"><a href="javascript:l4imsg(l4imsg:sendim?moballegh3)"><script type=text/javascript src=http://messenger.l4i.ir/checkstatus.aspx?u=moballegh3></script><script type=text/javascript>
+document.write("<img style=border:0; alt=وضعیت در ال فور آی مسنجر src="+(chkstatus?"http://www.zitova.com/zitova/l4i/online_48x48x32.png":"http://www.zitova.com/zitova/l4i/offline_48x48x32.png")+" />");
+</script></a><br/><a href="l4imsg:addfriend?moballegh3">اضافه کردن</a></div></div>
+
+           </div></div>
+<div class=s></div></div>
+
+
+
+<div class=menur>
+<div class=tmenu>
+<div class=tmenu2>
+<b>نویسندگان وبلاگ</b></div></div>
+<div class=xmenu>
+
+
+<!-- نام نویسنده اول -->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/522350">ابواحمد توسلی</a></div>
+<!-- نام نویسنده دوم -->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/388548">عبدالله جوانمرد</a></div>
+<!-- نام نویسنده سوم -->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1214460">علی سیّدی</a></div>
+<!-- نام نویسنده چهارم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/782744">محمد فرضی پوریان</a></div>
+<!-- نام نویسنده پنجم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/228526">محمدمهدی قربانی</a></div>
+<!-- نام نویسنده ششم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/789764">غلامرضا مومنی</a></div>
+<!-- نام نویسنده هفتم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1308559">محمدحسین كاظمی</a>
+</div>
+<!-- نام نویسنده هشتم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1306002">علی احمدی فریدنی</a>
+</div>
+<!-- نام نویسنده نهم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1202121">كمیل شمس‌الدینی</a></div>
+
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1311740">سلمان خلیلی</a></div>
+<!-- نام نویسنده یازدهم-->
+<div class=menu-txt>
+<a href="http://dinpajoohan.mihanblog.com/post/author/1325868">مصطفی عباسی</a></div>
+
+<div class=s></div></div>
+
+
+			<div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>موضوعات وبلاگ</b></div></div>
+			<div class=xmenu><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/19">+ 	مفهوم کلی دین(14)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/14"> شناخت دین(51)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/21">	جهان بینی و ایدئولوژی(23)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/22">	ساختار دین(15)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/4"> دین پژوهی (46)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/13"> روشن فکری(21)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/5">+ فلسفه دین(118)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/24">	ضرورت دین(9)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/23">	كاركردهای دین(34)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/16">دین و دینداران(38)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/17"> تجربه دینی(9)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/12">دین در دنیای مدرنیته(24)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/26">	نواندیشی دینی(11)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/2">+ روان شناسی دین(63)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/15"> نقش ایمان(27)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/25">	معنویت جدید(7)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/3">+ جامعه شناسی دین(82)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/11"> دین و پیشرفت جامعه(18)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/1"> فرهنگ دینی(157)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/27">+	ادیان وفرقه های دینی(18)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/28">	ادیان آسمانی و اصول آنها(13)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/29">	ادیان و مکاتب غیر آسمانی(14)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/18"> دین اسلام(79)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/32">+	گفتگوی دینی(54)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/9"> اتاق فکر(23)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/10">+ معرفی سایت(1)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/8">+ معرفی اندیشمندان(12)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/7">+ معرفی كتاب ماه(8)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/category/6">+ سایر موضوعات(38)</a></div></div>
+			<div class=s></div></div>
+            <div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>عضویت ! </b></div></div>
+			<div class=xmenu><div class=menu-txt2>  
+            <div style="text-align:center;"><form style="border:0px solid #ccc;padding:3px;text-align:justify;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=mihanblog/uspc', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>آدرس ایمیل خودتان را وارد كنید تا آخرین نوشته ها برایتان ارسال شود :</p><p align="center" style="direction:ltr"><input style="margin:5px" type="text"  style="width:167px" style="text-align:left" name="email" /></p><input type="hidden" value="mihanblog/uspc" name="uri"/><input type="hidden" name="loc" value="en_US"/><center><input style="margin:5px;padding:3px;cursor:pointer;outline:none;font-family:Tahoma" type="submit" value="اشتراک" /></center></form></div>
+            </div></div>
+			<div class=s></div></div>
+
+		<form id="frm-16076938985fd3764a392a9" method="post" action="http://dinpajoohan.mihanblog.com/poll/new/fid/16076938985fd3764a392a9/atrty/1607693898/avrvy/0/key/02fcf78270ea887e4a302795c7fd755a/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="245554" id="data[pollid]" />		
+			<div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>نظرسنجی</b></div></div>
+			<div class=xmenu><div class=menu-txt2>  
+            <br><div class="descri">نظر شما در مورد مطالب وبلاگ دین پژوهان چیست؟<br><label><input type="radio" name="data[answer]" value="v1">ضعبـف </label><br><label><input type="radio" name="data[answer]" value="v2">متوسـط </label><br><label><input type="radio" name="data[answer]" value="v3">خــوب </label><br><label><input type="radio" name="data[answer]" value="v4">عـالـی </label><br><br><center><input style="margin:5px;padding:3px;cursor:pointer;outline:none;font-family:Tahoma" type="submit" value="ثبت"></center></div></div></div>
+			<div class=s></div></div>
+
+		<input type="hidden" name="frm-id" value="16076938985fd3764a392a9" id="frm-id" /></form>            <div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>آخرین مطالب</b></div></div>
+			<div class=xmenu>
+			<div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1134"> سیب زمینی‌های اجتماع </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1133"> چرا در داستان حضرت سلیمان، هدهد خبررسان شد؟ </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1132"> الکی مثلا من دلم پاکه!!! </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1131"> پوشش و حجاب زنان در آیین یهود </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1130"> تعیین «حقوق بشر» سزاوار کیست؟ </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1129"> عوامل و اهداف تخریب روحانیّت از نگاه امام خمینی </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1128"> پوشش و حجاب در آیین مسیحیت </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1127">«حجاب» رفراندم‌ پذیر است </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1126"> خوش‌گذرانی ملک نامسلمان و بمباران یمن مسلمان </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1125"> حجاب نه حق من است نه حق تو، بلکه حق خداست </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1124"> مخالفان ولایت علی(ع) فرزندان نامشروع جامعه انسانی! </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1123"> اسلام و کتک زدن زن! </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1122"> تمسخری جاهلانه در برابر منطقی قوی </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1121"> فتنه مرجعیت انگلیسی! </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1120"> ضرورت اتحاد بین شیعه و سنی </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1119"> ظلم‌های آل سعود؛ نتیجه‌اش سقوط است </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1118"> «تشیع انگلیسی» اسمی بامسمی </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1117"> تعامل علمای شیعه و علمای اهل سنت </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1116"> تمسخری جاهلانه در برابر منطقی قوی </a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/1115">تمسخری جاهلانه در برابر منطقی قوی</a></div></div>
+			<div class=s></div></div>
+            <div class=menur>
+			<div class=tmenu>
+			<div class=tmenu2>
+			<b>آرشیو مطالب</b></div></div>
+			<div class=xmenu>
+			<div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1396/1"> فروردین 1396(13)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/12"> اسفند 1395(22)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/11"> بهمن 1395(29)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/10"> دی 1395(10)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/8"> آبان 1395(9)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/7"> مهر 1395(12)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/6"> شهریور 1395(23)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/5"> مرداد 1395(32)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/4"> تیر 1395(14)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/3"> خرداد 1395(28)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/2"> اردیبهشت 1395(26)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1395/1"> فروردین 1395(33)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/12"> اسفند 1394(27)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/11"> بهمن 1394(24)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/10"> دی 1394(15)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/9"> آذر 1394(11)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/8"> آبان 1394(17)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/7"> مهر 1394(26)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/6"> شهریور 1394(28)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/5"> مرداد 1394(42)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/4"> تیر 1394(36)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/3"> خرداد 1394(37)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/2"> اردیبهشت 1394(49)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1394/1"> فروردین 1394(28)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1393/12"> اسفند 1393(38)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1393/11"> بهمن 1393(23)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1392/11"> بهمن 1392(2)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1392/9"> آذر 1392(1)</a></div><div class=menu-txt>
+			<a href="http://dinpajoohan.mihanblog.com/post/archive/1392/8"> آبان 1392(4)</a></div></div>
+			<div class=s></div></div>
+			
+</div>
+<!--End SR -->
+</div>
+<!-- End Con-->
+<!-- Start Footer-->
+<div class="footer">
+          <p><strong>تمام حقوق این وبلاگ و مطالب آن متعلق به 
+           <a href="index.html">دین پژوهان</a> می باشد.</strong></p>
+</div>
+<!-- End Footer-->
+</div>
+<!-- End BG -->
+<!--AmarGir-->
+<script type="text/javascript" src="http://radarurl.com/js/radarurl_widget.js"></script><script type="text/javascript">radarurl_call_radar_widgetv2({edition:"Dynamic",location:"leftcenter"})</script><noscript><a href="http://radarurl.com/" _fcksavedurl="http://radarurl.com/">radarurl - Monitor Visitors</a></noscript>
+<!--EndAmarGir-->
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.welayatnet.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 5]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.welayatnet.com/piwik.php?idsite=5" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
+<a target="_blank"
+href="http://www.cloob.com/share/link/add?
+url=http://dinpajoohan.mihanblog.com/[cb:post_href]&title=[cb:post_title]">
+<img alt="داغ کن - کلوب دات کام" src="http://static.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+</a><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'dinpajoohan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

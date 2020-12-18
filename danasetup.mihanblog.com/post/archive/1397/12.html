@@ -1,0 +1,2251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه بیست و هفتم آذر 1399');
+		/*1155132*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[470]='0';commentCnt[471]='0';commentCnt[472]='0';commentCnt[473]='0';commentCnt[474]='0';commentCnt[475]='0';commentCnt[476]='0';commentCnt[477]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[470]='1';
+mihanblogDisLikeArrCnt[470]='0';
+mihanblogLikeArrCnt[471]='0';
+mihanblogDisLikeArrCnt[471]='0';
+mihanblogLikeArrCnt[472]='0';
+mihanblogDisLikeArrCnt[472]='0';
+mihanblogLikeArrCnt[473]='1';
+mihanblogDisLikeArrCnt[473]='0';
+mihanblogLikeArrCnt[474]='2';
+mihanblogDisLikeArrCnt[474]='0';
+mihanblogLikeArrCnt[475]='4';
+mihanblogDisLikeArrCnt[475]='0';
+mihanblogLikeArrCnt[476]='1';
+mihanblogDisLikeArrCnt[476]='0';
+mihanblogLikeArrCnt[477]='3';
+mihanblogDisLikeArrCnt[477]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://danasetup.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://danasetup.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','306');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه یکم مهر 1399');
+	
+	setStatVar('today_view','140');
+	setStatVar('yesterday_view','198');
+	
+	setStatVar('this_month_view','5360');
+	setStatVar('last_month_view','4885');
+
+	setStatVar('total_view','479279');
+	setStatVar('last_view_date','پنجشنبه بیست و هفتم آذر 1399 (22:10)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://danasetup.mihanblog.com/statupdate/?data[refereruri]=http://danasetup.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1397/12&data[sdate]=1608230743&data[hash]=8d08a72b611853b24ee8aeca58e6e47e&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://danasetup.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content="reza"/>
+    <link rel="alternate" type="application/rss+xml" title="سیستم  دانا   متوسطه (دوره دوم)                " href="../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="سیستم  دانا   متوسطه (دوره دوم)                " href="../../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099963/style.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/iepngfix_tilebg.js"></script>
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/jquery.js"></script>
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099963/easySlider1.5.js"></script>
+    <script type="text/javascript">
+        var jq=jQuery.noConflict();
+        jq(document).ready(function(){
+            jq("#slider").easySlider();
+        });
+        var i=1;
+        var mytheme_pic=new Array();
+        var mytheme_titr=new Array();
+        var mytheme_text=new Array();
+        var mytheme_link=new Array();
+        /* nahveye estefade az slideshow
+         baraye ijad slide jadid az 3 ghesmat zir copy begirid va adade dakhel keroshe ra be tartib tanzim konid:
+
+         mytheme_pic[4] = 'Your_pic.jpg'
+         mytheme_titr[4] = 'Your_titr';
+         mytheme_text[4] = 'Your_text';
+         mytheme_link[4] = 'Your_link';
+
+         tavajoh konid tedad slide haye shoma bayad ba moteghayer (number) barabar bashad.
+
+         >> SIZE TASAVIR >> width="480 px" :: height="255 px"
+
+         */
+
+        var number = 3; //numbers of slides
+
+        mytheme_pic[1] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic1.jpg'; //adress tasvire shoma
+        mytheme_titr[1] = 'آموزش نحوه ویرایش اسلایدشو'; //titr marbot be tasvire shoma
+        mytheme_text[1] = 'چگونگی ویرایش اسلاید را در اینجا بخوانید'; //matne tozih marbot be tasvire shoma
+        mytheme_link[1] = 'http://www.mytheme.ir/faq.php'; // link marbot be tasvire shoma
+
+        mytheme_pic[2] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic2.jpg';
+        mytheme_titr[2] = 'دامنه ir. رایگان';
+        mytheme_text[2] = 'کلیه کاربرانی که از قالب های رایگان سایت استفاده می کنند می توانند دامنه ir. رایگان بگیرند.';
+        mytheme_link[2] = 'http://mytheme.ir/free-domain.php';
+
+        mytheme_pic[3] = 'http://mihanblog.com/public/public/user_data/template/2099963/pic3.jpg';
+        mytheme_titr[3] = 'تیتر اسلاید شماره 3';
+        mytheme_text[3] = 'این اسلایدشو به تعداد دلخواه قابل افزایش یا کاهش خواهد بود.';
+        mytheme_link[3] = 'http://www.mytheme.ir';
+
+    </script>
+    <title>سیستم  دانا   متوسطه (دوره دوم)                 - مطالب  اسفند 1397</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class="m-l">&nbsp;</td>
+<td class=div2>
+<div class=div00 id="top">
+
+<div class="mytheme">
+    <div class="mytheme3">
+        <a href="../../rss/index.html" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.facebook.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.del.icio.us" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.twitter.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a>
+        <a href="http://www.cloob.com" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=20 height=20 border="0"></a></div>
+    <div class="mytheme4">
+        <g:plusone size="medium"></g:plusone>
+        <script type="text/javascript">
+            window.___gcfg = {lang: 'fa'};
+
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script></div>
+</div>
+
+<div class=div60>
+    <div class=div101>
+        <div class=div10><font class=title>سیستم  دانا   متوسطه (دوره دوم)                </font></div></div>
+    <div class=div11>
+        <div class=div12><font class=des>همکاران عزیز لطفا نظزات خودتون را بنویسید</font></div></div>
+</div>
+
+<div class=ss>
+    <div class=s1><form id="frm-16079833335fd7e0e5a6e31" method="get" action="http://danasetup.mihanblog.com/post/search/fid/16079833335fd7e0e5a6e31"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div class=s2>
+            <input type="text" name="search_text" size="18" style="border: 0px none; color:#35260c; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+        <div class=s3><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=30 height=30 value="جستجو"></div>
+    <input type="hidden" name="frm-id" value="16079833335fd7e0e5a6e31" id="frm-id" /></form></div>
+
+    <div class=s4>
+        <div class=s5><font class=text10><a href="../../../index.html">صفحه نخست</a></font></div>
+        <div class=s5><font class=text10><a href="javascript:messageForm()">تماس با ما</a></font></div>
+        <div class=s5><font class=text10><a href="mailto:eslami_2001@yahoo.com">پست الکترونیک</a></font></div>
+        <div class=s5><font class=text10><a href="../../atom/index.html">ATOM</a></font></div>
+        <div class=s5><font class=text10><a href="http://www.mytheme.ir" target="_blank">طراح قالب</a></font></div>
+    </div>
+</div>
+
+<div class=mdiv17></div>
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35-1>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1><center><img src="http://static.mihanblog.com//public/user_data/web_photo/386/1155132.jpg?1565"  /><br><br>
+                پیشنهادات شما  مفید خواهد بود.<br />
+درصورت تمابل .شماره تلفن یا ایمیل خودرا بصورت خصوصی جهت دریافت جواب بگذارید.دانلود اهنگ جدیدنمایشگر آمار آلکسا</center><br>
+                <b>مدیر وبلاگ :</b> <a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35-2>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../../514.html">مراحل تغییر رشته از دهم به یازدهم---واز یازدهم به دوازدهم </a></li><li><a href="../../513.html">دریافت آلبوم عکس-کارت ورود به جلسه-لیست شرکت کنندگان از فاینال(گام دوم فاینال)</a></li><li><a href="../../509.html">دریافت آلبوم عکس-کارت ورود به جلسه-لیست شرکت کنندگان از فاینال(گام دوم فاینال)</a></li><li><a href="../../508.html">فاینال مختص حوزه اجرای امتحانات نهایی</a></li><li><a href="../../507.html">جدول دروس تطبیقی</a></li><li><a href="../../506.html">دانلود برنامه های سیستم دانا(برنامه رسمی آموزش وپرورش برای دوره ابتدایی-راهنمایی</a></li><li><a href="../../419.html">آدرس وبلاگ و کانال معاومین اجرایی</a></li><li><a href="../../505.html">نگارش 24.9</a></li><li><a href="../../503.html">تنظیمات سیستم دانا </a></li><li><a href="../../500.html">فرم هاودستورالعمل های مورد نیاز</a></li><li><a href="../../499.html"> قوانین خدمت وظیفه عمومی</a></li><li><a href="../../496.html">انجام فارغ التحصیلی برای پایه دوازدهم در سایت امین</a></li><li><a href="../../491.html">سامانه عملیات متوسطه دوم و امین</a></li><li><a href="../../490.html">آموزش تصویری نحوه نصب برنامه دانا در ویندوز7</a></li><li><a href="../../489.html">روند اجرایی كمیسیون خاص</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-3>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../1399/7.html"> مهر 1399</a></li><li><a href="../1399/5.html"> مرداد 1399</a></li><li><a href="../1399/2.html"> اردیبهشت 1399</a></li><li><a href="../1398/11.html"> بهمن 1398</a></li><li><a href="../1398/10.html"> دی 1398</a></li><li><a href="../1398/9.html"> آذر 1398</a></li><li><a href="../1398/8.html"> آبان 1398</a></li><li><a href="../1398/3.html"> خرداد 1398</a></li><li><a href="../1398/2.html"> اردیبهشت 1398</a></li><li><a href="12.html"> اسفند 1397</a></li><li><a href="11.html"> بهمن 1397</a></li>            <li><b><a href="../../archive.html">آرشیو كل مطالب</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-4>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../../author/995270.html">محمدرضا اسلامی (306)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    
+		<form id="frm-16079833335fd7e0e5a709d" method="post" action="http://danasetup.mihanblog.com/poll/new/fid/16079833335fd7e0e5a709d/atrty/1607983333/avrvy/0/key/e62462077a03f438a7375ab0f7c5dbe8/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="235874" id="data[pollid]" />		<div class=div24>
+        <div class=div35-5>
+            <div class=div25><font class=text5>نظرسنجی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1>
+                پیشنهادات خودرا بیان کنید<br>
+                <label><input type="checkbox"  name="data[v1]" id="v1" value="1" />عالی ومفید</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />متوسط </label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />خوب</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />ضعیف</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />خیلی ضعیف</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />بدنیست</label><br>                <div align="center"><br><input type="submit" value="ثبت وحتما نظر دهید." style="font-family: Tahoma; font-size: 9pt"></div>
+            </font></div></div><div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16079833335fd7e0e5a709d" id="frm-id" /></form>
+    <div class=div24>
+        <div class=div35-6>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../../tag/نرم+افزار.html">نرم افزار</a></li><li><a href="../../tag/نگارش+14_____|(dot)|_____4.html">نگارش 14.4</a></li><li><a href="../../tag/پیش+دانشگاهی.html">پیش دانشگاهی</a></li><li><a href="../../tag/متوسطه.html">متوسطه</a></li><li><a href="../../tag/سرود.html">سرود</a></li><li><a href="../../tag/نرم+افزارهای+جالب.html">نرم افزارهای جالب</a></li><li><a href="../../tag/علت+عدم+نمایش+نام+مدرسه+در+helper+وناشناخته+بودن+آن.html">علت عدم نمایش نام مدرسه در helper وناشناخته بودن آن</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+</div>
+
+<div class=div20>
+
+    <!-- Slideshow Starts Here -->
+    <div id="container">
+        <div id="content">
+            <div id="slider">
+                <ul>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic1.jpg" /></li>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic2.jpg" /></li>
+                    <li><img src="http://mihanblog.com/public/public/user_data/template/2099963/pic3.jpg" /></li>
+                </ul>
+            </div>
+        </div></div>
+    <!-- Slideshow Ends Here -->
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../477.html">کرک نود32 وبرنامه نصب نود</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><div><br></div><div><br></div><div><br></div><div align="center"><a href="http://s9.picofile.com/file/8354616876/NOD32.rar.html" target="_blank" title=""><img class="irc_mi" src="http://s1.picofile.com/file/7992758816/17.gif" alt="Image result for ‫دانلود متحرک‬‎" style="margin-top: 117px;" width="316" height="120"></a></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../477.html#commentlist">نظرات (<script>setCommentCnt(477)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('477','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../476.html">رفع مشکل باز نشدن بخش اصلاح سوابق تحصیلی</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">با
+ عرض سلام و خسته نباشید خالصانه محضر همه همکاران محترم و تشکر ویژه بابت 
+یاری همه جانبه و اظهار لطف جهت بهبود هر چه بهتر مطالب این وبلاگ (که صد 
+البته متعلق به خود شماست).<br></span>
+<p><span style="font-size: small;">در پست قبلی به </span>تاریخ: <span style="color: #ff0000;"><strong><a href="http://sanjeshborujerd.blogfa.com/post/191" target="_blank"><span style="color: #ff0000;">چهارشنبه ۲۴ آبان ۱۳۹۶</span></a></strong> </span>با موضوع&nbsp;<span style="color: #ff0000;"><strong><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;">ر</span></a><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;">وش اصلاح سوابق دانش</span></a><a href="http://sanjeshborujerd.blogfa.com/post/191"><span style="color: #ff0000;"> آموزان</span></a></strong></span>&nbsp;مطالبی خدمت شما عزیزان گفته شد.&nbsp;</p>
+<p><span style="font-size: small;">در تکمیل مطالب قبلی باید بگوییم که ممکن است بخش اصلاح سوابق تحصیلی باز نشود و با پیغام ((<span style="color: #ff0000;">سندهای وجود دارد که به منطقه ارسال شده اند ولی هنوز رمز اصلاحیه صادره برای آن ها در سیستم اعمال نشده است</span>)) مواجه شوید.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8320310950/%D8%A7%D8%B5%D9%84%D8%A7%D8%AD_%D8%B3%D9%88%D8%A7%D8%A8%D9%82.JPG" alt="" width="450" height="164"></span></p>
+<p><span style="font-size: small;">&nbsp;</span></p>
+<p><span style="font-size: small;">این امر ممکن به دو دلیل باشد:</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;"> 1-</span>
+ سوابق دانش آموزی را اصلاح نموده و به منطقه ارسال نموده اید اما&nbsp;بعد از 
+دریافت اسناد اصلاحیه از منطقه و اعمال آن ها مشاهده می کنید که&nbsp;&nbsp;این بخش 
+باز نمی شود. (چند سند اعمال نشده باقی مانده است)<br></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;"> 2-</span> و یا قبلا به هر دلیلی اصلاحاتی صورت گرفته اما موارد بعدی پیگیری نشده است و این اصلاحات در سیستم هم چنان باقی مانده اند.</span></p>
+<p><span style="font-size: small;"><span style="background-color: #00ff00;">نکته: </span>حتما قبلا از انجام اصلاحات یک ذخیره تهیه نمایید تا با بروز مشکلات احتمالی بتوانید سیستم را به حالت قبل برگردانید.</span></p>
+<p><span style="font-size: small;">اما راه حل:</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;"> الف)</span>
+ در قسمت اول که اصلاحات را انجام داده و اسناد را دریافت و اعمال نموده 
+اید اگر بخش اصلاح سوابق تحصیلی باز شد یعنی اسناد تولید شده شما تأیید و 
+اعمال شده است. اما &nbsp;حتی بعد از تکرار چند بار دریافت اسناد و اعمال آن ها،
+ این بخش&nbsp;باز نشد، می توانید ذخیره را بر گردانید.&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">ب)</span> ممکن این اسناد قبلا صورت گرفته باشند و معلوم نباشد که چه زمانی بوده و یا حتی مورد تأیید شما باشند یا نه، لذا نمی توانید از روش <span style="background-color: #ffff00;">الف</span> استفاده نمایید. برای بر طرف نمودن این مشکل باید از ا<span style="color: #ff0000;">سکریپت script</span> مخصوص حذف اسناد اصلاحیه استفاده نمایید.</span></p>
+<p style="text-align: center;"><span style="color: #ff0000; font-size: small;">&nbsp;<a href="http://s9.picofile.com/file/8320310500/baha.sql.html" rel="nofollow" target="_blank"><span style="color: #ff0000;"><strong>اسکریپت حذف اسناد اصلاحیه</strong></span></a></span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../476.html#commentlist">نظرات (<script>setCommentCnt(476)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('476','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../475.html">انتقال دانش آموز به مدرسه دیگر بعد از امتحانات نوبت اول</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">در ابتدا بهتر است آیین نامه مربوطه را به دقت بخوانیم:<br></span>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">طبق ماده 23 آیین نامه</span>
+ : انتقال دانش آموز در طول سال تحصیلی از یك مدرسه به مدرسه دیگر با 
+موافقت «اداره آموزش و پرورش مقصد» و حداكثر تا یكماه قبل از شروع امتحانات
+ پایانی نوبت دوم بلامانع است. در این صورت مدارك، پرونده تحصیلی و نمرات 
+مربوط به ارزشیابی طول سال تحصیلی، وی باید پس از مهر و امضا مدرسه مبدأ با
+ تأیید اداره آموزش و پرورش، در موعد مقرر به «مدرسه مقصد» ارسال شود. 
+انتقال دانش آموز در محدوده یك منطقه آموزشی با هماهنگی دو مدرسه مبدأ و 
+مقصد و موافقت اداره آموزش و&nbsp; پرورش، با رعایت مقررات و در مهلت تعیین شده،
+ بلامانع است.</span></p>
+<p><span style="background-color: #ffff00; font-size: small;">تبصره های ذیل آن شامل:</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00; color: #ff0000;">تبصره 1-</span> پرونده تربیتی– تحصیلی دانش آموز به صورت محرمانه باید به «مدرسه مقصد» ارسال شود .</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00; color: #ff0000;">تبصره2-</span>
+ صحت ریز نمرات و سوابق تحصیلی دانش آموزان انتقالی از سوی اداره آموزش و 
+پرورش مقصد، ظرف مدت یك هفته بعد از انتقال از اداره آموزش و پرورش مبدأ، 
+استعلام و پاسخ استعلام نیز حداكثرتا یكماه بعد از آن ارسال شود.</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00; color: #ff0000;">تبصره3- </span>انتقال
+ دانش آموزان بین مدارس استعدادهای درخشان، در صورت دارا بودن نمره آزمون 
+ورودی در سطح حداقل نمره مدرسه مقصد و وجود ظرفیت خالی در آن مدرسه در داخل
+ استان با موافقت اداره كل آموزش و پرورش استان و از یك استان به استان 
+دیگر، با موافقت اداره كل آموزش و پرورش استان مقصد، مجاز خواهد بود</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00; color: #ff0000;">تبصره4-</span> انتقال بین مدارس استعدادهای درخشان یك هرستان، در سال نخست پذیرش، ممنوع است.</span></p>
+<p><span style="font-size: small;">حال دانش آموزانی که بعد از نوبت اوّل 
+از یک مدرسه به مدرسه دیگر منتقل می شوند می بایست موارد ذیل را در رابطه 
+با آن ها در نظر گرفت: </span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000; background-color: #00ff00;">سامانه سناد:</span> ابتدا <span style="color: #ff0000;">مدرسه مقصد</span> می بایست در <a href="http://m2.snd.medu.ir/" rel="nofollow" target="_blank"><span style="color: #ff0000;"><strong>سامانه</strong> <strong>سناد </strong></span></a>از قسمت نقل و انتقال درخواست انتقال خود را ثبت نمایید و سپس نوبت <span style="color: #ff0000;">مدرسه مبدأ</span> است که درخواست تأیید نمایید. بعد از تأیید مدرسه مقصد دانش آموز را کلاس بندی نموده و در دانا دریافت می نمایید. </span></p>
+<p><span style="font-size: small;"><span style="background-color: #ff9900;">سیستم دانا: </span>مدرسه
+ مبدأ پس از تکمیل مراحل اعم از ثبت نمرات چاپ لیست ها و چاپ کارنامه 
+تفکیکی و کل از قسمت نقل و انتقال سروری دانش آموز مربوطه را انتقال داده و
+ گزارش انتقال را برای وی چاپ می نمایید. کلیه مدارک به مدرسه مقصد فرستاده
+ می شود.</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ff0000;">توجه:</span> <span style="text-decoration: underline;">این کد انتقال برای دانش آموزان میان پایه&nbsp; (یازده و داوزهم) لازم است.</span> </span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">اما در مدرسه مقصد:</span> الف) پس از کلاس بندی در سناد وارد دانا شده و از قسمت عملیات اولیه، سازماندهی و ثبت نام، <span style="color: #ff0000;">دریافت اطلاعات مشخصات دانش آموزان و ثبت نام از سناد</span> را لمس نموده و عملیات را تکمیل نمایید. </span></p>
+<p><span style="font-size: small;">ب) پس از دریافت مشخصات دانش آموز وارد قسمت ورود نمارات انفرادی شده و مطابق کارنامه ارسالی نمرات را دقیقاَ وارد نمایید.</span></p>
+<p><span style="text-decoration: underline; color: #ff0000; font-size: small;"><strong>نکات ویژه و قابل توجه:</strong></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;"><span style="color: #0000ff;">1)</span> مدرسه مبدأ:</span>
+ پس از انتقال دانش آموز برای این که اسم دانش آموز از لیست خارج شود باید 
+وارد قسمت عملیات ضمن سال شده و از قسمت نقل و انتقال اطلاعات، اصلاح 
+اتوماتیک را اجرا نماید.</span></p>
+<p><span style="font-size: small;"><span style="color: #0000ff;">2)</span> <span style="color: #ff0000;">مدرسه مقصد:</span> نمرات دوره ای که باز است را باید به صورت دستی وارد نمایند.</span></p>
+<p><span style="font-size: small;"><span style="color: #0000ff;">3)</span> برای دانش آموزان میان پایه علاوه بر درخواست از سناد حتما باید کد انتقال هم دریافت نمایند.</span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../475.html#commentlist">نظرات (<script>setCommentCnt(475)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('475','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../474.html">روند ارسال اطلاعات به سامانه امتحانات نهایی</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small; color: #000000;">برای ارسال نمرات دروس نهایی به <span style="font-size: small;"><strong><span style="color: #ff0000;"><a href="http://final2.medu.ir/Login.aspx" rel="nofollow" target="_blank"><span style="color: #ff0000;">سامانه امتحانات نهایی</span></a></span></strong></span> توجه همكاران ارجمند را به نكات زیر معطوف می دارد: </span>
+<p><span style="font-size: small;"><span style="color: #ff0000;">مرحله اول:</span> ابتدا در سیستم دانا کلیه <span style="color: #ff0000;">نمرات مستمر</span> دروس نهایی را به دقت ثبت نمایید. سپس بررسی نمایید كه در ثبت نمرات اشتباهی صورت نگرفته باشد. <br></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">مرحله دوم:</span> به عملیان ضمن سال، نقل و انتقال اطلاعات رفته و بر روی گزینه <span style="color: #ff0000;">نقل و انتقال اطلاعات&nbsp;به سیستم مكانیزه امتحانات نهایی تحت وب</span>
+ کلیک کنید، سال و دوره مورد نظر را انتخاب نمایید. اگر با پیغام خوشبختانه
+ خطایی مشاهده نشد مواجه شدید، تأیید کرده و محل ذخیره سازی (پیش فرض صفحه 
+کار {دسکتاپ} است) را مشخص نمایید.در پایان كار گزارشی از دانش آموزانی كه 
+به سامانه ارسال شده اند به شما نشان می دهد. </span></p>
+<p><span style="font-size: small;"><span style="font-size: small;"><span style="background-color: #ffff00;">توجه:</span>&nbsp; </span>قبل
+ از ارسال اطلاعات به سامانه نهایی بهتر است این گزارش را بررسی نمایید تا 
+در صورت وجود هر گونه اشتباه (ثبت نمره) نسبت به رفع آن اقدام نمایید. <br></span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8323902668/%D9%81%D8%A7%DB%8C%D9%86%D8%A7%D9%84_1.JPG" alt="" width="500"></span></p>
+<p><span style="font-size: small;">نام فایلی كه برای ارسال به <strong><span style="color: #ff0000;"><a href="http://final2.medu.ir/Login.aspx" rel="nofollow" target="_blank"><span style="color: #ff0000;">سامانه امتحانات نهایی</span></a> </span></strong>ساخته می شود عبارت است از&nbsp;<span style="color: #ff0000;">DanaToWebFinal</span>&nbsp; بعد <span style="color: #ff0000;">كد منطقه</span> (5425) + <span style="color: #ff0000;">كد مدرسه</span> (96018366) و <span style="color: #ff0000;">كد دوره</span> (9601) این یعنی&nbsp;دوره خرداد سال 96 <br></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">مزحله سوم:</span> وارد سامانه برگزاری امتحانات نهایی به آدرس <span style="color: #ff0000;"><strong><a href="http://final2.medu.ir/Login.aspx" rel="nofollow"><span style="color: #ff0000;">http://final2.medu.ir&nbsp;</span></a> </strong></span>شوید
+ با پس از ثبت کد مدرسه و رمز وارد سامانه شوید. از گزینه اوّل مدرسه، 
+ارسال اطلاعات مدرسه به منطقه را انتخاب کنید. در پنجره جدید گزینه choose 
+file را کلیک کنید و فایل دریافت از دانا را انتخاب نمایید. سپس ذخیره را 
+کلیک نمایید اگر فایل مشکل نداشته باشد اسامی و نمرات قابل مشاهده می 
+باشند.</span></p>
+<p><span style="font-size: small;"><img src="http://s8.picofile.com/file/8323902684/%D9%81%D8%A7%DB%8C%D9%86%D8%A7%D9%84_2.JPG" alt="" width="500" height="331"></span></p><br><br>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../474.html#commentlist">نظرات (<script>setCommentCnt(474)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('474','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../473.html">دریافت نمرات اصلی از سامانه نهایی</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">پس
+ از ثبت اعتراضات و&nbsp; بررسی مجدد اوراق از طرف حوزه تصحیح و در نهایت تأیید 
+سنجش مدارس می توانند نمرات نهایی را برای ورود در دانا از سامانه امتحانات
+ نهایی دریافت نمایید.</span>
+<p><span style="font-size: small;">برای انجام این مراحل ذیل را انجام دهید:</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">اوّل:</span>&nbsp;</span></p>
+<p><span style="font-size: small;">ابتدا وارد سامانه امتحانات نهایی به آدرس&nbsp;<span style="color: #ff0000;"><strong><a href="http://final2.medu.ir/" rel="nofollow"><span style="color: #ff0000;">http://final2.medu.ir</span></a></strong></span>&nbsp;شده &nbsp;و از قسمت مدرسه، ارسال اطلاعات به دانا را انتخاب کرده تا وارد این قسمت شوید. <br></span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8328955726/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D9%86%D9%87%D8%A7%DB%8C%DB%8C1.jpg" alt="" width="450" height="218"></span></p>
+<p><span style="font-size: small;">در این مرحله <span style="font-size: small;">عنوان دریافت فایل را لمس نمایید. </span>در این حالت یک فایل خروجی را در اختیار شما قرار می دهد، محل ذخیره سازی را مشخص کرده و تأیید نمایید.&nbsp;</span></p>
+<p><span style="background-color: #ffff00; font-size: small;">دوم:</span></p>
+<p><span style="font-size: small;">وارد دانا شده و از قسمت عملیات ضمن سال، نقل و انتقال سروری گزینه <span style="color: #ff0000;">دریافت نمرات از سامانه امتحانات نهایی</span>
+ را انتخاب کرده و دوره مورد نظر را کلیک می نمایید در مرحله بعد مسیر را 
+انتخاب کنید و فایل دریافتی از سامانه امتحانات نهایی ذخیره شده را به آن 
+معرفی کرده و تأیید نمایید.&nbsp;</span></p>
+<p style="text-align: center;"><span style="font-size: small;">&nbsp;<img src="http://s9.picofile.com/file/8328128350/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D9%86%D9%87%D8%A7%DB%8C%DB%8C.JPG" alt="" width="450" height="268"></span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">توجه:</span>
+ برای این که نمرات دریافت شده تآثیر خود را در نمره کل و میانگین و هم 
+چنینی محاسبه نمره سالانه اعمال نماید، وارد بخش صدور کارنامه شده و 
+کارنامه ها را تا مرحله چاپ پیش ببرید.</span></p>
+<p><span style="font-size: small;"><img title="" src="http://www.blogfa.com/images/smileys/36.gif" alt="" border="0">
+ توجه داشته باشید که با انجام این کار تنها نمرات نهایی دریافت می شود و 
+برای ثبت نمرات داخلی داخلی باید از طریق ورود نمرات اقدام نمایید.</span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../473.html#commentlist">نظرات (<script>setCommentCnt(473)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('473','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../472.html">عملیات فارغ التحصیلی</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">همان
+ طور که می دانید عملیات فارغ التحصیلی بعد از اعلان نمرات از طرف حوزه 
+تصحیح و تأیید سنجش انجام می پذیرد. برای این کار موارد ذیل می بایست انجام
+ بگیرد.</span>
+<p><span style="font-size: small; background-color: #ffff00;">مرحله اوّل:&nbsp;</span></p>
+<p><span style="font-size: small;">وارد سامانه برگزاری امتحانات نهایی به آدرس&nbsp;<span style="color: #ff0000;"><strong><a href="http://final2.medu.ir/" rel="nofollow"><span style="color: #ff0000;">http://final2.medu.ir</span></a></strong></span>&nbsp;شده و فایل خروجی نمرات را از این سامانه دریافت می نمایید.</span></p>
+<p><span style="font-size: small;">برای گرفتن اطلاعات بر روی بخش <span style="color: #ff0000;">مدرسه</span> کلیک نمایید و گزینه <span style="color: #ff0000;">ارسال اطلاعات به دانا</span> را لمس نمایید. در پنجره جدید بر روی <span style="color: #ff0000;">دریافت فایل</span> کلیک نموده تا فایل ذخیره شود. نام فایلی که دریافت می شود عبارت است از ((<span style="color: #ff0000;">WebFinalToDana5429_950414574_9601</span>&nbsp;)) (که شامل کد منطقه، کد مدرسه، کد دوره) می شود.</span></p>
+<p><span style="font-size: small; background-color: #ffff00;">مرحله دوم:</span></p>
+<p><span style="font-size: small;">وارد برنامه دانا شوید و از بخش عملیات ضمن سال، نقل و انتقال سروری، گزینه&nbsp;<span style="color: #ff0000;">دریافت نمرات از سامانه امتحانات نهایی</span>&nbsp;را انتخاب کرده و دوره مورد نظر را کلیک نمایید. در مرحله بعد مسیر را انتخاب کنید و فایل دریافتی از <a href="http://final2.medu.ir/" rel="nofollow" target="_blank"><span style="color: #ff0000;"><strong>سامانه امتحانات نهایی</strong></span></a> ذخیره شده را به آن معرفی کرده و تأیید نمایید.<br></span></p>
+<p><span style="font-size: small;">این مطلب در پست (<strong><span style="color: #ff0000;"><a href="http://sanjeshborujerd.blogfa.com/post/244"><span style="color: #ff0000;">http://sanjeshborujerd.blogfa.com/post/244</span></a></span></strong>)&nbsp;تاریخ : دوشنبه ۲۱ خرداد ۱۳۹۷&nbsp;به طور مفصل بیان شده است.&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">مرحله سوم:</span>&nbsp;</span></p>
+<p><span style="font-size: small;">پس از دریافت نمرات نهایی و ثبت نمرات 
+داخلی در دانا و حصول اطمینان از ثبت و درستی همه نمرات، اقدام به انجام 
+امور فارغ التحصیلی می نماییم.</span></p>
+<p><span style="font-size: small;">انجام این کار نیز <span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">شامل دو مرحله (بخش)</span></span> می باشد:&nbsp;</span></p>
+<p><span style="text-decoration: underline; font-size: small;"><span style="background-color: #ffff00;">یک) دانا:&nbsp;</span></span></p>
+<p><span style="font-size: small;">برای انجام امورات فارغ التحصیلی وارد بخش&nbsp;عملیات ضمن سال شده و گزینه<span style="color: #ff0000;"> عملیات فارغ التحصیلی جدید</span>
+ را کلیک نمایید، در این بخش چندین گزینه مشاهده می شود که لازم است تمامی 
+آن ها را به ترتیب انجام دهید. پس از تأیید دانش آموزان فارغ التحصیل، با 
+کلیک بر روی عنوان <span style="color: #ff0000;">ارسال سوابق فارغ التحصیلان تأییده شده</span> به <strong><span style="color: #ff0000;"><a href="http://edu.medu.ir/Login.aspx" rel="nofollow" target="_blank"><span style="color: #ff0000;">پایگاه فارغ التحصیلان</span></a> </span></strong>می توانید با تکمیل مراحل فایل خروجی را دریافت نمایید.&nbsp;</span></p>
+<p style="text-align: center;"><img src="http://s9.picofile.com/file/8329332850/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86.jpg" alt="" width="450" height="345">&nbsp;</p>
+<p><span style="text-decoration: underline; font-size: small;"><span style="background-color: #ffff00;">دو) <a href="http://edu.medu.ir/Login.aspx" rel="nofollow" target="_blank">سامانه جامع سنجش وزارت آموش و پرورش (امین)&nbsp;</a></span></span></p>
+<p><span style="font-size: small;">&nbsp;</span><span style="font-size: small;">با ورود به این سامانه&nbsp;به آدرس&nbsp;<span style="color: #ff0000;"><strong>(<a href="http://edu.medu.ir/Login.aspx" rel="nofollow"><span style="color: #ff0000;">edu.medu.ir</span></a>)</strong></span>&nbsp;شوید. برای ارسال فایل مراحل ذیل باید صورت بپذیرد:&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">الف)</span>&nbsp;ابتدا از بخش&nbsp;انتخاب دوره،&nbsp;پایگاه عملیاتی (امین) را تیک زده و دوره مربوطه را انتخاب نمایید سپس از قسمت&nbsp;عملیات اصلی،&nbsp;<span style="color: #ff0000;">ارسال فایل از مدرسه به سامانه</span>&nbsp;را لمس نمایید.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8329333118/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_1.jpg" alt="" width="450" height="289"></span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">ب)</span>&nbsp;بر روی گزینه انتخاب فایل<span style="color: #ff0000;">&nbsp;(Choose File)</span>&nbsp;كلیك كرده و فایل ساخته شده سیستم دانا را انتخاب و ذخیره نمایید.</span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">ج)</span>&nbsp;پس از بارگذاری اطلاعات نمره ای دانش آموزان بر روی سامانه برای این که گواهی های صادره در این بخش عکس دار باشند&nbsp;از قسمت <span style="color: #ff0000;">ارسال تصاویر دانش آموزان&nbsp;</span>از
+ همین قسمت با معرفی مجدد فایل خروجی از دانا اقدام نموده و ذخیره می 
+نمایید. با این کار کلیه مدارکی که قرار است از امین چاپ شوند عکس دار 
+خواهند بود.</span></p>
+<p style="text-align: center;" dir="RTL"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8329333184/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_2.jpg" alt="" width="450" height="275"></span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">د)</span>&nbsp;برای اطمینان از ارسال اطاعات کلیه دانش آموزان به سامانه، می توانید از بخش عملیات اصلی، <span style="color: #ff0000;">مشاهده اطلاعات دانش آموزان</span>
+ را انتخاب كنید تا لیست دانش آموزان به شما نشان داده شود. در این قسمت هم
+ می توانید تعداد دانش آموزان ارسالی را مشاهده نمایید و هم می توانید 
+اطلاعات نمراه ای آن ها را چک کنید. با كلیك بر روی <span style="color: #ff0000;">نمایش</span>
+ مربوطه هر دانش آموز، دوره های ارسالی او را می توانید مشاهده نمایید و هم
+ چنین اگر بر روی نمایش هر دوره كلیك كنید، می توانید نمرات ارسال شده را 
+نیز مشاهده نمایید.</span></p>
+<p style="text-align: center;" dir="RTL"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8329333892/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_3.jpg" alt="" width="450" height="233"></span></p>
+<p dir="RTL"><span style="font-size: small;"><img title="" src="http://www.blogfa.com/images/smileys/19.gif" alt="" border="0"><span style="background-color: #ffff00;">حال نوبت به مراحل تأیید از سوی مدرسه و سنجش می رسد:&nbsp;</span></span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">ه)</span>&nbsp;از بخش عملیات اصلی،&nbsp;وضعیت فارغ التحصیلان&nbsp;را انتخاب کنید تیک <span style="color: #ff0000;">تأیید اولیه مدرسه</span> را زده و ذخیره نمایید.</span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">و)</span>&nbsp;بعد از این باید منتظر بمانید تا مسئول منطقه نیز این عملیات را تأیید نماید به عبارت دیگر تیک <span style="color: #ff0000;">تایید اولیه منطقه</span> زده شود.</span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">ز)</span>&nbsp;سپس از قسمت&nbsp;<span style="color: #ff0000;">عملیات فارغ التحصیلی </span>روی نمایش&nbsp;عملیات فارغ التحصیلی کلیک نمایید و شروع محاسبه را<span style="color: #ff0000;">&nbsp;</span>لمس نمایید تا عملیات شروع شود پس اتمام محاسبه می توانید تیک <span style="color: #ff0000;">تأیید نهایی مدرسه</span> را نیز زده و ذخیره نمایید.&nbsp;</span></p>
+<p dir="RTL"><span style="font-size: small;"><span style="color: #ff0000;">ح)&nbsp;</span>پس از فعال شدن تیک تایید نهایی مدرسه، منتظر تایید</span> <span style="color: #ff0000;">نهایی منطقه</span> و &nbsp;تایید <span style="color: #ff0000;">نهایی سنجش(منطقه)</span> می مانیم.</p>
+<p style="text-align: center;" dir="RTL"><img src="http://s8.picofile.com/file/8329334334/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_4.jpg" alt="" width="450" height="269"></p>
+<p style="text-align: right;" dir="RTL"><span style="color: #ff0000;">ط)</span> پس از تکمیل مراحل می توانید از بخش گزراش ها مدارک مورد نیاز را چاپ نمود .که انشاء الله در مطلب بعدی بیان خواهد شد.&nbsp; <br></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../472.html#commentlist">نظرات (<script>setCommentCnt(472)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('472','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../471.html">ارسال نمرات كلیه پایه ها به سامانه امین</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">روند ارسال نمرات و سوابق دانش آموزان به&nbsp;<span style="color: #ff0000;"><strong><a href="http://edu.medu.ir/" rel="nofollow" target="_blank"><span style="color: #ff0000;">سامانه جامعه سنجش وزارت آموزش و پرورش</span></a></strong></span>&nbsp;با
+ استقرار نظام جدید آغاز شد. این روند در سال گذشته (96-95) از پایه دهم 
+شروع شد و امسال نیز می بایست برای دانش آموزان فعلی (دهم و یازدهم) نیز 
+انجام شود.</span>
+<p><span style="font-size: small;">پس با توجه به این مسئله در ثبت 
+اطلاعات فردی و نمره ای دانش آموزان باید از دقت بسیار بالای برخودار باشد.
+ &nbsp;احتمالا ممکن چندی بعد ثبت اطلاعات تنها متکی به&nbsp;<span style="color: #ff0000;"><a href="http://edu.medu.ir/" rel="nofollow" target="_blank"><span style="color: #ff0000;"><strong>این سامانه (امین)</strong></span></a></span>&nbsp;باشد و ثبت اطلاعات در دانا همانند رشته های فنی حذف شود.</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">&nbsp;قابل تذکر است</span> که&nbsp;<strong><span style="color: #ff0000;"><a href="http://edu.medu.ir/" rel="nofollow" target="_blank"><span style="color: #ff0000;">سامانه جامعه سنجش وزارت آموزش و پرورش</span></a></span>&nbsp;</strong>کارکرد دو گانه ای دارد:</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">1-</span>&nbsp;انجام عملیات فارغ التحصیلی برای دانش آموزان فارغ التحصیل&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">2-&nbsp;</span>ثبت کلیه سوابق دانش آموزان در حال تحصیل<strong>&nbsp;</strong></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000; background-color: #00ff00;">نکته اوّل:</span> ارسال اطلاعات برای مدارس روزانه در دو نوبت صورت می گیرد:</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">1)</span>&nbsp;خرداد ماه (ارسال سوابق ضمن سال)</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">2)</span>&nbsp;شهریور ماه (ارسال سوابق تابستان)</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000; background-color: #00ff00;">نکته دوم:</span>&nbsp;اما ارسال اطلاعات برای مدارس بزرگسال در سه نوبت صورت می گیرد:</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">1)</span> نوبت اول بزرگسال (در دی ماه)</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">2)</span> نوبت دوم بزرگسال (در خرداد ماه)</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">3)</span> نوبت تابستان بزرگسال (در شهریور ماه)</span></p>
+<p><span style="color: #3366ff; font-size: small;">پس لازم است قبل از ارسال اطلاعات موارد زیر را مد نظر داشته باشید:&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">در ابتدا:</span> <span style="color: #ff0000;">در دانا موارد زیر را در نظر داشته و انجام دهید:</span></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">الف)</span> اطلاعات شناسنامه ای کلیه دانش آموزان با اصل شناسنامه مطابقت داده شود تا در صورت مغایرت نسبت به رفع آن اقدام شود.&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ب)</span>&nbsp;كلیه
+ نمرات قبل از ارسال به سامانه&nbsp;به طور دقیق ثبت&nbsp;و&nbsp;چك شوند چون بعد از ارسال
+ به سامانه و گرفتن تأییده تغییر دادن آن ها نیاز به هماهنگی با سنجش می 
+باشد.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ج)</span> پس از ثبت کلیه نمرات برای حصول اطمینان از ثبت نمرات می توانید از قسمت ورود نمرات، گزارش <span style="color: #ff0000;">نمرات ثبت نشده</span> را اجرا نمایید تا احیانا اگر نمره ثبت نشده ای وجود دارد آن را ثبت کنید.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">د)</span> در&nbsp;برنامه دانا از بخش عملیات ضمن سال، قسمت نقل و انتقال سروری، گزینه <span style="color: #ff0000;">ارسال سوابق به سامانه امین</span> را انتخاب نمایید.</span></p>
+<p style="text-align: center;"><span style="font-size: small;">&nbsp;<img src="http://s9.picofile.com/file/8329846068/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_1.JPG" alt="" width="450" height="244"></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ذ)</span> سپس با مشاهده پیام <span style="color: #0000ff;">((خوشبختانه چنین خطای در سیسم برای سوابق سال جاری و یا دانش آموزان فعال مشاهده نشد))</span> کلمه <span style="color: #ff0000;">oK</span> را لمس نموده و پیام بعدی را نیز <span style="color: #ff0000;">تأیید</span> نمایید. در مرحله بعد محل ذخیره سازی را انتخاب و فایل خروجی را دریافت نمایید.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8329735442/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_2.jpg" alt="" width="450" height="249"></span></p>
+<p><span style="font-size: small;"><span style="background-color: #00ff00;">نکته سوم:</span>&nbsp;فایل خروجی به صورت فشرده بوده و نام آن به این صورت است:&nbsp;<span style="color: #ff0000;">DanaSchoolDataForAmin</span> همراه با (<span style="color: #ff0000;">کد منطقه</span>، <span style="color: #ff0000;">کد مدرسه</span>، <span style="color: #ff0000;">کد دوره</span> و <span style="color: #ff0000;">تاریخ</span>)&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">در انتها:</span> <span style="color: #ff0000;">&nbsp;وارد </span><a href="http://edu.medu.ir/" rel="nofollow" target="_blank"><strong>سامانه امین</strong></a><span style="color: #ff0000;">&nbsp; شوید و موارد ذیل را انجام دهید</span>:&nbsp;</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">الف)</span> پس از ورود به سامانه از قسمت <span style="color: #ff0000;">سایر سیستم ها</span>،&nbsp;<span style="color: #ff0000;">عملیات مدرسه متوسطه دوم</span> را انتخاب کرده و سپس دوره مورد نظر را فعال نمایید. (یا می توانید با انتخاب گزینه، <span style="color: #ff0000;">انتخاب دوره</span> هم زمان، نوع عملیان و دوره را انتخاب نمایید.)</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8329848876/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_3.jpg" alt="" width="450" height="219"></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ب)</span> از اولین بخش عملیات اصلی،&nbsp;عنوان&nbsp;<span style="color: #ff0000;">ارسال فایل از مدرسه به سامانه</span> را لمس نمایید</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ج)</span> در این صفحه ابتدا <span style="color: #ff0000;">ارسال اطلاعات نمره ای</span> و سپس <span style="color: #ff0000;">ارسال تصاویر&nbsp;</span>را از طریق&nbsp;بخش موجود انجام دهید. برای ارسال اطلاعات گزینه <span style="color: #ff0000;">Choose File</span>
+ را کلیک کرده و فایل ذخیره شده از دانا را انتخاب و ذخیره نمایید برای 
+ارسال عکس ها نیز از قسمت&nbsp;ارسال تصاویر دانش آموزان روند فوق را تکرار 
+نمایید.&nbsp;</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s9.picofile.com/file/8329849900/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_4.jpg" alt="" width="450" height="225"></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">د)</span>&nbsp;پس از حصول اطمینان از ارسال اطلاعات، از بخش عملیات اصلی عنوان <span style="color: #ff0000;">وضعیت مدرسه</span> لمس نمایید در صفحه جدید بر روی <span style="color: #ff0000;">شروع محاسبه کارنامه</span>
+ کلیک نمایید، در پنجره جدید نیز مجددا بر روی همین عنوان کلیک نمایید تا 
+روند محاسبه شروع شود. بعد از تأیید (حدود 24 ساعت) و دیدن پیغام می توانید
+ <span style="color: #ff0000;">تیک اولیه</span> را زده و ذخیره نمایید تا مراحل بعدی از طرف سنجش صورت گیرد.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8329850484/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_5.jpg" alt="" width="450" height="205"></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">ه)</span> پس از تأیید نهایی می توانید از قسمت <span style="color: #ff0000;">گزارش ها</span>، گزارشات مربوطه را دریافت نمایید.</span></p>
+<p><span style="font-size: small;">این گزارشات شامل: فرم 450 - فرم 451 -
+ فرم 424 - فرم 425 -&nbsp;جلد دفتر امتحانات -&nbsp;پیش نویس کارنامه -&nbsp;کارنامه 
+تحصیلی -&nbsp;دفتر امتحانات -&nbsp;آمار نتایج قبولی دروس در دفتر امتحانات</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8329851226/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%86%D9%85%D8%B1%D8%A7%D8%AA_%D8%AF%D8%A7%D8%AE%D9%84%DB%8C_%D8%A8%D9%87_%D8%A7%D9%85%DB%8C%D9%86_6.jpg" alt="" width="450" height="218"></span></p>
+<p style="text-align: right;"><span style="font-size: small;"><span style="color: #ff0000; background-color: #ffff00;">نکته چهارم:</span>
+ برای این که کلیه مدارکی که از این سامانه چه در قسمت&nbsp;پایگاه 
+عملیاتی&nbsp;(فارغ التحصیلی) و چه در قسمت عملیات مدرسه (متوسطه دوم) چاپ می 
+شوند دارای <span style="color: #ff0000;">نام مدیر</span> و <span style="color: #ff0000;">معاون اجرایی</span> و <span style="color: #ff0000;">مسئول ثبت نمره</span> باشد، می بایست کلیه ی جدول های مربوطه در بخش&nbsp;<span style="color: #ff0000;">عملیات اصلی</span> / <span style="color: #ff0000;">مسئولین مدرسه</span> تکمیل شوند. <br></span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../471.html#commentlist">نظرات (<script>setCommentCnt(471)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('471','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../../470.html">رفع خطاهای موجود در هنگام ارسال اطلاعات</a></font></div>
+            <div class=div58><font class=text7><a href="../../author/995270.html">محمدرضا اسلامی</a></font></div>
+            <div class=div581><font class=text7>یکشنبه نوزدهم اسفند 1397</font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+		
+
+<span style="font-size: small;">ارسال اطلاعات به سامانه<span style="color: #ff0000;"><strong> <a href="http://school.medu.ir" rel="nofollow"><span style="color: #ff0000;">http://school.medu.ir</span></a> </strong></span>به
+ صورت ماهیانه صورت می گیرد. بعد از ارسال می توانید تأییده ارسال را نیز 
+دریافت نمایید. اگر این ارسال صورت نگیرد بعد از انقضای مدت ارسال دیگر نمی
+ توانید وارد دانا شوید. </span>
+<p><span style="font-size: small;"><img title="" src="http://www.blogfa.com/images/smileys/17.gif" alt="" border="0"><span style="color: #ff0000;">نکته قابل ذکر</span>
+ این است که این ارسال ماهانه اطلاعات حسن دیگری نیز دارد که اگر برای 
+سیستم دانش آموزی به هر دلیلی اتفاقی بیافتد که دیگر قابل دسترسی نبوده و 
+حتی هیچ ذخیره ای نیز برای بازیابی موجود نباشد خود شرکت می تواند اطلاعات 
+را از این ارسال ها بازیابی نماید. البته ممکن است بازیابی به صورت کامل 
+صورت نگیرد.</span></p>
+<p><span style="font-size: small;">در زمان ارسال اطلاعات ممکن است با 
+لیستی از خطاها مواجه شوید که نمی دانید نسبت به آن ها باید چه کاری صورت 
+دهید. در این بخش سعی می شود نوع خطا و راه حل آن نیز بیان شود.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8331692776/%D8%AE%D8%B7%D8%A7%DB%8C_%D8%AF%D8%A7%D9%86%D8%A7_2.jpg" alt="" width="450" height="253"></span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">1)</span> کد ملی نا معتبر است:</span></p>
+<p><span style="font-size: small;">ممکن است کد ملی دانش آموز ثبت نشده باشد و یا در صورت ثبت اشتباه باشد.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">2)</span> کد ملی و شماره شناسنامه اتباع ایرانی نباید خالی باشد:</span></p>
+<p><span style="font-size: small;">کد ملی و شماره شناسنامه اتباعی که در ایران تحصیل می کنند باید ثبت شوند.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">3)</span> برای دانش آموز هیچ سابقه ای ارسال نشده است:</span></p>
+<p><span style="font-size: small;">این خطا یعنی این دانش آموز هیچ سابقه 
+نمراه ای در سیستم ندارد و تنها مشخصات شناسنامه ای وی در دانا موجود است. 
+برای رفع این خطا از قسمت عملیات اولیه، ثبت نام و سازماندهی گزینه مشخصات 
+فردی را لمس می نماییم. سپس روی گزینه حذف کلیک کرده و تأیید می نماییم.<br></span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">نکته:</span>
+ اگر دانش آموزی سابقه داشته باشد امکان حذف ندارد. گاهی با این که از 
+نداشتن سابقه دانش آموزی مطمئن هستیم اما با کلیک بر روی عنوان حذف و تأیید
+ با پیام <span style="color: #ff0000;">(این دانش آموز دارای سابقه می باشد)</span> روبرو می شویم، به احتمال قوی این شخص دارای ثبت نام است پس اول باید لغو ثبت نام شده و بعد نسبت به حذف آن اقدام کنیم.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">4)</span> در سال و دوره ذکر شده برای این دانش آموز انتخاب واحد وجود ندارد:</span></p>
+<p><span style="font-size: small;">یعنی دانش آموز در این سال و دوره 
+مربوطه فقط ثبت نام دارد و فاقد انتخاب واحد می باشد. برای رفع این مشکل 
+اگر دوره باز باشد، فقط کافی است که ثبت نام این شخص را لغو نماییم اما اگر
+ دوره بسته باشد باید از طریق اصلاح سابقه، ثبت نام این دانش آموز را حذف 
+کرد. </span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">5)</span> خطای مدرسه ناشناخته: </span></p>
+<p><span style="font-size: small;">وقتی سوابق دانش آموز انتقالی دریافت 
+می شود اما سابقه آن مدرسه در دانا وجود ندارد این خطا رخ می دهد. به محض 
+این که اطلاعات مدرسه از طریق دریافت مشخصات آموزشگاه، دریافت شود مشکل 
+برطرف می شود. </span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">6)</span> برای این دانش آموز در این سال دوره سابقه تکراری وجود دارد:</span></p>
+<p><span style="font-size: small;">به احتمال زیاد این دانش آموز در این 
+سال یا دوره در یک مدرسه دیگر بوده و سپس به مدرسه شما منتقل و ثبت نام 
+مجدد شده است. بعد از ثبت نام در مدرسه جدید با دریافت کد انتقال سابقه 
+مدرسه قبلی نیز دریافت شده است. در این صورت سابقه اضافه را باید حذف نمود.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">7)</span> وضعیت تحصیلی در پایان سال نا مشخص است:</span></p>
+<p><span style="font-size: small;">بعضی از دروس فاقد نمره می باشند که در
+ این حالت باید وضعیت آن ها مشخص شود یعنی یا نمره وارد شود و یا در صورت 
+غایب بودن غیبت ثبت شود.</span></p>
+<p><span style="font-size: small;"><span style="color: #ff0000;">8)</span> در فایل اصلی مربوط به دوره بزرگسال پایه روزانه ثبت شده است: </span></p>
+<p><span style="font-size: small;">پایه دانش آموزانی که در مدارس بزرگسال
+ درس می خوانند باید بزرگسال باشد چون این دانش آموزان فاقد پایه می باشند،
+ پس برای اصلاح از قسمت اصلاح سوابق وارد شده و پایه دانش آموز را از دوم 
+یا سوم به بزرگسال تغییر می دهیم.</span></p>
+<p style="text-align: center;"><span style="font-size: small;"><img src="http://s8.picofile.com/file/8331717226/%D8%AE%D8%B7%D8%A7%DB%8C_%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D8%AF%D8%A7%D9%86%D8%A7_1.JPG" alt="" width="450" height="230"></span></p>
+<p><span style="font-size: small;"><span style="background-color: #ffff00;">توجه:</span> با تغییراتی که در دانا با نگارش های جدید صورت گرفته است ممکن است بعضی از خطاهای فوق الذکر دیگر رخ ندهد. </span></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                            </font>
+
+
+
+<div style='display:none;'><li><a href='http://PicHaK.NeT/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../470.html#commentlist">نظرات (<script>setCommentCnt(470)</script>)</a></font></div>
+
+            <div style="float:left;margin-left: 61px; margin-top: 15px;"><script>mihanblogPostLike('470','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+            .mihanblog_like_likeCnt{
+                right: 0;
+            }
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 15px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:505px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+            .com1{ width:487px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:260px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:467px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:467px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:477px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+        ( کل صفحات : 3 )&nbsp;&nbsp;&nbsp;
+            <a href="12/page/1.html" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="12/page/2.html" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="12/page/3.html" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<br><br><br>
+    </font>
+    </div>
+</div>
+
+
+<div class=div170>
+
+    <div class=div24>
+        <div class=div35-7>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../../category/20.html">ویندوز (2)</a></li><li><a href="../../category/19.html">نرم افزار (5)</a></li><li><a href="../../category/18.html">سرودهای بازگشایی مدارس (1)</a></li><li><a href="../../category/17.html">آنتی وریروس (1)</a></li><li><a href="../../category/16.html">نحوه شارژ چاپگرهای hp (2)</a></li><li><a href="../../category/15.html">متوسطه (16)</a></li><li><a href="../../category/14.html">راهنمایی (10)</a></li><li><a href="../../category/13.html">ابتدایی (3)</a></li><li><a href="../../category/12.html">پیش دانشگاهی (1)</a></li><li><a href="../../category/10.html">اسکریپت نمایش مشخصات فردی دانش آموز انتقالی و دانش آموز فارغ التحصیل (1)</a></li><li><a href="../../category/9.html">رفع بهم ریختگی در حرف (ی) (1)</a></li><li><a href="../../category/6.html">سوالات وپاسخها (9)</a></li><li><a href="../../category/5.html">ترفندهای کامپیوتر (6)</a></li><li><a href="../../category/4.html">سیستم پیام خطای نصب فونت را می دهد (3)</a></li><li><a href="../../category/3.html">آموزش تصویری gmail (8)</a></li><li><a href="../../category/2.html">آموزش فتوشاپ (3)</a></li><li><a href="../../category/1.html">دفتر امتحانات راهنمایی (2)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-8>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://niiyayesh1351.mihanblog.com/" title="" target="_blank">دلنوشته های نیایش</a></li><li><a href="https://rizy.ir/" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم از سایت ریزی برای کوتاه کردن لینک ها استفاده کند و در کنارش کسب درآمد هم کنید!
+از هر بازدید کننده لینک های کوتاه تا 200 ریال درآمد کسب کنید!" target="_blank">کوتاه کننده لینک</a></li><li><a href="http://uupload.ir" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون" target="_blank">آپلود عکس و فایل</a></li><li><a href="http://webposter.ir/webmasters" title="در آمد میهن بلاگی ها در تیر ماه 95 به 2245000 تومان رسید.
+
+    - در آمد هر پاپ آپ 30 ریال.
+    - در آمد بنر گرافیکی 600 ریال. (جدید)
+
+وب پوستر - هوشمند
+webposter.ir
+
+لطفا این لینک را تایید کنید." target="_blank">کسب در آمد از سایت و وبلاگ</a></li><li><a href="http://esteva.mihanblog.com" title="لطفا این لینک را تایید کنید" target="_blank">استوا</a></li><li><a href="http://esteva.mihanblog.com/" title="سلام . مطالب وبلاگتون رو دنبال میکنم
+
+لینکتون رو به این ادرس بفرستید
+http://esteva.mihanblog.com/linkdaily/new
+خیلی زود تایید میکنم
+
+شما هم این لینک رو تایید کنید" target="_blank">مجله اینترنتی استوا</a></li><li><a href="http://esteva.mihanblog.com/post/2793" title="با این زیر می توانید تبلیغات بالای وبلاگتان (سمت چپ) را بلافاصله ببندید.
+
+ادامه مطلب در 
+http://esteva.mihanblog.com/post/2793
+
+لطفا این لینک را تایید کنید" target="_blank">حذف تبلیغات میهن بلاگ</a></li><li><a href="http://rahchamani.mihanblog.com/extrapage/p1" title="" target="_blank">آپدیت سه ماهه NOD32</a></li><li><a href="http://nod32update1.ir/nod32/91" title="" target="_blank">آپدیت 90روزه  نود</a></li><li><a href="http://newsoft-nod32.cofeblog.ir/" title="" target="_blank">نود32</a></li><li><a href="http://shop.panizz.com/product.php?id=3" title="سلام وبلاگ زیبایی دارید
+در صورت تمایل این را لینک را تایید کنید سپس لینک وبلاگ خود را در سایت زیر قرار دهید
+http://9rang.ir/panizz
+ارادتمند" target="_blank">آموزش خیاطی</a></li><li><a href="http://www.iphone.dcashop.ir" title="سلام 
+لطفا ما را لینک کنید 
+تشکر" target="_blank">آیفون تصویری</a></li><li><a href="http://www.kanoon.ir/Public/ExamQuestions.aspx?group=27&amp;lesson=10" title="" target="_blank">نمونه سوالات قلم چی </a></li><li><a href="http://peykanshegeftangiz.blogfa.com/" title="پیکان شگفت انیز" target="_blank">وبلاگ پسر کوچولوی من </a></li><li><a href="http://www.upsara.com/" title="با افتخار میزبان عکس ها و فایل های شما هستیم.
+آپلود رایگان و دائمی عکس
+
+با لینک کردن ما آدرس ما رو فراموش نکنید و از ما حمایت کنید
+
+باتشکر
+آپسرا" target="_blank">آپلود عکس</a></li><li><a href="http://tabadolha.rozblog.com/" title="" target="_blank">خنده وان </a></li><li><a href="http://linefarsi.com" title="" target="_blank">فروشگاه اینترنتی</a></li><li><a href="http://sanjeshl.blogfa.com/" title="" target="_blank">کارشناسی سنجش وارزشیابی شهرستان لردگان</a></li><li><a href="http://emtehan.roshd.ir/" title="" target="_blank">امتحانات سامانه رشد</a></li><li><a href="http://mesl.ir/" title="" target="_blank">نمونه سوالات</a></li>            <li><b><a href="../../../linkdaily/index.html">همه پیوندهای روزانه</a></b></li>
+            <li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-9>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://www.rasafars.com/EDU2/statute.htm#" title="" target="_blank">اساسنامه مدارس بزرگسالان</a></li><li><a href="http://sanjesh16ab.blogfa.com/" title="" target="_blank">وبلاگ دوره راهنمایی همکار محترم  علیرضا بک نزاد*معاون اجرائی مدارس تربت حیدریه</a></li><li><a href="http://shahedsabrin.mihanblog.com/" title="shahedsabrin" target="_blank">وبلاگ همکار گرامی  رشید خواجه</a></li><li><a href="http://www.akserver.ir" title="" target="_blank">آپلود</a></li><li><a href="http://www.aee.medu.ir/IranEduThms/theme2/cntntpge.php?pgid=99&amp;rcid=151" title="" target="_blank">بخشنامه های كلیدی و آیین نامه ها ازسال1313 تا به امروز</a></li><li><a href="http://www.aee.medu.ir/IranEduThms/theme2/cntntpge.php?pgid=99&amp;rcid=112" title="سوالات نهایی" target="_blank">آرشیو سوالات وزارت آموزش وپرورش</a></li><li><a href="http://danasetup.rzb.ir/" title="ثبت نام" target="_blank">دانا سیستم</a></li><li><a href="http://fish.medu.ir/" title="حقوق شما" target="_blank">فیش حقوق</a></li><li><a href="http://danasetup.rozblog.com/" title="سیستم جدید" target="_blank">سیتم دانا جدید</a></li><li><a href="http://s5.picofile.com/" title="" target="_blank">آپلود آسان picofile</a></li><li><a href="http://uploadweb.ir/Home/Index" title="" target="_blank">آپلود       uploadweb</a></li><li><a href="http://dailykhabariran.ir/news/52423" title="" target="_blank">لایسنس نود ورژن 9</a></li><li><a href="http://www.iranzamin-zanjan.ir" title="" target="_blank">همکار عزیز آقای سلیمی</a></li><li><a href="http://uploadgoogle.ir/" title="" target="_blank">آپلود کردن</a></li><li><a href="http://peykanshegeftangiz.mihanblog.com/" title="" target="_blank">وبلاگ پسر کوچولوی من که عاشق ماشینه</a></li><li><a href="http://m-a-amjadi.blog.ir/" title="" target="_blank">همگام با مدارس سلماس</a></li><li><a href="http://www.sanjesh5747.blogfa.com/" title="سنجش وارزشیابی تحصیلی سجاسرود" target="_blank">وبلاگ همکار گرامی آقای گنج خانلو</a></li><li><a href="http://sch1.blogfa.com/" title="" target="_blank">پایگاه اطلاع رسانی مدارس</a></li><li><a href="http://softsara.ir/" title="" target="_blank">سافت سرا  /softsara.ir/</a></li><li><a href="http://danasetup.persiangig.com/win-xp.pdf/download" title="" target="_blank">تعمیر ویندوزxp با استفاده از دستورات خود ویندوز</a></li>            <li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li>
+            <li><b><a href="../../../link/index.html">همه پیوندها</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-10>
+            <div class=div25><font class=text5>صفحات جانبی</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li><a href="../../../extrapage/1.html">آیین نامه های مهم(کمیسیون خاص -تخلفات امتحانی و...)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-11>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div341><font class=text1><ul>
+            <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+            <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+            <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+            <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+            <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+            <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+            <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+            <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+            <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35-12>
+            <div class=div25><font class=text5>امکانات جانبی</font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><center><font class=text1><!-- BEGIN Parstools.com Site Translator -->ترجمه وبلاگ به زبانهای مختلف دنیا
+<script src="http://code.parstools.com/index.php?t=st&langs=en,ar,bg,ca,cs,da,de,el,es,et,fi,hi,hu,id,it,ja,ko,lt,lv,mt,nl,pl,pt,ro,ru,sk,sl,sq,sr,sv,th,tl,tr,uk,vi,zh-CN"></script>
+<!-- END Parstools.com Site Translator -->
+
+<center><a target="_blank" href="http://pichak.net/blogcod/pagerank/"><img src="http://pichak.net/blogcod/pagerank/icon/50/pr5.gif" alt="پیج رنک سایت " border="0"></a></center><div style="display:none"><h3><a href="http://pichak.net/">پیج رنک</a></h3><h3><a href="http://pichak.net/blogcod/pagerank/">پیج رنک گوگل</a></h3><h3><a href="http://pichak.net/">قالب وبلاگ</a></h3></div>
+
+<center><script language="javascript" src="http://picHak.NEt/alexa/code.php?link=pichak.net&urlweb=pichak.net&bgi=12&global=1&country=1&links=1&bgc=FFFFFF&borderw=1&borderc=D6D2B4"></script></center><div style='display:none'><h3><a href='http://pichak.net/alexa/'>نمایشگر آمار آلکسا</a></h3></div></font></center>
+                <style>
+                    .mihan_logo {
+                        background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                        height: 131px;
+                        margin-top: 10px;
+                        text-align: center;
+                    }
+                </style>
+                <div class="mihan_logo"></div>
+
+            </div>
+        </div>
+        <div class=div30></div>
+    </div>
+
+</div>
+
+
+
+</div>
+</td>
+<td class="m-r">&nbsp;</td>
+</tr>
+<tr>
+    <td class="b-l">&nbsp;</td>
+    <td class="b2" valign=top>
+        <div class=div7><a href="http://www.mytheme.ir" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" border=0 width=182 height=35></a></div>
+        <div class="mytheme2"><a href="12.html#top"><img src="http://mihanblog.com/public/public/user_data/template/2099963/blank.gif" width=80 height=33 border="0" title="بالای صفحه" alt="بالای صفحه"></a></div>
+    </td>
+    <td class="b-r">&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 468px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'danasetup.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

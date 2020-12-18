@@ -1,0 +1,1199 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1187055*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[122]='1';commentCnt[123]='1';commentCnt[124]='3';commentCnt[125]='10';commentCnt[126]='5';commentCnt[127]='9';commentCnt[128]='5';commentCnt[129]='3';commentCnt[130]='3';commentCnt[131]='11';commentCnt[186]='28';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[122]='0';
+mihanblogDisLikeArrCnt[122]='0';
+mihanblogLikeArrCnt[123]='0';
+mihanblogDisLikeArrCnt[123]='0';
+mihanblogLikeArrCnt[124]='0';
+mihanblogDisLikeArrCnt[124]='0';
+mihanblogLikeArrCnt[125]='0';
+mihanblogDisLikeArrCnt[125]='0';
+mihanblogLikeArrCnt[126]='0';
+mihanblogDisLikeArrCnt[126]='0';
+mihanblogLikeArrCnt[127]='0';
+mihanblogDisLikeArrCnt[127]='0';
+mihanblogLikeArrCnt[128]='0';
+mihanblogDisLikeArrCnt[128]='0';
+mihanblogLikeArrCnt[129]='0';
+mihanblogDisLikeArrCnt[129]='0';
+mihanblogLikeArrCnt[130]='0';
+mihanblogDisLikeArrCnt[130]='0';
+mihanblogLikeArrCnt[131]='0';
+mihanblogDisLikeArrCnt[131]='0';
+mihanblogLikeArrCnt[186]='0';
+mihanblogDisLikeArrCnt[186]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://delnegar68.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://delnegar68.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','187');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','جمعه 7 شهریور 1393');
+	
+	setStatVar('today_view','7');
+	setStatVar('yesterday_view','6');
+	
+	setStatVar('this_month_view','325');
+	setStatVar('last_month_view','363');
+
+	setStatVar('total_view','87395');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:54)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://delnegar68.mihanblog.com/statupdate/?data[refereruri]=http://delnegar68.mihanblog.com/&data[postid]=&data[requesturi]=/page/7&data[sdate]=1607773722&data[hash]=80726e4665c06bf8e9e1f824ff1d0e41&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://delnegar68.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://delnegar68.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://delnegar68.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>کنار تو درگیر آرامشم...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="<-BlogAuthor->">
+<meta name="language" content="Farsi">
+<meta name="description" content="کنار تو درگیر آرامشم... - به شكوفه ها ... به باران... برسان سلام مارا - کنار تو درگیر آرامشم...">
+<meta name="keywords" content="کنار تو درگیر آرامشم...,delnegar68, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="کنار تو درگیر آرامشم..." href="../post/rss/index.html" />
+<link href="http://slidethemes.ir/theme/158/style.css" type="text/css" rel="stylesheet">
+<script src="http://slidethemes.ir/theme/158/slide/jquery-1.8.3.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="http://slidethemes.ir/theme/158/slide/jquery.nivo.slider.pack.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+$(window).load(function() {
+	$('#slider').nivoSlider();
+});
+</script>
+<link href='http://www.font-api.ir/css/B Koodak={font-api.ir}.css' rel='stylesheet' type='text/css'>
+<style>
+  *{
+  font-family:'B Koodak',Sans-Serif;
+  font-size:14px;
+ }
+</style>
+
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=SlideTheme>
+<div id=main-back>
+<div id=header>
+
+
+
+<!-- Slide Start -->
+
+<div id="RM-SlideBack">
+<div class="slider-wrapper style"> 
+ <div id="slider" class="nivoSlider">  
+<a href="7.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/158/slide1.jpg" alt="" /></a>
+<a href="7.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/158/slide2.jpg" alt="" /></a>
+<a href="7.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/158/slide3.jpg" alt=""  /></a>
+ </div></div></div>
+
+<!-- Slide End -->
+
+
+
+<div class=back-menu></div>
+<div class=top-menu2>
+<a href="../index.html">صفحه اصلی</a> |
+<a href="javascript:messageForm()">تماس با من </a> |
+<a href="mailto:r.arjmand93@yahoo.com">ایمیل مدیر</a> |
+<a href="http://www.slidetheme.ir" target="_blank" >قالب وبلاگ</a> |
+<a href="../post/rss/index.html" target="_blank" >Feed</a>
+</div>
+
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>کنار تو درگیر آرامشم...</div><div class=Description>به شكوفه ها ... به باران... برسان سلام مارا</div></div>
+
+</div>
+
+<div id="RM-Back1"></div>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../static.mihanblog.com/public/user_data/web_photo/396/1187055.jpg@2961"  /><br>مرا از دور تماشا كن... <br />
+من از نزدیك غمگینم...<br />
+<br />
+تو این وبلاگ سعی كردیم بهترین ها رو جمع كنیم...</p></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../post/author/1022834.html">روحی .  146 </a></div><div class=li-Sid>
+<a href="../post/author/1083511.html">سید رضا محدثی  15 </a></div></div>
+<div class=LowSid></div>
+
+
+
+
+		
+
+<div class="TopSid"><div class=TopSid2>رتبه الکسا</div></div>
+<div class=CenterSid>
+<center><script language="javascript" src="http://picHak.NEt/alexa/code.php?link=http://delnegar68.mihanblog.com&bgi=8&global=1&country=1&links=1&bgc=FFFFFF&borderw=1&borderc=D6D2B4"></script></center>
+</div>
+<div class=LowSid></div>
+
+
+
+
+﻿<div class="TopSid"><div class=TopSid2>ویژه اسلایدتم</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a title="قالب وبلاگ" href="http://www.slidetheme.ir/">قالب وبلاگ حرفه ای</a></div>
+<div class=li-Sid><a href="http://zibasaz.net/?n=4">تصاویر زیباسازی</a> | ﻿<a href="http://www.nafiskaran.com/">پارتیشن</a>
+</div>
+<div class=li-Sid><a href="http://par30iandl.ir">پارسیان دانلود</a>
+ | <a href="http://p-designer.ir">پی دیزاینر</a>
+</div>
+<div class=li-Sid><a href="http://sodown.ir">آپلود آهنگ</a>
+ | <a href="http://vahab65.ir">وهاب</a>
+ | <a href="http://caspian-forum.ir">انجمن های تخصصی کاسپین</a>
+</div>
+</div>
+<div class=LowSid></div>
+
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.shaqool.ir">عمران و معماری</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../0912music.mihanblog.com/index.html">دانلود آهنگ جدید</a></div><div class=li-Sid><a title="قالب وبلاگ اسلایدشو شاد" href="http://slidetheme.ir/view/158.php">قالب وبلاگ شاد</a></div>
+<div class=li-Sid><a href="http://slidetheme.ir">قالب میهن بلاگ</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+
+
+
+<div class="TopSid"><div class=TopSid2>ساعت</div></div>
+<div class=CenterSid>
+<p align="center"><script type=text/javascript src="http://pichak.net/blogcod/clock/show.php?n=44"></script></p>
+</div>
+<div class=LowSid></div>
+
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.grin.ir/" title="">خرید پستی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://thefacebook.mihanblog.com" title="با سلام....
+خیلی خوب دقت کن.
+یک بار داخل این وب بیای عاشقش میشی
+اکثر چیزایی رو که میخوای داره مثل:
+پست های فیسبوکی و دانلود اهنگ و دانلود فیلم و سریال و ...
+البته بعضی بخش هاش از هفته ی اینده راه می افته.
+اگر برات زحمتی نیست ما رو لینک کن و بهم خبر بده خواستی لینکت کنم..خوشحال میشم.
+
+با امکان چت انلاین بدون هیچ چیزی.
+
+ما رو با اسم&quot;فیسبوکی ها&quot; لینک کنید.
+آدرس ما">فیسبوکی ها</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../block-boy.mihanblog.com/index.html" title="لینكت كردم تو هم منو تایید كن تا بتونم بهت سر بزنم">₪ ℬLσḉK ℬσƔ ₪</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../ghalbe-zakhmi.mihanblog.com/index.html" title="سلام داداش بهم سر بزن منم لینکت کنم">♥♥قلب شکسته♥♥</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../www.barsa-f.mihanblog.com/index.html" title="سلام . وبلاگ قشنگی داری به وبلاگ منم سر بزن تازه درستش کردم اگه خواستی تبادل لینک هم انجام بدیم . منتظرتم">faraz</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.tr-avashanagh.blogfa.com" title="سلام
+
+بنده مایل به تبادل لینک هستم ، اگه تایید کردید خبرم کنید 
+ممنون">طبیعت روستای اواشانق </a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://danof.blog.ir" title="سلام وبلاگ جاب و قشنگی داری.
+به وبلاگ منم سر بزن
+نظر یادت نره
+راستی اگه میشه لینک ما رو حمایت کنید">دانوف</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../soogname.mihanblog.com/index.html" title="با سلام....
+
+شهادت امام صادق بر شما تسلیت باد.و از خدای مهربان آرزوی سلامتی موفقیت برایتان آرزو دارم">حنجره ای نذر حسین ع</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../gazireietanhaii.mihanblog.com/index.html" title="">جزیره تنهایی (آبجی مهسا)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../mansouri1371.mihanblog.com/index.html" title="">اس ام اس و جملات زیبا</a></div><div class=li-Sid><a href="http://slidetheme.ir">قالب وبلاگ</a></div>
+</div>
+<div class=LowSid></div>
+
+<script src="http://slidetheme.ir/img/fall.php" type="text/javascript" charset="UTF-8"></script>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<div id="RM-Back2"></div>
+
+
+<div id="aj"><h1><a href="http://تور.pichak.net/" title="تور" >تور</a></h1></div>
+<script type="text/javascript">document.getElementById('a'+'j').style.display='none';</script>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="../post/186.html">بهترین ِ بهترین ِ من</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<p>مرا خود با تو سری در میان هست </p>
+<p>وگرنه روی زیبا در جهان هست </p>
+<p>وجودی دارم از مهرت گدازان </p>
+<p>وجودم رفت و مهرت همچنان هست... <br></p><p align="center"><img src="http://s5.picofile.com/file/8135319226/24.gif" alt="" border="0" align="bottom" height="264" hspace="0" vspace="0" width="274"></p>
+
+
+
+
+<br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 27 اسفند 1392  | 11:51 ق.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(186)">نظرات  <script>setCommentCnt(186)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/131">عشق ... باران ... خدا</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><FONT size=2>مثل عشق<SPAN style="COLOR: rgb(255,0,153)"> ،</SPAN> زیر باران که حالش خوب میشود <SPAN style="COLOR: rgb(255,0,153)">. . .</SPAN></FONT>
+<P><BR></P>
+<P><FONT size=2>&nbsp; مثل قدم زنی های عاشقانه که زیر باران بی چترش می چسبد</FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل باران که چرخه ی عشق را نامنظم میکند</FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل خیابان که در پاییز اصل و نسب میابد</FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل درختان که با باران عکس یادگاری میگیرند</FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل غم که راه خانه اش را گم میکند در باران <SPAN style="COLOR: rgb(255,0,153)">. . .</SPAN></FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل لبخند که پست میشود به لبهای آدمیان </FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل لیلی که شاید مجنون را زیر باران دید و عاشقش کرد<SPAN style="COLOR: rgb(255,0,153)"> . . . </SPAN></FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل چتر که شکوفا میشود با باران </FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; مثل ماشینها <SPAN style="COLOR: rgb(255,0,153)">، </SPAN>کوچه ها <SPAN style="COLOR: rgb(255,0,153)">،</SPAN> خیابان ها که تغییر میکنند </FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; بی آنکه بخواهند باران حال همه را خوب میکند</FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; و حتی اگر ندانند </FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; و این اخلاق باران است </FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; هوا را ببین <SPAN style="COLOR: rgb(255,0,153)">. . . </SPAN></FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp; هوا را ببین بخدا <SPAN style="COLOR: rgb(255,0,153)">،</SPAN></FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; خدا عاشق است<SPAN style="COLOR: rgb(255,0,153)"> . . .</SPAN></FONT></P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 3 شهریور 1392  | 01:12 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(131)">نظرات  <script>setCommentCnt(131)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/130">كافر شدنم آرزوست </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P>به دو چشم مست تو </P>
+<P>من ...</P>
+<P>امشب ... </P>
+<P>كافر می شوم... </P>
+<P>بگذار مرا در جهنم نگاه تو بسوزانند... </P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 3 شهریور 1392  | 05:41 ق.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(130)">نظرات  <script>setCommentCnt(130)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/129">بی حضور تو </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN dir=ltr><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT size=2 face=arial,helvetica,sans-serif><STRONG>&nbsp;</STRONG></FONT></o:p></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><FONT face=tahoma,arial,helvetica,sans-serif><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><STRONG><FONT size=2><FONT face=tahoma,arial,helvetica,sans-serif>در انتظار توام</FONT>&nbsp;</FONT></STRONG></SPAN></FONT></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><FONT face=tahoma,arial,helvetica,sans-serif><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><STRONG><FONT size=2><FONT face=tahoma,arial,helvetica,sans-serif>در چنان هوایی بیا</FONT>&nbsp;</FONT></STRONG></SPAN></FONT></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><STRONG><FONT face=tahoma,arial,helvetica,sans-serif><FONT size=2><FONT face=tahoma,arial,helvetica,sans-serif><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face=tahoma,arial,helvetica,sans-serif>که گریز از تو&nbsp;ممکن نباشد</FONT>&nbsp;<BR></SPAN></FONT><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face=tahoma,arial,helvetica,sans-serif>تو</FONT>&nbsp;</SPAN></FONT></FONT></STRONG></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>تمام </STRONG></FONT><A title=تنهایی href="http://www.asheghaneha.ir/tag/%d8%aa%d9%86%d9%87%d8%a7%db%8c%db%8c" target=_blank><SPAN style="COLOR: windowtext"><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>تنهایی</STRONG></FONT></SPAN></A><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>‌هایم را&nbsp;</STRONG></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><STRONG><FONT face=tahoma,arial,helvetica,sans-serif><FONT size=2>از من گرفته‌ای&nbsp;<o:p></o:p></FONT></FONT></STRONG></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>خیابان‌ها&nbsp;</STRONG></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>بی حضور تو&nbsp;</STRONG></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face=tahoma,arial,helvetica,sans-serif><STRONG>راه‌های آشکار&nbsp;</STRONG></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face=arial,helvetica,sans-serif><FONT size=2><STRONG><FONT face=tahoma,arial,helvetica,sans-serif>جهنم‌اند</FONT></STRONG>&nbsp;</FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal align=right><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=3><o:p></o:p></FONT></SPAN>&nbsp;</P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 1 شهریور 1392  | 06:06 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(129)">نظرات  <script>setCommentCnt(129)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/128">چهار راه عشق </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">نفس می کشم نبودنت را</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">نیستی</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">هوای بوی تنت را کرده ام</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">می دانی</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">پیرهن جدایی ات بدجور به قامتم گشاد است</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">تو نیستی</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">آسمان بی معنیست</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">حتی آسمان پر ستاره</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">و باران</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">مثل قطره های عذاب روی سرم می ریزد</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">تو نیستی</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">و من چتر می خواهم ...</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">هر چیزی که حس عاشقانه و شاعرانه می دهد در چشمانم لباس سیاه پوشیده...</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">خودم را به هزار راه میزنم</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">به هزار کوچه</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">به هزار در</FONT></P>
+<P style="LINE-HEIGHT: 16px; MARGIN: 10px 0px; FONT-SIZE: 11px" align=right><FONT style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(51,51,51)" size=2 face="Tahoma, Arial, Helvetica, sans-serif">نکند یاد آغوشت بیفتم ...</FONT></P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 31 مرداد 1392  | 12:36 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(128)">نظرات  <script>setCommentCnt(128)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/127">دیگر نیا برای رسیدن دیر است .... </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P>رسیدن رسم ما نیست </P>
+<P>از زمان های دور در گوشمان فرو كردن </P>
+<P>كه عشق یعنی نرسیدن </P>
+<P>لیلی و مجنون </P>
+<P>شیرین و فرهاد </P>
+<P>خسرو و شیرین </P>
+<P>دیگر با این وجود چه كسی برای رسیدن تلاش می كند </P>
+<P>یكی بیاید این رسم لعنتی را بردارد </P>
+<P>می خواهی ما شروع كنیم؟ </P>
+<P>&nbsp;</P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 30 مرداد 1392  | 04:11 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(127)">نظرات  <script>setCommentCnt(127)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/126">دیوان شمس </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><TABLE>
+<TBODY>
+<TR>
+<TD class=b><SPAN class=beyt>چشم تو خواب می‌رود یا که تو ناز می‌کنی</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>نی به خدا که از دغل چشم فراز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>چشم ببسته‌ای که تا خواب کنی حریف را</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>چونک بخفت بر زرش دست دراز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>سلسله‌ای گشاده‌ای دام ابد نهاده‌ای</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>بند کی سخت می‌کنی بند کی باز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>عاشق بی‌گناه را بهر ثواب می‌کشی</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>بر سر گور کشتگان بانگ نماز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>گه به مثال ساقیان عقل ز مغز می‌بری</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>گه به مثال مطربان نغنغه ساز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>طبل فراق می‌زنی نای عراق می‌زنی</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>پرده بوسلیک را جفت حجاز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>جان و دل فقیر را خسته دل اسیر را</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>از صدقات حسن خود گنج نیاز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>پرده چرخ می‌دری جلوه ملک می‌کنی</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>تاج شهان همی‌بری ملک ایاز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>عشق منی و عشق را صورت شکل کی بود</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>اینک به صورتی شدی این به مجاز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>گنج بلا نهایتی سکه کجاست گنج را</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>صورت سکه گر کنی آن پی گاز می‌کنی</SPAN></TD></TR>
+<TR>
+<TD class=b><SPAN class=beyt>غرق غنا شو و خمش شرم بدار چند چند</SPAN></TD>
+<TD style="WIDTH: 2em"></TD>
+<TD class=b><SPAN class=beyt>در کنف غنای او ناله آز می‌کنی</SPAN></TD></TR></TBODY></TABLE><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 29 مرداد 1392  | 12:02 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(126)">نظرات  <script>setCommentCnt(126)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/125">شب سرمه ریز </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P style="DIRECTION: rtl" align=right>کجای این شب غریبمو ؟ </P>
+<P style="DIRECTION: rtl" align=right>کجای این کرانه ی کبود ؟ </P>
+<P style="DIRECTION: rtl" align=right>کجای این شبی که از ازل </P>
+<P style="DIRECTION: rtl" align=right>چراغ ماه قسمتش نبود</P>
+<P style="DIRECTION: rtl" align=left>&nbsp;</P>
+<P style="DIRECTION: rtl" align=left><IMG style="WIDTH: 350px; HEIGHT: 395px" border=0 hspace=0 alt="" align=middle src="http://s1.picofile.com/file/7899336876/45.jpg" width=461 height=395></P>
+<P style="DIRECTION: rtl" align=right>کجای این همیشه ابریم ؟ </P>
+<P style="DIRECTION: rtl" align=right>که اسمان نشان نمی دهد ؟ </P>
+<P style="DIRECTION: rtl" align=right>به گریه میرسم ولی سکوت </P>
+<P style="DIRECTION: rtl" align=right>به گریه هم امان نمی دهد </P>
+<P style="DIRECTION: rtl" align=right>کجای این شبم که می کشد </P>
+<P style="DIRECTION: rtl" align=right>هوای گریه ام به نا کجا</P>
+<P style="DIRECTION: rtl" align=right>&nbsp;از این خرابیم که می برد </P>
+<P style="DIRECTION: rtl" align=right>به خانه ای که نیست ای خدا</P>
+<P style="DIRECTION: rtl" align=right>&nbsp;کسی نمانده پا به پای من </P>
+<P style="DIRECTION: rtl" align=right>مگر غمی که خانه زاد توست </P>
+<P style="DIRECTION: rtl" align=right>مگر صدای سرمه ریز من که </P>
+<P style="DIRECTION: rtl" align=right>شعر سر به مهر یاد توست</P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 28 مرداد 1392  | 07:51 ق.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(125)">نظرات  <script>setCommentCnt(125)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/124">دلتنگ كسی هستم كه حتی روحش از این دلتنگی خبر نداره... </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">عاشقت خواهم ماند…</FONT><A href="http://persianrank.ir/"><SPAN style="COLOR: windowtext; TEXT-DECORATION: none; text-underline: none"><FONT size=2 face="times new roman,times,serif">…</FONT></SPAN></A><FONT size=2 face="times new roman,times,serif">……..بی آنکه بدانی.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA></SPAN><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">دوستت خواهم داشت …………….بی آنکه بگویم.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">درد دل خواهم </FONT><A href="http://persiantablig.ir/"><SPAN style="COLOR: windowtext; TEXT-DECORATION: none; text-underline: none"><FONT size=2 face="times new roman,times,serif">گ</FONT></SPAN></A><FONT size=2 face="times new roman,times,serif">فت…………بی هیچ کلامی.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">گوش خواهم داد …………</FONT><A href="http://shikblog.ir/"><SPAN style="COLOR: windowtext; TEXT-DECORATION: none; text-underline: none"><FONT size=2 face="times new roman,times,serif">…</FONT></SPAN></A><FONT size=2 face="times new roman,times,serif">…..بی هیچ سخنی.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">در آغوشت خواهم گریست…….بی آنکه حس کنی.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">در تو ذوب خواهم شد ……….</FONT><A href="http://asheganeh.ir/"><SPAN style="COLOR: windowtext; TEXT-DECORATION: none; text-underline: none"><FONT size=2 face="times new roman,times,serif">.بی</FONT></SPAN></A><FONT size=2 face="times new roman,times,serif"> هیچ حرارتی.</FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial', 'sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT size=2 face="times new roman,times,serif">این گونه شاید احساسم نمیرد … !!!</FONT></SPAN><SPAN dir=ltr><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 27 مرداد 1392  | 11:31 ق.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(124)">نظرات  <script>setCommentCnt(124)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/123">به عشق تو </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>برای تومی نویسم <?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; برای مهربانی چشمانت<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp;&nbsp;برای صمیمیتی که در کلامت موج می زند<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; برای تو می نویسم<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; برای لبخند شیرینی که روی لبانت نقش می بندد<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; وبرای نهال مهری که درسینه ی پرمهرت&nbsp;<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp;&nbsp;می&nbsp;روید...<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp;&nbsp;فقط برای تو مینویسم!<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; که صدایت زیباترین ترانه هستی است<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; وبرای نامت که پراز رازورمز زیبایی است<o:p></o:p></FONT></FONT></SPAN></P>
+<P style="MARGIN: 0cm 0cm 10pt" dir=rtl class=MsoNormal><SPAN style="FONT-FAMILY: 'Arial','sans-serif'; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi" lang=FA><FONT face="times new roman,times,serif"><FONT size=2>&nbsp;&nbsp; فقط برای تو مینویسم...!<o:p></o:p></FONT></FONT></SPAN></P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 27 مرداد 1392  | 11:29 ق.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(123)">نظرات  <script>setCommentCnt(123)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://delnegar68.mihanblog.com/post/122">دلم گرفته .... </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><FONT size=2 face="times new roman,times,serif">کاش بازمعلمی بود و انشایی می خواست :</FONT>
+<P><FONT size=2 face="times new roman,times,serif">روزگار خود را چگونه میگذرانید؟</FONT></P>
+<P><FONT size=2 face="times new roman,times,serif">تـا چـنـد خـط بـرایـش درد و دل کـنـم!!!!!</FONT></P><br>
+										<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 26 مرداد 1392  | 03:44 ب.ظ  | نویسنده : <a href="../post/author/1022834.html">روحی . </a> | <a target="_self" href="javascript:newComment(122)">نظرات  <script>setCommentCnt(122)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="../post.html">صفحات</a></div></div>
+</div>
+<div class=C-post><div class=CenterPost>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#000000;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #000000;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#000000;}.pging a.current:link, .pging a.current:visited {    background-color:#000000;    border:1px solid #000000;    color:red;    cursor:text;}</style>
+<center>
+ <div class=pging><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 19 ::     			<a href="3.html">
+			<font color="#000000"><i>...</i></font></a>  			<a href="4.html">
+			<font color="#000000"><span>4</span></font></a>  			<a href="5.html">
+			<font color="#000000"><span>5</span></font></a>  			<a href="6.html">
+			<font color="#000000"><span>6</span></font></a>  			<a href="7.html">
+			<font color="#000000"><b>7</b></font></a>  			<a href="8.html">
+			<font color="#000000"><span>8</span></font></a>  			<a href="http://delnegar68.mihanblog.com/page/9">
+			<font color="#000000"><span>9</span></font></a>  			<a href="http://delnegar68.mihanblog.com/page/10">
+			<font color="#000000"><span>10</span></font></a>  			<a href="http://delnegar68.mihanblog.com/page/11">
+			<font color="#000000"><i>...</i></font></a>  </font></div></center>
+</div></div>
+<div class=LowPost><div class=Comment>لطفا از دیگر صفحات نیز دیدن فرمایید</div></div>
+<div class=C-post><center><b><font size="1">.:</font></b>	<a href="http://SlideTheme.ir" target="_blank"> 
+	Weblog Themes By <b>SlideTheme </b></a><b><font size="1">:.</font></b>
+</center>
+</div></div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../post/archive/1393/4.html"> تیر 1393 ، 1 </a></div><div class=li-Sid>
+<a href="../post/archive/1393/2.html"> اردیبهشت 1393 ، 2 </a></div><div class=li-Sid>
+<a href="../post/archive/1393/1.html"> فروردین 1393 ، 2 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/12.html"> اسفند 1392 ، 1 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/11.html"> بهمن 1392 ، 2 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/10.html"> دی 1392 ، 2 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/9.html"> آذر 1392 ، 1 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/8.html"> آبان 1392 ، 4 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/7.html"> مهر 1392 ، 8 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/6.html"> شهریور 1392 ، 39 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/5.html"> مرداد 1392 ، 59 </a></div><div class=li-Sid>
+<a href="../post/archive/1392/2.html"> اردیبهشت 1392 ، 65 </a></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>جستجو</div></div>
+<div class=CenterSid>
+<center><form style="width:140px;font-size:9pt;font-family:Tahoma;text-align:center;border:1px dotted #bbbbbb;padding:5px;direction:rtl" target="_new" method=get action=http://www.google.com/search><a target="_blank" href="http://pichak.net/blogcod/google/"><img border=0 src="http://www.pichak.net/blogcod/google/g.gif"></a><input name=q size=12 style="border:1px solid #999999;background:#efefef;font-family:Tahoma"><br><br><input type="submit" name="btnG" value="جستجو" style="font-family:Tahoma"><br><input value="http://delnegar68.mihanblog.com" type=radio name=sitesearch checked>در این وبلاگ<br><input type=radio name=sitesearch value="">در كل اینترنت<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8></form></center></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>آخرین مطالب</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a href="../post/193.html">طاقت بیار دلم .... </a></div>
+<div class=li-Sid><a href="../post/192.html">تاریکم ای یلدا ... تاریکم </a></div>
+<div class=li-Sid><a href="../post/191.html">ناگه غروب كدامین ستاره </a></div>
+<div class=li-Sid><a href="../post/190.html">روزت مبارک مهربانم ... </a></div>
+<div class=li-Sid><a href="../post/188.html">شبیه همیشه شبیه تو  </a></div>
+<div class=li-Sid><a href="../post/187.html">منم آن شاعر دلخون كه فقط خرج تو كرد </a></div>
+<div class=li-Sid><a href="../post/186.html">بهترین ِ بهترین ِ من</a></div>
+<div class=li-Sid><a href="../post/185.html">خداحافظی ... خداحافظ نمی خواهد</a></div>
+<div class=li-Sid><a href="../post/184.html">لابد همین است... </a></div>
+<div class=li-Sid><a href="../post/182.html">کلک خیال انگیز </a></div>
+<div class=li-Sid><a href="../post/181.html">این شعرهای لعنتی </a></div>
+<div class=li-Sid><a href="../post/180.html">تمام تو ... </a></div>
+<div class=li-Sid><a href="../post/179.html">طرحی برای معشوقه ...</a></div>
+<div class=li-Sid><a href="../post/178.html">من از خاکم... </a></div>
+<div class=li-Sid><a href="../post/177.html">شعر - واژه - تو - خاطره</a></div>
+<div class=li-Sid><a href="../post/176.html">ابر... باران نبار بی انصاف...</a></div>
+<div class=li-Sid><a href="../post/175.html"> تو آمده بودی که بروی اصلا!</a></div>
+<div class=li-Sid><a href="../post/174.html">شعر کوتاه ولی حرف به اندازه کوه ...</a></div>
+<div class=li-Sid><a href="../post/173.html">وقتی كه باید عزم رفتن كرد... </a></div>
+<div class=li-Sid><a href="../post/172.html">بگذار زمان روی زمین بند نباشد... </a></div>
+</div>
+<div class=LowSid></div>
+
+
+
+
+
+
+<div class="TopSid"><div class=TopSid2>حامیان اسلایدتم</div></div>
+<div class=CenterSid>
+﻿<div class=li-Sid><a href="http://masoud1369.ir">زیباترین سایت تفریحی</a>
+ | <a href="http://caspianpc.ir">کاسپین کامپیوتر</a>
+</div>
+<div class=li-Sid><a href="http://www.takabplast.com/index.php/fa/products/ettesalate-electrofusion/cooplerdarpush">کوپلر</a>
+ | <a href="http://kkguilan.ir">دوره کاردانی استان گیلان</a>
+</div>
+<div class=li-Sid><a href="http://www.sakhtemoon.com/Scaffold/Companies">داربست نمایشگاهی</a>
+ | <a href="http://navarog.ir">پسر نپتون</a>
+</div>
+<div class=li-Sid><a title="ویزای ایران" href="http://تور.pichak.net/showthread.php?30-%D9%88%DB%8C%D8%B2%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">ویزای ایران</a>
+ | <a href="http://parsmanager.ir">پرتال مدیران پارسی</a>
+</div><div class=li-Sid><a href="http://news.pichak.net">اخبار وب</a>
+ | <a href="http://timblog.ir">تیم بلاگ</a>
+ | <a href="http://zibamod.ir">زیبا مد</a>
+</div>
+<div class=li-Sid><a href="http://sabzak.ir">سبزک</a>
+ | <a href="http://kharidlink.ir/">تبلیغات متنی</a>
+ | <a href="http://mohemnews.ir">مهم نیوز</a>
+</div></div>
+<div class=LowSid></div>
+
+
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+
+<script type='text/JavaScript'>
+var oulb= 'http://PicHaK.NeT/online-user/';
+function CheckBrowser(){
+if(navigator.appName == 'Microsoft Internet Explorer')	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=1&t=2"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=1&t=2"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>
+<!---Start Cod Music By RoozGozar.cOm--->
+</span><span style="font-size: 8pt" lang="en-us"></a></span></p><p align="center"><head><center><script language='JavaScript' type='text/javascript' src='http://roozgozar.com/music/ehsan-khajeamiri/asheghaneha/10-naborde-ranj/roozgozar.js' ></script></center></head></p><p align="center"><font face="Tahoma" style="font-size: 8pt"><a target="_blank" href="http://roozgozar.com/music"><span style="text-decoration: none"><font color=#ff0000">كد موسیقی برای وبلاگ</font></span></a></font></p>
+<!---End Cod Music By RoozGozar.cOm---><br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div>
+
+<div class=footer>
+
+<div class=Fo1>
+<a href="http://www.slidetheme.ir/category/templates-mihanblog.php" target="_blank">قالب میهن بلاگ</a> : <a href="http://slidetheme.ir"target="_blank"> اسلاید تم </a> | Weblog Themes By : <a href="http://slidetheme.ir"target="_blank"> SlideTheme.ir </a>
+</div>
+
+</div></div></div>
+
+</body>﻿<script type="text/javascript" src="http://slidetheme/down/s.php"></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pIChaK.NEt/upper/scrolltopcontrol.php?t=22' ></s"+"cript>");</script></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'delnegar68.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

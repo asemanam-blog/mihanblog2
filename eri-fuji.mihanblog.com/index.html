@@ -1,0 +1,2266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://eri-fuji.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1895219*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[5]='296';commentCnt[104]='0';commentCnt[105]='5';commentCnt[108]='0';commentCnt[109]='3';commentCnt[110]='13';commentCnt[111]='3';commentCnt[112]='29';commentCnt[115]='26';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[5]='1';
+mihanblogDisLikeArrCnt[5]='0';
+mihanblogLikeArrCnt[105]='0';
+mihanblogDisLikeArrCnt[105]='0';
+mihanblogLikeArrCnt[109]='0';
+mihanblogDisLikeArrCnt[109]='0';
+mihanblogLikeArrCnt[110]='0';
+mihanblogDisLikeArrCnt[110]='0';
+mihanblogLikeArrCnt[111]='0';
+mihanblogDisLikeArrCnt[111]='0';
+mihanblogLikeArrCnt[112]='0';
+mihanblogDisLikeArrCnt[112]='0';
+mihanblogLikeArrCnt[115]='1';
+mihanblogDisLikeArrCnt[115]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://eri-fuji.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://eri-fuji.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','41');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','یکشنبه 28 آبان 1396');
+	
+	setStatVar('today_view','3');
+	setStatVar('yesterday_view','12');
+	
+	setStatVar('this_month_view','225');
+	setStatVar('last_month_view','430');
+
+	setStatVar('total_view','35870');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (03:36)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://eri-fuji.mihanblog.com/statupdate/?data[refereruri]=http://mahdisclub.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607825820&data[hash]=c71d31344b95fef0d51fba768d5d05a9&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://eri-fuji.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://eri-fuji.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://eri-fuji.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link rel="alternate" type="application/rss+xml" title="ℯϰ◎ ℓ@ᾔḓ" href="http://eri-fuji.mihanblog.com/post/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="ℯϰ◎ ℓ@ᾔḓ" href="http://eri-fuji.mihanblog.com/post/atom/" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099922/style.css" type="text/css" rel="stylesheet">
+
+    <title>ℯϰ◎ ℓ@ᾔḓ</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td class=div2 valign=top>
+<div class=div00>
+<div class=div1></div>
+
+<div class=div17>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+
+        <div class=div341>
+            <div class=div31><center><img src="../static.mihanblog.com/public/user_data/web_photo/632/1895219.jpg@4414"  /><br><br>
+                <font class=text1>سلامـ منـ الیــ امـ<br />
+اکسوالیـ هستمـ<br />
+سهونـ عشقـ منهـ<br />
+قوانینـ رو رعایتـ کنینـ<br />
+نظر بدید زیادددددددددددددددد<br />
+خبـ دیگهـ زیادیـ زر زدمـ<br />
+بایـ گلمـ امیدوارمـ بهتـ خوشـ بگذرهـ</center><br>
+                <b>مدیر وبلاگ :</b> <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ & ṧℯhüᾔ </a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text51>مطالب اخیر</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://eri-fuji.mihanblog.com/post/115">.... (تغییر کرد)</a></li><li><a href="http://eri-fuji.mihanblog.com/post/112">تولد تولد تولدت مبارک</a></li><li><a href="http://eri-fuji.mihanblog.com/post/111">این مخصوص پرسپولیسی هاس</a></li><li><a href="http://eri-fuji.mihanblog.com/post/110">بیایید به کای و اکسو رای بدید!!!!!!!!</a></li><li><a href="http://eri-fuji.mihanblog.com/post/109">اکسو-الااا کمککککککککککککککک</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://eri-fuji.mihanblog.com/post/archive/1396/8/4"> هفته چهارم آبان 1396</a></li><li><a href="http://eri-fuji.mihanblog.com/post/archive/1396/1/4"> هفته چهارم فروردین 1396</a></li><li><a href="http://eri-fuji.mihanblog.com/post/archive/1396/1/2"> هفته دوم فروردین 1396</a></li><li><a href="http://eri-fuji.mihanblog.com/post/archive/1396/1/1"> هفته اول فروردین 1396</a></li><li><a href="http://eri-fuji.mihanblog.com/post/archive/1395/12/4"> هفته چهارم اسفند 1395</a></li><li><a href="http://eri-fuji.mihanblog.com/post/archive/1395/11/4"> هفته چهارم بهمن 1395</a></li>            <li><b><a href="http://eri-fuji.mihanblog.com/post/archive">آرشیو كل مطالب</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text52>پیوندها</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li><a href="../yasesorkh.mihanblog.com/index.html" title="" target="_blank">مائده جونم</a></li><li><a href="../mahdisclub.mihanblog.com/index.html" title="" target="_blank">مهدیس جونم</a></li><li><a href="../farnaz200.mihanblog.com/index.html" title="" target="_blank">فرناز جونم</a></li><li><a href="../exo-lover.mihanblog.com/index.html" title="" target="_blank">صحر جونم</a></li><li><a href="http://bi-ay.mihanblog.com" title="" target="_blank">ایاسا و بیوسا جونم</a></li><li><a href="http://anahitababa.mihanblog.com" title="" target="_blank">بلانکا جونم</a></li><li><a href="http://jina123.mihanblog.com" title="" target="_blank">پرنسس پاییزی جونم</a></li><li><a href="http://worldofcode.mihanblog.com/" title="" target="_blank">سلناتور جونم</a></li><li><a href="../cool-girls.mihanblog.com/index.html" title="" target="_blank">پانته آ جونم</a></li><li><a href="http://beauty-orders.mihanblog.com" title="" target="_blank">ایزابلا جونم</a></li><li><a href="../orders-world.mihanblog.com/index.html" title="" target="_blank">باران جونم</a></li><li><a href="http://ghaleb-raha.mihanblog.com" title="" target="_blank">رها جونم</a></li>            <li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li>
+            <li><b><a href="http://eri-fuji.mihanblog.com/link/">همه پیوندها</a></b></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ  (41)</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text51>صفحات جانبی</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li><a href="http://eri-fuji.mihanblog.com/extrapage/byugrafima">بیوگرافیه دخترا</a></li><li><a href="http://eri-fuji.mihanblog.com/extrapage/byugrafi">بیوگرافیه پسرا</a></li>        </ul></font></div><div class=div30></div>
+    </div>
+    
+		<form id="frm-16076513195fd2cff7c7bec" method="post" action="http://eri-fuji.mihanblog.com/poll/new/fid/16076513195fd2cff7c7bec/atrty/1607651319/avrvy/0/key/139d02f82801bf241e036eb64ca11cce/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="368472" id="data[pollid]" />		<div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text52>نظرسنجی</font></div></div>
+
+        <div class=div341>
+            <div class=div32><font class=text1>
+                                    موزیک ویدیو و اهنگای اکسو رو بزارم؟؟؟؟<br>
+                        <label><input type="radio" name="data[answer]" value="v1">اره  حتما</label><br><label><input type="radio" name="data[answer]" value="v2">نه اصلا</label><br><label><input type="radio" name="data[answer]" value="v3">نمیدونم میل خودته</label><br>                        <div align="center"><br><input type="submit" value="_-بکلیک-_" style="font-family: Tahoma; font-size: 9pt"><br><br></div>
+                                                </font></div></div><div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16076513195fd2cff7c7bec" id="frm-id" /></form>
+    
+    <form id="frm-16076513195fd2cff7c83bc" method="get" action="http://eri-fuji.mihanblog.com/post/search/fid/16076513195fd2cff7c83bc"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text51>جستجو</font></div></div>
+
+        <div class=div341>
+            <div class=div32><center><input type="text" name="search_text" size="15"><br>
+                <input type="submit" value="ببینم اینو داره???" style="font-family: Tahoma; font-size: 9pt"></center></div>
+        </div><div class=div30></div>
+    </div><input type="hidden" name="frm-id" value="16076513195fd2cff7c83bc" id="frm-id" /></form>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text52>آمار وبلاگ</font></div></div>
+
+        <div class=div341><font class=text1><ul>
+            <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+            <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+            <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+            <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+            <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+            <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+            <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+            <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+            <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+        </ul></font></div><div class=div30></div>
+    </div>
+    <div class=div024><center><style>body, a:hover{cursor:url(), url(http://s9.picofile.com/file/8277724284/moes.png), progress !important;}</style>
+
+<!-- Start Code By Love-skin.ir -->
+<script type="text/javascript" src="http://up.love-skin.ir/up/l-skin/tools/maker/top/top.jquery-min.js"></script>
+<script>var abzar = "<img src=http://s8.picofile.com/file/8268983892/%D8%A8%D8%A7%D9%84%D8%A7%D8%A8%D8%B1.png />";</script>
+<script type="text/javascript" src="http://up.love-skin.ir/up/l-skin/tools/maker/top/scroll-topcontrol.js"></script>
+<!-- End Code By Love-skin.ir -->
+
+
+<!-- start logo cod off http://beauty-orders.mihanblog.com --><p align="center"><p align="center"><a href="http://beauty-orders.mihanblog.com" target="_blank"><img border="0" src="http://uupload.ir/files/owr1_147380066722995.gif"  width="150" height="160" alt="بیوتــــــی وب"></a></p><!--finish logo cod off http://beauty-orders.mihanblog.com -->
+
+
+
+<!-- webniaz.blogfa.com --->
+<script type="text/javascript" src="http://cafe-webniaz.ir/abzar/porbazdid/webfontwebniaz.blogfa.commorvarid.js"></script><div style="display:none"><h1><a href="http://www.cafe-webniaz.ir">ابزار تغییر فونت مطالب وبلاگ اختصاصی کافه وبنیاز این جمله در وبتون نمایش داده نمیشه پس لطفا پاکش نکنید</a></h1></div>
+<!-- webniaz.blogfa.com --->
+
+
+
+<!-- powered by www.tools.iranianblogers.ir -->
+<script src="http://www.tools.iranianblogers.ir/fal/1/bazi-pishgooiy.js"></script>
+<!-- powered by www.tools.iranianblogers.ir -->
+
+
+<!-- Start Code Banner By Http://worldofcode.mihanblog.com --> <p style="text-align:center"><a title="یه وب واسه دخیا و دوستام" href="Http://worldofcode.mihanblog.com" target="_blank"><img src="http://s9.picofile.com/file/8268151626/IMG_6551.GIF" alt="یه وب واسه دخیا و دوستام" width="185" height="185"></a></p> <!-- End Code Banner By Http://worldofcode.mihanblog.com -->
+
+
+
+
+<script 
+
+language="JavaScript1.2">
+function disableselect(e){
+return false
+}
+
+function reEnable(){
+return true
+}
+
+//if IE4+
+document.onselectstart=new Function ("return false")
+
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script><p align="center"><font face="Tahoma" style="font-size: 9pt"><a target="_blank" href="http://www.pichak.net"><span style="text-decoration: none">جاوا اسكریپت</span></a></font></p>
+
+
+<p align="center"><script type=text/javascript src="http://pichak.net/blogcod/mose/04/code.php"></script></p>﻿<div style="display:none;"><li><a href="http://tokisti.ir">وب</a>
+</li></div></center>
+        <style>
+            .mihan_logo {
+                background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                height: 131px;
+                margin-top: 10px;
+                text-align: center;
+            }
+        </style>
+        <div class="mihan_logo"></div>
+
+    </div>
+
+
+</div>
+
+<div class=div100></div>
+
+<div class=div20>
+
+    <div class=div60>
+        <div class=div101>
+            <div class=div10><font class=title>ℯϰ◎ ℓ@ᾔḓ</font></div></div>
+        <div class=div11>
+            <div class=div12><font class=des></font></div><br><br><br><br></div>
+    </div>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/5">✿...fixed...✿...post...✿</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><div><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"><font size="4">✿Love&nbsp;dares to accept something like death✿</font><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://s9.picofile.com/file/8277478118/jessihun.png" alt=""></div><div><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"><font size="4">به نام خالق&nbsp;جِسیهون<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">سلام<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">خوش اومدی به وبم<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">من الهه ام مدیر این وب<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">این وب مال اکسو-الاس<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">پرچم اکسو-الا همیشه بالاس<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">چون بالا سرمون خداس<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4">&nbsp;</font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">حالا بریم سراغ قوانین<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><br></font></div><div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">1-ورود پسرا ممنوعه<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">2-تبادل لینک و لوگو ----&lt;موافقم<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">3-اگه از من و وبم خوشت میاد=ctrl+d<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">4-اگه از من و وبم خوشت نمیاد=ctrl+w<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">5-نویسنده میپذیرم<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">6-داداشمو زن----&gt;نـ میـ ـدم دقت کن سه بخشه نـ میـ ـدم<img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></font></div><div><font size="4"><br></font></div><div><font size="4"><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png">لوگوی وِبـــ</font><img src="http://s9.picofile.com/file/8269278900/te14_exo3.png"></div><div><p align="center"><a href="index.html" target="_blank"><img border="0" src="http://s8.picofile.com/file/8272666718/bloggif_580608ea0fe29.gif" width="200" alt="اکسو لند" height="300"></a><br><input onclick="this.select()" type="text" width="356" name="T1" size="15" value="<!-- start logo cod off http://eri-fuji.mihanblog.com --><p align=&quot;center&quot;><p align=&quot;center&quot;><a href=&quot;http://eri-fuji.mihanblog.com&quot; target=&quot;_blank&quot;><img border=&quot;0&quot; src=&quot;http://s8.picofile.com/file/8272666718/bloggif_580608ea0fe29.gif&quot;  width=&quot;200&quot; height=&quot;300&quot; alt=&quot;اکسو لند&quot;></a></p><!--finish logo cod off http://eri-fuji.mihanblog.com -->" dir="ltr"></p></div></div><div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>پنجشنبه 11 شهریور 1395 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/5#commentlist">نظرات (<script>setCommentCnt(5)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('5','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/115">.... (تغییر کرد)</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div style="text-align: center;"><font size="5">سلام</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">ادرس وب عوض شد</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">لطفا به این وب برید</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="6"><a href="http://eri-fuji.mihanblog.com/blackxotion.mihanblog.com" target="_blank" title="">blackxotion.mihanblog.com</a></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="5">کلیک کنید روش میاره</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">تو وبه جدید فقط رمان گذاشته میشه</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">این رمانه نصفه ای هم که اینجاس رو قراره تو اون وب ادامه بدم</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">همه ی کسایی که این وب رو لینک کردن خواهشااااااا اون وب رو لینک کنن و اینو از لینکاشون بردارن</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">خیلی دوستون دارم</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="5">بااااااااای</font></div>
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>یکشنبه 28 آبان 1396 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/115#commentlist">نظرات (<script>setCommentCnt(115)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('115','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/112">تولد تولد تولدت مبارک</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<div style="text-align: center;"><font size="4">سلام دوستانننننننننننن</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">امروز یا بهتره بگم دیروز(الان ساعت2:47 دیقه ی شبه) تولد زندگیم بود</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">تولد شومَلَم بود</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">تولدش مبارکککککککککککککککک</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">23 سالش شدددددددد</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">واییییییییی خیلی خوشحالم</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">قربونششششششششش برمممممم الهییییییییییییییییی</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">شوهر گلم...زندگیم..دنیام...نفسم...عشقم..تنها دلیل بود</font><span style="font-size: large;">نم(</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><span style="font-size: large;">) تولدت مبارکککککک</span></div><div style="text-align: center;"><span style="font-size: large;"><br></span></div><div style="text-align: center;"><span style="font-size: large;">ان شاءالله 200000000000000000000 ساله بشی(یا پیغمبر</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/13.gif"><font size="4">)</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">به مناسبت تولدش میخوام براش تولد بگیرم</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">کادو هاتونو اماده کنید</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">راستی من تولد کای و دی او اوپا و چانیول اوپا و مامانی سوهو رو هم نگرفتم خاک تو سرم</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">پس 5 تا کادو بیارید..یکی واسه مکنه ی زبون نفهمه اکسو</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"><font size="4">&nbsp;یکی واسه داداشیه هاتم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"><font size="4">&nbsp;یکی هم واسه دی.او اوپا سلطان صدای اکسو</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"><span style="font-size: large;">&nbsp;یکی واسه هپی ویروس اکسو</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"><span style="font-size: large;">یکی هم واسه مامانی خوشگل اکسو</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"></div><div style="text-align: center;"><span style="font-size: large;"><br></span></div><div style="text-align: center;"><span style="font-size: large;"><br></span></div><div style="text-align: center;"><span style="font-size: large;">خب فعلا بای تا های</span></div>
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>پنجشنبه 24 فروردین 1396 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/112#commentlist">نظرات (<script>setCommentCnt(112)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('112','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/111">این مخصوص پرسپولیسی هاس</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<div style="text-align: center;"><font size="4">ویدیو ی فوق العاده خنده دار از پرسپولیس(البته بعضیاشون)</font></div><div style="text-align: center;"><font size="4">فیلم تو ادامه مطلب</font></div>
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b><a href='http://eri-fuji.mihanblog.com/post/111'>بیا اینجاااااا..بدو</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>سه شنبه 8 فروردین 1396 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/111#commentlist">نظرات (<script>setCommentCnt(111)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('111','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/110">بیایید به کای و اکسو رای بدید!!!!!!!!</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="text-align: center;"><font size="4">سلام</font></div><div style="text-align: center;"><font size="4">گلای من خوبین؟؟؟؟</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">اجی الیکا چی عجیب بود؟</font></div><div style="text-align: center;"><font size="4">راستی</font></div><div style="text-align: center;"><font size="4">این هم رای گیری کای و اکسو</font></div><div style="text-align: center;"><font size="4">زود برید رای بدید</font></div><div style="text-align: center;"><font size="4">چونکه کره ای نوشته من میگم چیکار کنید</font></div><div style="text-align: center;"><font size="4">ببینید شما وقتی میرید توی صفحه ی رای گیری روی عکس مورد نظرتون(گروه اکسو و کای) کلیک میکنید بعد دوتا گزینه میاره که شما باید گزینه ی قرمز رو بزنید</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">لینک رای به گروه اکسو</font></div><div style="text-align: center;"><font size="4"><a href="http://fanq.io/poll.php?id=89&amp;ref=tw " target="_blank" title="">بکلیک</a></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="4">لینک رای به کای</font></div><div style="text-align: center;"><font size="4"><a href="http://fanq.io/poll-result.php?id=72 " target="_blank" title="">بکلیک</a></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="4">بای</font></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>پنجشنبه 3 فروردین 1396 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/110#commentlist">نظرات (<script>setCommentCnt(110)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('110','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/109">اکسو-الااا کمککککککککککککککک</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<div style="text-align: center;"><font size="4">سلامممممممممممم</font></div><div style="text-align: center;"><font size="4">وای وایییییییییی بدبخت شدیم</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">شبکه ی اس&nbsp;بی اس یه نظر سنجی گذاشته واسه لیدر ها و مکنه ها</font></div><div style="text-align: center;"><font size="4">بدویید بدویید که خیلی عقبیمممممممممم</font></div><div style="text-align: center;"><font size="4">با چند تا سیستم مختلف برید رای بدید</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">این مال رای گیری لیدر ها...به سوهو رای بدید</font></div><div style="text-align: center;"><font size="4"><a href="http://www.sbs.com.au/popasia/blog/2017/03/17/poll-who-your-favourite-k-pop-leader-all-time?cx_navSource=related-side-cx#cxrecs_s" target="_blank" title="">بکلیک</a></font></div><div style="text-align: center;"><font size="4">اسم سوهو اینطوری نوشته شده</font></div><div style="text-align: center;"><font size="4">EXO'S suho</font></div><div style="text-align: center;"><font size="5"><br></font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">این مال مکنه ها.....به سهون رای بدید</font></div><div style="text-align: center;"><font size="4"><a href="http://www.sbs.com.au/popasia/blog/2017/03/06/poll-who-your-favourite-k-pop-maknae-all-time " target="_blank" title="">بکلیک</a></font></div><div style="text-align: center;"><font size="4">اسم سهون اینطوری نوشته شده</font></div><div style="text-align: center;"><font size="4">EXO'S sehun</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">اونایی که وب دارن این لینکو پخش کنن</font></div><div style="text-align: center;"><font size="4">پسرامون خیلی از بقیه عقب ترن</font></div>
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>سه شنبه 1 فروردین 1396 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/109#commentlist">نظرات (<script>setCommentCnt(109)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('109','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/108">سلام بعد از قرن ها اومدم</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="text-align: center;"><font size="4">انیونگ هاسیو</font></div><div style="text-align: center;"><font size="4">خیلییییییییییییییی ببخشید بخاطر اینکه هیچی نزاشتم</font></div><div style="text-align: center;"><font size="4">به جان خودم نباشه به جان شما وقت نداشتم</font></div><div style="text-align: center;"><font size="4">حالا اومدم</font></div><div style="text-align: center;"><font size="4">27دقیقه&nbsp;42&nbsp;ثانیه تا عید</font></div><div style="text-align: center;"><font size="4">عیدتون مبارک</font></div><div style="text-align: center;"><font size="4">ان شاء الله امسال سال خوبی برای همه باشه</font></div><div style="text-align: center;"><font size="4">هیچ مریضی نباشه...اکسو بیاد ایران</font></div><div style="text-align: center;"><font size="4">خب یه چیزی میخوام به زهرا و فاطی یزدان مهر بگم</font></div><div style="text-align: center;"><font size="4">&lt;مین سوک&gt;و&lt;کیونگسو&gt;</font></div><div style="text-align: center;"><font size="4"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif">یادتون اومد؟؟؟؟<img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/24.gif"></font></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>دوشنبه 30 اسفند 1395 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/108#commentlist">نظرات (<script>setCommentCnt(108)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('108','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/105">ری اکشن اکسو الا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<div style="text-align: center;"><font size="4">سلام</font></div><div style="text-align: center;"><font size="4">امروز چند تا ویدیو از ری اکشن چند تا اکسو-ال از دیدن موزیک ویدیو های اکسو براتون اوردم</font></div><div style="text-align: center;"><font size="4">پس بدو ادامه</font></div><div style="text-align: center;"><font size="4">نه نه یه لحظه استپ</font></div><div style="text-align: center;"><font size="4">موافقید که براتون اهنگا و موزیک ویدیو های اکسو رو بزارم؟؟؟</font></div><div style="text-align: center;"><font size="4">یه نظرسنجی جدید</font></div><div style="text-align: center;"><font size="4">لطفا شرکت کنید</font></div>
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b><a href='http://eri-fuji.mihanblog.com/post/105'>come</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>یکشنبه 1 اسفند 1395 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/105#commentlist">نظرات (<script>setCommentCnt(105)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('105','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://eri-fuji.mihanblog.com/post/104">!!!!!!!!!!!!!!!!!!!</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="text-align: center;"><font size="4">یا خدااااااااااااا</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">چقد بازدیدم زیادهههههههههههههههه</font></div><div style="text-align: center;"><font size="4"><br></font></div><div style="text-align: center;"><font size="4">پس نظر کوش؟؟؟؟</font></div><div style="text-align: center;"><font size="4">اینهمه بازدید و فقط سه نظر که دو تاش مال فاطی بود و یکی هم دوست عزیزی که اسمش با صفا ترین بود</font></div><div style="text-align: center;"><font size="4">(بزنی روش بزرگ میشه)</font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s2.picofile.com/file/8286933376/Untitled.png" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s3.picofile.com/file/8286933118/fw.png" alt=""></a></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                                <br><font color="#c70900">برچسب ها :</font>
+                                <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font><br><br>
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div58><font class=text7>یکشنبه 1 اسفند 1395 :: نویسنده : <a href="http://eri-fuji.mihanblog.com/post/author/1563031">ℯℓ☤ &amp; ṧℯhüᾔ </a></font></div>
+            <div class=div27>
+                <font class=text8><a href="http://eri-fuji.mihanblog.com/post/104#commentlist">نظرات (<script>setCommentCnt(104)</script>)</a></font>
+
+                <div style="margin-top: -9px; margin-left: 20px; float: left;"><script>mihanblogPostLike('104','like')</script></div>
+
+
+            </div>
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:605px; float:left; background:#e8dabf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 5px; padding:0 0 10px 0;}
+            .com1{ width:587px; float:left; background:#542e19; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:360px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:567px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:567px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:577px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+        ( کل صفحات : 6 )&nbsp;&nbsp;&nbsp;
+            <a href="http://eri-fuji.mihanblog.com/page/1" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="http://eri-fuji.mihanblog.com/page/2" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<a href="http://eri-fuji.mihanblog.com/page/3" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<a href="http://eri-fuji.mihanblog.com/page/4" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="http://eri-fuji.mihanblog.com/page/5" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="http://eri-fuji.mihanblog.com/page/6" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+</div>
+</div>
+<div class=div06>
+    <div class=div6><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099922/mytheme.ir_02.gif" width="990" height="40"></div>
+    <div class=div7>
+        <a href="http://www.mytheme.ir" target="_blank">
+            <img src="http://mihanblog.com/public/public/user_data/template/2099922/blank.gif" border=0 width=182 height=35></a></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 550px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'eri-fuji.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

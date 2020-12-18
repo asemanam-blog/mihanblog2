@@ -1,0 +1,1533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://hasrat9.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*867850*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[542]='-';commentCnt[543]='-';commentCnt[545]='-';commentCnt[546]='-';commentCnt[547]='-';commentCnt[548]='-';commentCnt[549]='-';commentCnt[550]='-';commentCnt[561]='-';commentCnt[562]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[542]='0';
+mihanblogDisLikeArrCnt[542]='0';
+mihanblogLikeArrCnt[543]='0';
+mihanblogDisLikeArrCnt[543]='0';
+mihanblogLikeArrCnt[548]='0';
+mihanblogDisLikeArrCnt[548]='0';
+mihanblogLikeArrCnt[549]='0';
+mihanblogDisLikeArrCnt[549]='0';
+mihanblogLikeArrCnt[561]='0';
+mihanblogDisLikeArrCnt[561]='0';
+mihanblogLikeArrCnt[562]='0';
+mihanblogDisLikeArrCnt[562]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://hasrat9.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://hasrat9.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','104');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','شنبه 15 آذر 1399');
+	
+	setStatVar('today_view','20');
+	setStatVar('yesterday_view','51');
+	
+	setStatVar('this_month_view','1492');
+	setStatVar('last_month_view','1974');
+
+	setStatVar('total_view','287277');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:58)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://hasrat9.mihanblog.com/statupdate/?data[refereruri]=http://blogdooni.mihanblog.com/page/5&data[postid]=&data[requesturi]=/&data[sdate]=1607772912&data[hash]=1b189bf21cc0ef6ee0653e94392f4b45&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://hasrat9.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://hasrat9.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://hasrat9.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+		
+<html>
+
+	<head>
+<head>
+<body>
+<script language=JavaScript> 
+function clickIE() {
+if (document.all) {
+return false;
+}
+} 
+function clickNS(e) {
+if (document.layers||(document.getElementById&&!document.all)) { 
+if (e.which==2||e.which==3) {
+return false;
+}
+}
+} 
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS;
+} 
+else{
+document.onmouseup=clickNS;
+document.oncontextmenu=clickIE;
+} 
+document.oncontextmenu=new Function("return false") 
+</script>
+</body>
+</head>
+		<title>آقای نوستالژی</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Language" content="fa">
+		<meta name="description" content="" />
+		<meta name="keywords" content="حسرت" />
+		
+		<link rel="alternate" type="application/rss+xml" title="آقای نوستالژی" 
+		  href="http://hasrat9.mihanblog.com/post/rss/" />
+		<link rel="alternate" type="application/atom+xml" title="آقای نوستالژی" 
+		  href="http://hasrat9.mihanblog.com/post/atom/" />
+	
+	</head>
+	<style>
+		*{font-family:tahoma;direction:rtl;color:#FFFFFF}
+		#sidebar{float:right;width:200px;margin-right:5px}
+		#content{float:left;width:485px;padding:20px}	
+		#body{display:block;font-size:12px}
+		
+		a,a:hover,a.visited{text-decoration:none}
+		.inbox{list-style:none; padding:0 4px}
+		ul{padding:3px;margin:5px;}
+		h2{color:red}
+		h2 a{color:#ADADAD; font-size:25px; font-family:arial}
+		h3{color:#BABABA; margin-top:0; font-size:20px; font-family:arial; text-align:center}
+		#header h1 a{font-size:35px; font-family:arial; float:right; color:FFFFCC}		
+		#header h1{margin:0; height:50px; overflow:hidden}
+		
+		.author_box img{float:right;border:none;}
+		.mihan_logo{text-align:center;height:131px;margin-top:10px;
+	background: url(../static.mihanblog.com/public/images/logo/poweredby.gif) no-repeat top center;}
+		.slogan{
+			color:#FFFFFF; text-align:center; padding:5px 0;
+			background: url(../static.mihanblog.com/public/images/template_packages/16/body_background.png) repeat;
+			background: expression(#000000);
+		}
+		
+		#footer{font-size:9px;display:block;margin-top:50px; float:left}
+		#footer a,#footer a:hover,#footer a:visited{color:#000;}
+		
+		.hr{border-top:1px solid #CCCCCC;height:1px;margin:3px;}	
+		
+		body{margin:0; background: #000000 url(../static.mihanblog.com/public/user_data/user_template/994/2979351_photo_mid.jpg) no-repeat fixed left}
+		
+		.sidebar_box{background-color:#373737; padding:10px 5px; line-height:5px; line-height:20px}
+		.sidebar_box_border{background-color:#373737; height:1px; display:block; overflow:hidden}
+		.sidebar_box_border_div{width:185px;}
+		.seprator{margin-bottom:10px}
+		.main_menu{text-align:center}
+		.blog_title{color:#FFFFCC}
+		
+		#header{height:194px; overflow:hidden; background: #000000 url(../static.mihanblog.com/public/user_data/user_template/541/1622795_photo_top.jpg) center no-repeat}
+		#body{
+			background: url(../static.mihanblog.com/public/images/template_packages/16/body_background.png) repeat;
+			background: expression(#000000);
+		}
+		#blog_body{width:735px; margin:30px auto; float:right; margin-right:20px;}
+		#footer_background{height:0}
+	
+		.clearfix {
+			display:inline-block;
+		}
+		.clearfix:after {
+			clear:both;
+			content:'.';
+			display:block;
+			height:0;
+			visibility:hidden;
+		}
+		* html .clearfix {
+			height:1%;
+		}
+		.clearfix {
+			display:block;
+		}
+	</style>
+	<body>
+
+		<div id="blog_body">
+	
+			<div id="header">
+				<h1><p style="text-align:center; margin:0"><a class="blog_title" href="http://hasrat9.mihanblog.com/hasrat9" style="margin:10px">آقای نوستالژی</a></p></h1>
+			</div>
+		
+			<div class="slogan"></div>
+			
+			<div class="clearfix">
+			
+				<div id="body" class="clearfix">
+					
+					<div id="content">
+													
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+										<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/562">کوچ!</a>
+									</h2>
+	                                                                       <p class="date">
+										یکشنبه 9 آذر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<div style="text-align: justify;">ظاهرا بالاخره دلیل مشکلات فراوان میهن بلاگ در هفته های اخیر مشخص شد (شاید هم مشخص شده بود و من دیر متوجه این خبر شدم) و از قرار معلوم سرورهای سرویس وبلاگ دهی میهن بلاگ از تاریخ ۳۰ آذر ماه برای همیشه خاموش خواهند شد و این سرویس در کمال تاسف خاک گل کوزه گران خواهد شد!... تصور میکنم از این تاریخ به بعد هیچکدام از وبلاگ های این سرویس هم نمایش داده نخواهند شد. بنابر این از تاریخ ۳۰ آذر، این وبلاگ در سرویس وبلاگ دهی ((بیان)) به آدرس زیر، ادامه حیات خواهد داد:</div><div><div style="text-align: justify;"><a href="http://hasrat9.mihanblog.com/www.hasrat9.blog.ir" target="_blank" title=""></a><a href="http://hasrat9.mihanblog.com/hasrat9.blog.ir" target="_blank" title=""></a><div><a href="http://hasrat9.mihanblog.com/hasrat9.blog.ir" target="_blank" title=""></a><div><b><font size="3" color="#993300"><br></font></b></div><div><b><font size="3" color="#993300">www.hasrat9.blog.ir</font></b></div><div><br></div><div><br></div><div>باید سپاسگزار بود از مدیران و کارمندان سرویس قدیمی میهن بلاگ، که در طول سال های فعالیت (تا پیش از چند هفته اخیر) بدون شک بی نقص ترین و بی دردسرترین سرویس وبلاگ دهی کشور بودند. عدم ایجاد مشکل فنی آنچنانی در طول تمام سال های گذشته و همچنین عدم سختگیری افراطی در رابطه با محتوای وبلاگ ها از جمله بزرگترین نقاط قوت این سرویس بود.&nbsp;</div></div></div></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">در رابطه با وبلاگ شخصی خودم هم چندین بار لطف این دوستان شامل حالم شد که همیشه ازشون سپاسگزار بودم. با توجه به ظهور شبکه های اجتماعی مختلف و از رونق افتادن پدیده کهنه ظهور! وبلاگ نویسی، بهشون حق میدم که توجیه چندانی برای ادامه فعالیت و صرف هزینه در این عرصه نداشته باشند و تصمیم به جمع آوری این سرویس از این جهت قابل پذیرش هست. اما با این حال تنها نکته منفی شاید، از بین رفتن صدها هزار مطلب و خاطره به قلم هزاران نفر از افرادی که در طول سال های گذشته از این سرویس استفاده کردند و قطعا بسیاری از اونها هم در حال حاضر اطلاعی از این ندارند که طی چند روز آینده تمام آرشیو مطالب شون به باد خواهد رفت، میتونه باشه.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div>
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:void(0);">
+									<b> </b>
+									<script>setCommentCnt(562)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/561">غم بود که پیوسته نفس در نفسم بود...</a>
+									</h2>
+	                                                                       <p class="date">
+										پنجشنبه 6 آذر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																<div style="text-align: justify;">اگر یک روز از من بپرسند جذابترین ویژگی یک انسان چه چیزی میتونه باشه بی درنگ از ثبات شخصیتی و عاطفی اسم خواهم برد. تجربه صدها ارتباط در قالبهای مختلف، با افراد متفاوت در طول زندگی، یک مسئله رو بهم اثبات کرده. اینکه ((ثبات شخصیتی)) و ((ثبات عاطفی)) در انسانهایی که با هر عنوان و‌ در هر قالبی در طول زندگی با اونها ارتباط میگیریم، مهمترین و تاثیرگذارترین ویژگی میتونه باشه و البته شاید کمیاب ترین اونها...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">-------------------------------------------------------------------------------</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن۱: ظاهرا این روزها حال سرویس وبلاگ دهی ((میهن بلاگ)) چندان خوب نیست!... پستها به طور خودکار ظاهر شده و غیب میشن. آرشیو مطالب رو نمیشه بازگردانی کرد. بسیاری از کامنتهای سابق به طور رندوم! محو شدند. فکر میکنم پس از قریب به ده سال حضور و استفاده از این سرویس می بایست کم کم به فکر انتقال مطالب و استفاده از یک سرویس جدید باشم.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن۲: دوستی که پیش از این گله کرده بودند چرا در پست ۱۳ تیرماه، اسم همه شاعران رو آوردم ولی نامی از شاعر مصرع اول نبردم، پس از توضیحی که دادم مجددا کامنت گذاشتن که ((نفرت، تعصب یا تفاوت دیدگاه ما با یک شخصیت سیاسی نمی بایست موجب این بشه که نقاط قوت یا هنر اون شخص رو نادیده بگیریم یا بخواهیم در حقش بی انصافی کنیم))... خدمت این دوستمون عرض میکنم که جمله شما کاملا صحیح هست اما نفرت، انزجار، تعصب یا هرچیز دیگری دلیل من برای رد انتساب این شعر به این شخص نیست. فکر میکنم که شما هم با من هم عقیده باشید در اینکه جانشین این شخص هم از لحاظ محبوبیت یا منفوریت! تفاوت چندانی با ایشون ندارند اما ما نمیتونیم تسلط جانشین ایشون به شعر و ادبیات فارسی رو رد کنیم یا نادیده بگیریم و لوث کنیم و من خودم عقیده دارم جانشین این شخص در هر زمینه ای که تسلط نداشته لااقل در رابطه با زبان و ادبیات فارسی مطالعه و ممارست کرده و تسلط قابل قبولی داره در حدی که میتونم بپذیرم ایشون سراینده یک غزل باشند... اما در مورد خود اون شخص به هیچ عنوان منطق من این رو نمیپذیره. به نقل قولها و روایات افراد مختلف در مورد ایشون بسنده نکنید. کافیه به سخنرانی های اون شخص فقید گوش کنید تا متوجه عدم تسلط آشکار ایشون به ادبیات و واژگان فارسی باشید... از کوزه همان برون تراود که در اوست!... باز هم تاکید میکنم که این نظر شخصی من هست و ممکنه اشتباه هم باشه اما در هر صورت دلیلش بی ارتباط با نفرت یا تعصب هست.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن۳: دوستی با عنوان (( ارادتمند )) کامنت گذاشتند و ظاهرا بنده رو با صاحب شرکت خودشون اشتباه گرفتند (احتمالا به این دلیل که این وبلاگ دو سه باری روی مانیتور صاحب شرکت باز بوده، تصور کردند نویسنده وبلاگ خود اون شخص هست) و خواسته بودند که به جای وقت گذاشتن برای نوشتن سایت! و سر هم بندی این خزعبلات! به فکر راهی برای پرداخت سه ماه حقوق عقب افتاده پرسنل باشم!... چون کامنتشون سوژه جالبی بود یک پست طنز در پاسخشون نوشتم که به لطف میهن بلاگ غیب شد! اما اینجا به طور مختصر خدمتشون عرض میکنم که نام فامیل من شعبانی نیست و در ضمن بنده آسمان جل تر از این حرف ها هستم که صاحب شرکت و پرسنل و ماشین شاسی بلند باشم!... شما یکبار هم چند هفته پیش کامنتی گذاشتید که در اون کامنت از ماشین شاسی بلند من! و حقوق عقب افتاده خودتون گفتید اما اون زمان چون کامنتتون برام نامفهوم بود ازش رد شدم. احتمالا باز بودن وبلاگ من بر روی مانیتور ایشون براتون ایجاد سو تفاهم کرده که خودشون این وبلاگ رو مینویسن. به هرحال من اینجا از جناب شعبانی که احتمالا خواننده این وبلاگ هستند درخواست میکنم که حقوق عقب افتاده تون رو یکجوری پرداخت کنه چون هم برای شما خوبه هم برای خودش هم برای من!!... شعبانی جان! دل به کار بده برادر!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن۴: همینه که هست!... حجم پی نوشت ها باز هم چند برابر خود پست اصلی شدن!</div>
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:void(0);">
+									<b> </b>
+									<script>setCommentCnt(561)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/550">تو حتی از خودت زیباتری</a>
+									</h2>
+	                                                                       <p class="date">
+										شنبه 17 آبان 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+
+
+<div style="text-align: justify;">&nbsp;نمیتونیم کنار هم باشیم...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دنیا فرصت ثبت چه لحظه های نابی رو از دست داده!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">هر بار، چاقو به دست منطقم‌ میدم که احساسم رو‌ توی یه شب تاریک، گوشه دیوار گیر بندازه و کارشو تموم کنه.&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">احساسم اما کمربند مشکی دفاع شخصی داره گویا!... دست منطقم‌ رو روی هوا میگیره و میپیچونه. چاقو رو از چنگش در میاره و داخل بدن خود منطقم فرو میکنه! آخرش هم خیلی ریلکس خودش رو میتکونه، سیگاری روشن میکنه و مسیرش رو ادامه میده.</div>
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:void(0);">
+									<b> </b>
+									<script>setCommentCnt(550)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/549">از پیچ رگ بریدگی، سُر میخورم به ناکجا...</a>
+									</h2>
+	                                                                       <p class="date">
+										دوشنبه 5 آبان 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+
+
+
+
+
+
+
+<div style="text-align: justify;">یک: خودت تا حالا شده بخوای خودکشی کنی؟</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: یه وقتهایی شده بوده.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یک: چرا نکردی؟</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: میدونستی از لحظه ای که اولین بار تو زندگیت تصمیم میگیری خودکشی کنی یا حتی به انجامش فکر میکنی، دو تا فرشته میان میشینن دو طرف شونه ات؟!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یک: خب؟!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: یکی میشینه رو شونه سمت راست. یکی رو شونه سمت چپ.‌..‌ سمت راستی میگه تو آخرش خودکشی نمیکنی. سمت چپی ولی میگه تو آخرش خودتو میکشی. بعدش با هم شرط بندی میکنن. تا آخر عمرت همونجا میشینن. آخرش هرکدوم از اون فرشته ها که بازنده بشه باید خودشو بکشه!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یک: چه فرشته های بیکاری!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: بالاخره اونها هم نیاز به تفریح دارن دیگه.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یک: خب؟!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: من دو دو تا چهار تا کردم. دیدم اگه خودکشی کنم دو نفر رو کشتم. هم خودم و هم اون فرشته سمت راستی رو که روی من حساب کرده... ولی اگه خودکشی نکنم باعث میشم فقط فرشته سمت چپی کشته بشه که کمی هم بدجنسه!... پس خودکشی نکردم!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یک: الان میخوای من داستان سرکاریت رو باور کنم و خودمو نکشم؟!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دو: ترجیح میدم باور کنی.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">این قسمتی از مکالمه ای بود که سه چهار سال پیش در یکی از پیام رسان ها انجام دادیم و احتمالا اون داستان مزخرف فرشته ها رو هم همون لحظه توی ذهنم براش ساخته بودم...&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">چند روز پیش پس از مدتهای مدید پیام داده و نوشته بود که: ((فکر کنم دیگه وقتش شده ملاحظه فرشته سمت راستی رو نکنم!))... بعد توضیح داده بود که طی یکی دو سال گذشته چطور تصمیم می گیره به هر قیمتی به آلمان مهاجرت کنه اما تلاشهایی که برای مهاجرت انجام میده بر اثر عجله، بی احتیاطی و همینطور اعتماد اشتباه به افراد مختلف، وقت و هزینه بسیاری رو از خودش و خانواده اش میگیره و البته اشتباهات دیگر در موارد دیگر... در آخر گفته بود: ((با این اوصاف به نظرت بهتر نیست دو دوتا چهارتا رو بذارم کنار و کار خودم و اون فرشته سمت راستی رو یکسره کنم و باعث بشم فرشته بدجنس سمت چپی خوشحال بشه؟!))... نصف شب پیامش رو‌ خوندم و به شوخی براش پیغام گذاشتم: ((بله بهتره که انجامش بدی نکبت!... الان دیگه دو دو تا چهار تا هم به نفع خودکشی رای میده چون حالا تو فقط اون فرشته سمت چپی رو خوشحال نمیکنی بلکه با گندی که زدی، بعد از کشتن خودت منم خوشحال میکنی، خانواده ات هم خوشحال میکنی و کلا دنیا رو بدون وجود یه آدم خنگ، به جای بهتری تبدیل میکنی!))...&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">صبح که چشمهام باز شد، یک لحظه با خودم گفتم نکنه پیغامی که نصف شب براش گذاشتم باعث بشه بهش بربخوره و واقعا خوشحالمون کنه!!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پیام رسان رو باز کردم و دیدم دو هزارتا استیکر خنده گذاشته!!... فهمیدم غیرت خوشحال کردن من، خانواده اش و فرشته سمت چپی رو نداره!! و دوباره چشمهام رو بستم و خوابیدم...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">-----------------------------------------------------------------------------------</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۱: به طور آهسته و به تدریج مشغول بازگرداندن آرشیو وبلاگ هستم. فکر میکنم بیشتر از هفتاد درصد مطالب یک دهه گذشته زنده خواهند شد. ممکنه یک عده وقتی اینجا رو میخونن بگن خب به ما چه که چند درصدش برمیگرده؟!... خطاب به اونها باید بگم:((آیا به شما بی قید ها هم میگن انسان؟!))... ممکنه یک عده دیگه بی قید نباشند و بگن خب چرا فقط هفتاد درصدش؟!... خطاب به اونها باید بگم: ((درسته که به شما میگن انسان. اما یک انسان فضول!!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۲: دو ساعت پیش به طور کاملا اتفاقی، در لیست فیلمها، فیلمی تحت عنوان ((چهارشنبه ۱۹ اردیبهشت)) به چشمم خورد و از سر بی حوصلگی همون رو زدم که پخش بشه. می‌خواستم فقط چیزی پخش بشه و به صفحه تلویزیون خیره بشم. از قضا بسیار به دلم نشست و فکر میکنم یکی از بهترین فیلمهای ساخت وطن بود که در این چند سال دیده بودم.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۳: دوستی در مورد پستی که در تاریخ سیزدهم تیرماه منتشر کردم، پیام گذاشتن و گفتن چرا اسم همه شاعرانی که از ابیاتشون استفاده کردید رو در آخر پست نوشتید به جز اسم شخصی که در همون بیت اول از شعرش استفاده کرده بودید. باید بگم دلیلش این هست که من به نوعی یقین دارم این مصرع و همینطور سایر اشعاری که با نام این شخص منتشر شدن متعلق به خود ایشان نیست. عدم تسلط این شخص به زبان و ادبیات فارسی در سخنرانی هاشون مشهود بود و البته مضامین اشعار هم بعضا با اعتقادات این شخص همخوانی ندارن. فکر میکنم سالها بعد، پس از تغییراتی که در این سرزمین صورت میگیره اسناد حیرت انگیزی منتشر خواهند شد که شاید یکی از جزئی ترین اونها، همین باشه که این اشعار در واقع متعلق به چه کسی بودند و سپس چگونه و به چه طریق ایشان و اطرافیانشون اون اشعار رو تصاحب کردند... البته این نظر شخصی من هست و ممکنه اشتباه باشه.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن۴: ساعت: حدود نه و سی دقیقه شب گذشته... احساس کردم که بالاخره تحملم برای کشتی گرفتن با گلوی خودم تمام شده. تصمیم گرفتم جای خلوتی پارک کنم که هیچکسی از کنارم عبور نکنه. جایی که می خواستم رو پیدا کردم، سرم رو روی فرمون ماشین گذاشتم و برای اولین بار در زندگیم با ((صدای بلند)) و به مدت طولانی به گریه و هق هق تن دادم... بعد از حدود بیست دقیقه سرم رو بلند کردم. پیرزنی در فاصله چند متری ماشین ایستاده و از پنجره به رفتارم خیره شده بود... ماشین رو روشن کردم و راه افتادم... از داخل آینه دیدم که همچنان همونجا ایستاده بود و دور شدن ماشین رو تماشا میکرد!</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:void(0);">
+									<b> </b>
+									<script>setCommentCnt(549)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/548">شغلت رها کن عاشقا، خواننده شو، خواننده شو</a>
+									</h2>
+	                                                                       <p class="date">
+										چهارشنبه 23 مهر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+
+
+
+
+
+
+<div style="text-align: justify;">گفت: ببخشید، یه سوال داشتم.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گفتم: بفرمایید.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با جدیت گفت: شما خواننده هستید؟</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با لبخند گفتم: نه بابا!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گفت: عجیبه!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گفتم: اینکه خواننده نیستم عجیبه؟!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گفت: آره! امروز پنجمین نفری هستید که این سوال رو ازش میپرسم و پاسخش خیر هست!... تا حالا نشده بود تو این روزگار، از پنج نفر پشت سر هم بپرسم که خواننده هستن و هر پنج تاشون بگن نه!!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">هر دو با هم خندیدیم و البته لحظاتی بعد&nbsp; اتفاق جالبی افتاد که صدای خنده مون رو بلندتر کرد!... آقایی که دورتر از ما ایستاده و مشغول خرید بود و متوجه مکالمه ما شده بود، با خنده نزدیک ما اومد و خطاب به اون شخص گفت: من خواننده نیستم اما استودیو موسیقی دارم و گاهی خودم هم زیر آواز میزنم (کارت ویزیتش رو از جیب بغلش بیرون آورد و به طرف اون شخص گرفت)... این هم بابت اینکه فکر نکنید روزتون بدون مواجهه با یکی از اهالی موسیقی، شب شده!... اگر روزی قصد داشتید خودتون هم خواننده بشید من و دوستانم در استودیو در خدمتتون هستیم!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">من خودم همیشه با موضوع افزایش روز افزون و عجیب و غریب تعداد خواننده ها در کشور، شوخی میکنم، اما شوخی اغراق آمیز اون شخص در مورد اینکه تا به حال نشده از پنج آدم پشت سر هم بپرسه خواننده هستند و پاسخ هر پنج تا ((خیر)) باشه، به نظرم خیلی بامزه بود و باعث شد واقعا از ته دل بخندم...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">هیچوقت این رو متوجه نشدم که چه چیزی باعث میشه افرادی که پیش از این، ده ها و صدها صدای مشابه خودشون در بازار موسیقی مشغول فعالیت هستن، برای حضور در این بازار دست و پا بزنند و تلاش کنند، اون هم در حالی که اغلب اونها قرار نیست در کنار یک صدای تکراری، هیچ چیز جدیدی رو به این بازار اشباع شده اضافه کنند... روزگاری بود که تعداد خوانندگان، انگشت شمار و تعداد آثار خوب، فراوان بود. اون زمان اگر شما بر فرض مثال از کسی می پرسیدید: ((آهنگ جدید مهرداد رو گوش کردی؟!))، همه متوجه بودند که منظورتون چه کسی هست، چون بر فرض مثال تنها یک خواننده با نام مهرداد وجود داشت. اما امروز شرایط کمی تغییر کرده و مکالمه در این مورد به شدت سخت شده! چرا که احتمالا همین حالا بیست و هفت خواننده با نام کوچک مهرداد مشغول فعالیت هستند و البته طی سال های پیش رو این وضعیت پیچیده تر هم خواهد شد.&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">&nbsp;فرض کنید که طی ده یا پانزده سال آینده، شما برای تهیه یک آلبوم موسیقی به مغازه پا می گذارید.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">از فروشنده خواهید پرسید: (( آلبوم جدید مهرداد رو میخواستم؟))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ میگیرید: (( کدوم مهرداد؟... اجازه بدید سیستم رو چک کنم. خب!... هزار و هفتصد و سیزده تا خواننده با نام کوچک مهرداد داریم!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت:(( مهرداد ضیا الدینی))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: ((کدوم یکی از مهرداد های ضیا الدینی؟!... هشتاد و سه تا مهرداد ضیاالدینی داریم!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت: ((مهردا ضیاالدینی شمس آبادی))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: ((کدوم یکی از مهرداد های ضیاالدینی شمس آبادی؟!... بیست و هشت تا با این اسم داریم!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت: ((همون مهرداد ضیا الدینی شمس آبادی که کچله!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: (( کدوم مهرداد ضیاالدینی شمس آبادی کچل؟!... هفده تاشون کچل هستن!... اسم آلبوم رو بگو یا مشخصات ریزتری بده!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت: (( اسم آلبوم رو نمیدونم ولی همون مهرداد ضیاالدینی شمس آبادی کچل که نام پدرش علی هست!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: ((اسم پدر پنج تا از این مهردادهای ضیاالدینی شمس آبادی کچل، علی هست!... کدوم یکیشون؟!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت: ((همون مهرداد ضیاالدینی شمس آبادی کچل که نام پدرش علی هست و یک پاش هم میلنگه!!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: ((کدوم یکیشون؟!...دو تاشون نام پدرشون علی هست و پاشون هم میلنگه!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با نگاهی غضب آلود خواهید گفت: ((همون مهرداد ضیاالدینی شمس آبادی کچل که نام پدرش علی هست و یک پاش هم میلنگه و یک خال هم گوشه لبش داره!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: ((متاسفانه هر دو مهرداد ضیاالدینی شمس آبادی کچلی که نام پدرشون علی هست و یک پاشون میلنگه، گوشه لبشون خال دارن!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با عصبانیت خواهید گفت: ((آقا همون مهرداد ضیاالدینی شمس آبادی کچل که نام پدرش علی هست و یک پاش میلنگه و گوشه لبش هم خال داره و سال گذشته از بیماری سرطان نجات پیدا کرد!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ می گیرید: (( اهان! اون مهرداد...خب زودتر بگو!... نداریم آلبوم جدید اون رو!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">در همین لحظه شما اسلحه رو بیرون میارید و با شلیک به مغز فروشنده، قصد میکنید از محل حادثه فرار کنید که البته توسط مامورین دستگیر شده و به ندامتگاه منتقل خواهید شد...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">مدتی بعد در دادگاه حاضر شده و در مقابل قاضی خواهید نشست. قاضی از شما خواهد خواست که قیام کنید و خواهد پرسید:(( توضیح بده که در روز حادثه دقیقا چه اتفاقی افتاد؟!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاسخ خواهید داد: ((جناب قاضی! من هیچ خصومت قبلی با مقتول نداشتم و صرفا جهت تهیه آلبوم موسیقی جدید مهرداد به اونجا رفته بودم))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">قاضی خواهد گفت: ((کدوم مهرداد؟!... بیش از هزار خواننده با نام مهرداد داریم!!))</div><div style="text-align: justify;"><br></div><div><div style="text-align: justify;">خواهید گفت: (( مهرداد ضیاالدینی))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">قاضی خواهد گفت: ((کدوم مهرداد ضیاالدینی؟!... ده ها خواننده با این نام داریم))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خواهید گفت: ((حالا چه اهمیتی داره آقای قاضی!... مهرداد ضیاالدینی شمس آبا‌‌‌دی...))&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">قاضی خواهد گفت: ((کدوم یکی از مهردادهای ضیا الدینی شمس آبادی؟!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">لبهای خودتون رو گاز گرفته و خواهید گفت: ((لعنتی ها!... همون مهرداد ضیا الدینی شمس آبادی کچل که...))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">قاضی با چکش روی میز خواهد کوبید و ضمن دعوت حضار به سکوت، خطاب به شما خواهد گفت: ((ادامه بدید!... کدوم یکی از مهردادهای ضیاالدین شمس آبادی کچل؟))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">در این لحظه شما همچنان سکوت کرده و هیچ چیز دیگری نخواهید گفت... لحظاتی بعد بر اثر حمله عصبی که بهتون دست میده به سمت قاضی یورش برده، چکش روی میزش رو برداشته و همونطور که چکش رو با ضربات متعدد بر فرق سر قاضی می کوبید فریاد خواهید زد: ((همون مهرداد ضیاالدینی شمس آبادی کچل، فرزند علی، که یک پاش میلنگه و ...)) و در حالی که خون از فرق سر قاضی بر سر و صورتتون می پاشه ادامه می دید: ((... و یک خال گوشه لبش داره ...)) و در حالی که سربازها دست و پای شما رو گرفتند و کشان کشان می برند ادامه میدید: ((... و پارسال سرطان خون داشت!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">... تا بدین ترتیب مدتی بعد، به جرم دو قتل عمد، به هفت بار اعدام محکوم شده باشید... صرفا به دلیل اقدام به تهیه یک آلبوم موسیقی!</div></div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(548)">
+									<b> </b>
+									<script>setCommentCnt(548)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/547">تمام منی، ناتمام منی...</a>
+									</h2>
+	                                                                       <p class="date">
+										جمعه 11 مهر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																<div style="text-align: justify;">ما دست در دست هم دادیم و این عمارت زیبا رو‌ آجر به آجر ساختیم... در تمام طول روزها و در تمام طول شبهای بلند و سرشار از آرامشمون... حالا میتونیم کنار هم بایستیم و از تماشاش لذت ببریم... اگرچه حق زندگی در این عمارت رو نداشته باشیم و این حسرت بزرگ همواره در دلمون باشه، اما تا لحظه آخری که در این دنیا نفس میکشیم، میتونیم هر وقت دلمون از ساختمان های کج و معوج روابط انسانی در این دنیا گرفت، به یاد بیاریم که چه چیزی رو در کنج دنج این دنیا با هم ساختیم. میتونیم راه خودمون رو کج کنیم و به تماشای عمارت چشم نوازی که روزی با هم بنا کردیم، بنشینیم.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">خوشحالم و افتخار میکنم که یک سمت ماجرای ساخت این بنا بودم. اگر هر رابطه ای رو به ساختمانی تشبیه کنیم، بدون کوچکترین تردیدی، این ساختمان، زیباترین و در عین حال محکم ترین بنای زندگی من بوده... چیزی که بعدها وقتی پیرتر شدم، میتونم در موردش برای افراد جوان حرف بزنم!... چیزی شبیه به یک خانه باغ بی نظیر، که در عین ظرافت و زیبایی، انقدر محکم هست که هیچ زلزله ای قادر به فرو ریختنش نباشه...&nbsp;&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">من در کنار تو ((بزرگتر)) شدم. حالا حتی انسان چند ماه پیش نیستم. تنها در طول این مدت به اندازه تمام سال های زندگیم بزرگتر و آرامتر شدم. اون کسی که همواره در هر موقعیتی، در هر جمعی، در هر ارتباطی و در هر کجا، به ((رفتن)) و ((پاک کردن)) فکر می کرد و نماد عینی جمله مارگریت دوراس "برای من مهم نیست به جایی برسم. مهم این است، از جایی که هستم بروم!" بود، حالا، در کنار تو، ((ماندن)) و ((ساختن)) رو یاد گرفته...&nbsp;</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن: امیدوارم لذت تماشای عمارتی که با هم ساختیم، به تلخی حسرت آنچه بهش محکوم هستیم، غلبه کنه. شاید، مورد بعدی که باید در کنار هم بیاموزیم و تمرین کنیم، همین باشه...</div>
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(547)">
+									<b> </b>
+									<script>setCommentCnt(547)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/546">دریای شورانگیز چشمانت چه زیباست...</a>
+									</h2>
+	                                                                       <p class="date">
+										شنبه 5 مهر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																<div style="text-align: justify;">گفتی دوباره بنویس...</div><div style="text-align: justify;">دوست داشتم در چنین شرایطی باشه. دست در دستان تو... چشمان بسته شده ات وقتی سر بر پای من گذاشتی.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">شنبه ۵ مهرماه ۱۳۹۹</div><div style="text-align: justify;">ساعت ۱۲:۲۷ ظهر</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">زیباترین شنبه از دفترچه خاطرات ما</div>												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(546)">
+									<b> </b>
+									<script>setCommentCnt(546)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/545">در من این سبزی هذیان از توست...</a>
+									</h2>
+	                                                                       <p class="date">
+										جمعه 13 تیر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+
+
+<div style="text-align: justify;">من به خال همه جای تو گرفتار شدم!!</div><div style="text-align: justify;">((چشم بیمار تو را دیدم و بیمار شدم))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با تو یک تخت و دو پیمانه برایم کافی ست</div><div style="text-align: justify;">این علی وارترین شیوه خاطرخواهی ست!!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">وه! چه رویای ملیحی ست گرفتار شدن</div><div style="text-align: justify;">روی تخت تو به روی تنت آوار شدن!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گرم و آهسته و پیوسته به هم پیوستن</div><div style="text-align: justify;">بر مچ دست ظریف تو دخیلی بستن!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">بارِ پیراهن من بر تن من سنگین شد!</div><div style="text-align: justify;">دخترک! پیرهنم در تن‌ من غمگین شد!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گره کن جامه من را، بفشارش در مشت!</div><div style="text-align: justify;">پاره کن‌ پیرهنم را به دو دستت از پشت!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یوسُف‌‌ِ جان من امروز به دنبال بلاست</div><div style="text-align: justify;">تو زلیخاش شو! این مرتبه تسلیم قضاست!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">یوسُفِ جان من امروز، پدر سوخته است!</div><div style="text-align: justify;">چشم امید، به دستان شما دوخته است</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاره کن پیرهنم را که سبکتر بپریم!</div><div style="text-align: justify;">مرتع جان مرا تا ته پرچین بچریم!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پاره کن پیرَهَنت را که بنوشم از تو</div><div style="text-align: justify;">بر تنت دست کشم، شعر بدوشم از تو</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با تنم مرز و حصاری بکشم دور و بَرَت</div><div style="text-align: justify;">((تا چو خورشید، نبینند به هر بام و درت))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">آمدم تا به سحر باز نیایش بکنم</div><div style="text-align: justify;">چشم بیمار تو را باز ستایش بکنم</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">شب قدر است، شب خیره شدن بر توی مست!</div><div style="text-align: justify;">((و به حقک علیهم...))، لب تو حق من است!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">باش تا از لب هم، کهنه شرابی بخوریم!</div><div style="text-align: justify;">((امشبی را که در آنیم، غنیمت شمریم!))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پیرم، این لحظه ولی با تو جوانی کردم</div><div style="text-align: justify;">شد رها موی تو و چشم چرانی کردم!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">از لب پنجره بر گیسوی تو باد وزید</div><div style="text-align: justify;">((حالتی رفت که محراب به فریاد)) رسید!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">با تو کودک شده ام، کشف تماشاییِ من!</div><div style="text-align: justify;">زلف بر باد بده، سوژه انشاییِ من!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">این شب هر ثانیه از صبح شدن بیزار است</div><div style="text-align: justify;">((هر سر زلف مرا با تو هزاران کار است))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">باز کن پیرهنت را و تنم را تو بپوش</div><div style="text-align: justify;">((آخرین جرعه این جام تهی را تو‌‌ بنوش))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">((من همین یک نفس از جرعه جانم باقی ست))</div><div style="text-align: justify;">و‌ همین وسوسه در کنج دکانم باقی ست</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">... و همین وسوسه با تو نشستن تا صبح</div><div style="text-align: justify;">و فراموشی هر بی تو شکستن تا صبح</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">... و فراموشی این عمر که بی حاصل بود</div><div style="text-align: justify;">((که ز سرپنجه شاهین قضا غافل بود))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">***</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">ای تو کوتاهترین مهلت ابراز وجود</div><div style="text-align: justify;">((در نگاه تو رها می شوم از بود و نبود))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">در نگاه تو رها می شوم از این مَردم</div><div style="text-align: justify;">رو به آغوش خودت می دَوم از این مَردم</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">دشنه شو بر تن عصیانگر افسردگی ام</div><div style="text-align: justify;">ای سزاوارترین جرم همه زندگی ام</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">این پسِ پرده ترین جرمِ جهان من و توست</div><div style="text-align: justify;">((نشود فاش کسی، آنچه میان من و توست))</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">گرچه جرم است ولی با تو به دریا زده ام</div><div style="text-align: justify;">ای غم انگیز ترین فرصتِ دیر آمده ام...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">--------------------------------------------------------------------------</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن: پس از چند سال به سرم زد که یکبار دیگه با کلمات به شکلی قافیه دار بازی کنم. از رفقای خوب قدیمی ام! از جمله ((سعدی))، ((حافظ))، ((خیام))، ((حمید مصدق))، ((فریدون مشیری))، ((هوشنگ ابتهاج)) و ... که از راههای دور و نزدیک حضور به هم رساندند!! و به ناگاه خودشون رو به وسط این بازی پرت کردند هم متشکرم!</div>
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(545)">
+									<b> </b>
+									<script>setCommentCnt(545)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/543">خاطره بازی در نیمه شب!</a>
+									</h2>
+	                                                                       <p class="date">
+										دوشنبه 9 تیر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: justify;">امروز با دوستی در موردت حرف میزدم. این شد که دوباره یادت توی مخیله ام وول خورد! و به سرم زد! طبق عادتی که سالی یکی دو بار یقه ام رو میگیره، اسمت رو در گوگل جستجو کنم تا خبردار بشم که مشغول چه کاری هستی‌...&nbsp;</div><div style="text-align: justify;"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://hasrat9.mihanblog.com/post/543'>ادامـه مـطـلـب</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(543)">
+									<b> </b>
+									<script>setCommentCnt(543)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://hasrat9.mihanblog.com/post/542">بذار چیزی به غیر از تو نبینم...</a>
+									</h2>
+	                                                                       <p class="date">
+										یکشنبه 1 تیر 1399 
+								
+
+									</p>
+								</div>
+			
+								
+								</a> 
+			        			
+								<br/>
+			
+								
+			              	  		     
+									<br>
+								</cb:block_post_category>
+			        			          	
+																
+<div style="text-align: justify;">این پست صرفا جهت اینکه وقتی از امروز قراره یک ماه به شدت پرفشار کاری رو آغاز کنی و به اینجا میای، با یک ((دوستت دارم)) تر و تمیز! و یک ((من در همه حال در کنارت هستم و در تمام لحظاتت حضور دارم)) خوشگل! و یک ((تو دیگه چقدر خوش شانسی که منو داری!)) خودشیفتگانه! مواجه بشی، نوشته شده! و فاقد هرگونه ارزش و وجاهت قانونی دیگری می باشد!!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">-------------------------------------------------------------------------------</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۱: فردای روزی که پست قبلی رو نوشتم و سعی کردم از دنده راست برخیزم! به این فکر کردم که اگر به عنوان مثال به دوازده یا سیزده سال قبل برگردم و ببینم همونطور که دلخواهم هست، همه اتفاقات این سالها یک خواب بد بوده، ممکنه برخی اتفاقات خوب رو هم در این میان از دست بدم که قطعا این حضور تو و تجربه یک ارتباط بی نظیر، کمیاب و سازنده رو هم از دست خواهم داد‌... این وزنه اما، شاید به تنهایی انقدر سنگین هست که بتونه با تمام اتفاقات ناخوشایندی که بر کفه دیگر ترازو نشستند برابری کنه!... با خودم فکر میکنم اگر تمام اتفاقات تلخ این دوره، نهایتا منجر به آشنایی با تو و خلق این لحظات ناب شده، می بایست نسبت به آنچه در پست قبلی آرزو کردم بی تفاوت باشم‌...</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۲: تو نیمه پرشده لیوانی هستی که انگار قرن ها خالی بوده!</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">پ ن ۳: در یکی از کتب خطی مربوط به هفتصد سال پیش!! خوندم، از نشانه های آخر زمان یکیش این هست که ((... و در آن هنگام پی نوشت پستها از خود پستها طولانی تر خواهند بود!))</div>
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(542)">
+									<b> </b>
+									<script>setCommentCnt(542)</script> 								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								
+								<br><br>
+							
+																	     	
+						<br><br>
+				     		 
+							     	
+					
+													تعداد کل صفحات : 11  
+														<a href="http://hasrat9.mihanblog.com/page/1"> <b>1</b></a>  
+														<a href="http://hasrat9.mihanblog.com/page/2"> <span>2</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/3"> <span>3</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/4"> <span>4</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/5"> <span>5</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/6"> <span>6</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/7"> <span>7</span></a>  
+														<a href="http://hasrat9.mihanblog.com/page/8"> <i>...</i></a>  
+																
+					
+						<div id="footer" class="clearfix">
+							<strong>
+								POWERED BY <a href="../www.mihanblog.com/index.html">
+								<font color="#FF0000" size="2px">M</font>IHAN
+								<font color="#FF0000" size="2px">B</font>LOG.COM</a>
+							</strong>
+						</div>
+					</div>		
+				
+					<div id="sidebar">
+					
+
+
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>
+							
+							
+		 
+														
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+							
+
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+
+
+									<div class="sidebar_box">
+										<h3>آرشیو موضوعی</h3>
+																					<a href="http://hasrat9.mihanblog.com/post/category/1"> 
+												همه مطالب(100)
+											</a> 
+
+											<br/>
+						          		
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>														
+							
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+							 
+							
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>						    							
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>  آرشیو ماهانه</h3>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/9"> آذر 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/8"> آبان 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/7"> مهر 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/4"> تیر 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/3"> خرداد 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/2"> اردیبهشت 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1399/1"> فروردین 1399</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/11"> بهمن 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/10"> دی 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/8"> آبان 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/7"> مهر 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/6"> شهریور 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/5"> مرداد 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/4"> تیر 1398</a>
+											<br/>
+																					<a href="http://hasrat9.mihanblog.com/post/archive/1398/3"> خرداد 1398</a>
+											<br/>
+																				<a href="http://hasrat9.mihanblog.com/post/archive"><b>همه آرشیوها</b></a>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+										    														
+							
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>آنها که میخوانم</h3>
+										    
+
+<a href="http://oldism.blogfa.com" title="" target="_blank">
+												بچه سرتق	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://www.daneshmang.blogfa.com" title="" target="_blank">
+												حبـه انگور	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://beny20.blogsky.com" title="" target="_blank">
+												شهید آینده	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://mashghneveshte.blogfa.com" title="" target="_blank">
+												آفتاب لب بوم	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://choopia.blogsky.com" title="" target="_blank">
+												چوپیای لج باز	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://l-r-y.blogsky.com" title="" target="_blank">
+												تاریخ مسعودی	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://azar1394.blogfa.com" title="" target="_blank">
+												همیشه در صحنه	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://mehrdad1530.blogsky.com" title="" target="_blank">
+												یک بد اصفهانی خوب	
+											
+											</a>
+											<br/>
+										    
+
+<a href="http://mah-mahi.blogfa.com" title="" target="_blank">
+												شخص شخیص ماندانا خانم	
+											
+											</a>
+											<br/>
+																				<a href="http://hasrat9.mihanblog.com/link/"><b>همه لینکها</b></a>
+									</div>	
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+								
+						    
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+							    														 	
+							
+											
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>	    
+									
+								 
+
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														
+
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>														
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								    <div class="sidebar_box">
+										<h3>آمار وبلاگ </h3>
+										کل بازدید:<script>getStatVar('total_view');</script><br/>
+										بازدید امروز :<script>getStatVar('today_view');</script><br/>
+										بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+										بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+										بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+										تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+										تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+										آخرین بازدید : <script>getStatVar('last_view_date');</script><br/>
+										آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+									</div>	
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														  							
+						    
+							<div class="seprator"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>					
+
+							<div class="sidebar_box_border_div">
+															</div>
+
+
+
+<!-- Begin parstools.com ‍Clock Code --><div  style="display:none;"><a href="http://parstools.com"><h1>ساعت فلش</h1></a></div><script language="javascript" src="http://www.parstools.com/clock/?type=109&w=140&h=140"></script><!-- End Clock code -->
+
+
+<img src="http://www2.parstools.com/emails/120222/1329863909.png" alt="Email Icon by Parstools.com" />
+
+
+					</div>
+
+				</div>
+			</div>
+			
+			<div id="footer_background"><img src="../static.mihanblog.com/public/images/empty.gif"/></div>
+
+
+
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=2468084&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=2468084" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+
+
+
+								
+		</div>				
+
+
+
+	</body>
+
+</html>
+
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'hasrat9.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

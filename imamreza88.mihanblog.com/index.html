@@ -1,0 +1,1428 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc@rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1714029*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1]='-';commentCnt[26]='0';commentCnt[27]='1';commentCnt[28]='0';commentCnt[29]='4';commentCnt[30]='3';commentCnt[31]='2';commentCnt[32]='4';commentCnt[34]='3';commentCnt[35]='2';commentCnt[36]='6';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1]='1';
+mihanblogDisLikeArrCnt[1]='0';
+mihanblogLikeArrCnt[26]='2';
+mihanblogDisLikeArrCnt[26]='0';
+mihanblogLikeArrCnt[27]='2';
+mihanblogDisLikeArrCnt[27]='0';
+mihanblogLikeArrCnt[28]='2';
+mihanblogDisLikeArrCnt[28]='0';
+mihanblogLikeArrCnt[29]='1';
+mihanblogDisLikeArrCnt[29]='0';
+mihanblogLikeArrCnt[30]='3';
+mihanblogDisLikeArrCnt[30]='0';
+mihanblogLikeArrCnt[31]='1';
+mihanblogDisLikeArrCnt[31]='0';
+mihanblogLikeArrCnt[32]='5';
+mihanblogDisLikeArrCnt[32]='0';
+mihanblogLikeArrCnt[34]='2';
+mihanblogDisLikeArrCnt[34]='0';
+mihanblogLikeArrCnt[35]='3';
+mihanblogDisLikeArrCnt[35]='0';
+mihanblogLikeArrCnt[36]='0';
+mihanblogDisLikeArrCnt[36]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://imamreza88.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://imamreza88.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','27');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','جمعه 26 آذر 1395');
+	
+	setStatVar('today_view','2');
+	setStatVar('yesterday_view','11');
+	
+	setStatVar('this_month_view','170');
+	setStatVar('last_month_view','329');
+
+	setStatVar('total_view','49096');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (09:05)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://imamreza88.mihanblog.com/statupdate/?data[refereruri]=http://najvaye-kangan.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607772273&data[hash]=f3ef29e1ac8082306df1dc048717c9eb&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://imamreza88.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://imamreza88.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>وب سایت امام رضا </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="author" content="امیر  ">
+<meta name="description" content="">
+<meta name="keywords" content=", Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs, p-zolfaghar.persianblog.ir">
+<link href="http://www.salehon.ir/wp-content/uploads/2014/12/icon-ghoraba.png" rel="shortcut icon" width="14" height="18 >
+<link rel="alternate" type="application/rss+xml" title="وب سایت امام رضا " href="post/rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="وب سایت امام رضا " href="post/atom/index.html" />
+<script src="http://www.salehon.ir/wp-content/uploads/2014/06/slide-chamran/sliderengine/jquery.js"></script>
+<script src="http://www.salehon.ir/wp-content/uploads/2014/06/slide-chamran/sliderengine/amazingslider.js"></script>
+<script src="http://www.salehon.ir/wp-content/uploads/2014/06/slide-chamran/sliderengine/initslider-1.js"></script>
+<link href="http://www.salehon.ir/wp-content/uploads/2014/12/gharib-alghoraba.css" type="text/css" rel="stylesheet">
+</head>
+
+<body bgcolor="#5d5959" background="http://www.salehon.ir/wp-content/uploads/2014/12/patern-ghoraba.jpg">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0" dir="rtl">
+</div>
+</table>
+
+<div class="ghoraba1">
+<marquee
+style="margin:10px 121px 0px 11px"
+scrollamount="2"
+scrolldelay="20"
+style="font-family: Tahoma;
+font-size: 9pt;
+color: black"
+direction="right"><b>
+<span style="color: #cab593;">" (امام رضا (ع) :  هرکس مرا در غربت زیارت کند در سه جابه دیدنش می آیم تا او را از سختی ها نجات بدهم زمانی که نامه اعمال را به دست راست و چپ می دهند درصراط و در میزان. (من لایحضره الفقیه ،ج2،ص584 "</span>
+</b></marquee>
+</div>
+
+<!---------- هدر قالب ---------------------------->
+<div style="background-color:#5d5959; width:1003; overflow:hidden; height:300px; overflow:hidden;
+background-image:url('http://www.salehon.ir/wp-content/uploads/2014/12/header-ghoraba.jpg');">
+<div class="title">وب سایت امام رضا </div>
+<div class="description">اللهم صل علی محمد و آل محمد</div>
+</div>
+<!---------- هدر قالب ---------------------------->
+
+<div class="p-ghoraba">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<div class="ghoraba2">
+<span style="color: #ffffff;">
+<div id="tabs">
+ <ul>
+    <li><a href="index.html"><span><b>صفحه ی اصلی</b></span></a></li> |
+    <BlogEmailBlock><li><a href="mailto:"><span><b>پست الکترونیک</b></span></a></li></BlogEmailBlock> |
+    <li><a href="post/list.html"><span><b>آرشیو مطالب</b></span></a></li> |
+    <li><a href="javascript:messageForm()"><span><b>تماس با ما</b></span></a></li></BlogEmailBlock> |
+    <li><a target="_blank" href="post/rss/index.html"><span><b>لینك rss</b></span></a></li>
+ </ul>
+</div>
+</span>
+</tr>
+</table>
+
+<div align="center">
+<table border="0" width="970" cellspacing="0" cellpadding="0">
+<tr>
+<td width="218" valign="top">
+
+<bloglogoblock>
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">لوگوی ما</div></div>
+<div class="reza3"><div class="reza5">
+<p align="center"><a href="index.html" target="_blank"><img border="0" src="http://8pic.ir/images/388n1pbeu6bzdbbdhcij.gif"  width="200" alt=""  height="200"></a><br><input onclick="this.select()" type="text" width="356" name="T1" size="15" value='<!-- start logo cod off http://imamreza88.mihanblog.com/ --><p align="center"><p align="center"><a href="http://imamreza88.mihanblog.com/" target="_blank"><img border="0" src="http://8pic.ir/images/388n1pbeu6bzdbbdhcij.gif"  width="200" height="200" alt=""></a></p><!--finish logo cod off http://imamreza88.mihanblog.com/ -->' dir="ltr" ></p><div style="display:none"><a href="http://blogers.ir">وبلاگ</a>-<a href="http://blogers.ir/cod/make-logo-banner-cod/">کد لوگو و بنر</a></div>
+</textarea>
+</center>
+</div>
+<div class=s></div></div></BlogAuthorsBlock>
+</center>
+</div>
+</div>
+<div class="reza6"></div></div>
+</bloglogoblock>
+
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">موضوعات</div></div>
+<div class="reza3"><div class="reza5">
+<div class="d"><a href="post/category/1.html" >زندگینامه</a> (2)</div><div class="d"><a href="post/category/2.html" >حدیث</a> (6)</div><div class="d"><a href="post/category/3.html" >تصاویر</a> (1)</div><div class="d"><a href="post/category/11.html" >قالب ها</a> (2)</div><div class="d"><a href="post/category/4.html" >معرفی کتاب ها</a> (1)</div><div class="d"><a href="post/category/5.html" >ویدئو و کلیپ</a> (1)</div><div class="d"><a href="post/category/8.html" >کامپیوتر</a> (1)</div><div class="d"><a href="post/category/6.html" >اندروید</a> (3)</div><div class="d"><a href="post/category/9.html" >اهنگ ها</a> (7)</div><div class="d"><a href="post/category/10.html" >غیره...</a> (7)</div><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+
+<cb:block_blog_category>
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">حمایت ما در گوگل</div></div>
+<div class="reza3"><div class="reza5">
+<div class=menur>
+<div class=tmenu>
+<div class=tmenu2>
+<b></b></div></div>
+<div class=xmenu>		
+<!-- Begin Susa Web Tools - Google Plus -->
+<script src="http://susawebtools.ir/services/gplus/index.php?skin=3&logo=25"></script>
+<div><a target="_blank" href="http://susawebtools.ir/?p=48" title="سوسا وب تولز - گوگل پلاس"></a></div>
+<!-- End  -Susa Web Tools  Google Plus -->
+</embed>
+</object></center>
+<!-- BEGINNING OF sayberi174.persianblog.ir  -->
+</div>
+<div class=s></div>
+<!--- حمایت ما در گوگل --->
+</cb:loop_blog_category><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">مطالب پیشین</div></div>
+<div class="reza3"><div class="reza5">
+<div class="d"><a href="post/36.html" title="جمعه 26 آذر 1395" > احادیث امام رضا </a></div><div class="d"><a href="post/35.html" title="دوشنبه 19 مهر 1395" > مأمور امام رضا علیه السلام </a></div><div class="d"><a href="post/34.html" title="پنجشنبه 3 تیر 1395" > اهنگ شاه خراسانیم از دولتمند خلف </a></div><div class="d"><a href="post/32.html" title="شنبه 15 اسفند 1394" > استاد غلوش قاری سرشناس مصری در گذشت </a></div><div class="d"><a href="post/31.html" title="چهارشنبه 5 اسفند 1394" > السلام علیک یا بنت الرسول </a></div><div class="d"><a href="post/30.html" title="پنجشنبه 8 بهمن 1394" > درس هایی از امام رضا (ع) </a></div><div class="d"><a href="post/29.html" title="سه شنبه 6 بهمن 1394" > دانلود کتاب حکمت های رضوی شامل 1000 حدیث از امام رضا (ع) </a></div><div class="d"><a href="post/27.html" title="دوشنبه 5 بهمن 1394" > 93 حدیث از امام رضا (ع) </a></div><div class="d"><a href="post/28.html" title="یکشنبه 4 بهمن 1394" > قالب سه ستونه ولادت حضرت معصومه (س) برای وبلاگ </a></div><div class="d"><a href="post/26.html" title="چهارشنبه 16 دی 1394" > معجزه ای واقعی </a></div><div class="d"><a href="post/16.html" title="شنبه 9 آبان 1394" > 10 توصیه و پند ایت الله بهجت درباره ی زیارت امام رضا (ع) </a></div><div class="d"><a href="post/18.html" title="شنبه 9 آبان 1394" > دانلود اهنگ عطر بهشت از پویا بیاتی </a></div><div class="d"><a href="post/19.html" title="شنبه 9 آبان 1394" > دانلود آهنگ جدید مجید اخشابی بنام دقایق حرم </a></div><div class="d"><a href="post/22.html" title="شنبه 9 آبان 1394" > دانلود برنامه امام رضا (ع) برای اندروید </a></div><div class="d"><a href="post/20.html" title="شنبه 9 آبان 1394" > پیامک های زیبا برای امام رضا </a></div><div class="d"><a href="post/list.html"><b>لیست آخرین مطالب</b></a></div><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">نویسندگان</div></div>
+<div class="reza3"><div class="reza5">
+<div class="d"><a href="post/author/1280364.html"><img src="../static.mihanblog.com/public/user_data/user_photo/427/1280364.jpg" style="width:16px;" /></a> <a href="post/author/1280364.html">امیر  </a>(27)</div><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">ابر برچسب ها</div></div>
+<div class="reza3"><div class="reza5">
+<a href="post/tag/عطر+بهشت+از+پویا.html" style="font-size:1.05em">عطر بهشت از پویا</a>(2) , <a href="post/tag/دانلود+اهنگ+عطر+بهشت+از+پویا+بیاتی.html" style="font-size:1.05em">دانلود اهنگ عطر بهشت از پویا بیاتی</a>(2) , <a href="post/tag/عطر+بهشت.html" style="font-size:1.05em">عطر بهشت</a>(2) , <a href="post/tag/قالب+سه+ستونه.html" style="font-size:1.05em">قالب سه ستونه</a>(2) , <a href="post/tag/مأمور+امام+رضا+علیه+السلام.html" style="font-size:1em">مأمور امام رضا علیه السلام</a>(1) , <a href="post/tag/علی+بن+موسی+الرضا.html" style="font-size:1.81em">علی بن موسی الرضا</a>(18) , <a href="post/tag/امام+علی+بن+موسی+الرضا.html" style="font-size:1em">امام علی بن موسی الرضا</a>(1) , <a href="post/tag/امام+رضا.html" style="font-size:2em">امام رضا</a>(22) , <a href="post/tag/اهنگ+برای+امام+رضا.html" style="font-size:1.15em">اهنگ برای امام رضا</a>(4) , <a href="post/tag/عطر+بهشت+از+پویا+بیاتی.html" style="font-size:1.05em">عطر بهشت از پویا بیاتی</a>(2) , <p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+<!--حذف نام ولوگوی طراحان قالب از وب مورد رضایت نمی باشد-->
+<BlogTarahBlock>
+<div claas="m1r">
+<div class="reza4"><div class="menu-title" align="center">طراحان قالب</div></div>
+<div class="reza3"><div class="reza5">
+<center><p>
+<a title= "پایگاه فرهنگی مذهبی ذوالفقار" href="http://p-zolfaghar.persianblog.ir" target="_blank">
+<img src="http://p-zolfaghar.ir/ghaleb/folder1/5.jpg" alt="" width="85" height="40"/></a>
+
+<a title= "مرکز فرهنگی صالحون" href="http://www.salehon.ir/" target="_blank">
+<img src="http://www.salehon.ir/wp-content/uploads/2013/03/logo-salehon2.gif" alt="" width="85" height="40"/></a>
+</center><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+</BlogTarahBlock>
+<!--حذف نام ولوگوی طراحان قالب از وب مورد رضایت نمی باشد-->
+
+<p>&nbsp;
+</td></p>
+<td width="9" valign="top">&nbsp;</td>
+<td width="558" valign="top">
+
+<div id="amazingslider-1" style="display:block;position:relative;margin:16px auto 56px;">
+    <ul class="amazingslider-slides" style="display:none;">
+         <li><a href="http://www.salehon.ir" target="_blank" rel="nofollow" >
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sli1-ghoraba.jpg" alt="غریب الغربا" width="540" height="240" /></a></li>
+         <li><a href="http://www.salehon.ir" target="_blank" rel="nofollow" >
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sli2-ghoraba.jpg" alt="غریب الغربا" /></a></li>
+         <li><a href="http://www.salehon.ir" target="_blank" rel="nofollow" >
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sli3-ghoraba.jpg" alt="غریب الغربا" width="540" height="240" /></a></li>
+         <li><a href="http://www.salehon.ir" target="_blank" rel="nofollow" >
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sli4-ghoraba.jpg" alt="غریب الغربا" width="540" height="240" /></a></li>
+         <li><a href="http://www.salehon.ir" target="_blank" rel="nofollow" >
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sli5-ghoraba.jpg" alt="غریب الغربا" width="540" height="240" /></a></li>
+    </ul>
+     <ul class="amazingslider-thumbnails" style="display:none;">
+         <li>
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sl1-ghoraba.jpg" width="240" height="106" /></li>
+         <li><img src="http://www.salehon.ir/wp-content/uploads/2014/12/sl2-ghoraba.jpg" /></li>
+         <li>
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sl3-ghoraba.jpg" width="240" height="106" /></li>
+         <li>
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sl4-ghoraba.jpg" width="240" height="106" /></li>
+         <li>
+		<img src="http://www.salehon.ir/wp-content/uploads/2014/12/sl5-ghoraba.jpg" width="240" height="106" /></li>
+    </ul>
+<div class="amazingslider-engine" style="display:none;"><a href="http://amazingslider.com" rel="nofollow" >JavaScript Image Slideshow</a></div>
+</div>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/1.html">خوش آمدگویی</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><font style="background-color: rgb(255, 255, 255);"><img src="http://uupload.ir/files/v0e9_1.gif" alt="v0e9_1.gif"><img src="http://uupload.ir/files/8fbl_capture.jpg" alt="8fbl_capture.jpg" height="159" width="364" style="text-align: center;"></font></div><div style="text-align: center;"><p><font style="background-color: rgb(255, 255, 255);"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"><b style="font-family: Mihan-IransansBold; font-size: small;">به وب سایت امام رضا (ع) خوش آمدید</b><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif" style="font-family: Mihan-IransansBold; font-size: small;"></font></p><p><font style="background-color: rgb(255, 255, 255);"><font face="Mihan-IransansBold" size="2"><b><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">امیدوارم از مطالبی که می گذاریم لذت ببرید</b></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></p><p><font style="background-color: rgb(255, 255, 255);"><a href="index.html" target="_blank" style="font-size: 13.3333px; text-align: right; color: blue; text-decoration: none;"><img border="0" src="http://s9.picofile.com/file/8276145576/Moving_Pictures_of_Imam_Reza_YasGroup_ir_4.gif" width="200" alt="imamreza88" height="200" style="border: 0px;"></a></font></p><p style="text-align: center;"><input type="text" width="356" name="T1" size="15" value="<!-- start logo cod off http://imamreza88.mihanblog.com --><p align=&quot;center&quot;><p align=&quot;center&quot;><a href=&quot;http://imamreza88.mihanblog.com&quot; target=&quot;_blank&quot;><img border=&quot;0&quot; src=&quot;http://s9.picofile.com/file/8276145576/Moving_Pictures_of_Imam_Reza_YasGroup_ir_4.gif&quot;  width=&quot;200&quot; height=&quot;200&quot; alt=&quot;imamreza88&quot;></a></p><!--finish logo cod off http://imamreza88.mihanblog.com -->" dir="ltr"></p><div><br></div><p style="text-align: center;"><br></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br><br><br><b><a href="post/1.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : دوشنبه 16 شهریور 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(1)"> نظرات (<script>setCommentCnt(1)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/36.html">احادیث امام رضا</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+<div style="text-align: center;"><font face="Mihan-IransansBold" size="3">احادیث امام رضا (ع)</font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img src="http://www.upsara.com/images/oj88_8_2.jpg" alt="oj88_8_2.jpg"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font color="#ff0000" face="Mihan-IransansBold" size="3">لطفا به ادامه مطلب بروید...</font></div>
+
+
+
+
+
+
+
+
+<br><br>
+<br><br><br><br><b><a href="post/36.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : جمعه 26 آذر 1395 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(36)"> نظرات (<script>setCommentCnt(36)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/35.html">مأمور امام رضا علیه السلام</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+<div style="text-align: center;"><p dir="RTL" style="margin: 0px; padding: 7px 0px; font-size: 12px; text-align: justify;"><font face="Mihan-IransansBold">از حرم اومده بودم بیرون و داشتم تو&nbsp;<strong>خیابون های اطراف حرم</strong>&nbsp;قدم می زدم. یک دفعه متوجه شدم یکی&nbsp;<strong>از اون طرف خیابون</strong>&nbsp;داره صدام میزنه. اولش با خودم گفتم&nbsp;<strong>اشتباه فکر میکنی</strong>، حتماً منظورش با یکی دیگست آخه&nbsp;<strong>تو این شهر غریب</strong>&nbsp;کی تورو میشناسه؟ اما دیدم اومد سمت من و بامن&nbsp;<strong>احوال پرسی کرد</strong>.</font></p><p dir="RTL" style="margin: 0px; padding: 7px 0px; font-size: 12px; text-align: justify;"><font face="Mihan-IransansBold">متعجب مونده بودم. گفتم : ببخشید شما؟&nbsp;<strong>بجا نیاوردم</strong>. گفت : من&nbsp;<strong>دوسال پیش</strong>&nbsp;نیروی آموزشی شما تو پادگان بودم. خندم گرفت و تو دلم گفتم&nbsp;<strong>ببین چقدر تابلویی</strong>&nbsp;که از دوسال پیش طرف چهرتو بیاد داره. بعد بهش گفتم&nbsp;<strong>اینجا</strong>&nbsp;چیکار میکنی؟</font></p><p dir="RTL" style="text-align: center; margin: 0px; padding: 7px 0px; font-size: 12px;"><font face="Mihan-IransansBold"><img src="http://uupload.ir/files/wdg2_aksgif_ir_emam_reza_gif_%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1_%D9%85%D8%AA%D8%AD%D8%B1%DA%A9_%D8%A7%D9%85%D8%A7%D9%85_%D8%B1%D8%B6%D8%A7_%D8%B9237.gif" alt="wdg2_aksgif_ir_emam_reza_gif_تصاویر_متحرک_امام_رضا_ع237.gif"></font></p><p dir="RTL" style="margin: 0px; padding: 7px 0px; font-size: 12px; text-align: justify;"><font face="Mihan-IransansBold">جواب داد :&nbsp;<strong>اومده بودم زیارت&nbsp;</strong>و بعد رفتم تو بازار که کیف پولم و موبایلم رو زدن. مونده بودم&nbsp;<strong>تو این شهر غریب</strong>&nbsp;چیکار کنم و&nbsp;<strong>به کی رو بزنم</strong>&nbsp;که&nbsp;<strong>دست به دامن امام رضا</strong>&nbsp;شدم. آقاهم شمارو&nbsp;<strong>جلوی راهم</strong>&nbsp;قرار داد.</font></p><p dir="RTL" style="margin: 0px; padding: 7px 0px; font-size: 12px; text-align: justify;"><font face="Mihan-IransansBold">سکوت کردم.&nbsp;<strong>بغض گلوم رو گرفت</strong>. تا چند دقیقه قبل با خودم میگفتم این همه اومدی حرم&nbsp;<strong>چرا آقا عنایتی بهت نکرد</strong>؟ اما حالا آقا منو&nbsp;<strong>مأمور کرده بود</strong>&nbsp;تا مشکل یکی از&nbsp;<strong>زائرانش</strong>&nbsp;رو بر طرف کنم. یعنی<strong>عنایت ازین بالاتر</strong>&nbsp;که بشم&nbsp;<strong>مأمور امام رضا (ع)؟</strong></font></p><p dir="RTL" style="margin: 0px; padding: 7px 0px; font-size: 12px;"><font face="Mihan-IransansBold">راستی شماهم تابحال&nbsp;<strong>مأمور اهل بیت</strong>&nbsp;شدین؟</font></p><p dir="RTL" style="text-align: center; margin: 0px; padding: 7px 0px;"><font face="Mihan-IransansBold" size="3" color="#ff0000">لطفا به ادامه مطلب بروید...</font></p></div>
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/3.html">تصاویر</a> ، <a href="post/category/10.html">غیره...</a> ، <br><b>برچسب ها :</b> <a href="post/tag/مأمور&#32;امام&#32;رضا&#32;علیه&#32;السلام.html">مأمور امام رضا علیه السلام</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <a href="post/tag/امام&#32;علی&#32;بن&#32;موسی&#32;الرضا.html">امام علی بن موسی الرضا</a> ، <br><b>لینک های مرتبط :</b> <a href="http://sayberi174.persianblog.ir/">فندرسک</a> ، <br><b><a href="post/35.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : دوشنبه 19 مهر 1395 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(35)"> نظرات (<script>setCommentCnt(35)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/34.html">اهنگ شاه خراسانیم از دولتمند خلف</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+<div align="center"><font face="Mihan-IransansBold" size="3"><b><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">اهنگ شاه خراسانیم از دولتمند خلف<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></b></font><br><img src="http://s7.picofile.com/file/8257093034/Davlatmand_Kholov_Shahe_Khorasaniam.jpg" alt="" align="bottom" border="0" height="321" hspace="0" vspace="0" width="413"><br> <p style="text-align: center;"><span style="color: #ff0000;"><strong>MP3 – 320</strong></span></p> <p style="text-align: center;"><a href="http://dl.tagargahang.ir/Music/1394/Shahrivar/03/Dolatmand%20Kholf%20-%20Shahe%20Khorasaniam.mp3" target="_blank">دانلود با لینک مستقیم</a></p> <p>&nbsp;</p> <p style="text-align: center;"><span style="color: #ff0000;"><strong>MP3 – 128</strong></span></p> <p style="text-align: center;"><a href="http://dl.tagargahang.ir/Music/1394/Shahrivar/03/Dolatmand%20Kholf%20-%20Shahe%20Khorasaniam.mp3" target="_blank">دانلود با لینک مستقیم</a></p> <p>&nbsp;</p><br><br></div>
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/9.html">اهنگ ها</a> ، <br><b>برچسب ها :</b> <a href="post/tag/اهنگ&#32;شاه&#32;خراسانیم&#32;از&#32;دولتمند&#32;خلف.html">اهنگ شاه خراسانیم از دولتمند خلف</a> ، <a href="post/tag/دولتمند&#32;خلف.html">دولتمند خلف</a> ، <a href="post/tag/شاه&#32;خراسانیم.html">شاه خراسانیم</a> ، <a href="post/tag/شاه.html">شاه</a> ، <a href="post/tag/خراسان.html">خراسان</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <br><br><b><a href="post/34.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : پنجشنبه 3 تیر 1395 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(34)"> نظرات (<script>setCommentCnt(34)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/32.html">استاد غلوش قاری سرشناس مصری در گذشت</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><font color="#ff0000" style="background-color: rgb(255, 255, 255);" face="Mihan-IransansBold" size="2"><font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/12.gif"></font>استاد غلوش قاری سرشناس مصری در گذشت<img src="http://mihanblog.com/public/public/rte/images_new/smiles/12.gif"></font></div><div style="text-align: center;"><font color="#ff0000" style="background-color: rgb(255, 255, 255);" face="Mihan-IransansBold" size="2"><iframe src="http://www.aparat.com/video/video/embed/videohash/KdD80/vt/frame" height="270" width="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></font></div><div style="text-align: center;"><span style="line-height: 21px; text-align: justify; background-color: rgb(255, 255, 255);"><font size="2" face="Mihan-IransansBold" color="#ff0000">در میان مؤمنان مردانی هستند که بر سر عهدی که با خدا بستند صادقانه ایستاده‌اند؛&nbsp;</font></span></div><div style="text-align: center;"><span style="line-height: 21px; text-align: justify; background-color: rgb(255, 255, 255);"><font size="2" face="Mihan-IransansBold" color="#ff0000">بعضی پیمان خود را به آخر بردند (و در راه او شربت شهادت نوشیدند)،&nbsp;</font></span></div><div style="text-align: center;"><span style="line-height: 21px; text-align: justify; background-color: rgb(255, 255, 255);"><font size="2" face="Mihan-IransansBold" color="#ff0000">و بعضی دیگر در انتظارند؛ و هرگز تغییر و تبدیلی در عهد و پیمان خود ندادند.</font></span></div><div style="text-align: center;"><hr></div><div style="text-align: center;"><font face="Mihan-IransansBold" color="#ff0000" style="background-color: rgb(255, 255, 255);" size="2"><br></font></div><div style="text-align: center;"><font face="Mihan-IransansBold" color="#ff0000" style="background-color: rgb(255, 255, 255);" size="2">برای شادی روح استاد&nbsp;فاتحه مع الصلوات</font></div><div style="text-align: center;"><font color="#ff0000" style="background-color: rgb(255, 255, 255);" face="Mihan-IransansBold" size="2">به ادامه ی مطلب مراجعه فرمایید...</font></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/10.html">غیره...</a> ، <br><b>برچسب ها :</b> <a href="post/tag/استاد&#32;غلوش.html">استاد غلوش</a> ، <a href="post/tag/غلوش.html">غلوش</a> ، <a href="post/tag/استاد&#32;غلوش&#32;درگذشت.html">استاد غلوش درگذشت</a> ، <a href="post/tag/قاری&#32;سرشناس&#32;جهان&#32;اسلام.html">قاری سرشناس جهان اسلام</a> ، <a href="post/tag/غلوش&#32;درگذشت.html">غلوش درگذشت</a> ، <a href="post/tag/قاری&#32;نامدار&#32;جهان&#32;اسلام&#32;در&#32;گذشت.html">قاری نامدار جهان اسلام در گذشت</a> ، <a href="post/tag/غلوش&#32;در&#32;سن&#32;77&#32;سالگی&#32;درگذشت.html">غلوش در سن 77 سالگی درگذشت</a> ، <br><br><b><a href="post/32.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : شنبه 15 اسفند 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(32)"> نظرات (<script>setCommentCnt(32)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/31.html">السلام علیک یا بنت الرسول</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+
+
+<div style="text-align: center;"><h4 style="font-stretch: normal; line-height: 29.3333px;"><font color="#ff0000" face="Mihan-IransansBold" size="1">با سلام ، شهادت حضرت فاطمه (س) را به تمام شیعیان مولا تسلیت می گوییم</font></h4><div><font size="1"><img src="http://8pic.ir/images/gg63bhn2vbbmdja1tzc0.gif" alt="تصاویر-متحرك-شهادت-حضرت-فاطمه_Shabhayetanhayi.ir-1.gif"></font></div><h4 style="font-stretch: normal;"><font face="Mihan-IransansBold" size="1"><strong style="line-height: 16px; color: rgb(67, 52, 43); text-align: -webkit-right;"><div style="text-align: center;">به روز حشر در دلهای محزون</div></strong><span style="line-height: 16px; color: rgb(67, 52, 43); text-align: -webkit-right;"><div style="text-align: center;">شود هول قیامت هردم افزون</div></span><span style="line-height: 16px; color: rgb(67, 52, 43); text-align: -webkit-right;"><div style="text-align: center;">رسد چون نوبت عفو و شفاعت</div></span><span style="line-height: 16px; color: rgb(67, 52, 43); text-align: -webkit-right;"><div style="text-align: center;">ندا آید که " أین الفاطمیون "<br><img src="http://dl.aviny.com/Album/mazhabi/ahlbeit/ZAHRA/kamel/129.jpg" height="223" width="336"><br></div></span></font></h4><h4 style="font-stretch: normal; line-height: 29.3333px;"><font size="1"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"><font color="#ff0000" face="Mihan-IransansBold">در این مطلب علل بیمارى و شهادت حضرت زهرا (س) را برایتان آوردیم</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></h4></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/10.html">غیره...</a> ، <br><b>برچسب ها :</b> <a href="post/tag/السلام&#32;علیک&#32;یا&#32;بنت&#32;الرسول.html">السلام علیک یا بنت الرسول</a> ، <a href="post/tag/fateme.html">fateme</a> ، <a href="post/tag/فاطمه&#32;الزهرا.html">فاطمه الزهرا</a> ، <a href="post/tag/بنت&#32;الرسول.html">بنت الرسول</a> ، <a href="post/tag/فاطمه.html">فاطمه</a> ، <a href="post/tag/زهرا.html">زهرا</a> ، <a href="post/tag/یا&#32;فاطمه&#32;زهرا.html">یا فاطمه زهرا</a> ، <br><br><b><a href="post/31.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : چهارشنبه 5 اسفند 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(31)"> نظرات (<script>setCommentCnt(31)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/30.html">درس هایی از امام رضا (ع)</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+<div style="text-align: center;"><font face="Mihan-IransansBold" size="2"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"><font color="#ff0000">درس هایی از امام رضا (ع)</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div><div style="text-align: center;"><font face="Mihan-IransansBold" size="2"><img src="http://www.beytoote.com/images/stories/religious/hhr337.jpg" alt="احادیث امام رضا(ع),سخنان امام رضا(ع),پندهایی از امام رضا (ع)"></font></div><div style="text-align: center;"><font face="Mihan-IransansBold" size="2"><br></font></div><div style="text-align: center;"><font face="Mihan-IransansBold" size="2"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/86.gif"><font color="#ff0000">بفرمایید ادامه مطلب&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/86.gif"></font></div>
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/2.html">حدیث</a> ، <a href="post/category/10.html">غیره...</a> ، <br><b>برچسب ها :</b> <a href="post/tag/درس&#32;هایی&#32;از&#32;امام&#32;رضا&#32;(ع).html">درس هایی از امام رضا (ع)</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <a href="post/tag/علی&#32;بن&#32;موسی&#32;الرضا.html">علی بن موسی الرضا</a> ، <br><br><b><a href="post/30.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : پنجشنبه 8 بهمن 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(30)"> نظرات (<script>setCommentCnt(30)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/29.html">دانلود کتاب حکمت های رضوی شامل 1000 حدیث از امام رضا (ع)</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+
+
+
+
+<div align="center"><p class="rtejustify" style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"><font face="Mihan-IransansBold"><span style="font-size: 12.5pt;"><font color="#FF0000" face="Mihan-Nassim"><b style="background-color: rgb(51, 51, 255);">دانلود کتاب حکمت های رضوی شامل 1000 حدیث از امام رضا (ع)</b></font></span></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></p><p class="rtejustify" style="text-align: justify;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/56.gif"><font face="Mihan-IransansBold" size="2">حکمت‌
+ های رضوی شامل یکهزار سخن حکمت‌آمیز و گهربار از امام رضا(ع) است.&nbsp;نویسنده
+ این کتاب&nbsp;محمدجواد مروج طبسی و ترجمه عباس پور عبادی است</font></p><p class="rtejustify" style="text-align: justify;"><font face="Mihan-IransansBold" size="2">این کتاب در&nbsp; ۳۲۴ صفحه با همکاری اداره کل فرهنگ و ارشاد اسلامی البرز و بنیاد بین‌المللی فرهنگی هنری امام رضا(ع) به چاپ رسیده است.</font></p><p class="rtejustify" style="text-align: justify;"><font face="Mihan-IransansBold"><font size="2">حکمت‌ های رضوی با زبانی ساده و همه فهم سخنانی از امام رضا(ع) را در خود جای داده است</font><span style="font-size: 12.5pt;">.</span></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/56.gif"></p><p style="text-align: center;"><img src="http://s6.picofile.com/file/8235441126/182239_orig.jpg" alt="" border="0" height="338" hspace="0" vspace="0" width="358" align="bottom"></p><h2 style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif" style="font-size: 11px;"><font face="Mihan-IransansBold" size="2">دانلود کتاب حکمت‌ های رضوی – PDF</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif" style="font-size: 11px;"></h2><p style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/93.gif"><font face="Mihan-IransansBold" size="3"><a href="http://dl.faraghlit.com/Book/Hekmathaye%20Razavi.pdf"><span style="color: rgb(128, 0, 0);">دانلود با لینک مستقیم</span><span style="color: rgb(128, 128, 0);"> و حجم ۳&nbsp;مگابایت</span></a></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/93.gif"></p></div><font face="Mihan-IransansBold">
+
+
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/2.html">حدیث</a> ، <a href="post/category/4.html">معرفی کتاب ها</a> ، <br><b>برچسب ها :</b> <a href="post/tag/1000&#32;حدیث&#32;از&#32;امام&#32;رضا&#32;(ع).html">1000 حدیث از امام رضا (ع)</a> ، <a href="post/tag/دانلود&#32;کتاب&#32;حکمت&#32;های&#32;رضوی.html">دانلود کتاب حکمت های رضوی</a> ، <a href="post/tag/کتاب&#32;های&#32;امام&#32;رضا&#32;(ع).html">کتاب های امام رضا (ع)</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <a href="post/tag/علی&#32;بن&#32;موسی&#32;الرضا.html">علی بن موسی الرضا</a> ، <br><b>لینک های مرتبط :</b> <a href="http://www.faraghlit.com/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%DA%A9%D8%AA%D8%A7%D8%A8-%D8%AD%DA%A9%D9%85%D8%AA%E2%80%8C-%D9%87%D8%A7%DB%8C-%D8%B1%D8%B6%D9%88%DB%8C/">دانلود کتاب حکمت های رضوی</a> ، <br><b><a href="post/29.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : سه شنبه 6 بهمن 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(29)"> نظرات (<script>setCommentCnt(29)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/27.html">93 حدیث از امام رضا (ع)</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+<div style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"><b><font color="#ff0000" face="Mihan-Nassim" size="3">حدیث از امام رضا(ع)</font></b><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"></div><div style="text-align: center;"><img src="http://8pic.ir/images/z1jlgxqx6smfz76ci1gj.jpg" alt="Untitled.jpg" height="309" width="442"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"><font face="Mihan-IransansBold" size="3"><b>لطفا به ادامه مطلب بروید</b></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></div>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/2.html">حدیث</a> ، <br><b>برچسب ها :</b> <a href="post/tag/93&#32;حدیث&#32;امام&#32;رضا&#32;(ع).html">93 حدیث امام رضا (ع)</a> ، <a href="post/tag/حدیث&#32;های&#32;امام&#32;رضا.html">حدیث های امام رضا</a> ، <a href="post/tag/حدیث&#32;امام&#32;رضا.html">حدیث امام رضا</a> ، <a href="post/tag/حدیث.html">حدیث</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <a href="post/tag/علی&#32;بن&#32;موسی&#32;الرضا.html">علی بن موسی الرضا</a> ، <br><b>لینک های مرتبط :</b> <a href="http://ez12.persianblog.ir/post/10/">حدیث</a> ، <br><b><a href="post/27.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : دوشنبه 5 بهمن 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(27)"> نظرات (<script>setCommentCnt(27)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/28.html">قالب سه ستونه ولادت حضرت معصومه (س) برای وبلاگ</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+<div style="text-align: center;"><img src="http://images.persianblog.ir/587760_195wlUog.jpg" alt="قالب سه ستونه ولادت حضرت معصومه (س) برای وبلاگ"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><p style="color: rgb(78, 78, 78); font-family: Tahoma; font-size: 10.6667px; line-height: 16px;"><strong><span style="color: rgb(255, 0, 0);">هزینه دریافت</span></strong>&nbsp;: یک صلوات و هدیه به خانم فاطمه معصومه (س)</p><table border="0" align="center" style="font-family: Tahoma;"><tbody><tr><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px; text-align: center;">بلاگفا</td><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px; text-align: center;">پرشین بلاگ</td><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px; text-align: center;">میهن بلاگ</td></tr><tr><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px; text-align: center;"><a href="http://s4.picofile.com/file/8179032434/b_theme.zip.html" target="_blank" style="font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;"><img src="http://images.persianblog.ir/587760_5XxPJPD4.gif" alt="دانلود نمایید" width="150" height="58" style="border: none;"></a></td><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px;"><a href="http://s4.picofile.com/file/7924111719/p_theme.zip.html" target="_blank" style="font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;"><img src="http://images.persianblog.ir/587760_sp6TSQSQ.gif" alt="دانلود نمایید" width="150" height="58" style="border: none;"></a></td><td style="font-size: 8pt; color: rgb(78, 78, 78); line-height: 16px;">&nbsp;<a href="http://s3.picofile.com/file/7924111177/m_theme.zip.html" target="_blank" style="font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;"><img src="http://images.persianblog.ir/587760_a3hXowW0.gif" alt="دانلود نمایید" width="150" height="58" style="border: none;"></a></td></tr></tbody></table><p style="color: rgb(78, 78, 78); font-family: Tahoma; font-size: 10.6667px; line-height: 16px; text-align: -webkit-right;">&nbsp;&nbsp;</p></div>
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/11.html">قالب ها</a> ، <br><b>برچسب ها :</b> <a href="post/tag/قالب&#32;سه&#32;ستونه.html">قالب سه ستونه</a> ، <a href="post/tag/قالب&#32;حضرت&#32;معصومه.html">قالب حضرت معصومه</a> ، <a href="post/tag/قالب&#32;سه&#32;ستونه&#32;ولادت&#32;حضرت&#32;معصومه&#32;(س)&#32;برای&#32;وبلاگ.html">قالب سه ستونه ولادت حضرت معصومه (س) برای وبلاگ</a> ، <a href="post/tag/قالب&#32;بلاگفا.html">قالب بلاگفا</a> ، <a href="post/tag/قالب&#32;میهن&#32;بلاگ.html">قالب میهن بلاگ</a> ، <br><b>لینک های مرتبط :</b> <a href="http://sayberi174.persianblog.ir/post/1388/">فندرسک</a> ، <br><b><a href="post/28.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : یکشنبه 4 بهمن 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(28)"> نظرات (<script>setCommentCnt(28)</script>)</a>
+</div></div></div><p></p>
+<div class="post1"><div class="title-post"><div class="link-title-post">		
+<b><a href="post/26.html">معجزه ای واقعی</a></b></div></div></div>
+<div class="post2">
+<div align="center"><div class="post3"><div align="right">
+
+
+
+
+
+<div style="text-align: center;"><font size="2"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"><font face="Mihan-IransansBold" color="#ff0000">معجزه واقعی از امام رضا(ع)</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"></font></div><div style="text-align: center;"><font size="2"><iframe src="http://www.aparat.com/video/video/embed/videohash/jt71p/vt/frame" height="270" width="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></font></div><div style="text-align: center;"><font size="2"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"><font face="Mihan-IransansBold">الله الهم صل آل محمد و آل محمد</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><b>موضوعات مرتبط :</b> <a href="post/category/5.html">ویدئو و کلیپ</a> ، <br><b>برچسب ها :</b> <a href="post/tag/معجزه&#32;ای&#32;واقعی.html">معجزه ای واقعی</a> ، <a href="post/tag/معجزه&#32;ای&#32;واقعی&#32;از&#32;امام&#32;رضا.html">معجزه ای واقعی از امام رضا</a> ، <a href="post/tag/معجزه&#32;امام&#32;رضا.html">معجزه امام رضا</a> ، <a href="post/tag/معجزه&#32;ی&#32;باور&#32;نکردنی&#32;از&#32;امام&#32;رضا.html">معجزه ی باور نکردنی از امام رضا</a> ، <a href="post/tag/معجزه.html">معجزه</a> ، <a href="post/tag/علی&#32;بن&#32;موسی&#32;الرضا.html">علی بن موسی الرضا</a> ، <a href="post/tag/امام&#32;رضا.html">امام رضا</a> ، <br><br><b><a href="post/26.html">ادامه مطلب</a></b>
+</div>
+</div></div></div>
+<div class="post4">
+<div class="post7"><div class="post6">نوشته شده در تاریخ : چهارشنبه 16 دی 1394 | نویسنده :&nbsp;امیر   | <a target="_self" href="javascript:newComment(26)"> نظرات (<script>setCommentCnt(26)</script>)</a>
+</div></div></div><p></p>
+
+
+<center>
+<span style="color: #ffffff;">
+تعداد کل صفحات : 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/1.html">
+<b>1</b></a>&nbsp;&nbsp;<a href="page/2.html">
+<span>2</span></a>&nbsp;&nbsp;<a href="page/3.html">
+<span>3</span></a>&nbsp;&nbsp;</span>
+</a>
+</center>
+
+</td>
+<td width="9" valign="top">&nbsp;</td>
+<td width="218" valign="top">
+
+<BlogProfile>
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">درباره وبلاگ</div></div>
+<div class="reza3"><div class="reza5"><div align="center"><div class="text">
+<div align="center" style="padding:0px 0px 6px 0px;"><img src="../static.mihanblog.com/public/user_data/web_photo/572/1714029.jpg@5528"  /></div>
+<div align="justify">اللهم صل علی محمد و آل محمد<br>
+:: <a target="_blank" href="post/author/1280364.html">امیر  </a>
+</div>
+</div></div></div></div>
+<div class="reza6"></div></div>
+</BlogProfile>
+
+<BlogNavaBlock>
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">نوای عاشقی</div></div>
+<div class="reza3"><div class="reza5">
+<p><center>
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" border="0" style="width: 150px; height: 30px">    <param name="movie" value="http://dl.bachehayeghalam.ir/flash/naghmekhan-khademan.swf" />    <param name="quality" value="High" />    <param name="menu" value="false" />    <embed src="http://dl.bachehayeghalam.ir/flash/naghmekhan-khademan.swf" pluginspage="http://r.office.microsoft.com/r/rlidFPGetFlash?clid=1033&ver=12&app=spdesign.exe" type="application/x-shockwave-flash" name="obj1" quality="High" style="width: 150px; height: 30px" menu="false" /></object>
+</p></center><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+</BlogNavaBlock>
+
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">آرشیو مطالب</div></div>
+<div class="reza3"><div class="reza5">
+<div class="d"><a href="post/archive/1395/9.html"> آذر 1395</a> (1)</div><div class="d"><a href="post/archive/1395/7.html"> مهر 1395</a> (1)</div><div class="d"><a href="post/archive/1395/4.html"> تیر 1395</a> (1)</div><div class="d"><a href="post/archive/1394/12.html"> اسفند 1394</a> (2)</div><div class="d"><a href="post/archive/1394/11.html"> بهمن 1394</a> (4)</div><div class="d"><a href="post/archive/1394/10.html"> دی 1394</a> (1)</div><div class="d"><a href="post/archive/1394/8.html"> آبان 1394</a> (5)</div><div class="d"><a href="post/archive/1394/6.html"> شهریور 1394</a> (12)</div><div class="d"><a href="post/archive.html"><b>لیست کامل آرشیو وبلاگ</b></a></div><p></p>
+</div>
+</div>
+<div class="reza6"></div>
+
+
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">لینک دوستان</div></div>
+<div class="reza3"><div class="reza5">
+<div class="d"><a target="_blank" href="../imamali01.mihanblog.com/index.html" title="">وب سایت امام علی (ع)</a></div><div class="d"><a target="_blank" href="../alaraf.mihanblog.com/index.html" title="">مردان اعراف</a></div><div class="d"><a href="link/index.html"><b>لیست کامل لینک دوستان</b></a></div><p></p>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+
+		<form id="frm-16075119125fd0af68c6092" method="post" action="http://imamreza88.mihanblog.com/poll/new/fid/16075119125fd0af68c6092/atrty/1607511912/avrvy/0/key/d2ee68b3cdf2a9ed7a5da05753ba4870/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="347808" id="data[pollid]" />		
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">نظرسنجی</div></div>
+<div class="reza3"><div class="reza5">
+<div style="margin:0px 10px 0px 0px;"><b>نظرتون درباره ی عملکرد  این وب سایت  چیه؟</b><br><p></p></div> 
+<div class="d"><label><input type="radio" name="data[answer]" value="v1">فوق العاده</label><br></div><div class="d"><label><input type="radio" name="data[answer]" value="v2">عالی </label><br></div><div class="d"><label><input type="radio" name="data[answer]" value="v3">خیلی خوب</label><br></div><div class="d"><label><input type="radio" name="data[answer]" value="v4">خوب</label><br></div><div class="d"><label><input type="radio" name="data[answer]" value="v5">بد نیست</label><br></div><div class="d"><label><input type="radio" name="data[answer]" value="v6">ضعیف</label><br></div><center>
+<input type="submit" value="ثبت"><p></p>
+</center>
+</div>
+</div>
+<div class="reza6"></div></div>
+
+		<input type="hidden" name="frm-id" value="16075119125fd0af68c6092" id="frm-id" /></form>
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">آمار وبلاگ</div></div>
+<div class="reza3"><div class="reza5">
+
+<ul>
+<div class="d"><li>کل بازدید : <script>getStatVar('total_view');</script></li></div>
+<div class="d"><li>بازدید امروز :<script>getStatVar('today_view');</script></li></div>
+<div class="d"><li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li></div>
+<div class="d"><li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li></div>
+<div class="d"><li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li></div>
+<div class="d"><li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li></div>
+<div class="d"><li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li></div>
+<div class="d"><li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li></div>
+<div class="d"><li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li></div>
+</ul>
+</div>
+</div>
+<div class="reza6"></div>
+
+<BlogCustomHtml>
+<div claas="m1l">
+<div class="reza2"><div class="menu-title" align="center">امکانات وبلاگ</div></div>
+<div class="reza3"><div class="reza5">
+<div align="center"><div class="other">
+<center>
+
+   <!-- www.3x2.ir{TOOLS BLOG} -->
+<script src="http://3x2.ir/js/tools(salavat2).php?m=1"></script>
+<h2><a style="display:none" href="HTTP://3x2.ir">TOOLS SALAVAT</a></h2>
+   <!-- END_www.3x2.ir{TOOLS BLOG} -->
+        
+        
+
+
+<!-- oghat sharee by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/azan/azan.php?color1=33040D&color2=F0210A&bg=D1FE1E&kc=0D18B3&kadr=5&shahr=12"></script><div style="display:none"><h2><a href="http://www.1abzar.com/abzar/azan2.php">اوقات شرعی</a></h2></div>
+<!-- oghat sharee by www.1abzar.com --->
+
+
+
+
+
+
+
+
+<style type="text/css">//Ashoora.ir|Moharam Begins</style><div align="center"><script type="text/javascript"src="http://www.ashoora.biz/mazhabi-projects/moharam/moharam.php?mod=18"></script></div><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1585;&#1608;&#1586;&#1588;&#1605;&#1575;&#1585; &#1605;&#1581;&#1585;&#1605; &#1593;&#1575;&#1588;&#1608;&#1585;&#1575;</a><style type="text/css">//Ashoora.ir|Moharam Ends</style>
+
+
+
+
+<style type="text/css">//Ashoora.ir|Ashoora Begins</style><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/png.js"></script><script type="text/javascript" src="http://www.ashoora.biz/mazhabi-projects/ashoora/ashoora.php?mod=3&color2=FF0000&color1=000000&width=150"></script><a href="http://www.ashoora.ir/" class="ashoora_tool_link">&#1583;&#1575;&#1606;&#1588;&#1606;&#1575;&#1605;&#1607; &#1593;&#1575;&#1588;&#1608;&#1585;&#1575;</a><style type="text/css">//Ashoora.ir|Ashoora Ends</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br></center><p></p>
+</div>
+</div></div>
+<div class="reza6"></div>
+</BlogCustomHtml>
+
+<p>&nbsp;
+</td></p>
+<div align="center">
+<table border="0" width="970" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1003" valign="top"><div class="ghoraba4">
+<div class="ghoraba5"><span style="color: #ffffff;">طراح قالب  :  <a href="http://p-zolfaghar.persianblog.ir">ذوالفقار</a> - <a href="http://www.salehon.ir">صالحون</a> | Weblog Themes By : <a title="قالب های پایگاه فرهنگی مذهبی ذوالفقار"  href="http://p-zolfaghar.persianblog.ir/"target="_blank" rel="nofollow" > p-zolfaghar.persianblog.ir </a>  -  <a title="قالب های صالحون" href="http://www.salehon.ir/"target="_blank" rel="nofollow" > www.salehon.ir </a></div></span>
+<div class="ghoraba3">تمامی حقوق این وبلاگ و مطالب آن متعلق به <b>وب سایت امام رضا </b> می باشد و انتشار مطالب با ذکر منبع مانعی ندارد.
+<p>&nbsp;</p>
+</div>
+</div>
+
+</td>
+</tr>
+</table>
+</div>
+</body></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'imamreza88.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

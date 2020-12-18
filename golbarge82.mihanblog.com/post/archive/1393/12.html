@@ -1,0 +1,1481 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1444425*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[489]='0';commentCnt[490]='0';commentCnt[491]='0';commentCnt[492]='0';commentCnt[493]='0';commentCnt[494]='0';commentCnt[495]='0';commentCnt[496]='0';commentCnt[497]='0';commentCnt[498]='4';commentCnt[499]='0';commentCnt[500]='0';commentCnt[501]='0';commentCnt[502]='1';commentCnt[504]='0';commentCnt[505]='0';commentCnt[506]='0';commentCnt[507]='3';commentCnt[508]='0';commentCnt[509]='0';commentCnt[510]='3';commentCnt[514]='-';commentCnt[515]='0';commentCnt[516]='1';commentCnt[517]='3';commentCnt[518]='-';commentCnt[519]='2';commentCnt[520]='4';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[491]='0';
+mihanblogDisLikeArrCnt[491]='0';
+mihanblogLikeArrCnt[499]='0';
+mihanblogDisLikeArrCnt[499]='0';
+mihanblogLikeArrCnt[504]='0';
+mihanblogDisLikeArrCnt[504]='0';
+mihanblogLikeArrCnt[509]='0';
+mihanblogDisLikeArrCnt[509]='0';
+mihanblogLikeArrCnt[510]='0';
+mihanblogDisLikeArrCnt[510]='0';
+mihanblogLikeArrCnt[514]='0';
+mihanblogDisLikeArrCnt[514]='0';
+mihanblogLikeArrCnt[515]='0';
+mihanblogDisLikeArrCnt[515]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://golbarge82.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://golbarge82.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','570');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','شنبه 4 مرداد 1399');
+	
+	setStatVar('today_view','10');
+	setStatVar('yesterday_view','28');
+	
+	setStatVar('this_month_view','1495');
+	setStatVar('last_month_view','1710');
+
+	setStatVar('total_view','293605');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (07:11)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://golbarge82.mihanblog.com/statupdate/?data[refereruri]=http://golbarge82.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1393/12&data[sdate]=1607831911&data[hash]=c566263fd3fd76a8d5c75a3b7fd6ce3e&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://golbarge82.mihanblog.com/post/archive/1393/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://golbarge82.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>دل نوشته های یک دختر چادری - مطالب  اسفند 1393</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="دل نوشته های یک دختر چادری - مطالب  اسفند 1393 -  - دل نوشته های یک دختر چادری">
+<meta name="keywords" content="دل نوشته های یک دختر چادری - مطالب  اسفند 1393,golbarge82, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="دل نوشته های یک دختر چادری" href="../../rss/index.html" />
+<link href="http://template.pichak.net/pichak/182/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>دل نوشته های یک دختر چادری</div><div class=Description></div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="../../../index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:gollbarge82@chmail.ir">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="../../rss/index.html" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../author/1217535.html">گلبرگ سمائی  482 </a></div><div class=li-Sid>
+<a href="../../author/1469370.html">شکوفه   2 </a></div><div class=li-Sid>
+<a href="../../author/1564494.html">-راضیه -  0 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16076931855fd37381def00" method="post" action="http://golbarge82.mihanblog.com/poll/new/fid/16076931855fd37381def00/atrty/1607693185/avrvy/0/key/f044b92e7cad3b521d1703ec4a53abc5/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="379015" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+راجع به کدام شهید بزرگوار بیشتر مطلب بگذاریم؟<br><label><input type="radio" name="data[answer]" value="v1">شهید سپهبد سلیمانی</label><br><label><input type="radio" name="data[answer]" value="v2">شهید حججی</label><br><label><input type="radio" name="data[answer]" value="v3">شهید ابراهیم هادی</label><br><label><input type="radio" name="data[answer]" value="v4">شهید احمد کاظمی</label><br><label><input type="radio" name="data[answer]" value="v5">سایر شهدا(در نظرات بفرمایید)</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16076931855fd37381def00" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khorshid81.mihanblog.com/index.html">مبینا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../maryamjo0n.mihanblog.com/index.html">مریم جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://doostareHejab.blogfa.com/">مریم جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../baran2k5.mihanblog.com/index.html">باران جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.roman-biyoosa.mihanblog.com/index.html">بیوسا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../sora811.mihanblog.com/index.html">سورا جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mohajabe82.mihanblog.com/index.html">زینب جون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../pat09.mihanblog.com/index.html">نگارجون</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/182/">قالب وبلاگ چادر</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../../extrapage/mylogo.html">لوگوهای من</a></div><div class=li-Sid>
+<a href="../../../extrapage/porofailegolbarg.html">پروفایل گلبرگ</a></div><div class=li-Sid>
+<a href="../../../extrapage/maryam.html">پروفایل مریم</a></div><div class=li-Sid>
+<a href="../../../extrapage/galery.html">گالری عکس</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/سردار+دلها.html" style="font-size:1em">
+		سردار دلها</a> </div>
+</center><div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://hamva.ir/" title="سلام دوست خوبم وبلاگ زیبا و جالبی داشتی ،منم یه سایت کنکوری دارم  به من هم سر بزن و لطفا لینک من رو هم تایید کن . مرسی
+منتظر حضورت هستم">تخمین رتبه کنکور</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://http:/windpumpshop.ir/" title="">کمپرسور باد فندکی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://linux-web.ir/" title="روش کلیک نکن،به هیچ وجه!">هاست لینوکس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jonbeshnet.ir/news/53727" title="سلام
+
+در پی اهنانت دشمنان اسلام ، جنبش اینترنتی پیامیر رحمت (ص   راه اندازی شد از‌این‌رو،‌ از تمامی فعالان فضای مجازی دعوت می کنیم
+
+ با قراردادن لوگوهای« جنبش اینترنتی پیامیر رحمت ( ص)   در پایگاه های اینترنتی و وبلاگ های خود و همچنین انتشار ، و بازنشر مطالب مربوط به این جنبش  ما را در این امر خطیر یاری فرمایند 
+
+و نام خود را  در زمره خادمین پیامیر رحمت (ص) ثبت فرمائید .
+
+ضمنا جهت دریافت کد لوگو به آدرس  مراجعه فرمائید و پس از درج لوگو ولینک کردن ، در بخش نظرات اعلام نمائید تا پایگاه شما نیز در صفحه جنبش پیامیر رحمت (ص) لینک شود
+
+**من عاشق محمدم**
+
+http://www.jonbeshnet.ir/news/53727">من عاشق محّمدم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jonbeshnet.ir/news/33132" title="سلام 
+خیلی خوشحالم كه با وبلاگ شما آشنا شدم بدون تعارف وبلاگ خوبی دارید خوشحال میشم بیشتر با هم تو زمنیه وبلاگ نویسی تعامل كنیم 
+از شما فعالان فضای مجازی دعوت می کنیم 
+با قرار دادن «لوگوهای جنبش » در پایگاه های اینترنتی و  وبلاگ های خود و همچنین با تولید، انتشار و... ما را در این امر خطیر یاری فرمایند.
+
+لطفا گروه اینترنتی رهروان ولایت را لینك كرده و به ما هم در سایت در بخش نظرات بفرمائید تا شمارو لینك كنیم .
+ منتظر لینكتون هستم .
+http://www.jonbeshnet.ir/news/33132">نهی از منکر</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.pichak.net">قالب وبلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب های پیچک</a></div></div>
+<div class=LowSid></div>
+
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<!-- motarjem -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/520">منتشررررررررررررررررررررر</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><p align="center">
+
+
+<img alt="" src="http://s1.picofile.com/file/7695653117/254.jpg" height="500" width="386"></p>                                                                                                  <br>
+                                                                        
+                                                          
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('520','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 19 اسفند 1393  | 19:17  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(520)">نظرات  <script>setCommentCnt(520)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/519">منتشر کنید</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font style="font-size: 15pt" color="#000000" face="Arial"><font style="font-size: 8pt" color="#000000" face="Tahoma"><font color="#000000"><font color="#000000"><font color="#000000"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><span style="color: #796e6e;"><span style="font-size: 8pt;"><span style="color: #979797;"><span style="color: #979797;"><span style="font-size: 8pt;"><span dir="rtl"><span style="color: #979797;"><span style="font-size: 11pt;"><span style="color: #d3d2d2;"><img src="http://up.vbiran.ir/uploads/20875141372403120743_1410090385830432.jpg" alt="" height="405" width="405"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></font></font></font></font></font>
+
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('519','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 19 اسفند 1393  | 17:39  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(519)">نظرات  <script>setCommentCnt(519)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/518">توجیه</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div style="text-align: center;" align="right"><img src="http://s5.picofile.com/file/8146204976/azadupload_com141015665143221.jpg" alt="" align="bottom" border="0" height="259" hspace="0" vspace="0" width="463"></div>
+
+
+                    <br>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('518','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 16 اسفند 1393  | 19:02  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(518)">نظرات  <script>setCommentCnt(518)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/517">دخترانه ها...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font class="text4"><div align="center"><font face="tahoma,arial,helvetica,sans-serif" size="2"><img src="http://s5.picofile.com/file/8146581468/i_love_islam_hijab_drawing_cute.jpg" alt="" align="bottom" border="0" height="615" hspace="0" vspace="0" width="574"></font></div><font face="tahoma,arial,helvetica,sans-serif" size="2"><br></font><font face="courier new,courier,monospace" size="3"><font face="tahoma,arial,helvetica,sans-serif" size="2">دخترانی را می شناسم كه صورتی می پوشند!<br>
+لاك قرمز می زنند! <br>
+ناز می كنند!<br>
+عروسك دارند!<br>
+لوس می شوند گــآهی<br>
+و لبخنـــد می زنند <br>
+اینهایی  كه می شناسم دخترند<br>
+ولی به دخترانه هایشان چوب حراج نزدند<br>
+یاد گرفته اند "همه" لایق دخترانه ها نیستند<br>
+اینهــآ هم دختـرند<br>
+با چاشنی چــآدر<br>
+و نمك حیــا...</font><br>
+</font></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('517','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 16 اسفند 1393  | 19:01  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(517)">نظرات  <script>setCommentCnt(517)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/516">چادر</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font class="text4"><div align="center"><img src="http://s5.picofile.com/file/8146915026/%D9%85%D8%A7%D9%87_%D9%88%D8%AD%D8%AC%D8%A7%D8%A8.jpg" alt="" align="bottom" border="0" height="264" hspace="0" vspace="0" width="440"><br><font face="tahoma,arial,helvetica,sans-serif" size="2"><br></font></div><font face="tahoma,arial,helvetica,sans-serif"><br>وقتــی می‌پرسند : نمی‌پـزید در این <font color="#990000">گرمــا</font>؟!<br>
+یک لبــخند بزن و بگو :<br>
+ سرگرمِ عشقــبازی که باشی و در اشتیاق خاکستر شدن ،<br>
+ این <font color="#990000">گرما</font> که شوخی کوچکی بیش نیست!<br>
+و بعد دقیق شو در چهره‌شان ، تا خوب ببینی که چطور می‌شود<br>
+ با یک چادر، تمام معادلات عقلانی‌شان را در لحظه‌ای بر هم زد !</font></font>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('516','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 16 اسفند 1393  | 19:00  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(516)">نظرات  <script>setCommentCnt(516)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/515">یا فاطمه...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div align="justify"><font size="2">&nbsp; اول هرچیز را حیدر مشخص می کند</font><br><font size="2">&nbsp; آخرش تکلیف را کوثر مشخص می کند</font><br><font size="2">&nbsp; حیدری نیمه ابری یا حسینی شدید</font><br><font size="2">&nbsp; پس هوای خانه را مادر مشخص می کند...</font><br><br></div><font size="2"><img src="http://8pic.ir/images/9xx20vcqh7n9pfrg3tvn.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br></font>#چادر<br>
+<br>
+واژه غریبی است..<br>
+<br>
+دلم را می لرزاند<br>
+<br>
+یادآوری خاطرات#مدینه<br>
+#چادر-خاکی<br>
+#مادر<br>
+#در<br>
+#آتش<br>
+#کربلا<br>
+#خواهر<br>
+#بیابان<br>
+#خار<br>
+#تنهایی<br>
+#عطش<br>
+<br>
+عجب داستانی داری #چادر<br>
+و عجب روزگاری<br>
+حقا که سیاهی برازنده توست...<br><br><img src="http://8pic.ir/images/719ohqmxb13cef9prdy8.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('515','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 16 اسفند 1393  | 18:19  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(515)">نظرات  <script>setCommentCnt(515)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/514">حجاب...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><p style="text-align: justify;"><span style="font-size: small;">اصولا سالی یک بار یاد مبارزه با بدحجابی می افتیم و تهاجم فرهنگی را با گوشت و خون و پوست و تمام اعضا و جوارحمان احساس می کنیم!!!</span></p><p><span style="font-size: small;">آن
+ هم وقتی است که هوا رو به گرمی می  گذارد و لباس ها از تمامی جهات آب می 
+روند! نمی دانیم مقصر بنجلیات چینی  است که جنس هاشان نامرغوب است و بعد از
+ یک بار شسته شدن طول و عرض کم می  کند، مقصر ستاد امر به معروف و نهی از 
+منکر است که سه فصل سال را در خواب  است و تابستان ها دوره کاری اش شروع می
+ شود،ایراد از ماهواره هاست که تا می  توانند برهنگی ترویج می کنند،قصور از
+ ویترین مغازه های داخلی است که لباس  های تن مانکنشان در اوج قناعت تنها 
+نیم تا یک متر پارچه مصرف کرده اند یا  ایراد از هواست که غفلت می ورزد و 
+جهالت می کند و در اقدامی نابخردانه گرم  می شود!!اصولا و اساسا ما انسان 
+هایی هستیم که تا اتفاقی نیفتد به فکر چاره  و درمان نخواهیم افتاد.</span></p> <p><span style="font-size: small;">با
+ مضمونی با عنوان مدیریت بحران کاملا  بیگانه ایم و به شدت معتقدیم ماهی را
+ هر وقت از آب بگیریم تازه است! و چشم  می بندیم بر این واقعیت که نوشداروی
+ بعد از مرگ سهراب کارساز نیست. سال  هاست این سریال دنباله دار در کشور 
+جریان دارد. گرمای هوا مساوی است با شال  هایی که تنها نقش نمادین بر سر 
+ایفا می کنند،مانتوهای نازک بدن نما که سر  جمع گاهی ارتفاعشان به نیم متر 
+هم نمی رسد،صندل هایی که ناخن های لاک زده  را یدک می کشد، تیشرت های تنگ 
+با صور قبیحه که گاها نوشته هاشان بسیار  مذموم و زننده است و شلوار هایی 
+که یا رنگ و رو رفته اند یا پاره در پاره  اند و یا تنگ و کوتاه!</span></p> <p><span style="font-size: small;">بعد
+ قسمت دوم سریال شروع می شود!طرح  ضربتی مبارزه با بدحجابی!چند مامور مرد 
+متصدی این کار می شوند و با  برخوردهایی که به هیچ وجه شایسته یک مملکت 
+اسلامی نیست با بدحجابان برخورد  می کنند!بعد همین اتفاقات رسانه های خارجی
+ را هتاک نموده و دهان باز می  کنند به یاوه پرانی!درست در همین لحظه تصمیم
+ می گیریم مامورین خانم را هم  به کادر ستاد مبارزه با بدحجابی اضافه کنیم و
+ خلاصه تا می آییم که دست در  دست هم دهیم و طرحی نو در اندازیم تابستان به
+ پایان رسیده و در فصل سرما  هیچ عقل سالمی برهنه بیرون نمی آید و تازه آن 
+وقت مانند کبک سرمان را زیر  برف می کنیم که طرحمان موفق شد و بدحجابی را 
+مهار کردیم!!!غافل از آنکه همه  ی این ها ریشه در یک اصل اساسی دارد !</span></p> <p><span style="font-size: small;">&nbsp;</span></p> <p><span style="font-size: small;"><strong>برویم بگردیم و کنکاش کنیم در خودمان در زندگی و منشمان ببینیم کجای کار را خطا رفته ایم که اعتقاداتمان رنگ باخته</strong> !</span></p> <p><span style="font-size: small;">این حقیقتی است که هرسال نهیب می دهد:<strong>هواکه گرم می شود،اعتقاداتمان سرد می شود!</strong></span></p>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('514','like')</script><div class=LowPost><div class=Comment>تاریخ : سه شنبه 12 اسفند 1393  | 17:52  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(514)">نظرات  <script>setCommentCnt(514)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/510">مردان دست و دل بـاز!</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+            
+                
+                <font class="text4"><br><div align="center"><img src="http://s5.picofile.com/file/8130000868/%D9%85%D8%B1%D8%AF%D8%A7%D9%86_%D8%AF%D8%B3%D8%AA_%D9%88_%D8%AF%D9%84_%D8%A8%D8%A7%D8%B2.jpg" alt="" align="bottom" border="0" height="372" hspace="0" vspace="0" width="290"></div><br><p><font color="#3333FF"><b><font face="courier new,courier,monospace" size="3">رسول خدا صلی الله علیه و آله و سلم:<br>
+خداوند هفت نفر را لعنت کردند که یکی از آنها مردی است<br>
+که نسبت به پوشش و عفت همسرش بی توجه است.</font></b></font></p><p><font color="#3333FF"><b><font face="courier new,courier,monospace" size="3">مستدرک الوسایل ، ج، 14ص291</font></b></font></p><p><br></p><p><font color="#3333FF"><b><font face="courier new,courier,monospace" size="3">پ.ن:</font></b></font></p><p><br><font color="#CC0000"><b><font face="courier new,courier,monospace" size="3">از مــــرگ نترس ، از این بترس که زنده باشی و غیرتت مرده باشد.</font></b></font></p></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('510','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 9 اسفند 1393  | 09:44  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(510)">نظرات  <script>setCommentCnt(510)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/509">زینت پا</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><br><div align="center"><img src="http://s5.picofile.com/file/8130001868/%DA%86%D9%86%D8%A7%D9%86_%D9%BE%D8%A7%DB%8C_%D9%86%DA%A9%D9%88%D8%A8%D9%86%D8%AF.jpg" alt="" align="bottom" border="0" height="565" hspace="0" vspace="0" width="376"><br><font size="2">ولا یضربنَ بِاَرجلهِنَّ {و پاهای خود را چنان نکوبند}<br>
+لیعلمَ ما یُخفینَ من زینتهِنَّ {تا زینتی که پنهان داشته اند،معلوم شود}</font><br><font size="2">آیه 30 و 31 سوره ی نور</font><br><br><img src="http://s5.picofile.com/file/8110865218/%D8%A7%D8%AF%D8%A7%D9%85%D9%87_%D9%85%D8%B7%D9%84%D8%A8_2.gif" alt="" align="bottom" border="0" height="51" hspace="0" vspace="0" width="171"><br><br></div>
+
+
+
+
+                    <br>
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/509'>ادامه مطلب</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('509','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 9 اسفند 1393  | 09:34  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(509)">نظرات  <script>setCommentCnt(509)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/508">حجاب=مصونیت</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><img src="http://s5.picofile.com/file/8131270518/Hejab.png" alt="" align="bottom" border="0" height="245" hspace="0" vspace="0" width="472"><br><br><br><font size="5"><font color="#003300">بانو! جامه ی توست اما...</font><br><br><font color="#006600">"جــــــــامعه" ی مارا میسازد...</font><br><br><font color="#009900">جامه ات را مواظب باش...</font><br><br><font color="#33CC00">جـــــــــامعه در "خطر" است</font></font> <br>
+
+
+
+
+                    <br>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('508','like')</script><div class=LowPost><div class=Comment>تاریخ : شنبه 9 اسفند 1393  | 09:33  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(508)">نظرات  <script>setCommentCnt(508)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/507">تکرار...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font class="text4"><div align="center"><img src="http://s5.picofile.com/file/8144173368/%D8%B4%D9%87%DB%8C%D8%AF_%D8%AD%D8%AC%D8%A7%D8%A8.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></div><br><div class="post_title"><br></div><b><font face="arial,helvetica,sans-serif" size="3">تکرار چندین باره ی یک کابوس:<br><br></font><font face="arial,helvetica,sans-serif" size="3"><font face="courier new,courier,monospace">‌شتک <font color="#CC0000">خــون</font> روی زمین.</font></font><font face="arial,helvetica,sans-serif" size="3"><br><br>ردهای به جای مانده از <font color="#CC0000" face="courier new,courier,monospace">خــون</font> جاری روی صورت.<br><br>صدای همهمه..صدای هیجده ضربه. و صدای هیجده فریاد دلخراش . . .<br><br>رویایی وحشتناک و بی انتها<br><br>همه چیز انابی می شود درست رنگ روسری مادرش. . .<br><br>نقش ها همه می شود نقش گل گلی روسری مروه. . .<br><br>صدای
+ مادر توی گوشش می رود. سرش درد می گیرد. خودش هم انگار دارد با مادر همصدا
+ می شود. انگار با او می خواهد به جای هرضربه یک جیغ بکشد. ‌<br><br>طارق می دود توی اتاق:<br><br>- مصطفی بیدار شو، چه ات شده. . .<br><br>مصطفی ملحفه را می پیچد دور خودش. طارق هرچه تکان می دهد نمی تواند.<br><br>بعد همه چیز آبی می شود. بعد خاکستری بعد تیره. .<br><br>‌<br><br>‌مامان
+ جان یک خانمی آمده پیش من. من بهش می خواستم بگویم مامان مروه ی خودم دکتر
+ است.‌ خودش می آید من را خوب می کند. من به شما هیچ نیازی ندارم. نمی آیی 
+مامان جان؟ به سرم پارچه ی سفید بسته اند. بیا و من را خوب کن. آن خانمه 
+بهم گفت همه چیز را از یادم ببرم. اما مگر دست خودم است. من به همه می 
+گویم.‌ من تو را می خواهم. من دلم برایت تنگ شده. مگر می توانم. خانم دکتر 
+بهم گفته که اصلا فکر آن روز عصر و فکر توی دادگاه را نکنم. اما من برای 
+اینکه دست از سرم بردارد بهش گفتم باشد. اما همیشه فکرت هستم. داداش طارق 
+بهم گفته رفتی پیش خدا، رفتی آن دنیا. . اما من به خدا می گویم خدا مامانم 
+را پس بدهد. . خدا خیلی مهربان است. حتما می داند که من دارم از دوری تو دق
+ می کنم. مامان من دلم برات تنگ شده. . برگرد مامانی. . برگرد مامان. . .</font></b><br><br><br><font color="#990000"><font size="3"><font face="courier new,courier,monospace"><b>این داستان واقعی بود و جریان قتل مروه رو در شرح میداد <br>مروه
+ در جلسه ی دادگاه در مقابل دیدگان قاضی و نیروهای امنیتی و همه ی مردم 
+توسط قاتل 18 ضربه ی چاقو خورد و هیچ کس برای نجات او تلاش نکرد تا اینکه 
+مروه با مظلومیت و در مقابل دیدگاه فرزندش به شهادت رسید</b></font></font></font></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('507','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 18:17  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(507)">نظرات  <script>setCommentCnt(507)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/506"> الهام چرخنده ← بازیگری که از پیله بیرون آمد و زیباترین پروانه شد.</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font class="text4"><div align="center"><img src="http://s5.picofile.com/file/8155487900/%D8%A7%D9%84%D9%87%D8%A7%D9%85_%DA%86%D8%B1%D8%AE%D9%86%D8%AF%D9%87_%D8%B2%DB%8C%D8%A8%D8%A7%D8%AA%D8%B1%DB%8C%D9%86_%D9%BE%D8%B1%D9%88%D8%A7%D9%86%D9%87_%D8%B4%D8%AF.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></div><font size="2"><br>انتشار
+ ویدئوی تبریک عید نوروز او به رهبر انقلاب خبر از چرخشی ناگهانی در 
+روحیاتش می داد. تغییری که چرخنده به سینما سوژه می گوید یکدفعه ای نبوده: 
+«من کسی نیستم که بخواهم کار خاصی را انجام دهم اما این کشور برای هیچ حزب و
+ دسته و رنگ خاصی نیست. وطنم بوی ایمان، عشق، صبر و آرامش می دهد و چند سال
+ در عرصه ملی در رشته والیبال توپ زدم و با افتخار قاری قرآن در مهدیه 
+تهران بودم و سال ها در بسیج مساجد نقاشی را تدریس می کردم. <br><br>سال 79 با اثر کیومرث پوراحمد وارد سینما شدم اما شاید دیگر تصویر من را نبینید چون به من پیغام دادند که:<br><br>&nbsp;خانم چرخنده، سینمای ما جای چنین زنانی نیست و این علامت سوال برای من بود که فضای فرهنگی در سینمای ما جای چگونه زن هایی است؟»<br><br><font color="#3333FF"><b>اما
+ هیچ کدام از این هشدارها و انتقادها و واکنش ها به چرخنده در شبکه های 
+اجتماعی تاثیری روی او نداشت و کارهای خودش را با چیزهای دیگری گره زد و به
+ نوشته سینما سوژه گفت پای حرف های خودش خواهد ایستاد: <br>«متاسفانه در 
+شرایط موجود «لا اکراه فی الدین قد تبین الرشد من الغی» جایی ندارد. من 
+تنها به جرم بیان اعتقاداتم دچار چنین موقعیتی شدم اما هر چه مخالفان 
+صدایشان را بالاتر برند من هم بیشتر ایستادگی خواهم کرد چون این روزها 
+بیشتر به مظلومیت ولایت پی می برم. من نمی گذارم خون شهدا پایمال شود و همه
+ توانم را در راه اعتقاداتم هزینه خواهم کرد.»</b></font></font><font color="#CC0000"><b><br></b></font><br><font size="2">بعد از این ماجرا چند اتفاق مهمی که در زندگی او رخ داد را با هم در ادامه ی مطلب مرور میکنیم.</font><br><br><br><div align="center"><a href="http://diana1.mihanblog.com/post/338" target="_blank" title=""><img src="http://s5.picofile.com/file/8110865218/%D8%A7%D8%AF%D8%A7%D9%85%D9%87_%D9%85%D8%B7%D9%84%D8%A8_2.gif" alt="" align="bottom" border="0" height="43" hspace="0" vspace="0" width="145"></a><a href="http://diana1.mihanblog.com/post/338" target="_blank" title=""><br></a></div><br>
+
+
+<br><br><font size="2"></font></font>
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/506'>ادامه مطلب</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('506','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 18:11  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(506)">نظرات  <script>setCommentCnt(506)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/505">دختر سرزمین من</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<div class="div15">
+                
+                <div class="div18"><font class="text6"><a href="http://diana1.mihanblog.com/post/334">دختر سرزمین من...</a></font></div>
+            </div>
+            
+                
+                <font class="text4">
+
+
+<font face="courier new,courier,monospace" size="4"><img src="http://s5.picofile.com/file/8154006084/zeynab_069.JPG" alt="" align="bottom" border="0" height="314" hspace="0" vspace="0" width="421"><br><br><font color="#996633" face="tahoma,arial,helvetica,sans-serif" size="3"><b>دختر سرزمین من...<br>
+<br>
+تو ناموس این مذهبی،<br>
+<br>
+عزیزی برای این دین و آیین،<br>
+<br>
+کسی اسارت تو را دوست ندارد،<br>
+<br>
+مراقب خودت باش!<br>
+<br>
+مراقب خودت و همه ارزشهایت...<br>
+<br>
+مواظب باش اسیر هوس ها، اسیر یزید صفتان عصرت نشوی،<br>
+<br>
+مراقب باش شیطان ها به بندت نکشند،<br>
+<br>
+که آنوقت اسارتت مصیبتی میشود برای دل امام زمان(عج)</b></font></font></font>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('505','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 18:10  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(505)">نظرات  <script>setCommentCnt(505)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/504">من آزادم</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+                
+                <font class="text4">
+<font size="4"><img src="http://s5.picofile.com/file/8159370268/13606933053094_large.jpg" alt="" align="bottom" border="0" height="319" hspace="0" vspace="0" width="477"><br><br>دختره یکهو&nbsp; وسط صحبتهاش با یکی جوش آورد و دم پله های سِلف
+ دانشگاه میخواست مقنعه ش رو دربیاره! هی داد میزد و حرف میزد!!! داد میزدا
+ ؟! داد هم نه!<br>دااااااااااااااااااااد!!<br>&nbsp;گوش کردم بین حرفاش اینا رو فهمیدم: من آزادی مطلق میخوام!<br>دوست دارم هر کاری که دلم خواست بکنم! هر جور دلم خواست زندگی کنم!<br> هر رنگی دلم خواست! هر مدل لباسی دلم خواست!<br> اصلا دلم میخواد همینجا مقنعه م رو در بیارم! (یهویی درآورد!) <br>دوست دارم همینجا هرکاری دلم خواست بکنم! بسه دیگه! چرا نمیذارین آزاد باشم؟؟<br>بعد زد زیر گریه! البته خیلی کم! هیشکی جرات نمیکرد نزدیکش بشه! حتی دخترا !<br> رفتم جلو! سلام کردم! جوابم رو نداد! <br>مقنعه
+ ش رو از روی زمین برداشتم و دادم بهش و گفتم: میدونم خیلی زمان خوبی واسه 
+حرف زدن نیست! ولی چند تا سوال میپرسم، اگه منطقی نبود، من خودم همینجا همه
+ لباسهام رو در میارم! <br>چشاش گرد شد! سرش رو آورد بالا و من رو نگاه کرد !<br></font></font>
+
+
+
+
+
+
+<br><a href='http://golbarge82.mihanblog.com/post/504'>بااحترام ادامه</a>
+										<br>
+</div></div>
+<script>mihanblogPostLike('504','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 17:41  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(504)">نظرات  <script>setCommentCnt(504)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/502">همون ریشوی افراطی...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font class="text4"><font face="tahoma,arial,helvetica,sans-serif" size="2">یکی بود...یکی نبود......<br>
+یه روز یه خانم مثل هر روز بعد از کلی آرایش کنار آینه , مانتو تنگه و کفش پاشنه بلنده شو پا کرد و راهی خیابونای شهر شد..<br><br><img src="http://s5.picofile.com/file/8159477484/1_ohdpw90oj9j6btjlrxp4.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br></font><font face="tahoma,arial,helvetica,sans-serif" size="2"><br>همینطوری که داشت راه میرفت ,وسط متلک های جوونا یه صدایی توجهش رو جلب کرد:خواهرم حجابت.. خواهرم بخاطر خدا حجابت رو رعایت کن..
+
+
+
+
+</font><font face="georgia,times new roman,times,serif"><font face="tahoma,arial,helvetica,sans-serif" size="2">
+همینطوری که داشت راه میرفت ,وسط متلک های جوونا یه صدایی توجهش رو جلب کرد:خواهرم حجابت.. خواهرم بخاطر خدا حجابت رو رعایت کن..<br>
+نگاه  کرد دید یه جوون ریشو, از همونا که متنفر بود ازشون با یه پیرهن روی 
+شلوار  و یه شلوار پارچه ای داره به خانم های بد حجاب تذکر میده..<br>  <br> به
+  دوستش گفت من باید حال اینو بگیرم وگرنه شب خوابم نمیبره, مرتیکه سرتاپاش
+  یه قرون نمی ارزه اون وقت اومده میگه چکار بکنید وچکار نکنید...تصمیم 
+گرفت  مسیرش رو به سمت اون آقا کج کنه و یه چیزی بگه که دلش خنک بشه,وقتی 
+مقابل  پسر رسید چشماشو تا آخر باز کرد و دندوناش رو روی هم فشار داد و گفت
+ تو اگه  راست میگی چشمای خودتو درویش کن با این ریشای مسخره ات..<br>
+بعدم با دوستش زدن زیر خنده و رفتن.. پسر سرشو رو به آسمون بلند کرد و زیر لب گفت: خدایا این کم رو از من قبول کن..<br>
+شبش که رفت خونه به خودش افتخار میکرد, گوشی رو برداشت و قضیه رو با آب و تاب برای دوستاش تعریف میکرد..<br>
+فردای  اون روز دوباره آینه وآرایش و... بعد که آماده شد به دوستاش زنگ زد و
+ قرار  پارک رو گذاشت... توی پارک دوباره قضیه دیروز ذو برای دوستاش تعریف 
+میکرد و  بلند بلند میخندیدند..<br>
+شب وقتی که داشت از پارک برمیگشت یه ماشین کنار  پاش ترمز زد: خانمی 
+برسونیم...لبخند زد و گفت برو عمتو برسون , بعد با  دوستش زدن زیر خنده..<br>
+پسره از ماشین پیاده شد و چند قدمی کنار دختر قدم  زد و بعد یکباره حمله 
+کرد به سمت دختر و اون رو به سمت ماشین کشید.. دختر  که شوکه شده بود , 
+شروع کرد به داد و فریاد, اما کسی جلو نمیومد , اینبار  با صدای بلند 
+التماس کرد , اما همه تماشاچی بودن,هیچ کدوم از اونایی که تو  خیابون بهش 
+متلک مینداختن و زیباییشو ستایش میکردن حاضر نبودن جونشون رو به  خطر 
+بندازن..<br>
+دیگه داشت نا امید میشد که دید یه جوون به سمتشون میدوه و  فریاد میزنه.. 
+آهای ولش کن بی غیرت مگه خودت ناموس نداری.. وقتی بهشون  رسید سرشو انداخت 
+پایین و گفت خواهرم شما برو .....و یه تنه مقابل دزدای  ناموس ایستاد...<br>
+دختر در حالی که هنوز شوکه بود و دست و پاش میلرزید یک  دفعه با صدای هیاهو
+ به خودش اومد و دید یه جوون ریشو, از همونا که پیرهن رو  روی شلوار 
+میندازن.. از همونا که به نظرش افراطی بودن, افتاده روی زمین و  تمام بدنش 
+غرق به خونه.. ناخودآگاه یاد دیروز افتاد..<br>
+اون شب برای دوستاش اس ام اس فرستاد:<br> <font color="#0000ff">وقتی خواستن به زور سوارش کنند , همون کسی از جونش گذشت که توی خیابون بهش میگفت: خواهرم حجابت..<br>
+همان ریشوی افراطی..</font>.<br> <br> </font><font size="4"><font face="tahoma,arial,helvetica,sans-serif" size="2">من از این ریشو های افراطی زیاد میشناسم.....<br></font><br><img src="http://s5.picofile.com/file/8159477500/1_81098915_5587501.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></font></font></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('502','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 17:38  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(502)">نظرات  <script>setCommentCnt(502)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/501">محجبه</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div align="center"><img src="http://rozup.ir/up/313135/1393/11/21/21%287%29.jpg" alt="" align="bottom" border="0" height="221" hspace="0" vspace="0" width="257"><br><br></div>
+
+
+
+<p style="text-align: center;" align="center"><font class="text4"></font> برسد به دست تمام خواهران محجبه وباایمان:<br></p><div align="center">
+...<br>
+بگذار تمام دنیا بد وبیراهه بگویند!<br>
+به خودت...<br>
+به چادرت...<br>
+به سیاه بودنش... می ارزد به یک لبخند رضایت مهدی فاطمه(س)<br>
+و بدان <br>
+گذشت آن زمان که نفت را طلای سیاه میگفتند.<br>
+این روزها طلا تویی<br>
+سیاه هم چادرت...<br>
+طعنه ها دلسردت نکن.<br>
+اُمُّل بودن جسارت میخواد...<br>
+اینکه وسط ی عده بی نماز،نماز بخونی!!<br>
+اینکه وسط ی عده بی حجاب تو گرمای تابستون حجاب داشته باشی!!<br>
+اینکه حد و حدود محرم و نامحرم و رعایت کنی!! ناراحت نباش بانو، دوره آخر الزمان است،<br>
+به خودت افتخار کن، <br>
+تو خاصی.. نه اُمُّل                       
+
+
+
+
+</div>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('501','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 16:38  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(501)">نظرات  <script>setCommentCnt(501)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/500">نخور!!!!!!!!!!!!!!</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<div align="right"><font face="tahoma,arial,helvetica,sans-serif" size="3"><img src="http://s5.picofile.com/file/8164520276/myhome.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br></font></div><div align="right"><font face="tahoma,arial,helvetica,sans-serif" size="3"><br><br></font></div><div align="right"><font color="#990000" face="tahoma,arial,helvetica,sans-serif" size="3"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/100.gif"> زیباترین رژیم غذایی،</font><font color="#990000" face="tahoma,arial,helvetica,sans-serif" size="3"><br>دست كشیدن از خوردن گوشت برادرِ مُرده است...!<br><br>این رژیم در روز قیامت تاثیر زیادى در برداشتن بار،<br>از روى دوش و قدمهایمان دارد!<br><br><font color="#CC0000">"...غیبت نکنیم..."</font></font></div>
+
+
+
+
+                    <br>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('500','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 16:28  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(500)">نظرات  <script>setCommentCnt(500)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/499">الکی مثلامن...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font size="3">هوای اهواز خوب است<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>الکی مثلا من <font color="#CC0000">ابتکار</font>م</font>&nbsp;
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('499','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 8 اسفند 1393  | 15:21  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(499)">نظرات  <script>setCommentCnt(499)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/498">مـــــــــــاهواره</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+                
+                <font class="text4"><div align="center"><div align="right"><img src="http://rozup.ir/up/313135/1393/11/23/m%282%29.JPG" alt="" align="bottom" border="0" height="183" hspace="0" vspace="0" width="481"><br></div><br><div align="right"><font class="text4"></font> تا کنون 45 دستگاه ماهواره از سوی مردم به صورت داوطلبانه تحویل داده شده که این حرکت بسیار خوبی است.<br></div><br><div align="right"><img src="http://rozup.ir/up/313135/1393/11/23/m%281%29.JPG" alt="" align="bottom" border="0" height="184" hspace="0" vspace="0" width="482"><br></div><br><br><div align="right"><img src="http://rozup.ir/up/313135/1393/11/23/m%284%29.JPG" alt="" align="bottom" border="0" height="281" hspace="0" vspace="0" width="481"><br></div><br><div align="right"><img src="http://rozup.ir/up/313135/1393/11/23/m%285%29.JPG" alt="" align="bottom" border="0" height="200" hspace="0" vspace="0" width="481"><br></div><div align="right"><font class="text4"><font class="text4"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">منبع:<a href="http://seyedkavir.mihanblog.com/" target="_blank" title="">فرهنگی</a></span></font></font><br></div></div></font>
+
+
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('498','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:43  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(498)">نظرات  <script>setCommentCnt(498)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/497">پشت بام خانه</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font class="text4"><img src="http://rozup.ir/up/313135/1393/9/23/23%288%29.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('497','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:41  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(497)">نظرات  <script>setCommentCnt(497)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/496">بیـِِِِِِِِِِِِِِِِِِسیـــــم</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+                
+                <font class="text4"><div align="center"><img src="http://nmedia.afs-cdn.ir/v1/image/UFnQCyp9Yb2vOHvb7IoCuGelIwWW-haQYHGaDWK07Oq1X3srHlGtnA/s/w480/" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><font class="text4"><font class="text4"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">منبع:<a href="http://seyedkavir.mihanblog.com/" target="_blank" title="">فرهنگی</a></span></font></font><br></div></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('496','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:40  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(496)">نظرات  <script>setCommentCnt(496)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/495">یه داستان واقعی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+                
+                <font class="text4"><div align="center"><br><br><div align="right"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">فدای مظلومیتت یا صاحب الزمان (عج) ...</span></span><br><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);"></span>« بر اساس یک جریان واقعی »</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">♥•٠·</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">توی
+ یکی از بهترین مراکز فروش لپ تاپ و کامپیوتر تهران مغازه گرفته بودم. روز 
+افتتاح بود. کلی وقت و هزینه صرف کرده بودم تا بهترین دکور ممکن رو برای 
+مغازه طراحی کنم و بسازم. هر کی رد می شد تبریک می گفت. همه از دکور تعریف 
+می کردن، اون هم توی این پاساژ که هر مغازه برای خودش سمبل زیبایی 
+بود.تعدادی از همسایه ها برای تبریک اومدن توی فروشگاه. بعد از کلی تعریف و
+ ابراز محبت، رفتن. موقع رفتن یکی از همسایه ها که مردی حدوداً 45-50 ساله 
+بود، به من گفت: «دکورت فوق العاده زیباست، اما اون تابلویی که اونجا 
+زدی،کلاس مغازه رو پایین میاره. دیگه مردم به این چیزای مذهبی اهمیت نمی 
+دن. اگه به جای اون یه بطری خالی مشروب بذاری کلی زیباتر میشه و فروشِت رو 
+بیشتر می کنه.»برگشتم دیدم داره به تابلویی اشاره می کنه که بالای سرم زده 
+بودم و نوشته بود: " اَلا اِنَّ خاتَمَ الْاَئِمَّةِ مِنَّا الْقائِمَ 
+الْمَهْدِىَّ"<span class="Apple-converted-space">&nbsp;</span></span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">یه
+ لحظه تمام بدنم یخ کرد.خیلی سعی کردم عصبانی نشم! توی روی من واستاده داره
+ مهمترین رکن اعتقادی من رو با چی مقایسه می کنه؟!! خودمو جمع و جور کردم و
+ گفتم: «اگه فرصت دارین چند دقیقه با هم صحبت کنیم؟»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">گفت: «موردی نداره»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">چند
+ دقیقه ای هر چی بلد بودم در دفاع از دین گفتم؛ ولی زیر بار نمی رفت. گرم 
+صحبت بودیم که یک آقای شیک پوش به همراه یک خانم نسبتاً بد حجاب وارد شدن. 
+شروع کردن به قیمت کردن و اطلاعات گرفتن. به همسایه ام گفتم: «چون من از 
+شما خواستم بمونید، اگه می خواید برید تا بعداً با هم صحبت کنیم.» گفت: 
+«نه. می شینم تا کار اینا تموم بشه.»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">هی
+ قیمت کردن، تا روی یک مدل به نتیجه رسیدن. وقتی قیمت رو بهشون گفتم، خانمه
+ گفت: «ما همین مدل رو با 30 هزار تومن قیمت کمتر توی یه مغازه دیگه دیدیم.
+ بهمون کمتر بدین.» گفتم: «نمی شه. قیمت ما اینه.»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">گفت: « ببین آقا! گرون تر هم بدین ما از شما خرید می کنیم؛ ولی تخفیف بدین.»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">خلاصه بعد از کلی چونه زدن با 30 هزار تومن تخفیف خرید کردن. موقع بیرون رفتن خانمه برگشت و گفت:</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">«می دونید چرا خواستیم از شما خرید کنیم؟ به خاطر اون تابلوی نام امام زمان علیه السلام که بالای سرتون زدین.»</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">من برای بدرقه مشتریها پشت سرشون راه افتادم که دیدم همسایه ام پاشد، گفتم: "آقا حالا برمی گردم صحبت می کنیم."</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">مشتریا
+ رو که تا دم در مشایعت کردم، برگشتم دیدم همسایه ام رو به تابلو وایستاده 
+اشک تو چشمش جمع شده و با بغض میگه: «آقا غلط کردم. می خواستین به من 
+بفهمونید، فهمیدم. غلط کردم. ببخشید.».</span></div></div></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('495','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:39  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(495)">نظرات  <script>setCommentCnt(495)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/494">سنگ</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div align="center"><img src="http://nmedia.afs-cdn.ir/v1/image/j28M5zoa7Ne9omGJTCsyFJj6UsLC5EGynEIepVjeqzGcqxwfblEFRA/s/w486/" alt="" align="bottom" border="0" hspace="0" vspace="0"></div>
+
+
+                    <br>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('494','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:36  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(494)">نظرات  <script>setCommentCnt(494)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/493">غیرت!</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+                
+                <font class="text4"><div align="center"><img src="http://nmedia.afs-cdn.ir/v1/image/fu0q1drjAoFV1nijsdaWa5O2p6osqkwHLjua5JV3YHLd9-_0idpyag/s/w515/" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><font class="text4"><font class="text4"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">منبع:<a href="http://seyedkavir.mihanblog.com/" target="_blank" title="">فرهنگی</a></span></font></font><br></div></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('493','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:34  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(493)">نظرات  <script>setCommentCnt(493)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/492">معشوق من ...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+                
+                <font class="text4"><div align="center"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"></div><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">دختره
+ تو دانشگاه جلوی یه پسر رو گرفت وگفت: خیلی مغروری ازت خوشم میاد هرچی بهت
+ آمار دادم نگاه نکردی ولی چون خیلی ازت خوشم میاد من اومدم جلو خودم ازت 
+شمارتو بگیرم باهم دوست شیم<span class="Apple-converted-space">&nbsp;</span></span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">پسرگفت شرمنده نمیتوانم من صاحب دارم<span class="Apple-converted-space">&nbsp;</span></span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">دختره که از حسودی داشت میترکید گفت:خوشبحالش که با آدم باوفایی مثل تو دوسته...</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">پسره گفت:نه خوشبحال من که یه همچین صاحبی دارم از خود راضی</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">دخترگفت اووووه چه رمانتیک این خوشگل خوشبخت که که این جوری دلتو برده؟</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">عکسشو داری ببینمش؟</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">پسر گفت عکسشو ندارم خودم هم ندیدمش اما میدونم خوشگل ترین ادم دنیاست,</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">دختره شروع کرد به خندیدن مسخره کردن می گفت ندیده عاشقش شدی ؟</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">نکنه اسمشم نمیدونی ؟</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">پسر سرشو بالا گرفت گفت آره ندیده عاشقش شدم اما اسمشو میدونم ...</span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">اسمش مهدی فاطمه (عج الله) است ...<span class="Apple-converted-space">&nbsp;</span></span><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><br style="margin: 0px; padding: 0px; font-family: tahoma; color: rgb(0, 0, 0); font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246);"><span style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(246, 246, 246);">دوست مهدی (عج الله) با نامحرم دوست نمیشه ...<br><br>منبع:<a href="http://seyedkavir.mihanblog.com/" target="_blank" title="">فرهنگی</a></span></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('492','like')</script><div class=LowPost><div class=Comment>تاریخ : پنجشنبه 7 اسفند 1393  | 19:32  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(492)">نظرات  <script>setCommentCnt(492)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/491">ولادت حضرت زینب مبارک باد</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<div class="detail__pane  js-detail-content"><div class="detail__media"><font size="2"><b><span class="detail__media__img-wrapper"><font class="text4"><br></font></span></b></font><div align="center"><font size="2"><b><span class="detail__media__img-wrapper"><font class="text4"><font color="#ff0000" face="times new roman,times,serif" size="4"><strong><img alt="" src="http://upload7.ir/imgs/2014-09/59529615971324821395.gif" align="bottom" border="0" height="40" hspace="0" width="53"></strong></font></font>ولادت <img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">حضرت زینب(س)<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif">،الگوی زنان مسلمان، مبارک </span></b></font><font size="2"><b><span class="detail__media__img-wrapper"><font face="tahoma,arial,helvetica,sans-serif">باد</font></span></b></font><font size="2"><b><span class="detail__media__img-wrapper"></span></b></font><font size="2"><b><span class="detail__media__img-wrapper"><font size="2"><b><span class="detail__media__img-wrapper"><font class="text4"><font color="#ff0000" face="times new roman,times,serif" size="4"><strong><font color="#000000" face="tahoma,arial,helvetica,sans-serif" size="2"></font><img alt="" src="http://upload7.ir/imgs/2014-09/59529615971324821395.gif" align="bottom" border="0" height="40" hspace="0" width="53"></strong></font></font></span></b></font></span></b></font><br><br></div>
+
+
+
+
+        
+            
+            <div align="center"><font class="text4">
+
+
+<img alt="" src="http://upload7.ir/imgs/2014-09/34145339517724868586.gif" align="bottom" border="0" hspace="0"><img alt="" src="http://upload7.ir/imgs/2014-09/34145339517724868586.gif" align="bottom" border="0" hspace="0"></font><br></div><div align="center"><span class="detail__media__img-wrapper"></span><br><span class="detail__media__img-wrapper"></span><span class="detail__media__img-wrapper"><img src="http://static.yooz.ir/fc/images_m/small-blog/0150224/56783213-0.jpg" style="height:288px;top:0px;left:0px;" class="detail__media__img-thumbnail  js-detail-img "></span><br><span class="detail__media__img-wrapper"></span><font class="text4"><font color="#ff0000" face="times new roman,times,serif" size="4"><strong><img alt="" src="http://upload7.ir/imgs/2014-09/59529615971324821395.gif" align="bottom" border="0" hspace="0"></strong></font><font color="#ff0000" face="times new roman,times,serif" size="4"><strong><img alt="" src="http://upload7.ir/imgs/2014-09/59529615971324821395.gif" align="bottom" border="0" hspace="0"></strong></font></font><br></div></div></div>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('491','like')</script><div class=LowPost><div class=Comment>تاریخ : چهارشنبه 6 اسفند 1393  | 17:35  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(491)">نظرات  <script>setCommentCnt(491)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/490">تلخ است چادری نشدی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font size="2"><font size="2"><font size="3">سلام...متن رو حتما بخونید به دردتون میخوره</font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><hr><font size="2"><i><b>&nbsp; <font size="2">یادم می آ<font size="2">ید <font size="2">ازکودکی...<br><br></font></font></font></b></i><font size="3">یادم
+ می آید از کودکی پدرم به من میگفت:تو دختری،جواهری_و جواهر ارزشمندی مثل 
+تورا دست هرکسی نمیگذارندو نشان هرکسی نمیدهند...یادگرفتم چگونه رفتار کنم 
+تا ارزشمند بمانم.<br>یادم می آید 9 ساله که بودم در روز جشن تکلیفم مادرم 
+یک چادر و جانماز به من هدیه داد...آن روز،خداوند مرا به درگاه خویش دعوت 
+کرد..از آن روز من ارزشمندتر بودم!از آن روز من گوهری بودم در 
+صدف...!باچادر،فقط دوبال کم داشتم تا به سوی آسمان پروازکنم.با اولین نماز 
+سبک شده بودم تازه فهمیدم زندگی چیست و برای چه متولد شده ام.هنوز برق 
+چشمان مادربزرگ و پدربزرگم هنگامی که مرا با چادرم دیدند یادم هست!<br>یادم
+ نمیرود که برای اولین بار دست رد به سینه نامحرم زدم و چه زیبابود آن 
+لحظه...!از آن روزها تا حالا چادر من همراه من بود...تارو پودش با من سخن 
+میگوید</font><i><b><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><br>تلخ است چادری نشدی وگرنه میفهمیدی <font size="2">باچادر تو ارزشمند تری...<font size="2">چادر از تو دربرابر نگا<font size="2">ههای هرزه ای که هرلحظه م<font size="2">مکن است تورا اسیر کنند <font size="2"><font size="2">محافظت</font> میکند<br>منبع:<a href="http://dellneveshtehkhoda.mihanblog.com/" target="" title="">دل نوشته های طلایی</a></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></i></font>
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('490','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 1 اسفند 1393  | 19:22  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(490)">نظرات  <script>setCommentCnt(490)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://golbarge82.mihanblog.com/post/489">لوگو جدیدمن</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font style="color: rgb(0, 0, 0);" color="#6D34C2"><font style="font-size: 14pt;"><font style="font-size: 8pt;">سلام دوستان عزیز<br><font color="#6D34C2">اومدم بگم تغییر لوگو دادم</font><br><font color="#6D34C2">خوشحال می شم لوگومو توی وب لاگ یا وب سایتتون بگذارید<br>لوگوم: <br><img src="http://8pic.ir/images/1yu0s28nxqwwl35k6aww.png" alt="" align="bottom" border="0" hspace="0" vspace="0"><br>کد:<br></font></font></font></font><table style="border: 9px solid rgb(0, 0, 0); border-collapse: collapse; font-family: tahoma,arial,helvetica,sans-serif; font-size: 11px;" align="" cellpadding="1" cellspacing="1" height="133" width="221"><tbody><tr><td style="border:9px solid #000000; border-collapse: collapse;width: 100%;">&nbsp;<font style="color: rgb(0, 0, 0);" color="#6D34C2"><font style="font-size: 14pt;"><font style="font-size: 8pt;">&lt;!-- start logo cod off http://http://golbarge82.mihanblog.com/ 
+--&gt;&lt;p align="center"&gt;&lt;p align="center"&gt;&lt;a 
+href="http://golbarge82.mihanblog.com/" target="_blank"&gt;&lt;img 
+border="0" src="http://8pic.ir/images/1yu0s28nxqwwl35k6aww.png"&nbsp; 
+alt=""&gt;&lt;/a&gt;&lt;/p&gt;&lt;!--finish logo cod 
+offhttp://golbarge82.mihanblog.com/ --&gt;<br></font></font></font><font style="color: rgb(0, 0, 0);" color="#6D34C2"><font style="font-size: 14pt;"><font style="font-size: 8pt;"></font></font></font></td></tr></tbody></table><font style="color: rgb(0, 0, 0);" color="#6D34C2"><font style="font-size: 14pt;"><font style="font-size: 8pt;"><br><br><br><br><br><br><br><br><br><br></font></font></font>
+
+
+
+
+<br>
+										<br>
+</div></div>
+<script>mihanblogPostLike('489','like')</script><div class=LowPost><div class=Comment>تاریخ : جمعه 1 اسفند 1393  | 09:52  | نویسنده : <a href="../../author/1217535.html">گلبرگ سمائی </a> | <a target="_self" href="javascript:newComment(489)">نظرات  <script>setCommentCnt(489)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<!-- start logo cod off http://http://golbarge82.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/482/1444425/2313389_573.gif"  alt=""></a></p><!--finish logo cod offhttp://golbarge82.mihanblog.com/ -->
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#d9e6ea;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#d9e6ea"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/482/1444425.jpg@8404"  /><br>سلام<br />
+خوش آمدید</p></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1399/5.html"> مرداد 1399 ، 4 </a></div><div class=li-Sid>
+<a href="../1399/4.html"> تیر 1399 ، 3 </a></div><div class=li-Sid>
+<a href="../1397/5.html"> مرداد 1397 ، 28 </a></div><div class=li-Sid>
+<a href="../1395/4.html"> تیر 1395 ، 1 </a></div><div class=li-Sid>
+<a href="../1395/3.html"> خرداد 1395 ، 26 </a></div><div class=li-Sid>
+<a href="../1395/2.html"> اردیبهشت 1395 ، 9 </a></div><div class=li-Sid>
+<a href="../1395/1.html"> فروردین 1395 ، 11 </a></div><div class=li-Sid>
+<a href="../1394/12.html"> اسفند 1394 ، 5 </a></div><div class=li-Sid>
+<a href="../1394/11.html"> بهمن 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/10.html"> دی 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../1394/9.html"> آذر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/8.html"> آبان 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../1394/7.html"> مهر 1394 ، 3 </a></div><div class=li-Sid>
+<a href="../1394/6.html"> شهریور 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/5.html"> مرداد 1394 ، 6 </a></div><div class=li-Sid>
+<a href="../1394/4.html"> تیر 1394 ، 104 </a></div><div class=li-Sid>
+<a href="../1394/3.html"> خرداد 1394 ، 6 </a></div><div class=li-Sid>
+<a href="../1394/2.html"> اردیبهشت 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../1394/1.html"> فروردین 1394 ، 14 </a></div><div class=li-Sid>
+<a href="12.html"> اسفند 1393 ، 25 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1393 ، 124 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1393 ، 13 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1393 ، 13 </a></div><div class=li-Sid>
+<a href="8.html"> آبان 1393 ، 14 </a></div><div class=li-Sid>
+<a href="7.html"> مهر 1393 ، 28 </a></div><div class=li-Sid>
+<a href="6.html"> شهریور 1393 ، 47 </a></div><div class=li-Sid>
+<a href="5.html"> مرداد 1393 ، 26 </a></div><div class=li-Sid>
+<a href="4.html"> تیر 1393 ، 14 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../926.html">رذل مثل آمریکا</a></div><div class=li-Sid>
+<a href="../../925.html">حنجره های اجاره ای سلبریتی های ما...</a></div><div class=li-Sid>
+<a href="../../924.html">پست ثابت</a></div><div class=li-Sid>
+<a href="../../923.html">خاطره ای از شهید حججی</a></div><div class=li-Sid>
+<a href="../../922.html">#اعدام_کنید</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/5.html">      ماه من،خرداد  3 </a></div><div class=li-Sid>				
+<a href="../../category/4.html">رمان  13 </a></div><div class=li-Sid>				
+<a href="../../../../www.golbarge82.mihanblog.com/post/category/3.html">رمان*(رویای بارانی)*  14 </a></div><div class=li-Sid>				
+<a href="../../category/6.html">تعبیر خواب  1 </a></div><div class=li-Sid>				
+<a href="../../category/2.html">مسابقات  9 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">کدهای مجانی  30 </a></div></div>			
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<!-- Started code by varoone.ir ---- YahooID: davod_v2008  -->
+<script type="text/JavaScript" language="javascript">
+msg = "♡دل نوشته های یک دختر چادری♡"; msg = "..." + msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos > msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</script>
+<p>
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="display:none;"><h3><li><a href="http://pichak.net/paper/?categories=56">paper</a> | <a href="http://buylink.ir">بک لینک</a>
+ | <a href="http://saleslink.ir/">فروش لینک</a>
+</li></h3></div></body><script type='text/javascript' src='http://pichak.net/upper/jquery.min.js' ></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pichak.net/upper/scrolltopcontrol.php?t=15' ></s"+"cript>");</script>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'golbarge82.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>
